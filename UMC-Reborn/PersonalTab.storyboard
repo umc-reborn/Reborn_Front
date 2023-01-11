@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="acI-Wt-Q5u">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="oe0-7m-EV4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bUF-Rq-ahy">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="LAb-Oj-DsO" kind="relationship" relationship="viewControllers" id="1FU-dJ-uBi"/>
+                        <segue destination="lMT-JY-pgR" kind="relationship" relationship="viewControllers" id="0BF-xI-2p1"/>
+                        <segue destination="zzu-mM-CPs" kind="relationship" relationship="viewControllers" id="xEi-gu-esh"/>
+                        <segue destination="ivm-fZ-VVo" kind="relationship" relationship="viewControllers" id="t0e-hb-kJo"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qkg-VJ-TTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491" y="854"/>
+        </scene>
+        <!--마이리본-->
+        <scene sceneID="pgJ-mP-pzj">
+            <objects>
+                <navigationController id="ivm-fZ-VVo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="마이리본" image="person" catalog="system" id="ded-hs-SO4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="daK-Ca-ULF">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIo-Qz-hQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="1830"/>
+        </scene>
+        <!--찜-->
+        <scene sceneID="SWL-TU-BoG">
+            <objects>
+                <navigationController id="zzu-mM-CPs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="찜" image="heart" catalog="system" id="Aka-9F-KGd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xRF-kv-MOF">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwO-ex-rKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="1123"/>
+        </scene>
+        <!--검색-->
+        <scene sceneID="QJn-QI-ay5">
+            <objects>
+                <navigationController id="lMT-JY-pgR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="1Yq-UO-e6e"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xSh-BL-hpc">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NGa-IA-kGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="385"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="AX2-PH-jpH">
+            <objects>
+                <navigationController id="LAb-Oj-DsO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="6nE-uL-kpa"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FcR-Sd-360">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVK-4b-EvY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="-373"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="person" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
