@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
+		2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */; };
+		2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7010EF297586C100E09DD9 /* MyReborn.storyboard */; };
 		952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB295296E813300BD7CD7 /* PersonalTab.storyboard */; };
 		C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD74296D315B00040E05 /* AppDelegate.swift */; };
 		C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD76296D315B00040E05 /* SceneDelegate.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
+		2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornViewController.swift; sourceTree = "<group>"; };
+		2F7010EF297586C100E09DD9 /* MyReborn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReborn.storyboard; sourceTree = "<group>"; };
 		952CB295296E813300BD7CD7 /* PersonalTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalTab.storyboard; sourceTree = "<group>"; };
 		C7C4FD71296D315B00040E05 /* UMC-Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-Reborn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C4FD74296D315B00040E05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,9 @@
 				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
 				C7C4FD82296D315E00040E05 /* Info.plist */,
 				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
+				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
+				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
+				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
 			);
 			path = "UMC-Reborn";
 			sourceTree = "<group>";
@@ -130,6 +139,7 @@
 			files = (
 				952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
+				2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */,
 				C7C4FD7E296D315E00040E05 /* Assets.xcassets in Resources */,
 				C7C4FD7C296D315B00040E05 /* Main.storyboard in Resources */,
 			);
@@ -142,9 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
+				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
