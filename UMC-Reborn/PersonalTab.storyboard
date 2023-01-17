@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="jj3-uv-qGw" kind="relationship" relationship="rootViewController" id="ybX-XZ-VEz"/>
+                        <segue destination="jj3-uv-qGw" kind="relationship" relationship="rootViewController" id="Ubr-2q-o1Z"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVK-4b-EvY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -93,7 +93,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41O-Qg-DDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="-409"/>
+            <point key="canvasLocation" x="1741" y="-403"/>
         </scene>
     </scenes>
     <resources>
