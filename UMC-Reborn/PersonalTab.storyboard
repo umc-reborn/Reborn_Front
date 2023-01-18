@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oe0-7m-EV4">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -72,16 +72,28 @@
         <!--홈-->
         <scene sceneID="AX2-PH-jpH">
             <objects>
-                <navigationController id="LAb-Oj-DsO" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="LAb-Oj-DsO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="6nE-uL-kpa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FcR-Sd-360">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="jj3-uv-qGw" kind="relationship" relationship="rootViewController" id="Ubr-2q-o1Z"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVK-4b-EvY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="846" y="-373"/>
+        </scene>
+        <!--PersonalHomeVC-->
+        <scene sceneID="FqT-Ck-oBe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Personal_Home" referencedIdentifier="PersonalHomeVC" id="jj3-uv-qGw" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tGs-7q-iR3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41O-Qg-DDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741" y="-403"/>
         </scene>
     </scenes>
     <resources>
