@@ -8,32 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB295296E813300BD7CD7 /* PersonalTab.storyboard */; };
-		C71C2D6D29755C28007BA3E0 /* ic_Time.png in Resources */ = {isa = PBXBuildFile; fileRef = C71C2D6C29755C28007BA3E0 /* ic_Time.png */; };
+		952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */; };
+		952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */; };
+		952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */; };
+		952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */; };
+		952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */; };
+		952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */; };
+		952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */; };
+		952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */; };
 		C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */; };
-		C74FEE1E2971787800BFC8D0 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE1D2971787800BFC8D0 /* back_button.png */; };
-		C74FEE202971787E00BFC8D0 /* ic_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE1F2971787D00BFC8D0 /* ic_setting.png */; };
-		C74FEE222971788300BFC8D0 /* ic_bell_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE212971788300BFC8D0 /* ic_bell_disabled.png */; };
-		C74FEE262971788A00BFC8D0 /* edit_storebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE232971788A00BFC8D0 /* edit_storebutton.png */; };
-		C74FEE272971788A00BFC8D0 /* store_category.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE242971788A00BFC8D0 /* store_category.png */; };
-		C74FEE282971788A00BFC8D0 /* store_view.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE252971788A00BFC8D0 /* store_view.png */; };
-		C74FEE2A2971789000BFC8D0 /* edit_store.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE292971788F00BFC8D0 /* edit_store.png */; };
-		C74FEE2C2971789400BFC8D0 /* store_star.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE2B2971789400BFC8D0 /* store_star.png */; };
-		C74FEE322971789E00BFC8D0 /* goods_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE2D2971789E00BFC8D0 /* goods_picture.png */; };
-		C74FEE332971789E00BFC8D0 /* umc_character.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE2E2971789E00BFC8D0 /* umc_character.png */; };
-		C74FEE342971789E00BFC8D0 /* share_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE2F2971789E00BFC8D0 /* share_setting.png */; };
-		C74FEE352971789E00BFC8D0 /* review.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE302971789E00BFC8D0 /* review.png */; };
-		C74FEE362971789E00BFC8D0 /* store_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE312971789E00BFC8D0 /* store_setting.png */; };
-		C74FEE38297178BE00BFC8D0 /* reborn_symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE37297178BE00BFC8D0 /* reborn_symbol.png */; };
 		C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */; };
 		C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */; };
-		C74FEE4029717E2500BFC8D0 /* ic_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE3F29717E2500BFC8D0 /* ic_down.png */; };
-		C74FEE422971840500BFC8D0 /* add_button.png in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE412971840500BFC8D0 /* add_button.png */; };
 		C74FEE442971893300BFC8D0 /* RebornEnrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE432971893300BFC8D0 /* RebornEnrollViewController.swift */; };
 		C74FEE4629718B7C00BFC8D0 /* AddRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE4529718B7C00BFC8D0 /* AddRebornViewController.swift */; };
 		C74FEE48297199FE00BFC8D0 /* StoreManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE47297199FE00BFC8D0 /* StoreManageViewController.swift */; };
 		C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE492971B40800BFC8D0 /* EditStoreViewController.swift */; };
-		C785D635297455F900EBE7CB /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = C785D634297455F900EBE7CB /* frame.png */; };
-		C785D637297465D900EBE7CB /* store_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C785D636297465D900EBE7CB /* store_image.png */; };
 		C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD74296D315B00040E05 /* AppDelegate.swift */; };
 		C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD76296D315B00040E05 /* SceneDelegate.swift */; };
 		C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD78296D315B00040E05 /* ViewController.swift */; };
@@ -41,43 +30,32 @@
 		C7C4FD7E296D315E00040E05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7C4FD7D296D315E00040E05 /* Assets.xcassets */; };
 		C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */; };
 		C7D56FAA2972BC5600A68015 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D56FA92972BC5600A68015 /* PopupViewController.swift */; };
-		C7D56FAD2973BCE200A68015 /* count_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D56FAB2973BCE200A68015 /* count_minus.png */; };
-		C7D56FAE2973BCE200A68015 /* count_add.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D56FAC2973BCE200A68015 /* count_add.png */; };
 		C7DCE53C29727AA900F44F1D /* EnrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */; };
 		C7DCE54029728D6000F44F1D /* StoreModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE53F29728D6000F44F1D /* StoreModalViewController.swift */; };
 		C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE5412972916400F44F1D /* StoreMainTableViewCell.swift */; };
 		C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */; };
-		C7DCE5462972957D00F44F1D /* bread_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DCE5452972957D00F44F1D /* bread_image.png */; };
+		F54958F376ED96265363C1F8 /* Pods_UMC_Reborn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.release.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.release.xcconfig"; sourceTree = "<group>"; };
+		20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.debug.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.debug.xcconfig"; sourceTree = "<group>"; };
 		952CB295296E813300BD7CD7 /* PersonalTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalTab.storyboard; sourceTree = "<group>"; };
-		C71C2D6C29755C28007BA3E0 /* ic_Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_Time.png; path = ../../../../../Downloads/ic_Time.png; sourceTree = "<group>"; };
+		952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal_Home.storyboard; sourceTree = "<group>"; };
+		952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHomeViewController.swift; sourceTree = "<group>"; };
+		952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitedRebronViewController.swift; sourceTree = "<group>"; };
+		952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewViewController.swift; sourceTree = "<group>"; };
+		952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopViewController.swift; sourceTree = "<group>"; };
+		952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopViewController.swift; sourceTree = "<group>"; };
+		952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSideDishViewController.swift; sourceTree = "<group>"; };
+		952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCafeViewController.swift; sourceTree = "<group>"; };
 		C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreTab.storyboard; sourceTree = "<group>"; };
-		C74FEE1D2971787800BFC8D0 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_button.png; path = ../../../../../Downloads/back_button.png; sourceTree = "<group>"; };
-		C74FEE1F2971787D00BFC8D0 /* ic_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_setting.png; path = ../../../../../Downloads/ic_setting.png; sourceTree = "<group>"; };
-		C74FEE212971788300BFC8D0 /* ic_bell_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_bell_disabled.png; path = ../../../../../Downloads/ic_bell_disabled.png; sourceTree = "<group>"; };
-		C74FEE232971788A00BFC8D0 /* edit_storebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit_storebutton.png; path = ../../../../../Downloads/edit_storebutton.png; sourceTree = "<group>"; };
-		C74FEE242971788A00BFC8D0 /* store_category.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = store_category.png; path = ../../../../../Downloads/store_category.png; sourceTree = "<group>"; };
-		C74FEE252971788A00BFC8D0 /* store_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = store_view.png; path = ../../../../../Downloads/store_view.png; sourceTree = "<group>"; };
-		C74FEE292971788F00BFC8D0 /* edit_store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit_store.png; path = ../../../../../Downloads/edit_store.png; sourceTree = "<group>"; };
-		C74FEE2B2971789400BFC8D0 /* store_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = store_star.png; path = ../../../../../Downloads/store_star.png; sourceTree = "<group>"; };
-		C74FEE2D2971789E00BFC8D0 /* goods_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goods_picture.png; path = ../../../../../Downloads/goods_picture.png; sourceTree = "<group>"; };
-		C74FEE2E2971789E00BFC8D0 /* umc_character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = umc_character.png; path = ../../../../../Downloads/umc_character.png; sourceTree = "<group>"; };
-		C74FEE2F2971789E00BFC8D0 /* share_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share_setting.png; path = ../../../../../Downloads/share_setting.png; sourceTree = "<group>"; };
-		C74FEE302971789E00BFC8D0 /* review.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = review.png; path = ../../../../../Downloads/review.png; sourceTree = "<group>"; };
-		C74FEE312971789E00BFC8D0 /* store_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = store_setting.png; path = ../../../../../Downloads/store_setting.png; sourceTree = "<group>"; };
-		C74FEE37297178BE00BFC8D0 /* reborn_symbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reborn_symbol.png; path = ../../../../reborn_symbol.png; sourceTree = "<group>"; };
 		C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarController.swift; sourceTree = "<group>"; };
 		C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMainViewController.swift; sourceTree = "<group>"; };
-		C74FEE3F29717E2500BFC8D0 /* ic_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_down.png; path = ../../../../../Downloads/ic_down.png; sourceTree = "<group>"; };
-		C74FEE412971840500BFC8D0 /* add_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_button.png; path = ../../../../../Downloads/add_button.png; sourceTree = "<group>"; };
 		C74FEE432971893300BFC8D0 /* RebornEnrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornEnrollViewController.swift; sourceTree = "<group>"; };
 		C74FEE4529718B7C00BFC8D0 /* AddRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRebornViewController.swift; sourceTree = "<group>"; };
 		C74FEE47297199FE00BFC8D0 /* StoreManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManageViewController.swift; sourceTree = "<group>"; };
 		C74FEE492971B40800BFC8D0 /* EditStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStoreViewController.swift; sourceTree = "<group>"; };
-		C785D634297455F900EBE7CB /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame.png; path = ../../../../../Downloads/frame.png; sourceTree = "<group>"; };
-		C785D636297465D900EBE7CB /* store_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = store_image.png; path = ../../../../../Downloads/store_image.png; sourceTree = "<group>"; };
 		C7C4FD71296D315B00040E05 /* UMC-Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-Reborn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C4FD74296D315B00040E05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7C4FD76296D315B00040E05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,13 +65,11 @@
 		C7C4FD80296D315E00040E05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7C4FD82296D315E00040E05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7D56FA92972BC5600A68015 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
-		C7D56FAB2973BCE200A68015 /* count_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = count_minus.png; path = ../../../../../Downloads/count_minus.png; sourceTree = "<group>"; };
-		C7D56FAC2973BCE200A68015 /* count_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = count_add.png; path = ../../../../../Downloads/count_add.png; sourceTree = "<group>"; };
 		C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollTableViewCell.swift; sourceTree = "<group>"; };
 		C7DCE53F29728D6000F44F1D /* StoreModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModalViewController.swift; sourceTree = "<group>"; };
 		C7DCE5412972916400F44F1D /* StoreMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMainTableViewCell.swift; sourceTree = "<group>"; };
 		C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRebornViewController.swift; sourceTree = "<group>"; };
-		C7DCE5452972957D00F44F1D /* bread_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bread_image.png; path = ../../../../../Downloads/bread_image.png; sourceTree = "<group>"; };
+		EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UMC_Reborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,39 +77,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F54958F376ED96265363C1F8 /* Pods_UMC_Reborn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C74FEE1B2971781A00BFC8D0 /* Storeimages */ = {
+		77AD8D9494DCB96CF5BB6F9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C71C2D6C29755C28007BA3E0 /* ic_Time.png */,
-				C785D636297465D900EBE7CB /* store_image.png */,
-				C785D634297455F900EBE7CB /* frame.png */,
-				C7D56FAC2973BCE200A68015 /* count_add.png */,
-				C7D56FAB2973BCE200A68015 /* count_minus.png */,
-				C7DCE5452972957D00F44F1D /* bread_image.png */,
-				C74FEE412971840500BFC8D0 /* add_button.png */,
-				C74FEE3F29717E2500BFC8D0 /* ic_down.png */,
-				C74FEE37297178BE00BFC8D0 /* reborn_symbol.png */,
-				C74FEE2D2971789E00BFC8D0 /* goods_picture.png */,
-				C74FEE302971789E00BFC8D0 /* review.png */,
-				C74FEE2F2971789E00BFC8D0 /* share_setting.png */,
-				C74FEE312971789E00BFC8D0 /* store_setting.png */,
-				C74FEE2E2971789E00BFC8D0 /* umc_character.png */,
-				C74FEE2B2971789400BFC8D0 /* store_star.png */,
-				C74FEE292971788F00BFC8D0 /* edit_store.png */,
-				C74FEE232971788A00BFC8D0 /* edit_storebutton.png */,
-				C74FEE242971788A00BFC8D0 /* store_category.png */,
-				C74FEE252971788A00BFC8D0 /* store_view.png */,
-				C74FEE212971788300BFC8D0 /* ic_bell_disabled.png */,
-				C74FEE1F2971787D00BFC8D0 /* ic_setting.png */,
-				C74FEE1D2971787800BFC8D0 /* back_button.png */,
+				EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */,
 			);
-			path = Storeimages;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		952CB29B297754E100BD7CD7 /* PersonalHome */ = {
+			isa = PBXGroup;
+			children = (
+				952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */,
+				952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */,
+				952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */,
+				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
+				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
+				952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */,
+			);
+			path = PersonalHome;
 			sourceTree = "<group>";
 		};
 		C74FEE1C2971782C00BFC8D0 /* StoreHomeViewController */ = {
@@ -159,6 +128,8 @@
 			children = (
 				C7C4FD73296D315B00040E05 /* UMC-Reborn */,
 				C7C4FD72296D315B00040E05 /* Products */,
+				D04DEAD214F0B35E09E08104 /* Pods */,
+				77AD8D9494DCB96CF5BB6F9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,8 +144,8 @@
 		C7C4FD73296D315B00040E05 /* UMC-Reborn */ = {
 			isa = PBXGroup;
 			children = (
+				952CB29B297754E100BD7CD7 /* PersonalHome */,
 				C74FEE1C2971782C00BFC8D0 /* StoreHomeViewController */,
-				C74FEE1B2971781A00BFC8D0 /* Storeimages */,
 				C7C4FD74296D315B00040E05 /* AppDelegate.swift */,
 				C7C4FD76296D315B00040E05 /* SceneDelegate.swift */,
 				C7C4FD78296D315B00040E05 /* ViewController.swift */,
@@ -183,9 +154,20 @@
 				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
 				C7C4FD82296D315E00040E05 /* Info.plist */,
 				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
+				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
+				952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */,
 				C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */,
 			);
 			path = "UMC-Reborn";
+			sourceTree = "<group>";
+		};
+		D04DEAD214F0B35E09E08104 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */,
+				0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7C4FD85296D315E00040E05 /* Build configuration list for PBXNativeTarget "UMC-Reborn" */;
 			buildPhases = (
+				6965A19F8B7A023819DAD2B1 /* [CP] Check Pods Manifest.lock */,
 				C7C4FD6D296D315B00040E05 /* Sources */,
 				C7C4FD6E296D315B00040E05 /* Frameworks */,
 				C7C4FD6F296D315B00040E05 /* Resources */,
+				F0535D8D29DFB2B70ECBF9CB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,37 +230,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C74FEE4029717E2500BFC8D0 /* ic_down.png in Resources */,
-				C7DCE5462972957D00F44F1D /* bread_image.png in Resources */,
-				C74FEE222971788300BFC8D0 /* ic_bell_disabled.png in Resources */,
-				C74FEE352971789E00BFC8D0 /* review.png in Resources */,
-				C7D56FAE2973BCE200A68015 /* count_add.png in Resources */,
 				952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */,
-				C785D635297455F900EBE7CB /* frame.png in Resources */,
-				C74FEE202971787E00BFC8D0 /* ic_setting.png in Resources */,
-				C74FEE2A2971789000BFC8D0 /* edit_store.png in Resources */,
-				C74FEE342971789E00BFC8D0 /* share_setting.png in Resources */,
-				C7D56FAD2973BCE200A68015 /* count_minus.png in Resources */,
-				C74FEE38297178BE00BFC8D0 /* reborn_symbol.png in Resources */,
-				C74FEE362971789E00BFC8D0 /* store_setting.png in Resources */,
-				C74FEE332971789E00BFC8D0 /* umc_character.png in Resources */,
+				952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
-				C74FEE322971789E00BFC8D0 /* goods_picture.png in Resources */,
-				C74FEE422971840500BFC8D0 /* add_button.png in Resources */,
-				C74FEE1E2971787800BFC8D0 /* back_button.png in Resources */,
 				C7C4FD7E296D315E00040E05 /* Assets.xcassets in Resources */,
-				C74FEE2C2971789400BFC8D0 /* store_star.png in Resources */,
 				C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */,
-				C785D637297465D900EBE7CB /* store_image.png in Resources */,
 				C7C4FD7C296D315B00040E05 /* Main.storyboard in Resources */,
-				C71C2D6D29755C28007BA3E0 /* ic_Time.png in Resources */,
-				C74FEE262971788A00BFC8D0 /* edit_storebutton.png in Resources */,
-				C74FEE272971788A00BFC8D0 /* store_category.png in Resources */,
-				C74FEE282971788A00BFC8D0 /* store_view.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6965A19F8B7A023819DAD2B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UMC-Reborn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0535D8D29DFB2B70ECBF9CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C7C4FD6D296D315B00040E05 /* Sources */ = {
@@ -286,6 +291,13 @@
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
+				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
+				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
+				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
+				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
+				952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */,
+				952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */,
+				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */,
 				C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */,
@@ -438,6 +450,7 @@
 		};
 		C7C4FD86296D315E00040E05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -467,6 +480,7 @@
 		};
 		C7C4FD87296D315E00040E05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
