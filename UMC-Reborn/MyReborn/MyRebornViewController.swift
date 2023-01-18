@@ -26,7 +26,45 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 메뉴 별로 viewController 넘기기
+        switch indexPath.row {
+            // 회원정보수정
+        case 0: if let vc = storyboard?.instantiateViewController(withIdentifier: "editUserProfileVC") as? EditUserProfileViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+            // 리본 히스토리
+        case 1: if let vc = storyboard?.instantiateViewController(withIdentifier: "rebornHistoryVC") as? RebornHistoryViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+            // 리뷰 관리
+        case 2: if let vc = storyboard?.instantiateViewController(withIdentifier: "reviewManageVC") as? ReviewManageViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+            
+            // 최근 본 리본 가게
+        case 3: if let vc = storyboard?.instantiateViewController(withIdentifier: "recentStoreVC") as? RecentStoreViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+            // 내 쿠폰함
+        case 4: if let vc = storyboard?.instantiateViewController(withIdentifier: "MyCouponVC") as? MyCouponViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+            // 알림 설정 리본 스토어
+        case 5: if let vc = storyboard?.instantiateViewController(withIdentifier: "alertStoreVC") as? AlertStoreViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        default:
+            
+            return
+            
+        }
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         MyRebornTableView.delegate = self
@@ -44,8 +82,15 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         progressBar.progress = 0.1
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 화면 넘어갔다가 다시 돌아왔을 때 cell 포커스 해제
+        if let selectedIndexPath = MyRebornTableView.indexPathForSelectedRow {
+            MyRebornTableView.deselectRow(at: selectedIndexPath, animated: animated)
+        }
+    }
+    
 }
-
 
 
 // 메뉴 TableViewCell에 들어갈 데이터 모델

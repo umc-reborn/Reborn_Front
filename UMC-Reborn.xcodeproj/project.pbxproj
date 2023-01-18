@@ -10,6 +10,12 @@
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */; };
 		2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7010EF297586C100E09DD9 /* MyReborn.storyboard */; };
+		2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */; };
+		2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */; };
+		2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */; };
+		2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */; };
+		2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */; };
+		2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */; };
 		952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB295296E813300BD7CD7 /* PersonalTab.storyboard */; };
 		C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD74296D315B00040E05 /* AppDelegate.swift */; };
 		C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD76296D315B00040E05 /* SceneDelegate.swift */; };
@@ -23,6 +29,12 @@
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
 		2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornViewController.swift; sourceTree = "<group>"; };
 		2F7010EF297586C100E09DD9 /* MyReborn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReborn.storyboard; sourceTree = "<group>"; };
+		2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStoreViewController.swift; sourceTree = "<group>"; };
+		2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
+		2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryViewController.swift; sourceTree = "<group>"; };
+		2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCouponViewController.swift; sourceTree = "<group>"; };
+		2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManageViewController.swift; sourceTree = "<group>"; };
+		2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStoreViewController.swift; sourceTree = "<group>"; };
 		952CB295296E813300BD7CD7 /* PersonalTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalTab.storyboard; sourceTree = "<group>"; };
 		C7C4FD71296D315B00040E05 /* UMC-Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-Reborn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C4FD74296D315B00040E05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FB4A6A229779E2000CA811C /* MyReborn */ = {
+			isa = PBXGroup;
+			children = (
+				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
+				2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */,
+				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
+				2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */,
+				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
+				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
+				2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */,
+				2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */,
+				2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */,
+			);
+			path = MyReborn;
+			sourceTree = "<group>";
+		};
 		C7C4FD68296D315B00040E05 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +92,7 @@
 		C7C4FD73296D315B00040E05 /* UMC-Reborn */ = {
 			isa = PBXGroup;
 			children = (
+				2FB4A6A229779E2000CA811C /* MyReborn */,
 				C7C4FD74296D315B00040E05 /* AppDelegate.swift */,
 				C7C4FD76296D315B00040E05 /* SceneDelegate.swift */,
 				C7C4FD78296D315B00040E05 /* ViewController.swift */,
@@ -72,9 +101,6 @@
 				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
 				C7C4FD82296D315E00040E05 /* Info.plist */,
 				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
-				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
-				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
-				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
 			);
 			path = "UMC-Reborn";
 			sourceTree = "<group>";
@@ -154,9 +180,15 @@
 			files = (
 				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
+				2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */,
+				2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */,
+				2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */,
+				2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
+				2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
+				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
