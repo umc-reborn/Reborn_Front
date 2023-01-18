@@ -47,7 +47,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
             // 최근 본 리본 가게
         case 3: if let vc = storyboard?.instantiateViewController(withIdentifier: "recentStoreVC") as? RecentStoreViewController {
             self.navigationController?.pushViewController(vc, animated: true)
-            self.navigationItem.title = ""  // < back title
+            self.navigationItem.title = ""
             
         }
             // 내 쿠폰함

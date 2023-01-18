@@ -10,6 +10,8 @@
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */; };
 		2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7010EF297586C100E09DD9 /* MyReborn.storyboard */; };
+		2FA916E82977C70100DED2B7 /* StoreCustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA916E72977C70100DED2B7 /* StoreCustomCollectionView.swift */; };
+		2FA916EA2977C73F00DED2B7 /* StoreCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA916E92977C73F00DED2B7 /* StoreCustomCollectionViewCell.swift */; };
 		2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */; };
 		2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */; };
 		2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */; };
@@ -52,6 +54,8 @@
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
 		2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornViewController.swift; sourceTree = "<group>"; };
 		2F7010EF297586C100E09DD9 /* MyReborn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReborn.storyboard; sourceTree = "<group>"; };
+		2FA916E72977C70100DED2B7 /* StoreCustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCustomCollectionView.swift; sourceTree = "<group>"; };
+		2FA916E92977C73F00DED2B7 /* StoreCustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStoreViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryViewController.swift; sourceTree = "<group>"; };
@@ -102,16 +106,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FA916E42977C60500DED2B7 /* RecentStore */ = {
+			isa = PBXGroup;
+			children = (
+				2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */,
+				2FA916E72977C70100DED2B7 /* StoreCustomCollectionView.swift */,
+				2FA916E92977C73F00DED2B7 /* StoreCustomCollectionViewCell.swift */,
+			);
+			path = RecentStore;
+			sourceTree = "<group>";
+		};
 		2FB4A6A229779E2000CA811C /* MyReborn */ = {
 			isa = PBXGroup;
 			children = (
+				2FA916E42977C60500DED2B7 /* RecentStore */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
 				2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */,
 				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
 				2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */,
 				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
 				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
-				2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */,
 				2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */,
 				2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */,
 			);
@@ -333,7 +347,9 @@
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
+				2FA916E82977C70100DED2B7 /* StoreCustomCollectionView.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
+				2FA916EA2977C73F00DED2B7 /* StoreCustomCollectionViewCell.swift in Sources */,
 				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
 				C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
