@@ -14,6 +14,8 @@
 		952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */; };
 		952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */; };
 		952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */; };
+		952CB2A5297768D200BD7CD7 /* PopularCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularCafeViewController.swift */; };
+		952CB2A72977691100BD7CD7 /* PopularSideDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A62977691100BD7CD7 /* PopularSideDishViewController.swift */; };
 		C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD74296D315B00040E05 /* AppDelegate.swift */; };
 		C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD76296D315B00040E05 /* SceneDelegate.swift */; };
 		C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD78296D315B00040E05 /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 		952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewViewController.swift; sourceTree = "<group>"; };
 		952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopViewController.swift; sourceTree = "<group>"; };
 		952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopViewController.swift; sourceTree = "<group>"; };
+		952CB2A4297768D200BD7CD7 /* PopularCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCafeViewController.swift; sourceTree = "<group>"; };
+		952CB2A62977691100BD7CD7 /* PopularSideDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSideDishViewController.swift; sourceTree = "<group>"; };
 		C7C4FD71296D315B00040E05 /* UMC-Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-Reborn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C4FD74296D315B00040E05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7C4FD76296D315B00040E05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,12 +71,22 @@
 		952CB29B297754E100BD7CD7 /* PersonalHome */ = {
 			isa = PBXGroup;
 			children = (
+				952CB2A82977691900BD7CD7 /* PopularCategory */,
 				952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */,
 				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
 				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
 				952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */,
 			);
 			path = PersonalHome;
+			sourceTree = "<group>";
+		};
+		952CB2A82977691900BD7CD7 /* PopularCategory */ = {
+			isa = PBXGroup;
+			children = (
+				952CB2A4297768D200BD7CD7 /* PopularCafeViewController.swift */,
+				952CB2A62977691100BD7CD7 /* PopularSideDishViewController.swift */,
+			);
+			path = PopularCategory;
 			sourceTree = "<group>";
 		};
 		C7C4FD68296D315B00040E05 = {
@@ -240,9 +254,11 @@
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
+				952CB2A72977691100BD7CD7 /* PopularSideDishViewController.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
 				952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */,
+				952CB2A5297768D200BD7CD7 /* PopularCafeViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 			);
