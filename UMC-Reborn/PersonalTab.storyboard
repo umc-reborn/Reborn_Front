@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oe0-7m-EV4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21219" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oe0-7m-EV4">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21200"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,19 +27,32 @@
             </objects>
             <point key="canvasLocation" x="-491" y="854"/>
         </scene>
-        <!--마이리본-->
+        <!--MyReborn-->
         <scene sceneID="pgJ-mP-pzj">
             <objects>
-                <navigationController id="ivm-fZ-VVo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이리본" image="person" catalog="system" id="ded-hs-SO4"/>
+                <navigationController storyboardIdentifier="MyReborn" title="MyReborn" id="ivm-fZ-VVo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="마이리본" image="my" id="ded-hs-SO4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="daK-Ca-ULF">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="Uqc-wh-3Bg" kind="relationship" relationship="rootViewController" id="CT5-Po-EjR"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIo-Qz-hQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868" y="1830"/>
+        </scene>
+        <!--MyRebornVC-->
+        <scene sceneID="LWq-c7-myv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyReborn" referencedIdentifier="MyRebornVC" id="Uqc-wh-3Bg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EWv-HS-1Pg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkM-5t-spi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1521" y="1830"/>
         </scene>
         <!--찜-->
         <scene sceneID="SWL-TU-BoG">
@@ -100,6 +113,6 @@
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="person" catalog="system" width="128" height="121"/>
+        <image name="my" width="26" height="26"/>
     </resources>
 </document>
