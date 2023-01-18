@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BAEAC2429704020008079E6 /* JoinLogin.storyboard */; };
+		0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC96D5B2975522800EA4926 /* LoginViewController.swift */; };
 		952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB295296E813300BD7CD7 /* PersonalTab.storyboard */; };
 		C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD74296D315B00040E05 /* AppDelegate.swift */; };
 		C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD76296D315B00040E05 /* SceneDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BAEAC2429704020008079E6 /* JoinLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinLogin.storyboard; sourceTree = "<group>"; };
+		0BC96D5B2975522800EA4926 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		952CB295296E813300BD7CD7 /* PersonalTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalTab.storyboard; sourceTree = "<group>"; };
 		C7C4FD71296D315B00040E05 /* UMC-Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-Reborn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C4FD74296D315B00040E05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
 				C7C4FD82296D315E00040E05 /* Info.plist */,
 				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
+				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
+				0BC96D5B2975522800EA4926 /* LoginViewController.swift */,
 			);
 			path = "UMC-Reborn";
 			sourceTree = "<group>";
@@ -130,6 +136,7 @@
 			files = (
 				952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
+				0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */,
 				C7C4FD7E296D315E00040E05 /* Assets.xcassets in Resources */,
 				C7C4FD7C296D315B00040E05 /* Main.storyboard in Resources */,
 			);
@@ -142,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
