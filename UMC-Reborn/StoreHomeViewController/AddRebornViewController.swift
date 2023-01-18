@@ -7,19 +7,35 @@
 
 import UIKit
 
-class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol2{
+    
+    func dataSend(data: String) {
+        timeLabel.text = data
+        timeLabel.sizeToFit()
+    }
 
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var eatTextfield: UITextField!
     @IBOutlet weak var introduceTextView: UITextView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var AddImageView: UIImageView!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var TimeSwitch: UISwitch!
+    @IBOutlet weak var countTextfield: UITextField!
+    var Number = 00
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        TimeSwitch.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        
         AddImageView.layer.cornerRadius = 10
         AddImageView.clipsToBounds = true
+        
+        countTextfield.layer.cornerRadius = 5
+        countTextfield.layer.borderWidth = 1.5
+        countTextfield.layer.borderColor = UIColor.gray.cgColor
 
         nameTextfield.layer.cornerRadius = 5
         nameTextfield.layer.borderWidth = 1
@@ -40,6 +56,8 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         textFieldDidEndEditing(nameTextfield)
         textFieldDidBeginEditing(eatTextfield)
         textFieldDidEndEditing(eatTextfield)
+        
+        countTextfield.text = String(Number)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -51,7 +69,17 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     func textFieldDidEndEditing(_ textField: UITextField) {
             textField.layer.borderColor = UIColor.gray.cgColor
             textField.layer.borderWidth = 1.0
-            
+    }
+
+    @IBAction func backButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func editTimeButton(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TimePopupViewController") as? TimePopupViewController else { return }
+        nextVC.modalPresentationStyle = .overCurrentContext
+        nextVC.delegate = self
+        self.present(nextVC, animated: true, completion: nil)
     }
     
     func placeholderSetting() {
@@ -87,8 +115,32 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         countLabel.text = "\(changedText.count)/50"
         return changedText.count < 50
     }
-
-    @IBAction func backButton(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    
+    @IBAction func textSwitch(_ sender: Any) {
+        if(TimeSwitch.isOn) {
+            timeLabel.text = "00 시간 00 분"
+            editButton.layer.cornerRadius = 5
+            editButton.layer.borderWidth = 1
+            editButton.layer.borderColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1).cgColor
+            editButton.backgroundColor = UIColor.white
+            editButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .normal)
+        } else {
+            timeLabel.text = "           "
+            editButton.layer.borderColor = UIColor(red: 255/255, green: 251/255, blue: 249/255, alpha: 1).cgColor
+            editButton.backgroundColor = UIColor(red: 255/255, green: 251/255, blue: 249/255, alpha: 1)
+            editButton.setTitleColor(UIColor(red: 255/255, green: 251/255, blue: 249/255, alpha: 1), for: .normal)
+        }
+    }
+    
+    @IBAction func minusCount(_ sender: Any) {
+        if (Number >= 1) {
+            Number -= 1
+            countTextfield.text = String(Number)
+        }
+    }
+    
+    @IBAction func plusCount(_ sender: Any) {
+        Number += 1
+        countTextfield.text = String(Number)
     }
 }

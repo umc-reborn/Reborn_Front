@@ -1,25 +1,25 @@
 //
-//  PopupViewController.swift
+//  TimePopupViewController.swift
 //  UMC-Reborn
 //
-//  Created by jaegu park on 2023/01/14.
+//  Created by jaegu park on 2023/01/16.
 //
 
 import UIKit
 
-protocol SampleProtocol:AnyObject {
+protocol SampleProtocol2:AnyObject {
     func dataSend(data: String)
 }
 
-class PopupViewController: UIViewController {
+class TimePopupViewController: UIViewController {
 
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var yesButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!    
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var popupPicker: UIPickerView!
     @IBOutlet weak var timeLabel2: UILabel!
     
-    weak var delegate : SampleProtocol?
+    weak var delegate : SampleProtocol2?
     
     var hour = ""
     var minute = ""
@@ -52,9 +52,10 @@ class PopupViewController: UIViewController {
         }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
 }
 
-extension PopupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension TimePopupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return pickerTitle.count

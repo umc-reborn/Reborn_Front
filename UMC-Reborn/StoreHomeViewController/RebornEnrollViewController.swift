@@ -47,5 +47,10 @@ class RebornEnrollViewController: UIViewController, UITableViewDelegate, UITable
         EnrollTableView.estimatedRowHeight = UITableView.automaticDimension
         EnrollTableView.contentInset = .zero
         EnrollTableView.contentInsetAdjustmentBehavior = .never
+        
+        EnrollTableView.layer.masksToBounds = false // any value you want
+        EnrollTableView.layer.shadowOpacity = 0.15// any value you want
+        EnrollTableView.layer.shadowRadius = 20 // any value you want
+        EnrollTableView.layer.shadowOffset = .init(width: 0, height: 10)
     }
 }
