@@ -7,10 +7,34 @@
 
 import UIKit
 
-class StoreManageViewController: UIViewController {
-
+class StoreManageViewController: UIViewController, SampleProtocol3 {
+    
+    func categorySend(data: String) {
+        storeCategory.text = data
+        storeCategory.sizeToFit()
+    }
+    
+    func introduceSend(data: String) {
+        storeIntroduce.text = data
+        storeIntroduce.sizeToFit()
+    }
+    
+    func addressSend(data: String) {
+        storeAddress.text = data
+        storeAddress.sizeToFit()
+    }
+    
+    func nameSend(data: String) {
+        storeName.text = data
+        storeName.sizeToFit()
+    }
+    
     @IBOutlet weak var storeView: UIView!
     @IBOutlet weak var ManageImageView: UIImageView!
+    @IBOutlet weak var storeName: UILabel!
+    @IBOutlet weak var storeCategory: UILabel!
+    @IBOutlet weak var storeIntroduce: UILabel!
+    @IBOutlet weak var storeAddress: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,4 +58,10 @@ class StoreManageViewController: UIViewController {
             self.navigationItem.title="가게 관리"
     }
 
+    @IBAction func nextButton(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "EditStoreViewController") as? EditStoreViewController else { return }
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.delegate = self
+        self.present(nextVC, animated: true, completion: nil)
+    }
 }
