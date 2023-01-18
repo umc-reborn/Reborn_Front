@@ -1286,7 +1286,7 @@
                                     <constraint firstAttribute="width" constant="23" id="j5S-xs-RFJ"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="count_minus.png"/>
+                                <buttonConfiguration key="configuration" style="plain" image="count_minus"/>
                                 <connections>
                                     <action selector="minusCount:" destination="UVa-Ym-bAh" eventType="touchUpInside" id="xdt-s9-4rg"/>
                                 </connections>
@@ -2199,7 +2199,6 @@
         <image name="bread_image" width="93" height="91"/>
         <image name="count_add" width="39" height="39"/>
         <image name="count_minus" width="39" height="40"/>
-        <image name="count_minus.png" width="39" height="40"/>
         <image name="edit_store" width="39" height="38"/>
         <image name="edit_storebutton" width="6.5" height="11"/>
         <image name="frame" width="390" height="128"/>
