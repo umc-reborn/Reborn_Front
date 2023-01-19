@@ -210,7 +210,7 @@
                                     <inset key="sectionInset" minX="26" minY="0.0" maxX="40" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="makingAppTeamCell" id="oxq-yZ-JbZ" customClass="MakingAppTeamCollectionViewCell" customModule="UMC_Reborn" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecruitedShopCell" id="oxq-yZ-JbZ" customClass="RecruitedShopCollectionViewCell" customModule="UMC_Reborn" customModuleProvider="target">
                                         <rect key="frame" x="26" y="0.0" width="131" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JYV-dg-QMO">
@@ -229,8 +229,12 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82a-mE-rOY">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bread_image" translatesAutoresizingMaskIntoConstraints="NO" id="82a-mE-rOY">
                                                     <rect key="frame" x="0.0" y="0.0" width="131" height="118"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="125" id="NpK-WH-PTI"/>
+                                                        <constraint firstAttribute="width" constant="130" id="qsc-ti-ehe"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9y-SR-Joh">
                                                     <rect key="frame" x="110" y="101" width="17" height="15"/>
@@ -238,7 +242,7 @@
                                                         <constraint firstAttribute="width" constant="17" id="8G9-np-1OF"/>
                                                         <constraint firstAttribute="height" constant="15" id="jln-Uc-8sp"/>
                                                     </constraints>
-                                                    <color key="tintColor" name="gray_196"/>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="13"/>
@@ -262,11 +266,16 @@
                                         <size key="customSize" width="131" height="164"/>
                                         <connections>
                                             <outlet property="likeButton" destination="K9y-SR-Joh" id="IKe-Fe-cGm"/>
-                                            <outlet property="purpose" destination="IsU-gY-pDW" id="1w8-dV-eAq"/>
-                                            <outlet property="teamName" destination="dyv-0B-X52" id="0tc-ci-mc4"/>
+                                            <outlet property="shopImage" destination="82a-mE-rOY" id="Hpu-ld-6Tq"/>
+                                            <outlet property="shopLocation" destination="IsU-gY-pDW" id="13x-NA-tkl"/>
+                                            <outlet property="shopName" destination="dyv-0B-X52" id="D2w-AY-Gyt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="A1P-7M-y6n" id="f9V-n5-V73"/>
+                                    <outlet property="delegate" destination="A1P-7M-y6n" id="1fB-6b-sCn"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPs-u0-YE1">
                                 <rect key="frame" x="314" y="6" width="50" height="16"/>
@@ -291,6 +300,9 @@
                             <constraint firstItem="H1d-CP-dSr" firstAttribute="top" secondItem="Xmx-Uc-8Jt" secondAttribute="bottom" constant="16" id="utC-UG-VjT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="H1d-CP-dSr" id="7LX-O4-5Zg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3J-Fe-57K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,7 +390,7 @@
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="40" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="makingAppTeamCell" id="kaR-0Q-iAg" customClass="MakingAppTeamCollectionViewCell" customModule="UMC_Reborn" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="makingAppTeamCell" id="kaR-0Q-iAg">
                                         <rect key="frame" x="20" y="0.66666666666666663" width="215" height="305"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eu1-eW-anL">
@@ -412,7 +424,7 @@
                                                         <action selector="likeButtonAction:" destination="kaR-0Q-iAg" eventType="touchUpInside" id="v8c-6w-4aY"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vlT-bg-dMQ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_image" translatesAutoresizingMaskIntoConstraints="NO" id="vlT-bg-dMQ">
                                                     <rect key="frame" x="0.0" y="46" width="215" height="203"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="215" id="2TE-fB-HMx"/>
@@ -425,7 +437,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a3Q-kN-i0j">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile@1" translatesAutoresizingMaskIntoConstraints="NO" id="a3Q-kN-i0j">
                                                     <rect key="frame" x="8" y="8" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="nU5-rk-rIO"/>
@@ -521,23 +533,17 @@
                                     <inset key="sectionInset" minX="26" minY="0.0" maxX="40" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="makingWebTeamCell" id="yhx-1A-aQG" customClass="MakingWebTeamCollectionViewCell" customModule="UMC_Reborn" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewShopCell" id="yhx-1A-aQG" customClass="NewShopCollectionViewCell" customModule="UMC_Reborn" customModuleProvider="target">
                                         <rect key="frame" x="26" y="0.0" width="131" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="j9n-6B-vLc">
                                             <rect key="frame" x="0.0" y="0.0" width="131" height="164"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="베이커리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6Z-1H-56t">
-                                                    <rect key="frame" x="0.0" y="120" width="45" height="20.666666666666629"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="베이커리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6Z-1H-56t">
+                                                    <rect key="frame" x="0.0" y="129" width="45" height="15.666666666666657"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="13"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="디자이너, 개발자 구인 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZA8-rl-JgI">
-                                                    <rect key="frame" x="0.0" y="164.66666666666666" width="125.66666666666667" height="16"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="13"/>
-                                                    <color key="textColor" name="gray_79"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4n-Ws-oca">
@@ -555,23 +561,22 @@
                                                         <action selector="likeButtonAction:" destination="yhx-1A-aQG" eventType="touchUpInside" id="pW4-ZW-Xew"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PKV-6n-T2J">
-                                                    <rect key="frame" x="0.0" y="0.0" width="131" height="118"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_image" translatesAutoresizingMaskIntoConstraints="NO" id="PKV-6n-T2J">
+                                                    <rect key="frame" x="0.0" y="0.0" width="131" height="125"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="131" id="k8y-Ck-ge0"/>
-                                                        <constraint firstAttribute="height" constant="118" id="oVp-jA-3Rb"/>
+                                                        <constraint firstAttribute="width" constant="130" id="k8y-Ck-ge0"/>
+                                                        <constraint firstAttribute="height" constant="125" id="oVp-jA-3Rb"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="공릉동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ee-yj-RuM">
-                                                    <rect key="frame" x="0.0" y="140" width="29" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공릉동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ee-yj-RuM">
+                                                    <rect key="frame" x="0.0" y="145.66666666666666" width="29" height="13.333333333333343"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="11"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="2Ee-yj-RuM" firstAttribute="top" secondItem="I6Z-1H-56t" secondAttribute="bottom" constant="3" id="3D1-uj-ZvY"/>
-                                                <constraint firstItem="ZA8-rl-JgI" firstAttribute="leading" secondItem="2Ee-yj-RuM" secondAttribute="leading" id="G6a-7G-c5e"/>
+                                                <constraint firstItem="I6Z-1H-56t" firstAttribute="top" secondItem="PKV-6n-T2J" secondAttribute="bottom" constant="4" id="8PR-2a-EsD"/>
                                                 <constraint firstItem="PKV-6n-T2J" firstAttribute="top" secondItem="j9n-6B-vLc" secondAttribute="top" id="LRZ-tB-QG8"/>
                                                 <constraint firstItem="I6Z-1H-56t" firstAttribute="leading" secondItem="j9n-6B-vLc" secondAttribute="leading" id="QgI-fC-ht2"/>
                                                 <constraint firstItem="PKV-6n-T2J" firstAttribute="leading" secondItem="j9n-6B-vLc" secondAttribute="leading" id="a98-1t-UF7"/>
@@ -579,17 +584,22 @@
                                                 <constraint firstItem="Z4n-Ws-oca" firstAttribute="top" secondItem="j9n-6B-vLc" secondAttribute="top" constant="101" id="fCX-eo-Cy8"/>
                                                 <constraint firstItem="2Ee-yj-RuM" firstAttribute="leading" secondItem="I6Z-1H-56t" secondAttribute="leading" id="jQr-4h-OJ3"/>
                                                 <constraint firstAttribute="trailing" secondItem="PKV-6n-T2J" secondAttribute="trailing" id="qAs-KH-dTp"/>
+                                                <constraint firstItem="2Ee-yj-RuM" firstAttribute="top" secondItem="I6Z-1H-56t" secondAttribute="bottom" constant="1" id="swb-Ce-phf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="131" height="164"/>
                                         <connections>
                                             <outlet property="likeButton" destination="Z4n-Ws-oca" id="OzR-Uu-MV6"/>
-                                            <outlet property="part" destination="ZA8-rl-JgI" id="Jgk-PT-fbY"/>
-                                            <outlet property="purpose" destination="2Ee-yj-RuM" id="2e3-2r-JeY"/>
-                                            <outlet property="teamName" destination="I6Z-1H-56t" id="Rrz-p6-LjV"/>
+                                            <outlet property="shopImage" destination="PKV-6n-T2J" id="aMH-Q4-btF"/>
+                                            <outlet property="shopLocation" destination="2Ee-yj-RuM" id="lDR-zt-Ss4"/>
+                                            <outlet property="shopName" destination="I6Z-1H-56t" id="WUu-UT-MEj"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="VVj-sb-NPS" id="F2t-Mj-BRP"/>
+                                    <outlet property="delegate" destination="VVj-sb-NPS" id="sRm-fQ-8EE"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLx-ev-kzw">
                                 <rect key="frame" x="314" y="5" width="50" height="16"/>
@@ -614,10 +624,13 @@
                             <constraint firstItem="L2U-g1-Hyv" firstAttribute="trailing" secondItem="TLx-ev-kzw" secondAttribute="trailing" constant="26" id="yBX-cw-11S"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="n2N-FL-t0I" id="NnK-XK-lRY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ac0-wd-TRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805" y="460"/>
+            <point key="canvasLocation" x="804.61538461538464" y="459.59715639810423"/>
         </scene>
         <!--Popular Cafe View Controller-->
         <scene sceneID="h0S-Sk-2R0">
@@ -786,11 +799,14 @@
     </scenes>
     <resources>
         <image name="bell" catalog="system" width="125" height="128"/>
+        <image name="bread_image" width="93" height="91"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="icMoreRight.png" width="16" height="16"/>
         <image name="img_default_130.png" width="130" height="130"/>
+        <image name="profile@1" width="90" height="90"/>
+        <image name="store_image" width="781" height="589"/>
         <namedColor name="gray_121">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -19,8 +19,6 @@
 		2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */; };
 		2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */; };
 		952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB295296E813300BD7CD7 /* PersonalTab.storyboard */; };
-		C71C2D6D29755C28007BA3E0 /* ic_Time.png in Resources */ = {isa = PBXBuildFile; fileRef = C71C2D6C29755C28007BA3E0 /* ic_Time.png */; };
-		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
 		952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */; };
 		952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */; };
 		952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */; };
@@ -29,6 +27,10 @@
 		952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */; };
 		952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */; };
 		952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */; };
+		95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */; };
+		95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */; };
+		95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */; };
+		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
 		C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */; };
 		C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */; };
 		C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */; };
@@ -47,9 +49,6 @@
 		C7DCE54029728D6000F44F1D /* StoreModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE53F29728D6000F44F1D /* StoreModalViewController.swift */; };
 		C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE5412972916400F44F1D /* StoreMainTableViewCell.swift */; };
 		C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */; };
-		C7DCE5462972957D00F44F1D /* bread_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DCE5452972957D00F44F1D /* bread_image.png */; };
-		C7DD72B629779D090076BFB4 /* ic_like_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DD72B429779D090076BFB4 /* ic_like_gray.png */; };
-		C7DD72B729779D090076BFB4 /* ic_bell_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DD72B529779D090076BFB4 /* ic_bell_gray.png */; };
 		F54958F376ED96265363C1F8 /* Pods_UMC_Reborn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +67,6 @@
 		2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManageViewController.swift; sourceTree = "<group>"; };
 		2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStoreViewController.swift; sourceTree = "<group>"; };
 		952CB295296E813300BD7CD7 /* PersonalTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalTab.storyboard; sourceTree = "<group>"; };
-		C71C2D6C29755C28007BA3E0 /* ic_Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_Time.png; path = ../../../../../Downloads/ic_Time.png; sourceTree = "<group>"; };
-		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
 		952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal_Home.storyboard; sourceTree = "<group>"; };
 		952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHomeViewController.swift; sourceTree = "<group>"; };
 		952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitedRebronViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +75,10 @@
 		952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopViewController.swift; sourceTree = "<group>"; };
 		952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSideDishViewController.swift; sourceTree = "<group>"; };
 		952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCafeViewController.swift; sourceTree = "<group>"; };
+		95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitedShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
 		C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreTab.storyboard; sourceTree = "<group>"; };
 		C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarController.swift; sourceTree = "<group>"; };
 		C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMainViewController.swift; sourceTree = "<group>"; };
@@ -98,9 +99,6 @@
 		C7DCE53F29728D6000F44F1D /* StoreModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModalViewController.swift; sourceTree = "<group>"; };
 		C7DCE5412972916400F44F1D /* StoreMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMainTableViewCell.swift; sourceTree = "<group>"; };
 		C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRebornViewController.swift; sourceTree = "<group>"; };
-		C7DCE5452972957D00F44F1D /* bread_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bread_image.png; path = ../../../../../Downloads/bread_image.png; sourceTree = "<group>"; };
-		C7DD72B429779D090076BFB4 /* ic_like_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_like_gray.png; path = ../../../../../Downloads/ic_like_gray.png; sourceTree = "<group>"; };
-		C7DD72B529779D090076BFB4 /* ic_bell_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_bell_gray.png; path = ../../../../../Downloads/ic_bell_gray.png; sourceTree = "<group>"; };
 		EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UMC_Reborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,30 +117,6 @@
 		2FB4A6A229779E2000CA811C /* MyReborn */ = {
 			isa = PBXGroup;
 			children = (
-				C7DD72B529779D090076BFB4 /* ic_bell_gray.png */,
-				C7DD72B429779D090076BFB4 /* ic_like_gray.png */,
-				C71C2D6C29755C28007BA3E0 /* ic_Time.png */,
-				C785D636297465D900EBE7CB /* store_image.png */,
-				C785D634297455F900EBE7CB /* frame.png */,
-				C7D56FAC2973BCE200A68015 /* count_add.png */,
-				C7D56FAB2973BCE200A68015 /* count_minus.png */,
-				C7DCE5452972957D00F44F1D /* bread_image.png */,
-				C74FEE412971840500BFC8D0 /* add_button.png */,
-				C74FEE3F29717E2500BFC8D0 /* ic_down.png */,
-				C74FEE37297178BE00BFC8D0 /* reborn_symbol.png */,
-				C74FEE2D2971789E00BFC8D0 /* goods_picture.png */,
-				C74FEE302971789E00BFC8D0 /* review.png */,
-				C74FEE2F2971789E00BFC8D0 /* share_setting.png */,
-				C74FEE312971789E00BFC8D0 /* store_setting.png */,
-				C74FEE2E2971789E00BFC8D0 /* umc_character.png */,
-				C74FEE2B2971789400BFC8D0 /* store_star.png */,
-				C74FEE292971788F00BFC8D0 /* edit_store.png */,
-				C74FEE232971788A00BFC8D0 /* edit_storebutton.png */,
-				C74FEE242971788A00BFC8D0 /* store_category.png */,
-				C74FEE252971788A00BFC8D0 /* store_view.png */,
-				C74FEE212971788300BFC8D0 /* ic_bell_disabled.png */,
-				C74FEE1F2971787D00BFC8D0 /* ic_setting.png */,
-				C74FEE1D2971787800BFC8D0 /* back_button.png */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
 				2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */,
 				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
@@ -173,6 +147,9 @@
 				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
 				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
 				952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */,
+				95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */,
+				95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */,
+				95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */,
 			);
 			path = PersonalHome;
 			sourceTree = "<group>";
@@ -307,20 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */,
-				C785D635297455F900EBE7CB /* frame.png in Resources */,
-				C74FEE202971787E00BFC8D0 /* ic_setting.png in Resources */,
-				C74FEE2A2971789000BFC8D0 /* edit_store.png in Resources */,
-				C74FEE342971789E00BFC8D0 /* share_setting.png in Resources */,
-				C7D56FAD2973BCE200A68015 /* count_minus.png in Resources */,
-				C74FEE38297178BE00BFC8D0 /* reborn_symbol.png in Resources */,
-				C74FEE362971789E00BFC8D0 /* store_setting.png in Resources */,
-				C7DD72B729779D090076BFB4 /* ic_bell_gray.png in Resources */,
-				C74FEE332971789E00BFC8D0 /* umc_character.png in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
-				C74FEE322971789E00BFC8D0 /* goods_picture.png in Resources */,
-				C74FEE422971840500BFC8D0 /* add_button.png in Resources */,
-				C7DD72B629779D090076BFB4 /* ic_like_gray.png in Resources */,
-				C74FEE1E2971787800BFC8D0 /* back_button.png in Resources */,
 				952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
 				0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */,
@@ -384,6 +348,7 @@
 				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */,
+				95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */,
 				2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */,
 				2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */,
 				2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */,
@@ -395,6 +360,7 @@
 				C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
+				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
@@ -406,6 +372,7 @@
 				C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */,
 				C7DCE54029728D6000F44F1D /* StoreModalViewController.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
+				95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */,
 				C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */,
 				C74FEE442971893300BFC8D0 /* RebornEnrollViewController.swift in Sources */,
 				C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */,
