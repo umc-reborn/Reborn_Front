@@ -8,7 +8,7 @@
 import UIKit
 
 class RecruitedShopCollectionViewCell:UICollectionViewCell {
-    
+    // MARK: - IBOutlet
     @IBOutlet weak var shopName: UILabel!
     @IBOutlet weak var shopImage: UIImageView!
     @IBOutlet weak var shopLocation: UILabel!
@@ -26,6 +26,8 @@ class RecruitedShopCollectionViewCell:UICollectionViewCell {
             }
         }
     }
+    
+    // MARK: - IBAction
     @IBAction func likeButtonAction(_ sender: UIButton) {
         if likeBool {
             likeBool = false

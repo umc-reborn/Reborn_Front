@@ -9,11 +9,12 @@ import UIKit
 
 class NewShopCollectionViewCell:UICollectionViewCell {
     
+    // MARK: - IBOutlet
     @IBOutlet weak var shopName: UILabel!
     @IBOutlet weak var shopImage: UIImageView!
     @IBOutlet weak var shopLocation: UILabel!
     @IBOutlet weak var likeButton: UIButton!
-        
+    
     var likeBool: Bool = false {
         willSet(newValue) {
             if newValue {
@@ -26,14 +27,15 @@ class NewShopCollectionViewCell:UICollectionViewCell {
             }
         }
     }
+    // MARK: - IBAction
     @IBAction func likeButtonAction(_ sender: UIButton) {
         if likeBool {
             likeBool = false
-//            removeDataAcion()
+            //            removeDataAcion()
         }
         else {
             likeBool = true
-//            pullDataAcion()
+            //            pullDataAcion()
         }
     }
     

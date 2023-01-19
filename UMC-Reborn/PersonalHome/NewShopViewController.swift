@@ -7,15 +7,13 @@
 
 import UIKit
 
-import UIKit
-
 class NewShopViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
     var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
-    var imageList: [String] = ["bread_image","bread_image","bread_image","bread_image","bread_image"]
+//    var imageList: [String] = ["bread_image","bread_image","bread_image","bread_image","bread_image"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +35,6 @@ extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.backgroundColor = .white
         cell.shopImage.layer.cornerRadius = 10
         cell.layer.borderWidth = 0
-//        cell.layer.borderColor = UIColor.black.cgColor
-//        cell.layer.shadowColor = UIColor.black.cgColor
-//        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        cell.layer.shadowOpacity = 0.15
-//        cell.layer.shadowRadius = 10
-        cell.contentView.layer.masksToBounds = true
-        cell.layer.masksToBounds = false
         
         cell.shopName.text = shopList[indexPath.row]
         cell.shopLocation.text = shopLocationList[indexPath.row]

@@ -20,6 +20,7 @@ class PopularShopViewController: TabmanViewController {
         setupTabMan()
     }
     
+    // MARK: - Function
     private func setupTabMan(){
         let firstVC = storyboard?.instantiateViewController(withIdentifier: "CafeVC") as! PopularCafeViewController
         let secondVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController

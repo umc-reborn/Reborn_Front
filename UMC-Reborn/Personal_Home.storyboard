@@ -390,7 +390,7 @@
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="40" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="makingAppTeamCell" id="kaR-0Q-iAg">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReviewCell" id="kaR-0Q-iAg" customClass="BestReviewCollectionViewCell" customModule="UMC_Reborn" customModuleProvider="target">
                                         <rect key="frame" x="20" y="0.66666666666666663" width="215" height="305"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eu1-eW-anL">
@@ -472,11 +472,17 @@
                                         <size key="customSize" width="215" height="305"/>
                                         <connections>
                                             <outlet property="likeButton" destination="h8O-xx-Yx4" id="bcL-Rv-iLS"/>
-                                            <outlet property="part" destination="L8L-6a-Fza" id="qNE-Be-cfP"/>
-                                            <outlet property="purpose" destination="mIq-RF-FBz" id="4Cg-av-WWh"/>
+                                            <outlet property="shopImage" destination="vlT-bg-dMQ" id="gGj-36-uth"/>
+                                            <outlet property="shopLocation" destination="L8L-6a-Fza" id="YbX-JE-9Ps"/>
+                                            <outlet property="shopName" destination="mIq-RF-FBz" id="tvW-J1-7lA"/>
+                                            <outlet property="userName" destination="UeG-py-nV0" id="r9f-aV-HNu"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Kn-OZ-ELF" id="uaU-gK-NXX"/>
+                                    <outlet property="delegate" destination="4Kn-OZ-ELF" id="RPd-fd-8an"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rQ-a2-LWb">
                                 <rect key="frame" x="314" y="6" width="50" height="16"/>
@@ -501,6 +507,9 @@
                             <constraint firstItem="Z5F-By-z9P" firstAttribute="top" secondItem="jdp-qk-rrg" secondAttribute="bottom" constant="12.5" id="yzw-bk-JsK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Z5F-By-z9P" id="3b9-NP-hga"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yO-te-0v1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

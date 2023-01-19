@@ -35,13 +35,6 @@ extension RecruitedRebronViewController: UICollectionViewDelegate, UICollectionV
         cell.backgroundColor = .white
         cell.shopImage.layer.cornerRadius = 10
         cell.layer.borderWidth = 0
-//        cell.layer.borderColor = UIColor.black.cgColor
-//        cell.layer.shadowColor = UIColor.black.cgColor
-//        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        cell.layer.shadowOpacity = 0.15
-//        cell.layer.shadowRadius = 10
-        cell.contentView.layer.masksToBounds = true
-        cell.layer.masksToBounds = false
         
         cell.shopName.text = shopList[indexPath.row]
         cell.shopLocation.text = shopLocationList[indexPath.row]
