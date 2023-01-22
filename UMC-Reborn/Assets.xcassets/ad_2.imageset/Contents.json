@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "umc_character.png",
+      "filename" : "ad_2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "umc_character_2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

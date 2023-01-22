@@ -31,6 +31,8 @@
 		95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */; };
 		95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */; };
 		95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */; };
+		95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFAA297D9B280073DF2B /* adViewController.swift */; };
+		95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */; };
 		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
 		C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */; };
 		C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */; };
@@ -80,6 +82,8 @@
 		95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		95E9FFAA297D9B280073DF2B /* adViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adViewController.swift; sourceTree = "<group>"; };
+		95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adCollectionViewCell.swift; sourceTree = "<group>"; };
 		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
 		C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreTab.storyboard; sourceTree = "<group>"; };
 		C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarController.swift; sourceTree = "<group>"; };
@@ -143,16 +147,19 @@
 		952CB29B297754E100BD7CD7 /* PersonalHome */ = {
 			isa = PBXGroup;
 			children = (
+				952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */,
+				95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */,
+				95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */,
+				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
 				952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */,
 				952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */,
-				952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */,
-				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
-				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
 				952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */,
-				95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */,
 				95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */,
-				95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */,
-				95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */,
+				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
+				95E9FFAA297D9B280073DF2B /* adViewController.swift */,
+				95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */,
+				952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */,
+				95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */,
 			);
 			path = PersonalHome;
 			sourceTree = "<group>";
@@ -197,22 +204,21 @@
 		C7C4FD73296D315B00040E05 /* UMC-Reborn */ = {
 			isa = PBXGroup;
 			children = (
+				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
+				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
+				C7C4FD7A296D315B00040E05 /* Main.storyboard */,
+				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
+				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
+				C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */,
 				2FB4A6A229779E2000CA811C /* MyReborn */,
 				952CB29B297754E100BD7CD7 /* PersonalHome */,
 				C74FEE1C2971782C00BFC8D0 /* StoreHomeViewController */,
 				C7C4FD74296D315B00040E05 /* AppDelegate.swift */,
 				C7C4FD76296D315B00040E05 /* SceneDelegate.swift */,
 				C7C4FD78296D315B00040E05 /* ViewController.swift */,
-				C7C4FD7A296D315B00040E05 /* Main.storyboard */,
 				C7C4FD7D296D315E00040E05 /* Assets.xcassets */,
-				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
 				C7C4FD82296D315E00040E05 /* Info.plist */,
-				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
-				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
 				0BC96D5B2975522800EA4926 /* LoginViewController.swift */,
-				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
-				952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */,
-				C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */,
 			);
 			path = "UMC-Reborn";
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */,
+				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
 				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
@@ -366,6 +373,7 @@
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
+				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
 				952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */,
