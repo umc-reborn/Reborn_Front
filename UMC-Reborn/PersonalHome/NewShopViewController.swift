@@ -18,6 +18,7 @@ class NewShopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        collectionView.backgroundColor = .clear
     }
 
 
@@ -32,7 +33,7 @@ extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataS
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewShopCell", for: indexPath) as! NewShopCollectionViewCell
         
-        cell.backgroundColor = .white
+        cell.backgroundColor = .clear
         cell.shopImage.layer.cornerRadius = 10
         cell.layer.borderWidth = 0
         

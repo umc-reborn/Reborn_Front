@@ -12,8 +12,6 @@ import Pageboy
 class PopularShopViewController: TabmanViewController {
     
     @IBOutlet weak var tabView: UIView!
-    
-    @IBOutlet weak var backgroundView: UIView!
     private var viewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
@@ -36,13 +34,24 @@ class PopularShopViewController: TabmanViewController {
         viewControllers.append(fourthVC)
         viewControllers.append(fifthVC)
         
+        tabView.backgroundColor = .white
+//        tabView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+        tabView.layer.cornerRadius = 20
+        tabView.layer.borderWidth = 0
+        tabView.layer.borderColor = UIColor.black.cgColor
+        tabView.layer.shadowColor = UIColor.black.cgColor
+        tabView.layer.shadowOffset = CGSize(width: 0, height: -5)
+        tabView.layer.shadowOpacity = 0.05
+        tabView.layer.shadowRadius = 10
+        tabView.layer.masksToBounds = false
+        
         
         self.dataSource = self
         let bar = TMBar.ButtonBar()
         // 배경 회색으로 나옴 -> 하얀색으로 바뀜
         bar.backgroundView.style = .blur(style: .light)
         // 간격 설정
-        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 25, bottom: 10, right: 25)
+        bar.layout.contentInset = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25)
         // 버튼 글씨 커스텀
         bar.buttons.customize { (button) in
             button.tintColor = .systemGray4

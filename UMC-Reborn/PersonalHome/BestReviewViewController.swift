@@ -19,6 +19,7 @@ class BestReviewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.backgroundColor = .clear
         // Do any additional setup after loading the view.
     }
 

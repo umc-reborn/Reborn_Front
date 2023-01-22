@@ -17,6 +17,7 @@ class RecruitedRebronViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.backgroundColor = .clear
         // Do any additional setup after loading the view.
     }
 
@@ -32,7 +33,6 @@ extension RecruitedRebronViewController: UICollectionViewDelegate, UICollectionV
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecruitedShopCell", for: indexPath) as! RecruitedShopCollectionViewCell
         
-        cell.backgroundColor = .white
         cell.shopImage.layer.cornerRadius = 10
         cell.layer.borderWidth = 0
         
