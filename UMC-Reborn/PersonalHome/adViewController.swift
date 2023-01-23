@@ -1,39 +1,35 @@
 //
-//  BestReviewViewController.swift
+//  adViewController.swift
 //  UMC-Reborn
 //
-//  Created by nayeon  on 2023/01/18.
+//  Created by nayeon  on 2023/01/23.
 //
 
 import UIKit
 
-class BestReviewViewController: UIViewController {
-    
+class adViewController: UIViewController {
+
     // MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var userList: [String] = ["우리동네맛집탐험가","새해복많이많이","졸려","집에가고싶어요","배고파"]
-    var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
-    var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
-    var imageList: [String] = ["bread_image","bread_image","bread_image","bread_image","bread_image"]
+    var imageList: [String] = ["ad_1","ad_2","ad_1","ad_2"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .clear
         // Do any additional setup after loading the view.
     }
 
 
 }
 
-extension BestReviewViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension adViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shopList.count
+        return imageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReviewCell", for: indexPath) as! BestReviewCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "adCell", for: indexPath) as! adCollectionViewCell
         
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 10
@@ -46,31 +42,27 @@ extension BestReviewViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.contentView.layer.masksToBounds = true
         cell.layer.masksToBounds = false
         
-        cell.userName.text = userList[indexPath.row]
-        cell.shopName.text = shopList[indexPath.row]
-        cell.shopLocation.text = shopLocationList[indexPath.row]
+        cell.adImage.image = UIImage(named: imageList[indexPath.row]) ?? UIImage()
         
 //        cell.shopImage.reloadData()
         return cell
     }
 }
-extension BestReviewViewController: UICollectionViewDelegateFlowLayout {
+extension adViewController: UICollectionViewDelegateFlowLayout {
     
     // 옆 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 29
+        return 20
         
     }
-
+    
     // cell 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let width = 215
-        let height = 305
-
+        
+        let width = 335
+        let height = 178
+        
         let size = CGSize(width: width, height: height)
         return size
     }
-    
-    
 }
