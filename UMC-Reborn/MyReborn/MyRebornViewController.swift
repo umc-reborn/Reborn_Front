@@ -43,21 +43,6 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         case 2: if let vc = storyboard?.instantiateViewController(withIdentifier: "reviewManageVC") as? ReviewManageViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
-            
-            // 최근 본 리본 가게
-        case 3: if let vc = storyboard?.instantiateViewController(withIdentifier: "recentStoreVC") as? RecentStoreViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-            self.navigationItem.title = ""
-            
-        }
-            // 내 쿠폰함
-        case 4: if let vc = storyboard?.instantiateViewController(withIdentifier: "MyCouponVC") as? MyCouponViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-            // 알림 설정 리본 스토어
-        case 5: if let vc = storyboard?.instantiateViewController(withIdentifier: "alertStoreVC") as? AlertStoreViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
         default:
             
             return
@@ -103,5 +88,5 @@ struct MyRebornMenuDataModel {
 }
 
 // 메뉴 TableViewCell 데이터
-let MyRebornMenu: [MyRebornMenuDataModel] = [MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "my"), MyRebornMenuLabel: "회원정보수정", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "present"), MyRebornMenuLabel: "리본 히스토리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "write"), MyRebornMenuLabel: "리뷰 관리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "store"), MyRebornMenuLabel: "최근 본 리본 가게", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "coupon"), MyRebornMenuLabel: "내 쿠폰함", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "label"), MyRebornMenuLabel: "알림 설정 리본 스토어", MyRebornNextIcon: UIImage(named: "arrow"))]
+let MyRebornMenu: [MyRebornMenuDataModel] = [MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "my"), MyRebornMenuLabel: "회원정보수정", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "present"), MyRebornMenuLabel: "리본 히스토리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "write"), MyRebornMenuLabel: "리뷰 관리", MyRebornNextIcon: UIImage(named: "arrow")),]
 

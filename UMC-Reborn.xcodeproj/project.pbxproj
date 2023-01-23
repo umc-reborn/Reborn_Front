@@ -15,9 +15,7 @@
 		2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */; };
 		2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */; };
 		2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */; };
-		2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */; };
 		2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */; };
-		2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */; };
 		952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB295296E813300BD7CD7 /* PersonalTab.storyboard */; };
 		952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */; };
 		952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */; };
@@ -59,9 +57,7 @@
 		2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStoreViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryViewController.swift; sourceTree = "<group>"; };
-		2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCouponViewController.swift; sourceTree = "<group>"; };
 		2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManageViewController.swift; sourceTree = "<group>"; };
-		2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStoreViewController.swift; sourceTree = "<group>"; };
 		952CB295296E813300BD7CD7 /* PersonalTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalTab.storyboard; sourceTree = "<group>"; };
 		952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal_Home.storyboard; sourceTree = "<group>"; };
 		952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHomeViewController.swift; sourceTree = "<group>"; };
@@ -121,13 +117,11 @@
 			children = (
 				2FA916E42977C60500DED2B7 /* RecentStore */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
-				2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */,
-				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
-				2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */,
-				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
-				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
 				2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */,
 				2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */,
+				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
+				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
+				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
 			);
 			path = MyReborn;
 			sourceTree = "<group>";
@@ -341,8 +335,6 @@
 				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */,
-				2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */,
-				2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */,
 				2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */,
