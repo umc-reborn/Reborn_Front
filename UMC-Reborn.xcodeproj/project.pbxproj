@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
+		2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */; };
 		2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */; };
 		2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7010EF297586C100E09DD9 /* MyReborn.storyboard */; };
 		2FA916E82977C70100DED2B7 /* StoreCustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA916E72977C70100DED2B7 /* StoreCustomCollectionView.swift */; };
@@ -50,6 +51,7 @@
 		0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.release.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.release.xcconfig"; sourceTree = "<group>"; };
 		20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.debug.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.debug.xcconfig"; sourceTree = "<group>"; };
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
+		2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornViewController.swift; sourceTree = "<group>"; };
 		2F7010EF297586C100E09DD9 /* MyReborn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReborn.storyboard; sourceTree = "<group>"; };
 		2FA916E72977C70100DED2B7 /* StoreCustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCustomCollectionView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F62AE85297EA0A8008907B2 /* WriteReview */ = {
+			isa = PBXGroup;
+			children = (
+				2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */,
+			);
+			path = WriteReview;
+			sourceTree = "<group>";
+		};
 		2FA916E42977C60500DED2B7 /* RecentStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		2FB4A6A229779E2000CA811C /* MyReborn */ = {
 			isa = PBXGroup;
 			children = (
+				2F62AE85297EA0A8008907B2 /* WriteReview */,
 				2FA916E42977C60500DED2B7 /* RecentStore */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
 				2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */,
@@ -354,6 +365,7 @@
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */,
+				2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */,
 				C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */,
 				C7DCE54029728D6000F44F1D /* StoreModalViewController.swift in Sources */,
 				C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */,
