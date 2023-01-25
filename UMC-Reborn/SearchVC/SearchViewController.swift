@@ -7,31 +7,85 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var latestCV: UICollectionView!
 
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UITextField!
     
     var latestData: [String] = ["베이커리","어쩌구","저쩌구"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        setSearchControllerUI()
+        configureNaviBar()
+        configure()
+        searchBar.delegate = self
         self.view.backgroundColor = UIColor(named: "Background")
 
-        
-        
     }
-    func setSearchControllerUI() {
-        self.searchBar.searchBarStyle = .minimal
-        self.searchBar.searchTextField.borderStyle = .none
-        self.searchBar.searchTextField.backgroundColor = .white
-        self.searchBar.searchTextField.layer.borderWidth = 0.5
-        self.searchBar.searchTextField.layer.cornerRadius = 5
-        self.searchBar.searchTextField.layer.borderColor = UIColor.black.cgColor
+
+    private lazy var searchButton: UIButton = {
+          let button = UIButton()
+        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        button.tintColor = .black
+          return button
+      }()
+    
+    private lazy var clearButton: UIButton = {
+         let button = UIButton()
+         button.setImage(#imageLiteral(resourceName: "ic_Xmark"), for: .normal)
+        
+//         button.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
+
+         return button
+     }()
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        if textField == self.searchBar {
+            userPressedToEnter(keyword: searchBar.text ?? "")
+        }
+
+        return true
+
+    }
+    
+    func configure(){
+        searchBar.layer.borderWidth = 1.0
+        searchBar.layer.borderColor = UIColor.lightGray.cgColor
+        searchBar.layer.cornerRadius = 4.0
+        searchBar.clearButtonMode = .never
+        searchBar.leftView = searchButton
+        searchBar.leftViewMode = .always
+        searchBar.rightView = clearButton
+        searchBar.rightViewMode = .whileEditing
     }
 
 }
-
+extension SearchViewController {
+    private func configureNaviBar() {
+        navigationController?.additionalSafeAreaInsets.top = 6
+        navigationItem.title = "검색"
+        navigationController?.navigationBar.tintColor = .black
+    }
+}
+// MARK: - Custom Methods
+extension SearchViewController {
+    func userPressedToEnter(keyword: String) {
+        guard let Resultvc = self.storyboard?.instantiateViewController(identifier: "SearchResultVC") as? SearchResultViewController else {
+                    return
+                }
+//        resultVC.keyword = keyword
+        // TODO: - 검색 개수 서버 연결
+//        resultVC.searchCnt = latestData.value.count
+        navigationController?.pushViewController(Resultvc, animated: true)
+    }
+    
+//    @objc func deleteSearchList(sender : UIButton) {
+//        latestCV.deleteItems(at: [IndexPath.init(row: sender.tag, section: 0)])
+//        var items = latestData.value
+//        items.remove(at: sender.tag)
+//        latestData.accept(items)
+//    }
+}
 extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return latestData.count

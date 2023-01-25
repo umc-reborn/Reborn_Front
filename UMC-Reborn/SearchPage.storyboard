@@ -23,29 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MG-Re-LhA">
-                                <rect key="frame" x="0.0" y="43" width="390" height="44"/>
-                                <color key="backgroundColor" name="Background"/>
-                                <color key="barTintColor" name="Background"/>
-                                <items>
-                                    <navigationItem title="검색" id="yBT-Aq-S6g"/>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="18z-W6-7fi">
-                                <rect key="frame" x="20" y="107" width="350" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="wsd-Ac-dq3"/>
-                                </connections>
-                            </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFZ-PX-bB2">
-                                <rect key="frame" x="26" y="186" width="68.666666666666671" height="18"/>
+                                <rect key="frame" x="26" y="131" width="68.666666666666671" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KvX-eN-emA">
-                                <rect key="frame" x="26" y="214" width="338" height="566"/>
+                                <rect key="frame" x="26" y="159" width="338" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gr4-ph-pik">
                                     <size key="itemSize" width="128" height="30"/>
@@ -61,8 +46,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhI-A5-Ou2">
-                                                    <rect key="frame" x="8" y="7.333333333333333" width="85" height="15.333333333333332"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhI-A5-Ou2">
+                                                    <rect key="frame" x="8" y="7.333333333333333" width="95" height="15.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeoL00" family="AppleSDGothicNeoL00" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -99,32 +84,54 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="sIP-wZ-34P"/>
                                 </connections>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="검색어를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zfu-IZ-5kj">
+                                <rect key="frame" x="26" y="68" width="338" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="WFv-eX-2in"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="KFZ-PX-bB2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="26" id="2ol-jV-ThP"/>
-                            <constraint firstItem="18z-W6-7fi" firstAttribute="top" secondItem="1MG-Re-LhA" secondAttribute="bottom" constant="20" id="GiX-Ib-HGi"/>
-                            <constraint firstItem="18z-W6-7fi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Lmj-Fz-3vC"/>
+                            <constraint firstItem="Zfu-IZ-5kj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="26" id="Agt-1O-Nb6"/>
+                            <constraint firstItem="KFZ-PX-bB2" firstAttribute="top" secondItem="Zfu-IZ-5kj" secondAttribute="bottom" constant="20" id="GWa-C0-SIe"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KvX-eN-emA" secondAttribute="bottom" constant="30" id="UAu-0E-QCC"/>
-                            <constraint firstItem="1MG-Re-LhA" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="43" id="Wa1-HK-4n7"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="18z-W6-7fi" secondAttribute="trailing" constant="20" id="Xbw-G1-bq5"/>
-                            <constraint firstItem="1MG-Re-LhA" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="cHW-W9-HG5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zfu-IZ-5kj" secondAttribute="trailing" constant="26" id="eAK-Xl-G2f"/>
                             <constraint firstItem="KvX-eN-emA" firstAttribute="top" secondItem="KFZ-PX-bB2" secondAttribute="bottom" constant="10" id="eXa-Kh-7bZ"/>
-                            <constraint firstItem="1MG-Re-LhA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="h4M-h8-BM1"/>
+                            <constraint firstItem="Zfu-IZ-5kj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="21" id="fRk-Ug-zdh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KvX-eN-emA" secondAttribute="trailing" constant="26" id="qCH-OD-xKV"/>
-                            <constraint firstItem="KFZ-PX-bB2" firstAttribute="top" secondItem="18z-W6-7fi" secondAttribute="bottom" constant="23" id="v0V-0u-D6C"/>
                             <constraint firstItem="KvX-eN-emA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="26" id="zuB-xF-EyS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="XYN-Ae-dvs"/>
                     <connections>
                         <outlet property="latestCV" destination="KvX-eN-emA" id="gMd-K8-U3r"/>
-                        <outlet property="searchBar" destination="18z-W6-7fi" id="g4E-c3-Zwc"/>
+                        <outlet property="searchBar" destination="Zfu-IZ-5kj" id="Xqm-MS-vUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30.769230769230766" y="-2.1327014218009479"/>
+        </scene>
+        <!--Search Result View Controller-->
+        <scene sceneID="3UM-Jt-Lqy">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultVC" id="Ek0-Hn-Asn" customClass="SearchResultViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cOM-aU-XFg">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VTu-0Z-wZk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yPY-M6-IUj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQH-sb-u3D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="13"/>
         </scene>
     </scenes>
     <resources>
