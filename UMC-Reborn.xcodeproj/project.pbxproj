@@ -18,6 +18,7 @@
 		2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */; };
 		2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */; };
 		2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */; };
+		95148B3D298256FF004A1A57 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95148B3C298256FF004A1A57 /* SearchResultTableViewCell.swift */; };
 		952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB295296E813300BD7CD7 /* PersonalTab.storyboard */; };
 		952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */; };
 		952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */; };
@@ -73,6 +74,7 @@
 		2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCouponViewController.swift; sourceTree = "<group>"; };
 		2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManageViewController.swift; sourceTree = "<group>"; };
 		2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStoreViewController.swift; sourceTree = "<group>"; };
+		95148B3C298256FF004A1A57 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		952CB295296E813300BD7CD7 /* PersonalTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalTab.storyboard; sourceTree = "<group>"; };
 		952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal_Home.storyboard; sourceTree = "<group>"; };
 		952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHomeViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				95E9FFB6297E6F880073DF2B /* SearchViewController.swift */,
 				95E9FFB8297FAFE10073DF2B /* LatestSearchedCell.swift */,
 				95E9FFBA29808CB10073DF2B /* SearchResultViewController.swift */,
+				95148B3C298256FF004A1A57 /* SearchResultTableViewCell.swift */,
 			);
 			path = SearchVC;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
 				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
+				95148B3D298256FF004A1A57 /* SearchResultTableViewCell.swift in Sources */,
 				95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
