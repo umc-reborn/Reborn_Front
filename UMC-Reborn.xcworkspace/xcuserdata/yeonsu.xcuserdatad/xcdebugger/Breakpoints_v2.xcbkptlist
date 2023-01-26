@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "1FE8C2F5-BE84-4556-AB64-A96C1A2E0831"
-   type = "1"
+   uuid = "C192658E-50B8-40C8-9460-386CF39B142E"
+   type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2801789A-8674-46EA-AD0D-4F1990F634CC"
+            uuid = "B71B395E-8E68-42BC-B83F-A34FECC7A75C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UMC-Reborn/MyReborn/MyRebornViewController.swift"
+            filePath = "UMC-Reborn/MyReborn/WriteReview/WriteReviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "onDragStarSlider(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
