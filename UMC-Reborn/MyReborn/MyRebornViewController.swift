@@ -9,8 +9,7 @@ import UIKit
 
 class MyRebornViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    @IBOutlet weak var progressBar: UIProgressView!
+
     @IBOutlet weak var MyRebornTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,15 +57,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         MyRebornTableView.dataSource = self
         
         self.MyRebornTableView.rowHeight = 60;
-        
-        progressBar.progressViewStyle = .default
-        progressBar.progressTintColor = UIColor(named: "MainColor")
-        progressBar.trackTintColor = .white
-        progressBar.layer.cornerRadius = 4
-        progressBar.clipsToBounds = true
-        progressBar.layer.sublayers![1].cornerRadius = 4 // 뒤에 있는 회색 track
-        progressBar.subviews[1].clipsToBounds = true
-        progressBar.progress = 0.1
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
