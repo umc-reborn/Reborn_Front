@@ -12,7 +12,6 @@ import Pageboy
 class PopularShopViewController: TabmanViewController {
     
     @IBOutlet weak var tabView: UIView!
-    
     private var viewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
@@ -20,19 +19,39 @@ class PopularShopViewController: TabmanViewController {
         setupTabMan()
     }
     
+    // MARK: - Function
     private func setupTabMan(){
-        let firstVC = storyboard?.instantiateViewController(withIdentifier: "CafeVC") as! PopularCafeViewController
+        let firstVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
         let secondVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
+        let thirdVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
+        let fourthVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
+        let fifthVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
+
         
         viewControllers.append(firstVC)
         viewControllers.append(secondVC)
+        viewControllers.append(thirdVC)
+        viewControllers.append(fourthVC)
+        viewControllers.append(fifthVC)
+        
+        tabView.backgroundColor = .white
+//        tabView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+        tabView.layer.cornerRadius = 20
+        tabView.layer.borderWidth = 0
+        tabView.layer.borderColor = UIColor.black.cgColor
+        tabView.layer.shadowColor = UIColor.black.cgColor
+        tabView.layer.shadowOffset = CGSize(width: 0, height: -5)
+        tabView.layer.shadowOpacity = 0.05
+        tabView.layer.shadowRadius = 10
+        tabView.layer.masksToBounds = false
+        
         
         self.dataSource = self
         let bar = TMBar.ButtonBar()
         // 배경 회색으로 나옴 -> 하얀색으로 바뀜
         bar.backgroundView.style = .blur(style: .light)
         // 간격 설정
-        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        bar.layout.contentInset = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25)
         // 버튼 글씨 커스텀
         bar.buttons.customize { (button) in
             button.tintColor = .systemGray4
@@ -56,6 +75,12 @@ class PopularShopViewController: TabmanViewController {
                 return TMBarItem(title: "카페 / 디저트")
             case 1:
                 return TMBarItem(title: "반찬")
+            case 2:
+                return TMBarItem(title: "패션")
+            case 3:
+                return TMBarItem(title: "편의 생활")
+            case 4:
+                return TMBarItem(title: "기타")
             default:
                 let title = "Page \(index)"
                return TMBarItem(title: title)

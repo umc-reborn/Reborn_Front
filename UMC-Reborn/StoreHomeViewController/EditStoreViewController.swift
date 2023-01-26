@@ -7,10 +7,19 @@
 
 import UIKit
 
+protocol SampleProtocol3:AnyObject {
+    func nameSend(data: String)
+    func categorySend(data: String)
+    func introduceSend(data: String)
+    func addressSend(data: String)
+}
+
 class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var storecategory = [" 카페·디저트", " 반찬", " 패션", " 편의·생활", " 기타"]
     let picker = UIPickerView()
+    
+    weak var delegate : SampleProtocol3?
     
     @IBOutlet weak var storenameTextfield: UITextField!
     @IBOutlet weak var storecategoryTextfield: UITextField!
@@ -19,15 +28,14 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var StoreImageView: UIImageView!
     
+    let imagePickerController = UIImagePickerController()
+    let alertController = UIAlertController(title: "가게 대표 사진 설정", message: "", preferredStyle: .actionSheet)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         StoreImageView.layer.cornerRadius = 10
         StoreImageView.clipsToBounds = true
-
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.title = ""
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)]
         
         storenameTextfield.layer.cornerRadius = 5
         storenameTextfield.layer.borderWidth = 1
@@ -57,8 +65,36 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         
         configPickerView()
         configToolbar()
+        
+        enrollAlertEvent()
+        self.imagePickerController.delegate = self
+        addGestureRecognizer()
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButton(_ sender: Any) {
+        let text = storenameTextfield.text
+        if ((text != "")) {
+            delegate?.nameSend(data: text!)
+        }
+        let text1 = storecategoryTextfield.text
+            if ((text1 != "")) {
+            delegate?.categorySend(data: text1!)
+        }
+        let text2 = storeaddressTextfield.text
+        if ((text2 != "")) {
+            delegate?.addressSend(data: text2!)
+        }
+        let text3 = storeTextView.text
+        if (text3 != " 사장님의 가게를 소개해 주세요!") {
+            delegate?.introduceSend(data: text3!)
+        }
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
            // textField.borderStyle = .line
         textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
@@ -102,6 +138,71 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         let changedText = currentText.replacingCharacters(in: stringRange, with: text)
         countLabel.text = "\(changedText.count)/50"
         return changedText.count < 50
+    }
+    
+    func enrollAlertEvent() {
+        let photoLibraryAlertAction = UIAlertAction(title: "앨범에서 사진 선택", style: .default) {
+            (action) in
+            self.openAlbum() // 아래에서 설명 예정.
+        }
+        
+        let cameraAlertAction = UIAlertAction(title: "사진 촬영", style: .default) {
+            (action) in
+            self.openCamera() // 아래에서 설명 예정.
+        }
+        
+        let cancelAlertAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        self.alertController.addAction(photoLibraryAlertAction)
+        self.alertController.addAction(cameraAlertAction)
+        self.alertController.addAction(cancelAlertAction)
+        guard let alertControllerPopoverPresentationController = alertController.popoverPresentationController
+        else {return}
+        prepareForPopoverPresentation(alertControllerPopoverPresentationController)
+    }
+    
+    func addGestureRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tappedUIImageView(_gesture:)))
+        self.StoreImageView.addGestureRecognizer(tapGestureRecognizer)
+        self.StoreImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func tappedUIImageView(_gesture: UITapGestureRecognizer) {
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension EditStoreViewController: UIPopoverPresentationControllerDelegate {
+    func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
+        if let popoverPresentationController = self.alertController.popoverPresentationController {
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverPresentationController.permittedArrowDirections = []
+        }
+    }
+}
+
+extension EditStoreViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func openAlbum() {
+        self.imagePickerController.sourceType = .photoLibrary
+        present(self.imagePickerController, animated: false, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            StoreImageView?.image = image
+        } else {
+            print("error detected in didFinishPickinMEdiaWithInfo method")
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
+            self.imagePickerController.sourceType = .camera
+            present(self.imagePickerController, animated: false, completion: nil)
+        } else {
+            print("Camera is not available as for now")
+        }
     }
 }
 

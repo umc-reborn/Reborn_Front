@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BAEAC2429704020008079E6 /* JoinLogin.storyboard */; };
+		0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC96D5B2975522800EA4926 /* LoginViewController.swift */; };
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */; };
 		2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */; };
@@ -25,6 +27,13 @@
 		952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */; };
 		952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */; };
 		952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */; };
+		95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */; };
+		95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */; };
+		95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */; };
+		95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */; };
+		95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFAA297D9B280073DF2B /* adViewController.swift */; };
+		95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */; };
+		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
 		C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */; };
 		C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */; };
 		C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */; };
@@ -47,6 +56,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BAEAC2429704020008079E6 /* JoinLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinLogin.storyboard; sourceTree = "<group>"; };
+		0BC96D5B2975522800EA4926 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.release.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.release.xcconfig"; sourceTree = "<group>"; };
 		20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.debug.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.debug.xcconfig"; sourceTree = "<group>"; };
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
@@ -67,6 +78,13 @@
 		952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopViewController.swift; sourceTree = "<group>"; };
 		952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSideDishViewController.swift; sourceTree = "<group>"; };
 		952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCafeViewController.swift; sourceTree = "<group>"; };
+		95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitedShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		95E9FFAA297D9B280073DF2B /* adViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adViewController.swift; sourceTree = "<group>"; };
+		95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adCollectionViewCell.swift; sourceTree = "<group>"; };
+		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
 		C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreTab.storyboard; sourceTree = "<group>"; };
 		C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarController.swift; sourceTree = "<group>"; };
 		C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMainViewController.swift; sourceTree = "<group>"; };
@@ -129,12 +147,19 @@
 		952CB29B297754E100BD7CD7 /* PersonalHome */ = {
 			isa = PBXGroup;
 			children = (
+				952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */,
+				95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */,
+				95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */,
+				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
 				952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */,
 				952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */,
-				952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */,
-				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
-				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
 				952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */,
+				95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */,
+				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
+				95E9FFAA297D9B280073DF2B /* adViewController.swift */,
+				95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */,
+				952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */,
+				95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */,
 			);
 			path = PersonalHome;
 			sourceTree = "<group>";
@@ -153,6 +178,7 @@
 				C7DCE5412972916400F44F1D /* StoreMainTableViewCell.swift */,
 				C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */,
 				C7D56FA92972BC5600A68015 /* PopupViewController.swift */,
+				C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */,
 			);
 			path = StoreHomeViewController;
 			sourceTree = "<group>";
@@ -178,20 +204,21 @@
 		C7C4FD73296D315B00040E05 /* UMC-Reborn */ = {
 			isa = PBXGroup;
 			children = (
+				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
+				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
+				C7C4FD7A296D315B00040E05 /* Main.storyboard */,
+				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
+				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
+				C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */,
 				2FB4A6A229779E2000CA811C /* MyReborn */,
 				952CB29B297754E100BD7CD7 /* PersonalHome */,
 				C74FEE1C2971782C00BFC8D0 /* StoreHomeViewController */,
 				C7C4FD74296D315B00040E05 /* AppDelegate.swift */,
 				C7C4FD76296D315B00040E05 /* SceneDelegate.swift */,
 				C7C4FD78296D315B00040E05 /* ViewController.swift */,
-				C7C4FD7A296D315B00040E05 /* Main.storyboard */,
 				C7C4FD7D296D315E00040E05 /* Assets.xcassets */,
-				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
 				C7C4FD82296D315E00040E05 /* Info.plist */,
-				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
-				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
-				952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */,
-				C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */,
+				0BC96D5B2975522800EA4926 /* LoginViewController.swift */,
 			);
 			path = "UMC-Reborn";
 			sourceTree = "<group>";
@@ -266,8 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */,
+				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
 				952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
+				0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */,
 				2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */,
 				C7C4FD7E296D315E00040E05 /* Assets.xcassets in Resources */,
 				C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */,
@@ -324,11 +353,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */,
 				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */,
+				95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */,
+				2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */,
+				2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */,
 				2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */,
+				95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
+				2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */,
+				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
 				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
@@ -336,7 +372,9 @@
 				C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
+				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
+				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
 				2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */,
@@ -348,6 +386,8 @@
 				2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */,
 				C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */,
 				C7DCE54029728D6000F44F1D /* StoreModalViewController.swift in Sources */,
+				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
+				95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */,
 				C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */,
 				C74FEE442971893300BFC8D0 /* RebornEnrollViewController.swift in Sources */,
 				C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */,
@@ -505,9 +545,11 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "''";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = StoreTab;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -535,9 +577,11 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "''";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = StoreTab;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

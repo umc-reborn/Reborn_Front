@@ -37,6 +37,8 @@ class StoreMainViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var StoreMainTableView: UITableView!
     @IBOutlet weak var wholeButton: UIButton!
     @IBOutlet weak var goingButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +48,7 @@ class StoreMainViewController: UIViewController, UITableViewDelegate, UITableVie
         storemainView.layer.masksToBounds = false
         storemainView.layer.shadowOffset = CGSize(width: 3, height: 8)
         storemainView.layer.shadowRadius = 20
-        storemainView.layer.shadowOpacity = 0.1
-        
-        wholeButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .selected)
+        storemainView.layer.shadowOpacity = 0.15
         
         let attributedString = NSMutableAttributedString(string: storemainLabel.text!, attributes: [
             .font: UIFont.systemFont(ofSize: 15, weight: .regular),
@@ -66,5 +66,70 @@ class StoreMainViewController: UIViewController, UITableViewDelegate, UITableVie
         StoreMainTableView.estimatedRowHeight = UITableView.automaticDimension
         StoreMainTableView.contentInset = .zero
         StoreMainTableView.contentInsetAdjustmentBehavior = .never
+        
+        StoreMainTableView.layer.masksToBounds = false // any value you want
+        StoreMainTableView.layer.shadowOpacity = 0.15// any value you want
+        StoreMainTableView.layer.shadowRadius = 20 // any value you want
+        StoreMainTableView.layer.shadowOffset = .init(width: 0, height: 10)
+    }
+    
+    @IBAction func tappedButton(_ sender: Any) {
+        wholeButton.isSelected = true
+        wholeButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .selected)
+        wholeButton.tintColor = .clear
+        goingButton.isSelected = false
+        goingButton.setTitleColor(.lightGray, for: .normal)
+        goingButton.tintColor = .clear
+        doneButton.isSelected = false
+        doneButton.setTitleColor(.lightGray, for: .normal)
+        doneButton.tintColor = .clear
+        cancelButton.isSelected = false
+        cancelButton.setTitleColor(.lightGray, for: .normal)
+        cancelButton.tintColor = .clear
+    }
+    
+    @IBAction func tappedButton2(_ sender: Any) {
+        goingButton.isSelected = true
+        goingButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .selected)
+        goingButton.tintColor = .clear
+        wholeButton.isSelected = false
+        wholeButton.setTitleColor(.lightGray, for: .normal)
+        wholeButton.tintColor = .clear
+        doneButton.isSelected = false
+        doneButton.setTitleColor(.lightGray, for: .normal)
+        doneButton.tintColor = .clear
+        cancelButton.isSelected = false
+        cancelButton.setTitleColor(.lightGray, for: .normal)
+        cancelButton.tintColor = .clear
+    }
+    
+    @IBAction func tappedButton3(_ sender: Any) {
+        doneButton.isSelected = true
+        doneButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .selected)
+        doneButton.tintColor = .clear
+        wholeButton.isSelected = false
+        wholeButton.setTitleColor(.lightGray, for: .normal)
+        wholeButton.tintColor = .clear
+        goingButton.isSelected = false
+        goingButton.setTitleColor(.lightGray, for: .normal)
+        goingButton.tintColor = .clear
+        cancelButton.isSelected = false
+        cancelButton.setTitleColor(.lightGray, for: .normal)
+        cancelButton.tintColor = .clear
+    }
+    
+    @IBAction func tappedButton4(_ sender: Any) {
+        cancelButton.isSelected = true
+        cancelButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .selected)
+        cancelButton.tintColor = .clear
+        wholeButton.isSelected = false
+        wholeButton.setTitleColor(.lightGray, for: .normal)
+        wholeButton.tintColor = .clear
+        goingButton.isSelected = false
+        goingButton.setTitleColor(.lightGray, for: .normal)
+        goingButton.tintColor = .clear
+        doneButton.isSelected = false
+        doneButton.setTitleColor(.lightGray, for: .normal)
+        doneButton.tintColor = .clear
     }
 }
