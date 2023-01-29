@@ -9,8 +9,7 @@ import UIKit
 
 class MyRebornViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    @IBOutlet weak var progressBar: UIProgressView!
+
     @IBOutlet weak var MyRebornTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,21 +42,6 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         case 2: if let vc = storyboard?.instantiateViewController(withIdentifier: "reviewManageVC") as? ReviewManageViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
-            
-            // 최근 본 리본 가게
-        case 3: if let vc = storyboard?.instantiateViewController(withIdentifier: "recentStoreVC") as? RecentStoreViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-            self.navigationItem.title = ""  // < back title
-            
-        }
-            // 내 쿠폰함
-        case 4: if let vc = storyboard?.instantiateViewController(withIdentifier: "MyCouponVC") as? MyCouponViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-            // 알림 설정 리본 스토어
-        case 5: if let vc = storyboard?.instantiateViewController(withIdentifier: "alertStoreVC") as? AlertStoreViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
         default:
             
             return
@@ -73,15 +57,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         MyRebornTableView.dataSource = self
         
         self.MyRebornTableView.rowHeight = 60;
-        
-        progressBar.progressViewStyle = .default
-        progressBar.progressTintColor = UIColor(named: "MainColor")
-        progressBar.trackTintColor = .white
-        progressBar.layer.cornerRadius = 4
-        progressBar.clipsToBounds = true
-        progressBar.layer.sublayers![1].cornerRadius = 4 // 뒤에 있는 회색 track
-        progressBar.subviews[1].clipsToBounds = true
-        progressBar.progress = 0.1
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,5 +79,5 @@ struct MyRebornMenuDataModel {
 }
 
 // 메뉴 TableViewCell 데이터
-let MyRebornMenu: [MyRebornMenuDataModel] = [MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "my"), MyRebornMenuLabel: "회원정보수정", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "present"), MyRebornMenuLabel: "리본 히스토리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "write"), MyRebornMenuLabel: "리뷰 관리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "store"), MyRebornMenuLabel: "최근 본 리본 가게", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "coupon"), MyRebornMenuLabel: "내 쿠폰함", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "label"), MyRebornMenuLabel: "알림 설정 리본 스토어", MyRebornNextIcon: UIImage(named: "arrow"))]
+let MyRebornMenu: [MyRebornMenuDataModel] = [MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "my"), MyRebornMenuLabel: "회원정보수정", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "present"), MyRebornMenuLabel: "리본 히스토리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "write"), MyRebornMenuLabel: "리뷰 관리", MyRebornNextIcon: UIImage(named: "arrow")),]
 

@@ -10,14 +10,14 @@
 		0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BAEAC2429704020008079E6 /* JoinLogin.storyboard */; };
 		0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC96D5B2975522800EA4926 /* LoginViewController.swift */; };
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
+		2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */; };
+		2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */; };
+		2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */; };
 		2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */; };
 		2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7010EF297586C100E09DD9 /* MyReborn.storyboard */; };
-		2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */; };
 		2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */; };
 		2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */; };
-		2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */; };
 		2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */; };
-		2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */; };
 		952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB295296E813300BD7CD7 /* PersonalTab.storyboard */; };
 		952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */; };
 		952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */; };
@@ -43,6 +43,12 @@
 		C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6B2982D85400CABA91 /* TabModalViewController.swift */; };
 		C70D3D6E2982D89200CABA91 /* ModalStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6D2982D89200CABA91 /* ModalStoreViewController.swift */; };
 		C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6F2982E7B900CABA91 /* PWChangeViewController.swift */; };
+		95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */; };
+		95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */; };
+		95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */; };
+		95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */; };
+		95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFAA297D9B280073DF2B /* adViewController.swift */; };
+		95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */; };
 		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
 		C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */; };
 		C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */; };
@@ -78,14 +84,14 @@
 		0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.release.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.release.xcconfig"; sourceTree = "<group>"; };
 		20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.debug.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.debug.xcconfig"; sourceTree = "<group>"; };
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
+		2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornViewController.swift; sourceTree = "<group>"; };
 		2F7010EF297586C100E09DD9 /* MyReborn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReborn.storyboard; sourceTree = "<group>"; };
-		2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStoreViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryViewController.swift; sourceTree = "<group>"; };
-		2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCouponViewController.swift; sourceTree = "<group>"; };
 		2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManageViewController.swift; sourceTree = "<group>"; };
-		2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStoreViewController.swift; sourceTree = "<group>"; };
 		952CB295296E813300BD7CD7 /* PersonalTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalTab.storyboard; sourceTree = "<group>"; };
 		952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal_Home.storyboard; sourceTree = "<group>"; };
 		952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHomeViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +118,12 @@
 		C70D3D6D2982D89200CABA91 /* ModalStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalStoreViewController.swift; sourceTree = "<group>"; };
 		C70D3D6F2982E7B900CABA91 /* PWChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWChangeViewController.swift; sourceTree = "<group>"; };
 		C71C2D6C29755C28007BA3E0 /* ic_Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_Time.png; path = ../../../../../Downloads/ic_Time.png; sourceTree = "<group>"; };
+		95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitedShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		95E9FFAA297D9B280073DF2B /* adViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adViewController.swift; sourceTree = "<group>"; };
+		95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adCollectionViewCell.swift; sourceTree = "<group>"; };
 		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
 		C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreTab.storyboard; sourceTree = "<group>"; };
 		C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarController.swift; sourceTree = "<group>"; };
@@ -138,9 +150,6 @@
 		C7D56FA92972BC5600A68015 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollTableViewCell.swift; sourceTree = "<group>"; };
 		C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRebornViewController.swift; sourceTree = "<group>"; };
-		C7DCE5452972957D00F44F1D /* bread_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bread_image.png; path = ../../../../../Downloads/bread_image.png; sourceTree = "<group>"; };
-		C7DD72B429779D090076BFB4 /* ic_like_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_like_gray.png; path = ../../../../../Downloads/ic_like_gray.png; sourceTree = "<group>"; };
-		C7DD72B529779D090076BFB4 /* ic_bell_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_bell_gray.png; path = ../../../../../Downloads/ic_bell_gray.png; sourceTree = "<group>"; };
 		EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UMC_Reborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,15 +172,15 @@
 				C7DD72B429779D090076BFB4 /* ic_like_gray.png */,
 				C71C2D6C29755C28007BA3E0 /* ic_Time.png */,
 				C7DCE5452972957D00F44F1D /* bread_image.png */,
+				2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */,
+				2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
-				2FB4A6AD2977A77700CA811C /* AlertStoreViewController.swift */,
-				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
-				2FB4A6A92977A61800CA811C /* MyCouponViewController.swift */,
-				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
-				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
-				2FB4A6A329779E7700CA811C /* RecentStoreViewController.swift */,
 				2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */,
 				2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */,
+				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
+				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
+				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
+				2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */,
 			);
 			path = MyReborn;
 			sourceTree = "<group>";
@@ -187,12 +196,19 @@
 		952CB29B297754E100BD7CD7 /* PersonalHome */ = {
 			isa = PBXGroup;
 			children = (
+				952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */,
+				95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */,
+				95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */,
+				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
 				952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */,
 				952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */,
-				952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */,
-				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
-				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
 				952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */,
+				95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */,
+				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
+				95E9FFAA297D9B280073DF2B /* adViewController.swift */,
+				95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */,
+				952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */,
+				95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */,
 			);
 			path = PersonalHome;
 			sourceTree = "<group>";
@@ -258,22 +274,21 @@
 		C7C4FD73296D315B00040E05 /* UMC-Reborn */ = {
 			isa = PBXGroup;
 			children = (
+				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
+				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
+				C7C4FD7A296D315B00040E05 /* Main.storyboard */,
+				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
+				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
+				C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */,
 				2FB4A6A229779E2000CA811C /* MyReborn */,
 				952CB29B297754E100BD7CD7 /* PersonalHome */,
 				C74FEE1C2971782C00BFC8D0 /* StoreHomeViewController */,
 				C7C4FD74296D315B00040E05 /* AppDelegate.swift */,
 				C7C4FD76296D315B00040E05 /* SceneDelegate.swift */,
 				C7C4FD78296D315B00040E05 /* ViewController.swift */,
-				C7C4FD7A296D315B00040E05 /* Main.storyboard */,
 				C7C4FD7D296D315E00040E05 /* Assets.xcassets */,
-				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
 				C7C4FD82296D315E00040E05 /* Info.plist */,
-				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
-				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
 				0BC96D5B2975522800EA4926 /* LoginViewController.swift */,
-				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
-				952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */,
-				C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */,
 			);
 			path = "UMC-Reborn";
 			sourceTree = "<group>";
@@ -359,6 +374,7 @@
 				C7DD72B729779D090076BFB4 /* ic_bell_gray.png in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
 				C7DD72B629779D090076BFB4 /* ic_like_gray.png in Resources */,
+				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
 				952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
 				0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */,
@@ -424,26 +440,33 @@
 				C7889DFC297C23050008E99F /* StoreReviewViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */,
+				95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */,
 				2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */,
 				2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */,
 				2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */,
 				C70D3D6E2982D89200CABA91 /* ModalStoreViewController.swift in Sources */,
+				95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */,
 				2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */,
 				C75E99072984E6F6003D40B4 /* CodeViewController.swift in Sources */,
+				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C70D3D572981890E00CABA91 /* SecondTabCollectionViewCell.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
 				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
+				2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */,
 				C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
 				C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */,
+				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
+				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				C7889E01297C297D0008E99F /* StoreReviewTableViewCell.swift in Sources */,
 				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
+				2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */,
 				952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */,
 				C70D3D5D29819A4B00CABA91 /* SecondMainViewController.swift in Sources */,
 				C70D3D5B29819A1D00CABA91 /* FirstMainViewController.swift in Sources */,
@@ -461,6 +484,11 @@
 				C70D3D6A29826F1D00CABA91 /* APIHandler.swift in Sources */,
 				C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */,
 				C70D3D552981637E00CABA91 /* SecondTabTableViewCell.swift in Sources */,
+				2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */,
+				C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */,
+				C7DCE54029728D6000F44F1D /* StoreModalViewController.swift in Sources */,
+				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
+				95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */,
 				C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */,
 				C70D3D532981001300CABA91 /* FirstTabTableViewCell.swift in Sources */,
 				C74FEE442971893300BFC8D0 /* RebornEnrollViewController.swift in Sources */,
