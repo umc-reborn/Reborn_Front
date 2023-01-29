@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="심볼 (3)" translatesAutoresizingMaskIntoConstraints="NO" id="1tw-mh-k2i">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="1tw-mh-k2i">
                                 <rect key="frame" x="127" y="383" width="136" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="78" id="4bm-8K-eKh"/>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="심볼 (3)" width="136.33332824707031" height="78"/>
+        <image name="launch" width="409" height="234"/>
     </resources>
 </document>
