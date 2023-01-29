@@ -7,6 +7,7 @@ target 'UMC-Reborn' do
 
   # Pods for UMC-Reborn
 
+  pod 'Alamofire'
   pod 'Tabman', '~> 2.9'
 post_install do |installer|
     installer.pods_project.targets.each do |target|
