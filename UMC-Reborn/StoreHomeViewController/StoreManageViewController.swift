@@ -35,6 +35,10 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
     @IBOutlet weak var storeCategory: UILabel!
     @IBOutlet weak var storeIntroduce: UILabel!
     @IBOutlet weak var storeAddress: UILabel!
+    @IBOutlet weak var reviewLabel: UILabel!
+    @IBOutlet weak var rebornLabel: UILabel!
+    @IBOutlet weak var jjimLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,17 +55,34 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
         storeView.layer.shadowOffset = CGSize(width: 3, height: 8)
         storeView.layer.shadowRadius = 20
         storeView.layer.shadowOpacity = 0.1
+        
+        let attributedString = NSMutableAttributedString(string: reviewLabel.text!, attributes: [
+            .font: UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13),
+            .foregroundColor: UIColor(white: 0.0, alpha: 1.0),
+            .kern: -0.01
+        ])
+        attributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13), range: (reviewLabel.text! as NSString).range(of: "41"))
+        self.reviewLabel.attributedText = attributedString
+        
+        let attributedString1 = NSMutableAttributedString(string: rebornLabel.text!, attributes: [
+            .font: UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13),
+            .foregroundColor: UIColor(white: 0.0, alpha: 1.0),
+            .kern: -0.01
+        ])
+        attributedString1.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13), range: (rebornLabel.text! as NSString).range(of: "64"))
+        self.rebornLabel.attributedText = attributedString1
+        
+        let attributedString2 = NSMutableAttributedString(string: jjimLabel.text!, attributes: [
+            .font: UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13),
+            .foregroundColor: UIColor(white: 0.0, alpha: 1.0),
+            .kern: -0.01
+        ])
+        attributedString2.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13), range: (jjimLabel.text! as NSString).range(of: "64"))
+        self.jjimLabel.attributedText = attributedString2
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
             self.navigationItem.title="가게 관리"
-    }
-
-    @IBAction func nextButton(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "EditStoreViewController") as? EditStoreViewController else { return }
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.delegate = self
-        self.present(nextVC, animated: true, completion: nil)
     }
 }

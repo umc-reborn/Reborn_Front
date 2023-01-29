@@ -27,6 +27,22 @@
 		952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */; };
 		952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */; };
 		952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */; };
+		C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D4E2980F1C500CABA91 /* FirstTabViewController.swift */; };
+		C70D3D512980F1CF00CABA91 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D502980F1CF00CABA91 /* SecondTabViewController.swift */; };
+		C70D3D532981001300CABA91 /* FirstTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D522981001300CABA91 /* FirstTabTableViewCell.swift */; };
+		C70D3D552981637E00CABA91 /* SecondTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D542981637E00CABA91 /* SecondTabTableViewCell.swift */; };
+		C70D3D572981890E00CABA91 /* SecondTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D562981890E00CABA91 /* SecondTabCollectionViewCell.swift */; };
+		C70D3D59298197FE00CABA91 /* TabMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D58298197FE00CABA91 /* TabMainViewController.swift */; };
+		C70D3D5B29819A1D00CABA91 /* FirstMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D5A29819A1D00CABA91 /* FirstMainViewController.swift */; };
+		C70D3D5D29819A4B00CABA91 /* SecondMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D5C29819A4B00CABA91 /* SecondMainViewController.swift */; };
+		C70D3D5F29819A5C00CABA91 /* ThirdMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D5E29819A5C00CABA91 /* ThirdMainViewController.swift */; };
+		C70D3D612981A16D00CABA91 /* FirstMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D602981A16D00CABA91 /* FirstMainTableViewCell.swift */; };
+		C70D3D632982308D00CABA91 /* SecondMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D622982308D00CABA91 /* SecondMainTableViewCell.swift */; };
+		C70D3D652982309D00CABA91 /* ThirdMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D642982309D00CABA91 /* ThirdMainTableViewCell.swift */; };
+		C70D3D6A29826F1D00CABA91 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6929826F1D00CABA91 /* APIHandler.swift */; };
+		C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6B2982D85400CABA91 /* TabModalViewController.swift */; };
+		C70D3D6E2982D89200CABA91 /* ModalStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6D2982D89200CABA91 /* ModalStoreViewController.swift */; };
+		C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6F2982E7B900CABA91 /* PWChangeViewController.swift */; };
 		95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */; };
 		95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */; };
 		95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */; };
@@ -41,6 +57,13 @@
 		C74FEE4629718B7C00BFC8D0 /* AddRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE4529718B7C00BFC8D0 /* AddRebornViewController.swift */; };
 		C74FEE48297199FE00BFC8D0 /* StoreManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE47297199FE00BFC8D0 /* StoreManageViewController.swift */; };
 		C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE492971B40800BFC8D0 /* EditStoreViewController.swift */; };
+		C75E99072984E6F6003D40B4 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E99062984E6F6003D40B4 /* CodeViewController.swift */; };
+		C75E990929857BA2003D40B4 /* ReviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E990829857BA2003D40B4 /* ReviewImage.swift */; };
+		C76935B0297E435A00EB4528 /* StoreReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76935AF297E435A00EB4528 /* StoreReviewCollectionViewCell.swift */; };
+		C7889DFC297C23050008E99F /* StoreReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7889DFB297C23050008E99F /* StoreReviewViewController.swift */; };
+		C7889E01297C297D0008E99F /* StoreReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7889DFF297C297D0008E99F /* StoreReviewTableViewCell.swift */; };
+		C7B8BCDF298423FC00FE3C0A /* PwErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8BCDE298423FC00FE3C0A /* PwErrorViewController.swift */; };
+		C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8BCE02984241200FE3C0A /* PwOkViewController.swift */; };
 		C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD74296D315B00040E05 /* AppDelegate.swift */; };
 		C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD76296D315B00040E05 /* SceneDelegate.swift */; };
 		C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD78296D315B00040E05 /* ViewController.swift */; };
@@ -49,9 +72,9 @@
 		C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */; };
 		C7D56FAA2972BC5600A68015 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D56FA92972BC5600A68015 /* PopupViewController.swift */; };
 		C7DCE53C29727AA900F44F1D /* EnrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */; };
-		C7DCE54029728D6000F44F1D /* StoreModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE53F29728D6000F44F1D /* StoreModalViewController.swift */; };
-		C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE5412972916400F44F1D /* StoreMainTableViewCell.swift */; };
 		C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */; };
+		C7DD72B629779D090076BFB4 /* ic_like_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DD72B429779D090076BFB4 /* ic_like_gray.png */; };
+		C7DD72B729779D090076BFB4 /* ic_bell_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DD72B529779D090076BFB4 /* ic_bell_gray.png */; };
 		F54958F376ED96265363C1F8 /* Pods_UMC_Reborn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +101,23 @@
 		952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopViewController.swift; sourceTree = "<group>"; };
 		952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSideDishViewController.swift; sourceTree = "<group>"; };
 		952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCafeViewController.swift; sourceTree = "<group>"; };
+		C70D3D4E2980F1C500CABA91 /* FirstTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewController.swift; sourceTree = "<group>"; };
+		C70D3D502980F1CF00CABA91 /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
+		C70D3D522981001300CABA91 /* FirstTabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabTableViewCell.swift; sourceTree = "<group>"; };
+		C70D3D542981637E00CABA91 /* SecondTabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabTableViewCell.swift; sourceTree = "<group>"; };
+		C70D3D562981890E00CABA91 /* SecondTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		C70D3D58298197FE00CABA91 /* TabMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainViewController.swift; sourceTree = "<group>"; };
+		C70D3D5A29819A1D00CABA91 /* FirstMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMainViewController.swift; sourceTree = "<group>"; };
+		C70D3D5C29819A4B00CABA91 /* SecondMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMainViewController.swift; sourceTree = "<group>"; };
+		C70D3D5E29819A5C00CABA91 /* ThirdMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdMainViewController.swift; sourceTree = "<group>"; };
+		C70D3D602981A16D00CABA91 /* FirstMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMainTableViewCell.swift; sourceTree = "<group>"; };
+		C70D3D622982308D00CABA91 /* SecondMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMainTableViewCell.swift; sourceTree = "<group>"; };
+		C70D3D642982309D00CABA91 /* ThirdMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdMainTableViewCell.swift; sourceTree = "<group>"; };
+		C70D3D6929826F1D00CABA91 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		C70D3D6B2982D85400CABA91 /* TabModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModalViewController.swift; sourceTree = "<group>"; };
+		C70D3D6D2982D89200CABA91 /* ModalStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalStoreViewController.swift; sourceTree = "<group>"; };
+		C70D3D6F2982E7B900CABA91 /* PWChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWChangeViewController.swift; sourceTree = "<group>"; };
+		C71C2D6C29755C28007BA3E0 /* ic_Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_Time.png; path = ../../../../../Downloads/ic_Time.png; sourceTree = "<group>"; };
 		95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitedShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -92,6 +132,13 @@
 		C74FEE4529718B7C00BFC8D0 /* AddRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRebornViewController.swift; sourceTree = "<group>"; };
 		C74FEE47297199FE00BFC8D0 /* StoreManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManageViewController.swift; sourceTree = "<group>"; };
 		C74FEE492971B40800BFC8D0 /* EditStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStoreViewController.swift; sourceTree = "<group>"; };
+		C75E99062984E6F6003D40B4 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		C75E990829857BA2003D40B4 /* ReviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewImage.swift; sourceTree = "<group>"; };
+		C76935AF297E435A00EB4528 /* StoreReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		C7889DFB297C23050008E99F /* StoreReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewViewController.swift; sourceTree = "<group>"; };
+		C7889DFF297C297D0008E99F /* StoreReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewTableViewCell.swift; sourceTree = "<group>"; };
+		C7B8BCDE298423FC00FE3C0A /* PwErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwErrorViewController.swift; sourceTree = "<group>"; };
+		C7B8BCE02984241200FE3C0A /* PwOkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwOkViewController.swift; sourceTree = "<group>"; };
 		C7C4FD71296D315B00040E05 /* UMC-Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-Reborn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C4FD74296D315B00040E05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7C4FD76296D315B00040E05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,8 +149,6 @@
 		C7C4FD82296D315E00040E05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7D56FA92972BC5600A68015 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollTableViewCell.swift; sourceTree = "<group>"; };
-		C7DCE53F29728D6000F44F1D /* StoreModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModalViewController.swift; sourceTree = "<group>"; };
-		C7DCE5412972916400F44F1D /* StoreMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMainTableViewCell.swift; sourceTree = "<group>"; };
 		C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRebornViewController.swift; sourceTree = "<group>"; };
 		EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UMC_Reborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,6 +168,10 @@
 		2FB4A6A229779E2000CA811C /* MyReborn */ = {
 			isa = PBXGroup;
 			children = (
+				C7DD72B529779D090076BFB4 /* ic_bell_gray.png */,
+				C7DD72B429779D090076BFB4 /* ic_like_gray.png */,
+				C71C2D6C29755C28007BA3E0 /* ic_Time.png */,
+				C7DCE5452972957D00F44F1D /* bread_image.png */,
 				2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */,
 				2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
@@ -167,6 +216,7 @@
 		C74FEE1C2971782C00BFC8D0 /* StoreHomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C7FA26E4297E9E600054DB29 /* Models */,
 				C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */,
 				C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */,
 				C74FEE432971893300BFC8D0 /* RebornEnrollViewController.swift */,
@@ -174,11 +224,31 @@
 				C74FEE47297199FE00BFC8D0 /* StoreManageViewController.swift */,
 				C74FEE492971B40800BFC8D0 /* EditStoreViewController.swift */,
 				C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */,
-				C7DCE53F29728D6000F44F1D /* StoreModalViewController.swift */,
-				C7DCE5412972916400F44F1D /* StoreMainTableViewCell.swift */,
 				C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */,
 				C7D56FA92972BC5600A68015 /* PopupViewController.swift */,
 				C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */,
+				C7889DFB297C23050008E99F /* StoreReviewViewController.swift */,
+				C7889DFF297C297D0008E99F /* StoreReviewTableViewCell.swift */,
+				C76935AF297E435A00EB4528 /* StoreReviewCollectionViewCell.swift */,
+				C70D3D4E2980F1C500CABA91 /* FirstTabViewController.swift */,
+				C70D3D502980F1CF00CABA91 /* SecondTabViewController.swift */,
+				C70D3D522981001300CABA91 /* FirstTabTableViewCell.swift */,
+				C70D3D542981637E00CABA91 /* SecondTabTableViewCell.swift */,
+				C70D3D562981890E00CABA91 /* SecondTabCollectionViewCell.swift */,
+				C70D3D58298197FE00CABA91 /* TabMainViewController.swift */,
+				C70D3D5A29819A1D00CABA91 /* FirstMainViewController.swift */,
+				C70D3D5C29819A4B00CABA91 /* SecondMainViewController.swift */,
+				C70D3D5E29819A5C00CABA91 /* ThirdMainViewController.swift */,
+				C70D3D602981A16D00CABA91 /* FirstMainTableViewCell.swift */,
+				C70D3D622982308D00CABA91 /* SecondMainTableViewCell.swift */,
+				C70D3D642982309D00CABA91 /* ThirdMainTableViewCell.swift */,
+				C70D3D6B2982D85400CABA91 /* TabModalViewController.swift */,
+				C70D3D6D2982D89200CABA91 /* ModalStoreViewController.swift */,
+				C70D3D6F2982E7B900CABA91 /* PWChangeViewController.swift */,
+				C7B8BCDE298423FC00FE3C0A /* PwErrorViewController.swift */,
+				C7B8BCE02984241200FE3C0A /* PwOkViewController.swift */,
+				C75E99062984E6F6003D40B4 /* CodeViewController.swift */,
+				C75E990829857BA2003D40B4 /* ReviewImage.swift */,
 			);
 			path = StoreHomeViewController;
 			sourceTree = "<group>";
@@ -221,6 +291,14 @@
 				0BC96D5B2975522800EA4926 /* LoginViewController.swift */,
 			);
 			path = "UMC-Reborn";
+			sourceTree = "<group>";
+		};
+		C7FA26E4297E9E600054DB29 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C70D3D6929826F1D00CABA91 /* APIHandler.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D04DEAD214F0B35E09E08104 /* Pods */ = {
@@ -293,6 +371,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */,
+				C7DD72B729779D090076BFB4 /* ic_bell_gray.png in Resources */,
+				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
+				C7DD72B629779D090076BFB4 /* ic_like_gray.png in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
 				952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
@@ -354,44 +435,68 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */,
+				C7B8BCDF298423FC00FE3C0A /* PwErrorViewController.swift in Sources */,
 				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
+				C7889DFC297C23050008E99F /* StoreReviewViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */,
 				95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */,
 				2FB4A6AE2977A77700CA811C /* AlertStoreViewController.swift in Sources */,
 				2FB4A6AA2977A61800CA811C /* MyCouponViewController.swift in Sources */,
 				2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */,
+				C70D3D6E2982D89200CABA91 /* ModalStoreViewController.swift in Sources */,
 				95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
+				C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */,
 				2FB4A6A429779E7700CA811C /* RecentStoreViewController.swift in Sources */,
+				C75E99072984E6F6003D40B4 /* CodeViewController.swift in Sources */,
 				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
+				C70D3D572981890E00CABA91 /* SecondTabCollectionViewCell.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
 				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
 				2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */,
 				C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
+				C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */,
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
 				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
+				C7889E01297C297D0008E99F /* StoreReviewTableViewCell.swift in Sources */,
 				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
 				2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */,
 				952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */,
+				C70D3D5D29819A4B00CABA91 /* SecondMainViewController.swift in Sources */,
+				C70D3D5B29819A1D00CABA91 /* FirstMainViewController.swift in Sources */,
+				C70D3D612981A16D00CABA91 /* FirstMainTableViewCell.swift in Sources */,
+				C70D3D512980F1CF00CABA91 /* SecondTabViewController.swift in Sources */,
+				C70D3D652982309D00CABA91 /* ThirdMainTableViewCell.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
+				C70D3D632982308D00CABA91 /* SecondMainTableViewCell.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */,
+				C75E990929857BA2003D40B4 /* ReviewImage.swift in Sources */,
+				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
+				C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */,
+				C70D3D6A29826F1D00CABA91 /* APIHandler.swift in Sources */,
+				C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */,
+				C70D3D552981637E00CABA91 /* SecondTabTableViewCell.swift in Sources */,
 				2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */,
 				C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */,
 				C7DCE54029728D6000F44F1D /* StoreModalViewController.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
 				95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */,
 				C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */,
+				C70D3D532981001300CABA91 /* FirstTabTableViewCell.swift in Sources */,
 				C74FEE442971893300BFC8D0 /* RebornEnrollViewController.swift in Sources */,
 				C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */,
+				C70D3D5F29819A5C00CABA91 /* ThirdMainViewController.swift in Sources */,
+				C70D3D59298197FE00CABA91 /* TabMainViewController.swift in Sources */,
 				C7DCE53C29727AA900F44F1D /* EnrollTableViewCell.swift in Sources */,
+				C76935B0297E435A00EB4528 /* StoreReviewCollectionViewCell.swift in Sources */,
 				C74FEE4629718B7C00BFC8D0 /* AddRebornViewController.swift in Sources */,
 				C74FEE48297199FE00BFC8D0 /* StoreManageViewController.swift in Sources */,
 				C7D56FAA2972BC5600A68015 /* PopupViewController.swift in Sources */,
