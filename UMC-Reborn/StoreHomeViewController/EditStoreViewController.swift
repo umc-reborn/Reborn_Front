@@ -34,6 +34,12 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold)
+        ]
+        
         StoreImageView.layer.cornerRadius = 10
         StoreImageView.clipsToBounds = true
         
@@ -71,10 +77,6 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         addGestureRecognizer()
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func saveButton(_ sender: Any) {
         let text = storenameTextfield.text
         if ((text != "")) {
@@ -94,6 +96,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
            // textField.borderStyle = .line

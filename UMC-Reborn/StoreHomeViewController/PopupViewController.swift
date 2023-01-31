@@ -24,8 +24,8 @@ class PopupViewController: UIViewController {
     var hour = ""
     var minute = ""
     
-    var pickerTitle = [["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
-                       ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]]
+    var pickerHour = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
+    var pickerMinute = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,19 +57,26 @@ class PopupViewController: UIViewController {
 extension PopupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return pickerTitle.count
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerTitle[component].count
+        switch component {
+                case 0:
+                    return pickerHour.count /// 연도의 아이템 개수
+                case 1:
+                    return pickerMinute.count /// 월의 아이템 개수
+                default:
+                    return 0
+                }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
             case 0:
-                return "\(pickerTitle[0][row])"
+                return "\(pickerHour[row])"
             case 1:
-                return "\(pickerTitle[1][row])"
+                return "\(pickerMinute[row])"
             default:
                 return ""
         }
@@ -84,11 +91,11 @@ extension PopupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         }
         switch component {
             case 0:
-                label?.text = pickerTitle[0][row] + "시간"
+                label?.text = pickerHour[row] + "시간"
                 label?.font = UIFont(name:"AppleSDGothicNeo-Bold", size:20)
                 return label!
             case 1:
-                label?.text = pickerTitle[1][row] + "분"
+                label?.text = pickerMinute[row] + "분"
                 label?.font = UIFont(name:"AppleSDGothicNeo-Bold", size:20)
                 return label!
             default:
@@ -100,11 +107,9 @@ extension PopupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         
         switch component {
         case 0:
-            hour = pickerTitle[0][row]
-            minute = pickerTitle[1][0]
+            hour = pickerHour[row]
         case 1:
-            hour = pickerTitle[0][0]
-            minute = pickerTitle[1][row]
+            minute = pickerMinute[row]
         default:
             timeLabel2.text = "00 시간 00 분"
         }
