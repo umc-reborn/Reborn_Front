@@ -13,8 +13,7 @@ class NewShopViewController: UIViewController {
     
     var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
     var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
-//    var imageList: [String] = ["bread_image","bread_image","bread_image","bread_image","bread_image"]
-
+    var imageList: [String] = ["image 2","image 4","image 2","image 4","image 2"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,7 +38,7 @@ extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         cell.shopName.text = shopList[indexPath.row]
         cell.shopLocation.text = shopLocationList[indexPath.row]
-        
+        cell.shopImage.image = UIImage(named: imageList[indexPath.row]) ?? UIImage()
 //        cell.shopImage.reloadData()
         return cell
     }

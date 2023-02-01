@@ -10,8 +10,8 @@ import DropDown
 
 class SearchResultViewController: UIViewController {
     
-    var shopList: [String] = ["베이커리","어쩌구","저쩌구","베이커리","어쩌구","저쩌구","베이커리","어쩌구","저쩌구","베이커리","어쩌구","저쩌구"]
-    var ratingNum: [String] = ["5.0","4.5","3.2","5.0","4.5","3.2","5.0","4.5","3.2","5.0","4.5","3.2"]
+    var shopList: [String] = ["베이커리","워스크베이커리","베이커리1","베이커리2","베이커리3","베이커리4","베이커리5","베이커리",]
+    var ratingNum: [String] = ["5.0","4.5","3.2","5.0","4.5","3.2","5.0","4.5"]
     @IBOutlet weak var tfInput: UITextField!
     @IBOutlet weak var ivIcon: UIImageView!
     @IBOutlet weak var btnSelect: UIButton!
