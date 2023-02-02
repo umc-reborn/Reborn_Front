@@ -15,6 +15,7 @@
 		2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */; };
 		2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */; };
 		2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7010EF297586C100E09DD9 /* MyReborn.storyboard */; };
+		2FA56F58298BDBE200CCC89A /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */; };
 		2FADC52D298BC71200C09566 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */; };
 		2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */; };
 		2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */; };
@@ -67,6 +68,7 @@
 		2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornViewController.swift; sourceTree = "<group>"; };
 		2F7010EF297586C100E09DD9 /* MyReborn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReborn.storyboard; sourceTree = "<group>"; };
+		2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */,
 				2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */,
 				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
+				2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */,
 			);
 			path = MyReborn;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */,
+				2FA56F58298BDBE200CCC89A /* UtilityFunctions.swift in Sources */,
 				2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */,
 				C7DCE5422972916400F44F1D /* StoreMainTableViewCell.swift in Sources */,
 				C7DCE54029728D6000F44F1D /* StoreModalViewController.swift in Sources */,
