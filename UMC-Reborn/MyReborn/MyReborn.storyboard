@@ -170,7 +170,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="319.66666666666669" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XRt-rv-7OK">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyImage1" translatesAutoresizingMaskIntoConstraints="NO" id="XRt-rv-7OK">
                                                     <rect key="frame" x="20" y="10" width="68" height="68"/>
                                                     <color key="backgroundColor" red="0.64992499349999999" green="0.63147217040000003" blue="0.97258526089999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
@@ -178,8 +178,8 @@
                                                         <constraint firstAttribute="width" constant="68" id="iCr-nf-qjo"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f61-vG-DQu">
-                                                    <rect key="frame" x="104" y="24" width="42.333333333333343" height="19.333333333333329"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유엠브레드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f61-vG-DQu">
+                                                    <rect key="frame" x="104" y="24" width="69.333333333333314" height="19.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -586,6 +586,9 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="g8d-tL-cQH" kind="push" id="IAq-LX-WK5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -661,9 +664,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회원정보수정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8n-eo-1z3">
-                                <rect key="frame" x="151" y="412" width="89" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원정보수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsw-Sf-yAI">
+                                <rect key="frame" x="150.66666666666666" y="411.66666666666669" width="89" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -671,18 +673,22 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R8t-0C-PsQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vsw-Sf-yAI" firstAttribute="centerX" secondItem="aS0-eS-dZr" secondAttribute="centerX" id="Ar0-Ke-Cwf"/>
+                            <constraint firstItem="Vsw-Sf-yAI" firstAttribute="centerY" secondItem="aS0-eS-dZr" secondAttribute="centerY" id="hEH-qj-AFu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gms-VX-nFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2906" y="621"/>
+            <point key="canvasLocation" x="2904.6153846153843" y="620.61611374407585"/>
         </scene>
         <!--Review Manage View Controller-->
         <scene sceneID="WuL-XG-hhc">
             <objects>
                 <viewController storyboardIdentifier="reviewManageVC" id="g8d-tL-cQH" customClass="ReviewManageViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JYF-9r-phx">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ZXX-mT-fi0">
@@ -709,7 +715,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZv-Je-WxA">
-                                <rect key="frame" x="26" y="106.66666666666669" width="338" height="543.33333333333326"/>
+                                <rect key="frame" x="26" y="106.66666666666669" width="338" height="520.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="12/31 (토)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rS-oe-HC7">
                                         <rect key="frame" x="17.999999999999996" y="18" width="48.666666666666657" height="13.333333333333336"/>
@@ -781,10 +787,9 @@
                                             <outlet property="delegate" destination="g8d-tL-cQH" id="mbJ-Vf-YRD"/>
                                         </connections>
                                     </collectionView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jkG-hD-ADr">
-                                        <rect key="frame" x="18" y="354.33333333333331" width="302" height="170.99999999999994"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="이런 좋은 상품을 저렴한 가격에 구매하다니... 저는 진정한 행운아입니다. 유엠브레드 최고 !!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jkG-hD-ADr">
+                                        <rect key="frame" x="18" y="354.33333333333331" width="302" height="148"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -864,10 +869,35 @@
                             <constraint firstItem="ZXX-mT-fi0" firstAttribute="leading" secondItem="hMd-m9-KHq" secondAttribute="leading" constant="26" id="ws4-i7-QV6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="q0T-Os-ArC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Kh-5y-P72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2903.0769230769229" y="1954.9763033175354"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="8jF-lI-jYg">
+            <objects>
+                <viewController storyboardIdentifier="changePwdVC" id="f2g-FN-1Or" customClass="ChangePasswordViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wzO-3v-Gnb">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="비밀번호 변경" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSl-M3-Kes">
+                                <rect key="frame" x="149" y="412" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cnk-8M-fpf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CbQ-6c-Rmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2903" y="2629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lJy-ds-tUC">
@@ -1230,6 +1260,7 @@
         <image name="addPhoto" width="42" height="42"/>
         <image name="clock" width="60" height="60"/>
         <image name="code_frame" width="603" height="117"/>
+        <image name="dummyImage1" width="606" height="397"/>
         <image name="empty_star" width="40" height="40"/>
         <image name="full_star" width="40" height="40"/>
         <image name="profile@1" width="90" height="90"/>
