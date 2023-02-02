@@ -60,6 +60,9 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         MyRebornTableView.dataSource = self
         
         self.MyRebornTableView.rowHeight = 60;
+        self.navigationItem.title = "마이리본"
+        self.navigationItem.backButtonDisplayMode = .minimal
+        self.navigationController?.navigationBar.tintColor = .black
 
     }
     

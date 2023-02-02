@@ -41,7 +41,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q9R-iR-aVu">
-                                <rect key="frame" x="20" y="327" width="350" height="413"/>
+                                <rect key="frame" x="20" y="327" width="350" height="293"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyRebornCell" id="K6N-hZ-XBX" customClass="MyRebornCell" customModule="UMC_Reborn" customModuleProvider="target">
@@ -94,7 +94,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aNa-PB-CRD">
-                                <rect key="frame" x="215" y="764" width="155" height="20"/>
+                                <rect key="frame" x="215" y="644" width="155" height="20"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0v-m4-CuM">
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="20"/>
@@ -135,7 +135,7 @@
                             <constraint firstItem="bYS-FK-xSO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="6Ry-ZG-fG3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Q9R-iR-aVu" secondAttribute="trailing" constant="20" id="6jg-0s-Y3M"/>
                             <constraint firstItem="Q9R-iR-aVu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Epo-zY-ZDs"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Q9R-iR-aVu" secondAttribute="bottom" constant="70" id="HNy-S7-rkP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Q9R-iR-aVu" secondAttribute="bottom" constant="190" id="HNy-S7-rkP"/>
                             <constraint firstItem="bYS-FK-xSO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="HcD-ev-fx9"/>
                             <constraint firstItem="Q9R-iR-aVu" firstAttribute="top" secondItem="bYS-FK-xSO" secondAttribute="bottom" constant="56" id="KyQ-fv-f0C"/>
                             <constraint firstItem="aNa-PB-CRD" firstAttribute="top" secondItem="Q9R-iR-aVu" secondAttribute="bottom" constant="24" id="OKU-6k-xkX"/>

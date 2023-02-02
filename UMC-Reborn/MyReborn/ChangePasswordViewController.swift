@@ -10,5 +10,6 @@ import UIKit
 class ChangePasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "비밀번호 변경"
     }
 }

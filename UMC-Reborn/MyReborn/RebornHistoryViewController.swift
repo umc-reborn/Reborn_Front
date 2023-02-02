@@ -42,6 +42,7 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         RebornHistoryTableView.delegate = self
         
         self.RebornHistoryTableView.rowHeight = 88;
+        self.navigationItem.title = "리본 히스토리"
         
     }
     

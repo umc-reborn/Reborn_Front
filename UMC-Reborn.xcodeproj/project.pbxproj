@@ -125,16 +125,16 @@
 		2FB4A6A229779E2000CA811C /* MyReborn */ = {
 			isa = PBXGroup;
 			children = (
-				2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */,
-				2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
+				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
 				2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */,
 				2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */,
-				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
-				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
-				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
 				2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */,
+				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
 				2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */,
+				2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */,
+				2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */,
+				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
 			);
 			path = MyReborn;
 			sourceTree = "<group>";
