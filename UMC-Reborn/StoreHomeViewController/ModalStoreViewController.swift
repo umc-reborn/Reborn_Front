@@ -12,7 +12,7 @@ class ModalStoreViewController: UIViewController {
     @IBOutlet weak var modalButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var bellButton: UIButton!
-    
+    @IBOutlet weak var modalView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,10 @@ class ModalStoreViewController: UIViewController {
         modalButton.layer.cornerRadius = 5
         modalButton.layer.borderWidth = 1
         modalButton.layer.borderColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1).cgColor
+        
+        modalView.clipsToBounds = true
+        modalView.layer.cornerRadius = 10
+        modalView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
     }
     
 

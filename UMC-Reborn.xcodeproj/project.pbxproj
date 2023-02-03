@@ -70,11 +70,16 @@
 		C70D3D612981A16D00CABA91 /* FirstMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D602981A16D00CABA91 /* FirstMainTableViewCell.swift */; };
 		C70D3D632982308D00CABA91 /* SecondMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D622982308D00CABA91 /* SecondMainTableViewCell.swift */; };
 		C70D3D652982309D00CABA91 /* ThirdMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D642982309D00CABA91 /* ThirdMainTableViewCell.swift */; };
-		C70D3D6A29826F1D00CABA91 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6929826F1D00CABA91 /* APIHandler.swift */; };
+		C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6929826F1D00CABA91 /* APIRebornPost.swift */; };
 		C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6B2982D85400CABA91 /* TabModalViewController.swift */; };
 		C70D3D6E2982D89200CABA91 /* ModalStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6D2982D89200CABA91 /* ModalStoreViewController.swift */; };
 		C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D6F2982E7B900CABA91 /* PWChangeViewController.swift */; };
+		C71987522986CF0D000C87EB /* Personal_Jjim.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71987512986CF0D000C87EB /* Personal_Jjim.storyboard */; };
+		C71987552986D447000C87EB /* JjimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987542986D447000C87EB /* JjimViewController.swift */; };
+		C71987572986D46F000C87EB /* JjimTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987562986D46F000C87EB /* JjimTableViewCell.swift */; };
+		C71987592986DBCA000C87EB /* APIRebornGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987582986DBCA000C87EB /* APIRebornGet.swift */; };
 		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
+		C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739AC12298A9D980016B840 /* APIRebornPatch.swift */; };
 		C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */; };
 		C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */; };
 		C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */; };
@@ -96,6 +101,8 @@
 		C7C4FD7E296D315E00040E05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7C4FD7D296D315E00040E05 /* Assets.xcassets */; };
 		C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */; };
 		C7D56FAA2972BC5600A68015 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D56FA92972BC5600A68015 /* PopupViewController.swift */; };
+		C7DA00A329891C740015BA4F /* APIReviewGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA00A229891C740015BA4F /* APIReviewGet.swift */; };
+		C7DA00A5298920A00015BA4F /* APIStoreGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA00A4298920A00015BA4F /* APIStoreGet.swift */; };
 		C7DCE53C29727AA900F44F1D /* EnrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */; };
 		C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */; };
 		C7DD72B629779D090076BFB4 /* (null) in Resources */ = {isa = PBXBuildFile; };
@@ -169,11 +176,17 @@
 		C70D3D602981A16D00CABA91 /* FirstMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMainTableViewCell.swift; sourceTree = "<group>"; };
 		C70D3D622982308D00CABA91 /* SecondMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMainTableViewCell.swift; sourceTree = "<group>"; };
 		C70D3D642982309D00CABA91 /* ThirdMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdMainTableViewCell.swift; sourceTree = "<group>"; };
-		C70D3D6929826F1D00CABA91 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		C70D3D6929826F1D00CABA91 /* APIRebornPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornPost.swift; sourceTree = "<group>"; };
 		C70D3D6B2982D85400CABA91 /* TabModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModalViewController.swift; sourceTree = "<group>"; };
 		C70D3D6D2982D89200CABA91 /* ModalStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalStoreViewController.swift; sourceTree = "<group>"; };
 		C70D3D6F2982E7B900CABA91 /* PWChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWChangeViewController.swift; sourceTree = "<group>"; };
+		C71987512986CF0D000C87EB /* Personal_Jjim.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal_Jjim.storyboard; sourceTree = "<group>"; };
+		C71987542986D447000C87EB /* JjimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimViewController.swift; sourceTree = "<group>"; };
+		C71987562986D46F000C87EB /* JjimTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimTableViewCell.swift; sourceTree = "<group>"; };
+		C71987582986DBCA000C87EB /* APIRebornGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornGet.swift; sourceTree = "<group>"; };
+		C71C2D6C29755C28007BA3E0 /* ic_Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_Time.png; path = ../../../../../Downloads/ic_Time.png; sourceTree = "<group>"; };
 		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
+		C739AC12298A9D980016B840 /* APIRebornPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornPatch.swift; sourceTree = "<group>"; };
 		C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreTab.storyboard; sourceTree = "<group>"; };
 		C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarController.swift; sourceTree = "<group>"; };
 		C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMainViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +210,8 @@
 		C7C4FD80296D315E00040E05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7C4FD82296D315E00040E05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7D56FA92972BC5600A68015 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		C7DA00A229891C740015BA4F /* APIReviewGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReviewGet.swift; sourceTree = "<group>"; };
+		C7DA00A4298920A00015BA4F /* APIStoreGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStoreGet.swift; sourceTree = "<group>"; };
 		C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollTableViewCell.swift; sourceTree = "<group>"; };
 		C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRebornViewController.swift; sourceTree = "<group>"; };
 		EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UMC_Reborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +260,7 @@
 		2FB4A6A229779E2000CA811C /* MyReborn */ = {
 			isa = PBXGroup;
 			children = (
+				C71C2D6C29755C28007BA3E0 /* ic_Time.png */,
 				2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */,
 				2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
@@ -302,6 +318,15 @@
 				95148B3C298256FF004A1A57 /* SearchResultTableViewCell.swift */,
 			);
 			path = SearchVC;
+			sourceTree = "<group>";
+		};
+		C71987532986D42F000C87EB /* PersonalJjim */ = {
+			isa = PBXGroup;
+			children = (
+				C71987542986D447000C87EB /* JjimViewController.swift */,
+				C71987562986D46F000C87EB /* JjimTableViewCell.swift */,
+			);
+			path = PersonalJjim;
 			sourceTree = "<group>";
 		};
 		C74FEE1C2971782C00BFC8D0 /* StoreHomeViewController */ = {
@@ -371,6 +396,8 @@
 				C7C4FD7A296D315B00040E05 /* Main.storyboard */,
 				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
 				C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */,
+				C71987512986CF0D000C87EB /* Personal_Jjim.storyboard */,
+				C71987532986D42F000C87EB /* PersonalJjim */,
 				95E9FFB3297E6EE80073DF2B /* SearchPage.storyboard */,
 				2FB4A6A229779E2000CA811C /* MyReborn */,
 				95E9FFB5297E6F560073DF2B /* SearchVC */,
@@ -390,7 +417,11 @@
 		C7FA26E4297E9E600054DB29 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C70D3D6929826F1D00CABA91 /* APIHandler.swift */,
+				C70D3D6929826F1D00CABA91 /* APIRebornPost.swift */,
+				C71987582986DBCA000C87EB /* APIRebornGet.swift */,
+				C7DA00A229891C740015BA4F /* APIReviewGet.swift */,
+				C7DA00A4298920A00015BA4F /* APIStoreGet.swift */,
+				C739AC12298A9D980016B840 /* APIRebornPatch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,6 +506,7 @@
 				2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */,
 				C7C4FD7E296D315E00040E05 /* Assets.xcassets in Resources */,
 				C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */,
+				C71987522986CF0D000C87EB /* Personal_Jjim.storyboard in Resources */,
 				C7C4FD7C296D315B00040E05 /* Main.storyboard in Resources */,
 				95E9FFB4297E6EE80073DF2B /* SearchPage.storyboard in Resources */,
 			);
@@ -539,11 +571,13 @@
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				0B94771429899DC700B5829A /* Basic_InfoViewController.swift in Sources */,
 				2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */,
+				C71987572986D46F000C87EB /* JjimTableViewCell.swift in Sources */,
 				95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */,
 				2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */,
 				0B94770829899D6400B5829A /* NeighborViewController.swift in Sources */,
 				C70D3D6E2982D89200CABA91 /* ModalStoreViewController.swift in Sources */,
 				95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */,
+				C7DA00A5298920A00015BA4F /* APIStoreGet.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				0B94772429899E6500B5829A /* ResetPwViewController.swift in Sources */,
 				95E9FFB9297FAFE10073DF2B /* LatestSearchedCell.swift in Sources */,
@@ -567,6 +601,7 @@
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
 				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
+				C71987552986D447000C87EB /* JjimViewController.swift in Sources */,
 				95148B3D298256FF004A1A57 /* SearchResultTableViewCell.swift in Sources */,
 				95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */,
 				0B94771829899DDE00B5829A /* HelloViewController.swift in Sources */,
@@ -583,6 +618,7 @@
 				C70D3D612981A16D00CABA91 /* FirstMainTableViewCell.swift in Sources */,
 				C70D3D512980F1CF00CABA91 /* SecondTabViewController.swift in Sources */,
 				C70D3D652982309D00CABA91 /* ThirdMainTableViewCell.swift in Sources */,
+				C71987592986DBCA000C87EB /* APIRebornGet.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
 				0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */,
@@ -595,6 +631,8 @@
 				C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */,
 				0B94770E29899D9700B5829A /* WhoViewController.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIHandler.swift in Sources */,
+				C7DA00A329891C740015BA4F /* APIReviewGet.swift in Sources */,
+				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
 				C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */,
 				C70D3D552981637E00CABA91 /* SecondTabTableViewCell.swift in Sources */,
 				2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */,
@@ -613,6 +651,7 @@
 				0B94771629899DD200B5829A /* InterestViewController.swift in Sources */,
 				C74FEE48297199FE00BFC8D0 /* StoreManageViewController.swift in Sources */,
 				0B94771C29899E2400B5829A /* InterestSecondViewController.swift in Sources */,
+				C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */,
 				C7D56FAA2972BC5600A68015 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

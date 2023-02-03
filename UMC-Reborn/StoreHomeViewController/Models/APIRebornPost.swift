@@ -8,25 +8,27 @@
 import Foundation
 import Alamofire
 
-struct RebornModel: Encodable {
+struct RebornModel:Encodable {
+    var storeIdx:Int
     var productName:String
     var productGuide:String
     var productComment:String
     var productImg:String
+    var productLimitTime:String
     var productCnt: Int
 }
 
-class APIHandler {
-    static let instance = APIHandler()
+class APIHandlerPost {
+    static let instance = APIHandlerPost()
     
-    func SendingPostRequest(parameters: RebornModel, handler: @escaping (_ result: [RebornresultModel])->(Void)) {
-        let url = ""
+    func SendingPostReborn(parameters: RebornModel, handler: @escaping (_ result: [RebornresultModel])->(Void)) {
+        let url = "http://www.rebornapp.shop/reborns/create"
         let headers:HTTPHeaders = [
             "content-type": "application/json"
         ]
         
-        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).response { response in
-            switch response.result {
+        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).response { responce in
+            switch responce.result {
             case .success(let data):
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)

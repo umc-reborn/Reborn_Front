@@ -9,6 +9,7 @@ import UIKit
 
 protocol SampleProtocol:AnyObject {
     func dataSend(data: String)
+    func timeSend(data: String)
 }
 
 class PopupViewController: UIViewController {
@@ -18,11 +19,12 @@ class PopupViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!    
     @IBOutlet weak var popupPicker: UIPickerView!
     @IBOutlet weak var timeLabel2: UILabel!
+    @IBOutlet weak var timeLabel3: UILabel!
     
     weak var delegate : SampleProtocol?
     
-    var hour = ""
-    var minute = ""
+    var hour = "00"
+    var minute = "00"
     
     var pickerHour = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
     var pickerMinute = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
@@ -49,6 +51,9 @@ class PopupViewController: UIViewController {
     @IBAction func nextButton(_ sender: Any) {
         if let text = timeLabel2.text {
             delegate?.dataSend(data: text)
+        }
+        if let text2 = timeLabel3.text {
+            delegate?.timeSend(data: text2)
         }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
@@ -112,8 +117,10 @@ extension PopupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             minute = pickerMinute[row]
         default:
             timeLabel2.text = "00 시간 00 분"
+            timeLabel3.text = "00:00:00"
         }
         
+        timeLabel3.text = hour + ":" + minute + ":00"
         timeLabel2.text = hour + " 시간 " + minute + " 분"
     }
 }
