@@ -4,7 +4,6 @@
 //
 //  Created by jaegu park on 2023/01/14.
 //
-
 import UIKit
 
 class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol {
@@ -14,6 +13,13 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         timeLabel.sizeToFit()
     }
     
+    func timeSend(data: String) {
+        timeLabel2.text = data
+        timeLabel2.sizeToFit()
+    }
+    
+    
+    @IBOutlet weak var timeLabel2: UILabel!
     @IBOutlet weak var EditImageView: UIImageView!
     @IBOutlet weak var TimeSwitch: UISwitch!
     @IBOutlet weak var editButton: UIButton!
@@ -24,6 +30,9 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     @IBOutlet weak var introduceTextView: UITextView!
     @IBOutlet weak var countLabel: UILabel!
     var Number = 00
+    
+    let imagePickerController = UIImagePickerController()
+    let alertController = UIAlertController(title: "가게 대표 사진 설정", message: "", preferredStyle: .actionSheet)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +67,10 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         textFieldDidEndEditing(eatTextfield)
         
         countTextfield.text = String(Number)
+        
+        enrollAlertEvent()
+        self.imagePickerController.delegate = self
+        addGestureRecognizer()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -116,6 +129,36 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         return changedText.count < 50
     }
     
+    func enrollAlertEvent() {
+        let photoLibraryAlertAction = UIAlertAction(title: "앨범에서 사진 선택", style: .default) {
+            (action) in
+            self.openAlbum() // 아래에서 설명 예정.
+        }
+        
+        let cameraAlertAction = UIAlertAction(title: "사진 촬영", style: .default) {
+            (action) in
+            self.openCamera() // 아래에서 설명 예정.
+        }
+        
+        let cancelAlertAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        self.alertController.addAction(photoLibraryAlertAction)
+        self.alertController.addAction(cameraAlertAction)
+        self.alertController.addAction(cancelAlertAction)
+        guard let alertControllerPopoverPresentationController = alertController.popoverPresentationController
+        else {return}
+        prepareForPopoverPresentation(alertControllerPopoverPresentationController)
+    }
+    
+    func addGestureRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tappedUIImageView(_gesture:)))
+        self.EditImageView.addGestureRecognizer(tapGestureRecognizer)
+        self.EditImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func tappedUIImageView(_gesture: UITapGestureRecognizer) {
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func textSwitch(_ sender: Any) {
         if(TimeSwitch.isOn) {
             timeLabel.text = "00 시간 00 분"
@@ -124,11 +167,13 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
             editButton.layer.borderColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1).cgColor
             editButton.backgroundColor = UIColor.white
             editButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .normal)
+            editButton.isEnabled = true
         } else {
             timeLabel.text = "           "
             editButton.layer.borderColor = UIColor(red: 255/255, green: 251/255, blue: 249/255, alpha: 1).cgColor
             editButton.backgroundColor = UIColor(red: 255/255, green: 251/255, blue: 249/255, alpha: 1)
             editButton.setTitleColor(UIColor(red: 255/255, green: 251/255, blue: 249/255, alpha: 1), for: .normal)
+            editButton.isEnabled = false
         }
     }
     
@@ -142,5 +187,40 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     @IBAction func addCount(_ sender: Any) {
         Number += 1
         countTextfield.text = String(Number)
+    }
+}
+
+extension EditRebornViewController: UIPopoverPresentationControllerDelegate {
+    func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
+        if let popoverPresentationController = self.alertController.popoverPresentationController {
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverPresentationController.permittedArrowDirections = []
+        }
+    }
+}
+
+extension EditRebornViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func openAlbum() {
+        self.imagePickerController.sourceType = .photoLibrary
+        present(self.imagePickerController, animated: false, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            EditImageView?.image = image
+        } else {
+            print("error detected in didFinishPickinMEdiaWithInfo method")
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
+            self.imagePickerController.sourceType = .camera
+            present(self.imagePickerController, animated: false, completion: nil)
+        } else {
+            print("Camera is not available as for now")
+        }
     }
 }

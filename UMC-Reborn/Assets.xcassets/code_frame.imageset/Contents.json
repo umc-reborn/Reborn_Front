@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "code_frame.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "code_frame.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

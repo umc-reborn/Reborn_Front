@@ -937,14 +937,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="178"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_1" translatesAutoresizingMaskIntoConstraints="NO" id="LFF-Bm-9RR">
-                                                    <rect key="frame" x="0.0" y="-12" width="355" height="219"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventAD" translatesAutoresizingMaskIntoConstraints="NO" id="LFF-Bm-9RR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="178"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="178" id="K4X-5H-ghh"/>
+                                                        <constraint firstAttribute="width" constant="335" id="lZf-CM-T6U"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="LFF-Bm-9RR" firstAttribute="leading" secondItem="Ts7-A2-wCi" secondAttribute="leading" id="HML-mn-EA1"/>
-                                                <constraint firstAttribute="bottom" secondItem="LFF-Bm-9RR" secondAttribute="bottom" constant="-29" id="ScR-WC-hKj"/>
-                                                <constraint firstItem="LFF-Bm-9RR" firstAttribute="top" secondItem="Ts7-A2-wCi" secondAttribute="top" constant="-12" id="gCh-Jr-SyT"/>
+                                                <constraint firstItem="LFF-Bm-9RR" firstAttribute="leading" secondItem="Ts7-A2-wCi" secondAttribute="leading" id="2KP-hS-Px1"/>
+                                                <constraint firstItem="LFF-Bm-9RR" firstAttribute="top" secondItem="Ts7-A2-wCi" secondAttribute="top" id="nZm-Nn-gZv"/>
+                                                <constraint firstAttribute="bottom" secondItem="LFF-Bm-9RR" secondAttribute="bottom" id="zNc-1c-K0S"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="335" height="178"/>
@@ -981,9 +985,9 @@
         <image name="Home_Frame" width="390" height="127"/>
         <image name="Label" width="190" height="27"/>
         <image name="Logo" width="34" height="20"/>
-        <image name="ad_1" width="355.33334350585938" height="218.33332824707031"/>
         <image name="backgroundLine" width="36" height="2022"/>
         <image name="bread_image" width="93" height="91"/>
+        <image name="eventAD" width="338" height="178"/>
         <image name="goods_picture" width="208" height="201"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="highlightingLine" width="390" height="29"/>

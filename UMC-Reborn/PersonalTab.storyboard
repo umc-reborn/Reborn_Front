@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21219" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oe0-7m-EV4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oe0-7m-EV4">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21200"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,16 +56,29 @@
         <!--찜-->
         <scene sceneID="SWL-TU-BoG">
             <objects>
-                <navigationController id="zzu-mM-CPs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="JjimVC" id="zzu-mM-CPs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="찜" image="heart" catalog="system" id="Aka-9F-KGd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xRF-kv-MOF">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="4Xi-Fo-Qqa" kind="relationship" relationship="rootViewController" id="gVJ-ol-WXK"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwO-ex-rKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868" y="1123"/>
+        </scene>
+        <!--JjimVC-->
+        <scene sceneID="Sa9-HL-QMd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Personal_Jjim" referencedIdentifier="JjimVC" id="4Xi-Fo-Qqa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mJ7-WH-LJz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uds-su-T3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1549" y="1123"/>
         </scene>
         <!--검색-->
         <scene sceneID="QJn-QI-ay5">
@@ -77,10 +89,23 @@
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="rDo-mA-Cji" kind="relationship" relationship="rootViewController" id="37G-fi-pjR"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGa-IA-kGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868" y="385"/>
+        </scene>
+        <!--SearchVC-->
+        <scene sceneID="9Pv-wV-KYB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchPage" referencedIdentifier="SearchVC" id="rDo-mA-Cji" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gve-3J-yVl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goV-X8-5DJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="326"/>
         </scene>
         <!--홈-->
         <scene sceneID="AX2-PH-jpH">
