@@ -4,7 +4,7 @@
 //
 //  Created by jaegu park on 2023/01/13.
 //
-
+import Foundation
 import UIKit
 
 class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol2{
@@ -15,7 +15,13 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         timeLabel.text = data
         timeLabel.sizeToFit()
     }
-
+    
+    func timeSend(data: String) {
+        timeLabel2.text = data
+        timeLabel2.sizeToFit()
+    }
+    
+    @IBOutlet weak var timeLabel2: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var eatTextfield: UITextField!
     @IBOutlet weak var introduceTextView: UITextView!
@@ -187,9 +193,9 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     
     
     @IBAction func RebornPostButton(_ sender: Any) {
-        let parmeterData = RebornModel(productName: "", productGuide: "", productComment: "", productImg: "", productCnt: 1)
+        let parmeterData = RebornModel(storeIdx: 1, productName: nameTextfield.text ?? "", productGuide: eatTextfield.text ?? "", productComment: introduceTextView.text ?? "", productImg: "", productLimitTime: timeLabel2.text ?? "", productCnt: Number)
         
-        APIHandler.instance.SendingPostRequest(parameters: parmeterData) { result in self.rebornData = result
+        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterData) { result in self.rebornData = result
         }
     }
     
