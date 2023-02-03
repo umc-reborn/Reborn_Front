@@ -9,6 +9,8 @@ import UIKit
 
 class RebornEnrollViewController: UIViewController {
     
+    var apiResult = [RebornListModel]()
+    
     @IBOutlet weak var EnrollTableView: UITableView!
     
     let CautionArray = ["리본 나눔 후 냉동 보관 필수", "당일 섭취를 권장합니다.", "리본 나눔 후 3시간 이내 섭취 권장", "리본 나눔 후 바로 섭취 권장", "리본 나눔 후 3시간 이내 섭취 권장"]
@@ -20,6 +22,14 @@ class RebornEnrollViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        APIHandlerGet.sharedInstance.SendingGetReborn { apiData in
+            self.apiResult = apiData
+            
+            DispatchQueue.main.async {
+                self.EnrollTableView.reloadData()
+            }
+        }
         
         EnrollTableView.delegate = self
         EnrollTableView.dataSource = self

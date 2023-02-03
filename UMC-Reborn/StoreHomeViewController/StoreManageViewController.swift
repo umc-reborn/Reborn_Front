@@ -9,6 +9,8 @@ import UIKit
 
 class StoreManageViewController: UIViewController, SampleProtocol3 {
     
+    var apiResult = [StoreListModel]()
+    
     func categorySend(data: String) {
         storeCategory.text = data
         storeCategory.sizeToFit()
@@ -42,6 +44,10 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        APIHandlerStoreGet.sharedInstance.SendingGetStore { apiData in
+            self.apiResult = apiData
+        }
         
         ManageImageView.layer.cornerRadius = 10
         ManageImageView.clipsToBounds = true

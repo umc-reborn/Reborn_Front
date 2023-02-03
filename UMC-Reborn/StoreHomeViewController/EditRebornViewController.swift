@@ -13,6 +13,13 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         timeLabel.sizeToFit()
     }
     
+    func timeSend(data: String) {
+        timeLabel2.text = data
+        timeLabel2.sizeToFit()
+    }
+    
+    
+    @IBOutlet weak var timeLabel2: UILabel!
     @IBOutlet weak var EditImageView: UIImageView!
     @IBOutlet weak var TimeSwitch: UISwitch!
     @IBOutlet weak var editButton: UIButton!

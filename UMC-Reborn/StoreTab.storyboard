@@ -1503,6 +1503,13 @@
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ead-o8-7bn">
+                                <rect key="frame" x="288" y="163" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p2D-tz-jdG"/>
                         <color key="backgroundColor" red="0.99592512850000003" green="0.9844868779" blue="0.97646933790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1557,6 +1564,7 @@
                         <outlet property="introduceTextView" destination="6ca-dH-dR0" id="53L-86-rGk"/>
                         <outlet property="nameTextfield" destination="Qha-Kt-RcD" id="r6L-nd-eWh"/>
                         <outlet property="timeLabel" destination="h9U-I6-6kt" id="baz-HY-ST1"/>
+                        <outlet property="timeLabel2" destination="Ead-o8-7bn" id="W7r-tS-N5H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12X-t0-bJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1635,6 +1643,13 @@
                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpn-9v-JlS">
+                                        <rect key="frame" x="233" y="20" width="71" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -1669,12 +1684,13 @@
                         <outlet property="popupPicker" destination="Sto-85-m7q" id="Moc-m9-X0F"/>
                         <outlet property="popupView" destination="da4-l8-sh1" id="wVq-OU-QLd"/>
                         <outlet property="timeLabel2" destination="0fo-ql-GWi" id="v3k-Jz-uIh"/>
+                        <outlet property="timeLabel3" destination="Bpn-9v-JlS" id="bly-pj-bdm"/>
                         <outlet property="yesButton" destination="xNA-BS-Qir" id="Tde-Nn-6d6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7g-gA-JrF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3187.6923076923076" y="-1108.2938388625591"/>
+            <point key="canvasLocation" x="3025" y="-1108"/>
         </scene>
         <!--리본 등록-->
         <scene sceneID="Jrc-74-G6w">
@@ -1716,14 +1732,14 @@
                                                         <constraint firstAttribute="height" constant="90" id="Hj9-Tf-Pst"/>
                                                     </constraints>
                                                 </imageView>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Row-ee-4YJ">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Row-ee-4YJ">
                                                     <rect key="frame" x="294.33333333333331" y="10" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.92356389760000002" green="0.35871350769999999" blue="0.18580088019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
                                                         <action selector="timeSwitch:" destination="sOJ-yP-4Cv" eventType="valueChanged" id="TI8-kG-BHG"/>
                                                     </connections>
                                                 </switch>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Time" translatesAutoresizingMaskIntoConstraints="NO" id="zX1-Ss-WjP">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Time" translatesAutoresizingMaskIntoConstraints="NO" id="zX1-Ss-WjP">
                                                     <rect key="frame" x="117" y="14.666666666666664" width="14" height="14"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -1731,8 +1747,8 @@
                                                         <constraint firstAttribute="width" constant="14" id="cX9-fc-KvU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10분 내 수령" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwi-z3-NP9">
-                                                    <rect key="frame" x="137" y="14" width="66" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10분 내 수령" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwi-z3-NP9">
+                                                    <rect key="frame" x="137" y="14" width="65.333333333333314" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="NNR-L2-m6e"/>
                                                     </constraints>
@@ -2049,6 +2065,13 @@
                                     <action selector="plusCount:" destination="9wC-Lg-iA6" eventType="touchUpInside" id="1Bw-4l-cvH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnG-o7-uJw">
+                                <rect key="frame" x="261" y="281" width="80" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m5h-56-mrb"/>
                         <color key="backgroundColor" red="0.99627512689999997" green="0.98423308129999998" blue="0.97668832539999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2106,6 +2129,7 @@
                         <outlet property="introduceTextView" destination="xaY-gX-hhE" id="aFZ-8I-grM"/>
                         <outlet property="nameTextfield" destination="IIR-AZ-jZU" id="klu-RW-1Yr"/>
                         <outlet property="timeLabel" destination="jyG-fY-ipZ" id="DTF-XZ-Ogr"/>
+                        <outlet property="timeLabel2" destination="MnG-o7-uJw" id="dV4-sG-3oa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vr-Pq-zjl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2184,6 +2208,13 @@
                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uju-U8-BzH">
+                                        <rect key="frame" x="236" y="17" width="71" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -2217,12 +2248,13 @@
                         <outlet property="popupPicker" destination="fpg-gD-C1q" id="mbd-ja-Vob"/>
                         <outlet property="popupView" destination="nTs-lR-C3B" id="kxf-AM-RVG"/>
                         <outlet property="timeLabel2" destination="g9d-re-Nmr" id="taj-rJ-BpO"/>
+                        <outlet property="timeLabel3" destination="Uju-U8-BzH" id="iYI-gP-vyg"/>
                         <outlet property="yesButton" destination="3lG-cb-ib7" id="sY2-7t-vzu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tA4-9J-8j5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3188" y="-1794"/>
+            <point key="canvasLocation" x="3026" y="-1794"/>
         </scene>
         <!--Store Tab Bar Controller-->
         <scene sceneID="J1a-T2-5K0">
@@ -2539,7 +2571,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Cd-ea-JfS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qeb-g5-IKB" firstAttribute="leading" secondItem="2Cd-ea-JfS" secondAttribute="leading" id="FPT-oo-QRM"/>
                             <constraint firstItem="qeb-g5-IKB" firstAttribute="top" secondItem="7Qt-FB-gvL" secondAttribute="top" id="S2Z-sR-X0V"/>
@@ -2552,11 +2584,12 @@
                         <outlet property="bellButton" destination="1T1-F2-w0B" id="8es-UJ-chR"/>
                         <outlet property="likeButton" destination="xlA-Nt-qBc" id="VwC-op-7k7"/>
                         <outlet property="modalButton" destination="E5D-vo-Utu" id="E4k-1i-BVT"/>
+                        <outlet property="modalView" destination="Qgy-8H-b0D" id="xjC-zn-EAY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEt-S6-NYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446" y="31"/>
+            <point key="canvasLocation" x="1445" y="30"/>
         </scene>
         <!--First Tab View Controller-->
         <scene sceneID="hAY-VR-CK2">
@@ -3598,7 +3631,7 @@
         <image name="store_setting" width="22.5" height="20.5"/>
         <image name="store_star" width="27" height="27"/>
         <image name="store_view" width="36" height="36"/>
-        <image name="umc_character" width="128" height="145"/>
+        <image name="umc_character" width="64" height="72.5"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

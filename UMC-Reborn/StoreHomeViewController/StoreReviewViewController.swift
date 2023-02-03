@@ -13,6 +13,9 @@ var Rdata = [
 ]
 
 class StoreReviewViewController: UIViewController {
+    
+    var apiResult = [ReviewList]()
+    var apiCountResult = [ReviewCount]()
 
     @IBOutlet weak var StoreReviewTableView: UITableView!
     
@@ -26,6 +29,18 @@ class StoreReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // APIHandlerReviewGet.sharedInstance.SendingGetReview { apiData in
+        //     self.apiResult = apiData
+            
+        //     DispatchQueue.main.async {
+        //         self.StoreReviewTableView.reloadData()
+        //     }
+        // }
+        
+        APIHandlerReviewCount.sharedInstance.SendingGetReviewCount { apiDataCount in
+            self.apiCountResult = apiDataCount
+        }
 
         StoreReviewTableView.delegate = self
         StoreReviewTableView.dataSource = self
