@@ -36,10 +36,10 @@ class EnrollTableViewCell: UITableViewCell {
     @IBAction func timeSwitch(_ sender: Any) {
         if RebornSwitch.isOn {
             TimeImageView.alpha = 1
-            timeLabel.text = "10분 내 수령"
+            timeLabel.alpha = 1
         } else {
             TimeImageView.alpha = 0
-            timeLabel.text = ""
+            timeLabel.alpha = 0
         }
     }
 }
@@ -47,7 +47,7 @@ class EnrollTableViewCell: UITableViewCell {
 extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return FoodArray.count
+        return FoodArray.count // apiResult.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,6 +65,7 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Enroll_TableViewCell", for: indexPath) as! EnrollTableViewCell
         
+        // cell.foodName.text = apiResult[indexPath.section].productName
         cell.foodName.text = FoodArray[indexPath.section]
         cell.timeLabel.text = "\(TimeArray[indexPath.section])분 내 수령"
         cell.countLabel.text = "남은 수량: \(CountArray[indexPath.section])"
