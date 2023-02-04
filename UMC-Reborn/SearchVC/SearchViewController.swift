@@ -25,12 +25,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
           let button = UIButton()
         button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         button.tintColor = .black
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: -10)
           return button
       }()
     
     private lazy var clearButton: UIButton = {
          let button = UIButton()
-         button.setImage(#imageLiteral(resourceName: "ic_Xmark"), for: .normal)
+         button.setImage(#imageLiteral(resourceName:"ic_Xmark"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 2)
         
 //         button.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
 
