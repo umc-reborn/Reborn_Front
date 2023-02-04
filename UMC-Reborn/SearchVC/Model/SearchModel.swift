@@ -7,22 +7,20 @@
 
 import Foundation
 
+
+struct SearchModel : Codable {
+    let isSuccess : Bool
+    let code : Int
+    let message : String
+    var result : [SearchResponse]
+}
+
 struct SearchResponse : Codable {
-    let storeIdx: String
+    let storeIdx: Int
     let storeName : String
     let storeImage: String
     let storeAddress: String
     let storeDescription : String
     let storeScore : Int
     let category : String
-    
-    enum CodingKeys : String, CodingKey {
-        case storeIdx
-        case storeName
-        case storeImage
-        case storeAddress
-        case storeDescription
-        case storeScore
-        case category
-    }
 }

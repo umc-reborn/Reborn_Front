@@ -9,7 +9,6 @@ import UIKit
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var latestCV: UICollectionView!
-
     @IBOutlet weak var searchBar: UITextField!
     
     var latestData: [String] = ["베이커리","어쩌구","저쩌구"]
@@ -42,6 +41,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
         if textField == self.searchBar {
             userPressedToEnter(keyword: searchBar.text ?? "")
+            
         }
 
         return true
@@ -70,22 +70,23 @@ extension SearchViewController {
 // MARK: - Custom Methods
 extension SearchViewController {
     func userPressedToEnter(keyword: String) {
+        guard let text = searchBar.text else { return }
         guard let Resultvc = self.storyboard?.instantiateViewController(identifier: "SearchResultVC") as? SearchResultViewController else {
                     return
                 }
-//        resultVC.keyword = keyword
-        // TODO: - 검색 개수 서버 연결
-//        resultVC.searchCnt = latestData.value.count
+        
+        Resultvc.keyword = text
         navigationController?.pushViewController(Resultvc, animated: true)
     }
     
 //    @objc func deleteSearchList(sender : UIButton) {
 //        latestCV.deleteItems(at: [IndexPath.init(row: sender.tag, section: 0)])
-//        var items = latestData.value
+////        var items = latestData.value
 //        items.remove(at: sender.tag)
-//        latestData.accept(items)
+////        latestData.accept(items)
 //    }
 }
+
 extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return latestData.count
