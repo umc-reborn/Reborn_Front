@@ -13,4 +13,7 @@ struct APIConstants {
     
     // MARK: - newShop URL
     static let newStoreURL = baseURL + "/store/new"
+    
+    // MARK: - Review URL
+    static let reviewURL = baseURL + "/review/best"
 }

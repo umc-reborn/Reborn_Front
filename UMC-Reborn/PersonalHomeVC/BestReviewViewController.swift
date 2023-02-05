@@ -12,6 +12,7 @@ class BestReviewViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var reivewDatas: [BestReivewResponse] = []
     var userList: [String] = ["우리동네맛집탐험가","새해복많이많이","졸려","집에가고싶어요","배고파"]
     var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
     var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
@@ -21,6 +22,20 @@ class BestReviewViewController: UIViewController {
         super.viewDidLoad()
         collectionView.backgroundColor = .clear
         // Do any additional setup after loading the view.
+        BestReviewService.shared.getBestReview{ result in
+                    switch result {
+                    case .success(let response):
+//                        dump(response)
+                        guard let response = response as? BestReviewModel else {
+                            break
+                        }
+                        self.reivewDatas = response.result
+                    
+                    default:
+                        break
+                    }
+                    self.collectionView.reloadData()
+                }
     }
 
 
@@ -28,7 +43,7 @@ class BestReviewViewController: UIViewController {
 
 extension BestReviewViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shopList.count
+        return reivewDatas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,9 +61,16 @@ extension BestReviewViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.contentView.layer.masksToBounds = true
         cell.layer.masksToBounds = false
         
-        cell.userName.text = userList[indexPath.row]
-        cell.shopName.text = shopList[indexPath.row]
-        cell.shopLocation.text = shopLocationList[indexPath.row]
+//        cell.userName.text = userList[indexPath.row]
+//        cell.shopName.text = shopList[indexPath.row]
+//        cell.shopLocation.text = shopLocationList[indexPath.row]
+        
+        let reviewData = reivewDatas[indexPath.row]
+        let url = URL(string: reviewData.reviewImage1)
+        cell.shopImage.load(url: url!)
+        cell.userName.text = reviewData.userNickname
+        cell.shopName.text = reviewData.storeName
+        cell.shopLocation.text = reviewData.storeCategory
         
 //        cell.shopImage.reloadData()
         return cell
