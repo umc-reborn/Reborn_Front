@@ -11,4 +11,6 @@ struct APIConstants {
     // MARK: - Base URL
     static let baseURL = "http://www.rebornapp.shop"
     
+    // MARK: - newShop URL
+    static let newStoreURL = baseURL + "/store/new"
 }
