@@ -13,11 +13,6 @@ class BestReviewViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var reivewDatas: [BestReivewResponse] = []
-    var userList: [String] = ["우리동네맛집탐험가","새해복많이많이","졸려","집에가고싶어요","배고파"]
-    var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
-    var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
-    var imageList: [String] = ["bread_image","bread_image","bread_image","bread_image","bread_image"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .clear
@@ -71,6 +66,9 @@ extension BestReviewViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.userName.text = reviewData.userNickname
         cell.shopName.text = reviewData.storeName
         cell.shopLocation.text = reviewData.storeCategory
+        cell.comment.text = reviewData.reviewComment
+        cell.date.text = String(reviewData.reviewCreatedAt.prefix(10))
+        cell.shopScore.text = String(reviewData.reviewScore)
         
 //        cell.shopImage.reloadData()
         return cell
