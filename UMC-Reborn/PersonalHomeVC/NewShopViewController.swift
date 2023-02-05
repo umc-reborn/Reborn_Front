@@ -12,9 +12,6 @@ class NewShopViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var newDatas: [NewShopResponse] = []
-    var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
-    var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
-    var imageList: [String] = ["image 2","image 4","image 2","image 4","image 2"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,10 +20,8 @@ class NewShopViewController: UIViewController {
         NewShopService.shared.getNewShop{ result in
                     switch result {
                     case .success(let response):
-                        dump(response)
-                        print("----여기문제---")
+//                        dump(response)
                         guard let response = response as? NewShopModel else {
-                            print("오류입니다")
                             break
                         }
                         self.newDatas = response.result
@@ -57,6 +52,7 @@ extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.shopImage.load(url: url!)
         cell.shopName.text = shopData.storeName
         cell.shopLocation.text = shopData.category
+        cell.shopScore.text = String(shopData.storeScore)
         return cell
     }
 }

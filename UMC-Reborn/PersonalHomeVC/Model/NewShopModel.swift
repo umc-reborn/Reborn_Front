@@ -18,9 +18,7 @@ struct NewShopResponse : Codable {
     let storeIdx: Int
     let storeImage: String
     let storeName : String
-//    let storeAddress: String
-//    let storeDescription : String
     let category : String
-    let storeScore : Int
+    let storeScore : Float
 
 }
