@@ -10,8 +10,19 @@ import UIKit
 class WriteReviewViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textField: UITextView!
-    
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var testImage: UIImageView!
+    
+    
+//    let stringToNum = self().countLabel.text
+//    let dd = Int(stringToNum)
+    
+    lazy var stringToNum = UInt(label.text ?? "")
+    
+    var writeRebornData:[postReviewReqResultModel]!
+    
+    var Number = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +36,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
         self.textField.delegate = self
         self.textField.textContainer.lineFragmentPadding = 8
         self.textField.layer.cornerRadius = 8
+
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -32,8 +44,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
         guard let stringRange = Range(range, in: currentText) else {return false }
         
         let changedText = currentText.replacingCharacters(in: stringRange, with: text)
-        countLabel.text = "\(changedText.count)/500"
-        
+        countLabel.text! = "\(changedText.count)/500"
         return true
     }
     
@@ -54,4 +65,19 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
                     }
                     self.label?.text = String(Int(floatValue))
                 }
+    
+    @IBAction func addReviewButton(_ sender: Any) {
+        print("순수 label 값은 \(label!)")
+        print("형변환한 label 값은 \(stringToNum!)")
+        
+        let parmeterData = postReviewReqModel(userIdx: 1, rebornIdx: 1, reviewScore: stringToNum!, reviewComment: textField.text ?? "")
+        let imageData = testImage
+        
+        print(parmeterData)
+        print(imageData as Any)
+        
+        APIMyRebornHandlerPost.instance.SendingPostReborn(parameters: parmeterData) { result in self.writeRebornData = result
+        }
+        
     }
+}

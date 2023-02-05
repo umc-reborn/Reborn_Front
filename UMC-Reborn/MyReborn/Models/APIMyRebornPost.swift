@@ -8,32 +8,35 @@
 import Foundation
 import Alamofire
 
-struct postReviewReq:Encodable {
+struct postReviewReqModel:Codable {
     var userIdx:Int
-    var rebornIdx:String
-    var reviewScore:String
+    var rebornIdx:Int
+    var reviewScore:UInt
     var reviewComment:String
-    
+}
+
+struct postReviewImageModel:Codable {
+    var images:String
 }
 
 struct postReviewReqResultModel: Codable {
     var isSuccess:Bool
     var code:Int
     var message:String
-    var result:RebornResult
+    var result:postReviewReqResult
 }
 
 struct postReviewReqResult: Codable {
-    var rebornIdx:Int
+    var reviewIdx:Int
 }
 
 class APIMyRebornHandlerPost {
     static let instance = APIMyRebornHandlerPost()
-    
-    func SendingPostReborn(parameters: RebornModel, handler: @escaping (_ result: [postReviewReqResultModel])->(Void)) {
+    //
+    func SendingPostReborn(parameters: postReviewReqModel, handler: @escaping (_ result: [postReviewReqResultModel])->(Void)) {
         let url = "http://www.rebornapp.shop/review"
-        let headers:HTTPHeaders = [
-            "content-type": "application/json"
+        let headers: HTTPHeaders = [
+            "content-type": "application/json",
         ]
         
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).response { responce in
@@ -53,4 +56,35 @@ class APIMyRebornHandlerPost {
             }
         }
     }
+    //
+    func uploadImage(_ photo: UIImage) {
+        let url = "http://www.rebornapp.shop/review"
+        let headers: HTTPHeaders = [
+            "content-type": "image/png"
+        ]
+        
+        AF.upload(multipartFormData: { (multipart) in
+                        if let imageData = photo.jpegData(compressionQuality: 1) {
+                            multipart.append(imageData, withName: "photo", fileName: "photo.png", mimeType: "image/png")
+                            //이미지 데이터를 POST할 데이터에 덧붙임
+                        }
+                    }, to: url    //전달할 url
+                    ,method: .post        //전달 방식
+                    ,headers: headers).responseJSON(completionHandler: { (response) in    //헤더와 응답 처리
+                        print(response)
+                        
+                        if let err = response.error{    //응답 에러
+                            print(err)
+                            return
+                        }
+                        print("success")        //응답 성공
+                        
+                        let json = response.data
+                        
+                        if (json != nil){
+                            print(json)
+                        }
+                    })
+    }
+    //
 }
