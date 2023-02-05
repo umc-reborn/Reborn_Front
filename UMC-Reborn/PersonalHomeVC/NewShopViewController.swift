@@ -19,34 +19,24 @@ class NewShopViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         collectionView.backgroundColor = .clear
-        getShopList()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        getShopList()
-    }
-    
-    func getShopList() {
-        NewShopService.shared.getMiracle {
-                    result in
+        
+        NewShopService.shared.getNewShop{ result in
                     switch result {
-                    case .success(let data):
-                        guard let twittList = data as? [NewShopResponse] else {return}
-                        self.newDatas = twittList
-                        self.collectionView.reloadData()
-                        print("성공")
-                    case .requestErr:
-                        print("requestErr")
-                    case .pathErr:
-                        print("pathErr")
-                    case .serverErr:
-                        print("serverErr")
-                    case .networkFail:
-                        print("networkFail")
+                    case .success(let response):
+                        dump(response)
+                        print("----여기문제---")
+                        guard let response = response as? NewShopModel else {
+                            print("오류입니다")
+                            break
+                        }
+                        self.newDatas = response.result
+                    
+                    default:
+                        break
                     }
+                    self.collectionView.reloadData()
                 }
     }
-
-
 }
 
 extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataSource {
