@@ -52,6 +52,7 @@
 		953AEE9C298F4FC2008AAE8A /* NewShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9B298F4FC2008AAE8A /* NewShopService.swift */; };
 		953AEEA0298F9C27008AAE8A /* BestReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */; };
 		9561B7B4298FA05900A4B33B /* BestReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561B7B3298FA05900A4B33B /* BestReviewService.swift */; };
+		9561B7B629916E7B00A4B33B /* PopularShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561B7B529916E7B00A4B33B /* PopularShopModel.swift */; };
 		95C036572988EBDE00599354 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C036562988EBDE00599354 /* SearchModel.swift */; };
 		95C0365A298A7D4400599354 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C03659298A7D4400599354 /* APIConstants.swift */; };
 		95C0365C298A7FEA00599354 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C0365B298A7FEA00599354 /* NetworkResult.swift */; };
@@ -165,6 +166,7 @@
 		953AEE9B298F4FC2008AAE8A /* NewShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopService.swift; sourceTree = "<group>"; };
 		953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewModel.swift; sourceTree = "<group>"; };
 		9561B7B3298FA05900A4B33B /* BestReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewService.swift; sourceTree = "<group>"; };
+		9561B7B529916E7B00A4B33B /* PopularShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopModel.swift; sourceTree = "<group>"; };
 		95C036562988EBDE00599354 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		95C03659298A7D4400599354 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		95C0365B298A7FEA00599354 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			children = (
 				953AEE95298F3C1D008AAE8A /* NewShopModel.swift */,
 				953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */,
+				9561B7B529916E7B00A4B33B /* PopularShopModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */,
 				C7B8BCDF298423FC00FE3C0A /* PwErrorViewController.swift in Sources */,
 				0B94772029899E4400B5829A /* FindIdViewController.swift in Sources */,
+				9561B7B629916E7B00A4B33B /* PopularShopModel.swift in Sources */,
 				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
 				C7889DFC297C23050008E99F /* StoreReviewViewController.swift in Sources */,
 				0B9477262989A86200B5829A /* FirstViewController.swift in Sources */,

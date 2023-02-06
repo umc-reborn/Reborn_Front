@@ -1,21 +1,22 @@
 //
-//  BestReviewService.swift
+//  PopularShopService.swift
 //  UMC-Reborn
 //
-//  Created by nayeon  on 2023/02/05.
+//  Created by nayeon  on 2023/02/07.
 //
 
 import Foundation
 import Alamofire
 
-class BestReviewService {
+class PopularShopService {
     
-    static let shared = BestReviewService()
+    static let shared = PopularShopService()
     private init() {}
     
-    func getBestReview(completion: @escaping (NetworkResult<Any>) -> Void) {
-        let url: String! = APIConstants.reviewURL
+    func getPopularShop(completion: @escaping (NetworkResult<Any>) -> Void) {
+        let url: String! = APIConstants.popularStoreURL
              let header: HTTPHeaders = ["Content-type": "application/json"]
+       
 
              let dataRequest = AF.request(
                 url, method: .get,
@@ -32,13 +33,11 @@ class BestReviewService {
 //                     dump(statusCode)
                      guard let value = response.value else { return }
 //                     dump(value)
-                     let networkResult = self.judgeStatus(by: statusCode, value, BestReviewModel.self)
+                     let networkResult = self.judgeStatus(by: statusCode, value, PopularShopModel.self)
                      completion(networkResult)
-//                     print("여기까지")
 
                  case .failure:
                      completion(.networkFail)
-//                     print("여기서")
                  }
              }
          }
@@ -46,8 +45,7 @@ class BestReviewService {
          private func judgeStatus<T:Codable> (by statusCode: Int, _ data: Data, _ type: T.Type) -> NetworkResult<Any> {
              let decoder = JSONDecoder()
              guard let decodedData = try? decoder.decode(type.self, from: data)
-             else { print("여기인가봐")
-                 return .pathErr }
+             else { return .pathErr }
 
              switch statusCode {
              case 200 ..< 300: return .success(decodedData as Any)
