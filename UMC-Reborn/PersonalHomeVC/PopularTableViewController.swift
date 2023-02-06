@@ -7,11 +7,9 @@
 
 import UIKit
 
-class PopularSideDishViewController: UIViewController {
+class PopularTableViewController: UIViewController {
     
     var tabName : String = ""
-    var shopList: [String] = ["베이커리","어쩌구","저쩌구"]
-    var locationList: [String] = ["연남동","홍제동","연희동"]
     var popularshopDatas: [PopularShopResponse] = []
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var categoryListTableView: UITableView!
@@ -94,7 +92,7 @@ class PopularSideDishViewController: UIViewController {
 }
 
 // MARK: - Extensions
-extension PopularSideDishViewController: UITableViewDelegate, UITableViewDataSource {
+extension PopularTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return popularshopDatas.count
     }
@@ -103,12 +101,10 @@ extension PopularSideDishViewController: UITableViewDelegate, UITableViewDataSou
         
         let cell: CategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PopularListCell", for: indexPath) as! CategoryTableViewCell
         
-//        cell.shopnameLabel.text = shopList[indexPath.row]
-//        cell.locationLabel.text = locationList[indexPath.row]
-        
         let popularshopData = popularshopDatas[indexPath.row]
         cell.shopnameLabel.text = popularshopData.storeName
         cell.locationLabel.text = popularshopData.storeAddress
+        cell.shopScore.text = String(popularshopData.storeScore)
         
         return cell
     }

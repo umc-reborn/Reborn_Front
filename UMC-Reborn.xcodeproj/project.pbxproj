@@ -46,8 +46,7 @@
 		952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */; };
 		952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */; };
 		952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */; };
-		952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */; };
-		952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */; };
+		952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */; };
 		953AEE96298F3C1D008AAE8A /* NewShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE95298F3C1D008AAE8A /* NewShopModel.swift */; };
 		953AEE9C298F4FC2008AAE8A /* NewShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9B298F4FC2008AAE8A /* NewShopService.swift */; };
 		953AEEA0298F9C27008AAE8A /* BestReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */; };
@@ -160,8 +159,7 @@
 		952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewViewController.swift; sourceTree = "<group>"; };
 		952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopViewController.swift; sourceTree = "<group>"; };
 		952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopViewController.swift; sourceTree = "<group>"; };
-		952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSideDishViewController.swift; sourceTree = "<group>"; };
-		952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCafeViewController.swift; sourceTree = "<group>"; };
+		952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewController.swift; sourceTree = "<group>"; };
 		953AEE95298F3C1D008AAE8A /* NewShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopModel.swift; sourceTree = "<group>"; };
 		953AEE9B298F4FC2008AAE8A /* NewShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopService.swift; sourceTree = "<group>"; };
 		953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewModel.swift; sourceTree = "<group>"; };
@@ -306,8 +304,7 @@
 				95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */,
 				95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */,
 				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
-				952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */,
-				952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */,
+				952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */,
 				952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */,
 				95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */,
 				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
@@ -650,7 +647,6 @@
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
 				C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */,
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
-				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
 				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
 				C71987552986D447000C87EB /* JjimViewController.swift in Sources */,
 				95148B3D298256FF004A1A57 /* SearchResultTableViewCell.swift in Sources */,
@@ -672,7 +668,7 @@
 				C70D3D512980F1CF00CABA91 /* SecondTabViewController.swift in Sources */,
 				C70D3D652982309D00CABA91 /* ThirdMainTableViewCell.swift in Sources */,
 				C71987592986DBCA000C87EB /* APIRebornGet.swift in Sources */,
-				952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */,
+				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
 				0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */,
 				C70D3D632982308D00CABA91 /* SecondMainTableViewCell.swift in Sources */,
