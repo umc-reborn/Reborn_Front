@@ -227,9 +227,11 @@
                     <size key="freeformSize" width="390" height="2300"/>
                     <connections>
                         <outlet property="backgroundView" destination="S4f-8F-h0K" id="kFE-1f-fJL"/>
+                        <outlet property="contentView" destination="9c6-Zh-JFO" id="ahB-Bl-BRI"/>
                         <outlet property="defaultLabel" destination="uoR-ge-r04" id="MK3-9o-rfe"/>
                         <outlet property="defaultSubLabel" destination="Ihd-YQ-ZrH" id="Dnf-9D-7jS"/>
                         <outlet property="nickNameLabel" destination="AKY-Bk-TGS" id="pcO-kR-TgW"/>
+                        <outlet property="scrollView" destination="pix-S4-1mx" id="oX0-nb-YEJ"/>
                         <outlet property="umcimg" destination="Yhw-xs-uH9" id="qxv-wD-9B5"/>
                     </connections>
                 </viewController>
