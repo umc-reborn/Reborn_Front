@@ -12,6 +12,8 @@
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */; };
 		2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */; };
+		2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD22991559700D3C791 /* APIHandler.swift */; };
+		2F48EBD52991592400D3C791 /* APIManageReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD42991592400D3C791 /* APIManageReview.swift */; };
 		2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */; };
 		2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */; };
 		2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7010EF297586C100E09DD9 /* MyReborn.storyboard */; };
@@ -101,6 +103,8 @@
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
 		2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		2F48EBD22991559700D3C791 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		2F48EBD42991592400D3C791 /* APIManageReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManageReview.swift; sourceTree = "<group>"; };
 		2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornViewController.swift; sourceTree = "<group>"; };
 		2F7010EF297586C100E09DD9 /* MyReborn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReborn.storyboard; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				2FF28CE7298D065D008B7D8E /* APIMyRebornPost.swift */,
+				2F48EBD22991559700D3C791 /* APIHandler.swift */,
+				2F48EBD42991592400D3C791 /* APIManageReview.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -525,6 +531,7 @@
 				C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */,
 				C75E99072984E6F6003D40B4 /* CodeViewController.swift in Sources */,
 				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,
+				2F48EBD52991592400D3C791 /* APIManageReview.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C70D3D572981890E00CABA91 /* SecondTabCollectionViewCell.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
@@ -535,6 +542,7 @@
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
 				C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */,
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
+				2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */,
 				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
 				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
 				C71987552986D447000C87EB /* JjimViewController.swift in Sources */,

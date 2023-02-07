@@ -23,6 +23,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
     
     var Number = 0
     
+    var imageDatas = [1, 2]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
         self.textField.layer.cornerRadius = 8
 
     }
+    
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textField.text ?? ""
@@ -71,13 +73,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
         print("형변환한 label 값은 \(stringToNum!)")
         
         let parmeterData = postReviewReqModel(userIdx: 1, rebornIdx: 1, reviewScore: stringToNum!, reviewComment: textField.text ?? "")
-        let imageData = testImage
         
         print(parmeterData)
-        print(imageData as Any)
-        
-        APIMyRebornHandlerPost.instance.SendingPostReborn(parameters: parmeterData) { result in self.writeRebornData = result
-        }
-        
     }
 }
