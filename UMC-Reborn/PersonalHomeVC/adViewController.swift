@@ -12,7 +12,7 @@ class adViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var imageList: [String] = ["eventAD","ad_2","ad_1","ad_2"]
+    var imageList: [String] = ["eventAD","ad_2","eventAD","ad_2"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

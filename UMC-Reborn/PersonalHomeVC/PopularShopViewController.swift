@@ -21,13 +21,18 @@ class PopularShopViewController: TabmanViewController {
     
     // MARK: - Function
     private func setupTabMan(){
-        let firstVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
-        let secondVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
-        let thirdVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
-        let fourthVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
-        let fifthVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularSideDishViewController
+        let firstVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularTableViewController
+        firstVC.tabName = "CAFE"
+        let secondVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularTableViewController
+        secondVC.tabName = "SIDEDISH"
+        let thirdVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularTableViewController
+        thirdVC.tabName = "FASHION"
+        let fourthVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularTableViewController
+        fourthVC.tabName = "LIFE"
+        let fifthVC = storyboard?.instantiateViewController(withIdentifier: "SideDishVC") as! PopularTableViewController
+        fifthVC.tabName = "ETC"
 
-        
+       
         viewControllers.append(firstVC)
         viewControllers.append(secondVC)
         viewControllers.append(thirdVC)
