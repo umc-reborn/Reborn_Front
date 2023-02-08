@@ -65,7 +65,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         nextbuttonEmail.setTitleColor(UIColor.mybrown, for: .normal)//버튼 텍스트 색상 설정
         nextbuttonEmail.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_bold", size: 16) //폰트 및 사이즈 설정
         
-        EmailTextField.addLeftPadding()
+//        EmailTextField.addLeftPadding()
         EmailTextField.placeholder = "이메일을 입력해 주세요"
         EmailTextField.backgroundColor = .white
         EmailTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
@@ -76,7 +76,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         EmailTextField.layer.cornerRadius = 4.0
         EmailTextField.clearButtonMode = .always // 한번에 지우기
         
-        codeTextField.addLeftPadding()
+//        codeTextField.addLeftPadding()
         codeTextField.placeholder = "인증번호를 입력해주세요"
         codeTextField.backgroundColor = .white
         codeTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)

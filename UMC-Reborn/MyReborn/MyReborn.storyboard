@@ -243,7 +243,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="w3B-76-O9L" kind="push" id="6VR-TH-9Ra"/>
+                                            <outlet property="category" destination="u6W-fR-cku" id="fVL-dY-cdS"/>
+                                            <outlet property="date" destination="YjY-7E-Bpa" id="PDs-h8-Kdi"/>
+                                            <outlet property="status" destination="ybs-BO-8H7" id="j6H-G6-zTj"/>
+                                            <outlet property="storeImage" destination="XRt-rv-7OK" id="6JL-V6-PKh"/>
+                                            <outlet property="storeName" destination="f61-vG-DQu" id="IkB-0H-nJV"/>
+                                            <outlet property="storeScore" destination="eV7-EI-tSI" id="rh2-5e-IlF"/>
+                                            <segue destination="iVA-25-aJ2" kind="push" id="wtM-Zp-Kef"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1045,7 +1051,7 @@
             <objects>
                 <viewController id="w3B-76-O9L" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRE-rp-Z5T">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/31 (토)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tON-CH-t8P">
@@ -1191,12 +1197,12 @@
             </objects>
             <point key="canvasLocation" x="4491" y="1285"/>
         </scene>
-        <!--View Controller-->
+        <!--Reborn History Detail View Controller-->
         <scene sceneID="Jjw-HS-ab9">
             <objects>
-                <viewController id="iVA-25-aJ2" sceneMemberID="viewController">
+                <viewController id="iVA-25-aJ2" customClass="RebornHistoryDetailViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bVU-y2-fkG">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/31 (토)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdW-ZW-074">
@@ -1258,8 +1264,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="code_frame" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-nr-uLl">
-                                        <rect key="frame" x="26" y="298" width="298" height="58"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="code_frame" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-nr-uLl">
+                                        <rect key="frame" x="24.666666666666657" y="297.66666666666663" width="301" height="58.666666666666686"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23568" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jju-Mn-Y5d">
                                         <rect key="frame" x="111" y="302.66666666666663" width="129" height="48"/>
@@ -1267,8 +1273,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KfF-dw-0ri">
-                                        <rect key="frame" x="56" y="385" width="238" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KfF-dw-0ri">
+                                        <rect key="frame" x="56" y="380.33333333333326" width="238" height="32"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="QAn-mK-nYd">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -1301,7 +1307,9 @@
                                     <constraint firstItem="XMs-6e-Fuc" firstAttribute="centerX" secondItem="s2c-b6-kXE" secondAttribute="centerX" id="DMD-bG-qwD"/>
                                     <constraint firstItem="5A3-v2-qrJ" firstAttribute="leading" secondItem="s2c-b6-kXE" secondAttribute="leading" constant="26" id="KBx-lr-7XC"/>
                                     <constraint firstItem="Uuz-7M-jgH" firstAttribute="leading" secondItem="s2c-b6-kXE" secondAttribute="leading" constant="26" id="L1t-Hn-Zx1"/>
+                                    <constraint firstItem="lvc-nr-uLl" firstAttribute="top" secondItem="8Xn-bo-zgw" secondAttribute="bottom" constant="16" id="NeR-i1-OWB"/>
                                     <constraint firstItem="jju-Mn-Y5d" firstAttribute="top" secondItem="8Xn-bo-zgw" secondAttribute="bottom" constant="21" id="Nmj-TM-P9H"/>
+                                    <constraint firstItem="lvc-nr-uLl" firstAttribute="centerX" secondItem="s2c-b6-kXE" secondAttribute="centerX" id="Nt9-hR-V61"/>
                                     <constraint firstItem="FeQ-LP-Iau" firstAttribute="top" secondItem="Uuz-7M-jgH" secondAttribute="bottom" constant="8" id="Tca-LZ-HjZ"/>
                                     <constraint firstItem="jju-Mn-Y5d" firstAttribute="leading" secondItem="s2c-b6-kXE" secondAttribute="leading" constant="111" id="YXD-fH-faf"/>
                                     <constraint firstAttribute="height" constant="480" id="ZJS-XL-vco"/>
@@ -1333,6 +1341,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwX-PL-Rzi">
+                                <rect key="frame" x="321" y="115" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="상태" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adz-LX-5nj">
+                                <rect key="frame" x="226" y="115" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vgo-gs-O7V"/>
                         <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1355,10 +1377,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yt9-hs-htY"/>
+                    <connections>
+                        <outlet property="changeCode" destination="jju-Mn-Y5d" id="x8A-Zu-iyl"/>
+                        <outlet property="date" destination="gdW-ZW-074" id="rm6-D8-PJn"/>
+                        <outlet property="productAlert" destination="5A3-v2-qrJ" id="0pF-zm-MB2"/>
+                        <outlet property="productDetail" destination="FeQ-LP-Iau" id="WMQ-rn-rjz"/>
+                        <outlet property="productImg" destination="E8H-V8-6E7" id="a39-lp-Hal"/>
+                        <outlet property="productName" destination="Uuz-7M-jgH" id="6yN-hX-nnw"/>
+                        <outlet property="status" destination="Adz-LX-5nj" id="NCj-uG-Den"/>
+                        <outlet property="storeAddr" destination="wwX-PL-Rzi" id="CZD-AA-Gp5"/>
+                        <outlet property="storeCategory" destination="sZL-JI-JIB" id="90s-fc-tOq"/>
+                        <outlet property="storeName" destination="kb6-PJ-kaU" id="RT2-6H-H2t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5I-WC-qIL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2166" y="1285"/>
+            <point key="canvasLocation" x="3834" y="1973"/>
         </scene>
     </scenes>
     <resources>
@@ -1377,7 +1411,7 @@
             <color red="1" green="0.98431372549019602" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
-            <color red="1" green="0.30196078431372547" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.30199998617172241" blue="0.082000002264976501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

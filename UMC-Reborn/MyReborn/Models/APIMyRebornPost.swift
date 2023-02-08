@@ -30,7 +30,7 @@ class APIMyRebornHandlerPost {
     static let instance = APIMyRebornHandlerPost()
     //
     func SendingPostReborn(parameters: postReviewReqModel, handler: @escaping (_ result: [postReviewReqResultModel])->(Void)) {
-        let url = "http://www.rebornapp.shop/review"
+        let url = "http://www.rebornapp.shop/review" 
         let headers: HTTPHeaders = [
             "content-type": "application/json",
         ]
