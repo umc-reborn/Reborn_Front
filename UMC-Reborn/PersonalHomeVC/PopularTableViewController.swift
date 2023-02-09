@@ -29,15 +29,11 @@ class PopularTableViewController: UIViewController {
         var url = APIConstants.baseURL + "/store/popular?category=\(category)"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        // 문자열 타입의 URL을 구조체 타입의 URL로 변환
         guard let url = URL(string: encodedStr) else { print("err"); return }
 
-        // URLRequest 구조체 사용 (GET 이외의 요청 가능)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
 
-        // URL Session 생성 (서버랑 통신하는 객체 ~= 브라우저)
-        // dataTask -> 비동기적으로 처리됨
         URLSession.shared.dataTask(with: request) { [self] data, response, error in
             // error 발생 시 리턴
             if error != nil {
@@ -45,14 +41,14 @@ class PopularTableViewController: UIViewController {
                 return
             }
 
-            // 응답코드에 따른 처리
+   
             guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
             response.statusCode else {
                 print("Error: HTTP request failed")
                 return
             }
 
-            // 데이터가 존재하면 출력
+        
             if let safeData = data {
                 // Data 타입을 String 타입으로 변환
                 print(String(decoding: safeData, as: UTF8.self))
@@ -105,6 +101,8 @@ extension PopularTableViewController: UITableViewDelegate, UITableViewDataSource
         cell.shopnameLabel.text = popularshopData.storeName
         cell.locationLabel.text = popularshopData.storeAddress
         cell.shopScore.text = String(popularshopData.storeScore)
+        let url = URL(string: popularshopData.storeImage)
+        cell.shopImg.load(url: url!)
         
         return cell
     }

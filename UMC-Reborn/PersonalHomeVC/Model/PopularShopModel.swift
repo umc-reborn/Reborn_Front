@@ -20,5 +20,6 @@ struct PopularShopResponse : Codable {
     let storeName : String
     let category : String
     let storeScore : Float
+    let storeImage : String
 
 }
