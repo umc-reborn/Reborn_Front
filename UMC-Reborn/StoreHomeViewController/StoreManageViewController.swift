@@ -9,6 +9,10 @@ import UIKit
 
 class StoreManageViewController: UIViewController, SampleProtocol3 {
     
+    let storeManage = UserDefaults.standard.integer(forKey: "userIdx")
+    
+    var storeText: Int = 2
+    
     func categorySend(data: String) {
         storeCategory.text = data
         storeCategory.sizeToFit()
@@ -85,7 +89,7 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
     
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/9"
+        let url = APIConstants.baseURL + "/store/\(String(storeManage))"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -144,4 +148,13 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
         super.viewWillAppear(animated)
             self.navigationItem.title="가게 관리"
     }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else {
+                    return
+                }
+        
+        self.present(svc1, animated: true)
+    }
+    
 }

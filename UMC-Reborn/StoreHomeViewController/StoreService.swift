@@ -10,7 +10,7 @@ import Foundation
 struct StoreService {
     static let shared = StoreService()
     
-    let urlString = APIConstants.baseURL + "/store/9"
+    let urlString = APIConstants.baseURL + "/store/{storeIdx}"
     
     func StoreData(completion: @escaping (Result<Any, Error>) -> ()) {
         
