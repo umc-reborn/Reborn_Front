@@ -42,6 +42,9 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         case 2: if let vc = storyboard?.instantiateViewController(withIdentifier: "reviewManageVC") as? ReviewManageViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        case 3: if let vc = storyboard?.instantiateViewController(withIdentifier: "changePwdVC") as? ChangePasswordViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         default:
             
             return
@@ -57,6 +60,9 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         MyRebornTableView.dataSource = self
         
         self.MyRebornTableView.rowHeight = 60;
+        self.navigationItem.title = "마이리본"
+        self.navigationItem.backButtonDisplayMode = .minimal
+        self.navigationController?.navigationBar.tintColor = .black
 
     }
     
@@ -79,5 +85,5 @@ struct MyRebornMenuDataModel {
 }
 
 // 메뉴 TableViewCell 데이터
-let MyRebornMenu: [MyRebornMenuDataModel] = [MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "my"), MyRebornMenuLabel: "회원정보수정", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "present"), MyRebornMenuLabel: "리본 히스토리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "write"), MyRebornMenuLabel: "리뷰 관리", MyRebornNextIcon: UIImage(named: "arrow")),]
+let MyRebornMenu: [MyRebornMenuDataModel] = [MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "my"), MyRebornMenuLabel: "회원정보수정", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "present"), MyRebornMenuLabel: "리본 히스토리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "write"), MyRebornMenuLabel: "리뷰 관리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "lock_icon"), MyRebornMenuLabel: "비밀번호 변경", MyRebornNextIcon: UIImage(named: "arrow")),]
 
