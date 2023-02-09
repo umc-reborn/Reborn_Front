@@ -9,6 +9,8 @@ import UIKit
 
 class ModalStoreViewController: UIViewController {
     
+    let modalStore = UserDefaults.standard.integer(forKey: "userIdx")
+    
     var rebornData:JjimresultModel!
     
     @IBOutlet weak var modalButton: UIButton!
@@ -85,7 +87,7 @@ class ModalStoreViewController: UIViewController {
     
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/9"
+        let url = APIConstants.baseURL + "/store/\(String(modalStore))"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }

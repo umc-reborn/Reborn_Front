@@ -9,6 +9,9 @@ import UIKit
 
 class FirstMainViewController: UIViewController {
     
+    let firstMain = UserDefaults.standard.integer(forKey: "userIdx")
+    
+    var storemainText: Int = 0
 //    let StoreArray = ["가나다라마바사아", "챱챱챱챱챱스테이크"]
 //    let FoodArray = ["맛있는우유식빵", "쫀득쫀득쫀득도넛"]
 //    let CountArray = ["1", "2"]
@@ -37,7 +40,7 @@ class FirstMainViewController: UIViewController {
     
     func rebornWholeResult() {
         
-        let url = APIConstants.baseURL + "/reborns/store/page/1/status?status="
+        let url = APIConstants.baseURL + "/reborns/store/page/\(String(firstMain))/status?status="
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }

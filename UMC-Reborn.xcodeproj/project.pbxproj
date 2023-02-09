@@ -138,8 +138,8 @@
 		C71987522986CF0D000C87EB /* Personal_Jjim.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71987512986CF0D000C87EB /* Personal_Jjim.storyboard */; };
 		C71987552986D447000C87EB /* JjimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987542986D447000C87EB /* JjimViewController.swift */; };
 		C71987572986D46F000C87EB /* JjimTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987562986D46F000C87EB /* JjimTableViewCell.swift */; };
-		C71987592986DBCA000C87EB /* RebornModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987582986DBCA000C87EB /* RebornModel.swift */; };
 		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
+		C71E517C2995565D00020A96 /* RebornModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71E517B2995565D00020A96 /* RebornModel.swift */; };
 		C7284AA3298D0B8F009A70E7 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA2298D0B8F009A70E7 /* HTTPManager.swift */; };
 		C7284AA5298D23BA009A70E7 /* APIJjimPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */; };
 		C7284AAA298EA703009A70E7 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA9298EA703009A70E7 /* APIConstants.swift */; };
@@ -338,10 +338,8 @@
 		C71987512986CF0D000C87EB /* Personal_Jjim.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal_Jjim.storyboard; sourceTree = "<group>"; };
 		C71987542986D447000C87EB /* JjimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimViewController.swift; sourceTree = "<group>"; };
 		C71987562986D46F000C87EB /* JjimTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimTableViewCell.swift; sourceTree = "<group>"; };
-		C71987582986DBCA000C87EB /* RebornModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornModel.swift; sourceTree = "<group>"; };
-		C71C2D6C29755C28007BA3E0 /* ic_Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_Time.png; path = ../../../../../Downloads/ic_Time.png; sourceTree = "<group>"; };
-		C71987582986DBCA000C87EB /* APIRebornGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornGet.swift; sourceTree = "<group>"; };
 		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
+		C71E517B2995565D00020A96 /* RebornModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RebornModel.swift; path = "../../../../../Reborn_iOS 2/Reborn_Front/UMC-Reborn/StoreHomeViewController/Models/RebornModel.swift"; sourceTree = "<group>"; };
 		C7284AA2298D0B8F009A70E7 /* HTTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIJjimPost.swift; sourceTree = "<group>"; };
 		C7284AA9298EA703009A70E7 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
@@ -751,8 +749,8 @@
 				C70D3D6929826F1D00CABA91 /* APIRebornPost.swift */,
 				C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */,
 				C7284AAF298FFB25009A70E7 /* StoreModel.swift */,
-				C71987582986DBCA000C87EB /* RebornModel.swift */,
 				C7EF98252990D83B00480DD9 /* RebornStatusModel.swift */,
+				C71E517B2995565D00020A96 /* RebornModel.swift */,
 				C7EF98292990DC0100480DD9 /* ReviewModel.swift */,
 				C7EF982D299107C000480DD9 /* JjimModel.swift */,
 				C739AC12298A9D980016B840 /* APIRebornPatch.swift */,
@@ -980,6 +978,7 @@
 				2FF28CE8298D065D008B7D8E /* APIMyRebornPost.swift in Sources */,
 				95148B3D298256FF004A1A57 /* SearchResultTableViewCell.swift in Sources */,
 				C7284AA3298D0B8F009A70E7 /* HTTPManager.swift in Sources */,
+				C71E517C2995565D00020A96 /* RebornModel.swift in Sources */,
 				95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */,
 				C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */,
 				0B94771829899DDE00B5829A /* HelloViewController.swift in Sources */,
@@ -1003,9 +1002,7 @@
 				C70D3D652982309D00CABA91 /* ThirdMainTableViewCell.swift in Sources */,
 				C7284AB0298FFB25009A70E7 /* StoreModel.swift in Sources */,
 				C7EF98262990D83B00480DD9 /* RebornStatusModel.swift in Sources */,
-				C71987592986DBCA000C87EB /* RebornModel.swift in Sources */,
-				952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */,
-				C71987592986DBCA000C87EB /* APIRebornGet.swift in Sources */,
+				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
 				0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */,
@@ -1234,7 +1231,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yeonsu/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1279,7 +1276,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yeonsu/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

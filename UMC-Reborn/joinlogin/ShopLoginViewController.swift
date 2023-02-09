@@ -141,12 +141,12 @@ class ShopLoginViewController: UIViewController, UITextFieldDelegate, UITextView
         let something5 = trainDataa?.result
         guard let text33 = something5?.storeIdx else {return}
         let something4 = UIStoryboard.init(name: "StoreTab", bundle: nil)
-        guard let rvc1 = something4.instantiateViewController(withIdentifier: "StoreMainViewController") as? StoreMainViewController else {return}
+        guard let rvc1 = something4.instantiateViewController(withIdentifier: "StoreTabBarController") as? StoreTabBarController else {return}
         
         rvc1.storeText = text33
         
         // 화면이동
-        navigationController?.pushViewController(rvc1, animated: true)
+        self.present(rvc1, animated: true)
     }
     
 }

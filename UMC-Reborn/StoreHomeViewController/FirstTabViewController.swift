@@ -9,6 +9,8 @@ import UIKit
 
 class FirstTabViewController: UIViewController {
     
+    let firstTab = UserDefaults.standard.integer(forKey: "userIdx")
+    
     var keyword : String = ""
     
     var rebornDatas: [RebornListModel] = []
@@ -36,7 +38,7 @@ class FirstTabViewController: UIViewController {
         
         let text = keyword
         
-        let url = APIConstants.baseURL + "/reborns/store/1/status?status="
+        let url = APIConstants.baseURL + "/reborns/store/\(String(firstTab))/status?status="
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }

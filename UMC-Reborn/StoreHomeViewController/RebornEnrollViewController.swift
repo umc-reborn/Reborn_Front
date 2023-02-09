@@ -9,6 +9,10 @@ import UIKit
 
 class RebornEnrollViewController: UIViewController {
     
+    let rebornEnroll = UserDefaults.standard.integer(forKey: "userIdx")
+    
+    var storeText2: Int = 0
+    
     var rebornDatas: [RebornListModel] = []
     
     @IBOutlet weak var EnrollTableView: UITableView!
@@ -32,18 +36,12 @@ class RebornEnrollViewController: UIViewController {
         EnrollTableView.layer.shadowRadius = 10 // any value you want
         EnrollTableView.layer.shadowOffset = .init(width: 5, height: 10)
         
-        self.navigationController?.navigationBar.topItem?.title = ""
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold)
-        ]
-        
         rebornResult()
     }
     
     func rebornResult() {
         
-        let url = APIConstants.baseURL + "/reborns/store/2/status?status="
+        let url = APIConstants.baseURL + "/reborns/store/\(String(rebornEnroll))/status?status="
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -80,5 +78,10 @@ class RebornEnrollViewController: UIViewController {
                 }
             }
         }.resume()
+    }
+    
+
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

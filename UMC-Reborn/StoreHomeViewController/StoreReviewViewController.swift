@@ -15,6 +15,8 @@ var Rdata = [
 
 class StoreReviewViewController: UIViewController {
     
+    let storeReview = UserDefaults.standard.integer(forKey: "userIdx")
+    
     var reviewDatas: [ReviewListModel] = []
 
     @IBOutlet weak var StoreReviewTableView: UITableView!
@@ -42,7 +44,7 @@ class StoreReviewViewController: UIViewController {
     
     func reviewResult() {
         
-        let url = APIConstants.baseURL + "/review/store/1/buz"
+        let url = APIConstants.baseURL + "/review/store/\(String(storeReview))/buz"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }

@@ -9,9 +9,13 @@ import UIKit
 
 class ThirdMainViewController: UIViewController {
     
+    let thirdMain = UserDefaults.standard.integer(forKey: "userIdx")
+    
 //    let StoreArray = [["가나다라마바사아"], ["챱챱챱챱챱스테이크"]]
 //    let FoodArray = [["맛있는우유식빵"], ["쫀득쫀득쫀득도넛"]]
 //    let CountArray = [["1"], ["2"]]
+    
+    var storethirdText: Int = 0
     
     var rebornCompleteDatas: [RebornStatusListModel] = []
     
@@ -36,7 +40,7 @@ class ThirdMainViewController: UIViewController {
     
     func rebornCompleteResult() {
         
-        let url = APIConstants.baseURL + "/reborns/store/page/1/status?status=COMPLETE"
+        let url = APIConstants.baseURL + "/reborns/store/page/\(String(thirdMain))/status?status=COMPLETE"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
