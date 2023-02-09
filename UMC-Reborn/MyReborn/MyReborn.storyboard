@@ -293,6 +293,7 @@
                     <connections>
                         <outlet property="RebornHistoryTableView" destination="BwJ-7R-tZz" id="Rsd-AN-TFF"/>
                         <outlet property="tableView" destination="BwJ-7R-tZz" id="mKC-Rd-MZR"/>
+                        <outlet property="totalNum" destination="4aC-XV-xxG" id="8o1-fm-bUZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPS-ln-fWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

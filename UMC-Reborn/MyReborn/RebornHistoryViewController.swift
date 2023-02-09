@@ -10,10 +10,14 @@ import UIKit
 class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var RebornHistoryTableView: UITableView!
+    @IBOutlet weak var totalNum: UILabel!
     
     var historyDatas: [RebornHistoryResponse] = []
     
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.totalNum.text = "\(historyDatas.count)"
         return historyDatas.count
     }
     
@@ -62,7 +66,5 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
                     self.RebornHistoryTableView.reloadData()
                 }
 //        print(historyDatas)
-        
     }
-    
 }
