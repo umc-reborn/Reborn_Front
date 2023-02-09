@@ -9,7 +9,7 @@ import UIKit
 
 class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol2{
     
-    var rebornData:[RebornresultModel]!
+    var rebornData: RebornresultModel!
     
     func dataSend(data: String) {
         timeLabel.text = data
@@ -31,7 +31,12 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var TimeSwitch: UISwitch!
     @IBOutlet weak var countTextfield: UITextField!
-    var Number = 00
+    
+    @IBOutlet weak var imageData: UIImageView!
+    
+    
+    
+    var Number = 0
     
     let imagePickerController = UIImagePickerController()
     let alertController = UIAlertController(title: "가게 대표 사진 설정", message: "", preferredStyle: .actionSheet)
@@ -193,12 +198,34 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     
     
     @IBAction func RebornPostButton(_ sender: Any) {
-        let parmeterData = RebornModel(storeIdx: 1, productName: nameTextfield.text ?? "", productGuide: eatTextfield.text ?? "", productComment: introduceTextView.text ?? "", productImg: "", productLimitTime: timeLabel2.text ?? "", productCnt: Number)
+    
+        let img = AddImageView.image?.jpegData(compressionQuality: 1)
+        let imageBase64String = img?.base64EncodedString()
+        let newImageData = Data(base64Encoded: imageBase64String!)
+        if let newImageData = newImageData {
+            imageData.image = UIImage(data: newImageData)
+        }
+        let parmeterData = RebornModel(storeIdx: 1, productName: nameTextfield.text ?? "", productGuide: eatTextfield.text ?? "", productComment: introduceTextView.text ?? "", productImg: imageBase64String ?? "", productLimitTime: timeLabel2.text ?? "", productCnt: Number)
         
         APIHandlerPost.instance.SendingPostReborn(parameters: parmeterData) { result in self.rebornData = result
         }
     }
     
+}
+
+extension UIImage {
+    var base64: String? {
+        self.jpegData(compressionQuality: 1)?.base64EncodedString()
+    }
+}
+
+extension String {
+    var imageFromBase64: UIImage? {
+        guard let imageData = Data(base64Encoded: self, options: .ignoreUnknownCharacters) else {
+            return nil
+        }
+        return UIImage(data: imageData)
+    }
 }
 
 extension AddRebornViewController: UIPopoverPresentationControllerDelegate {

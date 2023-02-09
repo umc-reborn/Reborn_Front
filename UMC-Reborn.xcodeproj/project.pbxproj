@@ -138,8 +138,15 @@
 		C71987522986CF0D000C87EB /* Personal_Jjim.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71987512986CF0D000C87EB /* Personal_Jjim.storyboard */; };
 		C71987552986D447000C87EB /* JjimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987542986D447000C87EB /* JjimViewController.swift */; };
 		C71987572986D46F000C87EB /* JjimTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987562986D46F000C87EB /* JjimTableViewCell.swift */; };
-		C71987592986DBCA000C87EB /* APIRebornGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987582986DBCA000C87EB /* APIRebornGet.swift */; };
+		C71987592986DBCA000C87EB /* RebornModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987582986DBCA000C87EB /* RebornModel.swift */; };
 		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
+		C7284AA3298D0B8F009A70E7 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA2298D0B8F009A70E7 /* HTTPManager.swift */; };
+		C7284AA5298D23BA009A70E7 /* APIJjimPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */; };
+		C7284AAA298EA703009A70E7 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA9298EA703009A70E7 /* APIConstants.swift */; };
+		C7284AAC298EA726009A70E7 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAB298EA726009A70E7 /* NetworkResult.swift */; };
+		C7284AAE298EAECE009A70E7 /* RebornService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAD298EAECE009A70E7 /* RebornService.swift */; };
+		C7284AB0298FFB25009A70E7 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAF298FFB25009A70E7 /* StoreModel.swift */; };
+		C7284AB2298FFBA1009A70E7 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AB1298FFBA1009A70E7 /* StoreService.swift */; };
 		C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739AC12298A9D980016B840 /* APIRebornPatch.swift */; };
 		C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */; };
 		C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */; };
@@ -162,12 +169,16 @@
 		C7C4FD7E296D315E00040E05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7C4FD7D296D315E00040E05 /* Assets.xcassets */; };
 		C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */; };
 		C7D56FAA2972BC5600A68015 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D56FA92972BC5600A68015 /* PopupViewController.swift */; };
-		C7DA00A329891C740015BA4F /* APIReviewGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA00A229891C740015BA4F /* APIReviewGet.swift */; };
-		C7DA00A5298920A00015BA4F /* APIStoreGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA00A4298920A00015BA4F /* APIStoreGet.swift */; };
 		C7DCE53C29727AA900F44F1D /* EnrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */; };
 		C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */; };
 		C7DD72B629779D090076BFB4 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		C7DD72B729779D090076BFB4 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		C7EF98262990D83B00480DD9 /* RebornStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF98252990D83B00480DD9 /* RebornStatusModel.swift */; };
+		C7EF98282990D8FB00480DD9 /* RebornStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF98272990D8FB00480DD9 /* RebornStatusService.swift */; };
+		C7EF982A2990DC0100480DD9 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF98292990DC0100480DD9 /* ReviewModel.swift */; };
+		C7EF982C2990DD2600480DD9 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF982B2990DD2600480DD9 /* ReviewService.swift */; };
+		C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF982D299107C000480DD9 /* JjimModel.swift */; };
+		C7EF98302991087200480DD9 /* JjimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF982F2991087200480DD9 /* JjimService.swift */; };
 		F54958F376ED96265363C1F8 /* Pods_UMC_Reborn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */; };
 /* End PBXBuildFile section */
 
@@ -327,8 +338,17 @@
 		C71987512986CF0D000C87EB /* Personal_Jjim.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal_Jjim.storyboard; sourceTree = "<group>"; };
 		C71987542986D447000C87EB /* JjimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimViewController.swift; sourceTree = "<group>"; };
 		C71987562986D46F000C87EB /* JjimTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimTableViewCell.swift; sourceTree = "<group>"; };
+		C71987582986DBCA000C87EB /* RebornModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornModel.swift; sourceTree = "<group>"; };
+		C71C2D6C29755C28007BA3E0 /* ic_Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_Time.png; path = ../../../../../Downloads/ic_Time.png; sourceTree = "<group>"; };
 		C71987582986DBCA000C87EB /* APIRebornGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornGet.swift; sourceTree = "<group>"; };
 		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
+		C7284AA2298D0B8F009A70E7 /* HTTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
+		C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIJjimPost.swift; sourceTree = "<group>"; };
+		C7284AA9298EA703009A70E7 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		C7284AAB298EA726009A70E7 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		C7284AAD298EAECE009A70E7 /* RebornService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornService.swift; sourceTree = "<group>"; };
+		C7284AAF298FFB25009A70E7 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
+		C7284AB1298FFBA1009A70E7 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		C739AC12298A9D980016B840 /* APIRebornPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornPatch.swift; sourceTree = "<group>"; };
 		C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreTab.storyboard; sourceTree = "<group>"; };
 		C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarController.swift; sourceTree = "<group>"; };
@@ -353,10 +373,14 @@
 		C7C4FD80296D315E00040E05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7C4FD82296D315E00040E05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7D56FA92972BC5600A68015 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
-		C7DA00A229891C740015BA4F /* APIReviewGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReviewGet.swift; sourceTree = "<group>"; };
-		C7DA00A4298920A00015BA4F /* APIStoreGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStoreGet.swift; sourceTree = "<group>"; };
 		C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollTableViewCell.swift; sourceTree = "<group>"; };
 		C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRebornViewController.swift; sourceTree = "<group>"; };
+		C7EF98252990D83B00480DD9 /* RebornStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornStatusModel.swift; sourceTree = "<group>"; };
+		C7EF98272990D8FB00480DD9 /* RebornStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornStatusService.swift; sourceTree = "<group>"; };
+		C7EF98292990DC0100480DD9 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		C7EF982B2990DD2600480DD9 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
+		C7EF982D299107C000480DD9 /* JjimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimModel.swift; sourceTree = "<group>"; };
+		C7EF982F2991087200480DD9 /* JjimService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimService.swift; sourceTree = "<group>"; };
 		EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UMC_Reborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -617,11 +641,25 @@
 			path = PersonalJjim;
 			sourceTree = "<group>";
 		};
+		C7284AA8298EA6E9009A70E7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C7284AA9298EA703009A70E7 /* APIConstants.swift */,
+				C7284AAB298EA726009A70E7 /* NetworkResult.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		C74FEE1C2971782C00BFC8D0 /* StoreHomeViewController */ = {
 			isa = PBXGroup;
 			children = (
 				C7FA26E4297E9E600054DB29 /* Models */,
 				C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */,
+				C7284AB1298FFBA1009A70E7 /* StoreService.swift */,
+				C7284AAD298EAECE009A70E7 /* RebornService.swift */,
+				C7EF98272990D8FB00480DD9 /* RebornStatusService.swift */,
+				C7EF982B2990DD2600480DD9 /* ReviewService.swift */,
+				C7EF982F2991087200480DD9 /* JjimService.swift */,
 				C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */,
 				C74FEE432971893300BFC8D0 /* RebornEnrollViewController.swift */,
 				C74FEE4529718B7C00BFC8D0 /* AddRebornViewController.swift */,
@@ -679,6 +717,7 @@
 		C7C4FD73296D315B00040E05 /* UMC-Reborn */ = {
 			isa = PBXGroup;
 			children = (
+				C7284AA8298EA6E9009A70E7 /* Network */,
 				95C03658298A7D1300599354 /* Network */,
 				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
 				2F7C0ABB29956D0400BC5F9A /* PersonalTabViewController.swift */,
@@ -710,10 +749,14 @@
 			isa = PBXGroup;
 			children = (
 				C70D3D6929826F1D00CABA91 /* APIRebornPost.swift */,
-				C71987582986DBCA000C87EB /* APIRebornGet.swift */,
-				C7DA00A229891C740015BA4F /* APIReviewGet.swift */,
-				C7DA00A4298920A00015BA4F /* APIStoreGet.swift */,
+				C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */,
+				C7284AAF298FFB25009A70E7 /* StoreModel.swift */,
+				C71987582986DBCA000C87EB /* RebornModel.swift */,
+				C7EF98252990D83B00480DD9 /* RebornStatusModel.swift */,
+				C7EF98292990DC0100480DD9 /* ReviewModel.swift */,
+				C7EF982D299107C000480DD9 /* JjimModel.swift */,
 				C739AC12298A9D980016B840 /* APIRebornPatch.swift */,
+				C7284AA2298D0B8F009A70E7 /* HTTPManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -900,7 +943,6 @@
 				0B94770829899D6400B5829A /* NeighborViewController.swift in Sources */,
 				C70D3D6E2982D89200CABA91 /* ModalStoreViewController.swift in Sources */,
 				95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */,
-				C7DA00A5298920A00015BA4F /* APIStoreGet.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				0B94772429899E6500B5829A /* ResetPwViewController.swift in Sources */,
 				95E9FFB9297FAFE10073DF2B /* LatestSearchedCell.swift in Sources */,
@@ -908,19 +950,24 @@
 				C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */,
 				C75E99072984E6F6003D40B4 /* CodeViewController.swift in Sources */,
 				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,
+				C7284AB2298FFBA1009A70E7 /* StoreService.swift in Sources */,
+				C7EF982C2990DD2600480DD9 /* ReviewService.swift in Sources */,
 				2F48EBD52991592400D3C791 /* APIManageReview.swift in Sources */,
 				95C0365C298A7FEA00599354 /* NetworkResult.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
+				C7284AAA298EA703009A70E7 /* APIConstants.swift in Sources */,
 				C70D3D572981890E00CABA91 /* SecondTabCollectionViewCell.swift in Sources */,
 				0B94770C29899D8C00B5829A /* ServiceViewController.swift in Sources */,
 				0B94771029899DA400B5829A /* EmailViewController.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
+				C7284AAC298EA726009A70E7 /* NetworkResult.swift in Sources */,
 				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
 				2FB97CFD2992A9EA006D4420 /* RebornHistoryDetailModel.swift in Sources */,
 				2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */,
 				0B94771229899DB200B5829A /* Id_PassWordViewController.swift in Sources */,
 				C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
+				C7EF98302991087200480DD9 /* JjimService.swift in Sources */,
 				0B0D66C6298CFA1800E5220F /* EmailViewSecondController.swift in Sources */,
 				9561B7B4298FA05900A4B33B /* BestReviewService.swift in Sources */,
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
@@ -932,7 +979,9 @@
 				C71987552986D447000C87EB /* JjimViewController.swift in Sources */,
 				2FF28CE8298D065D008B7D8E /* APIMyRebornPost.swift in Sources */,
 				95148B3D298256FF004A1A57 /* SearchResultTableViewCell.swift in Sources */,
+				C7284AA3298D0B8F009A70E7 /* HTTPManager.swift in Sources */,
 				95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */,
+				C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */,
 				0B94771829899DDE00B5829A /* HelloViewController.swift in Sources */,
 				0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */,
 				0B0D66C8298CFA6100E5220F /* Id_PassWordSecondViewController.swift in Sources */,
@@ -948,8 +997,14 @@
 				0B94772229899E5200B5829A /* FoundIdViewController.swift in Sources */,
 				C70D3D5B29819A1D00CABA91 /* FirstMainViewController.swift in Sources */,
 				C70D3D612981A16D00CABA91 /* FirstMainTableViewCell.swift in Sources */,
+				C7EF982A2990DC0100480DD9 /* ReviewModel.swift in Sources */,
+				C7284AA5298D23BA009A70E7 /* APIJjimPost.swift in Sources */,
 				C70D3D512980F1CF00CABA91 /* SecondTabViewController.swift in Sources */,
 				C70D3D652982309D00CABA91 /* ThirdMainTableViewCell.swift in Sources */,
+				C7284AB0298FFB25009A70E7 /* StoreModel.swift in Sources */,
+				C7EF98262990D83B00480DD9 /* RebornStatusModel.swift in Sources */,
+				C71987592986DBCA000C87EB /* RebornModel.swift in Sources */,
+				952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */,
 				C71987592986DBCA000C87EB /* APIRebornGet.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
@@ -975,7 +1030,9 @@
 				2FB97CFB2992A20A006D4420 /* RebornHistoryDetailViewController.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
 				95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */,
+				C7EF98282990D8FB00480DD9 /* RebornStatusService.swift in Sources */,
 				C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */,
+				C7284AAE298EAECE009A70E7 /* RebornService.swift in Sources */,
 				2FADC52D298BC71200C09566 /* ChangePasswordViewController.swift in Sources */,
 				C70D3D532981001300CABA91 /* FirstTabTableViewCell.swift in Sources */,
 				9561B7BE2991E1CD00A4B33B /* MapViewController.swift in Sources */,

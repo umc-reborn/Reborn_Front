@@ -17,7 +17,7 @@ class SecondMainTableViewCell: UITableViewCell {
     @IBOutlet weak var limitLabel: UILabel!
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var sharecancelButton: UIButton!
-    
+    @IBOutlet weak var statusLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -42,11 +42,11 @@ extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
             // #warning Incomplete implementation, return the number of sections
-            return StoreArray.count
+        return rebornGoingDatas.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StoreArray[section].count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -59,10 +59,25 @@ extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SecondMain_TableViewCell", for: indexPath) as! SecondMainTableViewCell
-        cell.nicknameLabel.text = StoreArray[indexPath.section][indexPath.row]
-        cell.foodnameLabel.text = FoodArray[indexPath.section][indexPath.row]
-        cell.countLabel.text = "남은 수량: \(CountArray[indexPath.section][indexPath.row])"
-        cell.limitLabel.text = "\(TimeArray[indexPath.section][indexPath.row]) 후 자동취소"
+        
+        let rebornData = rebornGoingDatas[indexPath.section]
+        let timeLimit = rebornData.productLimitTime
+        let hourLimit = timeLimit.prefix(2)
+        let minuteLimit1 = timeLimit[String.Index(encodedOffset: 3)]
+        let minuteLimit2 = timeLimit[String.Index(encodedOffset: 4)]
+        let createTime = rebornData.createdAt
+        let yearTime = createTime.prefix(4)
+        let monthTime1 = createTime[String.Index(encodedOffset: 5)]
+        let monthTime2 = createTime[String.Index(encodedOffset: 6)]
+        let dayTime1 = createTime[String.Index(encodedOffset: 8)]
+        let dayTime2 = createTime[String.Index(encodedOffset: 9)]
+        let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
+        cell.foodImage.load(url: url!)
+        cell.nicknameLabel.text = rebornData.userNickname
+        cell.foodnameLabel.text = rebornData.productName
+        cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
+        cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
+        cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2)"
         
         return cell
     }

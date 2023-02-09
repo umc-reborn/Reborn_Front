@@ -412,6 +412,7 @@
                         <outlet property="jjimLabel" destination="0qi-RJ-EPL" id="An4-bJ-V0M"/>
                         <outlet property="rebornLabel" destination="bjT-PQ-OGG" id="DE6-tG-n3C"/>
                         <outlet property="reviewLabel" destination="1fp-gk-Gc0" id="p1w-7G-d9V"/>
+                        <outlet property="scoreLabel" destination="Cv3-2j-0MD" id="CcO-u0-AJm"/>
                         <outlet property="storeAddress" destination="nRO-I8-bOw" id="Kpp-CR-8FP"/>
                         <outlet property="storeCategory" destination="Rta-5b-hYm" id="t0q-Aq-ypA"/>
                         <outlet property="storeIntroduce" destination="fuh-2B-PJA" id="1ab-2V-jhO"/>
@@ -822,6 +823,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="리뷰" id="EHi-Am-BfQ"/>
                     <connections>
+                        <outlet property="ReviewCountLabel" destination="WyU-5M-Tbz" id="brA-LL-JUA"/>
                         <outlet property="StoreReviewTableView" destination="cGn-4v-brm" id="Mu6-JP-srj"/>
                     </connections>
                 </viewController>
@@ -1247,7 +1249,7 @@
                                 </constraints>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umu-8x-gAl">
-                                <rect key="frame" x="0.0" y="430" width="390" height="414"/>
+                                <rect key="frame" x="0.0" y="430" width="390" height="332"/>
                                 <connections>
                                     <segue destination="Qf9-H5-j4v" kind="embed" id="OFi-sU-psh"/>
                                 </connections>
@@ -1268,6 +1270,7 @@
                             <constraint firstItem="jZ6-vH-tZr" firstAttribute="top" secondItem="S0a-1P-wuR" secondAttribute="top" constant="59.619999999999997" id="EPP-5m-Ms1"/>
                             <constraint firstItem="Umu-8x-gAl" firstAttribute="trailing" secondItem="MKj-Zk-nUm" secondAttribute="trailing" id="EgY-NE-QNe"/>
                             <constraint firstItem="CTp-uu-l9t" firstAttribute="top" secondItem="S0a-1P-wuR" secondAttribute="top" constant="-1" id="S4l-Ve-Ea0"/>
+                            <constraint firstAttribute="bottom" secondItem="Umu-8x-gAl" secondAttribute="bottom" constant="82" id="SFL-hw-8AR"/>
                             <constraint firstItem="szx-3D-BzP" firstAttribute="leading" secondItem="MKj-Zk-nUm" secondAttribute="leading" constant="26" id="W8k-D0-Owf"/>
                             <constraint firstItem="CTp-uu-l9t" firstAttribute="trailing" secondItem="MKj-Zk-nUm" secondAttribute="trailing" id="XfU-yk-3bJ"/>
                             <constraint firstItem="jZ6-vH-tZr" firstAttribute="leading" secondItem="XHT-VD-gMK" secondAttribute="trailing" constant="10" id="Ypg-IE-FJw"/>
@@ -1281,7 +1284,6 @@
                             <constraint firstItem="b3W-iE-F2B" firstAttribute="leading" secondItem="MKj-Zk-nUm" secondAttribute="leading" constant="26" id="kzk-P8-SSe"/>
                             <constraint firstItem="CTp-uu-l9t" firstAttribute="leading" secondItem="MKj-Zk-nUm" secondAttribute="leading" id="mzt-xO-vsR"/>
                             <constraint firstItem="9Vs-03-wLa" firstAttribute="trailing" secondItem="MKj-Zk-nUm" secondAttribute="trailing" id="rRt-Zq-Nul"/>
-                            <constraint firstAttribute="bottom" secondItem="Umu-8x-gAl" secondAttribute="bottom" id="u57-uq-Lez"/>
                             <constraint firstItem="Umu-8x-gAl" firstAttribute="top" secondItem="RRe-Ze-KLP" secondAttribute="bottom" constant="25" id="yb7-aB-Gb8"/>
                         </constraints>
                     </view>
@@ -2072,6 +2074,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Un-5b-mFj">
+                                <rect key="frame" x="29" y="87" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m5h-56-mrb"/>
                         <color key="backgroundColor" red="0.99627512689999997" green="0.98423308129999998" blue="0.97668832539999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2126,6 +2132,7 @@
                         <outlet property="countTextfield" destination="oVg-X7-rDZ" id="WyP-C1-i82"/>
                         <outlet property="eatTextfield" destination="en5-m6-RU1" id="Xss-LE-bfk"/>
                         <outlet property="editButton" destination="zlL-g0-Z1p" id="Dit-bI-Qe3"/>
+                        <outlet property="imageData" destination="6Un-5b-mFj" id="NKp-oe-nAK"/>
                         <outlet property="introduceTextView" destination="xaY-gX-hhE" id="aFZ-8I-grM"/>
                         <outlet property="nameTextfield" destination="IIR-AZ-jZU" id="klu-RW-1Yr"/>
                         <outlet property="timeLabel" destination="jyG-fY-ipZ" id="DTF-XZ-Ogr"/>
@@ -2134,7 +2141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vr-Pq-zjl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360" y="-1794"/>
+            <point key="canvasLocation" x="2360" y="-1794.3127962085307"/>
         </scene>
         <!--Time Popup View Controller-->
         <scene sceneID="MYV-2I-o8W">
@@ -2581,10 +2588,15 @@
                     </view>
                     <size key="freeformSize" width="390" height="1338"/>
                     <connections>
+                        <outlet property="DescriptionLabel" destination="Rgv-gR-He3" id="Rp7-jk-UOZ"/>
+                        <outlet property="addressLabel" destination="w5w-te-Sgt" id="aTA-Pc-KH5"/>
                         <outlet property="bellButton" destination="1T1-F2-w0B" id="8es-UJ-chR"/>
+                        <outlet property="categoryLabel" destination="RoB-CV-Cef" id="jcm-js-tfu"/>
                         <outlet property="likeButton" destination="xlA-Nt-qBc" id="VwC-op-7k7"/>
                         <outlet property="modalButton" destination="E5D-vo-Utu" id="E4k-1i-BVT"/>
                         <outlet property="modalView" destination="Qgy-8H-b0D" id="xjC-zn-EAY"/>
+                        <outlet property="scoreLabel" destination="DB7-ep-TRQ" id="Ihs-no-WGP"/>
+                        <outlet property="storeNameLabel" destination="LBe-zs-5BF" id="XQZ-es-HnQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEt-S6-NYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2619,7 +2631,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감자 고로케" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXc-Dk-gKx">
-                                                    <rect key="frame" x="24" y="22.666666666666668" width="69" height="18.000000000000004"/>
+                                                    <rect key="frame" x="24" y="35.666666666666664" width="69" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="631-l1-Prw"/>
                                                     </constraints>
@@ -2628,7 +2640,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남은 수량: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ao-U5-Kv2">
-                                                    <rect key="frame" x="101" y="22.666666666666668" width="72.333333333333314" height="18.000000000000004"/>
+                                                    <rect key="frame" x="101" y="35.666666666666664" width="72.333333333333314" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="dhd-dT-gNl"/>
                                                     </constraints>
@@ -2637,7 +2649,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감자가 가득 들어간 고로케" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-6G-d05">
-                                                    <rect key="frame" x="24" y="48.666666666666664" width="134" height="15.999999999999993"/>
+                                                    <rect key="frame" x="24" y="61.666666666666657" width="134" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="DJ8-78-iNF"/>
                                                     </constraints>
@@ -2646,7 +2658,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리본 나눔 후 냉동 보관 필수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXr-ut-2L8">
-                                                    <rect key="frame" x="24" y="72.666666666666671" width="141" height="16"/>
+                                                    <rect key="frame" x="24" y="85.666666666666671" width="141" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="3Br-SE-Bem"/>
                                                     </constraints>
@@ -2654,17 +2666,51 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RK1-t3-ulr">
+                                                    <rect key="frame" x="21.666666666666657" y="111" width="298" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="9nd-kw-kEV"/>
+                                                        <constraint firstAttribute="width" constant="298" id="h29-cg-o3z"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="리본 받기">
+                                                        <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
+                                                        <color key="baseBackgroundColor" red="0.92356389760000002" green="0.35871350769999999" blue="0.18580088019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="cOD-Y4-vzj">
+                                                    <rect key="frame" x="24" y="16" width="13.666666666666664" height="13.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="13.67" id="HRH-GI-QbR"/>
+                                                        <constraint firstAttribute="height" constant="13.67" id="xD9-5p-PGo"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10분 내 수령" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-TM-cp6">
+                                                    <rect key="frame" x="44" y="15.666666666666664" width="66" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="6xM-g2-HMD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="13"/>
+                                                    <color key="textColor" red="0.92356389760000002" green="0.35871350769999999" blue="0.18580088019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sXc-Dk-gKx" firstAttribute="top" secondItem="9zs-56-rOI" secondAttribute="top" constant="22.5" id="7uw-ck-SIF"/>
+                                                <constraint firstItem="Ekf-TM-cp6" firstAttribute="leading" secondItem="cOD-Y4-vzj" secondAttribute="trailing" constant="6.3300000000000001" id="EHO-kF-T1l"/>
+                                                <constraint firstItem="RK1-t3-ulr" firstAttribute="leading" secondItem="9zs-56-rOI" secondAttribute="leading" constant="21.5" id="EMd-4o-f7q"/>
+                                                <constraint firstItem="sXc-Dk-gKx" firstAttribute="top" secondItem="Ekf-TM-cp6" secondAttribute="bottom" constant="4" id="GcE-KZ-rzM"/>
+                                                <constraint firstItem="cOD-Y4-vzj" firstAttribute="leading" secondItem="9zs-56-rOI" secondAttribute="leadingMargin" constant="4" id="Glh-fW-XGN"/>
                                                 <constraint firstItem="rAq-01-FWB" firstAttribute="top" secondItem="9zs-56-rOI" secondAttribute="top" constant="10.789999999999999" id="MCR-Fj-kre"/>
                                                 <constraint firstItem="XXr-ut-2L8" firstAttribute="leading" secondItem="9zs-56-rOI" secondAttribute="leading" constant="24" id="VGA-vw-5nT"/>
                                                 <constraint firstItem="s1e-6G-d05" firstAttribute="leading" secondItem="9zs-56-rOI" secondAttribute="leading" constant="24" id="XwM-i6-wuE"/>
                                                 <constraint firstItem="sXc-Dk-gKx" firstAttribute="leading" secondItem="9zs-56-rOI" secondAttribute="leading" constant="24" id="YCe-NF-fwh"/>
                                                 <constraint firstItem="XXr-ut-2L8" firstAttribute="top" secondItem="s1e-6G-d05" secondAttribute="bottom" constant="8" id="bXh-nN-zc9"/>
+                                                <constraint firstItem="cOD-Y4-vzj" firstAttribute="top" secondItem="9zs-56-rOI" secondAttribute="top" constant="16.129999999999999" id="bZh-19-wra"/>
                                                 <constraint firstAttribute="trailing" secondItem="rAq-01-FWB" secondAttribute="trailing" constant="19.850000000000001" id="bvc-S1-Zr8"/>
                                                 <constraint firstItem="1Ao-U5-Kv2" firstAttribute="leading" secondItem="sXc-Dk-gKx" secondAttribute="trailing" constant="8" id="dzi-yH-6Df"/>
-                                                <constraint firstItem="1Ao-U5-Kv2" firstAttribute="top" secondItem="9zs-56-rOI" secondAttribute="top" constant="22.5" id="jLn-NS-Njp"/>
+                                                <constraint firstItem="RK1-t3-ulr" firstAttribute="top" secondItem="rAq-01-FWB" secondAttribute="bottom" constant="11" id="eSI-DD-yWQ"/>
+                                                <constraint firstItem="Ekf-TM-cp6" firstAttribute="top" secondItem="9zs-56-rOI" secondAttribute="top" constant="15.5" id="sH5-50-GW0"/>
+                                                <constraint firstItem="1Ao-U5-Kv2" firstAttribute="top" secondItem="Ekf-TM-cp6" secondAttribute="bottom" constant="4" id="tyj-41-Vrz"/>
                                                 <constraint firstItem="s1e-6G-d05" firstAttribute="top" secondItem="sXc-Dk-gKx" secondAttribute="bottom" constant="8" id="uJg-A8-hSk"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2675,6 +2721,9 @@
                                             <outlet property="LimitLabel" destination="XXr-ut-2L8" id="JqY-HT-7c7"/>
                                             <outlet property="countLabel" destination="1Ao-U5-Kv2" id="48o-1J-ieS"/>
                                             <outlet property="foodName" destination="sXc-Dk-gKx" id="u7t-sT-fh7"/>
+                                            <outlet property="limitTimeLabel" destination="Ekf-TM-cp6" id="HcJ-Xg-i33"/>
+                                            <outlet property="rebornButton" destination="RK1-t3-ulr" id="VL5-4m-ZtN"/>
+                                            <outlet property="timeImage" destination="cOD-Y4-vzj" id="hiG-Kl-i7G"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3402,6 +3451,7 @@
                                             <outlet property="limitLabel" destination="QCV-Ff-vwF" id="Q8i-Zs-u8C"/>
                                             <outlet property="nicknameLabel" destination="vpz-bD-lI6" id="CKO-7F-3hP"/>
                                             <outlet property="sharecancelButton" destination="RZk-6m-F3w" id="BLD-MO-QiF"/>
+                                            <outlet property="statusLabel" destination="1GX-3a-hph" id="8ch-uz-2WJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3545,7 +3595,7 @@
             <objects>
                 <viewController id="Qf9-H5-j4v" customClass="TabMainViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PBc-uK-jjH">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="332"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pln-Gm-cCz">
@@ -3607,6 +3657,7 @@
     <resources>
         <image name="bread_image" width="93" height="91"/>
         <image name="cake_image" width="93.5" height="90"/>
+        <image name="clock" width="60" height="60"/>
         <image name="code_frame" width="301" height="58.5"/>
         <image name="count_add" width="39" height="39"/>
         <image name="count_minus" width="39" height="40"/>

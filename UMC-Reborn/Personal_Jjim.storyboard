@@ -212,6 +212,7 @@
                     <navigationItem key="navigationItem" id="eHV-3w-ms7"/>
                     <connections>
                         <outlet property="JjimButton" destination="DBt-9y-g02" id="hbp-7t-MtM"/>
+                        <outlet property="JjimCountLabel" destination="iIU-PA-Tmc" id="CKY-SB-GEP"/>
                         <outlet property="JjimTableView" destination="lty-iH-oCB" id="tiY-Z8-ylo"/>
                         <outlet property="JjimTextField" destination="4wz-eq-Y4s" id="zIl-jo-83a"/>
                         <outlet property="JjimView" destination="mCE-Rp-eSo" id="svG-Qc-ICv"/>
