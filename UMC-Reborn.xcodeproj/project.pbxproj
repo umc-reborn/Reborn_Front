@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		0B0D66C6298CFA1800E5220F /* EmailViewSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D66C5298CFA1800E5220F /* EmailViewSecondController.swift */; };
 		0B0D66C8298CFA6100E5220F /* Id_PassWordSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D66C7298CFA6100E5220F /* Id_PassWordSecondViewController.swift */; };
-		0B0D66CA298CFC1D00E5220F /* JoinLoginAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D66C9298CFC1D00E5220F /* JoinLoginAPIHandler.swift */; };
+		0B0D66CC298D0BFD00E5220F /* APINeiLoginPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D66CB298D0BFD00E5220F /* APINeiLoginPost.swift */; };
+		0B0D66CE298D21A000E5220F /* APIShopLoginPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D66CD298D21A000E5220F /* APIShopLoginPost.swift */; };
+		0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B68DDE0299287B800A988FA /* FindIdGet.swift */; };
+		0B68DDE3299287D900A988FA /* JoinNeighborPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B68DDE2299287D900A988FA /* JoinNeighborPost.swift */; };
+		0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B68DDE4299287E500A988FA /* JoinShopPost.swift */; };
 		0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770329899BF400B5829A /* FirstLoginViewController.swift */; };
 		0B94770829899D6400B5829A /* NeighborViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770729899D6400B5829A /* NeighborViewController.swift */; };
 		0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770929899D7800B5829A /* ShopLoginViewController.swift */; };
@@ -180,7 +184,11 @@
 /* Begin PBXFileReference section */
 		0B0D66C5298CFA1800E5220F /* EmailViewSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewSecondController.swift; sourceTree = "<group>"; };
 		0B0D66C7298CFA6100E5220F /* Id_PassWordSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id_PassWordSecondViewController.swift; sourceTree = "<group>"; };
-		0B0D66C9298CFC1D00E5220F /* JoinLoginAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinLoginAPIHandler.swift; sourceTree = "<group>"; };
+		0B0D66CB298D0BFD00E5220F /* APINeiLoginPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINeiLoginPost.swift; sourceTree = "<group>"; };
+		0B0D66CD298D21A000E5220F /* APIShopLoginPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIShopLoginPost.swift; sourceTree = "<group>"; };
+		0B68DDE0299287B800A988FA /* FindIdGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdGet.swift; sourceTree = "<group>"; };
+		0B68DDE2299287D900A988FA /* JoinNeighborPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinNeighborPost.swift; sourceTree = "<group>"; };
+		0B68DDE4299287E500A988FA /* JoinShopPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinShopPost.swift; sourceTree = "<group>"; };
 		0B94770329899BF400B5829A /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
 		0B94770729899D6400B5829A /* NeighborViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborViewController.swift; sourceTree = "<group>"; };
 		0B94770929899D7800B5829A /* ShopLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLoginViewController.swift; sourceTree = "<group>"; };
@@ -366,11 +374,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B68DDDF299242A200A988FA /* JLAPI */ = {
+			isa = PBXGroup;
+			children = (
+				0B0D66CB298D0BFD00E5220F /* APINeiLoginPost.swift */,
+				0B0D66CD298D21A000E5220F /* APIShopLoginPost.swift */,
+				0B68DDE2299287D900A988FA /* JoinNeighborPost.swift */,
+				0B68DDE4299287E500A988FA /* JoinShopPost.swift */,
+				0B68DDE0299287B800A988FA /* FindIdGet.swift */,
+			);
+			path = JLAPI;
+			sourceTree = "<group>";
+		};
 		0B9477022989993900B5829A /* joinlogin */ = {
 			isa = PBXGroup;
 			children = (
+				0B68DDDF299242A200A988FA /* JLAPI */,
 				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
-				0B0D66C9298CFC1D00E5220F /* JoinLoginAPIHandler.swift */,
 				0B94770329899BF400B5829A /* FirstLoginViewController.swift */,
 				0B9477252989A86200B5829A /* FirstViewController.swift */,
 				0B94770729899D6400B5829A /* NeighborViewController.swift */,
@@ -923,14 +943,16 @@
 				C71987592986DBCA000C87EB /* APIRebornGet.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
+				0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */,
+				0B0D66CC298D0BFD00E5220F /* APINeiLoginPost.swift in Sources */,
 				0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */,
 				C70D3D632982308D00CABA91 /* SecondMainTableViewCell.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */,
 				2FA56F58298BDBE200CCC89A /* UtilityFunctions.swift in Sources */,
 				C75E990929857BA2003D40B4 /* ReviewImage.swift in Sources */,
+				0B0D66CE298D21A000E5220F /* APIShopLoginPost.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
-				0B0D66CA298CFC1D00E5220F /* JoinLoginAPIHandler.swift in Sources */,
 				C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */,
 				0B94770E29899D9700B5829A /* WhoViewController.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
@@ -961,6 +983,8 @@
 				C74FEE48297199FE00BFC8D0 /* StoreManageViewController.swift in Sources */,
 				953AEE9C298F4FC2008AAE8A /* NewShopService.swift in Sources */,
 				0B94771C29899E2400B5829A /* InterestSecondViewController.swift in Sources */,
+				0B68DDE3299287D900A988FA /* JoinNeighborPost.swift in Sources */,
+				0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */,
 				C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */,
 				C7D56FAA2972BC5600A68015 /* PopupViewController.swift in Sources */,
 			);

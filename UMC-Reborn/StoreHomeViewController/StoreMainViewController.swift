@@ -9,11 +9,16 @@ import UIKit
 
 class StoreMainViewController: UIViewController {
     
+    
+    var storeText: Int = 0
+    
     @IBOutlet weak var storemainView: UIView!
     @IBOutlet weak var storemainLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(storeText)
         
         storemainView.clipsToBounds = true
         storemainView.layer.cornerRadius = 20

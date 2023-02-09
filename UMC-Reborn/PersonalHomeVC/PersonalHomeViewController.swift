@@ -7,7 +7,13 @@
 
 import UIKit
 
+
+
 class PersonalHomeViewController: UIViewController {
+
+    
+    var userText : Int = 0
+    var userNickNameText : String = ""
 
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var defaultSubLabel: UILabel!
@@ -23,6 +29,9 @@ class PersonalHomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         addShadow()
+        print(userText)
+        print(userNickNameText)
+        //nickNameLabel.text = userNickNameText
         contentView.addSubview(floatingButton)
         
         NSLayoutConstraint.activate([

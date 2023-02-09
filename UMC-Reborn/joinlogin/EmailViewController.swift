@@ -87,6 +87,24 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         codeTextField.layer.cornerRadius = 4.0
         codeTextField.clearButtonMode = .always // 한번에 지우기
         
+        // 인증요청버튼
+        requestButton.layer.borderWidth = 1.0
+        requestButton.layer.borderColor = myorange?.cgColor // 테두리 컬러
+        requestButton.backgroundColor = .myorange
+        requestButton.layer.cornerRadius = 4.0
+        requestButton.setTitle("인증요청", for: .normal)  // 버튼 텍스트 설정
+        requestButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
+        requestButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
+        
+        // 인증확인버튼
+        requestCheckButton.layer.borderWidth = 1.0
+        requestCheckButton.layer.borderColor = myorange?.cgColor // 테두리 컬러
+        requestCheckButton.backgroundColor = .myorange
+        requestCheckButton.layer.cornerRadius = 4.0
+        requestCheckButton.setTitle("인증확인", for: .normal)  // 버튼 텍스트 설정
+        requestCheckButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
+        requestButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
+        
         EmailTextField.delegate = self
         codeTextField.delegate = self
         textFieldDidBeginEditing(EmailTextField)

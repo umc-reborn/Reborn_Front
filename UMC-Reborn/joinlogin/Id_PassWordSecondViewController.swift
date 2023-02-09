@@ -9,10 +9,16 @@ import UIKit
 
 class Id_PassWordSecondViewController: UIViewController {
 
+    
+    @IBOutlet weak var PgIdPw: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //progressview
+        PgIdPw.progressViewStyle = .default
+        PgIdPw.progressTintColor = .myorange
+        PgIdPw.progress = 0.66
     }
     
 
