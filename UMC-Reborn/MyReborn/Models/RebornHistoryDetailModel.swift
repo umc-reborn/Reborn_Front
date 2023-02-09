@@ -11,7 +11,7 @@ struct RebornHistoryDetailModel: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    var result: [RebornHistoryDetailResponse]
+    var result: RebornHistoryDetailResponse
 }
 
 struct RebornHistoryDetailResponse: Codable {

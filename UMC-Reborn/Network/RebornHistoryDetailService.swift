@@ -27,11 +27,12 @@ class RebornHistoryDetailService {
              )
 
         dataRequest.responseData { response in
-            //                 dump(response)
+            dump(response)
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
                 //                     dump(statusCode)
+                // 여기 부분 수정 value
                 guard let value = response.value else { return }
                 //                     dump(value)
                 let networkResult = self.judgeStatus(by: statusCode, value, RebornHistoryDetailModel.self)
@@ -49,7 +50,8 @@ class RebornHistoryDetailService {
              let decoder = JSONDecoder()
              guard let decodedData = try? decoder.decode(type.self, from: data)
              else { print("decode fail")
-                 return .pathErr }
+                
+                return .pathErr }
 
              /*
               // Decoding = JSON -> Swift object

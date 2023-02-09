@@ -1274,7 +1274,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KfF-dw-0ri">
-                                        <rect key="frame" x="56" y="380.33333333333326" width="238" height="32"/>
+                                        <rect key="frame" x="50" y="380.33333333333326" width="250" height="32"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="QAn-mK-nYd">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -1284,13 +1284,14 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="09:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TT6-dt-2If">
-                                                <rect key="frame" x="40.000000000000007" y="0.0" width="80.666666666666686" height="32"/>
+                                                <rect key="frame" x="40.000000000000007" y="0.0" width="92.666666666666686" height="32"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <color key="textColor" name="MainColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="0.0" height="0.0"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="후 자동취소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQB-0b-ZWp">
-                                                <rect key="frame" x="128.66666666666666" y="0.0" width="109.33333333333334" height="32"/>
+                                                <rect key="frame" x="140.66666666666666" y="0.0" width="109.33333333333334" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                 <color key="textColor" name="MainColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1300,10 +1301,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="KfF-dw-0ri" secondAttribute="trailing" constant="56" id="1J8-qD-EZc"/>
+                                    <constraint firstAttribute="trailing" secondItem="KfF-dw-0ri" secondAttribute="trailing" constant="50" id="1J8-qD-EZc"/>
                                     <constraint firstItem="E8H-V8-6E7" firstAttribute="top" secondItem="s2c-b6-kXE" secondAttribute="top" constant="20" id="2JA-Ug-DtI"/>
                                     <constraint firstItem="FeQ-LP-Iau" firstAttribute="leading" secondItem="s2c-b6-kXE" secondAttribute="leading" constant="26" id="7zD-8x-U7N"/>
-                                    <constraint firstItem="KfF-dw-0ri" firstAttribute="leading" secondItem="s2c-b6-kXE" secondAttribute="leading" constant="56" id="Cor-MP-Ewh"/>
+                                    <constraint firstItem="KfF-dw-0ri" firstAttribute="leading" secondItem="s2c-b6-kXE" secondAttribute="leading" constant="50" id="Cor-MP-Ewh"/>
                                     <constraint firstItem="XMs-6e-Fuc" firstAttribute="centerX" secondItem="s2c-b6-kXE" secondAttribute="centerX" id="DMD-bG-qwD"/>
                                     <constraint firstItem="5A3-v2-qrJ" firstAttribute="leading" secondItem="s2c-b6-kXE" secondAttribute="leading" constant="26" id="KBx-lr-7XC"/>
                                     <constraint firstItem="Uuz-7M-jgH" firstAttribute="leading" secondItem="s2c-b6-kXE" secondAttribute="leading" constant="26" id="L1t-Hn-Zx1"/>
@@ -1345,14 +1346,14 @@
                                 <rect key="frame" x="321" y="115" width="30" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="상태" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adz-LX-5nj">
                                 <rect key="frame" x="226" y="115" width="30" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1411,7 +1412,7 @@
             <color red="1" green="0.98431372549019602" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
-            <color red="1" green="0.30199998617172241" blue="0.082000002264976501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.30196078431372547" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -20,7 +20,7 @@ class RebornHistoryDetailViewController: UIViewController {
     @IBOutlet weak var storeAddr: UILabel!
     @IBOutlet weak var status: UILabel!
     
-    var apiData: [RebornHistoryDetailResponse] = []
+    var apiData: RebornHistoryDetailResponse!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class RebornHistoryDetailViewController: UIViewController {
         RebornHistoryDetailService.shared.getRebornHistoryDetail { result in
             switch result {
             case .success(let response):
-                print("성공")
+                print("성공일까?")
                 //
 //                if let name1 = response as? [String: Any] {
 //                    if let storeName1 = name1["storeName"] {
@@ -36,15 +36,48 @@ class RebornHistoryDetailViewController: UIViewController {
 //                    }
 //                }
                 // 값 불러오기
-                if let data = response as? RebornHistoryDetailResponse {
-                    self.storeName.text = data.storeName
-                }
-                //
+                print("response is \(response)")
                 guard let response = response as? RebornHistoryDetailModel else {
-                    print("실패")
                     break
                 }
                 self.apiData = response.result
+                print("response.result is \(response.result)")
+                print("self.apiData is \(self.apiData)")
+                let url = URL(string: self.apiData.storeImage)
+                self.storeName.text = self.apiData.storeName
+                self.status.text = self.apiData.status
+                self.changeCode.text = "\(self.apiData.productExchangeCode)"
+                self.productName.text = self.apiData.productName
+                self.productAlert.text = self.apiData.productGuide
+                self.productDetail.text = self.apiData.productComment
+                self.productImg.load(url: url!)
+                self.storeAddr.text = self.apiData.storeAddress
+                self.storeCategory.text = self.apiData.category
+                self.date.text = self.apiData.createdAt
+                
+                
+                
+//                self.storeName.text = self.apiData.storeName
+//                if let data = response as? RebornHistoryDetailResponse {
+//                    let url = URL(string: data.storeImage)
+//                    print("데이터 있니?\(data.storeName)")
+//                    self.storeName.text = data.storeName
+//                    self.status.text = data.status
+//                    self.changeCode.text = "\(data.productExchangeCode)"
+//                    self.productName.text = data.productName
+//                    self.productAlert.text = data.productGuide
+//                    self.productDetail.text = data.productComment
+//                    self.productImg.load(url: url!)
+//                    self.storeAddr.text = data.storeAddress
+//                    self.storeCategory.text = data.category
+//                    self.date.text = data.createdAt
+//                } else { print ("data is nil")}
+//
+//                guard let response = response as? RebornHistoryDetailModel else {
+//                    print("실패")
+//                    break
+//                }
+
             default:
                 break
             }
