@@ -9,8 +9,9 @@ import UIKit
 
 class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
+    
     @IBOutlet weak var ProgressView4: UIProgressView!
-
+    
     @IBOutlet weak var setIdTextField: UITextField!
     @IBOutlet weak var doubleCheckButton: UIButton!
     @IBOutlet weak var setPwTextField: UITextField!
@@ -34,7 +35,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         let BACKGROUND = UIColor(named: "BACKGROUND")
         self.view.backgroundColor = BACKGROUND
         
-        //progressView4
+        //ProgressView4
         ProgressView4.progressViewStyle = .default
         ProgressView4.progressTintColor = .myorange
         ProgressView4.progress = 0.66
