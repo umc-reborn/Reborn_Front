@@ -10,14 +10,20 @@ import Alamofire
 
 class RebornHistoryDetailService {
     
-    var RebornHistoryDetailUrl = "http://www.rebornapp.shop/reborns/history/detail/3"
+    let rebornTaskIdx = UserDefaults.standard.integer(forKey: "rebornTaskIdx")
     
     static let shared = RebornHistoryDetailService()
     private init() {}
      
     func getRebornHistoryDetail(completion: @escaping (NetworkResult<Any>) -> Void) {
+        var RebornHistoryDetailUrl = "http://www.rebornapp.shop/reborns/history/detail/\(rebornTaskIdx)"
+        print("rebornHistoryDetail의 taskIdx는 \(rebornTaskIdx)")
         let url: String! = RebornHistoryDetailUrl
-             let header: HTTPHeaders = ["Content-type": "application/json"]
+             let header: HTTPHeaders = [
+                // 헤더 프린트 해서 post 형태로 데이터를 불러오는거라서 오키오키
+                "Content-type": "application/json"
+//                "jwt"
+             ]
 
              let dataRequest = AF.request(
                 url, method: .get,

@@ -41,6 +41,9 @@
 		2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */; };
 		2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */; };
 		2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7010EF297586C100E09DD9 /* MyReborn.storyboard */; };
+		2F7C0AB42994DAA600BC5F9A /* ReviewManageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7C0AB32994DAA600BC5F9A /* ReviewManageModel.swift */; };
+		2F7C0AB82994DAD000BC5F9A /* ReviewManageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7C0AB72994DAD000BC5F9A /* ReviewManageService.swift */; };
+		2F7C0ABC29956D0400BC5F9A /* PersonalTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7C0ABB29956D0400BC5F9A /* PersonalTabViewController.swift */; };
 		2FA56F58298BDBE200CCC89A /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */; };
 		2FADC52D298BC71200C09566 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */; };
 		2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */; };
@@ -229,6 +232,9 @@
 		2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornViewController.swift; sourceTree = "<group>"; };
 		2F7010EF297586C100E09DD9 /* MyReborn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReborn.storyboard; sourceTree = "<group>"; };
+		2F7C0AB32994DAA600BC5F9A /* ReviewManageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManageModel.swift; sourceTree = "<group>"; };
+		2F7C0AB72994DAD000BC5F9A /* ReviewManageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManageService.swift; sourceTree = "<group>"; };
+		2F7C0ABB29956D0400BC5F9A /* PersonalTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTabViewController.swift; sourceTree = "<group>"; };
 		2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
@@ -466,6 +472,7 @@
 				2F48EBD42991592400D3C791 /* APIManageReview.swift */,
 				2FB97CFC2992A9EA006D4420 /* RebornHistoryDetailModel.swift */,
 				2FF615362992D1EC00143369 /* RebornHistoryModel.swift */,
+				2F7C0AB32994DAA600BC5F9A /* ReviewManageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -608,6 +615,7 @@
 				2FB97CFE2992AE1B006D4420 /* RebornHistoryDetailService.swift */,
 				2FF615342992D0B000143369 /* RebornHistoryService.swift */,
 				9561B98F2992463200A4B33B /* kako api-Bridging-Header.h */,
+				2F7C0AB72994DAD000BC5F9A /* ReviewManageService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -712,6 +720,7 @@
 				C7284AA8298EA6E9009A70E7 /* Network */,
 				95C03658298A7D1300599354 /* Network */,
 				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
+				2F7C0ABB29956D0400BC5F9A /* PersonalTabViewController.swift */,
 				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
 				C7C4FD7A296D315B00040E05 /* Main.storyboard */,
 				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
@@ -982,6 +991,7 @@
 				2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */,
 				95C036572988EBDE00599354 /* SearchModel.swift in Sources */,
 				952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */,
+				2F7C0AB42994DAA600BC5F9A /* ReviewManageModel.swift in Sources */,
 				C70D3D5D29819A4B00CABA91 /* SecondMainViewController.swift in Sources */,
 				95C0365A298A7D4400599354 /* APIConstants.swift in Sources */,
 				0B94772229899E5200B5829A /* FoundIdViewController.swift in Sources */,
@@ -1012,6 +1022,7 @@
 				0B94770E29899D9700B5829A /* WhoViewController.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
 				C7DA00A329891C740015BA4F /* APIReviewGet.swift in Sources */,
+				2F7C0ABC29956D0400BC5F9A /* PersonalTabViewController.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
 				C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */,
 				C70D3D552981637E00CABA91 /* SecondTabTableViewCell.swift in Sources */,
@@ -1027,6 +1038,7 @@
 				9561B7BE2991E1CD00A4B33B /* MapViewController.swift in Sources */,
 				C74FEE442971893300BFC8D0 /* RebornEnrollViewController.swift in Sources */,
 				2FF615352992D0B000143369 /* RebornHistoryService.swift in Sources */,
+				2F7C0AB82994DAD000BC5F9A /* ReviewManageService.swift in Sources */,
 				953AEEA0298F9C27008AAE8A /* BestReviewModel.swift in Sources */,
 				95E9FFB7297E6F880073DF2B /* SearchViewController.swift in Sources */,
 				C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */,
@@ -1222,7 +1234,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nayeon/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yeonsu/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1267,7 +1279,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nayeon/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yeonsu/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
