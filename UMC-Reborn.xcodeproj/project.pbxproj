@@ -7,17 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0D66C6298CFA1800E5220F /* EmailViewSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D66C5298CFA1800E5220F /* EmailViewSecondController.swift */; };
+		0B0D66C8298CFA6100E5220F /* Id_PassWordSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D66C7298CFA6100E5220F /* Id_PassWordSecondViewController.swift */; };
+		0B0D66CC298D0BFD00E5220F /* APINeiLoginPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D66CB298D0BFD00E5220F /* APINeiLoginPost.swift */; };
+		0B0D66CE298D21A000E5220F /* APIShopLoginPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D66CD298D21A000E5220F /* APIShopLoginPost.swift */; };
+		0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B68DDE0299287B800A988FA /* FindIdGet.swift */; };
+		0B68DDE3299287D900A988FA /* JoinNeighborPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B68DDE2299287D900A988FA /* JoinNeighborPost.swift */; };
+		0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B68DDE4299287E500A988FA /* JoinShopPost.swift */; };
+		0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770329899BF400B5829A /* FirstLoginViewController.swift */; };
+		0B94770829899D6400B5829A /* NeighborViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770729899D6400B5829A /* NeighborViewController.swift */; };
+		0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770929899D7800B5829A /* ShopLoginViewController.swift */; };
+		0B94770C29899D8C00B5829A /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770B29899D8C00B5829A /* ServiceViewController.swift */; };
+		0B94770E29899D9700B5829A /* WhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770D29899D9700B5829A /* WhoViewController.swift */; };
+		0B94771029899DA400B5829A /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770F29899DA400B5829A /* EmailViewController.swift */; };
+		0B94771229899DB200B5829A /* Id_PassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94771129899DB200B5829A /* Id_PassWordViewController.swift */; };
+		0B94771429899DC700B5829A /* Basic_InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94771329899DC700B5829A /* Basic_InfoViewController.swift */; };
+		0B94771629899DD200B5829A /* InterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94771529899DD200B5829A /* InterestViewController.swift */; };
+		0B94771829899DDE00B5829A /* HelloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94771729899DDD00B5829A /* HelloViewController.swift */; };
+		0B94771A29899DF700B5829A /* ShopBasic_InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94771929899DF700B5829A /* ShopBasic_InfoViewController.swift */; };
+		0B94771C29899E2400B5829A /* InterestSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94771B29899E2400B5829A /* InterestSecondViewController.swift */; };
+		0B94771E29899E3000B5829A /* HelloSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94771D29899E3000B5829A /* HelloSecondViewController.swift */; };
+		0B94772029899E4400B5829A /* FindIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94771F29899E4400B5829A /* FindIdViewController.swift */; };
+		0B94772229899E5200B5829A /* FoundIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94772129899E5200B5829A /* FoundIdViewController.swift */; };
+		0B94772429899E6500B5829A /* ResetPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94772329899E6500B5829A /* ResetPwViewController.swift */; };
+		0B9477262989A86200B5829A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9477252989A86200B5829A /* FirstViewController.swift */; };
 		0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BAEAC2429704020008079E6 /* JoinLogin.storyboard */; };
 		0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC96D5B2975522800EA4926 /* LoginViewController.swift */; };
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */; };
 		2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */; };
+		2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD22991559700D3C791 /* APIHandler.swift */; };
+		2F48EBD52991592400D3C791 /* APIManageReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD42991592400D3C791 /* APIManageReview.swift */; };
 		2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */; };
 		2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */; };
 		2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7010EF297586C100E09DD9 /* MyReborn.storyboard */; };
+		2FA56F58298BDBE200CCC89A /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */; };
+		2FADC52D298BC71200C09566 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */; };
 		2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */; };
 		2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */; };
 		2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */; };
+		2FB97CFB2992A20A006D4420 /* RebornHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB97CFA2992A20A006D4420 /* RebornHistoryDetailViewController.swift */; };
+		2FB97CFD2992A9EA006D4420 /* RebornHistoryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB97CFC2992A9EA006D4420 /* RebornHistoryDetailModel.swift */; };
+		2FB97CFF2992AE1B006D4420 /* RebornHistoryDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB97CFE2992AE1B006D4420 /* RebornHistoryDetailService.swift */; };
+		2FF28CE8298D065D008B7D8E /* APIMyRebornPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF28CE7298D065D008B7D8E /* APIMyRebornPost.swift */; };
+		2FF615352992D0B000143369 /* RebornHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF615342992D0B000143369 /* RebornHistoryService.swift */; };
+		2FF615372992D1EC00143369 /* RebornHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF615362992D1EC00143369 /* RebornHistoryModel.swift */; };
 		95148B3D298256FF004A1A57 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95148B3C298256FF004A1A57 /* SearchResultTableViewCell.swift */; };
 		952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB295296E813300BD7CD7 /* PersonalTab.storyboard */; };
 		952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */; };
@@ -26,8 +60,52 @@
 		952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */; };
 		952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */; };
 		952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */; };
-		952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */; };
-		952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */; };
+		952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */; };
+		953AEE96298F3C1D008AAE8A /* NewShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE95298F3C1D008AAE8A /* NewShopModel.swift */; };
+		953AEE9C298F4FC2008AAE8A /* NewShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9B298F4FC2008AAE8A /* NewShopService.swift */; };
+		953AEEA0298F9C27008AAE8A /* BestReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */; };
+		9561B7B4298FA05900A4B33B /* BestReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561B7B3298FA05900A4B33B /* BestReviewService.swift */; };
+		9561B7B629916E7B00A4B33B /* PopularShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561B7B529916E7B00A4B33B /* PopularShopModel.swift */; };
+		9561B7BA2991E13900A4B33B /* StoreMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9561B7B92991E13900A4B33B /* StoreMap.storyboard */; };
+		9561B7BE2991E1CD00A4B33B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561B7BD2991E1CD00A4B33B /* MapViewController.swift */; };
+		9561B804299232DF00A4B33B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561B803299232DF00A4B33B /* OpenGLES.framework */; };
+		9561B806299232FF00A4B33B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561B805299232FF00A4B33B /* SystemConfiguration.framework */; };
+		9561B8082992330A00A4B33B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561B8072992330A00A4B33B /* CoreLocation.framework */; };
+		9561B80A2992331300A4B33B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561B8092992331300A4B33B /* QuartzCore.framework */; };
+		9561B80E2992336200A4B33B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561B80B2992332100A4B33B /* libc++.tbd */; };
+		9561B80F2992336D00A4B33B /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561B80C2992333400A4B33B /* libxml2.tbd */; };
+		9561B8102992337D00A4B33B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561B80D2992334A00A4B33B /* libsqlite3.tbd */; };
+		9561BA692992494400A4B33B /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA442992494400A4B33B /* map_pinup_custom@3x.png */; };
+		9561BA6A2992494400A4B33B /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA452992494400A4B33B /* map_pin_custom.png */; };
+		9561BA6B2992494400A4B33B /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA462992494400A4B33B /* shadow_balloon.png */; };
+		9561BA6C2992494400A4B33B /* map_pinup.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA472992494400A4B33B /* map_pinup.png */; };
+		9561BA6D2992494400A4B33B /* detail_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA482992494400A4B33B /* detail_button.png */; };
+		9561BA6E2992494400A4B33B /* map_pin_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA492992494400A4B33B /* map_pin_custom@3x.png */; };
+		9561BA6F2992494400A4B33B /* map_pinup@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA4A2992494400A4B33B /* map_pinup@3x.png */; };
+		9561BA702992494400A4B33B /* map_pin_shadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA4B2992494400A4B33B /* map_pin_shadow@3x.png */; };
+		9561BA712992494400A4B33B /* copyright.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA4C2992494400A4B33B /* copyright.png */; };
+		9561BA722992494400A4B33B /* th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA4D2992494400A4B33B /* th_line.png */; };
+		9561BA732992494400A4B33B /* map_pin_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA4E2992494400A4B33B /* map_pin_red@3x.png */; };
+		9561BA742992494400A4B33B /* daum_copyright.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA4F2992494400A4B33B /* daum_copyright.png */; };
+		9561BA752992494400A4B33B /* map_pin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA502992494400A4B33B /* map_pin@3x.png */; };
+		9561BA762992494400A4B33B /* map_present_tracking.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA512992494400A4B33B /* map_present_tracking.png */; };
+		9561BA772992494400A4B33B /* map_pin_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA522992494400A4B33B /* map_pin_red.png */; };
+		9561BA782992494400A4B33B /* info_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA5C2992494400A4B33B /* info_box.png */; };
+		9561BA792992494400A4B33B /* point_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA5D2992494400A4B33B /* point_sprite.png */; };
+		9561BA7A2992494400A4B33B /* map_pinup_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA5E2992494400A4B33B /* map_pinup_custom.png */; };
+		9561BA7B2992494400A4B33B /* info_box_tail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA5F2992494400A4B33B /* info_box_tail.png */; };
+		9561BA7C2992494400A4B33B /* noimage256.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA602992494400A4B33B /* noimage256.png */; };
+		9561BA7D2992494400A4B33B /* map_present_direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA612992494400A4B33B /* map_present_direction.png */; };
+		9561BA7E2992494400A4B33B /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA622992494400A4B33B /* map_pin.png */; };
+		9561BA7F2992494400A4B33B /* map_present.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA632992494400A4B33B /* map_present.png */; };
+		9561BA802992494400A4B33B /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA642992494400A4B33B /* noimage.png */; };
+		9561BA812992494400A4B33B /* map_present_background_update.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA652992494400A4B33B /* map_present_background_update.png */; };
+		9561BA822992494400A4B33B /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA662992494400A4B33B /* daum_th_line.png */; };
+		9561BA832992494400A4B33B /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA672992494400A4B33B /* map_pin_shadow.png */; };
+		9561BA842992494400A4B33B /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561BA682992494400A4B33B /* DaumMap.framework */; };
+		95C036572988EBDE00599354 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C036562988EBDE00599354 /* SearchModel.swift */; };
+		95C0365A298A7D4400599354 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C03659298A7D4400599354 /* APIConstants.swift */; };
+		95C0365C298A7FEA00599354 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C0365B298A7FEA00599354 /* NetworkResult.swift */; };
 		95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */; };
 		95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */; };
 		95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */; };
@@ -101,7 +179,44 @@
 		F54958F376ED96265363C1F8 /* Pods_UMC_Reborn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9561B9FE2992471900A4B33B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0B0D66C5298CFA1800E5220F /* EmailViewSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewSecondController.swift; sourceTree = "<group>"; };
+		0B0D66C7298CFA6100E5220F /* Id_PassWordSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id_PassWordSecondViewController.swift; sourceTree = "<group>"; };
+		0B0D66CB298D0BFD00E5220F /* APINeiLoginPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINeiLoginPost.swift; sourceTree = "<group>"; };
+		0B0D66CD298D21A000E5220F /* APIShopLoginPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIShopLoginPost.swift; sourceTree = "<group>"; };
+		0B68DDE0299287B800A988FA /* FindIdGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdGet.swift; sourceTree = "<group>"; };
+		0B68DDE2299287D900A988FA /* JoinNeighborPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinNeighborPost.swift; sourceTree = "<group>"; };
+		0B68DDE4299287E500A988FA /* JoinShopPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinShopPost.swift; sourceTree = "<group>"; };
+		0B94770329899BF400B5829A /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
+		0B94770729899D6400B5829A /* NeighborViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborViewController.swift; sourceTree = "<group>"; };
+		0B94770929899D7800B5829A /* ShopLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLoginViewController.swift; sourceTree = "<group>"; };
+		0B94770B29899D8C00B5829A /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
+		0B94770D29899D9700B5829A /* WhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoViewController.swift; sourceTree = "<group>"; };
+		0B94770F29899DA400B5829A /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		0B94771129899DB200B5829A /* Id_PassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id_PassWordViewController.swift; sourceTree = "<group>"; };
+		0B94771329899DC700B5829A /* Basic_InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_InfoViewController.swift; sourceTree = "<group>"; };
+		0B94771529899DD200B5829A /* InterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestViewController.swift; sourceTree = "<group>"; };
+		0B94771729899DDD00B5829A /* HelloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloViewController.swift; sourceTree = "<group>"; };
+		0B94771929899DF700B5829A /* ShopBasic_InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopBasic_InfoViewController.swift; sourceTree = "<group>"; };
+		0B94771B29899E2400B5829A /* InterestSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestSecondViewController.swift; sourceTree = "<group>"; };
+		0B94771D29899E3000B5829A /* HelloSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSecondViewController.swift; sourceTree = "<group>"; };
+		0B94771F29899E4400B5829A /* FindIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdViewController.swift; sourceTree = "<group>"; };
+		0B94772129899E5200B5829A /* FoundIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundIdViewController.swift; sourceTree = "<group>"; };
+		0B94772329899E6500B5829A /* ResetPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPwViewController.swift; sourceTree = "<group>"; };
+		0B9477252989A86200B5829A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		0BAEAC2429704020008079E6 /* JoinLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinLogin.storyboard; sourceTree = "<group>"; };
 		0BC96D5B2975522800EA4926 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.release.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,12 +224,22 @@
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
 		2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		2F48EBD22991559700D3C791 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		2F48EBD42991592400D3C791 /* APIManageReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManageReview.swift; sourceTree = "<group>"; };
 		2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornViewController.swift; sourceTree = "<group>"; };
 		2F7010EF297586C100E09DD9 /* MyReborn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReborn.storyboard; sourceTree = "<group>"; };
+		2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
+		2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryViewController.swift; sourceTree = "<group>"; };
 		2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManageViewController.swift; sourceTree = "<group>"; };
+		2FB97CFA2992A20A006D4420 /* RebornHistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryDetailViewController.swift; sourceTree = "<group>"; };
+		2FB97CFC2992A9EA006D4420 /* RebornHistoryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryDetailModel.swift; sourceTree = "<group>"; };
+		2FB97CFE2992AE1B006D4420 /* RebornHistoryDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryDetailService.swift; sourceTree = "<group>"; };
+		2FF28CE7298D065D008B7D8E /* APIMyRebornPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMyRebornPost.swift; sourceTree = "<group>"; };
+		2FF615342992D0B000143369 /* RebornHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryService.swift; sourceTree = "<group>"; };
+		2FF615362992D1EC00143369 /* RebornHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryModel.swift; sourceTree = "<group>"; };
 		95148B3C298256FF004A1A57 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		952CB295296E813300BD7CD7 /* PersonalTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalTab.storyboard; sourceTree = "<group>"; };
 		952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal_Home.storyboard; sourceTree = "<group>"; };
@@ -123,8 +248,61 @@
 		952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewViewController.swift; sourceTree = "<group>"; };
 		952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopViewController.swift; sourceTree = "<group>"; };
 		952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopViewController.swift; sourceTree = "<group>"; };
-		952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSideDishViewController.swift; sourceTree = "<group>"; };
-		952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCafeViewController.swift; sourceTree = "<group>"; };
+		952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewController.swift; sourceTree = "<group>"; };
+		953AEE95298F3C1D008AAE8A /* NewShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopModel.swift; sourceTree = "<group>"; };
+		953AEE9B298F4FC2008AAE8A /* NewShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopService.swift; sourceTree = "<group>"; };
+		953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewModel.swift; sourceTree = "<group>"; };
+		9561B7B3298FA05900A4B33B /* BestReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewService.swift; sourceTree = "<group>"; };
+		9561B7B529916E7B00A4B33B /* PopularShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopModel.swift; sourceTree = "<group>"; };
+		9561B7B92991E13900A4B33B /* StoreMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreMap.storyboard; sourceTree = "<group>"; };
+		9561B7BD2991E1CD00A4B33B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9561B803299232DF00A4B33B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		9561B805299232FF00A4B33B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9561B8072992330A00A4B33B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9561B8092992331300A4B33B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9561B80B2992332100A4B33B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		9561B80C2992333400A4B33B /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		9561B80D2992334A00A4B33B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9561B98F2992463200A4B33B /* kako api-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kako api-Bridging-Header.h"; sourceTree = "<group>"; };
+		9561BA442992494400A4B33B /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
+		9561BA452992494400A4B33B /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
+		9561BA462992494400A4B33B /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
+		9561BA472992494400A4B33B /* map_pinup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pinup.png; sourceTree = "<group>"; };
+		9561BA482992494400A4B33B /* detail_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail_button.png; sourceTree = "<group>"; };
+		9561BA492992494400A4B33B /* map_pin_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_custom@3x.png"; sourceTree = "<group>"; };
+		9561BA4A2992494400A4B33B /* map_pinup@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup@3x.png"; sourceTree = "<group>"; };
+		9561BA4B2992494400A4B33B /* map_pin_shadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_shadow@3x.png"; sourceTree = "<group>"; };
+		9561BA4C2992494400A4B33B /* copyright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copyright.png; sourceTree = "<group>"; };
+		9561BA4D2992494400A4B33B /* th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th_line.png; sourceTree = "<group>"; };
+		9561BA4E2992494400A4B33B /* map_pin_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_red@3x.png"; sourceTree = "<group>"; };
+		9561BA4F2992494400A4B33B /* daum_copyright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_copyright.png; sourceTree = "<group>"; };
+		9561BA502992494400A4B33B /* map_pin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin@3x.png"; sourceTree = "<group>"; };
+		9561BA512992494400A4B33B /* map_present_tracking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present_tracking.png; sourceTree = "<group>"; };
+		9561BA522992494400A4B33B /* map_pin_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_red.png; sourceTree = "<group>"; };
+		9561BA542992494400A4B33B /* MTMapPOIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPOIItem.h; sourceTree = "<group>"; };
+		9561BA552992494400A4B33B /* MTMapCameraUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCameraUpdate.h; sourceTree = "<group>"; };
+		9561BA562992494400A4B33B /* MTMapReverseGeoCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapReverseGeoCoder.h; sourceTree = "<group>"; };
+		9561BA572992494400A4B33B /* MTMapPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPolyline.h; sourceTree = "<group>"; };
+		9561BA582992494400A4B33B /* MTMapLocationMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapLocationMarkerItem.h; sourceTree = "<group>"; };
+		9561BA592992494400A4B33B /* MTMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapView.h; sourceTree = "<group>"; };
+		9561BA5A2992494400A4B33B /* MTMapGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapGeometry.h; sourceTree = "<group>"; };
+		9561BA5B2992494400A4B33B /* MTMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCircle.h; sourceTree = "<group>"; };
+		9561BA5C2992494400A4B33B /* info_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_box.png; sourceTree = "<group>"; };
+		9561BA5D2992494400A4B33B /* point_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_sprite.png; sourceTree = "<group>"; };
+		9561BA5E2992494400A4B33B /* map_pinup_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pinup_custom.png; sourceTree = "<group>"; };
+		9561BA5F2992494400A4B33B /* info_box_tail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_box_tail.png; sourceTree = "<group>"; };
+		9561BA602992494400A4B33B /* noimage256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage256.png; sourceTree = "<group>"; };
+		9561BA612992494400A4B33B /* map_present_direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present_direction.png; sourceTree = "<group>"; };
+		9561BA622992494400A4B33B /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
+		9561BA632992494400A4B33B /* map_present.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present.png; sourceTree = "<group>"; };
+		9561BA642992494400A4B33B /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
+		9561BA652992494400A4B33B /* map_present_background_update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present_background_update.png; sourceTree = "<group>"; };
+		9561BA662992494400A4B33B /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
+		9561BA672992494400A4B33B /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
+		9561BA682992494400A4B33B /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		95C036562988EBDE00599354 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		95C03659298A7D4400599354 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		95C0365B298A7FEA00599354 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitedShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -156,6 +334,7 @@
 		C71987562986D46F000C87EB /* JjimTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimTableViewCell.swift; sourceTree = "<group>"; };
 		C71987582986DBCA000C87EB /* RebornModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornModel.swift; sourceTree = "<group>"; };
 		C71C2D6C29755C28007BA3E0 /* ic_Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_Time.png; path = ../../../../../Downloads/ic_Time.png; sourceTree = "<group>"; };
+		C71987582986DBCA000C87EB /* APIRebornGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornGet.swift; sourceTree = "<group>"; };
 		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
 		C7284AA2298D0B8F009A70E7 /* HTTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIJjimPost.swift; sourceTree = "<group>"; };
@@ -204,33 +383,104 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9561B80E2992336200A4B33B /* libc++.tbd in Frameworks */,
+				9561B8082992330A00A4B33B /* CoreLocation.framework in Frameworks */,
+				9561B8102992337D00A4B33B /* libsqlite3.tbd in Frameworks */,
+				9561B80A2992331300A4B33B /* QuartzCore.framework in Frameworks */,
 				F54958F376ED96265363C1F8 /* Pods_UMC_Reborn.framework in Frameworks */,
+				9561B80F2992336D00A4B33B /* libxml2.tbd in Frameworks */,
+				9561B806299232FF00A4B33B /* SystemConfiguration.framework in Frameworks */,
+				9561BA842992494400A4B33B /* DaumMap.framework in Frameworks */,
+				9561B804299232DF00A4B33B /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B68DDDF299242A200A988FA /* JLAPI */ = {
+			isa = PBXGroup;
+			children = (
+				0B0D66CB298D0BFD00E5220F /* APINeiLoginPost.swift */,
+				0B0D66CD298D21A000E5220F /* APIShopLoginPost.swift */,
+				0B68DDE2299287D900A988FA /* JoinNeighborPost.swift */,
+				0B68DDE4299287E500A988FA /* JoinShopPost.swift */,
+				0B68DDE0299287B800A988FA /* FindIdGet.swift */,
+			);
+			path = JLAPI;
+			sourceTree = "<group>";
+		};
+		0B9477022989993900B5829A /* joinlogin */ = {
+			isa = PBXGroup;
+			children = (
+				0B68DDDF299242A200A988FA /* JLAPI */,
+				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
+				0B94770329899BF400B5829A /* FirstLoginViewController.swift */,
+				0B9477252989A86200B5829A /* FirstViewController.swift */,
+				0B94770729899D6400B5829A /* NeighborViewController.swift */,
+				0B94770929899D7800B5829A /* ShopLoginViewController.swift */,
+				0B94770B29899D8C00B5829A /* ServiceViewController.swift */,
+				0B94770D29899D9700B5829A /* WhoViewController.swift */,
+				0B94770F29899DA400B5829A /* EmailViewController.swift */,
+				0B94771129899DB200B5829A /* Id_PassWordViewController.swift */,
+				0B94771329899DC700B5829A /* Basic_InfoViewController.swift */,
+				0B94771729899DDD00B5829A /* HelloViewController.swift */,
+				0B0D66C5298CFA1800E5220F /* EmailViewSecondController.swift */,
+				0B94771929899DF700B5829A /* ShopBasic_InfoViewController.swift */,
+				0B0D66C7298CFA6100E5220F /* Id_PassWordSecondViewController.swift */,
+				0B94771B29899E2400B5829A /* InterestSecondViewController.swift */,
+				0B94771529899DD200B5829A /* InterestViewController.swift */,
+				0B94771D29899E3000B5829A /* HelloSecondViewController.swift */,
+				0B94771F29899E4400B5829A /* FindIdViewController.swift */,
+				0B94772129899E5200B5829A /* FoundIdViewController.swift */,
+				0B94772329899E6500B5829A /* ResetPwViewController.swift */,
+			);
+			path = joinlogin;
+			sourceTree = "<group>";
+		};
 		2FB4A6A229779E2000CA811C /* MyReborn */ = {
 			isa = PBXGroup;
 			children = (
-				C71C2D6C29755C28007BA3E0 /* ic_Time.png */,
-				2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */,
-				2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */,
+				2FF28CE6298D0645008B7D8E /* Models */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
+				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
 				2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */,
 				2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */,
-				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
-				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
-				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
 				2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */,
+				2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */,
+				2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */,
+				2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */,
+				2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */,
+				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
+				2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */,
+				2FB97CFA2992A20A006D4420 /* RebornHistoryDetailViewController.swift */,
 			);
 			path = MyReborn;
+			sourceTree = "<group>";
+		};
+		2FF28CE6298D0645008B7D8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2FF28CE7298D065D008B7D8E /* APIMyRebornPost.swift */,
+				2F48EBD22991559700D3C791 /* APIHandler.swift */,
+				2F48EBD42991592400D3C791 /* APIManageReview.swift */,
+				2FB97CFC2992A9EA006D4420 /* RebornHistoryDetailModel.swift */,
+				2FF615362992D1EC00143369 /* RebornHistoryModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		77AD8D9494DCB96CF5BB6F9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9561BA422992494400A4B33B /* DaumMap.embeddedframework */,
+				9561B80D2992334A00A4B33B /* libsqlite3.tbd */,
+				9561B80C2992333400A4B33B /* libxml2.tbd */,
+				9561B80B2992332100A4B33B /* libc++.tbd */,
+				9561B8092992331300A4B33B /* QuartzCore.framework */,
+				9561B8072992330A00A4B33B /* CoreLocation.framework */,
+				9561B805299232FF00A4B33B /* SystemConfiguration.framework */,
+				9561B803299232DF00A4B33B /* OpenGLES.framework */,
 				EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */,
 			);
 			name = Frameworks;
@@ -239,12 +489,12 @@
 		952CB29B297754E100BD7CD7 /* PersonalHomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				953AEE94298F3C03008AAE8A /* Model */,
 				952CB299296EB51600BD7CD7 /* PersonalHomeViewController.swift */,
 				95E9FFA8297A920F0073DF2B /* CategoryTableViewCell.swift */,
 				95E9FFA62979C8350073DF2B /* BestReviewCollectionViewCell.swift */,
 				952CB29E2977566B00BD7CD7 /* BestReviewViewController.swift */,
-				952CB2A4297768D200BD7CD7 /* PopularSideDishViewController.swift */,
-				952CB2A62977691100BD7CD7 /* PopularCafeViewController.swift */,
+				952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */,
 				952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */,
 				95E9FFA42979BE270073DF2B /* NewShopCollectionViewCell.swift */,
 				952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */,
@@ -256,6 +506,83 @@
 			path = PersonalHomeVC;
 			sourceTree = "<group>";
 		};
+		953AEE94298F3C03008AAE8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				953AEE95298F3C1D008AAE8A /* NewShopModel.swift */,
+				953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */,
+				9561B7B529916E7B00A4B33B /* PopularShopModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9561B7BC2991E16900A4B33B /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				9561B7BD2991E1CD00A4B33B /* MapViewController.swift */,
+			);
+			path = MapVC;
+			sourceTree = "<group>";
+		};
+		9561BA422992494400A4B33B /* DaumMap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				9561BA432992494400A4B33B /* Resources */,
+				9561BA682992494400A4B33B /* DaumMap.framework */,
+			);
+			path = DaumMap.embeddedframework;
+			sourceTree = "<group>";
+		};
+		9561BA432992494400A4B33B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9561BA442992494400A4B33B /* map_pinup_custom@3x.png */,
+				9561BA452992494400A4B33B /* map_pin_custom.png */,
+				9561BA462992494400A4B33B /* shadow_balloon.png */,
+				9561BA472992494400A4B33B /* map_pinup.png */,
+				9561BA482992494400A4B33B /* detail_button.png */,
+				9561BA492992494400A4B33B /* map_pin_custom@3x.png */,
+				9561BA4A2992494400A4B33B /* map_pinup@3x.png */,
+				9561BA4B2992494400A4B33B /* map_pin_shadow@3x.png */,
+				9561BA4C2992494400A4B33B /* copyright.png */,
+				9561BA4D2992494400A4B33B /* th_line.png */,
+				9561BA4E2992494400A4B33B /* map_pin_red@3x.png */,
+				9561BA4F2992494400A4B33B /* daum_copyright.png */,
+				9561BA502992494400A4B33B /* map_pin@3x.png */,
+				9561BA512992494400A4B33B /* map_present_tracking.png */,
+				9561BA522992494400A4B33B /* map_pin_red.png */,
+				9561BA532992494400A4B33B /* Headers */,
+				9561BA5C2992494400A4B33B /* info_box.png */,
+				9561BA5D2992494400A4B33B /* point_sprite.png */,
+				9561BA5E2992494400A4B33B /* map_pinup_custom.png */,
+				9561BA5F2992494400A4B33B /* info_box_tail.png */,
+				9561BA602992494400A4B33B /* noimage256.png */,
+				9561BA612992494400A4B33B /* map_present_direction.png */,
+				9561BA622992494400A4B33B /* map_pin.png */,
+				9561BA632992494400A4B33B /* map_present.png */,
+				9561BA642992494400A4B33B /* noimage.png */,
+				9561BA652992494400A4B33B /* map_present_background_update.png */,
+				9561BA662992494400A4B33B /* daum_th_line.png */,
+				9561BA672992494400A4B33B /* map_pin_shadow.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9561BA532992494400A4B33B /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				9561BA542992494400A4B33B /* MTMapPOIItem.h */,
+				9561BA552992494400A4B33B /* MTMapCameraUpdate.h */,
+				9561BA562992494400A4B33B /* MTMapReverseGeoCoder.h */,
+				9561BA572992494400A4B33B /* MTMapPolyline.h */,
+				9561BA582992494400A4B33B /* MTMapLocationMarkerItem.h */,
+				9561BA592992494400A4B33B /* MTMapView.h */,
+				9561BA5A2992494400A4B33B /* MTMapGeometry.h */,
+				9561BA5B2992494400A4B33B /* MTMapCircle.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		95C036542988D95C00599354 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,9 +590,32 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		95C036552988EBB700599354 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95C036562988EBDE00599354 /* SearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95C03658298A7D1300599354 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				95C03659298A7D4400599354 /* APIConstants.swift */,
+				95C0365B298A7FEA00599354 /* NetworkResult.swift */,
+				953AEE9B298F4FC2008AAE8A /* NewShopService.swift */,
+				9561B7B3298FA05900A4B33B /* BestReviewService.swift */,
+				2FB97CFE2992AE1B006D4420 /* RebornHistoryDetailService.swift */,
+				2FF615342992D0B000143369 /* RebornHistoryService.swift */,
+				9561B98F2992463200A4B33B /* kako api-Bridging-Header.h */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		95E9FFB5297E6F560073DF2B /* SearchVC */ = {
 			isa = PBXGroup;
 			children = (
+				95C036552988EBB700599354 /* Model */,
 				95E9FFB6297E6F880073DF2B /* SearchViewController.swift */,
 				95E9FFB8297FAFE10073DF2B /* LatestSearchedCell.swift */,
 				95E9FFBA29808CB10073DF2B /* SearchResultViewController.swift */,
@@ -360,19 +710,22 @@
 			isa = PBXGroup;
 			children = (
 				C7284AA8298EA6E9009A70E7 /* Network */,
+				95C03658298A7D1300599354 /* Network */,
 				952CB295296E813300BD7CD7 /* PersonalTab.storyboard */,
 				C7C4FD7F296D315E00040E05 /* LaunchScreen.storyboard */,
 				C7C4FD7A296D315B00040E05 /* Main.storyboard */,
-				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
 				952CB297296EB2CA00BD7CD7 /* Personal_Home.storyboard */,
 				C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */,
 				C71987512986CF0D000C87EB /* Personal_Jjim.storyboard */,
 				C71987532986D42F000C87EB /* PersonalJjim */,
 				95E9FFB3297E6EE80073DF2B /* SearchPage.storyboard */,
+				9561B7B92991E13900A4B33B /* StoreMap.storyboard */,
 				2FB4A6A229779E2000CA811C /* MyReborn */,
 				95E9FFB5297E6F560073DF2B /* SearchVC */,
 				952CB29B297754E100BD7CD7 /* PersonalHomeVC */,
 				C74FEE1C2971782C00BFC8D0 /* StoreHomeViewController */,
+				9561B7BC2991E16900A4B33B /* MapVC */,
+				0B9477022989993900B5829A /* joinlogin */,
 				C7C4FD74296D315B00040E05 /* AppDelegate.swift */,
 				C7C4FD76296D315B00040E05 /* SceneDelegate.swift */,
 				C7C4FD78296D315B00040E05 /* ViewController.swift */,
@@ -420,6 +773,7 @@
 				C7C4FD6E296D315B00040E05 /* Frameworks */,
 				C7C4FD6F296D315B00040E05 /* Resources */,
 				F0535D8D29DFB2B70ECBF9CB /* [CP] Embed Pods Frameworks */,
+				9561B9FE2992471900A4B33B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -469,19 +823,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				952CB296296E813400BD7CD7 /* PersonalTab.storyboard in Resources */,
+				9561BA812992494400A4B33B /* map_present_background_update.png in Resources */,
+				9561BA7C2992494400A4B33B /* noimage256.png in Resources */,
+				9561BA782992494400A4B33B /* info_box.png in Resources */,
+				9561BA712992494400A4B33B /* copyright.png in Resources */,
+				9561BA792992494400A4B33B /* point_sprite.png in Resources */,
 				C7DD72B729779D090076BFB4 /* (null) in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
+				9561BA6B2992494400A4B33B /* shadow_balloon.png in Resources */,
+				9561BA6A2992494400A4B33B /* map_pin_custom.png in Resources */,
 				C7DD72B629779D090076BFB4 /* (null) in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
+				9561BA772992494400A4B33B /* map_pin_red.png in Resources */,
+				9561BA7B2992494400A4B33B /* info_box_tail.png in Resources */,
+				9561BA6F2992494400A4B33B /* map_pinup@3x.png in Resources */,
+				9561BA7E2992494400A4B33B /* map_pin.png in Resources */,
+				9561BA762992494400A4B33B /* map_present_tracking.png in Resources */,
 				952CB298296EB2CA00BD7CD7 /* Personal_Home.storyboard in Resources */,
+				9561BA732992494400A4B33B /* map_pin_red@3x.png in Resources */,
+				9561BA742992494400A4B33B /* daum_copyright.png in Resources */,
+				9561BA7D2992494400A4B33B /* map_present_direction.png in Resources */,
+				9561BA752992494400A4B33B /* map_pin@3x.png in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
 				0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */,
+				9561BA832992494400A4B33B /* map_pin_shadow.png in Resources */,
+				9561BA692992494400A4B33B /* map_pinup_custom@3x.png in Resources */,
+				9561BA822992494400A4B33B /* daum_th_line.png in Resources */,
 				2F7010F0297586C100E09DD9 /* MyReborn.storyboard in Resources */,
 				C7C4FD7E296D315E00040E05 /* Assets.xcassets in Resources */,
 				C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */,
+				9561BA7A2992494400A4B33B /* map_pinup_custom.png in Resources */,
+				9561BA6E2992494400A4B33B /* map_pin_custom@3x.png in Resources */,
+				9561BA702992494400A4B33B /* map_pin_shadow@3x.png in Resources */,
 				C71987522986CF0D000C87EB /* Personal_Jjim.storyboard in Resources */,
+				9561B7BA2991E13900A4B33B /* StoreMap.storyboard in Resources */,
 				C7C4FD7C296D315B00040E05 /* Main.storyboard in Resources */,
+				9561BA722992494400A4B33B /* th_line.png in Resources */,
 				95E9FFB4297E6EE80073DF2B /* SearchPage.storyboard in Resources */,
+				9561BA802992494400A4B33B /* noimage.png in Resources */,
+				9561BA6D2992494400A4B33B /* detail_button.png in Resources */,
+				9561BA7F2992494400A4B33B /* map_present.png in Resources */,
+				9561BA6C2992494400A4B33B /* map_pinup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,48 +918,73 @@
 			files = (
 				0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */,
 				C7B8BCDF298423FC00FE3C0A /* PwErrorViewController.swift in Sources */,
+				0B94772029899E4400B5829A /* FindIdViewController.swift in Sources */,
+				9561B7B629916E7B00A4B33B /* PopularShopModel.swift in Sources */,
 				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
+				2FB97CFF2992AE1B006D4420 /* RebornHistoryDetailService.swift in Sources */,
 				C7889DFC297C23050008E99F /* StoreReviewViewController.swift in Sources */,
+				0B9477262989A86200B5829A /* FirstViewController.swift in Sources */,
+				0B94771E29899E3000B5829A /* HelloSecondViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
+				0B94771429899DC700B5829A /* Basic_InfoViewController.swift in Sources */,
 				2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */,
 				C71987572986D46F000C87EB /* JjimTableViewCell.swift in Sources */,
 				95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */,
 				2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */,
+				0B94770829899D6400B5829A /* NeighborViewController.swift in Sources */,
 				C70D3D6E2982D89200CABA91 /* ModalStoreViewController.swift in Sources */,
 				95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
+				0B94772429899E6500B5829A /* ResetPwViewController.swift in Sources */,
 				95E9FFB9297FAFE10073DF2B /* LatestSearchedCell.swift in Sources */,
+				0B94771A29899DF700B5829A /* ShopBasic_InfoViewController.swift in Sources */,
 				C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */,
 				C75E99072984E6F6003D40B4 /* CodeViewController.swift in Sources */,
 				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,
 				C7284AB2298FFBA1009A70E7 /* StoreService.swift in Sources */,
 				C7EF982C2990DD2600480DD9 /* ReviewService.swift in Sources */,
+				2F48EBD52991592400D3C791 /* APIManageReview.swift in Sources */,
+				95C0365C298A7FEA00599354 /* NetworkResult.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C7284AAA298EA703009A70E7 /* APIConstants.swift in Sources */,
 				C70D3D572981890E00CABA91 /* SecondTabCollectionViewCell.swift in Sources */,
+				0B94770C29899D8C00B5829A /* ServiceViewController.swift in Sources */,
+				0B94771029899DA400B5829A /* EmailViewController.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
 				C7284AAC298EA726009A70E7 /* NetworkResult.swift in Sources */,
 				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
+				2FB97CFD2992A9EA006D4420 /* RebornHistoryDetailModel.swift in Sources */,
 				2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */,
+				0B94771229899DB200B5829A /* Id_PassWordViewController.swift in Sources */,
 				C7DCE5442972936A00F44F1D /* EditRebornViewController.swift in Sources */,
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				C7EF98302991087200480DD9 /* JjimService.swift in Sources */,
+				0B0D66C6298CFA1800E5220F /* EmailViewSecondController.swift in Sources */,
+				9561B7B4298FA05900A4B33B /* BestReviewService.swift in Sources */,
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
 				C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */,
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
-				952CB2A72977691100BD7CD7 /* PopularCafeViewController.swift in Sources */,
+				2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */,
 				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
+				2FF615372992D1EC00143369 /* RebornHistoryModel.swift in Sources */,
 				C71987552986D447000C87EB /* JjimViewController.swift in Sources */,
+				2FF28CE8298D065D008B7D8E /* APIMyRebornPost.swift in Sources */,
 				95148B3D298256FF004A1A57 /* SearchResultTableViewCell.swift in Sources */,
 				C7284AA3298D0B8F009A70E7 /* HTTPManager.swift in Sources */,
 				95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */,
 				C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */,
+				0B94771829899DDE00B5829A /* HelloViewController.swift in Sources */,
+				0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */,
+				0B0D66C8298CFA6100E5220F /* Id_PassWordSecondViewController.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				C7889E01297C297D0008E99F /* StoreReviewTableViewCell.swift in Sources */,
 				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
 				2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */,
+				95C036572988EBDE00599354 /* SearchModel.swift in Sources */,
 				952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */,
 				C70D3D5D29819A4B00CABA91 /* SecondMainViewController.swift in Sources */,
+				95C0365A298A7D4400599354 /* APIConstants.swift in Sources */,
+				0B94772229899E5200B5829A /* FoundIdViewController.swift in Sources */,
 				C70D3D5B29819A1D00CABA91 /* FirstMainViewController.swift in Sources */,
 				C70D3D612981A16D00CABA91 /* FirstMainTableViewCell.swift in Sources */,
 				C7EF982A2990DC0100480DD9 /* ReviewModel.swift in Sources */,
@@ -588,24 +995,39 @@
 				C7EF98262990D83B00480DD9 /* RebornStatusModel.swift in Sources */,
 				C71987592986DBCA000C87EB /* RebornModel.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularSideDishViewController.swift in Sources */,
+				C71987592986DBCA000C87EB /* APIRebornGet.swift in Sources */,
+				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
+				0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */,
+				0B0D66CC298D0BFD00E5220F /* APINeiLoginPost.swift in Sources */,
+				0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */,
 				C70D3D632982308D00CABA91 /* SecondMainTableViewCell.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */,
+				2FA56F58298BDBE200CCC89A /* UtilityFunctions.swift in Sources */,
 				C75E990929857BA2003D40B4 /* ReviewImage.swift in Sources */,
+				0B0D66CE298D21A000E5220F /* APIShopLoginPost.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
 				C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */,
+				0B94770E29899D9700B5829A /* WhoViewController.swift in Sources */,
+				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
+				C7DA00A329891C740015BA4F /* APIReviewGet.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
 				C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */,
 				C70D3D552981637E00CABA91 /* SecondTabTableViewCell.swift in Sources */,
 				2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */,
+				2FB97CFB2992A20A006D4420 /* RebornHistoryDetailViewController.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
 				95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */,
 				C7EF98282990D8FB00480DD9 /* RebornStatusService.swift in Sources */,
 				C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */,
 				C7284AAE298EAECE009A70E7 /* RebornService.swift in Sources */,
+				2FADC52D298BC71200C09566 /* ChangePasswordViewController.swift in Sources */,
 				C70D3D532981001300CABA91 /* FirstTabTableViewCell.swift in Sources */,
+				9561B7BE2991E1CD00A4B33B /* MapViewController.swift in Sources */,
 				C74FEE442971893300BFC8D0 /* RebornEnrollViewController.swift in Sources */,
+				2FF615352992D0B000143369 /* RebornHistoryService.swift in Sources */,
+				953AEEA0298F9C27008AAE8A /* BestReviewModel.swift in Sources */,
 				95E9FFB7297E6F880073DF2B /* SearchViewController.swift in Sources */,
 				C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */,
 				C70D3D5F29819A5C00CABA91 /* ThirdMainViewController.swift in Sources */,
@@ -613,7 +1035,13 @@
 				C7DCE53C29727AA900F44F1D /* EnrollTableViewCell.swift in Sources */,
 				C76935B0297E435A00EB4528 /* StoreReviewCollectionViewCell.swift in Sources */,
 				C74FEE4629718B7C00BFC8D0 /* AddRebornViewController.swift in Sources */,
+				953AEE96298F3C1D008AAE8A /* NewShopModel.swift in Sources */,
+				0B94771629899DD200B5829A /* InterestViewController.swift in Sources */,
 				C74FEE48297199FE00BFC8D0 /* StoreManageViewController.swift in Sources */,
+				953AEE9C298F4FC2008AAE8A /* NewShopService.swift in Sources */,
+				0B94771C29899E2400B5829A /* InterestSecondViewController.swift in Sources */,
+				0B68DDE3299287D900A988FA /* JoinNeighborPost.swift in Sources */,
+				0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */,
 				C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */,
 				C7D56FAA2972BC5600A68015 /* PopupViewController.swift in Sources */,
 			);
@@ -761,9 +1189,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DropDown\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Pageboy\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Tabman\"",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
@@ -779,9 +1218,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nayeon/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -793,9 +1234,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DropDown\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Pageboy\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Tabman\"",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
@@ -811,9 +1263,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nayeon/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -27,6 +27,7 @@ class ReviewManageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "리뷰 관리"
     }
 
 }

@@ -13,6 +13,7 @@ class CategoryTableViewCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var shopImg: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var shopScore: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
