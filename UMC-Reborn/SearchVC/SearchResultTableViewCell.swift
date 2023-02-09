@@ -12,7 +12,6 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var shopnameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var shopImg: UIImageView!
-    
     @IBOutlet weak var ratingnum: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

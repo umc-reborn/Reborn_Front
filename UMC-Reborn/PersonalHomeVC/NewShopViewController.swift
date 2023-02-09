@@ -11,22 +11,32 @@ class NewShopViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
-    var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
-//    var imageList: [String] = ["bread_image","bread_image","bread_image","bread_image","bread_image"]
-
+    var newDatas: [NewShopResponse] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         collectionView.backgroundColor = .clear
+        
+        NewShopService.shared.getNewShop{ result in
+                    switch result {
+                    case .success(let response):
+//                        dump(response)
+                        guard let response = response as? NewShopModel else {
+                            break
+                        }
+                        self.newDatas = response.result
+                    
+                    default:
+                        break
+                    }
+                    self.collectionView.reloadData()
+                }
     }
-
-
 }
 
 extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shopList.count
+        return newDatas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -37,13 +47,16 @@ extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.shopImage.layer.cornerRadius = 10
         cell.layer.borderWidth = 0
         
-        cell.shopName.text = shopList[indexPath.row]
-        cell.shopLocation.text = shopLocationList[indexPath.row]
-        
-//        cell.shopImage.reloadData()
+        let shopData = newDatas[indexPath.row]
+        let url = URL(string: shopData.storeImage)
+        cell.shopImage.load(url: url!)
+        cell.shopName.text = shopData.storeName
+        cell.shopLocation.text = shopData.category
+        cell.shopScore.text = String(shopData.storeScore)
         return cell
     }
 }
+
 extension NewShopViewController: UICollectionViewDelegateFlowLayout {
     
     // 옆 간격

@@ -13,7 +13,10 @@ class BestReviewCollectionViewCell:UICollectionViewCell {
     @IBOutlet weak var shopImage: UIImageView!
     @IBOutlet weak var shopLocation: UILabel!
     @IBOutlet weak var shopName: UILabel!
+    @IBOutlet weak var comment: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var shopScore: UILabel!
+    @IBOutlet weak var date: UILabel!
     
     var likeBool: Bool = false {
         willSet(newValue) {

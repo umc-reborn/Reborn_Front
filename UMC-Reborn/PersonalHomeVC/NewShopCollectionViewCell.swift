@@ -13,6 +13,7 @@ class NewShopCollectionViewCell:UICollectionViewCell {
     @IBOutlet weak var shopName: UILabel!
     @IBOutlet weak var shopImage: UIImageView!
     @IBOutlet weak var shopLocation: UILabel!
+    @IBOutlet weak var shopScore: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     
     var likeBool: Bool = false {
