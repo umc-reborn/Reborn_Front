@@ -32,6 +32,7 @@ class CodeViewController: UIViewController, UITextFieldDelegate {
         
         codeTextfield.delegate = self
         codeTextfield.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
+        codeTextfield.addTarget(self, action: #selector(textFieldInterval), for: .editingChanged)
     }
     
     @IBAction func textLimit(_ sender: Any) {
@@ -62,5 +63,28 @@ class CodeViewController: UIViewController, UITextFieldDelegate {
             codeokButton.layer.borderColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1).cgColor
         }
     }
-
+    
+    @objc func textFieldInterval(textFiled: UITextField) {
+        if (codeTextfield.text == "1") {
+            codeTextfield.defaultTextAttributes.updateValue(23.0, forKey: NSAttributedString.Key.kern)
+        } else if (codeTextfield.text == "2") {
+            codeTextfield.defaultTextAttributes.updateValue(16.0, forKey: NSAttributedString.Key.kern)
+        } else if (codeTextfield.text == "4") {
+            codeTextfield.defaultTextAttributes.updateValue(12.0, forKey: NSAttributedString.Key.kern)
+        } else if (codeTextfield.text == "5") {
+            codeTextfield.defaultTextAttributes.updateValue(17.0, forKey: NSAttributedString.Key.kern)
+        } else if (codeTextfield.text == "0") {
+            codeTextfield.defaultTextAttributes.updateValue(10.0, forKey: NSAttributedString.Key.kern)
+        } else if (codeTextfield.text == "6") {
+            codeTextfield.defaultTextAttributes.updateValue(14.0, forKey: NSAttributedString.Key.kern)
+        } else if (codeTextfield.text == "7") {
+            codeTextfield.defaultTextAttributes.updateValue(16.0, forKey: NSAttributedString.Key.kern)
+        } else if (codeTextfield.text == "8") {
+            codeTextfield.defaultTextAttributes.updateValue(13.0, forKey: NSAttributedString.Key.kern)
+        } else if (codeTextfield.text == "3") {
+            codeTextfield.defaultTextAttributes.updateValue(16.0, forKey: NSAttributedString.Key.kern)
+        } else if (codeTextfield.text == "9") {
+            codeTextfield.defaultTextAttributes.updateValue(14.0, forKey: NSAttributedString.Key.kern)
+        }
+    }
 }

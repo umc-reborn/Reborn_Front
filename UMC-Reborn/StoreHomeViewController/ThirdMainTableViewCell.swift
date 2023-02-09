@@ -33,11 +33,11 @@ extension ThirdMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
             // #warning Incomplete implementation, return the number of sections
-            return StoreArray.count
+        return rebornCompleteDatas.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StoreArray[section].count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -50,9 +50,20 @@ extension ThirdMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ThirdMain_TableViewCell", for: indexPath) as! ThirdMainTableViewCell
-        cell.nicknameLabel.text = StoreArray[indexPath.section][indexPath.row]
-        cell.foodnameLabel.text = FoodArray[indexPath.section][indexPath.row]
-        cell.countLabel.text = "남은 수량: \(CountArray[indexPath.section][indexPath.row])"
+        
+        let rebornData = rebornCompleteDatas[indexPath.section]
+        let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
+        let createTime = rebornData.createdAt
+        let yearTime = createTime.prefix(4)
+        let monthTime1 = createTime[String.Index(encodedOffset: 5)]
+        let monthTime2 = createTime[String.Index(encodedOffset: 6)]
+        let dayTime1 = createTime[String.Index(encodedOffset: 8)]
+        let dayTime2 = createTime[String.Index(encodedOffset: 9)]
+        cell.nicknameLabel.text = rebornData.userNickname
+        cell.foodImage.load(url: url!)
+        cell.foodnameLabel.text = rebornData.productName
+        cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
+        cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2)"
         
         return cell
     }

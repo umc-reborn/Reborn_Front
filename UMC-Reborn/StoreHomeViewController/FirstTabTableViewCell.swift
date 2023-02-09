@@ -15,6 +15,10 @@ class FirstTabTableViewCell: UITableViewCell {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var LimitLabel: UILabel!
     @IBOutlet weak var DescriptionLabel: UILabel!
+    @IBOutlet weak var timeImage: UIImageView!
+    @IBOutlet weak var limitTimeLabel: UILabel!
+    @IBOutlet weak var rebornButton: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

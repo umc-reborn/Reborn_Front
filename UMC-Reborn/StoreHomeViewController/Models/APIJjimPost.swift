@@ -1,28 +1,23 @@
 //
-//  APIHandler.swift
+//  APIJjimPost.swift
 //  UMC-Reborn
 //
-//  Created by jaegu park on 2023/01/26.
+//  Created by jaegu park on 2023/02/03.
 //
 
 import Foundation
 import Alamofire
 
-struct RebornModel:Encodable {
+struct JjimModel:Encodable {
     var storeIdx:Int
-    var productName:String
-    var productGuide:String
-    var productComment:String
-    var productImg:String
-    var productLimitTime:String
-    var productCnt:Int
+    var userIdx:Int
 }
 
-class APIHandlerPost {
-    static let instance = APIHandlerPost()
+class APIHandlerJjimPost {
+    static let instance = APIHandlerJjimPost()
     
-    func SendingPostReborn(parameters: RebornModel, handler: @escaping (_ result: RebornresultModel)->(Void)) {
-        let url = "http://www.rebornapp.shop/reborns/create"
+    func SendingPostJjim(parameters: JjimModel, handler: @escaping (_ result: JjimresultModel)->(Void)) {
+        let url = "http://www.rebornapp.shop/jjim"
         let headers:HTTPHeaders = [
             "content-type": "application/json"
         ]
@@ -34,7 +29,7 @@ class APIHandlerPost {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                     print(json)
                     
-                    let jsonresult = try JSONDecoder().decode(RebornresultModel.self, from: data!)
+                    let jsonresult = try JSONDecoder().decode(JjimresultModel.self, from: data!)
                     handler(jsonresult)
                 } catch {
                     print(error.localizedDescription)
@@ -46,13 +41,15 @@ class APIHandlerPost {
     }
 }
 
-struct RebornresultModel: Codable {
+struct JjimresultModel: Codable {
     var isSuccess:Bool
     var code:Int
     var message:String
-    var result: RebornResult
+    var result: JjimResult
 }
 
-struct RebornResult: Codable {
-    var rebornIdx:Int
+struct JjimResult: Codable {
+    var jjimIdx:Int
+    var userEmail:String
+    var storeName:String
 }
