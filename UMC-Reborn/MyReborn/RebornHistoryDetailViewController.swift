@@ -19,6 +19,7 @@ class RebornHistoryDetailViewController: UIViewController {
     @IBOutlet weak var productAlert: UILabel!
     @IBOutlet weak var storeAddr: UILabel!
     @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var statusImage: UIImageView!
     
     var apiData: RebornHistoryDetailResponse!
 
@@ -40,9 +41,15 @@ class RebornHistoryDetailViewController: UIViewController {
                 guard let response = response as? RebornHistoryDetailModel else {
                     break
                 }
+                
                 self.apiData = response.result
-                print("response.result is \(response.result)")
-                print("self.apiData is \(self.apiData)")
+                
+                if self.apiData.status == "ACTIVE" {
+                    self.statusImage.image = UIImage(named: "step1")
+                } else {
+                    self.statusImage.image = UIImage(named: "step2")
+                }
+                
                 let url = URL(string: self.apiData.storeImage)
                 self.storeName.text = self.apiData.storeName
                 self.status.text = self.apiData.status
@@ -54,7 +61,7 @@ class RebornHistoryDetailViewController: UIViewController {
                 self.storeAddr.text = self.apiData.storeAddress
                 self.storeCategory.text = self.apiData.category
                 self.date.text = self.apiData.createdAt
-                
+
                 
                 
 //                self.storeName.text = self.apiData.storeName
