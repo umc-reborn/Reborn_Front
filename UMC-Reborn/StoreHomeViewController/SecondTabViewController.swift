@@ -127,7 +127,7 @@ extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
             cell.reviewStar_c.image = UIImage(named: "review_star")
             cell.reviewStar_d.image = UIImage(named: "review_star")
             cell.reviewStar_e.image = UIImage(named: "review_star")
-        } else if (rebornData.reviewScore == 4) {
+        } else if (rebornData.reviewScore == 4) { 
             cell.reviewStar_a.image = UIImage(named: "review_star")
             cell.reviewStar_b.image = UIImage(named: "review_star")
             cell.reviewStar_c.image = UIImage(named: "review_star")
