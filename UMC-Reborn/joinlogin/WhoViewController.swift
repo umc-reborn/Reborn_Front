@@ -10,8 +10,9 @@ import UIKit
 class WhoViewController: UIViewController {
 
 
-    var isChangeLeft = true
-    var isChangeRight = true
+    
+    var isChangeLeft = false
+    var isChangeRight = false
     
     var leftgray: UIImage?
     var leftorange: UIImage?
@@ -33,32 +34,31 @@ class WhoViewController: UIViewController {
     
     
     @IBAction func LeftBowTapped(_ sender:Any){
-        if (isChangeLeft == true){
+        if (isChangeLeft == false){
             LeftBow.setImage(leftorange, for: .normal)
             BigWord1.textColor = .black
             SmallWord1.textColor = .black
             route_Neighbor = 1
-            isChangeLeft = false
+            isChangeLeft = true
         }
         else {
             LeftBow.setImage(leftgray, for: .normal)
             BigWord1.textColor = .mygray
             SmallWord1.textColor = .mygray
             route_Neighbor = 0
-            isChangeLeft = true
+            isChangeLeft = false
             NextButtonn.isEnabled = false
         }
     }
     
     @IBAction func RightBowTapped(_ sender:Any){
-        if (isChangeRight == true){
+        if (isChangeRight == false){
             RightBow.setImage(rightorange, for: .normal)
             BigWord2.textColor = .black
             SmallWord2.textColor = .black
             route_Shop = 1
-            isChangeRight = false
-            //동네가게누르면 바로 뒤로 
-            //self.present(EmailViewSecondController(), animated: true)
+            isChangeRight = true
+            
             
         }
         else {
@@ -66,10 +66,26 @@ class WhoViewController: UIViewController {
             BigWord2.textColor = .mygray
             SmallWord2.textColor = .mygray
             route_Shop = 0
-            isChangeRight = true
+            isChangeRight = false
             NextButtonn.isEnabled = false
         }
     }
+    
+    
+    @IBAction func NextButtonTouched(_ sender: Any) {
+        if (route_Neighbor == 1){
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "EmailViewController")
+            self.navigationController?.pushViewController(pushVC!, animated: true)
+        }
+        else if (route_Shop == 1){
+            let pushVCc = self.storyboard?.instantiateViewController(withIdentifier: "EmailViewSecondController")
+            self.navigationController?.pushViewController(pushVCc!, animated: true)
+        }
+        else {
+            NextButtonn.isEnabled = false
+        }
+    }
+    
     
     @objc func NextButtonndidChanged(_ sender: UIButton) {
         if ((isChangeLeft == true) && (isChangeRight == false)){
@@ -77,6 +93,9 @@ class WhoViewController: UIViewController {
             NextButtonn.setTitleColor(.white, for: .normal) // 평상시
             NextButtonn.setTitleColor(.white, for: .selected) // 선택됐을때
             NextButtonn.isEnabled = true
+            // 이웃 로직 타기 (화면 넘어가기)
+                
+            
             
            }
         else if ((isChangeRight == true) && (isChangeLeft == false)){
@@ -84,6 +103,7 @@ class WhoViewController: UIViewController {
             NextButtonn.setTitleColor(.white, for: .normal) // 평상시
             NextButtonn.setTitleColor(.white, for: .selected) // 선택됐을때
             NextButtonn.isEnabled = true
+            // 가게 로직 타기(화면 넘어가기)
         }
         else {
             NextButtonn.backgroundColor = .white

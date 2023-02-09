@@ -11,6 +11,10 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     
 
     @IBOutlet weak var MyRebornTableView: UITableView!
+    @IBOutlet var userNameLabel: UILabel!
+    
+    let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
+    let username = UserDefaults.standard.string(forKey: "userNickName")
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MyRebornMenu.count
@@ -56,6 +60,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         MyRebornTableView.delegate = self
         MyRebornTableView.dataSource = self
         
@@ -64,6 +69,10 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationItem.backButtonDisplayMode = .minimal
         self.navigationController?.navigationBar.tintColor = .black
 
+        print("마이 리본으로 불러온 userIdx 값은 \(userIdx)")
+        print("마이 리본으로 불러온 userNickname 값은 \(username)")
+        userNameLabel.text = "\(username!)"
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +81,8 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         if let selectedIndexPath = MyRebornTableView.indexPathForSelectedRow {
             MyRebornTableView.deselectRow(at: selectedIndexPath, animated: animated)
         }
+        
+
     }
     
 }

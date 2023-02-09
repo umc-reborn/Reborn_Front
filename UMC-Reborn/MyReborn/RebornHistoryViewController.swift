@@ -13,7 +13,7 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var totalNum: UILabel!
     
     var historyDatas: [RebornHistoryResponse] = []
-    
+    var userIdx:Int?
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +34,13 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         cell.status.text = historyData.status
         cell.storeScore.text = String(historyData.storeScore)
         cell.category.text = historyData.category
+        let taskIndex = historyData.rebornTaskIdx
+        UserDefaults.standard.set(taskIndex, forKey: "rebornTaskIdx")
+        print("taskIdx는 \(taskIndex)")
+        
+        //        self.historyDatas = response.result
+        //        let taskIdx = historyData.rebornTaskIdx
+        //        print("taskIdx는 \(taskIdx)")
 
         return cell
     }
@@ -50,21 +57,21 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         self.navigationItem.title = "리본 히스토리"
         
         RebornHistoryService.shared.getRebornHistory{ result in
-                    switch result {
-                    case .success(let response):
-                        print("성공")
-//                        dump(response)
-                        guard let response = response as? RebornHistoryModel else {
-                            print("실패")
-                            break
-                        }
-                        self.historyDatas = response.result
-                    
-                    default:
-                        break
-                    }
-                    self.RebornHistoryTableView.reloadData()
+            switch result {
+            case .success(let response):
+                print("성공")
+                dump(response)
+                guard let response = response as? RebornHistoryModel else {
+                    print("실패")
+                    break
                 }
-//        print(historyDatas)
+                self.historyDatas = response.result
+
+            default:
+                break
+            }
+            self.RebornHistoryTableView.reloadData()
+        }
+        //        print(historyDatas)
     }
 }

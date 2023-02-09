@@ -1,26 +1,29 @@
 //
-//  ShopBasic_InfoViewController.swift
+//  PersonalTabViewController.swift
 //  UMC-Reborn
 //
-//  Created by 김예린 on 2023/02/01.
+//  Created by yeonsu on 2023/02/10.
 //
 
 import UIKit
 
-class ShopBasic_InfoViewController: UIViewController {
+class PersonalTabViewController: UITabBarController {
 
-    @IBOutlet weak var PgBasic: UIProgressView!
+    var userIdx: Int = 0
+    var userNickname: String = ""
+    var jwt:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //progressview
-        PgBasic.progressViewStyle = .default
-        PgBasic.progressTintColor = .myorange
-        PgBasic.progress = 0.83
+        self.navigationItem.hidesBackButton = true
+        // Do any additional setup after loading the view.
+        UserDefaults.standard.set(userIdx, forKey: "userIndex")
+        UserDefaults.standard.set(userNickname, forKey:"userNickName")
     }
-    
 
+
+
+    
     /*
     // MARK: - Navigation
 
