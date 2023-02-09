@@ -8,7 +8,7 @@
 import UIKit
 
 class RebornHistoryDetailViewController: UIViewController {
-    
+
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var storeCategory: UILabel!
