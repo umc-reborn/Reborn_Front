@@ -9,7 +9,9 @@ import UIKit
 
 class StoreManageViewController: UIViewController, SampleProtocol3 {
     
-    var apiResult = [StoreListModel]()
+    let storeManage = UserDefaults.standard.integer(forKey: "userIdx")
+    
+    var storeText: Int = 2
     
     func categorySend(data: String) {
         storeCategory.text = data
@@ -40,14 +42,10 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var rebornLabel: UILabel!
     @IBOutlet weak var jjimLabel: UILabel!
-    
+    @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        APIHandlerStoreGet.sharedInstance.SendingGetStore { apiData in
-            self.apiResult = apiData
-        }
         
         ManageImageView.layer.cornerRadius = 10
         ManageImageView.clipsToBounds = true
@@ -85,10 +83,78 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
         ])
         attributedString2.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13), range: (jjimLabel.text! as NSString).range(of: "64"))
         self.jjimLabel.attributedText = attributedString2
+        
+        storeResult()
+    }
+    
+    func storeResult() {
+        
+        let url = APIConstants.baseURL + "/store/\(String(storeManage))"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let decodedData = try decoder.decode(StoreList.self, from: safeData)
+                    let storeDatas = decodedData.result
+                    print(storeDatas)
+                    DispatchQueue.main.async {
+                        self.storeName.text = "\(storeDatas.storeName)"
+                        let url = URL(string: storeDatas.storeImage ?? "")
+                        self.ManageImageView.load(url: url!)
+                        self.storeAddress.text = "\(storeDatas.storeAddress)"
+                        self.storeIntroduce.text = "\(storeDatas.storeDescription)"
+                        if (storeDatas.category == "CAFE") {
+                            self.storeCategory.text = "카페·디저트"
+                        } else if (storeDatas.category == "FASHION") {
+                            self.storeCategory.text = "패션"
+                        } else if (storeDatas.category == "SIDEDISH") {
+                            self.storeCategory.text = "반찬"
+                        } else if (storeDatas.category == "LIFE") {
+                            self.storeCategory.text = "편의·생활"
+                        } else {
+                            self.storeCategory.text = "기타"
+                        }
+                        self.scoreLabel.text = "\(String(storeDatas.storeScore))"
+                    }
+                } catch {
+                    print("error")
+                }
+            }
+        }.resume()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
             self.navigationItem.title="가게 관리"
     }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else {
+                    return
+                }
+        
+        self.present(svc1, animated: true)
+    }
+    
 }

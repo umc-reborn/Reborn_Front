@@ -8,6 +8,8 @@
 import UIKit
 
 class StoreTabBarController: UITabBarController {
+    
+    var storeText: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,5 +19,12 @@ class StoreTabBarController: UITabBarController {
         tabBar.layer.cornerRadius = 30
         tabBar.layer.masksToBounds = true
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .clear
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
+        print(storeText)
+        UserDefaults.standard.set(storeText, forKey: "userIdx")
     }
 }
