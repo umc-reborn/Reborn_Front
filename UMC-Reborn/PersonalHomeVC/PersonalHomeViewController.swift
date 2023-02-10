@@ -29,8 +29,8 @@ class PersonalHomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         addShadow()
-        print(userText)
-        print(userNickNameText)
+//        print(userText)
+//        print(userNickNameText)
         //nickNameLabel.text = userNickNameText
         contentView.addSubview(floatingButton)
         

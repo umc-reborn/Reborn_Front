@@ -20,6 +20,11 @@ extension UIColor { // 컬러를 이렇게 익스텐션으로 설정해서 쓰�
 
 class ServiceViewController: UIViewController {
     
+    // 데이터 넘길 때 쓸 변수
+    var smallStatus4 : String = ""
+    
+    
+    
     @IBOutlet weak var NnextButton: UIButton!
     
     @IBOutlet weak var ProgressView: UIProgressView!
@@ -86,12 +91,30 @@ class ServiceViewController: UIViewController {
     @IBAction func SmallButton4Tapped(_ sender: Any) {
         if SmallButton4.tintColor == .mygray {
             SmallButton4.tintColor = .myorange
+            
         }
         else {
             SmallButton4.tintColor = .mygray
+            smallStatus4 = "X"
         }
     }
    
+    
+//    @IBAction func NnextButton(_ sender: Any) {
+//
+//        //화면 넘기기 + 데이터 넘기기
+//        let servSomething4 = smallStatus4
+//
+//        let storyB = UIStoryboard.init(name: self, bundle: nil)
+//        guard let rvcc = storyB.instantiateViewController(withIdentifier: "WhoViewController") as? WhoViewController else {return}
+//
+//        rvcc.
+//
+//        //화면이동
+//        navigationController?.pushViewController(rvcc, animated: true)
+//
+//        
+//    }
     
     @objc func ButtondidChanged(_ sender: UIButton) {
            

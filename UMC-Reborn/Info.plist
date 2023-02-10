@@ -26,7 +26,6 @@
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
 					<string>JoinLogin</string>
-					<string>PersonalTab</string>
 				</dict>
 			</array>
 		</dict>

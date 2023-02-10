@@ -9,7 +9,8 @@ import UIKit
 
 class WhoViewController: UIViewController {
 
-
+    // 데이터 넘겨준 것 
+    var smallStatus4 : String = ""
     
     var isChangeLeft = false
     var isChangeRight = false
