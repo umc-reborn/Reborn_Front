@@ -51,7 +51,7 @@ class PopularTableViewController: UIViewController {
         
             if let safeData = data {
                 // Data 타입을 String 타입으로 변환
-                print(String(decoding: safeData, as: UTF8.self))
+//                print(String(decoding: safeData, as: UTF8.self))
                         
                 do {
                     let decoder = JSONDecoder()

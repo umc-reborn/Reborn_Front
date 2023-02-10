@@ -89,6 +89,10 @@
 		9561BA822992494400A4B33B /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA662992494400A4B33B /* daum_th_line.png */; };
 		9561BA832992494400A4B33B /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9561BA672992494400A4B33B /* map_pin_shadow.png */; };
 		9561BA842992494400A4B33B /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561BA682992494400A4B33B /* DaumMap.framework */; };
+		9561BA882994350A00A4B33B /* InprogressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561BA872994350A00A4B33B /* InprogressModel.swift */; };
+		9561BA8A2994712600A4B33B /* InprogressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561BA892994712600A4B33B /* InprogressService.swift */; };
+		9561BA8C2995B37C00A4B33B /* HomeInprogressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561BA8B2995B37C00A4B33B /* HomeInprogressViewController.swift */; };
+		9561BA8E2995B3FB00A4B33B /* InprogressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561BA8D2995B3FB00A4B33B /* InprogressCollectionViewCell.swift */; };
 		95C036572988EBDE00599354 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C036562988EBDE00599354 /* SearchModel.swift */; };
 		95C0365A298A7D4400599354 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C03659298A7D4400599354 /* APIConstants.swift */; };
 		95C0365C298A7FEA00599354 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C0365B298A7FEA00599354 /* NetworkResult.swift */; };
@@ -261,6 +265,10 @@
 		9561BA662992494400A4B33B /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
 		9561BA672992494400A4B33B /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		9561BA682992494400A4B33B /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		9561BA872994350A00A4B33B /* InprogressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InprogressModel.swift; sourceTree = "<group>"; };
+		9561BA892994712600A4B33B /* InprogressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InprogressService.swift; sourceTree = "<group>"; };
+		9561BA8B2995B37C00A4B33B /* HomeInprogressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInprogressViewController.swift; sourceTree = "<group>"; };
+		9561BA8D2995B3FB00A4B33B /* InprogressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InprogressCollectionViewCell.swift; sourceTree = "<group>"; };
 		95C036562988EBDE00599354 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		95C03659298A7D4400599354 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		95C0365B298A7FEA00599354 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -424,6 +432,8 @@
 				95E9FFA22977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift */,
 				952CB29C2977557500BD7CD7 /* RecruitedRebronViewController.swift */,
 				95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */,
+				9561BA8B2995B37C00A4B33B /* HomeInprogressViewController.swift */,
+				9561BA8D2995B3FB00A4B33B /* InprogressCollectionViewCell.swift */,
 			);
 			path = PersonalHomeVC;
 			sourceTree = "<group>";
@@ -434,6 +444,7 @@
 				953AEE95298F3C1D008AAE8A /* NewShopModel.swift */,
 				953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */,
 				9561B7B529916E7B00A4B33B /* PopularShopModel.swift */,
+				9561BA872994350A00A4B33B /* InprogressModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -528,6 +539,7 @@
 				953AEE9B298F4FC2008AAE8A /* NewShopService.swift */,
 				9561B7B3298FA05900A4B33B /* BestReviewService.swift */,
 				9561B98F2992463200A4B33B /* kako api-Bridging-Header.h */,
+				9561BA892994712600A4B33B /* InprogressService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -821,6 +833,7 @@
 				C7B8BCDF298423FC00FE3C0A /* PwErrorViewController.swift in Sources */,
 				0B94772029899E4400B5829A /* FindIdViewController.swift in Sources */,
 				9561B7B629916E7B00A4B33B /* PopularShopModel.swift in Sources */,
+				9561BA8C2995B37C00A4B33B /* HomeInprogressViewController.swift in Sources */,
 				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
 				C7889DFC297C23050008E99F /* StoreReviewViewController.swift in Sources */,
 				0B9477262989A86200B5829A /* FirstViewController.swift in Sources */,
@@ -839,6 +852,7 @@
 				0B94772429899E6500B5829A /* ResetPwViewController.swift in Sources */,
 				95E9FFB9297FAFE10073DF2B /* LatestSearchedCell.swift in Sources */,
 				0B94771A29899DF700B5829A /* ShopBasic_InfoViewController.swift in Sources */,
+				9561BA8A2994712600A4B33B /* InprogressService.swift in Sources */,
 				C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */,
 				C75E99072984E6F6003D40B4 /* CodeViewController.swift in Sources */,
 				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,
@@ -887,6 +901,7 @@
 				C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */,
 				C75E990929857BA2003D40B4 /* ReviewImage.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
+				9561BA882994350A00A4B33B /* InprogressModel.swift in Sources */,
 				0B0D66CA298CFC1D00E5220F /* JoinLoginAPIHandler.swift in Sources */,
 				C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */,
 				0B94770E29899D9700B5829A /* WhoViewController.swift in Sources */,
@@ -894,6 +909,7 @@
 				C7DA00A329891C740015BA4F /* APIReviewGet.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
 				C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */,
+				9561BA8E2995B3FB00A4B33B /* InprogressCollectionViewCell.swift in Sources */,
 				C70D3D552981637E00CABA91 /* SecondTabTableViewCell.swift in Sources */,
 				2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
