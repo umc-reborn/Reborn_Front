@@ -41,7 +41,15 @@ class HomeInprogressViewController: UIViewController {
                 }
         
     }
-
+    @IBAction func getNumber(_ sender: Any) {
+        let detail = UIStoryboard.init(name: "MyReborn", bundle: nil)
+        guard let Checkvc = detail.instantiateViewController(identifier: "historyDetailVC") as? RebornHistoryDetailViewController else {
+                    return
+                }
+        
+        navigationController?.pushViewController(Checkvc, animated: true)
+    }
+    
 }
 
 extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionViewDataSource {

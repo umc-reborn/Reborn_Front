@@ -19,17 +19,17 @@ class PersonalHomeViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     let button = UIButton(type: .system)
-    
+    let userNickName = UserDefaults.standard.integer(forKey: "userNickName")
     // var userid : String = "1"
-    
+//    let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // addShadow()
         // addShadow()
-        print(userText)
-        print(userNickNameText)
-        //nickNameLabel.text = userNickNameText
+        print("*********")
+        print(userNickName)
+        nickNameLabel.text = "\(userNickName)"
         contentView.addSubview(floatingButton)
         
         NSLayoutConstraint.activate([
