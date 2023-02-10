@@ -11,6 +11,10 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     
 
     @IBOutlet weak var MyRebornTableView: UITableView!
+    @IBOutlet var userNameLabel: UILabel!
+    
+    let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
+    let username = UserDefaults.standard.string(forKey: "userNickName")
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MyRebornMenu.count
@@ -42,6 +46,9 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         case 2: if let vc = storyboard?.instantiateViewController(withIdentifier: "reviewManageVC") as? ReviewManageViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        case 3: if let vc = storyboard?.instantiateViewController(withIdentifier: "changePwdVC") as? ChangePasswordViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         default:
             
             return
@@ -53,11 +60,19 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         MyRebornTableView.delegate = self
         MyRebornTableView.dataSource = self
         
         self.MyRebornTableView.rowHeight = 60;
+        self.navigationItem.title = "마이리본"
+        self.navigationItem.backButtonDisplayMode = .minimal
+        self.navigationController?.navigationBar.tintColor = .black
 
+        print("마이 리본으로 불러온 userIdx 값은 \(userIdx)")
+        print("마이 리본으로 불러온 userNickname 값은 \(username)")
+        userNameLabel.text = "\(username!)"
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +81,8 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         if let selectedIndexPath = MyRebornTableView.indexPathForSelectedRow {
             MyRebornTableView.deselectRow(at: selectedIndexPath, animated: animated)
         }
+        
+
     }
     
 }
@@ -79,5 +96,5 @@ struct MyRebornMenuDataModel {
 }
 
 // 메뉴 TableViewCell 데이터
-let MyRebornMenu: [MyRebornMenuDataModel] = [MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "my"), MyRebornMenuLabel: "회원정보수정", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "present"), MyRebornMenuLabel: "리본 히스토리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "write"), MyRebornMenuLabel: "리뷰 관리", MyRebornNextIcon: UIImage(named: "arrow")),]
+let MyRebornMenu: [MyRebornMenuDataModel] = [MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "my"), MyRebornMenuLabel: "회원정보수정", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "present"), MyRebornMenuLabel: "리본 히스토리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "write"), MyRebornMenuLabel: "리뷰 관리", MyRebornNextIcon: UIImage(named: "arrow")), MyRebornMenuDataModel(MyRebornMenuIcon: UIImage(named: "lock_icon"), MyRebornMenuLabel: "비밀번호 변경", MyRebornNextIcon: UIImage(named: "arrow")),]
 

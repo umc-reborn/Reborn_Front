@@ -9,8 +9,9 @@ import UIKit
 
 class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
+    
     @IBOutlet weak var ProgressView4: UIProgressView!
-
+    
     @IBOutlet weak var setIdTextField: UITextField!
     @IBOutlet weak var doubleCheckButton: UIButton!
     @IBOutlet weak var setPwTextField: UITextField!
@@ -34,7 +35,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         let BACKGROUND = UIColor(named: "BACKGROUND")
         self.view.backgroundColor = BACKGROUND
         
-        //progressView4
+        //ProgressView4
         ProgressView4.progressViewStyle = .default
         ProgressView4.progressTintColor = .myorange
         ProgressView4.progress = 0.66
@@ -73,7 +74,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         
         //아이디
-        setIdTextField.addLeftPadding()
+//        setIdTextField.addLeftPadding()
         setIdTextField.placeholder = "4~16자 영문, 숫자를 사용하세요"
         setIdTextField.backgroundColor = .white
         setIdTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
@@ -85,7 +86,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         setIdTextField.clearButtonMode = .always // 한번에 지우기
         
         //비밀번호
-        setPwTextField.addLeftPadding()
+//        setPwTextField.addLeftPadding()
         setPwTextField.placeholder = "8~16자 영문 대소문자, 숫자, 특수문자를 사용하세요"
         setPwTextField.backgroundColor = .white
         setPwTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
@@ -97,7 +98,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         setPwTextField.clearButtonMode = .always // 한번에 지우기
         
         //비밀번호확인
-        doubleCheckTextField.addLeftPadding()
+//        doubleCheckTextField.addLeftPadding()
         doubleCheckTextField.placeholder = "비밀번호를 한 번 더 입력해 주세요"
         doubleCheckTextField.backgroundColor = .white
         doubleCheckTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)

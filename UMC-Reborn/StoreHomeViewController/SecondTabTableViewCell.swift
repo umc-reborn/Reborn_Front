@@ -60,30 +60,3 @@ extension SecondTabTableViewCell: UICollectionViewDelegate, UICollectionViewData
         return cell
     }
 }
-
-extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-            return shopList.count
-    }
-    
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 1
-        }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        .leastNormalMagnitude
-    }
-        
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SecondTab_TableViewCell", for: indexPath) as! SecondTabTableViewCell
-
-            return cell
-    }
-        
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 433
-    }
-        
-}

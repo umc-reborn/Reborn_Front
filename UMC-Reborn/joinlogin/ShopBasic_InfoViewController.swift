@@ -9,10 +9,15 @@ import UIKit
 
 class ShopBasic_InfoViewController: UIViewController {
 
+    @IBOutlet weak var PgBasic: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //progressview
+        PgBasic.progressViewStyle = .default
+        PgBasic.progressTintColor = .myorange
+        PgBasic.progress = 0.83
     }
     
 

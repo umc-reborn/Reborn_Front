@@ -15,13 +15,13 @@ struct RebornModel:Encodable {
     var productComment:String
     var productImg:String
     var productLimitTime:String
-    var productCnt: Int
+    var productCnt:Int
 }
 
 class APIHandlerPost {
     static let instance = APIHandlerPost()
     
-    func SendingPostReborn(parameters: RebornModel, handler: @escaping (_ result: [RebornresultModel])->(Void)) {
+    func SendingPostReborn(parameters: RebornModel, handler: @escaping (_ result: RebornresultModel)->(Void)) {
         let url = "http://www.rebornapp.shop/reborns/create"
         let headers:HTTPHeaders = [
             "content-type": "application/json"
@@ -34,7 +34,7 @@ class APIHandlerPost {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                     print(json)
                     
-                    let jsonresult = try JSONDecoder().decode([RebornresultModel].self, from: data!)
+                    let jsonresult = try JSONDecoder().decode(RebornresultModel.self, from: data!)
                     handler(jsonresult)
                 } catch {
                     print(error.localizedDescription)
@@ -50,7 +50,7 @@ struct RebornresultModel: Codable {
     var isSuccess:Bool
     var code:Int
     var message:String
-    var result:RebornResult
+    var result: RebornResult
 }
 
 struct RebornResult: Codable {

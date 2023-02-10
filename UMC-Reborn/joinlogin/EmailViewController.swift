@@ -65,7 +65,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         nextbuttonEmail.setTitleColor(UIColor.mybrown, for: .normal)//버튼 텍스트 색상 설정
         nextbuttonEmail.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_bold", size: 16) //폰트 및 사이즈 설정
         
-        EmailTextField.addLeftPadding()
+//        EmailTextField.addLeftPadding()
         EmailTextField.placeholder = "이메일을 입력해 주세요"
         EmailTextField.backgroundColor = .white
         EmailTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
@@ -76,7 +76,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         EmailTextField.layer.cornerRadius = 4.0
         EmailTextField.clearButtonMode = .always // 한번에 지우기
         
-        codeTextField.addLeftPadding()
+//        codeTextField.addLeftPadding()
         codeTextField.placeholder = "인증번호를 입력해주세요"
         codeTextField.backgroundColor = .white
         codeTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
@@ -86,6 +86,24 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         codeTextField.layer.borderColor = mygray?.cgColor // 테두리 컬러
         codeTextField.layer.cornerRadius = 4.0
         codeTextField.clearButtonMode = .always // 한번에 지우기
+        
+        // 인증요청버튼
+        requestButton.layer.borderWidth = 1.0
+        requestButton.layer.borderColor = myorange?.cgColor // 테두리 컬러
+        requestButton.backgroundColor = .myorange
+        requestButton.layer.cornerRadius = 4.0
+        requestButton.setTitle("인증요청", for: .normal)  // 버튼 텍스트 설정
+        requestButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
+        requestButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
+        
+        // 인증확인버튼
+        requestCheckButton.layer.borderWidth = 1.0
+        requestCheckButton.layer.borderColor = myorange?.cgColor // 테두리 컬러
+        requestCheckButton.backgroundColor = .myorange
+        requestCheckButton.layer.cornerRadius = 4.0
+        requestCheckButton.setTitle("인증확인", for: .normal)  // 버튼 텍스트 설정
+        requestCheckButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
+        requestButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
         
         EmailTextField.delegate = self
         codeTextField.delegate = self

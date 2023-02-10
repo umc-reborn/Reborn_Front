@@ -14,11 +14,18 @@ class JjimViewController: UIViewController {
 
     // DropDown 아이템 리스트
     let itemList = ["   정렬", "이름순", "별점순", "인기순"]
+    
+    var jjimDatas: [JjimListModel] = []
+    var jjimPopularDatas: [JjimListModel] = []
+    var jjimNameDatas: [JjimListModel] = []
+    var jjimScoreDatas: [JjimListModel] = []
 
+    @IBOutlet weak var JjimCountLabel: UILabel!
     @IBOutlet weak var JjimTableView: UITableView!
     @IBOutlet weak var JjimView: UIView!
     @IBOutlet weak var JjimTextField: UITextField!
     @IBOutlet weak var JjimButton: UIButton!
+    
     
     func initUI() {
         DropDown.appearance().textColor = UIColor.black // 아이템 텍스트 색상
@@ -59,7 +66,256 @@ class JjimViewController: UIViewController {
         // 아이콘 이미지를 변경하여 DropDown이 펼쳐진 것을 표현
     }
     
-    let FoodArray = ["베이컨 샌드위치", "에그 토스트", "감자 고로케케케케", "바스트 치즈 케이크", "우유 크로와상", "베이컨 샌드위치", "에그 토스트", "감자 고로케케케케", "바스트 치즈 케이크", "우유 크로와상"]
+    func JjimResult() {
+        
+        let url = APIConstants.baseURL + "/jjim/22"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decodedData = try JSONDecoder().decode(JjimList.self, from: safeData)
+                    self.jjimDatas = decodedData.result
+                    print(jjimDatas)
+                    DispatchQueue.main.async {
+                        self.JjimTableView.reloadData()
+                        print("count: \(self.jjimDatas.count)")
+                        
+                    }
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
+    }
+    
+    func JjimCountResult() {
+        
+        let url = APIConstants.baseURL + "/jjim/cnt/22"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let decodedData = try decoder.decode(JjimCountList.self, from: safeData)
+                    let storeDatas = decodedData.result
+                    DispatchQueue.main.async {
+                        self.JjimCountLabel.text = "총 \(storeDatas)건"
+                    }
+                } catch {
+                    print("error")
+                }
+            }
+        }.resume()
+    }
+    
+    func JjimPopularResult() {
+        
+        let url = APIConstants.baseURL + "/jjim/22?sort=jjimCnt"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decodedData = try JSONDecoder().decode(JjimList.self, from: safeData)
+                    self.jjimPopularDatas = decodedData.result
+                    print(jjimPopularDatas)
+                    DispatchQueue.main.async {
+                        self.JjimTableView.reloadData()
+                        print("count: \(self.jjimPopularDatas.count)")
+                        
+                    }
+                    
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
+    }
+    
+    func JjimNameResult() {
+        
+        let url = APIConstants.baseURL + "/jjim/22?sort=storeName"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decodedData = try JSONDecoder().decode(JjimList.self, from: safeData)
+                    self.jjimNameDatas = decodedData.result
+                    print(jjimNameDatas)
+                    DispatchQueue.main.async {
+                        self.JjimTableView.reloadData()
+                        print("count: \(self.jjimNameDatas.count)")
+                        
+                    }
+                    
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
+    }
+    
+    func JjimScoreResult() {
+        
+        let url = APIConstants.baseURL + "/jjim/22?sort=storeScore"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decodedData = try JSONDecoder().decode(JjimList.self, from: safeData)
+                    self.jjimScoreDatas = decodedData.result
+                    print(jjimScoreDatas)
+                    DispatchQueue.main.async {
+                        self.JjimTableView.reloadData()
+                        print("count: \(self.jjimScoreDatas.count)")
+                        
+                    }
+                    
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,5 +340,10 @@ class JjimViewController: UIViewController {
         
         initUI()
         setDropdown()
+        JjimResult()
+        JjimCountResult()
+//        JjimPopularResult()
+//        JjimNameResult()
+//        JjimScoreResult()
     }
 }
