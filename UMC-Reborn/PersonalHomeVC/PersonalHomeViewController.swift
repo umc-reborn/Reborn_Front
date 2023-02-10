@@ -14,12 +14,14 @@ class PersonalHomeViewController: UIViewController {
     
     var userText : Int = 0
     var userNickNameText : String = ""
+    let username = UserDefaults.standard.string(forKey: "userNickName")
 
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     let button = UIButton(type: .system)
-    let userNickName = UserDefaults.standard.integer(forKey: "userNickName")
+   
+//    let userNickName = UserDefaults.standard.integer(forKey: "userNickName")
     // var userid : String = "1"
 //    let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
     override func viewDidLoad() {
@@ -28,8 +30,8 @@ class PersonalHomeViewController: UIViewController {
         // addShadow()
         // addShadow()
         print("*********")
-        print(userNickName)
-        nickNameLabel.text = "\(userNickName)"
+//        print(userNickName)
+        nickNameLabel.text = "\(username!)"
         contentView.addSubview(floatingButton)
         
         NSLayoutConstraint.activate([

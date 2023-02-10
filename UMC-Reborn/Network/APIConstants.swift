@@ -18,5 +18,5 @@ struct APIConstants {
     // MARK: - Review URL
     static let reviewURL = baseURL + "/review/best"
     
-    static let inprogressURL = baseURL + "/reborns/inprogress/user/2"
+    static let inprogressURL = baseURL + "/reborns/inprogress/user/"
 }

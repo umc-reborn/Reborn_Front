@@ -14,7 +14,6 @@ class HomeInprogressViewController: UIViewController {
     var rebornDatas: [InprogressResponse] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.defaultView.isHidden = false
         collectionView.backgroundColor = .clear
         // Do any additional setup after loading the view.
     }
@@ -29,10 +28,8 @@ class HomeInprogressViewController: UIViewController {
                             break
                         }
                         self.rebornDatas = response.result
-                        self.defaultView.isHidden = true
                     
                     default:
-                        self.defaultView.isHidden = false
                         break
                     }
                     self.collectionView.reloadData()

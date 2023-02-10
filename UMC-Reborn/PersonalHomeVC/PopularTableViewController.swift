@@ -111,6 +111,16 @@ extension PopularTableViewController: UITableViewDelegate, UITableViewDataSource
         return 96
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //상세페이지 이동
+//        let storyboard = UIStoryboard(name: "StoreTab", bundle: Bundle.main)
+//        guard let detailViewController = storyboard.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else { return }
+    
+        
+        
+    }
+    
     
 }
 

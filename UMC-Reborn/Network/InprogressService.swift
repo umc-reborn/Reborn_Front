@@ -15,10 +15,8 @@ class InprogressService {
 
 
     func getInprogress(completion: @escaping (NetworkResult<Any>) -> Void) {
-        let firstObject: RebornHistoryViewController = .init()
         let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
-        let url: String! = APIConstants.inprogressURL
-//        + "\(userIdx)"
+        let url: String! = APIConstants.inprogressURL + "\(userIdx)"
         print("---------")
         print("\(userIdx)")
 //        + "\(firstObject.userid)"

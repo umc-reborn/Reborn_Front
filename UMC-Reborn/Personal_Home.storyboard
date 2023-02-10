@@ -1753,6 +1753,40 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLine" translatesAutoresizingMaskIntoConstraints="NO" id="QCX-mm-Lv5">
                                 <rect key="frame" x="26" y="0.0" width="36" height="2022"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUz-Ip-hmq">
+                                <rect key="frame" x="26" y="0.0" width="338" height="165"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="umc_character" translatesAutoresizingMaskIntoConstraints="NO" id="JTs-xr-Jvn">
+                                        <rect key="frame" x="141.66666666666666" y="23" width="55" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="UhB-R2-Jor"/>
+                                            <constraint firstAttribute="width" constant="55" id="V8H-ym-r2i"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신으로 부터 다시 태어날 리본을 찾아보세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I41-79-rPF">
+                                        <rect key="frame" x="70.666666666666686" y="123" width="197" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 진행중인 리본이 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWl-g7-1aC">
+                                        <rect key="frame" x="76.666666666666686" y="95" width="185" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="WOn-Dl-ChV"/>
+                                    <constraint firstItem="UWl-g7-1aC" firstAttribute="top" secondItem="JTs-xr-Jvn" secondAttribute="bottom" constant="8" id="Ytz-pz-qMk"/>
+                                    <constraint firstItem="JTs-xr-Jvn" firstAttribute="top" secondItem="pUz-Ip-hmq" secondAttribute="top" constant="23" id="cIN-30-i4r"/>
+                                    <constraint firstItem="UWl-g7-1aC" firstAttribute="centerX" secondItem="pUz-Ip-hmq" secondAttribute="centerX" id="erZ-Y0-vs8"/>
+                                    <constraint firstItem="I41-79-rPF" firstAttribute="centerX" secondItem="pUz-Ip-hmq" secondAttribute="centerX" id="fk6-tz-Qzt"/>
+                                    <constraint firstItem="I41-79-rPF" firstAttribute="top" secondItem="UWl-g7-1aC" secondAttribute="bottom" constant="10" id="lOc-YN-0rd"/>
+                                    <constraint firstItem="JTs-xr-Jvn" firstAttribute="centerX" secondItem="pUz-Ip-hmq" secondAttribute="centerX" id="pku-0x-dwn"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fW1-Ai-zaI">
                                 <rect key="frame" x="0.0" y="-8" width="390" height="173"/>
                                 <constraints>
@@ -1851,40 +1885,6 @@
                                     <outlet property="delegate" destination="NaW-95-8Tp" id="Cgu-5w-QAK"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUz-Ip-hmq">
-                                <rect key="frame" x="26" y="0.0" width="338" height="165"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="umc_character" translatesAutoresizingMaskIntoConstraints="NO" id="JTs-xr-Jvn">
-                                        <rect key="frame" x="141.66666666666666" y="23" width="55" height="64"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="UhB-R2-Jor"/>
-                                            <constraint firstAttribute="width" constant="55" id="V8H-ym-r2i"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신으로 부터 다시 태어날 리본을 찾아보세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I41-79-rPF">
-                                        <rect key="frame" x="70.666666666666686" y="123" width="197" height="14"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 진행중인 리본이 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWl-g7-1aC">
-                                        <rect key="frame" x="76.666666666666686" y="95" width="185" height="18"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="165" id="WOn-Dl-ChV"/>
-                                    <constraint firstItem="UWl-g7-1aC" firstAttribute="top" secondItem="JTs-xr-Jvn" secondAttribute="bottom" constant="8" id="Ytz-pz-qMk"/>
-                                    <constraint firstItem="JTs-xr-Jvn" firstAttribute="top" secondItem="pUz-Ip-hmq" secondAttribute="top" constant="23" id="cIN-30-i4r"/>
-                                    <constraint firstItem="UWl-g7-1aC" firstAttribute="centerX" secondItem="pUz-Ip-hmq" secondAttribute="centerX" id="erZ-Y0-vs8"/>
-                                    <constraint firstItem="I41-79-rPF" firstAttribute="centerX" secondItem="pUz-Ip-hmq" secondAttribute="centerX" id="fk6-tz-Qzt"/>
-                                    <constraint firstItem="I41-79-rPF" firstAttribute="top" secondItem="UWl-g7-1aC" secondAttribute="bottom" constant="10" id="lOc-YN-0rd"/>
-                                    <constraint firstItem="JTs-xr-Jvn" firstAttribute="centerX" secondItem="pUz-Ip-hmq" secondAttribute="centerX" id="pku-0x-dwn"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fho-3v-gsW"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1906,7 +1906,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vS-dm-Poe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-803" y="-674"/>
+            <point key="canvasLocation" x="-817" y="-674"/>
         </scene>
     </scenes>
     <resources>
