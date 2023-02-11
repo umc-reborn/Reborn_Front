@@ -72,6 +72,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         print("마이 리본으로 불러온 userIdx 값은 \(userIdx)")
         print("마이 리본으로 불러온 userNickname 값은 \(username)")
         userNameLabel.text = "\(username!)"
+
         
     }
     
