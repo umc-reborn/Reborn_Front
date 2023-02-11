@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChangePasswordViewController: UIViewController {
+class ChangePasswordViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var oldPwdTextField: UITextField!
     @IBOutlet weak var newPwdTextField: UITextField!
@@ -56,6 +56,11 @@ class ChangePasswordViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "비밀번호 변경"
         
+        oldPwdTextField.delegate = self
+        newPwdTextField.delegate = self
+        confirmNewPwdTextField.delegate = self
+        
+        
         oldPwdTextField.addLeftPadding()
         newPwdTextField.addLeftPadding()
         confirmNewPwdTextField.addLeftPadding()
@@ -71,8 +76,31 @@ class ChangePasswordViewController: UIViewController {
         confirmNewPwdTextField.layer.borderWidth = 1.0
         confirmNewPwdTextField.layer.cornerRadius = 4
         confirmNewPwdTextField.layer.borderColor = UIColor.darkGray.cgColor
+        
+        // 텍스트 필드 컬러
+        textFieldDidBeginEditing(newPwdTextField)
+        textFieldDidBeginEditing(oldPwdTextField)
+        textFieldDidBeginEditing(confirmNewPwdTextField)
+        
+        textFieldDidEndEditing(newPwdTextField)
+        textFieldDidEndEditing(oldPwdTextField)
+        textFieldDidEndEditing(confirmNewPwdTextField)
     }
+    
+    //작성 중 주황색
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // textField.borderStyle = .line
+        textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
+        textField.layer.borderWidth = 1.0
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.borderWidth = 1.0
+    }
+    
 }
+
 
 extension UITextField {
     // textField 왼쪽에 padding값 설정

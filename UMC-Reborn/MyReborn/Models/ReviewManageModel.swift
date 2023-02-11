@@ -34,5 +34,5 @@ struct ReviewImg: Codable {
     let reviewImage2: String
     let reviewImage3: String
     let reviewImage4: String
-    let reviewImage5: String
+    let reviewImage5: String?
 }
