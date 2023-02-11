@@ -16,6 +16,8 @@ protocol SampleProtocol3:AnyObject {
 
 class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
+    let editStore = UserDefaults.standard.integer(forKey: "userIdx")
+    
     var storecategory = [" 카페·디저트", " 반찬", " 패션", " 편의·생활", " 기타"]
     let picker = UIPickerView()
     
@@ -56,7 +58,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         storeTextView.layer.borderWidth = 1
         storeTextView.layer.borderColor = UIColor.gray.cgColor
         
-        placeholderSetting()
+//        placeholderSetting()
         textViewDidBeginEditing(storeTextView)
         textViewDidEndEditing(storeTextView)
         storenameTextfield.delegate = self
@@ -75,7 +77,81 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         enrollAlertEvent()
         self.imagePickerController.delegate = self
         addGestureRecognizer()
+        
+        storeResult()
     }
+    
+    func storeResult() {
+        
+        let url = APIConstants.baseURL + "/store/1"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let decodedData = try decoder.decode(StoreList.self, from: safeData)
+                    let storeDatas = decodedData.result
+                    print(storeDatas)
+                    DispatchQueue.main.async {
+                        let url = URL(string: storeDatas.storeImage ?? "")
+                        self.StoreImageView.load(url: url!)
+                        self.storenameTextfield.text = "\(storeDatas.storeName)"
+                        if (storeDatas.category == "CAFE") {
+                            self.storecategoryTextfield.text = "카페·디저트"
+                        } else if (storeDatas.category == "FASHION") {
+                            self.storecategoryTextfield.text = "패션"
+                        } else if (storeDatas.category == "SIDEDISH") {
+                            self.storecategoryTextfield.text = "반찬"
+                        } else if (storeDatas.category == "LIFE") {
+                            self.storecategoryTextfield.text = "편의·생활"
+                        } else {
+                            self.storecategoryTextfield.text = "기타"
+                        }
+                        self.storeaddressTextfield.text = "\(storeDatas.storeAddress)"
+                        self.storeTextView.text = "\(storeDatas.storeDescription)"
+                    }
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     @IBAction func saveButton(_ sender: Any) {
         let text = storenameTextfield.text
@@ -109,12 +185,12 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
             textField.layer.borderWidth = 1.0
     }
     
-    func placeholderSetting() {
-        storeTextView.delegate = self // txtvReview가 유저가 선언한 outlet
-        storeTextView.text = " 사장님의 가게를 소개해 주세요!"
-        storeTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15.0)
-        storeTextView.textColor = UIColor.systemGray
-    }
+//    func placeholderSetting() {
+//        storeTextView.delegate = self // txtvReview가 유저가 선언한 outlet
+//        storeTextView.text = " 사장님의 가게를 소개해 주세요!"
+//        storeTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15.0)
+//        storeTextView.textColor = UIColor.systemGray
+//    }
         // TextView Place Holder
     @objc func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.systemGray {
@@ -127,7 +203,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     @objc func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = " 사장님의 가게를 소개해 주세요!"
-            textView.textColor = UIColor.systemGray
+            textView.textColor = UIColor.black
         }
         textView.layer.borderColor = UIColor.gray.cgColor
     }

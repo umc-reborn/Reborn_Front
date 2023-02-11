@@ -10,11 +10,11 @@ import Alamofire
 
 struct RebornModel:Encodable {
     var storeIdx:Int
-    var productName:String
-    var productGuide:String
-    var productComment:String
-    var productImg:String
-    var productLimitTime:String
+    var productName:String?
+    var productGuide:String?
+    var productComment:String?
+    var productImg:String?
+    var productLimitTime:String?
     var productCnt:Int
 }
 

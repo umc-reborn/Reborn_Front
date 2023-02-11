@@ -1,4 +1,4 @@
-framework module DropDown {
+module DropDown {
   umbrella header "DropDown-umbrella.h"
 
   export *

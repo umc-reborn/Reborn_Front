@@ -89,7 +89,7 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
     
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/\(String(storeManage))"
+        let url = APIConstants.baseURL + "/store/1"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -120,7 +120,7 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
                     print(storeDatas)
                     DispatchQueue.main.async {
                         self.storeName.text = "\(storeDatas.storeName)"
-                        let url = URL(string: storeDatas.storeImage ?? "")
+                        let url = URL(string: storeDatas.userImage ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
                         self.ManageImageView.load(url: url!)
                         self.storeAddress.text = "\(storeDatas.storeAddress)"
                         self.storeIntroduce.text = "\(storeDatas.storeDescription)"
@@ -136,9 +136,23 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
                             self.storeCategory.text = "기타"
                         }
                         self.scoreLabel.text = "\(String(storeDatas.storeScore))"
+                        self.reviewLabel.text = "\(String(storeDatas.numOfReview))개"
+                        self.jjimLabel.text = "\(String(storeDatas.numOfJjim))개"
+                        self.rebornLabel.text = "\(String(storeDatas.numOfReborn))회"
                     }
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
                 } catch {
-                    print("error")
+                    print("error: ", error)
                 }
             }
         }.resume()
@@ -148,6 +162,15 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
         super.viewWillAppear(animated)
             self.navigationItem.title="가게 관리"
     }
+    
+    @IBAction func editButton(_ sender: Any) {
+        guard let svc2 = self.storyboard?.instantiateViewController(identifier: "EditStoreViewController") as? EditStoreViewController else {
+                    return
+                }
+        
+        self.navigationController?.pushViewController(svc2, animated: true)
+    }
+    
     
     @IBAction func nextButton(_ sender: Any) {
         guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else {
