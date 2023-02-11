@@ -119,6 +119,7 @@
 		95E9FFB7297E6F880073DF2B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFB6297E6F880073DF2B /* SearchViewController.swift */; };
 		95E9FFB9297FAFE10073DF2B /* LatestSearchedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFB8297FAFE10073DF2B /* LatestSearchedCell.swift */; };
 		95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFBA29808CB10073DF2B /* SearchResultViewController.swift */; };
+		BCAC19B4823DC2E9483F2B3C /* libPods-UMC-Reborn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C19DC0605BD35D11E1E9E84 /* libPods-UMC-Reborn.a */; };
 		C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D4E2980F1C500CABA91 /* FirstTabViewController.swift */; };
 		C70D3D512980F1CF00CABA91 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D502980F1CF00CABA91 /* SecondTabViewController.swift */; };
 		C70D3D532981001300CABA91 /* FirstTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D522981001300CABA91 /* FirstTabTableViewCell.swift */; };
@@ -147,6 +148,8 @@
 		C7284AAE298EAECE009A70E7 /* RebornService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAD298EAECE009A70E7 /* RebornService.swift */; };
 		C7284AB0298FFB25009A70E7 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAF298FFB25009A70E7 /* StoreModel.swift */; };
 		C7284AB2298FFBA1009A70E7 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AB1298FFBA1009A70E7 /* StoreService.swift */; };
+		C7324E3A29965DDA0062564D /* APIImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7324E3929965DDA0062564D /* APIImagePost.swift */; };
+		C7324E3F2997EF460062564D /* StoreAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7324E3E2997EF460062564D /* StoreAddressViewController.swift */; };
 		C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739AC12298A9D980016B840 /* APIRebornPatch.swift */; };
 		C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */; };
 		C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */; };
@@ -179,7 +182,6 @@
 		C7EF982C2990DD2600480DD9 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF982B2990DD2600480DD9 /* ReviewService.swift */; };
 		C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF982D299107C000480DD9 /* JjimModel.swift */; };
 		C7EF98302991087200480DD9 /* JjimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF982F2991087200480DD9 /* JjimService.swift */; };
-		F54958F376ED96265363C1F8 /* Pods_UMC_Reborn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -224,6 +226,7 @@
 		0BC96D5B2975522800EA4926 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.release.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.release.xcconfig"; sourceTree = "<group>"; };
 		20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.debug.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.debug.xcconfig"; sourceTree = "<group>"; };
+		2C19DC0605BD35D11E1E9E84 /* libPods-UMC-Reborn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UMC-Reborn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
 		2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 		C7284AAD298EAECE009A70E7 /* RebornService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornService.swift; sourceTree = "<group>"; };
 		C7284AAF298FFB25009A70E7 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		C7284AB1298FFBA1009A70E7 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		C7324E3929965DDA0062564D /* APIImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImagePost.swift; sourceTree = "<group>"; };
+		C7324E3E2997EF460062564D /* StoreAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAddressViewController.swift; sourceTree = "<group>"; };
 		C739AC12298A9D980016B840 /* APIRebornPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornPatch.swift; sourceTree = "<group>"; };
 		C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreTab.storyboard; sourceTree = "<group>"; };
 		C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarController.swift; sourceTree = "<group>"; };
@@ -379,7 +384,6 @@
 		C7EF982B2990DD2600480DD9 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		C7EF982D299107C000480DD9 /* JjimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimModel.swift; sourceTree = "<group>"; };
 		C7EF982F2991087200480DD9 /* JjimService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimService.swift; sourceTree = "<group>"; };
-		EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UMC_Reborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,11 +395,11 @@
 				9561B8082992330A00A4B33B /* CoreLocation.framework in Frameworks */,
 				9561B8102992337D00A4B33B /* libsqlite3.tbd in Frameworks */,
 				9561B80A2992331300A4B33B /* QuartzCore.framework in Frameworks */,
-				F54958F376ED96265363C1F8 /* Pods_UMC_Reborn.framework in Frameworks */,
 				9561B80F2992336D00A4B33B /* libxml2.tbd in Frameworks */,
 				9561B806299232FF00A4B33B /* SystemConfiguration.framework in Frameworks */,
 				9561BA842992494400A4B33B /* DaumMap.framework in Frameworks */,
 				9561B804299232DF00A4B33B /* OpenGLES.framework in Frameworks */,
+				BCAC19B4823DC2E9483F2B3C /* libPods-UMC-Reborn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +490,7 @@
 				9561B8072992330A00A4B33B /* CoreLocation.framework */,
 				9561B805299232FF00A4B33B /* SystemConfiguration.framework */,
 				9561B803299232DF00A4B33B /* OpenGLES.framework */,
-				EB1D96CEC8F954642A95C41C /* Pods_UMC_Reborn.framework */,
+				2C19DC0605BD35D11E1E9E84 /* libPods-UMC-Reborn.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -689,6 +693,7 @@
 				C7B8BCE02984241200FE3C0A /* PwOkViewController.swift */,
 				C75E99062984E6F6003D40B4 /* CodeViewController.swift */,
 				C75E990829857BA2003D40B4 /* ReviewImage.swift */,
+				C7324E3E2997EF460062564D /* StoreAddressViewController.swift */,
 			);
 			path = StoreHomeViewController;
 			sourceTree = "<group>";
@@ -755,6 +760,7 @@
 				C7EF982D299107C000480DD9 /* JjimModel.swift */,
 				C739AC12298A9D980016B840 /* APIRebornPatch.swift */,
 				C7284AA2298D0B8F009A70E7 /* HTTPManager.swift */,
+				C7324E3929965DDA0062564D /* APIImagePost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -779,8 +785,9 @@
 				C7C4FD6D296D315B00040E05 /* Sources */,
 				C7C4FD6E296D315B00040E05 /* Frameworks */,
 				C7C4FD6F296D315B00040E05 /* Resources */,
-				F0535D8D29DFB2B70ECBF9CB /* [CP] Embed Pods Frameworks */,
 				9561B9FE2992471900A4B33B /* Embed Frameworks */,
+				C7324E3C2997A6450062564D /* ShellScript */,
+				70DB102761D3F562B03C6253 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -899,22 +906,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F0535D8D29DFB2B70ECBF9CB /* [CP] Embed Pods Frameworks */ = {
+		70DB102761D3F562B03C6253 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C7324E3C2997A6450062564D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -938,6 +964,7 @@
 				C71987572986D46F000C87EB /* JjimTableViewCell.swift in Sources */,
 				95E9FFA32977E55E0073DF2B /* RecruitedShopCollectionViewCell.swift in Sources */,
 				2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */,
+				C7324E3F2997EF460062564D /* StoreAddressViewController.swift in Sources */,
 				0B94770829899D6400B5829A /* NeighborViewController.swift in Sources */,
 				C70D3D6E2982D89200CABA91 /* ModalStoreViewController.swift in Sources */,
 				95E9FFA9297A92100073DF2B /* CategoryTableViewCell.swift in Sources */,
@@ -981,6 +1008,7 @@
 				C71E517C2995565D00020A96 /* RebornModel.swift in Sources */,
 				95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */,
 				C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */,
+				C7324E3A29965DDA0062564D /* APIImagePost.swift in Sources */,
 				0B94771829899DDE00B5829A /* HelloViewController.swift in Sources */,
 				0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */,
 				0B0D66C8298CFA6100E5220F /* Id_PassWordSecondViewController.swift in Sources */,
@@ -1018,7 +1046,6 @@
 				C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */,
 				0B94770E29899D9700B5829A /* WhoViewController.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
-				C7DA00A329891C740015BA4F /* APIReviewGet.swift in Sources */,
 				2F7C0ABC29956D0400BC5F9A /* PersonalTabViewController.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
 				C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */,
@@ -1114,6 +1141,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1135,6 +1164,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = "";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -1174,6 +1205,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1188,7 +1221,9 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = "";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};
@@ -1201,8 +1236,9 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"EXCLUDED_ARCHS[sdk=*]" = arm64;
+				DEVELOPMENT_TEAM = KSR8K3JPUM;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
@@ -1227,13 +1263,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -1246,8 +1283,9 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				EXCLUDED_ARCHS = arm64;
+				DEVELOPMENT_TEAM = KSR8K3JPUM;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
@@ -1272,13 +1310,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};

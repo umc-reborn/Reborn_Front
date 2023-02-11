@@ -6,9 +6,13 @@
 //
 import Foundation
 import UIKit
+import Alamofire
 
 class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol2{
     
+    let rebornAdd = UserDefaults.standard.integer(forKey: "userIdx")
+    
+    var imageUrl: ImageresultModel!
     var rebornData: RebornresultModel!
     
     func dataSend(data: String) {
@@ -32,9 +36,8 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var TimeSwitch: UISwitch!
     @IBOutlet weak var countTextfield: UITextField!
     
-    @IBOutlet weak var imageData: UIImageView!
     
-    
+    let serverURL = "http://www.rebornapp.shop/s3"
     
     var Number = 0
     
@@ -79,6 +82,8 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         self.imagePickerController.delegate = self
         addGestureRecognizer()
     }
+    
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
            // textField.borderStyle = .line
@@ -196,35 +201,61 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         countTextfield.text = String(Number)
     }
     
-    
     @IBAction func RebornPostButton(_ sender: Any) {
-    
-        let img = AddImageView.image?.jpegData(compressionQuality: 1)
-        let imageBase64String = img?.base64EncodedString()
-        let newImageData = Data(base64Encoded: imageBase64String!)
-        if let newImageData = newImageData {
-            imageData.image = UIImage(data: newImageData)
+//        let parmeterData = ImageModel(file: imageBase64String ?? "")
+//        let image = AddImageView.image
+//        DispatchQueue.main.async {
+//            APIHandlerImagePost.instance.SendingPostImage(parameters: parmeterData) { result in self.imageUrl = result
+//            }
+//        }
+//        DispatchQueue.global().sync {
+//            print(imageUrl ?? "")
+//            print(imageUrl ?? "")
+//        }
+        DispatchQueue.global().async {
+            DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+            Thread.sleep(forTimeInterval: 1)
+            print(self.imageUrl.result ?? "")
+            let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
+            Thread.sleep(forTimeInterval: 1)
+            APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
         }
-        let parmeterData = RebornModel(storeIdx: 1, productName: nameTextfield.text ?? "", productGuide: eatTextfield.text ?? "", productComment: introduceTextView.text ?? "", productImg: imageBase64String ?? "", productLimitTime: timeLabel2.text ?? "", productCnt: Number)
+//        let pngData = AddImageView.image?.jpegData(compressionQuality: 1.0)
+//        let parmeterDatas = RebornModel(storeIdx: 2, productName: nameTextfield.text ?? "", productGuide: eatTextfield.text ?? "", productComment: introduceTextView.text ?? "", productImg: "", productLimitTime: timeLabel2.text ?? "", productCnt: Number)
+//////
+//        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result
+//        }
+    }
+    
+    class DiaryPost {
+        static let instance = DiaryPost()
         
-        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterData) { result in self.rebornData = result
+        func uploadDiary(file: UIImage, url: String, handler: @escaping (_ result: ImageresultModel)->(Void)) {
+            let headers: HTTPHeaders = [
+                                "Content-type": "multipart/form-data"
+                            ]
+            AF.upload(multipartFormData: { (multipart) in
+                if let imageData = file.jpegData(compressionQuality: 0.8) {
+                    multipart.append(imageData, withName: "file", fileName: "photo.jpg", mimeType: "image/jpeg")
+                }
+            }, to: url ,method: .post ,headers: headers).response { responce in
+                switch responce.result {
+                case .success(let data):
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+                        print(json)
+                        
+                        let jsonresult = try JSONDecoder().decode(ImageresultModel.self, from: data!)
+                        handler(jsonresult)
+                        print(jsonresult)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         }
-    }
-    
-}
-
-extension UIImage {
-    var base64: String? {
-        self.jpegData(compressionQuality: 1)?.base64EncodedString()
-    }
-}
-
-extension String {
-    var imageFromBase64: UIImage? {
-        guard let imageData = Data(base64Encoded: self, options: .ignoreUnknownCharacters) else {
-            return nil
-        }
-        return UIImage(data: imageData)
     }
 }
 
@@ -247,6 +278,7 @@ extension AddRebornViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             AddImageView?.image = image
+//            AddActionEditService.shared.editActivity(file: image) { result in self.imageUrl = result }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")
         }
@@ -262,3 +294,4 @@ extension AddRebornViewController: UIImagePickerControllerDelegate, UINavigation
         }
     }
 }
+

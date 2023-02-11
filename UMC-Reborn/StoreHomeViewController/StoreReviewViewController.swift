@@ -8,9 +8,7 @@
 import UIKit
 
 var Rdata = [
-    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2023-02-09+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+7.15.10.png"]),
-    ReviewStoreListModel(reviewImgList: ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2023-02-09+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+7.15.10.png"]),
-    ReviewStoreListModel(reviewImgList: ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2023-02-09+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+7.15.10.png", "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2023-02-09+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+7.15.10.png"])
+    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2023-02-09+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+7.15.10.png", "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2023-02-09+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+7.15.10.png"]),
 ]
 
 class StoreReviewViewController: UIViewController {
@@ -44,7 +42,7 @@ class StoreReviewViewController: UIViewController {
     
     func reviewResult() {
         
-        let url = APIConstants.baseURL + "/review/store/\(String(storeReview))/buz"
+        let url = APIConstants.baseURL + "/review/store/2/buz"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -98,7 +96,7 @@ class StoreReviewViewController: UIViewController {
     
     func reviewCountResult() {
         
-        let url = APIConstants.baseURL + "/review/cnt?storeIdx=1"
+        let url = APIConstants.baseURL + "/review/cnt?storeIdx=2"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }

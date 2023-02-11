@@ -49,6 +49,11 @@ class CodeViewController: UIViewController, UITextFieldDelegate {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func shareDoneButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @objc func textFieldEdited(textField: UITextField) {
             
         if (textField.text?.count ?? 0 == 5) {

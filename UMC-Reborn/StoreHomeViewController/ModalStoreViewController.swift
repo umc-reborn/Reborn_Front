@@ -13,6 +13,8 @@ class ModalStoreViewController: UIViewController {
     
     var rebornData:JjimresultModel!
     
+    
+    @IBOutlet var storeBigImage: UIImageView!
     @IBOutlet weak var modalButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var bellButton: UIButton!
@@ -22,6 +24,11 @@ class ModalStoreViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var DescriptionLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet var reviewLabel: UILabel!
+    @IBOutlet var rebornLabel: UILabel!
+    @IBOutlet var jjimLabel: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +94,7 @@ class ModalStoreViewController: UIViewController {
     
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/\(String(modalStore))"
+        let url = APIConstants.baseURL + "/store/1"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -118,8 +125,8 @@ class ModalStoreViewController: UIViewController {
                     print(storeDatas)
                     DispatchQueue.main.async {
                         self.storeNameLabel.text = "\(storeDatas.storeName)"
-//                        let url = URL(string: storeDatas.storeImage ?? "")
-//                        self.ManageImageView.load(url: url!)
+                        let url = URL(string: storeDatas.storeImage ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
+                        self.storeBigImage.load(url: url!)
                         self.addressLabel.text = "\(storeDatas.storeAddress)"
                         self.DescriptionLabel.text = "\(storeDatas.storeDescription)"
                         if (storeDatas.category == "CAFE") {
@@ -134,6 +141,9 @@ class ModalStoreViewController: UIViewController {
                             self.categoryLabel.text = "기타"
                         }
                         self.scoreLabel.text = "\(String(storeDatas.storeScore))"
+                        self.reviewLabel.text = "리뷰수 \(String(storeDatas.numOfReview))개"
+                        self.jjimLabel.text = "찜 \(String(storeDatas.numOfJjim))개"
+                        self.rebornLabel.text = "리본 \(String(storeDatas.numOfReborn))회"
                     }
                 } catch {
                     print("error")

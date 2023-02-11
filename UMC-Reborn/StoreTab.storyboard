@@ -186,7 +186,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="edit_storebutton"/>
                                         <connections>
-                                            <segue destination="xFv-CL-2kQ" kind="show" id="xGi-B0-PuV"/>
+                                            <action selector="editButton:" destination="4As-QJ-xkR" eventType="touchUpInside" id="pyc-bO-b9d"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQy-PB-pBF">
@@ -387,6 +387,7 @@
                             <constraint firstItem="JFm-CL-dd4" firstAttribute="top" secondItem="twU-Uj-5nQ" secondAttribute="bottom" constant="40.409999999999997" id="LJc-C5-HJd"/>
                             <constraint firstItem="x06-sZ-jiT" firstAttribute="top" secondItem="R9S-Fm-RKc" secondAttribute="bottom" constant="213" id="N7s-oZ-ucd"/>
                             <constraint firstItem="Rta-5b-hYm" firstAttribute="leading" secondItem="3Xq-uC-tPY" secondAttribute="trailing" constant="4" id="O9u-nL-QaH"/>
+                            <constraint firstItem="Ihy-JL-ruC" firstAttribute="centerX" secondItem="OCs-ur-ap2" secondAttribute="centerX" id="OCz-Em-t6l"/>
                             <constraint firstItem="JFm-CL-dd4" firstAttribute="leading" secondItem="TfY-hP-gUy" secondAttribute="trailing" constant="20.5" id="Pj2-pd-UP4"/>
                             <constraint firstAttribute="trailing" secondItem="R9S-Fm-RKc" secondAttribute="trailing" constant="27" id="QNl-ka-r20"/>
                             <constraint firstItem="nRO-I8-bOw" firstAttribute="top" secondItem="fuh-2B-PJA" secondAttribute="bottom" constant="8" id="QOh-OO-cJI"/>
@@ -436,6 +437,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hh4-O0-JAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="576.92307692307691" y="-144.31279620853081"/>
+        </scene>
+        <!--Store Address View Controller-->
+        <scene sceneID="ktR-8y-xh1">
+            <objects>
+                <viewController storyboardIdentifier="StoreAddressViewController" id="1Hd-oS-jAu" customClass="StoreAddressViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NoF-qF-lDL">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95h-CU-8Nz">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bTE-tx-acr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="95h-CU-8Nz" firstAttribute="trailing" secondItem="bTE-tx-acr" secondAttribute="trailing" id="Cjj-m8-y5y"/>
+                            <constraint firstItem="95h-CU-8Nz" firstAttribute="leading" secondItem="bTE-tx-acr" secondAttribute="leading" id="Hzi-7U-lAz"/>
+                            <constraint firstAttribute="bottom" secondItem="95h-CU-8Nz" secondAttribute="bottom" id="Wto-vd-OLI"/>
+                            <constraint firstItem="95h-CU-8Nz" firstAttribute="top" secondItem="NoF-qF-lDL" secondAttribute="top" id="h4a-it-NMj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressWeb" destination="95h-CU-8Nz" id="v6o-ZG-fC3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jvc-nY-DPC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2107.6923076923076" y="-798.34123222748815"/>
         </scene>
         <!--Edit Store View Controller-->
         <scene sceneID="Ron-ok-bUd">
@@ -544,6 +579,11 @@
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" systemColor="systemGrayColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSf-V5-J0i">
                                 <rect key="frame" x="330" y="638.66666666666663" width="27.333333333333314" height="16"/>
@@ -562,6 +602,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="back_button"/>
+                                <connections>
+                                    <action selector="backButton:" destination="xFv-CL-2kQ" eventType="touchUpInside" id="fV1-hM-gvL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 정보 수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kh-Sd-GOh">
                                 <rect key="frame" x="144.66666666666666" y="54.666666666666657" width="103" height="22"/>
@@ -580,6 +623,9 @@
                                     <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                     <color key="baseForegroundColor" red="0.92356389760000002" green="0.35871350769999999" blue="0.18580088019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButton:" destination="xFv-CL-2kQ" eventType="touchUpInside" id="kKx-dg-Qu4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GVk-UK-626"/>
@@ -869,6 +915,7 @@
                             <constraint firstItem="je0-lb-qjA" firstAttribute="leading" secondItem="Vmo-Dl-Ejs" secondAttribute="leading" id="k9y-Oq-U7a"/>
                             <constraint firstItem="cGn-4v-brm" firstAttribute="leading" secondItem="LKf-EI-LJl" secondAttribute="leading" id="kFx-Pk-hYx"/>
                             <constraint firstItem="cGn-4v-brm" firstAttribute="bottom" secondItem="LKf-EI-LJl" secondAttribute="bottom" id="ncp-KE-wT8"/>
+                            <constraint firstItem="xOB-eZ-mhx" firstAttribute="centerX" secondItem="Vmo-Dl-Ejs" secondAttribute="centerX" id="ssu-NJ-SB7"/>
                             <constraint firstItem="cGn-4v-brm" firstAttribute="trailing" secondItem="LKf-EI-LJl" secondAttribute="trailing" id="wYL-3I-b02"/>
                         </constraints>
                     </view>
@@ -1644,7 +1691,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12X-t0-bJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360" y="-1107"/>
+            <point key="canvasLocation" x="2822" y="-1108"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="b8B-r3-Qrg">
@@ -1765,7 +1812,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7g-gA-JrF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3025" y="-1108"/>
+            <point key="canvasLocation" x="3574" y="-1108"/>
         </scene>
         <!--Reborn Enroll View Controller-->
         <scene sceneID="Jrc-74-G6w">
@@ -2179,10 +2226,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Un-5b-mFj">
-                                <rect key="frame" x="29" y="87" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m5h-56-mrb"/>
                         <color key="backgroundColor" red="0.99627512689999997" green="0.98423308129999998" blue="0.97668832539999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2237,7 +2280,6 @@
                         <outlet property="countTextfield" destination="oVg-X7-rDZ" id="WyP-C1-i82"/>
                         <outlet property="eatTextfield" destination="en5-m6-RU1" id="Xss-LE-bfk"/>
                         <outlet property="editButton" destination="zlL-g0-Z1p" id="Dit-bI-Qe3"/>
-                        <outlet property="imageData" destination="6Un-5b-mFj" id="NKp-oe-nAK"/>
                         <outlet property="introduceTextView" destination="xaY-gX-hhE" id="aFZ-8I-grM"/>
                         <outlet property="nameTextfield" destination="IIR-AZ-jZU" id="klu-RW-1Yr"/>
                         <outlet property="timeLabel" destination="jyG-fY-ipZ" id="DTF-XZ-Ogr"/>
@@ -2246,7 +2288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vr-Pq-zjl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360" y="-1794.3127962085307"/>
+            <point key="canvasLocation" x="2823" y="-1794"/>
         </scene>
         <!--Time Popup View Controller-->
         <scene sceneID="MYV-2I-o8W">
@@ -2366,7 +2408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tA4-9J-8j5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3026" y="-1794"/>
+            <point key="canvasLocation" x="3574" y="-1794"/>
         </scene>
         <!--Store Tab Bar Controller-->
         <scene sceneID="J1a-T2-5K0">
@@ -2694,10 +2736,14 @@
                         <outlet property="addressLabel" destination="w5w-te-Sgt" id="aTA-Pc-KH5"/>
                         <outlet property="bellButton" destination="1T1-F2-w0B" id="8es-UJ-chR"/>
                         <outlet property="categoryLabel" destination="RoB-CV-Cef" id="jcm-js-tfu"/>
+                        <outlet property="jjimLabel" destination="cvf-fp-mpd" id="VPA-xK-joa"/>
                         <outlet property="likeButton" destination="xlA-Nt-qBc" id="VwC-op-7k7"/>
                         <outlet property="modalButton" destination="E5D-vo-Utu" id="E4k-1i-BVT"/>
                         <outlet property="modalView" destination="Qgy-8H-b0D" id="xjC-zn-EAY"/>
+                        <outlet property="rebornLabel" destination="j2A-RE-xor" id="xSU-II-jBN"/>
+                        <outlet property="reviewLabel" destination="noZ-m8-M7S" id="vhM-eq-Eu9"/>
                         <outlet property="scoreLabel" destination="DB7-ep-TRQ" id="Ihs-no-WGP"/>
+                        <outlet property="storeBigImage" destination="c2U-sz-NKB" id="6Eg-qU-UHW"/>
                         <outlet property="storeNameLabel" destination="LBe-zs-5BF" id="XQZ-es-HnQ"/>
                     </connections>
                 </viewController>
@@ -3363,6 +3409,9 @@
                                         <state key="normal" title="확인">
                                             <color key="titleColor" red="0.2398672104" green="0.19570407270000001" blue="0.14291599390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shareDoneButton:" destination="fwN-vm-ZBh" eventType="touchUpInside" id="B1N-vb-nEJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99592512850000003" green="0.9844868779" blue="0.97646933790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

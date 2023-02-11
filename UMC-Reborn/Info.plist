@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
-	<false/>
+	<string></string>
+	<key>CFBundleExecutable</key>
+	<string>UMC-Reborn</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>96aff053724db2845775875f956af948</string>
 	<key>NSAppTransportSecurity</key>

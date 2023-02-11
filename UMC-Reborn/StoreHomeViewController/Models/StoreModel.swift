@@ -18,8 +18,12 @@ struct StoreListModel : Codable {
     let storeIdx : Int
     let storeName : String
     let storeImage : String?
+    let userImage : String?
     let storeAddress : String
     let storeDescription : String
-    let storeScore : Int
+    let storeScore : Float
+    let numOfReborn : Int
+    let numOfJjim : Int
+    let numOfReview: Int
     let category : String
 }

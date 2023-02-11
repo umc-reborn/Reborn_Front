@@ -56,7 +56,7 @@ class StoreReviewTableViewCell: UITableViewCell {
     
     func reviewImageResult() {
         
-        let url = APIConstants.baseURL + "/review/store/1/buz"
+        let url = APIConstants.baseURL + "/review/store/2/buz"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -77,7 +77,6 @@ class StoreReviewTableViewCell: UITableViewCell {
             }
             
             if let safeData = data {
-                print(String(decoding: safeData, as: UTF8.self))
                 
                 do {
                     let decoder = JSONDecoder()
@@ -111,9 +110,8 @@ class StoreReviewTableViewCell: UITableViewCell {
 extension StoreReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return reviewImageDatas[collectionView.tag].reviewImgList.count
-//        return reviewImageDatas[collectionView.tag].reviewImgList.count
-//        let ddd = reviewImageDatas[collectionView.tag].reviewImg
+//        return self.reviewImageDatas[(self.reviewImageDatas.count)-1].reviewImgList.count
+        return Rdata[(Rdata.count)-1].reviewImgList.count
 //        if (ddd.reviewImage1 != nil && ddd.reviewImage2 == nil && ddd.reviewImage3 == nil && ddd.reviewImage4 == nil && ddd.reviewImage5 == nil) {
 //            return 1
 //        } else if (ddd.reviewImage1 != nil && ddd.reviewImage2 != nil && ddd.reviewImage3 == nil && ddd.reviewImage4 == nil && ddd.reviewImage5 == nil) {
@@ -125,21 +123,17 @@ extension StoreReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDa
 //        } else {
 //            return 5
 //        }
-//        return reviewImageDatas[collectionView.tag].reviewImg.count
-        return 5
+//        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoreReview_CollectionViewCell", for: indexPath) as! StoreReviewCollectionViewCell
 //        let reviewDatas = reviewImageDatas[collectionView.tag].reviewImgList[indexPath.row]
-//        let url = URL(string: reviewImageDatas[collectionView.tag].reviewImgList[indexPath.row])
 //        cell.imageView.load(url: url!)
 //        let reviewDatas = reviewImageDatas[collectionView.hash].reviewImg
 //        print(reviewDatas)
-        let ddd = reviewImageDatas[collectionView.tag].reviewImgList[indexPath.row]
-        print("ddd: \(ddd)")
-        let url = URL(string: Rdata[collectionView.tag].reviewImgList[indexPath.row])
+        let url = URL(string: Rdata[(Rdata.count)-1].reviewImgList[indexPath.row])
         cell.imageView.load(url: url!)
         return cell
     }

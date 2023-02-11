@@ -1,4 +1,4 @@
-framework module Pods_UMC_Reborn {
+module Pods_UMC_Reborn {
   umbrella header "Pods-UMC-Reborn-umbrella.h"
 
   export *
