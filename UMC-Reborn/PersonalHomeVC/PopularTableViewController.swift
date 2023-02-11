@@ -51,7 +51,7 @@ class PopularTableViewController: UIViewController {
         
             if let safeData = data {
                 // Data 타입을 String 타입으로 변환
-                print(String(decoding: safeData, as: UTF8.self))
+//                print(String(decoding: safeData, as: UTF8.self))
                         
                 do {
                     let decoder = JSONDecoder()
@@ -109,6 +109,16 @@ extension PopularTableViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 96
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //상세페이지 이동
+//        let storyboard = UIStoryboard(name: "StoreTab", bundle: Bundle.main)
+//        guard let detailViewController = storyboard.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else { return }
+    
+        
+        
     }
     
     

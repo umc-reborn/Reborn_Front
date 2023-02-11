@@ -30,9 +30,10 @@
         <!--MyReborn-->
         <scene sceneID="pgJ-mP-pzj">
             <objects>
-                <navigationController storyboardIdentifier="MyReborn" title="MyReborn" navigationBarHidden="YES" id="ivm-fZ-VVo" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MyReborn" title="MyReborn" id="ivm-fZ-VVo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="마이리본" image="my" id="ded-hs-SO4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="daK-Ca-ULF">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
