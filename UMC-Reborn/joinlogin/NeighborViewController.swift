@@ -225,6 +225,9 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
              // 화면이동
              navigationController?.pushViewController(rvc, animated: true)
             
+            // 네비게이션 바 숨기기
+            navigationController?.setNavigationBarHidden(true, animated: false)
+            
             
             /*
             // 화면 넘기기 + 데이터 넘겨주기
