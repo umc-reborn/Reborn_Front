@@ -21,11 +21,13 @@ class ReviewManageViewController: UIViewController {
     }()
     //
     
-    var imageArray = [UIImage(named: "dummyImage1"), UIImage(named: "dummyImage1"),]
+    var imageArray = [UIImage(named: "bread1"), UIImage(named: "bread2"),]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "리뷰 관리"
+        
+
         
         ReviewManageService.shared.getUserReview{ result in
             switch result {
@@ -55,6 +57,8 @@ extension ReviewManageViewController: UICollectionViewDataSource, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReviewImageCollectionViewCell", for: indexPath) as! ReviewImageCollectionViewCell
         
         cell.reviewImage.image = imageArray[indexPath.row]
+        
+        cell.reviewImage.layer.cornerRadius  = 16
         return cell
     }
     

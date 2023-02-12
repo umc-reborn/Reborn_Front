@@ -9,6 +9,8 @@ import UIKit
 
 class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
+    var nickname = UserDefaults.standard.string(forKey: "userNickName")
+    
     @IBOutlet var EditNicknameTextField: UITextField!
     @IBOutlet var EditAddressTextField: UITextField!
     @IBOutlet var EditBirthTextField: UITextField!
@@ -21,6 +23,11 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("유저 닉네임은 \(nickname)")
+        
+        guard let name = nickname else {return}
+        self.EditNicknameTextField.text = "\(name)"
+
         // 네비게이션 바
         self.navigationItem.title = "회원정보 수정"
         self.navigationItem.backButtonDisplayMode = .minimal
