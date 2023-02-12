@@ -9,7 +9,6 @@ import UIKit
 
 class MyRebornViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
     @IBOutlet weak var MyRebornTableView: UITableView!
     @IBOutlet var userNameLabel: UILabel!
     
@@ -64,7 +63,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         MyRebornTableView.delegate = self
         MyRebornTableView.dataSource = self
         
-        self.MyRebornTableView.rowHeight = 60;
+        self.MyRebornTableView.rowHeight = 64;
         self.navigationItem.title = "마이리본"
         self.navigationItem.backButtonDisplayMode = .minimal
         self.navigationController?.navigationBar.tintColor = .black
@@ -72,6 +71,14 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         print("마이 리본으로 불러온 userIdx 값은 \(userIdx)")
         print("마이 리본으로 불러온 userNickname 값은 \(username)")
         userNameLabel.text = "\(username!)"
+        
+        // 그림자
+        self.MyRebornTableView.layer.shadowColor = UIColor.gray.cgColor //색상
+                self.MyRebornTableView.layer.shadowOpacity = 0.1 //alpha값
+                self.MyRebornTableView.layer.shadowRadius = 10 //반경
+                self.MyRebornTableView.layer.shadowOffset = CGSize(width: 0, height: 10) //위치조정
+                self.MyRebornTableView.layer.masksToBounds = false
+        self.MyRebornTableView.layer.cornerRadius = 8;
 
         
     }
