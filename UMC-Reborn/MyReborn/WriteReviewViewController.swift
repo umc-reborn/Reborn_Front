@@ -9,6 +9,8 @@ import UIKit
 
 class WriteReviewViewController: UIViewController, UITextViewDelegate {
     
+    var writeRebornData:[postReviewReqResultModel]!
+    
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var testImage: UIImageView!
@@ -18,8 +20,6 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
 //    let dd = Int(stringToNum)
     
     lazy var stringToNum = UInt(label.text ?? "")
-    
-    var writeRebornData:[postReviewReqResultModel]!
     
     var Number = 0
     
@@ -71,9 +71,5 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
     @IBAction func addReviewButton(_ sender: Any) {
         print("순수 label 값은 \(label!)")
         print("형변환한 label 값은 \(stringToNum!)")
-        
-        let parmeterData = postReviewReqModel(userIdx: 1, rebornIdx: 1, reviewScore: stringToNum!, reviewComment: textField.text ?? "")
-        
-        print(parmeterData)
     }
 }

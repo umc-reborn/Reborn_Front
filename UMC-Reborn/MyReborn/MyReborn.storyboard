@@ -250,7 +250,6 @@
                                             <outlet property="storeImage" destination="XRt-rv-7OK" id="6JL-V6-PKh"/>
                                             <outlet property="storeName" destination="f61-vG-DQu" id="IkB-0H-nJV"/>
                                             <outlet property="storeScore" destination="eV7-EI-tSI" id="rh2-5e-IlF"/>
-                                            <segue destination="iVA-25-aJ2" kind="push" id="wtM-Zp-Kef"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -295,6 +294,8 @@
                         <outlet property="RebornHistoryTableView" destination="BwJ-7R-tZz" id="Rsd-AN-TFF"/>
                         <outlet property="tableView" destination="BwJ-7R-tZz" id="mKC-Rd-MZR"/>
                         <outlet property="totalNum" destination="4aC-XV-xxG" id="8o1-fm-bUZ"/>
+                        <segue destination="iVA-25-aJ2" kind="push" identifier="historySegue" id="3cm-Dq-pyO"/>
+                        <segue destination="w3B-76-O9L" kind="push" identifier="completeSegue" id="ugY-Pl-urs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPS-ln-fWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -304,7 +305,7 @@
         <!--Write Review View Controller-->
         <scene sceneID="q49-Iv-j26">
             <objects>
-                <viewController id="8Hs-ZW-hUa" customClass="WriteReviewViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="writeReviewVC" id="8Hs-ZW-hUa" customClass="WriteReviewViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aeS-Vi-i54">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1229,12 +1230,12 @@
             </objects>
             <point key="canvasLocation" x="2904.6153846153843" y="1284.5971563981043"/>
         </scene>
-        <!--View Controller-->
+        <!--Complete Reborn View Controller-->
         <scene sceneID="xFR-3x-Qib">
             <objects>
-                <viewController id="w3B-76-O9L" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="completeRebornVC" id="w3B-76-O9L" customClass="CompleteRebornViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRE-rp-Z5T">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/31 (토)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tON-CH-t8P">
@@ -1591,7 +1592,7 @@
             <color red="1" green="0.30196078431372547" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mygray">
-            <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

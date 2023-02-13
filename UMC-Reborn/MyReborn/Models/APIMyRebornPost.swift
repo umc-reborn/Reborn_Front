@@ -8,31 +8,25 @@
 import Foundation
 import Alamofire
 
-struct postReviewReqModel:Codable {
+struct postReviewReqModel:Encodable {
     var userIdx:Int
     var rebornIdx:Int
     var reviewScore:UInt
     var reviewComment:String
-}
-
-struct postReviewReqResultModel: Codable {
-    var isSuccess:Bool
-    var code:Int
-    var message:String
-    var result:postReviewReqResult
-}
-
-struct postReviewReqResult: Codable {
-    var reviewIdx:Int
+    var reviewImage1:String
+    var reviewImage2:String
+    var reviewImage3:String
+    var reviewImage4:String
+    var reviewImage5:String
 }
 
 class APIMyRebornHandlerPost {
     static let instance = APIMyRebornHandlerPost()
     //
-    func SendingPostReborn(parameters: postReviewReqModel, handler: @escaping (_ result: [postReviewReqResultModel])->(Void)) {
-        let url = "http://www.rebornapp.shop/review" 
+    func SendingPostReview(parameters: postReviewReqModel, handler: @escaping (_ result: [postReviewReqResultModel])->(Void)) {
+        let url = "http://www.rebornapp.shop/reviewboni"
         let headers: HTTPHeaders = [
-            "content-type": "application/json",
+            "content-type": "application/json"
         ]
         
         // ====================
@@ -57,4 +51,15 @@ class APIMyRebornHandlerPost {
     //
     //
     
+}
+
+struct postReviewReqResultModel: Codable {
+    var isSuccess:Bool
+    var code:Int
+    var message:String
+    var result: RebornResult
+}
+
+struct postReviewReqResult: Codable {
+    var reviewIdx:Int
 }
