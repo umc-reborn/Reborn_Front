@@ -37,6 +37,8 @@
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */; };
 		2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */; };
+		2F3A2321299A875C002B183B /* PostReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2320299A875C002B183B /* PostReviewModel.swift */; };
+		2F3A2323299A877B002B183B /* PostReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2322299A877B002B183B /* PostReviewService.swift */; };
 		2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD22991559700D3C791 /* APIHandler.swift */; };
 		2F48EBD52991592400D3C791 /* APIManageReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD42991592400D3C791 /* APIManageReview.swift */; };
 		2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */; };
@@ -232,6 +234,8 @@
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
 		2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		2F3A2320299A875C002B183B /* PostReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReviewModel.swift; sourceTree = "<group>"; };
+		2F3A2322299A877B002B183B /* PostReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReviewService.swift; sourceTree = "<group>"; };
 		2F48EBD22991559700D3C791 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		2F48EBD42991592400D3C791 /* APIManageReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManageReview.swift; sourceTree = "<group>"; };
 		2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
@@ -479,6 +483,7 @@
 				2FB97CFC2992A9EA006D4420 /* RebornHistoryDetailModel.swift */,
 				2FF615362992D1EC00143369 /* RebornHistoryModel.swift */,
 				2F7C0AB32994DAA600BC5F9A /* ReviewManageModel.swift */,
+				2F3A2320299A875C002B183B /* PostReviewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -626,6 +631,7 @@
 				9561B98F2992463200A4B33B /* kako api-Bridging-Header.h */,
 				9561BA892994712600A4B33B /* InprogressService.swift */,
 				2F7C0AB72994DAD000BC5F9A /* ReviewManageService.swift */,
+				2F3A2322299A877B002B183B /* PostReviewService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1018,6 +1024,8 @@
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
+				2F3A2323299A877B002B183B /* PostReviewService.swift in Sources */,
+				2F3A2321299A875C002B183B /* PostReviewModel.swift in Sources */,
 				0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */,
 				0B0D66CC298D0BFD00E5220F /* APINeiLoginPost.swift in Sources */,
 				0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */,
@@ -1215,7 +1223,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.6;
 				DEVELOPMENT_TEAM = "";
 				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1229,6 +1237,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "UMC Re-born";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1241,7 +1250,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1260,7 +1269,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.6;
 				DEVELOPMENT_TEAM = "";
 				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1274,6 +1283,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "UMC Re-born";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1286,7 +1296,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
