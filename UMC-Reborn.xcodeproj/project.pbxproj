@@ -40,6 +40,8 @@
 		2F3A2321299A875C002B183B /* PostReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2320299A875C002B183B /* PostReviewModel.swift */; };
 		2F3A2323299A877B002B183B /* PostReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2322299A877B002B183B /* PostReviewService.swift */; };
 		2F3A2325299AA0F4002B183B /* CompleteRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2324299AA0F4002B183B /* CompleteRebornViewController.swift */; };
+		2F3A2327299AAF62002B183B /* ControlSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2326299AAF62002B183B /* ControlSlider.swift */; };
+		2F3A2329299AB690002B183B /* FinishWriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2328299AB690002B183B /* FinishWriteReviewViewController.swift */; };
 		2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD22991559700D3C791 /* APIHandler.swift */; };
 		2F48EBD52991592400D3C791 /* APIManageReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD42991592400D3C791 /* APIManageReview.swift */; };
 		2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */; };
@@ -238,6 +240,8 @@
 		2F3A2320299A875C002B183B /* PostReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReviewModel.swift; sourceTree = "<group>"; };
 		2F3A2322299A877B002B183B /* PostReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReviewService.swift; sourceTree = "<group>"; };
 		2F3A2324299AA0F4002B183B /* CompleteRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRebornViewController.swift; sourceTree = "<group>"; };
+		2F3A2326299AAF62002B183B /* ControlSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSlider.swift; sourceTree = "<group>"; };
+		2F3A2328299AB690002B183B /* FinishWriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishWriteReviewViewController.swift; sourceTree = "<group>"; };
 		2F48EBD22991559700D3C791 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		2F48EBD42991592400D3C791 /* APIManageReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManageReview.swift; sourceTree = "<group>"; };
 		2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
@@ -473,6 +477,8 @@
 				2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */,
 				2FB97CFA2992A20A006D4420 /* RebornHistoryDetailViewController.swift */,
 				2F3A2324299AA0F4002B183B /* CompleteRebornViewController.swift */,
+				2F3A2326299AAF62002B183B /* ControlSlider.swift */,
+				2F3A2328299AB690002B183B /* FinishWriteReviewViewController.swift */,
 			);
 			path = MyReborn;
 			sourceTree = "<group>";
@@ -944,6 +950,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3A2327299AAF62002B183B /* ControlSlider.swift in Sources */,
 				0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */,
 				C7B8BCDF298423FC00FE3C0A /* PwErrorViewController.swift in Sources */,
 				0B94772029899E4400B5829A /* FindIdViewController.swift in Sources */,
@@ -1026,6 +1033,7 @@
 				C7EF98262990D83B00480DD9 /* RebornStatusModel.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				2F3A2325299AA0F4002B183B /* CompleteRebornViewController.swift in Sources */,
+				2F3A2329299AB690002B183B /* FinishWriteReviewViewController.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
 				2F3A2323299A877B002B183B /* PostReviewService.swift in Sources */,

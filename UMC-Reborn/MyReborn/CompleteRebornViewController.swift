@@ -10,5 +10,7 @@ import UIKit
 class CompleteRebornViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.topItem?.title = ""
     }
 }

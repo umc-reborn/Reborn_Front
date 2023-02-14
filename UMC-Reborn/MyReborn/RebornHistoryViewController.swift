@@ -68,6 +68,8 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.topItem?.title = ""
+        
         RebornHistoryTableView.dataSource = self
         RebornHistoryTableView.delegate = self
         self.RebornHistoryTableView.rowHeight = 88;
