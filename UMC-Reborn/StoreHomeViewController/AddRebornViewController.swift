@@ -6,9 +6,15 @@
 //
 import Foundation
 import UIKit
+import Alamofire
 
 class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol2{
     
+    let rebornAdd = UserDefaults.standard.integer(forKey: "userIdx")
+    
+    let DidDismissAddRebornViewController: Notification.Name = Notification.Name("DidDismissAddRebornViewController")
+    
+    var imageUrl: ImageresultModel!
     var rebornData: RebornresultModel!
     
     func dataSend(data: String) {
@@ -32,9 +38,8 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var TimeSwitch: UISwitch!
     @IBOutlet weak var countTextfield: UITextField!
     
-    @IBOutlet weak var imageData: UIImageView!
     
-    
+    let serverURL = "http://www.rebornapp.shop/s3"
     
     var Number = 0
     
@@ -78,7 +83,12 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         enrollAlertEvent()
         self.imagePickerController.delegate = self
         addGestureRecognizer()
+        
+        let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
+    
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
            // textField.borderStyle = .line
@@ -100,6 +110,7 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.delegate = self
         self.present(nextVC, animated: true, completion: nil)
+        DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
     }
     
     func placeholderSetting() {
@@ -196,35 +207,65 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         countTextfield.text = String(Number)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView"), object: nil, userInfo: nil)
+    }
     
     @IBAction func RebornPostButton(_ sender: Any) {
+//        let parmeterData = ImageModel(file: imageBase64String ?? "")
+//        let image = AddImageView.image
+//        DispatchQueue.main.async {
+//            APIHandlerImagePost.instance.SendingPostImage(parameters: parmeterData) { result in self.imageUrl = result
+//            }
+//        }
+//        DispatchQueue.global().sync {
+//            print(imageUrl ?? "")
+//            print(imageUrl ?? "")
+//        }
     
-        let img = AddImageView.image?.jpegData(compressionQuality: 1)
-        let imageBase64String = img?.base64EncodedString()
-        let newImageData = Data(base64Encoded: imageBase64String!)
-        if let newImageData = newImageData {
-            imageData.image = UIImage(data: newImageData)
-        }
-        let parmeterData = RebornModel(storeIdx: 1, productName: nameTextfield.text ?? "", productGuide: eatTextfield.text ?? "", productComment: introduceTextView.text ?? "", productImg: imageBase64String ?? "", productLimitTime: timeLabel2.text ?? "", productCnt: Number)
+        let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
+        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+   
         
-        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterData) { result in self.rebornData = result
-        }
+    
+//        let pngData = AddImageView.image?.jpegData(compressionQuality: 1.0)
+//        let parmeterDatas = RebornModel(storeIdx: 2, productName: nameTextfield.text ?? "", productGuide: eatTextfield.text ?? "", productComment: introduceTextView.text ?? "", productImg: "", productLimitTime: timeLabel2.text ?? "", productCnt: Number)
+//////
+//        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result
+//        }
     }
     
-}
-
-extension UIImage {
-    var base64: String? {
-        self.jpegData(compressionQuality: 1)?.base64EncodedString()
-    }
-}
-
-extension String {
-    var imageFromBase64: UIImage? {
-        guard let imageData = Data(base64Encoded: self, options: .ignoreUnknownCharacters) else {
-            return nil
+    class DiaryPost {
+        static let instance = DiaryPost()
+        
+        func uploadDiary(file: UIImage, url: String, handler: @escaping (_ result: ImageresultModel)->(Void)) {
+            let headers: HTTPHeaders = [
+                                "Content-type": "multipart/form-data"
+                            ]
+            AF.upload(multipartFormData: { (multipart) in
+                if let imageData = file.jpegData(compressionQuality: 0.8) {
+                    multipart.append(imageData, withName: "file", fileName: "photo.jpg", mimeType: "image/jpeg")
+                }
+            }, to: url ,method: .post ,headers: headers).response { responce in
+                switch responce.result {
+                case .success(let data):
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+                        print(json)
+                        
+                        let jsonresult = try JSONDecoder().decode(ImageresultModel.self, from: data!)
+                        handler(jsonresult)
+                        print(jsonresult)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         }
-        return UIImage(data: imageData)
     }
 }
 
@@ -247,6 +288,7 @@ extension AddRebornViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             AddImageView?.image = image
+//            AddActionEditService.shared.editActivity(file: image) { result in self.imageUrl = result }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")
         }
@@ -262,3 +304,4 @@ extension AddRebornViewController: UIImagePickerControllerDelegate, UINavigation
         }
     }
 }
+

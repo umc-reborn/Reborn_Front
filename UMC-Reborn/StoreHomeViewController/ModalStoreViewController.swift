@@ -13,6 +13,10 @@ class ModalStoreViewController: UIViewController {
     
     var rebornData:JjimresultModel!
     
+    var storeIdm: Int = 0
+    
+    
+    @IBOutlet var storeBigImage: UIImageView!
     @IBOutlet weak var modalButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var bellButton: UIButton!
@@ -22,9 +26,20 @@ class ModalStoreViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var DescriptionLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet var reviewLabel: UILabel!
+    @IBOutlet var rebornLabel: UILabel!
+    @IBOutlet var jjimLabel: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let fullText = modalButton.titleLabel?.text
+        let attributedString = NSMutableAttributedString(string: fullText ?? "")
+        
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
+        self.modalButton.setAttributedTitle(attributedString, for: .normal)
 
         modalButton.layer.cornerRadius = 5
         modalButton.layer.borderWidth = 1
@@ -45,7 +60,7 @@ class ModalStoreViewController: UIViewController {
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
             likeButton.tintColor = .clear
         } else {
-            let parmeterData = JjimModel(storeIdx: 1, userIdx: 2)
+            let parmeterData = JjimModel(storeIdx: 1, userIdx: 3)
             APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
             }
             likeButton.isSelected = true
@@ -72,22 +87,22 @@ class ModalStoreViewController: UIViewController {
     }
     
     @IBAction func startModal(_ sender: Any) {
-        if (modalButton.title(for: .selected) == "리본이 진행중 입니다!") {
-            modalButton.isSelected = false
+        if (modalButton.title(for: .normal) == "리본이 진행중 입니다!") {
+            modalButton.isSelected = true
             modalButton.setTitle("진행중인 리본이 없습니다.", for: .normal)
             modalButton.setTitle("진행중인 리본이 없습니다.", for: .selected)
-            modalButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .selected)
             modalButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .normal)
+            modalButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .selected)
         } else {
-            modalButton.isSelected = true
-            modalButton.setTitle("리본이 진행중 입니다!", for: .selected)
-            modalButton.setTitleColor(UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), for: .selected)
+            modalButton.isSelected = false
+            modalButton.setTitle("리본이 진행중 입니다!", for: .normal)
+            modalButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .normal)
         }
     }
     
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/\(String(modalStore))"
+        let url = APIConstants.baseURL + "/store/\(modalStore)"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -118,8 +133,8 @@ class ModalStoreViewController: UIViewController {
                     print(storeDatas)
                     DispatchQueue.main.async {
                         self.storeNameLabel.text = "\(storeDatas.storeName)"
-//                        let url = URL(string: storeDatas.storeImage ?? "")
-//                        self.ManageImageView.load(url: url!)
+                        let url = URL(string: storeDatas.storeImage ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
+                        self.storeBigImage.load(url: url!)
                         self.addressLabel.text = "\(storeDatas.storeAddress)"
                         self.DescriptionLabel.text = "\(storeDatas.storeDescription)"
                         if (storeDatas.category == "CAFE") {
@@ -134,9 +149,23 @@ class ModalStoreViewController: UIViewController {
                             self.categoryLabel.text = "기타"
                         }
                         self.scoreLabel.text = "\(String(storeDatas.storeScore))"
+                        self.reviewLabel.text = "리뷰수 \(String(storeDatas.numOfReview))개"
+                        self.jjimLabel.text = "찜 \(String(storeDatas.numOfJjim))개"
+                        self.rebornLabel.text = "리본 \(String(storeDatas.numOfReborn))회"
                     }
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
                 } catch {
-                    print("error")
+                    print("error: ", error)
                 }
             }
         }.resume()

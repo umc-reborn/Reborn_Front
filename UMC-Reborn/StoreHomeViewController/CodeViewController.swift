@@ -33,6 +33,9 @@ class CodeViewController: UIViewController, UITextFieldDelegate {
         codeTextfield.delegate = self
         codeTextfield.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
         codeTextfield.addTarget(self, action: #selector(textFieldInterval), for: .editingChanged)
+        
+        let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     @IBAction func textLimit(_ sender: Any) {
@@ -48,6 +51,11 @@ class CodeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func backButton(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func shareDoneButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     
     @objc func textFieldEdited(textField: UITextField) {
             
