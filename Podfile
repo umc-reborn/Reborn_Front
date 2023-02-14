@@ -10,6 +10,9 @@ target 'UMC-Reborn' do
   pod 'Alamofire'
   pod 'Tabman', '~> 2.9'
   pod 'DropDown'
+  pod 'KakaoSDKCommon', '~> 2.13.1'
+  pod 'KakaoSDKAuth', '~> 2.13.1'
+  pod 'KakaoSDKUser', '~> 2.13.1'
 post_install do |installer|
     installer.pods_project.targets.each do |target|
       target.build_configurations.each do |config|

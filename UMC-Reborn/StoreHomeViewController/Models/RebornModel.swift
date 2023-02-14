@@ -1,11 +1,12 @@
 //
-//  APIHandlerGet.swift
+//  RebornModel.swift
 //  UMC-Reborn
 //
-//  Created by jaegu park on 2023/01/30.
+//  Created by 김예린 on 2023/02/11.
 //
 
 import Foundation
+
 
 struct RebornList : Codable {
     let isSuccess : Bool

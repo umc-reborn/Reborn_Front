@@ -9,6 +9,10 @@ import UIKit
 
 class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
+    //API
+    var apple1 : String = "" // ad
+    var emailData : emailModel!
+    var thisisemail : String = "" // 이메일 인증된 이메일
     
     @IBOutlet weak var ProgressView4: UIProgressView!
     
@@ -74,7 +78,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         
         //아이디
-//        setIdTextField.addLeftPadding()
+        setIdTextField.addLeftPadding1()
         setIdTextField.placeholder = "4~16자 영문, 숫자를 사용하세요"
         setIdTextField.backgroundColor = .white
         setIdTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
@@ -86,7 +90,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         setIdTextField.clearButtonMode = .always // 한번에 지우기
         
         //비밀번호
-//        setPwTextField.addLeftPadding()
+        setPwTextField.addLeftPadding1()
         setPwTextField.placeholder = "8~16자 영문 대소문자, 숫자, 특수문자를 사용하세요"
         setPwTextField.backgroundColor = .white
         setPwTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
@@ -98,7 +102,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         setPwTextField.clearButtonMode = .always // 한번에 지우기
         
         //비밀번호확인
-//        doubleCheckTextField.addLeftPadding()
+        doubleCheckTextField.addLeftPadding1()
         doubleCheckTextField.placeholder = "비밀번호를 한 번 더 입력해 주세요"
         doubleCheckTextField.backgroundColor = .white
         doubleCheckTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)

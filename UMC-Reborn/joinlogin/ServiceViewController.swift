@@ -21,7 +21,7 @@ extension UIColor { // 컬러를 이렇게 익스텐션으로 설정해서 쓰�
 class ServiceViewController: UIViewController {
     
     // 데이터 넘길 때 쓸 변수
-    var smallStatus4 : String = ""
+    var smallStatus4 : String = "X"
     
     
     
@@ -50,6 +50,8 @@ class ServiceViewController: UIViewController {
             SmallButton2.tintColor = .myorange
             SmallButton3.tintColor = .myorange
             SmallButton4.tintColor = .myorange
+            smallStatus4 = "O"
+            print("bigbutton orange")
         }
         else {
             BigButton.tintColor = .mygray
@@ -57,12 +59,14 @@ class ServiceViewController: UIViewController {
             SmallButton2.tintColor = .mygray
             SmallButton3.tintColor = .mygray
             SmallButton4.tintColor = .mygray
+            smallStatus4 = "X"
         }
     }
     
     @IBAction func SmallButton1Tapped(_ sender: Any) {
         if SmallButton1.tintColor == .mygray {
             SmallButton1.tintColor = .myorange
+            print("SmallButton1 orange")
         }
         else {
             SmallButton1.tintColor = .mygray
@@ -72,6 +76,7 @@ class ServiceViewController: UIViewController {
     @IBAction func SmallButton2Tapped(_ sender: Any) {
         if SmallButton2.tintColor == .mygray {
             SmallButton2.tintColor = .myorange
+            print("SmallButton2 orange")
         }
         else {
             SmallButton2.tintColor = .mygray
@@ -82,6 +87,7 @@ class ServiceViewController: UIViewController {
     @IBAction func SmallButton3Tapped(_ sender: Any) {
         if SmallButton3.tintColor == .mygray {
             SmallButton3.tintColor = .myorange
+            print("SmallButton3 orange")
         }
         else {
             SmallButton3.tintColor = .mygray
@@ -91,6 +97,8 @@ class ServiceViewController: UIViewController {
     @IBAction func SmallButton4Tapped(_ sender: Any) {
         if SmallButton4.tintColor == .mygray {
             SmallButton4.tintColor = .myorange
+            smallStatus4 = "O"
+            print("SmallButton4 orange")
             
         }
         else {
@@ -99,22 +107,22 @@ class ServiceViewController: UIViewController {
         }
     }
    
-    
-//    @IBAction func NnextButton(_ sender: Any) {
-//
-//        //화면 넘기기 + 데이터 넘기기
-//        let servSomething4 = smallStatus4
-//
-//        let storyB = UIStoryboard.init(name: self, bundle: nil)
-//        guard let rvcc = storyB.instantiateViewController(withIdentifier: "WhoViewController") as? WhoViewController else {return}
-//
-//        rvcc.
-//
-//        //화면이동
-//        navigationController?.pushViewController(rvcc, animated: true)
-//
-//        
-//    }
+
+    @IBAction func NnextButton(_ sender: Any) {
+
+        //화면 넘기기 + 데이터 넘기기
+        let servSomething4 = smallStatus4
+
+        let storyB = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+        guard let rvcc = storyB.instantiateViewController(withIdentifier: "WhoViewController") as? WhoViewController else {return}
+
+        rvcc.smallStatus44 = servSomething4
+
+        //화면이동
+        navigationController?.pushViewController(rvcc, animated: true)
+
+
+    }
     
     @objc func ButtondidChanged(_ sender: UIButton) {
            

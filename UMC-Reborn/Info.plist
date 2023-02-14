@@ -2,8 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>WKRunsIndependentlyOfCompanionApp</key>
-	<false/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakao2162fef7f599eefa91c978885c5c6fbb</string>
+			</array>
+		</dict>
+	</array>
 	<key>KAKAO_APP_KEY</key>
 	<string>96aff053724db2845775875f956af948</string>
 	<key>NSAppTransportSecurity</key>
@@ -13,6 +22,13 @@
 	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key>LSApplicationQueriesSchemes</key>
+        <array>
+              <!-- 카카오톡으로 로그인 -->
+              <string>kakaokompassauth</string>
+              <!-- 카카오링크 -->
+              <string>kakaolink</string>
+          </array>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>

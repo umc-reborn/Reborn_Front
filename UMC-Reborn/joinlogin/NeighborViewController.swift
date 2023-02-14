@@ -83,8 +83,8 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         
         //viewcontroller 배경 색상 변경 #FFFBF9
-                    let BACKGROUND = UIColor(named: "BACKGROUND")
-                    self.view.backgroundColor = BACKGROUND
+        let BACKGROUND = UIColor(named: "BACKGROUND")
+         self.view.backgroundColor = BACKGROUND
         
         
         Id.addLeftPadding1()
@@ -202,18 +202,49 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
             print(pparmeterData)
             APINeiLoginPost.instance.SendingPostNLogin(parameters: pparmeterData) { result in self.trainData =  result }
             
-             // 화면 넘기기 + 데이터 넘겨주기
+             // 화면 넘기기 + 데이터 넘겨주기.
              let something2 = trainData?.result
              guard let text = something2?.userIdx else {return}
              guard let text2 = something2?.userNickname else {return}
-            guard let jwtResult = something2?.jwt else {return}
-             let something3 = UIStoryboard.init(name: "PersonalTab", bundle: nil)
+             guard let jwtResult = something2?.jwt else {return}
+             let something3 = UIStoryboard(name: "PersonalTab", bundle: nil)
              guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalTabVC") as? PersonalTabViewController else {return}
+            
             
             rvc.userIdx = text
             rvc.userNickname = text2
             rvc.jwt = jwtResult
             
+
+            // 화면이동
+            navigationController?.pushViewController(rvc, animated: true)
+        
+            }
+            
+        }
+        
+
+
+// 방법 1
+//if (trainData.isSuccess == true) {
+// 화면이동
+//navigationController?.pushViewController(rvc, animated: true)
+//            }
+//            else {
+//
+//            }
+
+
+
+
+
+
+
+//let sb = UIStoryboard(name: "", bundle: Bundle.main)
+//sb.instantiateViewController(withIdentifier: "blue")
+
+    
+
 //            guard let userindex = something2?.userIdx else {return}
 //             let myRebornHistory = UIStoryboard.init(name: "MyReborn", bundle: nil)
 //             guard let historyVC = myRebornHistory.instantiateViewController(withIdentifier: "rebornHistoryVC") as? RebornHistoryViewController else { return }
@@ -222,27 +253,17 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
 //             print("넘겨주는 userIdx값은 \(historyVC.userIdx)")
 
              
-             // 화면이동
-             navigationController?.pushViewController(rvc, animated: true)
-            
-            
-            /*
-            // 화면 넘기기 + 데이터 넘겨주기
-             let something2 = trainData?.result
-             guard let text = something2?.userIdx else {return}
-             guard let text2 = something2?.userNickname else {return}
-             let something3 = UIStoryboard.init(name: "Personal_Home", bundle: nil)
-             guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalHomeVC") as? PersonalHomeViewController else {return}
-             
 
-             
-             // 화면이동
-             navigationController?.pushViewController(rvc, animated: true)
-             */
-            }
-            
-        }
-        
+/*
+// 화면 넘기기 + 데이터 넘겨주기
+ let something2 = trainData?.result
+ guard let text = something2?.userIdx else {return}
+ guard let text2 = something2?.userNickname else {return}
+ let something3 = UIStoryboard.init(name: "Personal_Home", bundle: nil)
+ guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalHomeVC") as? PersonalHomeViewController else {return}
+ 
 
-    
-
+ 
+ // 화면이동
+ navigationController?.pushViewController(rvc, animated: true)
+ */

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKUser
 //import Tabman
 //import Pageboy
 
@@ -41,6 +42,10 @@ class FirstLoginViewController: ViewController {
 
     @IBOutlet weak var FirstView: UIView!
     
+    @IBOutlet var kakaoButton: UIButton! // 카카오버튼
+    
+    
+    @IBOutlet var googleButton: UIButton! // 구글 버튼
     
 //    private var viewControllers: [UIViewController] = []
     
@@ -86,6 +91,28 @@ class FirstLoginViewController: ViewController {
 //
 //            }
             
+    
+    @IBAction func kakaoLoginButtonTouchUpInside(_ sender: UIButton) {
+            // 카카오톡 설치 여부 확인
+            if (UserApi.isKakaoTalkLoginAvailable()) {
+                UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                        print("loginWithKakaoTalk() success.")
+
+                        //do something
+                        _ = oauthToken
+                    }
+                }
+            }
+        }
+    
+    
+    
+    
+    
             
         }
     
