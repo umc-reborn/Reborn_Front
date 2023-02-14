@@ -1,40 +1,34 @@
 //
-//  ModalStoreViewController.swift
+//  ModalPersonalViewController.swift
 //  UMC-Reborn
 //
-//  Created by jaegu park on 2023/01/27.
+//  Created by jaegu park on 2023/02/14.
 //
 
 import UIKit
 
-class ModalStoreViewController: UIViewController {
+class ModalPersonalViewController: UIViewController {
     
-    let modalStore = UserDefaults.standard.integer(forKey: "userIdx")
+    var storeIdm1: Int = 0
     
-    var rebornData:JjimresultModel!
-    
-    var storeIdm: Int = 0
-    
-    
-    @IBOutlet var storeBigImage: UIImageView!
-    @IBOutlet weak var modalButton: UIButton!
-    @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var bellButton: UIButton!
-    @IBOutlet weak var modalView: UIView!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var storeNameLabel: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var DescriptionLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet var storeImage: UIImageView!
+    @IBOutlet var modalButton: UIButton!
+    @IBOutlet var modalView: UIView!
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
     @IBOutlet var reviewLabel: UILabel!
     @IBOutlet var rebornLabel: UILabel!
     @IBOutlet var jjimLabel: UILabel!
+    @IBOutlet var likeButton: UIButton!
     
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let fullText = modalButton.titleLabel?.text
         let attributedString = NSMutableAttributedString(string: fullText ?? "")
         
@@ -52,33 +46,19 @@ class ModalStoreViewController: UIViewController {
         storeResult()
     }
     
-
-    @IBAction func tappedlike(_ sender: Any) {
+    @IBAction func jjimTapped(_ sender: Any) {
         if (likeButton.image(for: .selected) == UIImage(named: "ic_like")) {
             likeButton.isSelected = false
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .normal)
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
             likeButton.tintColor = .clear
         } else {
-            let parmeterData = JjimModel(storeIdx: 1, userIdx: 3)
-            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
-            }
+//            let parmeterData = JjimModel(storeIdx: storeIdm1, userIdx: 3)
+//            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
+//            }
             likeButton.isSelected = true
             likeButton.setImage(UIImage(named: "ic_like"), for: .selected)
             likeButton.tintColor = .clear
-        }
-    }
-    
-    @IBAction func tappedbell(_ sender: Any) {
-        if (bellButton.image(for: .selected) == UIImage(named: "ic_bell")) {
-            bellButton.isSelected = false
-            bellButton.setImage(UIImage(named: "ic_bell_gray"), for: .normal)
-            bellButton.setImage(UIImage(named: "ic_bell_gray"), for: .selected)
-            bellButton.tintColor = .clear
-        } else {
-            bellButton.isSelected = true
-            bellButton.setImage(UIImage(named: "ic_bell"), for: .selected)
-            bellButton.tintColor = .clear
         }
     }
     
@@ -86,23 +66,9 @@ class ModalStoreViewController: UIViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func startModal(_ sender: Any) {
-        if (modalButton.title(for: .normal) == "리본이 진행중 입니다!") {
-            modalButton.isSelected = true
-            modalButton.setTitle("진행중인 리본이 없습니다.", for: .normal)
-            modalButton.setTitle("진행중인 리본이 없습니다.", for: .selected)
-            modalButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .normal)
-            modalButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .selected)
-        } else {
-            modalButton.isSelected = false
-            modalButton.setTitle("리본이 진행중 입니다!", for: .normal)
-            modalButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .normal)
-        }
-    }
-    
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/\(modalStore)"
+        let url = APIConstants.baseURL + "/store/\(storeIdm1)"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -132,11 +98,11 @@ class ModalStoreViewController: UIViewController {
                     let storeDatas = decodedData.result
                     print(storeDatas)
                     DispatchQueue.main.async {
-                        self.storeNameLabel.text = "\(storeDatas.storeName)"
+                        self.nameLabel.text = "\(storeDatas.storeName)"
                         let url = URL(string: storeDatas.storeImage ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
-                        self.storeBigImage.load(url: url!)
+                        self.storeImage.load(url: url!)
                         self.addressLabel.text = "\(storeDatas.storeAddress)"
-                        self.DescriptionLabel.text = "\(storeDatas.storeDescription)"
+                        self.descriptionLabel.text = "\(storeDatas.storeDescription)"
                         if (storeDatas.category == "CAFE") {
                             self.categoryLabel.text = "카페·디저트"
                         } else if (storeDatas.category == "FASHION") {
@@ -170,4 +136,5 @@ class ModalStoreViewController: UIViewController {
             }
         }.resume()
     }
+    
 }

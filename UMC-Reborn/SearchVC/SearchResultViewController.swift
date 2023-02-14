@@ -171,7 +171,7 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         let cell: SearchResultTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! SearchResultTableViewCell
         
         let searchData = searchDatas[indexPath.row]
-        let url = URL(string: searchData.storeImage)
+        let url = URL(string: searchData.userImage)
         cell.shopImg.load(url: url!)
         cell.shopnameLabel.text = searchData.storeName
         cell.ratingnum.text = String(searchData.storeScore)

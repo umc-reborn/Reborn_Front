@@ -12,6 +12,8 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     
     let rebornAdd = UserDefaults.standard.integer(forKey: "userIdx")
     
+    let DidDismissAddRebornViewController: Notification.Name = Notification.Name("DidDismissAddRebornViewController")
+    
     var imageUrl: ImageresultModel!
     var rebornData: RebornresultModel!
     
@@ -81,6 +83,9 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         enrollAlertEvent()
         self.imagePickerController.delegate = self
         addGestureRecognizer()
+        
+        let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     
@@ -105,6 +110,7 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.delegate = self
         self.present(nextVC, animated: true, completion: nil)
+        DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
     }
     
     func placeholderSetting() {
@@ -201,6 +207,11 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         countTextfield.text = String(Number)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView"), object: nil, userInfo: nil)
+    }
+    
     @IBAction func RebornPostButton(_ sender: Any) {
 //        let parmeterData = ImageModel(file: imageBase64String ?? "")
 //        let image = AddImageView.image
@@ -212,14 +223,13 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
 //            print(imageUrl ?? "")
 //            print(imageUrl ?? "")
 //        }
-        DispatchQueue.global().async {
-            DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
-            Thread.sleep(forTimeInterval: 1)
-            print(self.imageUrl.result ?? "")
-            let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
-            Thread.sleep(forTimeInterval: 1)
-            APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
-        }
+    
+        let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
+        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+   
+        
+    
 //        let pngData = AddImageView.image?.jpegData(compressionQuality: 1.0)
 //        let parmeterDatas = RebornModel(storeIdx: 2, productName: nameTextfield.text ?? "", productGuide: eatTextfield.text ?? "", productComment: introduceTextView.text ?? "", productImg: "", productLimitTime: timeLabel2.text ?? "", productCnt: Number)
 //////

@@ -18,7 +18,7 @@ struct SearchModel : Codable {
 struct SearchResponse : Codable {
     let storeIdx: Int
     let storeName : String
-    let storeImage: String
+    let userImage: String
     let storeAddress: String
     let storeDescription : String
     let storeScore : Int
