@@ -16,6 +16,12 @@ class HomeInprogressViewController: UIViewController {
         super.viewDidLoad()
         collectionView.backgroundColor = .clear
         // Do any additional setup after loading the view.
+        defaultView.clipsToBounds = true
+        defaultView.layer.cornerRadius = 20
+        defaultView.layer.masksToBounds = false
+        defaultView.layer.shadowOffset = CGSize(width: 5, height: 10)
+        defaultView.layer.shadowRadius = 10
+        defaultView.layer.shadowOpacity = 0.1
     }
     
     override func viewWillAppear(_ animated: Bool) {

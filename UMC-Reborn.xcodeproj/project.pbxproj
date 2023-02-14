@@ -152,6 +152,7 @@
 		C7284AAE298EAECE009A70E7 /* RebornService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAD298EAECE009A70E7 /* RebornService.swift */; };
 		C7284AB0298FFB25009A70E7 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAF298FFB25009A70E7 /* StoreModel.swift */; };
 		C7284AB2298FFBA1009A70E7 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AB1298FFBA1009A70E7 /* StoreService.swift */; };
+		C728F6F4299BA2960037838A /* ModalPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728F6F3299BA2960037838A /* ModalPersonalViewController.swift */; };
 		C7324E3A29965DDA0062564D /* APIImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7324E3929965DDA0062564D /* APIImagePost.swift */; };
 		C7324E3F2997EF460062564D /* StoreAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7324E3E2997EF460062564D /* StoreAddressViewController.swift */; };
 		C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739AC12298A9D980016B840 /* APIRebornPatch.swift */; };
@@ -358,6 +359,7 @@
 		C7284AAD298EAECE009A70E7 /* RebornService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornService.swift; sourceTree = "<group>"; };
 		C7284AAF298FFB25009A70E7 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		C7284AB1298FFBA1009A70E7 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		C728F6F3299BA2960037838A /* ModalPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPersonalViewController.swift; sourceTree = "<group>"; };
 		C7324E3929965DDA0062564D /* APIImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImagePost.swift; sourceTree = "<group>"; };
 		C7324E3E2997EF460062564D /* StoreAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAddressViewController.swift; sourceTree = "<group>"; };
 		C739AC12298A9D980016B840 /* APIRebornPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornPatch.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				95E9FFB1297D9F930073DF2B /* adCollectionViewCell.swift */,
 				9561BA8B2995B37C00A4B33B /* HomeInprogressViewController.swift */,
 				9561BA8D2995B3FB00A4B33B /* InprogressCollectionViewCell.swift */,
+				C728F6F3299BA2960037838A /* ModalPersonalViewController.swift */,
 			);
 			path = PersonalHomeVC;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				C74FEE4529718B7C00BFC8D0 /* AddRebornViewController.swift */,
 				C74FEE47297199FE00BFC8D0 /* StoreManageViewController.swift */,
 				C74FEE492971B40800BFC8D0 /* EditStoreViewController.swift */,
+				C7324E3E2997EF460062564D /* StoreAddressViewController.swift */,
 				C7DCE53B29727AA900F44F1D /* EnrollTableViewCell.swift */,
 				C7DCE5432972936A00F44F1D /* EditRebornViewController.swift */,
 				C7D56FA92972BC5600A68015 /* PopupViewController.swift */,
@@ -705,7 +709,6 @@
 				C7B8BCE02984241200FE3C0A /* PwOkViewController.swift */,
 				C75E99062984E6F6003D40B4 /* CodeViewController.swift */,
 				C75E990829857BA2003D40B4 /* ReviewImage.swift */,
-				C7324E3E2997EF460062564D /* StoreAddressViewController.swift */,
 			);
 			path = StoreHomeViewController;
 			sourceTree = "<group>";
@@ -1029,6 +1032,7 @@
 				C7889E01297C297D0008E99F /* StoreReviewTableViewCell.swift in Sources */,
 				952CB29D2977557500BD7CD7 /* RecruitedRebronViewController.swift in Sources */,
 				2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */,
+				C728F6F4299BA2960037838A /* ModalPersonalViewController.swift in Sources */,
 				95C036572988EBDE00599354 /* SearchModel.swift in Sources */,
 				952CB29A296EB51600BD7CD7 /* PersonalHomeViewController.swift in Sources */,
 				2F7C0AB42994DAA600BC5F9A /* ReviewManageModel.swift in Sources */,
@@ -1251,7 +1255,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = KSR8K3JPUM;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -1278,12 +1282,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yeonsu/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1298,7 +1302,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = KSR8K3JPUM;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -1325,12 +1329,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yeonsu/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;

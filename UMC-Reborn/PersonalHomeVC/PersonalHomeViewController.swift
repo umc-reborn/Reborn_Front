@@ -19,6 +19,7 @@ class PersonalHomeViewController: UIViewController {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     let button = UIButton(type: .system)
    
 //    let userNickName = UserDefaults.standard.integer(forKey: "userNickName")

@@ -14,7 +14,7 @@ protocol SampleProtocol3:AnyObject {
     func addressSend(data: String)
 }
 
-class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol4 {
     
     let editStore = UserDefaults.standard.integer(forKey: "userIdx")
     
@@ -22,6 +22,12 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     let picker = UIPickerView()
     
     weak var delegate : SampleProtocol3?
+    
+    func addressSend(data: String) {
+        storeaddressTextfield.text = data
+        storeaddressTextfield.sizeToFit()
+        print(data)
+    }
     
     @IBOutlet weak var storenameTextfield: UITextField!
     @IBOutlet weak var storecategoryTextfield: UITextField!
@@ -58,7 +64,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         storeTextView.layer.borderWidth = 1
         storeTextView.layer.borderColor = UIColor.gray.cgColor
         
-//        placeholderSetting()
+        placeholderSetting()
         textViewDidBeginEditing(storeTextView)
         textViewDidEndEditing(storeTextView)
         storenameTextfield.delegate = self
@@ -79,11 +85,24 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         addGestureRecognizer()
         
         storeResult()
+        
+        let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    
+    @IBAction func addressButton(_ sender: Any) {
+        guard let svc2 = self.storyboard?.instantiateViewController(identifier: "StoreAddressViewController") as? StoreAddressViewController else {
+                    return
+                }
+        svc2.delegate = self
+        
+        self.present(svc2, animated: true)
     }
     
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/1"
+        let url = APIConstants.baseURL + "/store/\(editStore)"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -127,8 +146,6 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
                         } else {
                             self.storecategoryTextfield.text = "기타"
                         }
-                        self.storeaddressTextfield.text = "\(storeDatas.storeAddress)"
-                        self.storeTextView.text = "\(storeDatas.storeDescription)"
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -177,7 +194,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     func textFieldDidBeginEditing(_ textField: UITextField) {
            // textField.borderStyle = .line
         textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
-            textField.layer.borderWidth = 1.0
+        textField.layer.borderWidth = 1.0
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -185,12 +202,12 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
             textField.layer.borderWidth = 1.0
     }
     
-//    func placeholderSetting() {
-//        storeTextView.delegate = self // txtvReview가 유저가 선언한 outlet
-//        storeTextView.text = " 사장님의 가게를 소개해 주세요!"
-//        storeTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15.0)
-//        storeTextView.textColor = UIColor.systemGray
-//    }
+    func placeholderSetting() {
+        storeTextView.delegate = self // txtvReview가 유저가 선언한 outlet
+        storeTextView.text = " 사장님의 가게를 소개해 주세요!"
+        storeTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15.0)
+        storeTextView.textColor = UIColor.systemGray
+    }
         // TextView Place Holder
     @objc func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.systemGray {
@@ -203,7 +220,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     @objc func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = " 사장님의 가게를 소개해 주세요!"
-            textView.textColor = UIColor.black
+            textView.textColor = UIColor.systemGray
         }
         textView.layer.borderColor = UIColor.gray.cgColor
     }

@@ -89,7 +89,7 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
     
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/1"
+        let url = APIConstants.baseURL + "/store/405"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }

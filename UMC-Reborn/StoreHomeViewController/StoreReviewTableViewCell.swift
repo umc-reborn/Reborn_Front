@@ -11,7 +11,7 @@ class StoreReviewTableViewCell: UITableViewCell {
 
     let flowlayout = UICollectionViewFlowLayout()
     
-    var reviewImageDatas : [ReviewStoreListModel] = []
+    var reviewImageDatas : [ReviewListModel] = []
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,7 +31,7 @@ class StoreReviewTableViewCell: UITableViewCell {
         setUpCollectionView()
         flowlayout.minimumLineSpacing = 0
         reviewComment.sizeToFit()
-        reviewImageResult()
+//        reviewImageResult()
         print("Rdata: \(Rdata)")
         
         personImage.layer.cornerRadius = self.personImage.frame.size.height / 2
@@ -54,64 +54,64 @@ class StoreReviewTableViewCell: UITableViewCell {
         collectionView.dataSource = self
     }
     
-    func reviewImageResult() {
-        
-        let url = APIConstants.baseURL + "/review/store/2/buz"
-        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-        guard let url = URL(string: encodedStr) else { print("err"); return }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        URLSession.shared.dataTask(with: request) { [self] data, response, error in
-            if error != nil {
-                print("err")
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
-            response.statusCode else {
-                print("Error: HTTP request failed")
-                return
-            }
-            
-            if let safeData = data {
-                
-                do {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let decodedData = try decoder.decode(ReviewStoreList.self, from: safeData)
-                    self.reviewImageDatas = decodedData.result
-                    print("reviewImageDatas: \(reviewImageDatas)")
-                    DispatchQueue.main.async {
-                        self.collectionView.reloadData()
-                    }
-                    
-                } catch let DecodingError.dataCorrupted(context) {
-                    print(context)
-                } catch let DecodingError.keyNotFound(key, context) {
-                    print("Key '\(key)' not found:", context.debugDescription)
-                    print("codingPath:", context.codingPath)
-                } catch let DecodingError.valueNotFound(value, context) {
-                    print("Value '\(value)' not found:", context.debugDescription)
-                    print("codingPath:", context.codingPath)
-                } catch let DecodingError.typeMismatch(type, context)  {
-                    print("Type '\(type)' mismatch:", context.debugDescription)
-                    print("codingPath:", context.codingPath)
-                } catch {
-                    print("error: ", error)
-                }
-            }
-        }.resume()
-    }
+//    func reviewImageResult() {
+//
+//        let url = APIConstants.baseURL + "/review/store/2/buz"
+//        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//
+//        guard let url = URL(string: encodedStr) else { print("err"); return }
+//
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "GET"
+//
+//        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+//            if error != nil {
+//                print("err")
+//                return
+//            }
+//
+//            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+//            response.statusCode else {
+//                print("Error: HTTP request failed")
+//                return
+//            }
+//
+//            if let safeData = data {
+//
+//                do {
+//                    let decoder = JSONDecoder()
+//                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+//                    let decodedData = try decoder.decode(ReviewList.self, from: safeData)
+//                    self.reviewImageDatas = decodedData.result
+//                    print("reviewImageDatas: \(reviewImageDatas)")
+//                    DispatchQueue.main.async {
+//                        self.collectionView.reloadData()
+//                    }
+//
+//                } catch let DecodingError.dataCorrupted(context) {
+//                    print(context)
+//                } catch let DecodingError.keyNotFound(key, context) {
+//                    print("Key '\(key)' not found:", context.debugDescription)
+//                    print("codingPath:", context.codingPath)
+//                } catch let DecodingError.valueNotFound(value, context) {
+//                    print("Value '\(value)' not found:", context.debugDescription)
+//                    print("codingPath:", context.codingPath)
+//                } catch let DecodingError.typeMismatch(type, context)  {
+//                    print("Type '\(type)' mismatch:", context.debugDescription)
+//                    print("codingPath:", context.codingPath)
+//                } catch {
+//                    print("error: ", error)
+//                }
+//            }
+//        }.resume()
+//    }
 }
 
 extension StoreReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return self.reviewImageDatas[(self.reviewImageDatas.count)-1].reviewImgList.count
-        return Rdata[(Rdata.count)-1].reviewImgList.count
+        return Rdata[collectionView.tag].reviewImgList.count
 //        if (ddd.reviewImage1 != nil && ddd.reviewImage2 == nil && ddd.reviewImage3 == nil && ddd.reviewImage4 == nil && ddd.reviewImage5 == nil) {
 //            return 1
 //        } else if (ddd.reviewImage1 != nil && ddd.reviewImage2 != nil && ddd.reviewImage3 == nil && ddd.reviewImage4 == nil && ddd.reviewImage5 == nil) {
@@ -132,8 +132,7 @@ extension StoreReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDa
 //        let reviewDatas = reviewImageDatas[collectionView.tag].reviewImgList[indexPath.row]
 //        cell.imageView.load(url: url!)
 //        let reviewDatas = reviewImageDatas[collectionView.hash].reviewImg
-//        print(reviewDatas)
-        let url = URL(string: Rdata[(Rdata.count)-1].reviewImgList[indexPath.row])
+        let url = URL(string: Rdata[collectionView.tag].reviewImgList[indexPath.row])
         cell.imageView.load(url: url!)
         return cell
     }
@@ -209,5 +208,18 @@ extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource 
         cell.reviewComment.text = rebornData.reviewComment
         cell.collectionView.tag = indexPath.row
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.section {
+        case 0:
+            let storeIdt = storeId
+            guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else { return }
+            svc1.storeIdm = storeIdt
+            self.present(svc1, animated: true)
+        default:
+            return
+        }
     }
 }

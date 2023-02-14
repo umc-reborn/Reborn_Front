@@ -331,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTR-cM-dpO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1685" y="-1212"/>
+            <point key="canvasLocation" x="-1717" y="-1209"/>
         </scene>
         <!--Recruited Rebron View Controller-->
         <scene sceneID="ssA-yy-PTy">
@@ -534,7 +534,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="bqB-r1-tgF"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="ic_like_gray"/>
                                                     <connections>
                                                         <action selector="likeButtonAction:" destination="jVP-kd-LyZ" eventType="touchUpInside" id="Hsb-lI-qCn"/>
                                                     </connections>
@@ -1135,10 +1135,10 @@
             </objects>
             <point key="canvasLocation" x="804.61538461538464" y="665.40284360189571"/>
         </scene>
-        <!--Modal Store View Controller-->
+        <!--Modal Personal View Controller-->
         <scene sceneID="Sk8-hQ-xQS">
             <objects>
-                <viewController storyboardIdentifier="ModalStoreViewController" id="84X-XF-NGv" customClass="ModalStoreViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModalStoreViewController" id="84X-XF-NGv" customClass="ModalPersonalViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xMa-RI-eqn">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="1338"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1164,12 +1164,9 @@
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="진행중인 리본이 없습니다.">
+                                                <state key="normal" title="리본이 진행중 입니다!">
                                                     <color key="titleColor" red="0.2398672104" green="0.19570407270000001" blue="0.14291599390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="startModal:" destination="84X-XF-NGv" eventType="touchUpInside" id="rb0-zg-U1c"/>
-                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_star" translatesAutoresizingMaskIntoConstraints="NO" id="FGF-Nb-Fqf">
                                                 <rect key="frame" x="29.666666666666671" y="396.66666666666669" width="15" height="15"/>
@@ -1223,9 +1220,6 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="ic_like_gray"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="ic_like_gray"/>
-                                                <connections>
-                                                    <action selector="tappedlike:" destination="84X-XF-NGv" eventType="touchUpInside" id="bIL-ll-PVu"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gM2-DI-eaq">
                                                 <rect key="frame" x="336.33333333333331" y="421" width="30" height="30"/>
@@ -1235,9 +1229,6 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="ic_bell_gray"/>
-                                                <connections>
-                                                    <action selector="tappedbell:" destination="84X-XF-NGv" eventType="touchUpInside" id="KGB-tG-xjJ"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰수 41개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqq-nK-IVA">
                                                 <rect key="frame" x="30" y="507.66666666666674" width="51" height="13"/>
@@ -1312,9 +1303,6 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="ic_down"/>
-                                                <connections>
-                                                    <action selector="backButton:" destination="84X-XF-NGv" eventType="touchUpInside" id="0Tl-HW-9a4"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.99592512850000003" green="0.9844868779" blue="0.97646933790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1383,10 +1371,14 @@
                     <navigationItem key="navigationItem" id="qwr-wG-rIB"/>
                     <size key="freeformSize" width="390" height="1338"/>
                     <connections>
-                        <outlet property="bellButton" destination="gM2-DI-eaq" id="ptp-SV-8sl"/>
-                        <outlet property="likeButton" destination="CzA-PD-IIX" id="CKC-mT-42K"/>
-                        <outlet property="modalButton" destination="56W-Db-0qg" id="cAe-U0-PC9"/>
-                        <outlet property="modalView" destination="R7n-bB-OJb" id="wZ3-eH-04N"/>
+                        <outlet property="addressLabel" destination="VdB-rE-y18" id="A7d-hH-PC7"/>
+                        <outlet property="categoryLabel" destination="y25-a5-S4T" id="z0F-Vt-j97"/>
+                        <outlet property="descriptionLabel" destination="1Tz-ZZ-MMh" id="MgO-aK-GOQ"/>
+                        <outlet property="modalButton" destination="56W-Db-0qg" id="UiQ-wd-e6u"/>
+                        <outlet property="modalView" destination="R7n-bB-OJb" id="e6e-JL-mzo"/>
+                        <outlet property="nameLabel" destination="HBu-O2-qf6" id="w3b-Pb-YgQ"/>
+                        <outlet property="scoreLabel" destination="s82-9G-CBB" id="8Qv-1o-qKR"/>
+                        <outlet property="storeImage" destination="57e-FN-I0w" id="efH-TI-Dh7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIL-3W-UZD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1710,7 +1702,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIO-9b-ZMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4998" y="-1092"/>
+            <point key="canvasLocation" x="4845" y="-1059"/>
         </scene>
         <!--Tab Modal View Controller-->
         <scene sceneID="KMe-bx-wGz">
@@ -1907,7 +1899,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vS-dm-Poe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-817" y="-674"/>
+            <point key="canvasLocation" x="-725" y="-637"/>
         </scene>
     </scenes>
     <resources>

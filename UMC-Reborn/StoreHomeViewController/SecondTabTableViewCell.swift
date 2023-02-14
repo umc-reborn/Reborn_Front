@@ -43,20 +43,16 @@ class SecondTabTableViewCell: UITableViewCell {
 
 extension SecondTabTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return reviewImage.count
-        }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return Rdatas[collectionView.tag].reviewImgList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondTab_CollectionViewCell", for: indexPath) as! SecondTabCollectionViewCell
         
-        cell.imageView.image = UIImage(named: reviewImage[indexPath.section])
-        
+        let url = URL(string: Rdatas[collectionView.tag].reviewImgList[indexPath.row])
+        cell.imageView.load(url: url!)
         return cell
     }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21219" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oe0-7m-EV4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oe0-7m-EV4">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21200"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,6 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.92356389760000002" green="0.35871350769999999" blue="0.18580088019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="LAb-Oj-DsO" kind="relationship" relationship="viewControllers" id="1FU-dJ-uBi"/>
@@ -31,7 +33,7 @@
         <scene sceneID="pgJ-mP-pzj">
             <objects>
                 <navigationController storyboardIdentifier="MyReborn" title="MyReborn" id="ivm-fZ-VVo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이리본" image="my" id="ded-hs-SO4"/>
+                    <tabBarItem key="tabBarItem" title="마이리본" image="p_my" id="ded-hs-SO4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="daK-Ca-ULF">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -58,7 +60,7 @@
         <scene sceneID="SWL-TU-BoG">
             <objects>
                 <navigationController storyboardIdentifier="JjimVC" id="zzu-mM-CPs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="찜" image="heart" catalog="system" id="Aka-9F-KGd"/>
+                    <tabBarItem key="tabBarItem" title="찜" image="p_jjim" id="Aka-9F-KGd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xRF-kv-MOF">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -85,7 +87,7 @@
         <scene sceneID="QJn-QI-ay5">
             <objects>
                 <navigationController id="lMT-JY-pgR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="1Yq-UO-e6e"/>
+                    <tabBarItem key="tabBarItem" title="검색" image="p_search" id="1Yq-UO-e6e"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xSh-BL-hpc">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -112,7 +114,7 @@
         <scene sceneID="AX2-PH-jpH">
             <objects>
                 <navigationController navigationBarHidden="YES" id="LAb-Oj-DsO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="6nE-uL-kpa"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="p_home" id="6nE-uL-kpa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FcR-Sd-360">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -136,9 +138,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="house" catalog="system" width="128" height="104"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="my" width="26" height="26"/>
+        <image name="p_home" width="23" height="23"/>
+        <image name="p_jjim" width="23" height="21"/>
+        <image name="p_my" width="23" height="22"/>
+        <image name="p_search" width="23" height="23"/>
     </resources>
 </document>
