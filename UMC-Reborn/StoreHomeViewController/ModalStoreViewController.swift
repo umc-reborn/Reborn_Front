@@ -60,9 +60,9 @@ class ModalStoreViewController: UIViewController {
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
             likeButton.tintColor = .clear
         } else {
-            let parmeterData = JjimModel(storeIdx: 1, userIdx: 3)
-            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
-            }
+//            let parmeterData = JjimModel(storeIdx: 1, userIdx: 3)
+//            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
+//            }
             likeButton.isSelected = true
             likeButton.setImage(UIImage(named: "ic_like"), for: .selected)
             likeButton.tintColor = .clear
@@ -102,7 +102,7 @@ class ModalStoreViewController: UIViewController {
     
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/\(modalStore)"
+        let url = APIConstants.baseURL + "/store/\(String(modalStore))"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
