@@ -102,7 +102,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     
     func storeResult() {
         
-        let url = APIConstants.baseURL + "/store/\(editStore)"
+        let url = APIConstants.baseURL + "/store/\(String(editStore))"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }

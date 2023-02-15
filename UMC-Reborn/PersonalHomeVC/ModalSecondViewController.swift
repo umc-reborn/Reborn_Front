@@ -1,13 +1,13 @@
 //
-//  SecondTabViewController.swift
+//  ModalSecondViewController.swift
 //  UMC-Reborn
 //
-//  Created by jaegu park on 2023/01/25.
+//  Created by jaegu park on 2023/02/15.
 //
 
 import UIKit
 
-var Rdatas = [
+var Rdatas2 = [
     ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/28aed2c9-fc93-4792-bbd1-496be6e24084.jpg"]),
     ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/a8e868cf-f1cb-4ac4-a83a-82f3710039d5.jpg"]),
     ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6e3b607a-a2c4-4512-b48e-205b660bc0e9.jpg"]),
@@ -30,39 +30,34 @@ var Rdatas = [
     ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/4adb6ce7-f8a2-44a4-b249-7b84c55efa0d.jpeg"]),
 ]
 
-class SecondTabViewController: UIViewController {
-    
-    let secondTab = UserDefaults.standard.integer(forKey: "userIdx")
-    
-    var shopList: [String] = ["bread_image", "cake_image", "goods_picture"]
+class ModalSecondViewController: UIViewController {
     
     var reviewDatas: [ReviewListModel] = []
     
-    @IBOutlet weak var STtableView: UITableView!
+    var storeIdm3: Int = 0
     
-    
+    @IBOutlet var mstableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        STtableView.delegate = self
-        STtableView.dataSource = self
-        STtableView.rowHeight = UITableView.automaticDimension
-        STtableView.estimatedRowHeight = UITableView.automaticDimension
-        STtableView.contentInset = .zero
-        STtableView.contentInsetAdjustmentBehavior = .never
-        
-        STtableView.layer.masksToBounds = true // any value you want
-        STtableView.layer.shadowOpacity = 0.1// any value you want
-        STtableView.layer.shadowRadius = 10 // any value you want
-        STtableView.layer.shadowOffset = .init(width: 0, height: 10)
 
-        reviewResult()
+        mstableView.delegate = self
+        mstableView.dataSource = self
+        mstableView.rowHeight = UITableView.automaticDimension
+        mstableView.estimatedRowHeight = UITableView.automaticDimension
+        mstableView.contentInset = .zero
+        mstableView.contentInsetAdjustmentBehavior = .never
+        
+        mstableView.layer.masksToBounds = true // any value you want
+        mstableView.layer.shadowOpacity = 0.1// any value you want
+        mstableView.layer.shadowRadius = 10 // any value you want
+        mstableView.layer.shadowOffset = .init(width: 0, height: 10)
     }
     
+
     func reviewResult() {
         
-        let url = APIConstants.baseURL + "/review/store/\(String(secondTab))/buz"
+        let url = APIConstants.baseURL + "/review/store/\(String(storeIdm3))/buz"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -90,7 +85,7 @@ class SecondTabViewController: UIViewController {
                     self.reviewDatas = decodedData.result
                     print(reviewDatas)
                     DispatchQueue.main.async {
-                        self.STtableView.reloadData()
+                        self.mstableView.reloadData()
                         print("count: \(self.reviewDatas.count)")
                         
                     }
@@ -112,9 +107,10 @@ class SecondTabViewController: UIViewController {
             }
         }.resume()
     }
+
 }
 
-extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
+extension ModalSecondViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
             return reviewDatas.count
@@ -130,7 +126,7 @@ extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SecondTab_TableViewCell", for: indexPath) as! SecondTabTableViewCell
+        let cell: ModalSecondTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ModalSecond_TableViewCell", for: indexPath) as! ModalSecondTableViewCell
         
         let rebornData = reviewDatas[indexPath.section]
         
@@ -143,38 +139,38 @@ extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
         let dayTime2 = createTime[String.Index(encodedOffset: 9)]
         cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2)"
         cell.nickName.text = rebornData.userNickname
-        cell.personImage.load(url: url!)
+        cell.userImage.load(url: url!)
         cell.foodName.text = rebornData.productName
         if (rebornData.reviewScore == 5) {
-            cell.reviewStar_a.image = UIImage(named: "review_star")
-            cell.reviewStar_b.image = UIImage(named: "review_star")
-            cell.reviewStar_c.image = UIImage(named: "review_star")
-            cell.reviewStar_d.image = UIImage(named: "review_star")
-            cell.reviewStar_e.image = UIImage(named: "review_star")
-        } else if (rebornData.reviewScore == 4) { 
-            cell.reviewStar_a.image = UIImage(named: "review_star")
-            cell.reviewStar_b.image = UIImage(named: "review_star")
-            cell.reviewStar_c.image = UIImage(named: "review_star")
-            cell.reviewStar_d.image = UIImage(named: "review_star")
-            cell.reviewStar_e.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_a.image = UIImage(named: "review_star")
+            cell.reviewstar_b.image = UIImage(named: "review_star")
+            cell.reviewstar_c.image = UIImage(named: "review_star")
+            cell.reviewstar_d.image = UIImage(named: "review_star")
+            cell.reviewstar_e.image = UIImage(named: "review_star")
+        } else if (rebornData.reviewScore == 4) {
+            cell.reviewstar_a.image = UIImage(named: "review_star")
+            cell.reviewstar_b.image = UIImage(named: "review_star")
+            cell.reviewstar_c.image = UIImage(named: "review_star")
+            cell.reviewstar_d.image = UIImage(named: "review_star")
+            cell.reviewstar_e.image = UIImage(named: "review_star_gray")
         } else if (rebornData.reviewScore == 3) {
-            cell.reviewStar_a.image = UIImage(named: "review_star")
-            cell.reviewStar_b.image = UIImage(named: "review_star")
-            cell.reviewStar_c.image = UIImage(named: "review_star")
-            cell.reviewStar_d.image = UIImage(named: "review_star_gray")
-            cell.reviewStar_e.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_a.image = UIImage(named: "review_star")
+            cell.reviewstar_b.image = UIImage(named: "review_star")
+            cell.reviewstar_c.image = UIImage(named: "review_star")
+            cell.reviewstar_d.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_e.image = UIImage(named: "review_star_gray")
         } else if (rebornData.reviewScore == 2) {
-            cell.reviewStar_a.image = UIImage(named: "review_star")
-            cell.reviewStar_b.image = UIImage(named: "review_star")
-            cell.reviewStar_c.image = UIImage(named: "review_star_gray")
-            cell.reviewStar_d.image = UIImage(named: "review_star_gray")
-            cell.reviewStar_e.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_a.image = UIImage(named: "review_star")
+            cell.reviewstar_b.image = UIImage(named: "review_star")
+            cell.reviewstar_c.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_d.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_e.image = UIImage(named: "review_star_gray")
         } else {
-            cell.reviewStar_a.image = UIImage(named: "review_star")
-            cell.reviewStar_b.image = UIImage(named: "review_star_gray")
-            cell.reviewStar_c.image = UIImage(named: "review_star_gray")
-            cell.reviewStar_d.image = UIImage(named: "review_star_gray")
-            cell.reviewStar_e.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_a.image = UIImage(named: "review_star")
+            cell.reviewstar_b.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_c.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_d.image = UIImage(named: "review_star_gray")
+            cell.reviewstar_e.image = UIImage(named: "review_star_gray")
         }
         cell.commentLabel.text = rebornData.reviewComment
         cell.collectionView.tag = indexPath.row

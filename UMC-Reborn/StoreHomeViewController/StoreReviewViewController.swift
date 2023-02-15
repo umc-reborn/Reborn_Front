@@ -63,7 +63,7 @@ class StoreReviewViewController: UIViewController {
     
     func reviewResult() {
         
-        let url = APIConstants.baseURL + "/review/store/\(storeReview)/buz"
+        let url = APIConstants.baseURL + "/review/store/\(String(storeReview))/buz"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -117,7 +117,7 @@ class StoreReviewViewController: UIViewController {
     
     func reviewCountResult() {
         
-        let url = APIConstants.baseURL + "/review/cnt?storeIdx=\(storeReview)"
+        let url = APIConstants.baseURL + "/review/cnt?storeIdx=\(String(storeReview))"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }

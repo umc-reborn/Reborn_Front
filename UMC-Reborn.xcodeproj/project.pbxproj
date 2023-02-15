@@ -130,6 +130,11 @@
 		95E9FFB9297FAFE10073DF2B /* LatestSearchedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFB8297FAFE10073DF2B /* LatestSearchedCell.swift */; };
 		95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFBA29808CB10073DF2B /* SearchResultViewController.swift */; };
 		BCAC19B4823DC2E9483F2B3C /* libPods-UMC-Reborn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C19DC0605BD35D11E1E9E84 /* libPods-UMC-Reborn.a */; };
+		C7062990299BE144002F5C1A /* ModalFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706298F299BE144002F5C1A /* ModalFirstViewController.swift */; };
+		C7062992299BE151002F5C1A /* ModalSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7062991299BE151002F5C1A /* ModalSecondViewController.swift */; };
+		C7062994299BE5BA002F5C1A /* ModalTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7062993299BE5BA002F5C1A /* ModalTabViewController.swift */; };
+		C7062996299BF03D002F5C1A /* ModalFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7062995299BF03D002F5C1A /* ModalFirstTableViewCell.swift */; };
+		C7062998299BF04A002F5C1A /* ModalSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7062997299BF04A002F5C1A /* ModalSecondTableViewCell.swift */; };
 		C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D4E2980F1C500CABA91 /* FirstTabViewController.swift */; };
 		C70D3D512980F1CF00CABA91 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D502980F1CF00CABA91 /* SecondTabViewController.swift */; };
 		C70D3D532981001300CABA91 /* FirstTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D3D522981001300CABA91 /* FirstTabTableViewCell.swift */; };
@@ -173,6 +178,7 @@
 		C76935B0297E435A00EB4528 /* StoreReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76935AF297E435A00EB4528 /* StoreReviewCollectionViewCell.swift */; };
 		C7889DFC297C23050008E99F /* StoreReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7889DFB297C23050008E99F /* StoreReviewViewController.swift */; };
 		C7889E01297C297D0008E99F /* StoreReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7889DFF297C297D0008E99F /* StoreReviewTableViewCell.swift */; };
+		C7B64478299C625E00A7048D /* RebornCautionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B64477299C625E00A7048D /* RebornCautionViewController.swift */; };
 		C7B8BCDF298423FC00FE3C0A /* PwErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8BCDE298423FC00FE3C0A /* PwErrorViewController.swift */; };
 		C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8BCE02984241200FE3C0A /* PwOkViewController.swift */; };
 		C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD74296D315B00040E05 /* AppDelegate.swift */; };
@@ -342,6 +348,11 @@
 		95E9FFB6297E6F880073DF2B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		95E9FFB8297FAFE10073DF2B /* LatestSearchedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSearchedCell.swift; sourceTree = "<group>"; };
 		95E9FFBA29808CB10073DF2B /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		C706298F299BE144002F5C1A /* ModalFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFirstViewController.swift; sourceTree = "<group>"; };
+		C7062991299BE151002F5C1A /* ModalSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSecondViewController.swift; sourceTree = "<group>"; };
+		C7062993299BE5BA002F5C1A /* ModalTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTabViewController.swift; sourceTree = "<group>"; };
+		C7062995299BF03D002F5C1A /* ModalFirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFirstTableViewCell.swift; sourceTree = "<group>"; };
+		C7062997299BF04A002F5C1A /* ModalSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSecondTableViewCell.swift; sourceTree = "<group>"; };
 		C70D3D4E2980F1C500CABA91 /* FirstTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewController.swift; sourceTree = "<group>"; };
 		C70D3D502980F1CF00CABA91 /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
 		C70D3D522981001300CABA91 /* FirstTabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabTableViewCell.swift; sourceTree = "<group>"; };
@@ -385,6 +396,7 @@
 		C76935AF297E435A00EB4528 /* StoreReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		C7889DFB297C23050008E99F /* StoreReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewViewController.swift; sourceTree = "<group>"; };
 		C7889DFF297C297D0008E99F /* StoreReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewTableViewCell.swift; sourceTree = "<group>"; };
+		C7B64477299C625E00A7048D /* RebornCautionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornCautionViewController.swift; sourceTree = "<group>"; };
 		C7B8BCDE298423FC00FE3C0A /* PwErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwErrorViewController.swift; sourceTree = "<group>"; };
 		C7B8BCE02984241200FE3C0A /* PwOkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwOkViewController.swift; sourceTree = "<group>"; };
 		C7C4FD71296D315B00040E05 /* UMC-Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-Reborn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -538,6 +550,12 @@
 				9561BA8B2995B37C00A4B33B /* HomeInprogressViewController.swift */,
 				9561BA8D2995B3FB00A4B33B /* InprogressCollectionViewCell.swift */,
 				C728F6F3299BA2960037838A /* ModalPersonalViewController.swift */,
+				C706298F299BE144002F5C1A /* ModalFirstViewController.swift */,
+				C7062991299BE151002F5C1A /* ModalSecondViewController.swift */,
+				C7062993299BE5BA002F5C1A /* ModalTabViewController.swift */,
+				C7062995299BF03D002F5C1A /* ModalFirstTableViewCell.swift */,
+				C7062997299BF04A002F5C1A /* ModalSecondTableViewCell.swift */,
+				C7B64477299C625E00A7048D /* RebornCautionViewController.swift */,
 			);
 			path = PersonalHomeVC;
 			sourceTree = "<group>";
@@ -1020,6 +1038,7 @@
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
 				C7284AAC298EA726009A70E7 /* NetworkResult.swift in Sources */,
 				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
+				C7062990299BE144002F5C1A /* ModalFirstViewController.swift in Sources */,
 				2FB97CFD2992A9EA006D4420 /* RebornHistoryDetailModel.swift in Sources */,
 				2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */,
 				0B94771229899DB200B5829A /* Id_PassWordViewController.swift in Sources */,
@@ -1043,6 +1062,7 @@
 				C7324E3A29965DDA0062564D /* APIImagePost.swift in Sources */,
 				0B94771829899DDE00B5829A /* HelloViewController.swift in Sources */,
 				0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */,
+				C7B64478299C625E00A7048D /* RebornCautionViewController.swift in Sources */,
 				0B0D66C8298CFA6100E5220F /* Id_PassWordSecondViewController.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				C7889E01297C297D0008E99F /* StoreReviewTableViewCell.swift in Sources */,
@@ -1071,6 +1091,7 @@
 				2F3A2323299A877B002B183B /* PostReviewService.swift in Sources */,
 				2F3A2321299A875C002B183B /* PostReviewModel.swift in Sources */,
 				0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */,
+				C7062996299BF03D002F5C1A /* ModalFirstTableViewCell.swift in Sources */,
 				0B0D66CC298D0BFD00E5220F /* APINeiLoginPost.swift in Sources */,
 				0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */,
 				C70D3D632982308D00CABA91 /* SecondMainTableViewCell.swift in Sources */,
@@ -1081,6 +1102,7 @@
 				0B0D66CE298D21A000E5220F /* APIShopLoginPost.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
 				9561BA882994350A00A4B33B /* InprogressModel.swift in Sources */,
+				C7062992299BE151002F5C1A /* ModalSecondViewController.swift in Sources */,
 				C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */,
 				0B94770E29899D9700B5829A /* WhoViewController.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
@@ -1093,6 +1115,7 @@
 				2FB97CFB2992A20A006D4420 /* RebornHistoryDetailViewController.swift in Sources */,
 				2F19029A2997D6C400853D75 /* RebornModel.swift in Sources */,
 				C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */,
+				C7062998299BF04A002F5C1A /* ModalSecondTableViewCell.swift in Sources */,
 				95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */,
 				C7EF98282990D8FB00480DD9 /* RebornStatusService.swift in Sources */,
 				C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */,
@@ -1119,6 +1142,7 @@
 				0B68DDE3299287D900A988FA /* JoinNeighborPost.swift in Sources */,
 				0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */,
 				C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */,
+				C7062994299BE5BA002F5C1A /* ModalTabViewController.swift in Sources */,
 				C7D56FAA2972BC5600A68015 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

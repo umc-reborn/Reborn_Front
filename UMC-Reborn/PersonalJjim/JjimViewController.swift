@@ -15,6 +15,8 @@ class JjimViewController: UIViewController {
     // DropDown 아이템 리스트
     let itemList = ["   정렬", "이름순", "별점순", "인기순"]
     
+    let jjimview = UserDefaults.standard.integer(forKey: "userIndex")
+    
     var jjimDatas: [JjimListModel] = []
     var jjimPopularDatas: [JjimListModel] = []
     var jjimNameDatas: [JjimListModel] = []
@@ -68,7 +70,7 @@ class JjimViewController: UIViewController {
     
     func JjimResult() {
         
-        let url = APIConstants.baseURL + "/jjim/22"
+        let url = APIConstants.baseURL + "/jjim/\(String(jjimview))"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -120,7 +122,7 @@ class JjimViewController: UIViewController {
     
     func JjimCountResult() {
         
-        let url = APIConstants.baseURL + "/jjim/cnt/22"
+        let url = APIConstants.baseURL + "/jjim/cnt/\(String(jjimview))"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
