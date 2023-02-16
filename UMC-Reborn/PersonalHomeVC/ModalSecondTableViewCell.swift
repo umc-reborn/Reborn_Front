@@ -43,14 +43,14 @@ class ModalSecondTableViewCell: UITableViewCell {
 extension ModalSecondTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Rdatas2[collectionView.tag].reviewImgList.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondTab_CollectionViewCell", for: indexPath) as! SecondTabCollectionViewCell
         
-        let url = URL(string: Rdatas2[collectionView.tag].reviewImgList[indexPath.row])
+        let url = URL(string: "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/ee808a37-a23d-482f-95e0-b57c5d6cb1cb.jpg")
         cell.imageView.load(url: url!)
         return cell
     }

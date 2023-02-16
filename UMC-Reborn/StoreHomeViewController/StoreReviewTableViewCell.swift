@@ -133,7 +133,7 @@ extension StoreReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDa
 //        cell.imageView.load(url: url!)
 //        let reviewDatas = reviewImageDatas[collectionView.hash].reviewImg
         let url = URL(string: Rdata[collectionView.tag].reviewImgList[indexPath.row])
-        cell.imageView.load(url: url!)
+        cell.reviewImageView.load(url: url!)
         return cell
     }
 }
