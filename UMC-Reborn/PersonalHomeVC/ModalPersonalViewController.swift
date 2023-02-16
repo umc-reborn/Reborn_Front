@@ -47,6 +47,7 @@ class ModalPersonalViewController: UIViewController {
         modalView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
         
         storeResult()
+        UserDefaults.standard.set(storeIdm1, forKey: "storeid")
     }
     
     @IBAction func jjimTapped(_ sender: Any) {

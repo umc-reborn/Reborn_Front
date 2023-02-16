@@ -812,7 +812,7 @@
                                                             </collectionViewCellContentView>
                                                             <size key="customSize" width="320" height="198"/>
                                                             <connections>
-                                                                <outlet property="imageView" destination="XC7-LW-YJL" id="a7E-SO-4VY"/>
+                                                                <outlet property="reviewImageView" destination="XC7-LW-YJL" id="WWf-8u-oZx"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -1270,10 +1270,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리가게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szx-3D-BzP">
-                                <rect key="frame" x="26" y="158" width="104" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뚜레쥬르공덕점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szx-3D-BzP">
+                                <rect key="frame" x="26" y="158" width="181.66666666666666" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="3nU-KP-Gje"/>
+                                    <constraint firstAttribute="width" constant="181.66999999999999" id="Vka-Os-Bf1"/>
                                     <constraint firstAttribute="height" constant="36" id="rEh-PO-QzC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
@@ -1281,7 +1281,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-xP-Cey">
-                                <rect key="frame" x="135" y="161.66666666666666" width="21" height="29"/>
+                                <rect key="frame" x="212.66666666666666" y="161.66666666666666" width="21" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="dMc-tz-NoQ"/>
                                     <constraint firstAttribute="width" constant="21" id="gco-KA-AJ5"/>

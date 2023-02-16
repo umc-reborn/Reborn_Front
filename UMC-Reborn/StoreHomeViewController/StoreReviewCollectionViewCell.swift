@@ -8,16 +8,12 @@
 import UIKit
 
 class StoreReviewCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var imageView: UIImageView!
+
+    @IBOutlet var reviewImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
+        reviewImageView.layer.cornerRadius = 10
+        reviewImageView.clipsToBounds = true
     }
 }

@@ -30,11 +30,11 @@ class ModalFirstTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func cautionButton(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornCautionViewController") as? RebornCautionViewController else { return }
-        nextVC.modalPresentationStyle = .overCurrentContext
-        self.present(nextVC, animated: true, completion: nil)
-    }
+//    @IBAction func cautionButton(_ sender: Any) {
+//        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornCautionViewController") as? RebornCautionViewController else { return }
+//        nextVC.modalPresentationStyle = .overCurrentContext
+//        self.present(nextVC, animated: true, completion: nil)
+//    }
     
 
 }

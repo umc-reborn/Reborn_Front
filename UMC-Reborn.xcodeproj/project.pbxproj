@@ -37,6 +37,11 @@
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */; };
 		2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */; };
+		2F3A2321299A875C002B183B /* PostReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2320299A875C002B183B /* PostReviewModel.swift */; };
+		2F3A2323299A877B002B183B /* PostReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2322299A877B002B183B /* PostReviewService.swift */; };
+		2F3A2325299AA0F4002B183B /* CompleteRebornViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2324299AA0F4002B183B /* CompleteRebornViewController.swift */; };
+		2F3A2327299AAF62002B183B /* ControlSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2326299AAF62002B183B /* ControlSlider.swift */; };
+		2F3A2329299AB690002B183B /* FinishWriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2328299AB690002B183B /* FinishWriteReviewViewController.swift */; };
 		2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD22991559700D3C791 /* APIHandler.swift */; };
 		2F48EBD52991592400D3C791 /* APIManageReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48EBD42991592400D3C791 /* APIManageReview.swift */; };
 		2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */; };
@@ -174,6 +179,7 @@
 		C7889DFC297C23050008E99F /* StoreReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7889DFB297C23050008E99F /* StoreReviewViewController.swift */; };
 		C7889E01297C297D0008E99F /* StoreReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7889DFF297C297D0008E99F /* StoreReviewTableViewCell.swift */; };
 		C7B64478299C625E00A7048D /* RebornCautionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B64477299C625E00A7048D /* RebornCautionViewController.swift */; };
+		C7B6447A299C873B00A7048D /* ModalSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B64479299C873B00A7048D /* ModalSecondCollectionViewCell.swift */; };
 		C7B8BCDF298423FC00FE3C0A /* PwErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8BCDE298423FC00FE3C0A /* PwErrorViewController.swift */; };
 		C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8BCE02984241200FE3C0A /* PwOkViewController.swift */; };
 		C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4FD74296D315B00040E05 /* AppDelegate.swift */; };
@@ -242,6 +248,11 @@
 		2F1B30C329758EC5001A7284 /* MyRebornCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRebornCell.swift; sourceTree = "<group>"; };
 		2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		2F3A2320299A875C002B183B /* PostReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReviewModel.swift; sourceTree = "<group>"; };
+		2F3A2322299A877B002B183B /* PostReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReviewService.swift; sourceTree = "<group>"; };
+		2F3A2324299AA0F4002B183B /* CompleteRebornViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRebornViewController.swift; sourceTree = "<group>"; };
+		2F3A2326299AAF62002B183B /* ControlSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSlider.swift; sourceTree = "<group>"; };
+		2F3A2328299AB690002B183B /* FinishWriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishWriteReviewViewController.swift; sourceTree = "<group>"; };
 		2F48EBD22991559700D3C791 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		2F48EBD42991592400D3C791 /* APIManageReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManageReview.swift; sourceTree = "<group>"; };
 		2F62AE86297EA0C0008907B2 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
@@ -387,6 +398,7 @@
 		C7889DFB297C23050008E99F /* StoreReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewViewController.swift; sourceTree = "<group>"; };
 		C7889DFF297C297D0008E99F /* StoreReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C7B64477299C625E00A7048D /* RebornCautionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornCautionViewController.swift; sourceTree = "<group>"; };
+		C7B64479299C873B00A7048D /* ModalSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		C7B8BCDE298423FC00FE3C0A /* PwErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwErrorViewController.swift; sourceTree = "<group>"; };
 		C7B8BCE02984241200FE3C0A /* PwOkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwOkViewController.swift; sourceTree = "<group>"; };
 		C7C4FD71296D315B00040E05 /* UMC-Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-Reborn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -484,6 +496,9 @@
 				2F1B30C329758EC5001A7284 /* MyRebornCell.swift */,
 				2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */,
 				2FB97CFA2992A20A006D4420 /* RebornHistoryDetailViewController.swift */,
+				2F3A2324299AA0F4002B183B /* CompleteRebornViewController.swift */,
+				2F3A2326299AAF62002B183B /* ControlSlider.swift */,
+				2F3A2328299AB690002B183B /* FinishWriteReviewViewController.swift */,
 			);
 			path = MyReborn;
 			sourceTree = "<group>";
@@ -497,6 +512,7 @@
 				2FB97CFC2992A9EA006D4420 /* RebornHistoryDetailModel.swift */,
 				2FF615362992D1EC00143369 /* RebornHistoryModel.swift */,
 				2F7C0AB32994DAA600BC5F9A /* ReviewManageModel.swift */,
+				2F3A2320299A875C002B183B /* PostReviewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -542,6 +558,7 @@
 				C7062995299BF03D002F5C1A /* ModalFirstTableViewCell.swift */,
 				C7062997299BF04A002F5C1A /* ModalSecondTableViewCell.swift */,
 				C7B64477299C625E00A7048D /* RebornCautionViewController.swift */,
+				C7B64479299C873B00A7048D /* ModalSecondCollectionViewCell.swift */,
 			);
 			path = PersonalHomeVC;
 			sourceTree = "<group>";
@@ -651,6 +668,7 @@
 				9561B98F2992463200A4B33B /* kako api-Bridging-Header.h */,
 				9561BA892994712600A4B33B /* InprogressService.swift */,
 				2F7C0AB72994DAD000BC5F9A /* ReviewManageService.swift */,
+				2F3A2322299A877B002B183B /* PostReviewService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -982,6 +1000,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3A2327299AAF62002B183B /* ControlSlider.swift in Sources */,
 				0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */,
 				C7B8BCDF298423FC00FE3C0A /* PwErrorViewController.swift in Sources */,
 				0B94772029899E4400B5829A /* FindIdViewController.swift in Sources */,
@@ -1043,6 +1062,7 @@
 				C7284AA3298D0B8F009A70E7 /* HTTPManager.swift in Sources */,
 				95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */,
 				C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */,
+				C7B6447A299C873B00A7048D /* ModalSecondCollectionViewCell.swift in Sources */,
 				C7324E3A29965DDA0062564D /* APIImagePost.swift in Sources */,
 				0B94771829899DDE00B5829A /* HelloViewController.swift in Sources */,
 				0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */,
@@ -1068,8 +1088,12 @@
 				C7284AB0298FFB25009A70E7 /* StoreModel.swift in Sources */,
 				C7EF98262990D83B00480DD9 /* RebornStatusModel.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
+				2F3A2325299AA0F4002B183B /* CompleteRebornViewController.swift in Sources */,
+				2F3A2329299AB690002B183B /* FinishWriteReviewViewController.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
+				2F3A2323299A877B002B183B /* PostReviewService.swift in Sources */,
+				2F3A2321299A875C002B183B /* PostReviewModel.swift in Sources */,
 				0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */,
 				C7062996299BF03D002F5C1A /* ModalFirstTableViewCell.swift in Sources */,
 				0B0D66CC298D0BFD00E5220F /* APINeiLoginPost.swift in Sources */,
@@ -1280,7 +1304,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = KSR8K3JPUM;
+				DEVELOPMENT_TEAM = R8ZX684WX2;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1294,6 +1318,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "UMC Re-born";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1301,6 +1326,8 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1308,7 +1335,7 @@
 				);
 				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
@@ -1327,7 +1354,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = KSR8K3JPUM;
+				DEVELOPMENT_TEAM = R8ZX684WX2;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1341,6 +1368,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "UMC Re-born";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1348,6 +1376,8 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1355,7 +1385,7 @@
 				);
 				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.JKPARK.UMC-Reborn";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";

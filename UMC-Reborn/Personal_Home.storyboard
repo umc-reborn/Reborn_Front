@@ -723,7 +723,7 @@
                                                         <action selector="likeButtonAction:" destination="kaR-0Q-iAg" eventType="touchUpInside" id="v8c-6w-4aY"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_image" translatesAutoresizingMaskIntoConstraints="NO" id="vlT-bg-dMQ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_image" translatesAutoresizingMaskIntoConstraints="NO" id="vlT-bg-dMQ">
                                                     <rect key="frame" x="0.0" y="46" width="215" height="203"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="215" id="2TE-fB-HMx"/>
@@ -750,9 +750,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWa-qD-sJ0">
-                                                    <rect key="frame" x="10" y="218" width="47" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="10" y="221" width="40" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acI-Gp-dgX">
@@ -1198,6 +1198,9 @@
                                             <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
                                             <color key="baseForegroundColor" red="0.99627512689999997" green="0.98423308129999998" blue="0.97668832539999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="yesTapped:" destination="xmg-rf-XFK" eventType="touchUpInside" id="AMp-lo-5hn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xba-dJ-ho3">
                                         <rect key="frame" x="-1" y="238" width="157" height="43"/>
@@ -1210,6 +1213,9 @@
                                             <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="xmg-rf-XFK" eventType="touchUpInside" id="zND-Xt-X6v"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1239,6 +1245,11 @@
                             <constraint firstItem="iSH-xk-fWc" firstAttribute="leading" secondItem="11K-3q-F4S" secondAttribute="leading" constant="38.5" id="yZO-bd-2Wl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="Xba-dJ-ho3" id="x65-Sf-0fv"/>
+                        <outlet property="cautionView" destination="iSH-xk-fWc" id="p6V-yw-FDH"/>
+                        <outlet property="yesButton" destination="lkM-Hm-KFV" id="9Wn-8u-Kk0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y5M-g1-SNk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1258,7 +1269,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7n-bB-OJb">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1281"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_image" translatesAutoresizingMaskIntoConstraints="NO" id="57e-FN-I0w">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_image" translatesAutoresizingMaskIntoConstraints="NO" id="57e-FN-I0w">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="294"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="294" id="M1l-QW-ba6"/>
@@ -1595,9 +1606,6 @@
                                                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="baseBackgroundColor" red="0.92356389760000002" green="0.35871350769999999" blue="0.18580088019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="cautionButton:" destination="jp6-cd-YVK" eventType="touchUpInside" id="c26-MJ-Tr2"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1761,7 +1769,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SecondTab_CollectionViewCell" id="uha-bD-CQE" customClass="SecondTabCollectionViewCell" customModule="UMC_Reborn" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ModalSecond_CollectionViewCell" id="uha-bD-CQE" customClass="ModalSecondCollectionViewCell" customModule="UMC_Reborn" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="318" height="198"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cxB-0o-n40">
@@ -1783,9 +1791,6 @@
                                                                     <constraint firstItem="Qbn-9e-3yA" firstAttribute="leading" secondItem="cxB-0o-n40" secondAttribute="leading" constant="8" id="i0c-oa-nrV"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <connections>
-                                                                <outlet property="imageView" destination="Qbn-9e-3yA" id="C7x-gY-Wma"/>
-                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>

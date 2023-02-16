@@ -9,6 +9,9 @@ import UIKit
 
 class WriteReviewViewController: UIViewController, UITextViewDelegate {
     
+    var writeRebornData:[postReviewReqResultModel]!
+
+    
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var testImage: UIImageView!
@@ -19,8 +22,6 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
     
     lazy var stringToNum = UInt(label.text ?? "")
     
-    var writeRebornData:[postReviewReqResultModel]!
-    
     var Number = 0
     
     var imageDatas = [1, 2]
@@ -28,18 +29,18 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.topItem?.title = ""
+
         // ======== 상세 리뷰 작성 textField ========
         self.textField.layer.borderWidth = 1.0
         self.textField.layer.borderColor=UIColor.lightGray.cgColor
-        self.textField.text = "리본 후기를 알려주세요!"
+        self.textField.text = ""
         self.textField.textColor=UIColor.lightGray
         self.textField.returnKeyType = .done
         self.textField.delegate = self
         self.textField.textContainer.lineFragmentPadding = 8
         self.textField.layer.cornerRadius = 8
-
     }
-    
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textField.text ?? ""
@@ -71,9 +72,5 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
     @IBAction func addReviewButton(_ sender: Any) {
         print("순수 label 값은 \(label!)")
         print("형변환한 label 값은 \(stringToNum!)")
-        
-        let parmeterData = postReviewReqModel(userIdx: 1, rebornIdx: 1, reviewScore: stringToNum!, reviewComment: textField.text ?? "")
-        
-        print(parmeterData)
     }
 }
