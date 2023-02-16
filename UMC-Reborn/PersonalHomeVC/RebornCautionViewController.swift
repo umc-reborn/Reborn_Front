@@ -8,22 +8,28 @@
 import UIKit
 
 class RebornCautionViewController: UIViewController {
+    
+    @IBOutlet var cautionView: UIView!
+    @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var yesButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        cautionView.layer.cornerRadius = 10
+        cautionView.clipsToBounds = true
+        cancelButton.layer.cornerRadius = 0
+        cancelButton.layer.borderWidth = 1
+        cancelButton.layer.borderColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1).cgColor
+        yesButton.layer.cornerRadius = 0
+        yesButton.layer.borderWidth = 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    */
-
+    
+    @IBAction func yesTapped(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 }

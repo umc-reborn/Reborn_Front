@@ -13,6 +13,8 @@ class ModalFirstViewController: UIViewController {
     
     var storeIdm2: Int = 0
     
+    let modalfirst = UserDefaults.standard.integer(forKey: "storeid")
+    
     
     @IBOutlet var mftableView: UITableView!
     
@@ -37,7 +39,7 @@ class ModalFirstViewController: UIViewController {
         
 //        let text = keyword
         
-        let url = APIConstants.baseURL + "/reborns/store/\(String(storeIdm2))/status?status="
+        let url = APIConstants.baseURL + "/reborns/store/\(String(modalfirst))/status?status="
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -75,6 +77,11 @@ class ModalFirstViewController: UIViewController {
         }.resume()
     }
     
+    @objc func shareButtonTapped2(sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornCautionViewController") as? RebornCautionViewController else { return }
+        nextVC.modalPresentationStyle = .overCurrentContext
+        self.present(nextVC, animated: true, completion: nil)
+    }
     
 }
 
@@ -115,6 +122,9 @@ extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource {
             cell.rebornButton.isHidden = true
 //            cell.limitTimeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
         }
+        cell.rebornButton.tag = indexPath.section
+        cell.rebornButton.addTarget(self, action: #selector(shareButtonTapped2(sender:)), for: .touchUpInside)
+        
         return cell
     }
         

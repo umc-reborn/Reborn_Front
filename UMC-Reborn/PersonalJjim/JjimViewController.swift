@@ -348,4 +348,9 @@ class JjimViewController: UIViewController {
 //        JjimNameResult()
 //        JjimScoreResult()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        JjimResult()
+        JjimCountResult()
+    }
 }

@@ -34,6 +34,8 @@ class ModalSecondViewController: UIViewController {
     
     var reviewDatas: [ReviewListModel] = []
     
+    let modalsecond = UserDefaults.standard.integer(forKey: "storeid")
+    
     var storeIdm3: Int = 0
     
     @IBOutlet var mstableView: UITableView!
@@ -57,7 +59,7 @@ class ModalSecondViewController: UIViewController {
 
     func reviewResult() {
         
-        let url = APIConstants.baseURL + "/review/store/\(String(storeIdm3))/buz"
+        let url = APIConstants.baseURL + "/review/store/\(String(modalsecond))/buz"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
