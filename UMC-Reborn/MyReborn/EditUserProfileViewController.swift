@@ -14,6 +14,12 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     @IBOutlet var EditNicknameTextField: UITextField!
     @IBOutlet var EditAddressTextField: UITextField!
     @IBOutlet var EditBirthTextField: UITextField!
+    @IBOutlet var button1: UIButton!
+    @IBOutlet var button2: UIButton!
+    @IBOutlet var button3: UIButton!
+    @IBOutlet var button4: UIButton!
+    @IBOutlet var button5: UIButton!
+    
     
     
     @objc func FinishEditMode() {
@@ -65,6 +71,12 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         textFieldDidEndEditing(EditAddressTextField)
         textFieldDidEndEditing(EditBirthTextField)
     }
+    
+    // 카테고리 버튼
+    @IBAction func isCategoryPressed(_ sender: UIButton) {
+        
+    }
+    
     
     //작성 중 주황색
     func textFieldDidBeginEditing(_ textField: UITextField) {
