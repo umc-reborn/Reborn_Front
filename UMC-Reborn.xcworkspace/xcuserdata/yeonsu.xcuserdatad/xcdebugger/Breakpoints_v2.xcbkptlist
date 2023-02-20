@@ -52,5 +52,221 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEF750CB-95E7-40C6-BABE-E5799B102D5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "EditUserProfileViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "FEF750CB-95E7-40C6-BABE-E5799B102D5E - 50d0cc09c5d1ec24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.EditNicknameTextField.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "FEF750CB-95E7-40C6-BABE-E5799B102D5E - 35163f6f1b1a3618"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.EditNicknameTextField.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "FEF750CB-95E7-40C6-BABE-E5799B102D5E - cab088cb3cf43cb1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.EditNicknameTextField.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "FEF750CB-95E7-40C6-BABE-E5799B102D5E - 13c51ec05231acb2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.EditNicknameTextField.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "FEF750CB-95E7-40C6-BABE-E5799B102D5E - 2e632b27e3aad226"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; UMC_Reborn.EditUserProfileViewController"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "538">
+               </Location>
+               <Location
+                  uuid = "FEF750CB-95E7-40C6-BABE-E5799B102D5E - 865ef7fae18d73f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UMC_Reborn.EditUserProfileViewController&gt;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "468">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD54835B-AF5A-472A-8EE1-D742C27EFFEA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "EditUserProfileViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "AD54835B-AF5A-472A-8EE1-D742C27EFFEA - 7bd1098ff6445ec1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.EditAddressTextField.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "AD54835B-AF5A-472A-8EE1-D742C27EFFEA - bf99d7d1a64eabf5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.EditAddressTextField.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "AD54835B-AF5A-472A-8EE1-D742C27EFFEA - 6ca605fe19f8c64f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.EditAddressTextField.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "AD54835B-AF5A-472A-8EE1-D742C27EFFEA - 5bdf5d2e1c302c54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.EditAddressTextField.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "AD54835B-AF5A-472A-8EE1-D742C27EFFEA - 2e632b27e3aad5c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; UMC_Reborn.EditUserProfileViewController"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "563">
+               </Location>
+               <Location
+                  uuid = "AD54835B-AF5A-472A-8EE1-D742C27EFFEA - 865ef7fae18d7412"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UMC_Reborn.EditUserProfileViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UMC_Reborn.EditUserProfileViewController&gt;"
+                  moduleName = "UMC-Reborn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeonsu/Reborn_Front/UMC-Reborn/MyReborn/EditUserProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "493">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

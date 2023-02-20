@@ -11,6 +11,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     
     var nickname = UserDefaults.standard.string(forKey: "userNickName")
     
+    
+    
+    @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var EditNicknameTextField: UITextField!
     @IBOutlet var EditAddressTextField: UITextField!
     @IBOutlet var EditBirthTextField: UITextField!
@@ -21,13 +24,14 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     @IBOutlet var button5: UIButton!
     
     
-    
     @objc func FinishEditMode() {
         // TODO : (일단 닉네임이라도) 변경한 값으로 만들기
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createButton()
         
         print("유저 닉네임은 \(nickname)")
         
@@ -73,8 +77,31 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     }
     
     // 카테고리 버튼
+    func createButton() {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
+        button.configuration = createConfig()
+        view.addSubview(button)
+        button.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 16).isActive = true
+    }
+    
+    func createConfig() -> UIButton.Configuration {
+        var config: UIButton.Configuration = .filled()
+        config.baseBackgroundColor = .systemRed
+        config.title = "Hey~"
+        config.titleAlignment = .center
+        config.cornerStyle = .capsule
+        config.image = UIImage(systemName: "heart")
+        return config
+    }
+    
+
     @IBAction func isCategoryPressed(_ sender: UIButton) {
-        
+//        switch sender.tag {
+//        case 1:
+//
+//        default:
+//            break
+//        }
     }
     
     

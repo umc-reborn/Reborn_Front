@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21219" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21200"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -770,12 +770,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R85-DN-SOG">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R85-DN-SOG">
                                 <rect key="frame" x="25.999999999999993" y="624" width="84.333333333333314" height="29.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="카페·디저트" cornerStyle="capsule">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" name="Background"/>
                                         <color key="strokeColor" name="mygray"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
@@ -885,12 +884,12 @@
                     <connections>
                         <outlet property="EditAddressTextField" destination="Nlf-eP-GKR" id="YNM-mq-Ank"/>
                         <outlet property="EditBirthTextField" destination="qL5-bO-uPZ" id="vRB-Ly-e3F"/>
-                        <outlet property="EditNicknameTextField" destination="rIp-L4-uK0" id="LC3-qq-Gcj"/>
                         <outlet property="button1" destination="R85-DN-SOG" id="jYG-Td-9mT"/>
                         <outlet property="button2" destination="vdV-fW-aL7" id="pqd-mV-EVb"/>
                         <outlet property="button3" destination="9ST-6n-MWd" id="ETg-nT-6FB"/>
                         <outlet property="button4" destination="VYN-Rs-4fK" id="not-Ye-GCj"/>
                         <outlet property="button5" destination="CwZ-o0-MpE" id="8Kf-uD-94E"/>
+                        <outlet property="categoryLabel" destination="z1D-Uq-kkP" id="dUw-Lh-zyS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gms-VX-nFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

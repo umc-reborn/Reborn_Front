@@ -14,7 +14,6 @@ class PersonalHomeViewController: UIViewController {
     
     var userText : Int = 0
     var userNickNameText : String = ""
-    let username = UserDefaults.standard.string(forKey: "userNickName")
 
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
@@ -32,6 +31,7 @@ class PersonalHomeViewController: UIViewController {
         // addShadow()
         print("*********")
 //        print(userNickName)
+        let username = UserDefaults.standard.string(forKey: "userNickName")
         nickNameLabel.text = "\(username!)"
         contentView.addSubview(floatingButton)
         
