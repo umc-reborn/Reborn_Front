@@ -11,17 +11,17 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     
     var nickname = UserDefaults.standard.string(forKey: "userNickName")
     
-    
-    
+
+    let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
+    let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
+    let button3 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
+    let button4 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
+    let button5 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
+
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var EditNicknameTextField: UITextField!
     @IBOutlet var EditAddressTextField: UITextField!
     @IBOutlet var EditBirthTextField: UITextField!
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var button2: UIButton!
-    @IBOutlet var button3: UIButton!
-    @IBOutlet var button4: UIButton!
-    @IBOutlet var button5: UIButton!
     
     
     @objc func FinishEditMode() {
@@ -31,7 +31,11 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createButton()
+        createButton1()
+        createButton2()
+        createButton3()
+        createButton4()
+        createButton5()
         
         print("유저 닉네임은 \(nickname)")
         
@@ -76,32 +80,184 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         textFieldDidEndEditing(EditBirthTextField)
     }
     
-    // 카테고리 버튼
-    func createButton() {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
-        button.configuration = createConfig()
-        view.addSubview(button)
-        button.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 16).isActive = true
+    // 카테고리 버튼1
+    func createButton1() {
+        button1.configuration = createConfig()
+        view.addSubview(button1)
+        button1.translatesAutoresizingMaskIntoConstraints = false
+        button1.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
+        button1.leadingAnchor.constraint(equalTo: self.categoryLabel.leadingAnchor, constant: 0).isActive = true
+        
+        button1.changesSelectionAsPrimaryAction = true
+
+        button1.configurationUpdateHandler =  { button in
+          var config = button.configuration
+          config?.title = "카페·디저트"
+            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
+          config?.image = button.isSelected
+          ? UIImage(named: "checkedicon")
+            : .none
+          button.configuration = config
+        }
+        
+        button1.layer.borderWidth = 1
+        button1.layer.borderColor = UIColor.lightGray.cgColor
+        button1.layer.cornerRadius = 16
     }
     
     func createConfig() -> UIButton.Configuration {
         var config: UIButton.Configuration = .filled()
-        config.baseBackgroundColor = .systemRed
-        config.title = "Hey~"
         config.titleAlignment = .center
         config.cornerStyle = .capsule
-        config.image = UIImage(systemName: "heart")
+        config.baseForegroundColor = .darkGray
+        var titleAttr = AttributedString.init("button1")
+        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config.attributedTitle = titleAttr
         return config
     }
     
+    // 카테고리 버튼2
+    func createButton2() {
+        button2.configuration = createConfig2()
+        view.addSubview(button2)
+        button2.translatesAutoresizingMaskIntoConstraints = false
+        button2.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
+        button2.leadingAnchor.constraint(equalTo: self.button1.trailingAnchor, constant: 8).isActive = true
+        
+        button2.changesSelectionAsPrimaryAction = true
 
-    @IBAction func isCategoryPressed(_ sender: UIButton) {
-//        switch sender.tag {
-//        case 1:
-//
-//        default:
-//            break
-//        }
+        button2.configurationUpdateHandler =  { button in
+          var config = button.configuration
+          config?.title = "편의·생활"
+            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
+          config?.image = button.isSelected
+          ? UIImage(named: "checkedicon")
+            : .none
+          button.configuration = config
+        }
+        
+        button2.layer.borderWidth = 1
+        button2.layer.borderColor = UIColor.lightGray.cgColor
+        button2.layer.cornerRadius = 16
+    }
+    
+    func createConfig2() -> UIButton.Configuration {
+        var config: UIButton.Configuration = .filled()
+        config.titleAlignment = .center
+        config.cornerStyle = .capsule
+        config.baseForegroundColor = .darkGray
+        var titleAttr = AttributedString.init("button2")
+        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config.attributedTitle = titleAttr
+        return config
+    }
+    
+    // 카테고리 버튼3
+    func createButton3() {
+        button3.configuration = createConfig3()
+        view.addSubview(button3)
+        button3.translatesAutoresizingMaskIntoConstraints = false
+        button3.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
+        button3.leadingAnchor.constraint(equalTo: self.button2.trailingAnchor, constant: 8).isActive = true
+        
+        button3.changesSelectionAsPrimaryAction = true
+
+        button3.configurationUpdateHandler =  { button in
+          var config = button.configuration
+          config?.title = "반찬"
+            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
+          config?.image = button.isSelected
+          ? UIImage(named: "checkedicon")
+            : .none
+          button.configuration = config
+        }
+        
+        button3.layer.borderWidth = 1
+        button3.layer.borderColor = UIColor.lightGray.cgColor
+        button3.layer.cornerRadius = 16
+    }
+    
+    func createConfig3() -> UIButton.Configuration {
+        var config: UIButton.Configuration = .filled()
+        config.titleAlignment = .center
+        config.cornerStyle = .capsule
+        config.baseForegroundColor = .darkGray
+        var titleAttr = AttributedString.init("button3")
+        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config.attributedTitle = titleAttr
+        return config
+    }
+    
+    // 카테고리 버튼4
+    func createButton4() {
+        button4.configuration = createConfig4()
+        view.addSubview(button4)
+        button4.translatesAutoresizingMaskIntoConstraints = false
+        button4.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
+        button4.leadingAnchor.constraint(equalTo: self.button3.trailingAnchor, constant: 8).isActive = true
+        
+        button4.changesSelectionAsPrimaryAction = true
+
+        button4.configurationUpdateHandler =  { button in
+          var config = button.configuration
+          config?.title = "패션"
+            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
+          config?.image = button.isSelected
+          ? UIImage(named: "checkedicon")
+            : .none
+          button.configuration = config
+        }
+        
+        button4.layer.borderWidth = 1
+        button4.layer.borderColor = UIColor.lightGray.cgColor
+        button4.layer.cornerRadius = 16
+    }
+    
+    func createConfig4() -> UIButton.Configuration {
+        var config: UIButton.Configuration = .filled()
+        config.titleAlignment = .center
+        config.cornerStyle = .capsule
+        config.baseForegroundColor = .darkGray
+        var titleAttr = AttributedString.init("button4")
+        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config.attributedTitle = titleAttr
+        return config
+    }
+    
+    // 카테고리 버튼5
+    func createButton5() {
+        button5.configuration = createConfig5()
+        view.addSubview(button5)
+        button5.translatesAutoresizingMaskIntoConstraints = false
+        button5.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
+        button5.leadingAnchor.constraint(equalTo: self.button4.trailingAnchor, constant: 8).isActive = true
+        
+        button5.changesSelectionAsPrimaryAction = true
+
+        button5.configurationUpdateHandler =  { button in
+          var config = button.configuration
+          config?.title = "반찬"
+            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
+          config?.image = button.isSelected
+          ? UIImage(named: "checkedicon")
+            : .none
+          button.configuration = config
+        }
+        
+        button5.layer.borderWidth = 1
+        button5.layer.borderColor = UIColor.lightGray.cgColor
+        button5.layer.cornerRadius = 16
+    }
+    
+    func createConfig5() -> UIButton.Configuration {
+        var config: UIButton.Configuration = .filled()
+        config.titleAlignment = .center
+        config.cornerStyle = .capsule
+        config.baseForegroundColor = .darkGray
+        var titleAttr = AttributedString.init("button5")
+        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config.attributedTitle = titleAttr
+        return config
     }
     
     
