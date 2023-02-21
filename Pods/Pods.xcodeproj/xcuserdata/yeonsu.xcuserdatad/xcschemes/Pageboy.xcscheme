@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "06201A837B408E21A6F416D49AF9A573"
-               BuildableName = "Pageboy.framework"
+               BuildableName = "libPageboy.a"
                BlueprintName = "Pageboy"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

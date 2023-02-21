@@ -770,98 +770,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R85-DN-SOG">
-                                <rect key="frame" x="25.999999999999993" y="624" width="84.333333333333314" height="29.666666666666629"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="카페·디저트" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background">
-                                        <color key="strokeColor" name="mygray"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                    <color key="baseForegroundColor" name="mygray"/>
-                                    <color key="baseBackgroundColor" name="Background"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-fW-aL7">
-                                <rect key="frame" x="116.33333333333331" y="624" width="73" height="29.666666666666629"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="편의·생활" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background">
-                                        <color key="strokeColor" name="mygray"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                    <color key="baseForegroundColor" name="mygray"/>
-                                    <color key="baseBackgroundColor" name="Background"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ST-6n-MWd">
-                                <rect key="frame" x="195.33333333333334" y="624" width="46.666666666666657" height="29.666666666666629"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="반찬" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background">
-                                        <color key="strokeColor" name="mygray"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                    <color key="baseForegroundColor" name="mygray"/>
-                                    <color key="baseBackgroundColor" name="Background"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYN-Rs-4fK">
-                                <rect key="frame" x="247.99999999999997" y="624" width="46.666666666666657" height="29.666666666666629"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="패션" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background">
-                                        <color key="strokeColor" name="mygray"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                    <color key="baseForegroundColor" name="mygray"/>
-                                    <color key="baseBackgroundColor" name="Background"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwZ-o0-MpE">
-                                <rect key="frame" x="300.66666666666669" y="624" width="46.666666666666686" height="29.666666666666629"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="기타" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background">
-                                        <color key="strokeColor" name="mygray"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                    <color key="baseForegroundColor" name="mygray"/>
-                                    <color key="baseBackgroundColor" name="Background"/>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R8t-0C-PsQ"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="vdV-fW-aL7" firstAttribute="top" secondItem="z1D-Uq-kkP" secondAttribute="bottom" constant="26" id="1zF-bG-1e5"/>
                             <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="pyk-ws-fAU" secondAttribute="trailing" constant="26" id="2ls-Qh-jjs"/>
                             <constraint firstItem="sHP-pb-uuD" firstAttribute="centerX" secondItem="aS0-eS-dZr" secondAttribute="centerX" id="6TA-7j-kAE"/>
-                            <constraint firstItem="CwZ-o0-MpE" firstAttribute="top" secondItem="z1D-Uq-kkP" secondAttribute="bottom" constant="26" id="6u2-pS-gRu"/>
                             <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="cx4-m7-ZMq" secondAttribute="trailing" constant="26" id="7I2-nQ-9Be"/>
                             <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="Ky2-kI-7r0" secondAttribute="trailing" constant="115" id="98C-R3-vDt"/>
                             <constraint firstItem="cx4-m7-ZMq" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="9k1-K6-eZF"/>
                             <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="z1D-Uq-kkP" secondAttribute="trailing" constant="26" id="Bqi-8j-Urv"/>
                             <constraint firstItem="cx4-m7-ZMq" firstAttribute="top" secondItem="Ky2-kI-7r0" secondAttribute="bottom" constant="16" id="MXj-Io-hIa"/>
-                            <constraint firstItem="vdV-fW-aL7" firstAttribute="leading" secondItem="R85-DN-SOG" secondAttribute="trailing" constant="6" id="S99-uY-4R4"/>
                             <constraint firstItem="sHP-pb-uuD" firstAttribute="top" secondItem="R8t-0C-PsQ" secondAttribute="top" constant="150" id="XGh-Yn-Ksh"/>
-                            <constraint firstItem="CwZ-o0-MpE" firstAttribute="leading" secondItem="VYN-Rs-4fK" secondAttribute="trailing" constant="6" id="YOP-IQ-n0e"/>
                             <constraint firstItem="z1D-Uq-kkP" firstAttribute="top" secondItem="paQ-Sq-7n6" secondAttribute="bottom" constant="32" id="b7J-6A-VFR"/>
-                            <constraint firstItem="VYN-Rs-4fK" firstAttribute="top" secondItem="z1D-Uq-kkP" secondAttribute="bottom" constant="26" id="dP2-n5-IeH"/>
                             <constraint firstItem="paQ-Sq-7n6" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="g32-i2-Qmb"/>
                             <constraint firstItem="Ky2-kI-7r0" firstAttribute="top" secondItem="R8t-0C-PsQ" secondAttribute="top" constant="8" id="gvd-8f-SPc"/>
                             <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="9tO-MF-F3D" secondAttribute="trailing" constant="26" id="itO-1a-Cen"/>
                             <constraint firstItem="paQ-Sq-7n6" firstAttribute="top" secondItem="pyk-ws-fAU" secondAttribute="bottom" constant="8" id="jQQ-yE-4WP"/>
                             <constraint firstItem="9tO-MF-F3D" firstAttribute="top" secondItem="cx4-m7-ZMq" secondAttribute="bottom" constant="20" id="kny-F9-kMT"/>
                             <constraint firstItem="9tO-MF-F3D" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="lsv-CZ-kmn"/>
-                            <constraint firstItem="R85-DN-SOG" firstAttribute="top" secondItem="z1D-Uq-kkP" secondAttribute="bottom" constant="26" id="m0i-lk-AaG"/>
                             <constraint firstItem="pyk-ws-fAU" firstAttribute="top" secondItem="9tO-MF-F3D" secondAttribute="bottom" constant="20" id="onS-ci-l4J"/>
-                            <constraint firstItem="9ST-6n-MWd" firstAttribute="leading" secondItem="vdV-fW-aL7" secondAttribute="trailing" constant="6" id="opz-1n-cBd"/>
-                            <constraint firstItem="9ST-6n-MWd" firstAttribute="top" secondItem="z1D-Uq-kkP" secondAttribute="bottom" constant="26" id="sxD-3M-XCB"/>
                             <constraint firstItem="pyk-ws-fAU" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="vkK-n8-1Fy"/>
                             <constraint firstItem="z1D-Uq-kkP" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="wUH-n6-0Mc"/>
-                            <constraint firstItem="VYN-Rs-4fK" firstAttribute="leading" secondItem="9ST-6n-MWd" secondAttribute="trailing" constant="6" id="xbW-iq-BmW"/>
-                            <constraint firstItem="R85-DN-SOG" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="zyw-dr-2UZ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -869,7 +799,8 @@
                     <connections>
                         <outlet property="EditAddressTextField" destination="Nlf-eP-GKR" id="YNM-mq-Ank"/>
                         <outlet property="EditBirthTextField" destination="qL5-bO-uPZ" id="vRB-Ly-e3F"/>
-                        <outlet property="EditNicknameTextField" destination="rIp-L4-uK0" id="LC3-qq-Gcj"/>
+                        <outlet property="EditNicknameTextField" destination="rIp-L4-uK0" id="SAe-d3-KPd"/>
+                        <outlet property="categoryLabel" destination="z1D-Uq-kkP" id="dUw-Lh-zyS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gms-VX-nFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1591,7 +1522,7 @@
             <color red="1" green="0.30196078431372547" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mygray">
-            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

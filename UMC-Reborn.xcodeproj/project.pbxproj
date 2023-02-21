@@ -70,6 +70,7 @@
 		952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */; };
 		952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */; };
 		952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */; };
+		95369A1229A485860041F837 /* WillLikeShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369A1129A485860041F837 /* WillLikeShopCell.swift */; };
 		953AEE96298F3C1D008AAE8A /* NewShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE95298F3C1D008AAE8A /* NewShopModel.swift */; };
 		953AEE9C298F4FC2008AAE8A /* NewShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9B298F4FC2008AAE8A /* NewShopService.swift */; };
 		953AEEA0298F9C27008AAE8A /* BestReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */; };
@@ -280,6 +281,7 @@
 		952CB2A02977569C00BD7CD7 /* NewShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopViewController.swift; sourceTree = "<group>"; };
 		952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopViewController.swift; sourceTree = "<group>"; };
 		952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewController.swift; sourceTree = "<group>"; };
+		95369A1129A485860041F837 /* WillLikeShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillLikeShopCell.swift; sourceTree = "<group>"; };
 		953AEE95298F3C1D008AAE8A /* NewShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopModel.swift; sourceTree = "<group>"; };
 		953AEE9B298F4FC2008AAE8A /* NewShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopService.swift; sourceTree = "<group>"; };
 		953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewModel.swift; sourceTree = "<group>"; };
@@ -680,6 +682,7 @@
 				95E9FFB8297FAFE10073DF2B /* LatestSearchedCell.swift */,
 				95E9FFBA29808CB10073DF2B /* SearchResultViewController.swift */,
 				95148B3C298256FF004A1A57 /* SearchResultTableViewCell.swift */,
+				95369A1129A485860041F837 /* WillLikeShopCell.swift */,
 			);
 			path = SearchVC;
 			sourceTree = "<group>";
@@ -968,8 +971,6 @@
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
-			outputPaths = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn-resources.sh\"\n";
@@ -1141,6 +1142,7 @@
 				C74FEE48297199FE00BFC8D0 /* StoreManageViewController.swift in Sources */,
 				953AEE9C298F4FC2008AAE8A /* NewShopService.swift in Sources */,
 				0B94771C29899E2400B5829A /* InterestSecondViewController.swift in Sources */,
+				95369A1229A485860041F837 /* WillLikeShopCell.swift in Sources */,
 				0B68DDE3299287D900A988FA /* JoinNeighborPost.swift in Sources */,
 				0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */,
 				C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */,
@@ -1336,7 +1338,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nayeon/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1386,7 +1388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nayeon/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
