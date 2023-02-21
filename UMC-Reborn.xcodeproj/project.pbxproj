@@ -159,7 +159,6 @@
 		C7284AA3298D0B8F009A70E7 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA2298D0B8F009A70E7 /* HTTPManager.swift */; };
 		C7284AA5298D23BA009A70E7 /* APIJjimPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */; };
 		C7284AAA298EA703009A70E7 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA9298EA703009A70E7 /* APIConstants.swift */; };
-		C7284AAC298EA726009A70E7 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAB298EA726009A70E7 /* NetworkResult.swift */; };
 		C7284AAE298EAECE009A70E7 /* RebornService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAD298EAECE009A70E7 /* RebornService.swift */; };
 		C7284AB0298FFB25009A70E7 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAF298FFB25009A70E7 /* StoreModel.swift */; };
 		C7284AB2298FFBA1009A70E7 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AB1298FFBA1009A70E7 /* StoreService.swift */; };
@@ -1040,7 +1039,6 @@
 				0B94770C29899D8C00B5829A /* ServiceViewController.swift in Sources */,
 				0B94771029899DA400B5829A /* EmailViewController.swift in Sources */,
 				2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */,
-				C7284AAC298EA726009A70E7 /* NetworkResult.swift in Sources */,
 				2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */,
 				C7062990299BE144002F5C1A /* ModalFirstViewController.swift in Sources */,
 				2FB97CFD2992A9EA006D4420 /* RebornHistoryDetailModel.swift in Sources */,
