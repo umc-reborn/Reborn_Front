@@ -16,6 +16,7 @@ class BestReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .clear
+        
         // Do any additional setup after loading the view.
         BestReviewService.shared.getBestReview{ result in
                     switch result {
@@ -44,7 +45,7 @@ extension BestReviewViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReviewCell", for: indexPath) as! BestReviewCollectionViewCell
-        
+        cell.gradationView.setGradient(color1: UIColor.clear, color2: UIColor.black.withAlphaComponent(0.8))
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 10
         cell.layer.borderWidth = 0
