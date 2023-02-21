@@ -50,7 +50,12 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 169
+        let rebornData = rebornWholeDatas[indexPath.section]
+        if (rebornData.status == "ACTIVE") {
+            return 169
+        } else {
+            return 131
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -76,7 +81,11 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.nicknameLabel.text = rebornData.userNickname
         cell.foodnameLabel.text = rebornData.productName
         cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
-        cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
+        if (rebornData.status == "ACTIVE") {
+            cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
+        } else {
+            cell.limitLabel.text = ""
+        }
         if (rebornData.status == "ACTIVE") {
             cell.statusLabel.text = "진행중"
         } else {
