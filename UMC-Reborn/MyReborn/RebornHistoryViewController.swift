@@ -91,6 +91,6 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
             }
             self.RebornHistoryTableView.reloadData()
         }
-        //        print(historyDatas)
+                print("여기는 \(historyDatas)")
     }
 }
