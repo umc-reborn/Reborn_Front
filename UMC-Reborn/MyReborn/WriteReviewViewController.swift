@@ -105,13 +105,16 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
 //    }
     
     @IBAction func postReviewButton(_ sender: UIButton) {
-        
-        DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
-        
+
         let parmeterDatas = postReviewReqModel(userIdx: self.rebornAdd, rebornIdx: self.rebornIdx, reviewScore: scoreInt, reviewComment: self.textField.text ?? "", reviewImage: self.imageUrl.result ?? "")
         APIMyRebornHandlerPost.instance.SendingPostReview(parameters: parmeterDatas) { result in self.writeRebornData = result }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func AddImageUrl(_ sender: UIButton) {
+        DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+    }
+    
     
     class DiaryPost {
         static let instance = DiaryPost()
