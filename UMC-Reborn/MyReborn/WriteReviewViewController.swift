@@ -17,6 +17,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet var AddImageView: UIImageView!
     
+    
     let rebornAdd = UserDefaults.standard.integer(forKey: "userIndex")
     
     let rebornIdx = UserDefaults.standard.integer(forKey: "rebornIndex")
@@ -105,6 +106,8 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
 //    }
     
     @IBAction func postReviewButton(_ sender: UIButton) {
+        
+        // TODO: rebornIdx 수정 필요
 
         let parmeterDatas = postReviewReqModel(userIdx: self.rebornAdd, rebornIdx: self.rebornIdx, reviewScore: scoreInt, reviewComment: self.textField.text ?? "", reviewImage: self.imageUrl.result ?? "")
         APIMyRebornHandlerPost.instance.SendingPostReview(parameters: parmeterDatas) { result in self.writeRebornData = result }

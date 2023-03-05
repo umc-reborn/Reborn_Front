@@ -20,11 +20,15 @@ class RebornHistoryDetailViewController: UIViewController {
     @IBOutlet weak var storeAddr: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var statusImage: UIImageView!
+    @IBOutlet var contentView: UIView!
     
     var apiData: RebornHistoryDetailResponse!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.contentView.layer.cornerRadius = 10
+        self.productImg.layer.cornerRadius = 10
         
         RebornHistoryDetailService.shared.getRebornHistoryDetail { result in
             switch result {
