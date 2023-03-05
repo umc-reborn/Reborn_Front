@@ -7,17 +7,6 @@
 
 import UIKit
 
-var Rdata = [
-    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/28aed2c9-fc93-4792-bbd1-496be6e24084.jpg"]),
-    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/a8e868cf-f1cb-4ac4-a83a-82f3710039d5.jpg"]),
-    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6e3b607a-a2c4-4512-b48e-205b660bc0e9.jpg"]),
-    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/dd1d2acb-eb7f-402e-b653-8d18fa49bffb.jpg"]),
-    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/80559139-8da4-47bd-8be5-cd51d038c6b7.jpeg"]),
-    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/538ede0c-3eb5-4019-b09b-0c12c269e7b7.jpeg"]),
-    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/88cc6d35-4618-4322-8567-720ec92abb8e.jpeg"]),
-    ReviewStoreListModel(reviewImgList:  ["https://rebornbucket.s3.ap-northeast-2.amazonaws.com/cefb81ee-e334-42f9-a41b-f9f9c1e52e8e.jpeg"]),
-]
-
 class StoreReviewViewController: UIViewController {
     
     let storeReview = UserDefaults.standard.integer(forKey: "userIdx")
@@ -51,7 +40,7 @@ class StoreReviewViewController: UIViewController {
     
     func reviewResult() {
         
-        let url = APIConstants.baseURL + "/review/store/\(String(storeReview))/buz"
+        let url = APIConstants.baseURL + "/review/store/\(String(storeReview))/buz2"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }

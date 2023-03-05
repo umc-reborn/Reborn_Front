@@ -14,7 +14,6 @@ class StoreReviewTableViewCell: UITableViewCell {
     var reviewImageDatas : [ReviewListModel] = []
     
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var reviewStar_a: UIImageView!
@@ -25,18 +24,19 @@ class StoreReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var foodnameLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var reviewComment: UILabel!
+    @IBOutlet var reviewImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpCollectionView()
         flowlayout.minimumLineSpacing = 0
         reviewComment.sizeToFit()
 //        reviewImageResult()
-        print("Rdata: \(Rdata)")
         
         personImage.layer.cornerRadius = self.personImage.frame.size.height / 2
         personImage.layer.masksToBounds = true
         personImage.clipsToBounds = true
+        reviewImg.layer.cornerRadius = 10
+        reviewImg.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,11 +47,6 @@ class StoreReviewTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-    }
-    
-    func setUpCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
     
 //    func reviewImageResult() {
@@ -107,37 +102,6 @@ class StoreReviewTableViewCell: UITableViewCell {
 //    }
 }
 
-extension StoreReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return self.reviewImageDatas[(self.reviewImageDatas.count)-1].reviewImgList.count
-        return Rdata[collectionView.tag].reviewImgList.count
-//        if (ddd.reviewImage1 != nil && ddd.reviewImage2 == nil && ddd.reviewImage3 == nil && ddd.reviewImage4 == nil && ddd.reviewImage5 == nil) {
-//            return 1
-//        } else if (ddd.reviewImage1 != nil && ddd.reviewImage2 != nil && ddd.reviewImage3 == nil && ddd.reviewImage4 == nil && ddd.reviewImage5 == nil) {
-//            return 2
-//        } else if (ddd.reviewImage1 != nil && ddd.reviewImage2 != nil && ddd.reviewImage3 != nil && ddd.reviewImage4 == nil && ddd.reviewImage5 == nil) {
-//            return 3
-//        } else if (ddd.reviewImage1 != nil && ddd.reviewImage2 != nil && ddd.reviewImage3 != nil && ddd.reviewImage4 != nil && ddd.reviewImage5 == nil) {
-//            return 4
-//        } else {
-//            return 5
-//        }
-//        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoreReview_CollectionViewCell", for: indexPath) as! StoreReviewCollectionViewCell
-//        let reviewDatas = reviewImageDatas[collectionView.tag].reviewImgList[indexPath.row]
-//        cell.imageView.load(url: url!)
-//        let reviewDatas = reviewImageDatas[collectionView.hash].reviewImg
-        let url = URL(string: Rdata[collectionView.tag].reviewImgList[indexPath.row])
-        cell.reviewImageView.load(url: url!)
-        return cell
-    }
-}
-
 extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -164,6 +128,7 @@ extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource 
 //        let ddd : [String] = [rebornData.reviewImage1 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png", rebornData.reviewImage2 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png", rebornData.reviewImage3 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png", rebornData.reviewImage4 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png", rebornData.reviewImage5 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png"]
 //        print(ddd)
         let url = URL(string: rebornData.userImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/20959843-0000-46c8-aaff-38342f93dd47.jpg")
+        let url2 = URL(string: rebornData.reviewImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/20959843-0000-46c8-aaff-38342f93dd47.jpg")
         let createTime = rebornData.reviewCreatedAt
         let yearTime = createTime.prefix(4)
         let monthTime1 = createTime[String.Index(encodedOffset: 5)]
@@ -173,6 +138,7 @@ extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource 
         cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2)"
         cell.nicknameLabel.text = rebornData.userNickname
         cell.personImage.load(url: url!)
+        cell.reviewImg.load(url: url2!)
         cell.foodnameLabel.text = rebornData.productName
         if (rebornData.reviewScore == 5) {
             cell.reviewStar_a.image = UIImage(named: "review_star")
@@ -206,7 +172,6 @@ extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource 
             cell.reviewStar_e.image = UIImage(named: "review_star_gray")
         }
         cell.reviewComment.text = rebornData.reviewComment
-        cell.collectionView.tag = indexPath.row
         return cell
     }
     
