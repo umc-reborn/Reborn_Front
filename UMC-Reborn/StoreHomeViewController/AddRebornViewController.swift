@@ -38,7 +38,6 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var TimeSwitch: UISwitch!
     @IBOutlet weak var countTextfield: UITextField!
     
-    
     let serverURL = "http://www.rebornapp.shop/s3"
     
     var Number = 0
@@ -103,6 +102,7 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
 
     @IBAction func backButton(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+        print(AddImageView.image ?? "")
     }
 
     @IBAction func editTimeButton(_ sender: Any) {
@@ -223,7 +223,6 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
 //            print(imageUrl ?? "")
 //            print(imageUrl ?? "")
 //        }
-    
         let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
         APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
         self.presentingViewController?.dismiss(animated: true, completion: nil)

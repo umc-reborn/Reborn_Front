@@ -111,9 +111,17 @@ extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.timeImage.isHidden = true
 //            cell.timeImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
+            cell.foodName.translatesAutoresizingMaskIntoConstraints = false
+            cell.foodName.topAnchor.constraint(equalTo: cell.limitTimeLabel.topAnchor, constant: 5).isActive = true
+            cell.rebornButton.alpha = 0
+            cell.rebornButton.isEnabled = false
             cell.limitTimeLabel.isHidden = true
             cell.rebornButton.isHidden = true
+            cell.countLabel.translatesAutoresizingMaskIntoConstraints = false
+            cell.countLabel.topAnchor.constraint(equalTo: cell.limitTimeLabel.topAnchor, constant: 5).isActive = true
+            cell.FTimageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 10.79).isActive = true
 //            cell.limitTimeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
+            
         }
         
         return cell

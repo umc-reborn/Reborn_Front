@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78D238F14F9636CC4A666316CE5BE663"
-               BuildableName = "libPods-UMC-Reborn.a"
+               BuildableName = "Pods_UMC_Reborn.framework"
                BlueprintName = "Pods-UMC-Reborn"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
