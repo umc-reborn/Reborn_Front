@@ -16,6 +16,8 @@ class RebornEnrollViewController: UIViewController {
     var storeText2: Int = 0
     
     var rebornDatas: [RebornListModel] = []
+    var rebornData: RebornDeleteresultModel!
+    var rebornActiveData: RebornActiveresultModel!
     
     @IBOutlet weak var EnrollTableView: UITableView!
     

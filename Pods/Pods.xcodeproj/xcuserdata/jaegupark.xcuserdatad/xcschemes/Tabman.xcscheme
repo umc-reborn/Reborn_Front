@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3EF26018CD886BA3143044A409D6D0B9"
-               BuildableName = "libTabman.a"
+               BuildableName = "Tabman.framework"
                BlueprintName = "Tabman"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

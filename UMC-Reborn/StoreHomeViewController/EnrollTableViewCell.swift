@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SampleProtocol5:AnyObject {
+    func activeSwitchTapped(index: Int)
+}
+
 class EnrollTableViewCell: UITableViewCell {
     
     @IBOutlet weak var RebornSwitch: UISwitch!
@@ -17,6 +21,9 @@ class EnrollTableViewCell: UITableViewCell {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var Description: UILabel!
     @IBOutlet weak var CautionLabel: UILabel!
+    
+    var index: Int = 0
+    var cellDelegate: SampleProtocol5?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,6 +52,7 @@ class EnrollTableViewCell: UITableViewCell {
             TimeImageView.alpha = 0
             timeLabel.alpha = 0
         }
+        self.cellDelegate?.activeSwitchTapped(index: index)
     }
 }
 
@@ -62,7 +70,13 @@ class EnrollTableViewCell: UITableViewCell {
 //    }
 //}
 
-extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource {
+extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource, SampleProtocol5 {
+    
+    func activeSwitchTapped(index: Int) {
+        let rebornData = rebornDatas[index]
+        let parameterDatas = RebornActiveModel(rebornIdx: rebornData.rebornIdx)
+        APIHandlerActivePost.instance.SendingPostReborn(rebornId: rebornData.rebornIdx, parameters: parameterDatas) { result in self.rebornActiveData = result }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return rebornDatas.count
@@ -94,20 +108,36 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
         cell.CautionLabel.text = rebornData.productGuide
         cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
         cell.timeLabel.text = "\(minuteLimit1)\(minuteLimit2)분 내 수령"
+        if (rebornData.status == "ACTIVE") {
+            cell.RebornSwitch.isOn = true
+            cell.timeLabel.alpha = 1
+            cell.TimeImageView.alpha = 1
+        } else {
+            cell.RebornSwitch.isOn = false
+            cell.timeLabel.alpha = 0
+            cell.TimeImageView.alpha = 0
+        }
 //        cell.foodName.text = FoodArray[indexPath.section]
 //        cell.timeLabel.text = "\(TimeArray[indexPath.section])분 내 수령"
 //        cell.countLabel.text = "남은 수량: \(CountArray[indexPath.section])"
 //        cell.Description.text = DescriptionArray[indexPath.section]
 //        cell.CautionLabel.text = CautionArray[indexPath.section]
+        cell.index = indexPath.section
+        cell.cellDelegate = self
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .normal, title: nil) { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
-                    success(true)
-                }
-                delete.backgroundColor = .white
+            print("삭제 클릭 됨")
+            let rebornData = self.rebornDatas[indexPath.section]
+            let parmeterDatas = RebornDeleteModel(rebornIdx: rebornData.rebornIdx)
+            APIHandlerDeletePost.instance.SendingPostReborn(rebornId: rebornData.rebornIdx, parameters: parmeterDatas) { result in self.rebornData = result }
+            
+            success(true)
+        }
+        delete.backgroundColor = .white
         delete.image = UIImage(named: "ic_delete")
         
         return UISwipeActionsConfiguration(actions: [delete])
