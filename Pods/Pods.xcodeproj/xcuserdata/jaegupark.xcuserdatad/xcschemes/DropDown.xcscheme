@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E9F9401E9C74C0C393164FD8D86D0068"
-               BuildableName = "libDropDown.a"
+               BuildableName = "DropDown.framework"
                BlueprintName = "DropDown"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -22,7 +22,7 @@ struct ReviewListModel: Codable {
     let productName: String
     let reviewScore: Int
     let reviewComment: String
-    let reviewImgList: [String?]
+    let reviewImg: String?
     let reviewCreatedAt: String
 }
 
@@ -36,8 +36,6 @@ struct ReviewStoreList: Codable {
 struct ReviewStoreListModel: Codable {
     let reviewImgList: [String]
 }
-
-
 
 struct ReviewCountList: Codable {
     let isSuccess: Bool
