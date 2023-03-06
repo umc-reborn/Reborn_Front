@@ -27,11 +27,6 @@ class PersonalHomeViewController: UIViewController {
 //    let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        // addShadow()
-        // addShadow()
-        print("*********")
-//        print(userNickName)
         nickNameLabel.text = "\(username!)"
         contentView.addSubview(floatingButton)
         

@@ -19,4 +19,6 @@ struct APIConstants {
     static let reviewURL = baseURL + "/review/best"
     
     static let inprogressURL = baseURL + "/reborns/inprogress/user/"
+    
+    static let willLikeshopURL = baseURL + "/store/likeable-stores"
 }
