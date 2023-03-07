@@ -13,7 +13,9 @@ class BestReviewService {
     static let shared = BestReviewService()
     private init() {}
     
+    
     func getBestReview(completion: @escaping (NetworkResult<Any>) -> Void) {
+//        let firstObject: SearchResultViewController = .init()
         let url: String! = APIConstants.reviewURL
              let header: HTTPHeaders = ["Content-type": "application/json"]
 

@@ -3,7 +3,7 @@
 ////  UMC-Reborn
 ////
 ////  Created by 김예린 on 2023/02/11.
-////
+//// resultData4
 //
 //import Foundation
 //import Alamofire
@@ -15,7 +15,7 @@
 //class CompanyNumPost {
 //    static let instance = CompanyNumPost()
 //
-//    func sendingPostCNumber(parameters2: CNumberModel, handler:@escaping(_ result: )
+//    func sendingPostCNumber(parameters3: CNumberModel, handler:@escaping(_ result: )
 //
 //
 //

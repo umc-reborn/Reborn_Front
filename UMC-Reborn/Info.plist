@@ -13,6 +13,10 @@
 			</array>
 		</dict>
 	</array>
+	<key>WKRunsIndependentlyOfCompanionApp</key>
+	<string></string>
+	<key>CFBundleExecutable</key>
+	<string>UMC-Reborn</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>96aff053724db2845775875f956af948</string>
 	<key>NSAppTransportSecurity</key>
@@ -20,6 +24,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>LSApplicationQueriesSchemes</key>

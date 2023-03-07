@@ -92,7 +92,7 @@ class SearchResultViewController: UIViewController {
     // MARK: - API
     func searchResult(){
        let text = keyword
-        print(text)
+//        print(text)
         var url = APIConstants.baseURL + "/store/search?keyword=\(text)"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
@@ -121,7 +121,7 @@ class SearchResultViewController: UIViewController {
             // 데이터가 존재하면 출력
             if let safeData = data {
                 
-                print(String(decoding: safeData, as: UTF8.self))
+//                print(String(decoding: safeData, as: UTF8.self))
                         
                 do {
                     let decoder = JSONDecoder()
@@ -130,7 +130,7 @@ class SearchResultViewController: UIViewController {
                     decodedData.result.sort { $0.storeName.count < $1.storeName.count }
 //
                     self.searchDatas = decodedData.result
-                    print(searchDatas)
+//                    print(searchDatas)
                     DispatchQueue.main.async {
                         self.ResultTableView.reloadData()
                         print("count : \(self.searchDatas.count)")
@@ -171,7 +171,7 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         let cell: SearchResultTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! SearchResultTableViewCell
         
         let searchData = searchDatas[indexPath.row]
-        let url = URL(string: searchData.storeImage)
+        let url = URL(string: searchData.userImage)
         cell.shopImg.load(url: url!)
         cell.shopnameLabel.text = searchData.storeName
         cell.ratingnum.text = String(searchData.storeScore)

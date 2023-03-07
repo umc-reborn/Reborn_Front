@@ -9,30 +9,29 @@ import Foundation
 import Alamofire
 
 struct Model3: Encodable {
-    var email:String
+    var userEmail:String
 }
 
 class identificationPost {
     static let instance = identificationPost()
     
     func SendingPostNemail(parameters2: Model3, handler:@escaping (_ result: emailModel) ->(Void)){
-        
-        let url = "http://www.rebornapp.shop/users/login/mailConfirm?userEmail={유저이메일}"
+        let url = "http://www.rebornapp.shop/users/login/mailConfirm"
         let headers:HTTPHeaders = [
-            .contentType("application/json;charset=utf-8")
+            "content-type" : "application/json;charset=utf-8"
         ]
         
         AF.request(url, method:.post, parameters: parameters2, encoder:
                     JSONParameterEncoder.default, headers: headers).response { ressponse in switch ressponse.result {
                     case .success(let data):
-                        let resultData3 = String(data: ressponse.data!, encoding: .utf8)
+                        //let resultData3 = String(data: ressponse.data!, encoding: .utf8)
                         do {
                             let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
-                            print(json)
+                            print(json) // {} 로그에 뜬 애들
                             
                             let jsonresult = try JSONDecoder().decode(emailModel.self, from: data!)
-                            handler(jsonresult)
-                            
+                            handler(jsonresult) // 디코드 한 것
+                            print(jsonresult) // 프린트 됨  여기서 result 값 꺼내오기 
                         }catch {
                             print(String(describing: error))
                         }
@@ -47,6 +46,6 @@ class identificationPost {
 struct emailModel : Codable {
     let isSuccess : Bool
     let code : Int
-    let Message: String
+    let message: String
     let result: String
     }

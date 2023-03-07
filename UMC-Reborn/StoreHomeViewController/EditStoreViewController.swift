@@ -14,12 +14,20 @@ protocol SampleProtocol3:AnyObject {
     func addressSend(data: String)
 }
 
-class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol4 {
+    
+    let editStore = UserDefaults.standard.integer(forKey: "userIdx")
     
     var storecategory = [" 카페·디저트", " 반찬", " 패션", " 편의·생활", " 기타"]
     let picker = UIPickerView()
     
     weak var delegate : SampleProtocol3?
+    
+    func addressSend(data: String) {
+        storeaddressTextfield.text = data
+        storeaddressTextfield.sizeToFit()
+        print(data)
+    }
     
     @IBOutlet weak var storenameTextfield: UITextField!
     @IBOutlet weak var storecategoryTextfield: UITextField!
@@ -75,7 +83,92 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         enrollAlertEvent()
         self.imagePickerController.delegate = self
         addGestureRecognizer()
+        
+        storeResult()
+        
+        let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
+    
+    
+    @IBAction func addressButton(_ sender: Any) {
+        guard let svc2 = self.storyboard?.instantiateViewController(identifier: "StoreAddressViewController") as? StoreAddressViewController else {
+                    return
+                }
+        svc2.delegate = self
+        
+        self.present(svc2, animated: true)
+    }
+    
+    func storeResult() {
+        
+        let url = APIConstants.baseURL + "/store/\(editStore)"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let decodedData = try decoder.decode(StoreList.self, from: safeData)
+                    let storeDatas = decodedData.result
+                    print(storeDatas)
+                    DispatchQueue.main.async {
+                        let url = URL(string: storeDatas.storeImage ?? "")
+                        self.StoreImageView.load(url: url!)
+                        self.storenameTextfield.text = "\(storeDatas.storeName)"
+                        if (storeDatas.category == "CAFE") {
+                            self.storecategoryTextfield.text = "카페·디저트"
+                        } else if (storeDatas.category == "FASHION") {
+                            self.storecategoryTextfield.text = "패션"
+                        } else if (storeDatas.category == "SIDEDISH") {
+                            self.storecategoryTextfield.text = "반찬"
+                        } else if (storeDatas.category == "LIFE") {
+                            self.storecategoryTextfield.text = "편의·생활"
+                        } else {
+                            self.storecategoryTextfield.text = "기타"
+                        }
+                    }
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     @IBAction func saveButton(_ sender: Any) {
         let text = storenameTextfield.text
@@ -101,7 +194,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     func textFieldDidBeginEditing(_ textField: UITextField) {
            // textField.borderStyle = .line
         textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
-            textField.layer.borderWidth = 1.0
+        textField.layer.borderWidth = 1.0
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {

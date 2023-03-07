@@ -115,7 +115,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="IY1-HI-9Q7"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="ic_like_gray"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="ic_like"/>
                                                     <connections>
                                                         <action selector="JjimTapped:" destination="zlG-em-wNk" eventType="touchUpInside" id="ket-dA-top"/>
                                                     </connections>
@@ -227,7 +227,7 @@
         <image name="arrow_down" width="25.5" height="21"/>
         <image name="cake_image" width="93.5" height="90"/>
         <image name="full_star" width="40" height="40"/>
-        <image name="ic_like_gray" width="30.5" height="30.5"/>
+        <image name="ic_like" width="30.5" height="30.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -74,8 +74,7 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+
         errorMessage.isHidden = true
         
         let mygray = UIColor(named: "mygray") // 만들어둔 컬러 쓰려면 선언 먼저
@@ -215,10 +214,12 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
             rvc.userNickname = text2
             rvc.jwt = jwtResult
             
-
             // 화면이동
             navigationController?.pushViewController(rvc, animated: true)
-        
+            
+            // userDefault - jwt 저장
+            UserDefaults.standard.set(jwtResult, forKey: "userJwt")
+            
             }
             
         }
@@ -253,6 +254,21 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
 //             print("넘겨주는 userIdx값은 \(historyVC.userIdx)")
 
              
+             // 화면이동
+             //navigationController?.pushViewController(rvc, animated: true)
+            
+            // 네비게이션 바 숨기기
+            //navigationController?.setNavigationBarHidden(true, animated: false)
+            
+            
+            /*
+            // 화면 넘기기 + 데이터 넘겨주기
+             let something2 = trainData?.result
+             guard let text = something2?.userIdx else {return}
+             guard let text2 = something2?.userNickname else {return}
+             let something3 = UIStoryboard.init(name: "Personal_Home", bundle: nil)
+             guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalHomeVC") as? PersonalHomeViewController else {return}
+             
 
 /*
 // 화면 넘기기 + 데이터 넘겨주기
@@ -266,4 +282,4 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
  
  // 화면이동
  navigationController?.pushViewController(rvc, animated: true)
- */
+ */*/

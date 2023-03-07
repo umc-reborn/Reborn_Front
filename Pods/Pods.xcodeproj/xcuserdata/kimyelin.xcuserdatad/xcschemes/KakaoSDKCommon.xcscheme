@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "205D6EF1B8DCC8419E2F53266F6ADCDC"
-               BuildableName = "KakaoSDKCommon.framework"
+               BuildableName = "libKakaoSDKCommon.a"
                BlueprintName = "KakaoSDKCommon"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

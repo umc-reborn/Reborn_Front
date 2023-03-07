@@ -1,4 +1,4 @@
-framework module KakaoSDKUser {
+module KakaoSDKUser {
   umbrella header "KakaoSDKUser-umbrella.h"
 
   export *

@@ -14,7 +14,6 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
     
     var historyDatas: [RebornHistoryResponse] = []
     var userIdx:Int?
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.totalNum.text = "\(historyDatas.count)"
@@ -36,20 +35,40 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         cell.category.text = historyData.category
         let taskIndex = historyData.rebornTaskIdx
         UserDefaults.standard.set(taskIndex, forKey: "rebornTaskIdx")
-        print("taskIdx는 \(taskIndex)")
-        
-        //        self.historyDatas = response.result
-        //        let taskIdx = historyData.rebornTaskIdx
-        //        print("taskIdx는 \(taskIdx)")
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let historyData = historyDatas[indexPath.row]
+
+        switch historyData.status {
+
+        case "COMPLETE": self.performSegue(withIdentifier: "completeSegue", sender: nil)
+
+        case "ACTIVE": self.performSegue(withIdentifier: "historySegue", sender: nil)
+
+        default:
+
+            return
+
+        }
+
     }
 
     
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.topItem?.title = ""
         
         RebornHistoryTableView.dataSource = self
         RebornHistoryTableView.delegate = self
@@ -60,7 +79,7 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
             switch result {
             case .success(let response):
                 print("성공")
-                dump(response)
+                                dump(response)
                 guard let response = response as? RebornHistoryModel else {
                     print("실패")
                     break

@@ -20,7 +20,7 @@ struct joinNeiModel: Encodable {
 }
 
 // 이미지도 보내야 함
-
+//parameter4 response2 resultData5
 class JoinNeighborPost {
     static let instance = JoinNeighborPost()
     

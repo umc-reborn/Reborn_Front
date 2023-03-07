@@ -1,4 +1,4 @@
-framework module KakaoSDKAuth {
+module KakaoSDKAuth {
   umbrella header "KakaoSDKAuth-umbrella.h"
 
   export *

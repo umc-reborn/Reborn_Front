@@ -43,12 +43,7 @@ class RebornHistoryDetailViewController: UIViewController {
                 }
                 
                 self.apiData = response.result
-                
-                if self.apiData.status == "ACTIVE" {
-                    self.statusImage.image = UIImage(named: "step1")
-                } else {
-                    self.statusImage.image = UIImage(named: "step2")
-                }
+            
                 
                 let url = URL(string: self.apiData.storeImage)
                 self.storeName.text = self.apiData.storeName

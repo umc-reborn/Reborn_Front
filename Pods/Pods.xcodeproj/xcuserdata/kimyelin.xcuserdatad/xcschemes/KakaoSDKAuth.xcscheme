@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "83CA882AD877ED964BDF66235E416BC1"
-               BuildableName = "KakaoSDKAuth.framework"
+               BuildableName = "libKakaoSDKAuth.a"
                BlueprintName = "KakaoSDKAuth"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
