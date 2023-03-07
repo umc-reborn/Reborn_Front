@@ -21,7 +21,7 @@ class SearchResultViewController: UIViewController {
     @IBOutlet weak var ResultTableView: UITableView!
     
     let dropdown = DropDown()
-    let itemList = ["이름순","별점순","인기순"]
+    let itemList = ["이름순","별점순"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,12 @@ class SearchResultViewController: UIViewController {
         searchResult()
         
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        searchResult()
+//        searchsorted()
+//
+//    }
     
     func setSearchBar(){
         
@@ -85,14 +91,46 @@ class SearchResultViewController: UIViewController {
         dropdown.bottomOffset = CGPoint(x: 0, y: dropView.bounds.height)
         dropdown.selectionAction = { [weak self] (index, item) in
             self!.tfInput.text = item
+            if self!.tfInput.text == "이름순" {
+                 print("이름순 정렬")
+//                 self?.getGoalListsortbyAsc()
+                self!.searchDatas.sort{ $0.storeName < $1.storeName }
+                self!.ResultTableView.reloadData()
+                 
+             } else {
+                 print("별점순 정렬")
+//                 self?.getGoalListsortbyDesc()
+                 self!.searchDatas.sort{ $0.storeScore < $1.storeScore }
+//                 DispatchQueue.main.async {
+                     self!.ResultTableView.reloadData()
+//                }
+                 
+             }
+            
             self!.tfInput.textColor = UIColor.black
             self!.dropView.layer.borderColor = UIColor.red.cgColor
             self!.ivIcon.image = UIImage(systemName:"chevron.down")
+            
         }
         
         dropdown.cancelAction = {[weak self] in
             self?.ivIcon.image = UIImage(systemName:"chevron.down")
         }
+    }
+    
+    func searchsorted(){
+        
+        if tfInput.text! == "이름순" {
+            searchDatas.sort{ $0.storeName < $1.storeName }
+           
+        }
+        else {
+            searchDatas.sort{ $0.storeScore < $1.storeScore }
+        }
+       
+//        DispatchQueue.main.async {
+            self.ResultTableView.reloadData()
+//        }
     }
     
     @IBAction func dropdownClicked(_ sender: Any){
