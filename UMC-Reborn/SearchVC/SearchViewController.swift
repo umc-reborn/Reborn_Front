@@ -54,12 +54,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     private lazy var clearButton: UIButton = {
          let button = UIButton()
          button.setImage(#imageLiteral(resourceName:"ic_Xmark"), for: .normal)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 2)
-        
-//         button.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
+         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 2)
+         button.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
 
          return button
      }()
+    
+    @objc func didTapClearButton() {
+        searchBar.text?.removeAll()
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
@@ -95,6 +98,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         searchBar.rightView = clearButton
         searchBar.rightViewMode = .whileEditing
     }
+    
+
 
 }
 extension SearchViewController {
@@ -112,7 +117,7 @@ extension SearchViewController {
                     return
                 }
         saveSearchInput(text)
-        Resultvc.keyword = text
+        Resultvc.SearchInput = text
         navigationController?.pushViewController(Resultvc, animated: true)
 
     }
@@ -123,6 +128,7 @@ extension SearchViewController {
         latestCV.reloadData()
 
     }
+
 }
 
 extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -181,7 +187,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
 extension SearchViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == latestCV{
-            return 10
+            return 8
         }
          if collectionView == WillLikeShop {
             return 15
