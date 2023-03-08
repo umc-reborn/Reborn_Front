@@ -23,11 +23,9 @@ class ShopLoginViewController: UIViewController, UITextFieldDelegate, UITextView
     
     @IBOutlet weak var IdSecond: UITextField!
     
-    
     @IBOutlet weak var PassWordSecond: UITextField!
     
     @IBOutlet weak var errorLabel2: UILabel!
-    
     
     @IBOutlet weak var LoginButtonSecond: UIButton!
     
@@ -140,6 +138,8 @@ class ShopLoginViewController: UIViewController, UITextFieldDelegate, UITextView
         
         let something5 = trainDataa?.result
         guard let text33 = something5?.storeIdx else {return}
+        guard let text44 = something5?.storeName else {return}
+        guard let jwtResult1 = something5?.jwt else {return}
         let something4 = UIStoryboard.init(name: "StoreTab", bundle: nil)
         guard let rvc1 = something4.instantiateViewController(withIdentifier: "StoreTabBarController") as? StoreTabBarController else {return}
         
@@ -147,6 +147,9 @@ class ShopLoginViewController: UIViewController, UITextFieldDelegate, UITextView
         
         // 화면이동
         self.present(rvc1, animated: true)
+        
+        // userDefault - jwt 저장
+        UserDefaults.standard.set(jwtResult1, forKey: "shopJwt")
     }
     
 }
