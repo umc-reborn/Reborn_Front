@@ -2,7 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<<<<<<< HEAD
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -18,8 +17,6 @@
 	<string></string>
 	<key>CFBundleExecutable</key>
 	<string>UMC-Reborn</string>
-=======
->>>>>>> 4e14ea2c483cc0f1db00d3f07b77e056d7735eee
 	<key>KAKAO_APP_KEY</key>
 	<string>96aff053724db2845775875f956af948</string>
 	<key>NSAppTransportSecurity</key>
