@@ -1,26 +1,25 @@
 //
-//  SearchModel.swift
+//  WillLikeShopModel.swift
 //  UMC-Reborn
 //
-//  Created by nayeon  on 2023/01/31.
+//  Created by nayeon  on 2023/02/26.
 //
 
 import Foundation
 
 
-struct SearchModel : Codable {
+struct WillLikeShopModel : Codable {
     let isSuccess : Bool
     let code : Int
     let message : String
-    var result : [SearchResponse]
+    var result : [LikeShopsponse]
 }
 
-struct SearchResponse : Codable {
+struct LikeShopsponse : Codable {
     let storeIdx: Int
     let storeName : String
     let userImage: String
-    let storeAddress: String
-    let storeDescription : String
+    let hasJjim : Bool
     let storeScore : Float
     let category : String
 }

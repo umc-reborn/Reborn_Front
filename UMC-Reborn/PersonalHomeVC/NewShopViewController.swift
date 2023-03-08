@@ -11,9 +11,9 @@ class NewShopViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
-    var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
-    var imageList: [String] = ["image 1","image 3","image 1","image 3","image 1"]
+//    var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
+//    var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
+//    var imageList: [String] = ["image 1","image 3","image 1","image 3","image 1"]
     
     var newDatas: [NewShopResponse] = []
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class NewShopViewController: UIViewController {
 
 extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shopList.count
+        return newDatas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,9 +51,12 @@ extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.shopImage.layer.cornerRadius = 10
         cell.layer.borderWidth = 0
         
-        cell.shopName.text = shopList[indexPath.row]
-        cell.shopLocation.text = shopLocationList[indexPath.row]
-        cell.shopImage.image = UIImage(named: imageList[indexPath.row]) ?? UIImage()
+        let newData = newDatas[indexPath.row]
+        cell.shopName.text = newData.storeName
+        cell.shopLocation.text = newData.category
+        let url = URL(string: newData.userImage)
+        cell.shopImage.load(url: url!)
+//        cell.shopImage.image = UIImage(named: imageList[indexPath.row]) ?? UIImage()
 //        cell.shopImage.reloadData()
         return cell
     }

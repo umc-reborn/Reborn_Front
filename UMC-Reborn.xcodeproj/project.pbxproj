@@ -77,6 +77,8 @@
 		952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */; };
 		952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */; };
 		95369A1229A485860041F837 /* WillLikeShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369A1129A485860041F837 /* WillLikeShopCell.swift */; };
+		95369A1429ACBB2E0041F837 /* WillLikeShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369A1329ACBB2E0041F837 /* WillLikeShopModel.swift */; };
+		95369A1629ACBC670041F837 /* WillLikeShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369A1529ACBC670041F837 /* WillLikeShopService.swift */; };
 		953AEE96298F3C1D008AAE8A /* NewShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE95298F3C1D008AAE8A /* NewShopModel.swift */; };
 		953AEE9C298F4FC2008AAE8A /* NewShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9B298F4FC2008AAE8A /* NewShopService.swift */; };
 		953AEEA0298F9C27008AAE8A /* BestReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */; };
@@ -296,6 +298,8 @@
 		952CB2A229775CBC00BD7CD7 /* PopularShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShopViewController.swift; sourceTree = "<group>"; };
 		952CB2A4297768D200BD7CD7 /* PopularTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewController.swift; sourceTree = "<group>"; };
 		95369A1129A485860041F837 /* WillLikeShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillLikeShopCell.swift; sourceTree = "<group>"; };
+		95369A1329ACBB2E0041F837 /* WillLikeShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillLikeShopModel.swift; sourceTree = "<group>"; };
+		95369A1529ACBC670041F837 /* WillLikeShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillLikeShopService.swift; sourceTree = "<group>"; };
 		953AEE95298F3C1D008AAE8A /* NewShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopModel.swift; sourceTree = "<group>"; };
 		953AEE9B298F4FC2008AAE8A /* NewShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopService.swift; sourceTree = "<group>"; };
 		953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewModel.swift; sourceTree = "<group>"; };
@@ -674,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				95C036562988EBDE00599354 /* SearchModel.swift */,
+				95369A1329ACBB2E0041F837 /* WillLikeShopModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -691,6 +696,7 @@
 				9561BA892994712600A4B33B /* InprogressService.swift */,
 				2F7C0AB72994DAD000BC5F9A /* ReviewManageService.swift */,
 				2F3A2322299A877B002B183B /* PostReviewService.swift */,
+				95369A1529ACBC670041F837 /* WillLikeShopService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1079,6 +1085,7 @@
 				C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */,
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */,
+				95369A1429ACBB2E0041F837 /* WillLikeShopModel.swift in Sources */,
 				C7C400F529B09127008EB125 /* RebornDeletePost.swift in Sources */,
 				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
 				2FF615372992D1EC00143369 /* RebornHistoryModel.swift in Sources */,
@@ -1124,7 +1131,6 @@
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
 				2F3A2323299A877B002B183B /* PostReviewService.swift in Sources */,
 				2F3A2321299A875C002B183B /* PostReviewModel.swift in Sources */,
-				0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */,
 				C7062996299BF03D002F5C1A /* ModalFirstTableViewCell.swift in Sources */,
 				0B0D66CC298D0BFD00E5220F /* APINeiLoginPost.swift in Sources */,
 				0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */,
@@ -1152,6 +1158,7 @@
 				C7062998299BF04A002F5C1A /* ModalSecondTableViewCell.swift in Sources */,
 				95E9FFA72979C8350073DF2B /* BestReviewCollectionViewCell.swift in Sources */,
 				C7EF98282990D8FB00480DD9 /* RebornStatusService.swift in Sources */,
+				95369A1629ACBC670041F837 /* WillLikeShopService.swift in Sources */,
 				C74FEE4A2971B40800BFC8D0 /* EditStoreViewController.swift in Sources */,
 				C7284AAE298EAECE009A70E7 /* RebornService.swift in Sources */,
 				2FADC52D298BC71200C09566 /* ChangePasswordViewController.swift in Sources */,
@@ -1371,7 +1378,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimyelin/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nayeon/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1421,7 +1428,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimyelin/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nayeon/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;

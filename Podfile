@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '11.0'
 
 target 'UMC-Reborn' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -10,9 +10,9 @@ target 'UMC-Reborn' do
   pod 'Alamofire'
   pod 'Tabman', '~> 2.9'
   pod 'DropDown'
-  pod 'KakaoSDKCommon', '~> 2.13.1'
-  pod 'KakaoSDKAuth', '~> 2.13.1'
-  pod 'KakaoSDKUser', '~> 2.13.1'
+  pod 'KakaoSDKCommon', ‘~> 2.11.3’
+  pod 'KakaoSDKAuth', ‘~> 2.11.3’
+  pod 'KakaoSDKUser', ‘~> 2.11.3’
 post_install do |installer|
     installer.pods_project.targets.each do |target|
       target.build_configurations.each do |config|
