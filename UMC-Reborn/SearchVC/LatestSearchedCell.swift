@@ -15,16 +15,4 @@ class LatestSearchedCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//    }
-    
-//    func configureCell(with label: String) {
-//        layer.borderColor = UIColor.black.cgColor
-//        layer.borderWidth = 1
-//        layer.cornerRadius = frame.height / 2
-//
-//        keyword.text = "\(label)"
-//        deleteBtn.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
-//    }
 }

@@ -12,6 +12,7 @@ class SearchResultViewController: UIViewController {
     
     var keyword : String = ""
     var searchDatas: [SearchResponse] = []
+
     
     @IBOutlet weak var countNum: UILabel!
     @IBOutlet weak var tfInput: UITextField!
@@ -100,7 +101,7 @@ class SearchResultViewController: UIViewController {
              } else {
                  print("별점순 정렬")
 //                 self?.getGoalListsortbyDesc()
-                 self!.searchDatas.sort{ $0.storeScore < $1.storeScore }
+                 self!.searchDatas.sort{ $0.storeScore > $1.storeScore }
 //                 DispatchQueue.main.async {
                      self!.ResultTableView.reloadData()
 //                }
@@ -117,21 +118,8 @@ class SearchResultViewController: UIViewController {
             self?.ivIcon.image = UIImage(systemName:"chevron.down")
         }
     }
-    
-    func searchsorted(){
-        
-        if tfInput.text! == "이름순" {
-            searchDatas.sort{ $0.storeName < $1.storeName }
-           
-        }
-        else {
-            searchDatas.sort{ $0.storeScore < $1.storeScore }
-        }
-       
-//        DispatchQueue.main.async {
-            self.ResultTableView.reloadData()
-//        }
-    }
+
+
     
     @IBAction func dropdownClicked(_ sender: Any){
         dropdown.show()
