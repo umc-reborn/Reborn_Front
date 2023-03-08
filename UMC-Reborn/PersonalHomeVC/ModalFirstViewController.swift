@@ -1,44 +1,45 @@
 //
-//  FirstTabViewController.swift
+//  ModalFirstViewController.swift
 //  UMC-Reborn
 //
-//  Created by jaegu park on 2023/01/25.
+//  Created by jaegu park on 2023/02/15.
 //
 
 import UIKit
 
-class FirstTabViewController: UIViewController {
-    
-    let firstTab = UserDefaults.standard.integer(forKey: "userIdx")
-    
-    var keyword : String = ""
+class ModalFirstViewController: UIViewController {
     
     var rebornDatas: [RebornListModel] = []
     
-    @IBOutlet weak var FTtableView: UITableView!
+    var storeIdm2: Int = 0
+    
+    let modalfirst = UserDefaults.standard.integer(forKey: "storeid")
     
     
+    @IBOutlet var mftableView: UITableView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FTtableView.delegate = self
-        FTtableView.dataSource = self
-        FTtableView.rowHeight = UITableView.automaticDimension
-        FTtableView.estimatedRowHeight = UITableView.automaticDimension
+        mftableView.delegate = self
+        mftableView.dataSource = self
+        mftableView.rowHeight = UITableView.automaticDimension
+        mftableView.estimatedRowHeight = UITableView.automaticDimension
         
-        FTtableView.layer.masksToBounds = true // any value you want
-        FTtableView.layer.shadowOpacity = 0.1// any value you want
-        FTtableView.layer.shadowRadius = 10 // any value you want
-        FTtableView.layer.shadowOffset = .init(width: 5, height: 10)
+        mftableView.layer.masksToBounds = true // any value you want
+        mftableView.layer.shadowOpacity = 0.1// any value you want
+        mftableView.layer.shadowRadius = 10 // any value you want
+        mftableView.layer.shadowOffset = .init(width: 5, height: 10)
         
         rebornResult()
     }
     
     func rebornResult() {
         
-        let text = keyword
+//        let text = keyword
         
-        let url = APIConstants.baseURL + "/reborns/store/\(String(firstTab))/status?status="
+        let url = APIConstants.baseURL + "/reborns/store/\(String(modalfirst))/status?status="
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -66,7 +67,7 @@ class FirstTabViewController: UIViewController {
                     self.rebornDatas = decodedData.result
                     print(rebornDatas)
                     DispatchQueue.main.async {
-                        self.FTtableView.reloadData()
+                        self.mftableView.reloadData()
                         print("count: \(self.rebornDatas.count)")
                     }
                 } catch {
@@ -75,18 +76,24 @@ class FirstTabViewController: UIViewController {
             }
         }.resume()
     }
-}
     
+    @objc func shareButtonTapped2(sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornCautionViewController") as? RebornCautionViewController else { return }
+        nextVC.modalPresentationStyle = .overCurrentContext
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
+}
 
-extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
+extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
             return rebornDatas.count
     }
     
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 1
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         .leastNormalMagnitude
@@ -94,35 +101,29 @@ extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-        let cell: FirstTabTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FirstTab_TableViewCell", for: indexPath) as! FirstTabTableViewCell
+        let cell: ModalFirstTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ModalFirst_TableViewCell", for: indexPath) as! ModalFirstTableViewCell
             
         let rebornData = rebornDatas[indexPath.section]
         let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
-        cell.FTimageView.load(url: url!)
+        cell.mfImageView.load(url: url!)
         cell.foodName.text = rebornData.productName
         cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
-        cell.DescriptionLabel.text = rebornData.productComment
-        cell.LimitLabel.text = rebornData.productGuide
+        cell.descriptionLabel.text = rebornData.productComment
+        cell.cautionLabel.text = rebornData.productGuide
         
         if (rebornData.status == "ACTIVE") {
             cell.timeImage.isHidden = false
-            cell.limitTimeLabel.isHidden = false
+            cell.timeLabel.isHidden = false
             cell.rebornButton.isHidden = false
         } else {
             cell.timeImage.isHidden = true
 //            cell.timeImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
-            cell.foodName.translatesAutoresizingMaskIntoConstraints = false
-            cell.foodName.topAnchor.constraint(equalTo: cell.limitTimeLabel.topAnchor, constant: 5).isActive = true
-            cell.rebornButton.alpha = 0
-            cell.rebornButton.isEnabled = false
-            cell.limitTimeLabel.isHidden = true
+            cell.timeLabel.isHidden = true
             cell.rebornButton.isHidden = true
-            cell.countLabel.translatesAutoresizingMaskIntoConstraints = false
-            cell.countLabel.topAnchor.constraint(equalTo: cell.limitTimeLabel.topAnchor, constant: 5).isActive = true
-            cell.FTimageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 10.79).isActive = true
 //            cell.limitTimeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
-            
         }
+        cell.rebornButton.tag = indexPath.section
+        cell.rebornButton.addTarget(self, action: #selector(shareButtonTapped2(sender:)), for: .touchUpInside)
         
         return cell
     }
@@ -136,4 +137,3 @@ extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-

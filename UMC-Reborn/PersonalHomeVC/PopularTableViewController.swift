@@ -112,15 +112,24 @@ extension PopularTableViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //상세페이지 이동
-//        let storyboard = UIStoryboard(name: "StoreTab", bundle: Bundle.main)
-//        guard let detailViewController = storyboard.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else { return }
-    
-        
-        
+            tableView.deselectRow(at: indexPath, animated: true)
+            switch indexPath.row {
+            case 0:
+                guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
+                svc1.storeIdm1 = popularshopDatas[0].storeIdx
+                self.present(svc1, animated: true)
+            case 1:
+                guard let svc2 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
+                svc2.storeIdm1 = popularshopDatas[1].storeIdx
+                self.present(svc2, animated: true)
+            case 2:
+                guard let svc3 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
+                svc3.storeIdm1 = popularshopDatas[2].storeIdx
+                self.present(svc3, animated: true)
+            default:
+                return
+            }
     }
-    
-    
+
 }
 

@@ -37,9 +37,19 @@ class SearchResultViewController: UIViewController {
     func setSearchBar(){
         
         //서치바 만들기
-        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 400, height: 0))
-        searchBar.placeholder = "Search"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+        let text = keyword
+        let bounds = UIScreen.main.bounds
+        let width = bounds.size.width //화면 너비
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: width - 50, height: 0))
+        searchBar.placeholder = "\(text)"
+        searchBar.searchTextField.backgroundColor = UIColor.white
+        searchBar.searchTextField.layer.borderColor = UIColor.lightGray.cgColor
+        searchBar.searchTextField.layer.borderWidth = 1.0
+        searchBar.searchTextField.layer.cornerRadius = 4
+        let search = UIBarButtonItem(customView: searchBar)
+        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spacer.width = 26
+        self.navigationItem.rightBarButtonItems = [search, spacer]
             
         }
     

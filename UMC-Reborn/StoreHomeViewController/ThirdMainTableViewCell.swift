@@ -27,6 +27,10 @@ class ThirdMainTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }
 
 extension ThirdMainViewController: UITableViewDelegate, UITableViewDataSource {

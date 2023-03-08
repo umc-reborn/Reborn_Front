@@ -12,7 +12,6 @@ class SecondTabTableViewCell: UITableViewCell {
     let reviewImage = ["Review_image", "Review_image"]
     let flowlayout = UICollectionViewFlowLayout()
     
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var nickName: UILabel!
@@ -24,35 +23,25 @@ class SecondTabTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewStar_d: UIImageView!
     @IBOutlet weak var reviewStar_e: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet var reviewImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        collectionView.delegate = self
-        collectionView.dataSource = self
         flowlayout.minimumLineSpacing = 0
         commentLabel.sizeToFit()
+        
+        personImage.layer.cornerRadius = self.personImage.frame.size.height / 2
+        personImage.layer.masksToBounds = true
+        personImage.clipsToBounds = true
+        reviewImg.layer.cornerRadius = 10
+        reviewImg.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-}
-
-extension SecondTabTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Rdatas[collectionView.tag].reviewImgList.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondTab_CollectionViewCell", for: indexPath) as! SecondTabCollectionViewCell
-        
-        let url = URL(string: Rdatas[collectionView.tag].reviewImgList[indexPath.row])
-        cell.imageView.load(url: url!)
-        return cell
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
 }

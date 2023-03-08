@@ -16,9 +16,9 @@ class StoreTabBarController: UITabBarController {
         tabBar.tintColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1.0)
         tabBar.unselectedItemTintColor = UIColor.black
         tabBar.backgroundColor = .white
-        tabBar.layer.cornerRadius = 30
+        tabBar.layer.cornerRadius = 0
         tabBar.layer.masksToBounds = true
-        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+//        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = .clear

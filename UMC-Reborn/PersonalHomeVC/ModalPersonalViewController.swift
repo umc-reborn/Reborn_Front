@@ -11,6 +11,10 @@ class ModalPersonalViewController: UIViewController {
     
     var storeIdm1: Int = 0
     
+    let modalperson = UserDefaults.standard.integer(forKey: "userIndex")
+    
+    var rebornData:JjimresultModel!
+    
     @IBOutlet var storeImage: UIImageView!
     @IBOutlet var modalButton: UIButton!
     @IBOutlet var modalView: UIView!
@@ -23,7 +27,6 @@ class ModalPersonalViewController: UIViewController {
     @IBOutlet var rebornLabel: UILabel!
     @IBOutlet var jjimLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
-    
     
 
     override func viewDidLoad() {
@@ -44,6 +47,7 @@ class ModalPersonalViewController: UIViewController {
         modalView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
         
         storeResult()
+        UserDefaults.standard.set(storeIdm1, forKey: "storeid")
     }
     
     @IBAction func jjimTapped(_ sender: Any) {
@@ -53,9 +57,9 @@ class ModalPersonalViewController: UIViewController {
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
             likeButton.tintColor = .clear
         } else {
-//            let parmeterData = JjimModel(storeIdx: storeIdm1, userIdx: 3)
-//            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
-//            }
+            let parmeterData = JjimModel(storeIdx: storeIdm1, userIdx: modalperson)
+            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
+            }
             likeButton.isSelected = true
             likeButton.setImage(UIImage(named: "ic_like"), for: .selected)
             likeButton.tintColor = .clear

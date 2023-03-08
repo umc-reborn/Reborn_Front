@@ -36,6 +36,10 @@ class SecondMainTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }
 
 extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource {
