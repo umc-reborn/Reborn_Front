@@ -4,41 +4,44 @@
 //
 //  Created by 김예린 on 2023/01/28.
 //
-
+import Foundation
 import UIKit
 
-//extension FrontCardCreationCollectionViewCell: UITextFieldDelegate {
-//    // ✅ textField 에서 편집을 시작한 후
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        // 키보드 업
-//        textField.becomeFirstResponder()
-//        // 입력 시 textField 를 강조하기 위한 테두리 설정
-//        textField.borderWidth = 1
-//        textField.borderColor = Colors.white.color
-//    }
-//
-//}
-
+ 
 class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
-
+    
+    var apple: String = ""
+    
+    //API
+    var emailData: emailModel!
+    var UserEmailText: String = ""
+    //var textt : String = ""
+    var Something6 : String = ""
+    
+    //get api 선언
+    var Lego : NumCheckModel!
     
     @IBOutlet weak var ProgressView3: UIProgressView!
     
     
-    @IBOutlet weak var nextbuttonEmail: UIButton!
+    @IBOutlet weak var nextbuttonEmail: UIButton! // 다음 버튼
     
-    @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var EmailTextField: UITextField! // 이메일 텍스트필드
     
-    @IBOutlet weak var codeTextField: UITextField!
+    @IBOutlet weak var codeTextField: UITextField! // 인증번호 텍스트필드
     
-    @IBOutlet weak var requestButton: UIButton!
+    @IBOutlet weak var requestButton: UIButton! // 인증 요청 버튼
     
-    @IBOutlet weak var requestCheckButton: UIButton!
+    @IBOutlet weak var requestCheckButton: UIButton! // 인증 확인 버튼
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("ad : who에서 email로 넘어왔음 " + apple) //된다
+        
         //뒤로가기 한글 삭제
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
@@ -65,7 +68,8 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         nextbuttonEmail.setTitleColor(UIColor.mybrown, for: .normal)//버튼 텍스트 색상 설정
         nextbuttonEmail.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_bold", size: 16) //폰트 및 사이즈 설정
         
-//        EmailTextField.addLeftPadding()
+        // 이메일 텍스트필드
+        EmailTextField.addLeftPadding1()
         EmailTextField.placeholder = "이메일을 입력해 주세요"
         EmailTextField.backgroundColor = .white
         EmailTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
@@ -76,7 +80,9 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         EmailTextField.layer.cornerRadius = 4.0
         EmailTextField.clearButtonMode = .always // 한번에 지우기
         
-//        codeTextField.addLeftPadding()
+        
+        // 인증번호 텍스트필드
+        codeTextField.addLeftPadding1()
         codeTextField.placeholder = "인증번호를 입력해주세요"
         codeTextField.backgroundColor = .white
         codeTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
@@ -103,7 +109,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         requestCheckButton.layer.cornerRadius = 4.0
         requestCheckButton.setTitle("인증확인", for: .normal)  // 버튼 텍스트 설정
         requestCheckButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
-        requestButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
+        requestCheckButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
         
         EmailTextField.delegate = self
         codeTextField.delegate = self
@@ -115,15 +121,53 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     }
     
     //작성 중 주황색
-   func textFieldDidBeginEditing(_ textField: UITextField) {
-          // textField.borderStyle = .line
-       textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
-           textField.layer.borderWidth = 1.0
-   }
-
-   func textFieldDidEndEditing(_ textField: UITextField) {
-           textField.layer.borderColor = UIColor.gray.cgColor
-           textField.layer.borderWidth = 1.0
-   }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // textField.borderStyle = .line
+        textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
+        textField.layer.borderWidth = 1.0
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.borderWidth = 1.0
+    }
+    
+    //다음 버튼 누르면 데이터 보내기 : 1. ad 2. 이메일
+    // 인증 번호 같아야 넘어갈거임...인증번호 같은지 확인 후 활성화 되는 함수 만들기
+    //    @IBAction func nextbuttonEmailTapped(_ sender: Any) {
+    //        Something6 = EmailTextField.text ??  // 이메일을 변수에 넣었고
+    //
+    //        let storyBBB = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+    //        guard let rvc2 = storyBBB.instantiateViewController(withIdentifier: "Id_PassWordViewController") as? Id_PassWordViewController else {return}
+    //
+    //        rvc2.apple1 = apple // who에서 email로 온 거 담아서 보낼거임
+    //        rvc2.thisisemail = Something6 // 이메일 담음 (보낼거야)
+    //
+    //
+    //    }
+    
+    //인증요청 누르면 api 넘기기
+    @IBAction func requestButtonTapped() {
+        
+        let paramettaData = Model3(userEmail: EmailTextField.text ?? "")
+        print(paramettaData)
+        identificationPost.instance.SendingPostNemail(parameters2: paramettaData) { result2 in self.emailData = result2 }
+        
+        //let something6 = emailData
+        //guard let textt = emailData?.result else {return}
+        
+        //let decodedData = try JSONDecoder().decode(emailModel.self, from: <#T##Data#>)
+        //self.emailData =
+        
+        UserEmailText = emailData?.result ?? ""
+        print("암호화된 인증 코드 = "+UserEmailText) // 꺼내와야하는데 이게 문제. 알아보기.
+    }
+    
+    //인증번호 확인 버튼, result 값이 암호화된 인증 코드. 위에 버튼의 암호화친구와 이 친구가 같아야 다음 버튼 활성화 가능.
+//    @IBAction func requestCheckButtonTapped() {
+//        
+//        //api get
+//        NumCheckGet.instance.NumCheckGetData(veriCode: codeTextField.text ?? ""){result in self.Lego = result}
+//        
+//    }
 }
-

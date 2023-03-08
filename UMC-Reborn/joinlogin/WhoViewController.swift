@@ -9,7 +9,10 @@ import UIKit
 
 class WhoViewController: UIViewController {
 
-
+    // 데이터 넘겨준 것 
+    var smallStatus44 : String = ""
+    //넘겨줄 것
+    var apple: String = ""
     
     var isChangeLeft = false
     var isChangeRight = false
@@ -74,8 +77,18 @@ class WhoViewController: UIViewController {
     
     @IBAction func NextButtonTouched(_ sender: Any) {
         if (route_Neighbor == 1){
-            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "EmailViewController")
-            self.navigationController?.pushViewController(pushVC!, animated: true)
+            let somethingg = smallStatus44 // 받아온 거 담음(광고 O,X)
+            
+            let pushVC = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+            guard let rvvc = pushVC.instantiateViewController(withIdentifier: "EmailViewController") as? EmailViewController else {return}
+            
+            rvvc.apple = somethingg
+            
+            //화면이동
+            navigationController?.pushViewController(rvvc, animated: true)
+            
+            
+            
         }
         else if (route_Shop == 1){
             let pushVCc = self.storyboard?.instantiateViewController(withIdentifier: "EmailViewSecondController")
@@ -117,6 +130,11 @@ class WhoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("who로 넘어왔음 " + smallStatus44)
+        // 44를 5를 통해 넘길거임. : emailveiwcontroller로 
+        var smallStatus5 : String = ""
+        
         
         NextButtonn.isEnabled = false
         

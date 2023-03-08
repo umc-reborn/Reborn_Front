@@ -27,8 +27,6 @@ class ModalSecondTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        collectionView.delegate = self
-        collectionView.dataSource = self
         flowlayout.minimumLineSpacing = 0
         commentLabel.sizeToFit()
     }
@@ -37,21 +35,5 @@ class ModalSecondTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-}
-
-extension ModalSecondTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondTab_CollectionViewCell", for: indexPath) as! SecondTabCollectionViewCell
-        
-        let url = URL(string: "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/ee808a37-a23d-482f-95e0-b57c5d6cb1cb.jpg")
-        cell.imageView.load(url: url!)
-        return cell
     }
 }

@@ -36,6 +36,10 @@ class FirstMainTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }
 
 extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -83,12 +87,9 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
         if (rebornData.status == "ACTIVE") {
             cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
-        } else {
-            cell.limitLabel.text = ""
-        }
-        if (rebornData.status == "ACTIVE") {
             cell.statusLabel.text = "진행중"
         } else {
+            cell.limitLabel.text = ""
             cell.statusLabel.text = "완료"
         }
         cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2)"
