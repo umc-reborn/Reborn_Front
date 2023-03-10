@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class WriteReviewViewController: UIViewController, UITextViewDelegate {
+class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     var imageUrl: ReviewImageresultModel!
     var writeRebornData:[postReviewReqResultModel]!
@@ -16,11 +16,10 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet var AddImageView: UIImageView!
-    
-    
+
     let rebornAdd = UserDefaults.standard.integer(forKey: "userIndex")
     
-    let rebornIdx = UserDefaults.standard.integer(forKey: "rebornIndex")
+    let rebornIdx = 23
     
     let serverURL = "http://www.rebornapp.shop/s3"
     
@@ -45,7 +44,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
         self.textField.layer.borderWidth = 1.0
         self.textField.layer.borderColor=UIColor.lightGray.cgColor
         self.textField.text = ""
-        self.textField.textColor=UIColor.lightGray
+        self.textField.textColor=UIColor.black
         self.textField.returnKeyType = .done
         self.textField.delegate = self
         self.textField.textContainer.lineFragmentPadding = 8
@@ -117,6 +116,24 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate {
     @IBAction func AddImageUrl(_ sender: UIButton) {
         DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
     }
+    
+    @IBAction func pressedAddButton(_ sender: Any) {
+        self.imagePickerController.delegate = self
+               self.imagePickerController.sourceType = .photoLibrary
+               present(self.imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            AddImageView.image = image
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
+        }
+        
+        picker.dismiss(animated: true, completion: nil) //dismiss를 직접 해야함
+    }
+    
     
     
     class DiaryPost {

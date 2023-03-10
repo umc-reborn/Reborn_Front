@@ -31,8 +31,4 @@ struct ReviewManageModelResponse: Codable {
 
 struct ReviewImg: Codable {
     let reviewImage1: String
-    let reviewImage2: String
-    let reviewImage3: String
-    let reviewImage4: String
-    let reviewImage5: String?
 }

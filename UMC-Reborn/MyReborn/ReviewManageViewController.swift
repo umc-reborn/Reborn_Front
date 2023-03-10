@@ -32,7 +32,7 @@ class ReviewManageViewController: UIViewController {
         ReviewManageService.shared.getUserReview{ result in
             switch result {
             case .success(let response):
-                print("성공")
+                print("리뷰 이미지 불러오기 성공")
 //                dump(response)
                 guard let response = response as? ReviewManageModel else {
                     print("실패")

@@ -61,29 +61,6 @@ class RebornHistoryDetailViewController: UIViewController {
                 self.storeCategory.text = self.apiData.category
                 self.date.text = self.apiData.createdAt
 
-                
-                
-//                self.storeName.text = self.apiData.storeName
-//                if let data = response as? RebornHistoryDetailResponse {
-//                    let url = URL(string: data.storeImage)
-//                    print("데이터 있니?\(data.storeName)")
-//                    self.storeName.text = data.storeName
-//                    self.status.text = data.status
-//                    self.changeCode.text = "\(data.productExchangeCode)"
-//                    self.productName.text = data.productName
-//                    self.productAlert.text = data.productGuide
-//                    self.productDetail.text = data.productComment
-//                    self.productImg.load(url: url!)
-//                    self.storeAddr.text = data.storeAddress
-//                    self.storeCategory.text = data.category
-//                    self.date.text = data.createdAt
-//                } else { print ("data is nil")}
-//
-//                guard let response = response as? RebornHistoryDetailModel else {
-//                    print("실패")
-//                    break
-//                }
-
             default:
                 break
             }
@@ -93,19 +70,13 @@ class RebornHistoryDetailViewController: UIViewController {
     func getData() {
         print("getData() 함수 실행")
     
-//        let url = URL(string: apiData.storeImage)
-//
-//        date.text = apiData.createdAt
-//        storeName.text = apiData.storeName
-//        storeCategory.text = apiData.category
-//        productImg.load(url: url!)
-//        print("\(productImg.load(url: url!))")
-//        productName.text = apiData.productName
-//        productDetail.text = apiData.productComment
-//        changeCode.text = String(apiData.productExchangeCode)
-//        productAlert.text = apiData.productGuide
-//        storeAddr.text = apiData.storeAddress
-//        status.text = apiData.status
     }
 
+    @IBAction func FinishRebornTapped(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AlertViewController") as? AlertViewController else { return }
+        nextVC.modalPresentationStyle = .overCurrentContext
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    
 }
