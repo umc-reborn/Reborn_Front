@@ -7,8 +7,12 @@
 
 import UIKit
 
+protocol ComponentProductCellDelegate {
+    func completeButtonTapped(index: Int)
+    func cancelButtonTapped(index: Int)
+}
+
 class FirstMainTableViewCell: UITableViewCell {
-    
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
@@ -19,6 +23,9 @@ class FirstMainTableViewCell: UITableViewCell {
     @IBOutlet weak var foodimageView: UIImageView!
     @IBOutlet weak var sharecancelButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
+    
+    var index: Int = 0
+    var delegate: ComponentProductCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,9 +47,38 @@ class FirstMainTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
     }
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        self.delegate?.completeButtonTapped(index: index)
+    }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        self.delegate?.cancelButtonTapped(index: index)
+    }
 }
 
-extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource {
+extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, ComponentProductCellDelegate {
+    
+    func cancelButtonTapped(index: Int) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CancelAlertViewController") as? CancelAlertViewController else { return }
+        let rebornData = rebornWholeDatas[index]
+        nextVC.rebornTaskId = rebornData.rebornTaskIdx
+        nextVC.modalPresentationStyle = .overFullScreen
+        self.present(nextVC, animated: true, completion: nil)
+//        let rebornData = rebornWholeDatas[index]
+//        let parameterDatas = RebornCancelModel(rebornTaskIdx: rebornData.rebornTaskIdx)
+//        APIHandlerCancelPost.instance.SendingPostReborn(rebornTaskId: rebornData.rebornTaskIdx, parameters: parameterDatas) { result in self.rebornData = result }
+//        StoreFirsttableView.reloadData()
+    }
+    
+    func completeButtonTapped(index: Int) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController else { return }
+        let rebornData = rebornWholeDatas[index]
+        nextVC.rebornTaskId = rebornData.rebornTaskIdx
+        nextVC.modalPresentationStyle = .overFullScreen
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
             // #warning Incomplete implementation, return the number of sections
@@ -88,14 +124,20 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource {
         if (rebornData.status == "ACTIVE") {
             cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
             cell.statusLabel.text = "진행중"
+            cell.shareButton.isEnabled = true
+            cell.sharecancelButton.isEnabled = true
         } else {
             cell.limitLabel.text = ""
             cell.statusLabel.text = "완료"
+            cell.shareButton.isEnabled = false
+            cell.sharecancelButton.isEnabled = false
         }
         cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2)"
         
-        cell.shareButton.tag = indexPath.section
-        cell.shareButton.addTarget(self, action: #selector(shareButtonTapped(sender:)), for: .touchUpInside)
+        cell.index = indexPath.section
+        cell.delegate = self
+        
+        
         return cell
     }
 }

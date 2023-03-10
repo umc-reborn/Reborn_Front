@@ -42,6 +42,7 @@ class EnrollTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        StoreImageView.image = nil
     }
 
     @IBAction func timeSwitch(_ sender: Any) {
@@ -76,6 +77,14 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
         let rebornData = rebornDatas[index]
         let parameterDatas = RebornActiveModel(rebornIdx: rebornData.rebornIdx)
         APIHandlerActivePost.instance.SendingPostReborn(rebornId: rebornData.rebornIdx, parameters: parameterDatas) { result in self.rebornActiveData = result }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rebornData = rebornDatas[indexPath.section]
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "EditRebornViewController") as? EditRebornViewController else { return }
+        nextVC.modalPresentationStyle = .overFullScreen
+        nextVC.rebornId = rebornData.rebornIdx
+        self.present(nextVC, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -135,6 +144,10 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
             let parmeterDatas = RebornDeleteModel(rebornIdx: rebornData.rebornIdx)
             APIHandlerDeletePost.instance.SendingPostReborn(rebornId: rebornData.rebornIdx, parameters: parmeterDatas) { result in self.rebornData = result }
             
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                  
+                  self.rebornResult()
+            }
             success(true)
         }
         delete.backgroundColor = .white

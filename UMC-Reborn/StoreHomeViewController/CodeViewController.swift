@@ -9,6 +9,11 @@ import UIKit
 
 class CodeViewController: UIViewController, UITextFieldDelegate {
 
+    var rebornTaskId : Int = 0
+    
+    var rebornData: RebornCompleteresultModel!
+    
+    let DidDismissEditRebornViewController: Notification.Name = Notification.Name("DidDismissEditRebornViewController")
     
     @IBOutlet weak var codeTextfield: UITextField!
     @IBOutlet weak var codeokButton: UIButton!
@@ -17,8 +22,10 @@ class CodeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("넘겨받은 값은 \(String(rebornTaskId))")
+        
         codeView.clipsToBounds = true
-        codeView.layer.cornerRadius = 20
+        codeView.layer.cornerRadius = 15
         codeView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
 
         codeokButton.layer.cornerRadius = 5
@@ -53,9 +60,16 @@ class CodeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func shareDoneButton(_ sender: Any) {
+        let exchangeCode = Int(codeTextfield.text ?? "") ?? 0
+        let parameterDatas = RebornCompleteModel(rebornTaskIdx: rebornTaskId, productExchangeCode: exchangeCode)
+        APIHandlerCompletePost.instance.SendingPostReborn(parameters: parameterDatas) { result in self.rebornData = result }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView3"), object: nil, userInfo: nil)
+    }
     
     @objc func textFieldEdited(textField: UITextField) {
             

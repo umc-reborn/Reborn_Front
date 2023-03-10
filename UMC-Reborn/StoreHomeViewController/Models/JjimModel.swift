@@ -20,7 +20,7 @@ struct JjimListModel: Codable {
     let storeName: String
     let storeImage: String?
     let storeCategory: String
-    let storeScore: Int
+    let storeScore: Float
 }
 
 

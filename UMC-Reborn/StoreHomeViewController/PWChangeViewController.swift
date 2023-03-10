@@ -9,6 +9,7 @@ import UIKit
 
 class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
+    let pwChange = UserDefaults.standard.integer(forKey: "userIdx")
     
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var newpwTextField: UITextField!
@@ -17,6 +18,7 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
     @IBOutlet weak var pwokErrorLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     
+    var rebornData: PwChangeresultModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,10 +100,24 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
             textField.layer.borderColor = UIColor.gray.cgColor
             textField.layer.borderWidth = 1.0
     }
-
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func pwnextButton(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PwErrorViewController") as? PwErrorViewController else { return }
-        nextVC.modalPresentationStyle = .overCurrentContext
-        self.present(nextVC, animated: true, completion: nil)
+        let parameterDatas = PwChangeModel(userIdx: pwChange, userPwd: pwTextField.text ?? "", userNewPwd: newpwTextField.text ?? "", userNewPwd2: newokTextField.text ?? "")
+        APIHandlerPwPost.instance.SendingPostReborn(token: "", parameters: parameterDatas) { result in self.rebornData = result }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            if (self.rebornData.code == 2111) {
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PwErrorViewController") as? PwErrorViewController else { return }
+                nextVC.modalPresentationStyle = .overFullScreen
+                self.present(nextVC, animated: true, completion: nil)
+            } else {
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PwOkViewController") as? PwOkViewController else { return }
+                nextVC.modalPresentationStyle = .overFullScreen
+                self.present(nextVC, animated: true, completion: nil)
+            }
+        }
     }
 }

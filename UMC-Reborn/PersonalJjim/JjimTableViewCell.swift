@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol JjimCellDelegate {
+    func JjimBtn(index: Int)
+}
+
 class JjimTableViewCell: UITableViewCell {
+    
     
     
     @IBOutlet weak var foodImage: UIImageView!
@@ -15,6 +20,9 @@ class JjimTableViewCell: UITableViewCell {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var JjimButton: UIButton!
+    
+    var index: Int = 0
+    var delegate: JjimCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +38,12 @@ class JjimTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        foodImage.image = nil
+        JjimButton.setImage(UIImage(named: "ic_like"), for: .normal)
+    }
+    
     
     @IBAction func JjimTapped(_ sender: Any) {
         if (JjimButton.image(for: .selected) == UIImage(named: "ic_like")) {
@@ -37,6 +51,7 @@ class JjimTableViewCell: UITableViewCell {
             JjimButton.setImage(UIImage(named: "ic_like_gray"), for: .normal)
             JjimButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
             JjimButton.tintColor = .clear
+            self.delegate?.JjimBtn(index: index)
         } else {
             JjimButton.isSelected = true
             JjimButton.setImage(UIImage(named: "ic_like"), for: .selected)
@@ -46,7 +61,18 @@ class JjimTableViewCell: UITableViewCell {
     
 }
 
-extension JjimViewController: UITableViewDelegate, UITableViewDataSource {
+extension JjimViewController: UITableViewDelegate, UITableViewDataSource, JjimCellDelegate {
+    func JjimBtn(index: Int) {
+        let rebornData = jjimDatas[index]
+        let parmeterData = JjimModel(storeIdx: rebornData.storeIdx, userIdx: jjimVC)
+        APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornJjimData = result
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            self.JjimResult()
+            self.JjimCountResult()
+        }
+    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
             return 1
@@ -71,7 +97,7 @@ extension JjimViewController: UITableViewDelegate, UITableViewDataSource {
         let url = URL(string: rebornData.storeImage ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
         cell.foodImage.load(url: url!)
         cell.storeName.text = rebornData.storeName
-        cell.rateLabel.text = "\(String(rebornData.storeScore))"
+        cell.rateLabel.text = String(rebornData.storeScore)
         if (rebornData.storeCategory == "CAFE") {
             cell.categoryLabel.text = "카페·디저트"
         } else if (rebornData.storeCategory == "FASHION") {
@@ -83,6 +109,10 @@ extension JjimViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.categoryLabel.text = "기타"
         }
+        
+        cell.index = indexPath.row
+        cell.delegate = self
+        
         return cell
 //        } else if (JjimTextField.text == "인기순")  {
 //            JjimTableView.beginUpdates()

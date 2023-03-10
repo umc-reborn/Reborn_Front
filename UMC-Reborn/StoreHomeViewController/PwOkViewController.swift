@@ -17,4 +17,9 @@ class PwOkViewController: UIViewController {
         pwchangeView.layer.cornerRadius = 10
         pwchangeView.clipsToBounds = true
     }
+    
+    
+    @IBAction func okButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 }

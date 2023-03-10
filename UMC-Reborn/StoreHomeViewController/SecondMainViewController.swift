@@ -19,6 +19,7 @@ class SecondMainViewController: UIViewController {
     var storesecondText: Int = 0
     
     var rebornGoingDatas: [RebornStatusListModel] = []
+    var rebornData: RebornCancelresultModel!
 
     @IBOutlet weak var StoreSecondtableView: UITableView!
     
@@ -37,6 +38,27 @@ class SecondMainViewController: UIViewController {
         StoreSecondtableView.layer.shadowOffset = .init(width: 5, height: 10)
         
         rebornGoingResult()
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView3"),
+                  object: nil
+                  )
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView9"),
+                  object: nil
+                  )
+    }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            
+            self.rebornGoingResult()
+        }
     }
     
     func rebornGoingResult() {
