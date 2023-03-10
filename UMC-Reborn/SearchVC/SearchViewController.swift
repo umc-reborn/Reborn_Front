@@ -12,12 +12,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet var WillLikeShop: UICollectionView!
     
+    
     @IBOutlet var titleLabel: UILabel!
-    var latestData: [String] = ["베이커리","어쩌구","저쩌구"]
     var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
     var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
     var imageList: [String] = ["image 1","image 3","image 1","image 3","image 1"]
     let username = UserDefaults.standard.string(forKey: "userNickName")
+    
+    private var recentSearchKeywordList: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +29,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         
         self.view.backgroundColor = UIColor(named: "Background")
+        self.latestCV.backgroundColor = UIColor(named: "Background")
         titleLabel.text = "\(username!)"
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         SearchKeywordList()
+     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.searchBar.resignFirstResponder()
@@ -46,12 +54,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     private lazy var clearButton: UIButton = {
          let button = UIButton()
          button.setImage(#imageLiteral(resourceName:"ic_Xmark"), for: .normal)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 2)
-        
-//         button.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
+         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 2)
+         button.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
 
          return button
      }()
+    
+    @objc func didTapClearButton() {
+        searchBar.text?.removeAll()
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
@@ -63,6 +74,20 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    
+    private func SearchKeywordList() {
+         recentSearchKeywordList = UserDefaults.standard.stringArray(forKey: "recentSearchKeywordList") ?? [String]()
+        latestCV.reloadData()
+     }
+    
+    private func saveSearchInput(_ inputKeyword: String) {
+            if inputKeyword.count > 0 {
+                recentSearchKeywordList.append(inputKeyword)
+                UserDefaults.standard.set(recentSearchKeywordList, forKey: "recentSearchKeywordList")
+            }
+        }
+
+    
     func configure(){
         searchBar.layer.borderWidth = 1.0
         searchBar.layer.borderColor = UIColor.lightGray.cgColor
@@ -73,6 +98,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         searchBar.rightView = clearButton
         searchBar.rightViewMode = .whileEditing
     }
+    
+
 
 }
 extension SearchViewController {
@@ -89,25 +116,26 @@ extension SearchViewController {
         guard let Resultvc = self.storyboard?.instantiateViewController(identifier: "SearchResultVC") as? SearchResultViewController else {
                     return
                 }
-        
-        Resultvc.keyword = text
+        saveSearchInput(text)
+        Resultvc.SearchInput = text
         navigationController?.pushViewController(Resultvc, animated: true)
 
     }
     
-//    @objc func deleteSearchList(sender : UIButton) {
-//        latestCV.deleteItems(at: [IndexPath.init(row: sender.tag, section: 0)])
-////        var items = latestData.value
-//        items.remove(at: sender.tag)
-////        latestData.accept(items)
-//    }
+    @objc func deletePreview(sender: UIButton){
+        recentSearchKeywordList.remove(at: sender.tag)
+        UserDefaults.standard.removeObject(forKey: "recentSearchKeywordList")
+        latestCV.reloadData()
+
+    }
+
 }
 
 extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == latestCV {
-            return latestData.count
+            return recentSearchKeywordList.count
             
         }
         if collectionView == WillLikeShop {
@@ -123,12 +151,15 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LatestSearchedCVC", for: indexPath) as! LatestSearchedCell
             
-            cell.keyword.text = latestData[indexPath.row]
+            cell.keyword.text = recentSearchKeywordList[indexPath.row]
             
             cell.layer.cornerRadius = 10
             cell.layer.borderWidth = 0
             cell.keyword.sizeToFit()
             //        cell.backgroundColor =
+            cell.deleteBtn.tag = indexPath.row
+                    cell.deleteBtn.addTarget(self, action: #selector(deletePreview(sender:)), for: .touchUpInside)
+            
             
             return cell
         }
@@ -147,6 +178,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             return shopcell
         }
         return UICollectionViewCell()
+        
     }
     
     
@@ -155,7 +187,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
 extension SearchViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == latestCV{
-            return 10
+            return 8
         }
          if collectionView == WillLikeShop {
             return 15
@@ -166,7 +198,7 @@ extension SearchViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == latestCV{
             let cell = latestCV.dequeueReusableCell(withReuseIdentifier: "LatestSearchedCVC", for: indexPath) as! LatestSearchedCell
-            cell.keyword.text = latestData[indexPath.row]
+            cell.keyword.text = recentSearchKeywordList[indexPath.row]
             cell.keyword.sizeToFit()
             
             let cellWidth = cell.keyword.frame.width + 8 + 25
@@ -182,4 +214,3 @@ extension SearchViewController : UICollectionViewDelegateFlowLayout{
         return CGSize(width: 20, height:15)
     }
 }
-

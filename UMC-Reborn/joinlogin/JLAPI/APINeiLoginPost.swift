@@ -27,7 +27,10 @@ class APINeiLoginPost {
                 switch rresponse.result {
                 case .success(let data):
                     let resultData = String(data: rresponse.data!, encoding: .utf8)
+                    //let encodingEUCKR = CFStringConvertEncodingToNSStringEncoding(0x0422)
+                    //let strUTF8 = String(data: data!, encoding: String.Encoding(rawValue: encodingEUCKR))
                     do {
+//                        var dataString = NSString(data: data!, encoding: CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.EUC_KR.rawValue)))
                         let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                         print(json)
                         
@@ -35,7 +38,7 @@ class APINeiLoginPost {
                         //let something = jsonresult.result
                         handler(jsonresult)
                         
-                    }catch {
+                    }catch let error as NSError {
                         print(String(describing: error)) // 고쳤음
                     }
                 case .failure(let error):
@@ -43,7 +46,7 @@ class APINeiLoginPost {
                 }
             }
         }
- 
+    
 }
 
 struct TrainModel: Codable {

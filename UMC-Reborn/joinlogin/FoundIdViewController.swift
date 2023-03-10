@@ -8,14 +8,39 @@
 import UIKit
 
 class FoundIdViewController: UIViewController {
-
+    
+    var userId1 : String = ""
+    var createdAt1 : String = ""
+  //var image1 : String = ""
+    
+    
     @IBOutlet weak var IdFullButton: UIButton!
     
     @IBOutlet weak var FoundIdLoginButton: UIButton!
     
+    @IBOutlet var imageRound: UIImageView! // 프로필 이미지 
+    
+    @IBOutlet var UrNameLabel: UILabel! // 아이디 뒤 3글자 지워진 label
+    
+    @IBOutlet var joinDateLabel: UILabel! // 가입일 label
+    
+    @IBOutlet var whiteView: UIView! // 뷰 배경
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 표현됨
+        print("유저 아이디 : " + userId1)
+        print("가입일 : " + createdAt1)
+        
+        
+        UrNameLabel.text = userId1
+        joinDateLabel.text = createdAt1
+        
+        // + 이미지 까지
+        //let url = URL(string: 받아온유저이미지스트링값)
+        //imageRound.load(url: url!)
         
         let mybrown = UIColor(named: "mybrown")
         let myorange = UIColor(named: "myorange")
@@ -45,17 +70,17 @@ class FoundIdViewController: UIViewController {
         FoundIdLoginButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
         FoundIdLoginButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 18) //폰트 및 사이즈 설정
         
+        // 그림자
+        whiteView.clipsToBounds = true
+        whiteView.layer.cornerRadius = 20
+        whiteView.layer.masksToBounds = false
+        whiteView.layer.shadowOffset = CGSize(width: 5, height: 10)
+        whiteView.layer.shadowRadius = 10
+        whiteView.layer.shadowOpacity = 0.1
+        
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
