@@ -11,13 +11,9 @@ import Alamofire
 struct postReviewReqModel:Encodable {
     var userIdx:Int
     var rebornIdx:Int
-    var reviewScore:UInt
+    var reviewScore:Int
     var reviewComment:String
-    var reviewImage1:String
-    var reviewImage2:String
-    var reviewImage3:String
-    var reviewImage4:String
-    var reviewImage5:String
+    var reviewImage:String?
 }
 
 class APIMyRebornHandlerPost {

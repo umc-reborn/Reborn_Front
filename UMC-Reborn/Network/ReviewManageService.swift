@@ -10,7 +10,7 @@ import Alamofire
 
 class ReviewManageService {
     
-    var RebornManageServiceUrl = "http://www.rebornapp.shop/reborns/review"
+    var RebornManageServiceUrl = "http://www.rebornapp.shop/review"
     
     static let shared = ReviewManageService()
     private init() {}
