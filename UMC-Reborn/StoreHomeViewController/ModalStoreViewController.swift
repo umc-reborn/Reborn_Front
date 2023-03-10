@@ -11,7 +11,7 @@ class ModalStoreViewController: UIViewController {
     
     let modalStore = UserDefaults.standard.integer(forKey: "userIdx")
     
-    var rebornData:JjimresultModel!
+    var rebornDatas: [RebornListModel] = []
     
     var storeIdm: Int = 0
     
@@ -50,6 +50,19 @@ class ModalStoreViewController: UIViewController {
         modalView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
         
         storeResult()
+        rebornResult()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            if (self.rebornDatas.count >= 1) {
+                let fullText = self.modalButton.titleLabel?.text
+                let attributedString = NSMutableAttributedString(string: fullText ?? "")
+                
+                attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
+                self.modalButton.setAttributedTitle(attributedString, for: .normal)
+            } else {
+                self.modalButton.titleLabel?.text = "진행중인 리본이 없습니다"
+            }
+        }
     }
     
 
@@ -166,6 +179,42 @@ class ModalStoreViewController: UIViewController {
                     print("codingPath:", context.codingPath)
                 } catch {
                     print("error: ", error)
+                }
+            }
+        }.resume()
+    }
+    
+    func rebornResult() {
+        
+        let url = APIConstants.baseURL + "/reborns/store/\(String(modalStore))/status?status="
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decodedData = try JSONDecoder().decode(RebornList.self, from: safeData)
+                    self.rebornDatas = decodedData.result
+                    print(rebornDatas)
+                } catch {
+                    print("Error")
                 }
             }
         }.resume()

@@ -84,8 +84,22 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
         attributedString2.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13), range: (jjimLabel.text! as NSString).range(of: "64"))
         self.jjimLabel.attributedText = attributedString2
         
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView8"),
+                  object: nil
+              )
+        
         storeResult()
     }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+              
+              self.storeResult()
+          }
+      }
     
     func storeResult() {
         
@@ -180,4 +194,11 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
         self.present(svc1, animated: true)
     }
     
+    @IBAction func pwchangeButton(_ sender: Any) {
+        guard let svc2 = self.storyboard?.instantiateViewController(identifier: "PWChangeViewController") as? PWChangeViewController else {
+                    return
+                }
+        
+        self.navigationController?.pushViewController(svc2, animated: true)
+    }
 }

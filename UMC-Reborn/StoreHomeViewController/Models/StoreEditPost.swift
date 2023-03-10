@@ -9,10 +9,11 @@ import Foundation
 import Alamofire
 
 struct StoreEditModel:Encodable {
-    var storeName: String
-    var storeAddress: String
-    var storeDescription: String
-    var category: String
+    var storeName: String?
+    var storeAddress: String?
+    var storeDescription: String?
+    var category: String?
+    var storeImage: String?
 }
 
 class APIHandlerStorePost {

@@ -9,8 +9,6 @@ import UIKit
 
 class RebornEnrollViewController: UIViewController {
     
-    
-    
     let rebornEnroll = UserDefaults.standard.integer(forKey: "userIdx")
     
     var storeText2: Int = 0
@@ -48,10 +46,24 @@ class RebornEnrollViewController: UIViewController {
                   name: NSNotification.Name("DismissDetailView"),
                   object: nil
               )
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification2(_:)),
+                  name: NSNotification.Name("DismissDetailView2"),
+                  object: nil
+              )
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
-          DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+              
+              self.rebornResult()
+          }
+      }
+    
+    @objc func didDismissDetailNotification2(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
               
               self.rebornResult()
           }

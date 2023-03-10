@@ -18,6 +18,7 @@ class FirstMainViewController: UIViewController {
 //    let TimeArray = ["09:12", "10:13"]
     
     var rebornWholeDatas: [RebornStatusListModel] = []
+    var rebornData: RebornCancelresultModel!
     
     @IBOutlet weak var StoreFirsttableView: UITableView!
     
@@ -36,6 +37,27 @@ class FirstMainViewController: UIViewController {
         StoreFirsttableView.layer.shadowOffset = .init(width: 5, height: 10)
         
         rebornWholeResult()
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView3"),
+                  object: nil
+                  )
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView9"),
+                  object: nil
+                  )
+    }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            
+            self.rebornWholeResult()
+        }
     }
     
     func rebornWholeResult() {
@@ -88,11 +110,4 @@ class FirstMainViewController: UIViewController {
             }
         }.resume()
     }
-
-    @objc func shareButtonTapped(sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController else { return }
-        nextVC.modalPresentationStyle = .overCurrentContext
-        self.present(nextVC, animated: true, completion: nil)
-    }
-
 }

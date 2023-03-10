@@ -110,7 +110,7 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.delegate = self
         self.present(nextVC, animated: true, completion: nil)
-        DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+//        DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
     }
     
     func placeholderSetting() {
@@ -287,6 +287,9 @@ extension AddRebornViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             AddImageView?.image = image
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
 //            AddActionEditService.shared.editActivity(file: image) { result in self.imageUrl = result }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")
