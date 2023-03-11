@@ -27,8 +27,6 @@ class JjimViewController: UIViewController {
     @IBOutlet weak var JjimTableView: UITableView!
     @IBOutlet weak var JjimView: UIView!
     @IBOutlet weak var JjimTextField: UITextField!
-    @IBOutlet weak var JjimButton: UIButton!
-    
     
     func initUI() {
         DropDown.appearance().textColor = UIColor.black // 아이템 텍스트 색상
@@ -77,10 +75,10 @@ class JjimViewController: UIViewController {
     }
 
     // View 클릭 시 Action
-    @IBAction func dropdownClicked(_ sender: Any) {
-        dropdown.show() // 아이템 팝업을 보여준다.
-        // 아이콘 이미지를 변경하여 DropDown이 펼쳐진 것을 표현
-    }
+    
+    
+//        print("드롭다운")
+//        dropdown.show()
     
     func JjimResult() {
         

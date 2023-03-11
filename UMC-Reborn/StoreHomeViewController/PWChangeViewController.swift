@@ -10,6 +10,7 @@ import UIKit
 class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     let pwChange = UserDefaults.standard.integer(forKey: "userIdx")
+    let pwToken = UserDefaults.standard.string(forKey: "shopJwt")
     
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var newpwTextField: UITextField!
@@ -107,8 +108,8 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     @IBAction func pwnextButton(_ sender: Any) {
         let parameterDatas = PwChangeModel(userIdx: pwChange, userPwd: pwTextField.text ?? "", userNewPwd: newpwTextField.text ?? "", userNewPwd2: newokTextField.text ?? "")
-        APIHandlerPwPost.instance.SendingPostReborn(token: "", parameters: parameterDatas) { result in self.rebornData = result }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+        APIHandlerPwPost.instance.SendingPostReborn(token: pwToken ?? "", parameters: parameterDatas) { result in self.rebornData = result }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
             if (self.rebornData.code == 2111) {
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PwErrorViewController") as? PwErrorViewController else { return }
                 nextVC.modalPresentationStyle = .overFullScreen
