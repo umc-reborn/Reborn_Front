@@ -13,6 +13,7 @@ target 'UMC-Reborn' do
   pod 'KakaoSDKCommon', ‘~> 2.11.3’
   pod 'KakaoSDKAuth', ‘~> 2.11.3’
   pod 'KakaoSDKUser', ‘~> 2.11.3’
+pod "BSImagePicker", "~> 3.1"
 post_install do |installer|
     installer.pods_project.targets.each do |target|
       target.build_configurations.each do |config|

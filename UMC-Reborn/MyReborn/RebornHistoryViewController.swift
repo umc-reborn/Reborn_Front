@@ -33,8 +33,7 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         cell.status.text = historyData.status
         cell.storeScore.text = String(historyData.storeScore)
         cell.category.text = historyData.category
-        let taskIndex = historyData.rebornTaskIdx
-        UserDefaults.standard.set(taskIndex, forKey: "rebornTaskIdx")
+
 
         return cell
     }
@@ -44,6 +43,8 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         tableView.deselectRow(at: indexPath, animated: true)
         
         let historyData = historyDatas[indexPath.row]
+        
+        let rebornTaskIndex = historyData.rebornTaskIdx
 
         switch historyData.status {
 
@@ -54,8 +55,10 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         default:
 
             return
-
         }
+
+        
+        
 
     }
 
@@ -91,6 +94,6 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
             }
             self.RebornHistoryTableView.reloadData()
         }
-        //        print(historyDatas)
+                print("여기는 \(historyDatas)")
     }
 }

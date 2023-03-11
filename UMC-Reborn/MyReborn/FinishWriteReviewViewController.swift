@@ -16,7 +16,7 @@ class FinishWriteReviewViewController:UIViewController {
     
     @IBAction func onClickButton(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "MyReborn", bundle: nil)
-        guard let rvc = storyboard.instantiateViewController(withIdentifier: "rebornHistoryVC") as? RebornHistoryViewController else {return}
+        guard let rvc = storyboard.instantiateViewController(withIdentifier: "reviewManageVC") as? ReviewManageViewController else {return}
         
         navigationController?.pushViewController(rvc, animated: true)
     }
