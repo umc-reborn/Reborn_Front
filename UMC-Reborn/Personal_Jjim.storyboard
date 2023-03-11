@@ -162,33 +162,29 @@
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="13"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBt-9y-g02">
-                                        <rect key="frame" x="40" y="4" width="25" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="Aed-w1-VTM"/>
-                                            <constraint firstAttribute="height" constant="21" id="rBV-tD-uKX"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPZ-Xi-5yl">
+                                        <rect key="frame" x="34" y="-6" width="50" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow_down"/>
-                                        <connections>
-                                            <action selector="dropdownClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GMg-Jl-jfC"/>
-                                        </connections>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="4wz-eq-Y4s" firstAttribute="leading" secondItem="mCE-Rp-eSo" secondAttribute="leading" constant="3" id="1r4-Di-ikI"/>
-                                    <constraint firstItem="DBt-9y-g02" firstAttribute="leading" secondItem="mCE-Rp-eSo" secondAttribute="leading" constant="40" id="4Il-ZU-hgO"/>
-                                    <constraint firstItem="DBt-9y-g02" firstAttribute="top" secondItem="mCE-Rp-eSo" secondAttribute="top" constant="4" id="Nx1-Nj-QZF"/>
                                     <constraint firstItem="4wz-eq-Y4s" firstAttribute="top" secondItem="mCE-Rp-eSo" secondAttribute="top" id="TS0-oI-Oar"/>
-                                    <constraint firstAttribute="trailing" secondItem="DBt-9y-g02" secondAttribute="trailing" constant="2" id="V7I-uU-2sY"/>
                                     <constraint firstAttribute="bottom" secondItem="4wz-eq-Y4s" secondAttribute="bottom" id="dX0-HY-WUh"/>
                                     <constraint firstAttribute="trailing" secondItem="4wz-eq-Y4s" secondAttribute="trailing" constant="16" id="gT3-5M-e2z"/>
                                     <constraint firstAttribute="width" constant="67" id="kd7-12-L77"/>
                                     <constraint firstAttribute="height" constant="29" id="lO5-Ru-9HC"/>
-                                    <constraint firstAttribute="bottom" secondItem="DBt-9y-g02" secondAttribute="bottom" constant="4" id="uVs-E7-vMK"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0e-QR-aja">
+                                <rect key="frame" x="128" y="105" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.99620968099999996" green="0.98817390199999999" blue="0.98060065510000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -211,7 +207,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="eHV-3w-ms7"/>
                     <connections>
-                        <outlet property="JjimButton" destination="DBt-9y-g02" id="hbp-7t-MtM"/>
                         <outlet property="JjimCountLabel" destination="iIU-PA-Tmc" id="CKY-SB-GEP"/>
                         <outlet property="JjimTableView" destination="lty-iH-oCB" id="tiY-Z8-ylo"/>
                         <outlet property="JjimTextField" destination="4wz-eq-Y4s" id="zIl-jo-83a"/>
@@ -224,7 +219,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_down" width="25.5" height="21"/>
+        <image name="arrow" width="26" height="26"/>
         <image name="cake_image" width="93.5" height="90"/>
         <image name="full_star" width="40" height="40"/>
         <image name="ic_like" width="30.5" height="30.5"/>

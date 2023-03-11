@@ -1171,6 +1171,8 @@
 				2F3A2329299AB690002B183B /* FinishWriteReviewViewController.swift in Sources */,
 				952CB2A5297768D200BD7CD7 /* PopularTableViewController.swift in Sources */,
 				952CB2A329775CBC00BD7CD7 /* PopularShopViewController.swift in Sources */,
+				2F3A2323299A877B002B183B /* PostReviewService.swift in Sources */,
+				2F3A2321299A875C002B183B /* PostReviewModel.swift in Sources */,
 				0B68DDE1299287B800A988FA /* FindIdGet.swift in Sources */,
 				C717679D29B98F92005D4445 /* RebornCompletePost.swift in Sources */,
 				C7062996299BF03D002F5C1A /* ModalFirstTableViewCell.swift in Sources */,
