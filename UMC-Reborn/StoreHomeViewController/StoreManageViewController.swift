@@ -10,6 +10,10 @@ import UIKit
 class StoreManageViewController: UIViewController, SampleProtocol3 {
     
     let storeManage = UserDefaults.standard.integer(forKey: "userIdx")
+    let shopToken = UserDefaults.standard.string(forKey: "shopJwt")
+    
+    var rebornData: LogoutresultModel!
+    var rebornDatas: UserDeleteresultModel!
     
     var storeText: Int = 2
     
@@ -200,5 +204,28 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
                 }
         
         self.navigationController?.pushViewController(svc2, animated: true)
+    }
+    
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        let parameterDatas = LogoutModel(jwt: shopToken ?? "")
+        APIHandlerLogoutPost.instance.SendingPostReborn(token: shopToken ?? "", parameters: parameterDatas) { result in self.rebornData = result }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
+            rvc.modalPresentationStyle = .fullScreen
+            self.present(rvc, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func deleteuserButton(_ sender: Any) {
+        let parameterDatas = UserDeleteModel(userIdx: storeManage, status: "DELETE")
+        APIHandlerUserDeletePost.instance.SendingPostReborn(token: shopToken ?? "", parameters: parameterDatas) { result in self.rebornDatas = result }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
+            rvc.modalPresentationStyle = .fullScreen
+            self.present(rvc, animated: true, completion: nil)
+        }
     }
 }

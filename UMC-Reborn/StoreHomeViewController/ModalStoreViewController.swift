@@ -35,11 +35,12 @@ class ModalStoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fullText = modalButton.titleLabel?.text
-        let attributedString = NSMutableAttributedString(string: fullText ?? "")
-        
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
-        self.modalButton.setAttributedTitle(attributedString, for: .normal)
+//        let fullText = modalButton.titleLabel?.text
+//        let attributedString = NSMutableAttributedString(string: fullText ?? "")
+//
+//        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
+//        self.modalButton.setAttributedTitle(attributedString, for: .normal)
+//        self.modalButton.titleLabel?.text = "진행중인 리본이 없습니다"
 
         modalButton.layer.cornerRadius = 5
         modalButton.layer.borderWidth = 1
@@ -51,16 +52,17 @@ class ModalStoreViewController: UIViewController {
         
         storeResult()
         rebornResult()
+        print("리본 데이터의 수는? \(rebornDatas.count)")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            if (self.rebornDatas.count >= 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            if (self.rebornDatas.count > 0) {
                 let fullText = self.modalButton.titleLabel?.text
                 let attributedString = NSMutableAttributedString(string: fullText ?? "")
                 
                 attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
                 self.modalButton.setAttributedTitle(attributedString, for: .normal)
             } else {
-                self.modalButton.titleLabel?.text = "진행중인 리본이 없습니다"
+                self.modalButton.setTitle("진행중인 리본이 없습니다.", for: .normal)
             }
         }
     }

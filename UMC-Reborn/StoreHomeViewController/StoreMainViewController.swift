@@ -16,6 +16,7 @@ class StoreMainViewController: UIViewController {
     @IBOutlet weak var storemainLabel: UILabel!
     @IBOutlet var storeName: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("넘겨받은 값은 \(String(storeMain))")
