@@ -22,11 +22,15 @@ class JjimViewController: UIViewController {
     let jjimview = UserDefaults.standard.integer(forKey: "userIndex")
     
     var jjimDatas: [JjimListModel] = []
+    
+    
 
     @IBOutlet weak var JjimCountLabel: UILabel!
     @IBOutlet weak var JjimTableView: UITableView!
     @IBOutlet weak var JjimView: UIView!
     @IBOutlet weak var JjimTextField: UITextField!
+    @IBOutlet weak var JjimButton: UIButton!
+    
     
     func initUI() {
         DropDown.appearance().textColor = UIColor.black // 아이템 텍스트 색상
@@ -56,16 +60,12 @@ class JjimViewController: UIViewController {
             self!.JjimTextField.text = item
             if index == 0 {
                 self?.JjimResult()
-                self?.JjimTableView.reloadData()
             } else if index == 1 {
                 self?.JjimNameResult()
-                self?.JjimTableView.reloadData()
             } else if index == 2 {
                 self?.JjimScoreResult()
-                self?.JjimTableView.reloadData()
             } else if index == 3 {
                 self?.JjimPopularResult()
-                self?.JjimTableView.reloadData()
             }
         }
         
@@ -76,6 +76,10 @@ class JjimViewController: UIViewController {
 
     // View 클릭 시 Action
     
+    @IBAction func dropClicked(_ sender: Any) {
+        print("드롭다운")
+        dropdown.show()
+    }
     
 //        print("드롭다운")
 //        dropdown.show()
@@ -359,6 +363,7 @@ class JjimViewController: UIViewController {
 //        JjimPopularResult()
 //        JjimNameResult()
 //        JjimScoreResult()
+        JjimButton.isUserInteractionEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

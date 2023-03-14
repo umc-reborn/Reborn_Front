@@ -40,12 +40,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        guard let start = UserDefaults.standard.object(forKey: "sceneDidEnterBackground") as? Date else { return }
+        let interval = Int(Date().timeIntervalSince(start))
+        NotificationCenter.default.post(name: Notification.Name("sceneWillEnterForeground"), object: nil, userInfo: ["time" : interval])
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        NotificationCenter.default.post(name: Notification.Name("sceneDidEnterBackground"), object: nil)
     }
 //카톡 소셜로그인 : 카카오톡으로 로그인을 위한 설정. 카톡으로 이동한 후 다시 서비스 앱으로 돌아오는 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
