@@ -40,7 +40,7 @@ class CancelAlertViewController: UIViewController {
     
 
     @IBAction func backButton(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func shareCancelButton(_ sender: Any) {

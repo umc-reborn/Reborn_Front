@@ -23,6 +23,6 @@ class PwOkViewController: UIViewController {
         let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
         guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
         rvc.modalPresentationStyle = .fullScreen
-        self.present(rvc, animated: true, completion: nil)
+        self.present(rvc, animated: false, completion: nil)
     }
 }

@@ -11,7 +11,6 @@ class ModalSecondTableViewCell: UITableViewCell {
     
     let flowlayout = UICollectionViewFlowLayout()
     
-    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var userImage: UIImageView!
     @IBOutlet var nickName: UILabel!
@@ -23,7 +22,7 @@ class ModalSecondTableViewCell: UITableViewCell {
     @IBOutlet var reviewstar_c: UIImageView!
     @IBOutlet var reviewstar_d: UIImageView!
     @IBOutlet var reviewstar_e: UIImageView!
-    
+    @IBOutlet var reviewImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

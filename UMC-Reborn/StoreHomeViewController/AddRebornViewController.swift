@@ -109,7 +109,7 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TimePopupViewController") as? TimePopupViewController else { return }
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.delegate = self
-        self.present(nextVC, animated: true, completion: nil)
+        self.present(nextVC, animated: false, completion: nil)
 //        DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
     }
     

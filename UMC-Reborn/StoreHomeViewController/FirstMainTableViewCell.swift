@@ -64,7 +64,7 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
         let rebornData = rebornWholeDatas[index]
         nextVC.rebornTaskId = rebornData.rebornTaskIdx
         nextVC.modalPresentationStyle = .overFullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        self.present(nextVC, animated: false, completion: nil)
 //        let rebornData = rebornWholeDatas[index]
 //        let parameterDatas = RebornCancelModel(rebornTaskIdx: rebornData.rebornTaskIdx)
 //        APIHandlerCancelPost.instance.SendingPostReborn(rebornTaskId: rebornData.rebornTaskIdx, parameters: parameterDatas) { result in self.rebornData = result }
@@ -76,7 +76,7 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
         let rebornData = rebornWholeDatas[index]
         nextVC.rebornTaskId = rebornData.rebornTaskIdx
         nextVC.modalPresentationStyle = .overFullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        self.present(nextVC, animated: false, completion: nil)
     }
     
     

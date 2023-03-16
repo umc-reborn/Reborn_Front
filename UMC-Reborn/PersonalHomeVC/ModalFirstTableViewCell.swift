@@ -18,6 +18,8 @@ class ModalFirstTableViewCell: UITableViewCell {
     @IBOutlet var cautionLabel: UILabel!
     @IBOutlet var rebornButton: UIButton!
     
+    var index: Int = 0
+    var delegate: ComponentProductCellDelegate3?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,11 +32,17 @@ class ModalFirstTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
 //    @IBAction func cautionButton(_ sender: Any) {
 //        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornCautionViewController") as? RebornCautionViewController else { return }
 //        nextVC.modalPresentationStyle = .overCurrentContext
 //        self.present(nextVC, animated: true, completion: nil)
 //    }
     
-
+    @IBAction func rebornButtonTapped(_ sender: Any) {
+        self.delegate?.rebornButtonTapped(index: index)
+    }
 }

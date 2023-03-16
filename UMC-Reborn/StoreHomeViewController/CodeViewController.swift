@@ -56,7 +56,7 @@ class CodeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func shareDoneButton(_ sender: Any) {

@@ -84,7 +84,7 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "EditRebornViewController") as? EditRebornViewController else { return }
         nextVC.modalPresentationStyle = .overFullScreen
         nextVC.rebornId = rebornData.rebornIdx
-        self.present(nextVC, animated: true)
+        self.present(nextVC, animated: false)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

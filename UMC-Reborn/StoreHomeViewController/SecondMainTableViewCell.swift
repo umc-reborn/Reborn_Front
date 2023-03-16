@@ -63,7 +63,7 @@ extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource, 
         let rebornData = rebornGoingDatas[index]
         nextVC.rebornTaskId = rebornData.rebornTaskIdx
         nextVC.modalPresentationStyle = .overFullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        self.present(nextVC, animated: false, completion: nil)
     }
     
     func completeButtonTapped2(index: Int) {
@@ -71,7 +71,7 @@ extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource, 
         let rebornData = rebornGoingDatas[index]
         nextVC.rebornTaskId = rebornData.rebornTaskIdx
         nextVC.modalPresentationStyle = .overFullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        self.present(nextVC, animated: false, completion: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
