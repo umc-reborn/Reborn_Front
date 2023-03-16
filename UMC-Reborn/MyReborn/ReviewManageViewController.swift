@@ -9,6 +9,8 @@ import UIKit
 
 class ReviewManageViewController: UIViewController {
     
+    let userReview = UserDefaults.standard.integer(forKey: "userIndex")
+    
     var reviewDatas: [ReviewManageModelResponse] = []
     
     // 이미지 사이즈 지정
