@@ -113,11 +113,11 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
             if (self.rebornData.code == 2111) {
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PwErrorViewController") as? PwErrorViewController else { return }
                 nextVC.modalPresentationStyle = .overFullScreen
-                self.present(nextVC, animated: true, completion: nil)
+                self.present(nextVC, animated: false, completion: nil)
             } else {
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PwOkViewController") as? PwOkViewController else { return }
                 nextVC.modalPresentationStyle = .overFullScreen
-                self.present(nextVC, animated: true, completion: nil)
+                self.present(nextVC, animated: false, completion: nil)
             }
         }
     }

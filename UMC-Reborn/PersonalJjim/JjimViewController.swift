@@ -116,7 +116,15 @@ class JjimViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
                         print("정렬순: \(self.jjimDatas.count)")
-                        
+//                        for i in 0...self.jjimDatas.count-1 {
+//                            if (self.jjimDatas[i].storeIdx == 2) {
+//                                break
+//                            } else {
+//                                
+//                            }
+//                        }
+                        let ggg = self.jjimDatas[0].storeIdx
+                        print("스토어아이디: \(ggg)")
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)

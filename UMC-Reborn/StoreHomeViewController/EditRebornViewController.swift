@@ -109,14 +109,14 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func EdittimeButton(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PopupViewController") as? PopupViewController else { return }
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.delegate = self
-        self.present(nextVC, animated: true, completion: nil)
+        self.present(nextVC, animated: false, completion: nil)
 //        DiaryPost.instance.uploadDiary(file: self.EditImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
     }
     

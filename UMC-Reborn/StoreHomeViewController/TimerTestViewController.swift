@@ -136,5 +136,6 @@ class TimerTestViewController: UIViewController {
     }
     
     @IBAction func resetAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

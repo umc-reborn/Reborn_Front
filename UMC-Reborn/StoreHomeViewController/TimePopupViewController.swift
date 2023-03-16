@@ -45,7 +45,7 @@ class TimePopupViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func nextButton(_ sender: Any) {

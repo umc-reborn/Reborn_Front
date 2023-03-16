@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class TimerTestsViewController: UIViewController {
     
     
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var timeButton: UIButton!
+    @IBOutlet var timeLabel2: UILabel!
     
+    var container: NSPersistentContainer!
     var timer: Timer? = nil
     var isTimerOn = false
     var timeWhenGoBackground: Date?
@@ -31,7 +34,11 @@ class TimerTestsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.container = appDelegate.persistentContainer
+    
         timeSecond = 20
+//        fetchContact()
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
@@ -62,16 +69,43 @@ class TimerTestsViewController: UIViewController {
             timer?.invalidate()
             timeButton.setTitle("START", for: .normal)
         } else {
+            let entity = NSEntityDescription.entity(forEntityName: "Entity", in: self.container.viewContext)
+            let person = NSManagedObject(entity: entity!, insertInto: self.container.viewContext)
             self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
                 self.timeSecond -= 1
-                print("\(self.timeSecond)")
+                person.setValue(self.timeSecond, forKey: "minutes")
+                do {
+                    try self.container.viewContext.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
                 if (self.timeSecond == 0) {
                     timer.invalidate()
                 }
+                self.fetchContact()
             }
             RunLoop.current.add(self.timer!, forMode: .common)
             timeButton.setTitle("STOP", for: .normal)
         }
         isTimerOn = !isTimerOn
+    }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        guard let svc5 = self.storyboard?.instantiateViewController(identifier: "TimerViewController") as? TimerViewController else {
+                    return
+                }
+        self.navigationController?.pushViewController(svc5, animated: true)
+        print("ㄱㅈㄱㅈ")
+    }
+    
+    func fetchContact() {
+        do {
+            let contact = try self.container.viewContext.fetch(Entity.fetchRequest()) as! [Entity]
+           contact.forEach {
+            self.timeLabel2.text = "\($0.minutes)"
+          }
+        } catch {
+           print(error.localizedDescription)
+        }
     }
 }

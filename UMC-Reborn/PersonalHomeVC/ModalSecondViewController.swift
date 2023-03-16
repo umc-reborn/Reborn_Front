@@ -54,12 +54,16 @@ class ModalSecondViewController: UIViewController {
         mstableView.layer.shadowOpacity = 0.1// any value you want
         mstableView.layer.shadowRadius = 10 // any value you want
         mstableView.layer.shadowOffset = .init(width: 0, height: 10)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.reviewResult()
+        }
     }
     
 
     func reviewResult() {
         
-        let url = APIConstants.baseURL + "/review/store/\(String(modalsecond))/buz"
+        let url = APIConstants.baseURL + "/review/store/\(String(modalsecond))/buz2"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -133,6 +137,7 @@ extension ModalSecondViewController: UITableViewDelegate, UITableViewDataSource 
         let rebornData = reviewDatas[indexPath.section]
         
         let url = URL(string: rebornData.userImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/20959843-0000-46c8-aaff-38342f93dd47.jpg")
+        let url2 = URL(string: rebornData.reviewImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/20959843-0000-46c8-aaff-38342f93dd47.jpg")
         let createTime = rebornData.reviewCreatedAt
         let yearTime = createTime.prefix(4)
         let monthTime1 = createTime[String.Index(encodedOffset: 5)]
@@ -143,6 +148,7 @@ extension ModalSecondViewController: UITableViewDelegate, UITableViewDataSource 
         cell.nickName.text = rebornData.userNickname
         cell.userImage.load(url: url!)
         cell.foodName.text = rebornData.productName
+        cell.reviewImage.load(url: url2!)
         if (rebornData.reviewScore == 5) {
             cell.reviewstar_a.image = UIImage(named: "review_star")
             cell.reviewstar_b.image = UIImage(named: "review_star")
@@ -175,7 +181,6 @@ extension ModalSecondViewController: UITableViewDelegate, UITableViewDataSource 
             cell.reviewstar_e.image = UIImage(named: "review_star_gray")
         }
         cell.commentLabel.text = rebornData.reviewComment
-        cell.collectionView.tag = indexPath.row
         return cell
     }
         

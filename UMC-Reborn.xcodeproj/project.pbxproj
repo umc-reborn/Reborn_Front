@@ -178,6 +178,7 @@
 		C7324E3A29965DDA0062564D /* APIImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7324E3929965DDA0062564D /* APIImagePost.swift */; };
 		C7324E3F2997EF460062564D /* StoreAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7324E3E2997EF460062564D /* StoreAddressViewController.swift */; };
 		C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739AC12298A9D980016B840 /* APIRebornPatch.swift */; };
+		C74A64B329C3673100F5B06F /* CreateRebornPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A64B229C3673100F5B06F /* CreateRebornPost.swift */; };
 		C74FEE1A297177BF00BFC8D0 /* StoreTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */; };
 		C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */; };
 		C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */; };
@@ -421,6 +422,7 @@
 		C7324E3929965DDA0062564D /* APIImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImagePost.swift; sourceTree = "<group>"; };
 		C7324E3E2997EF460062564D /* StoreAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAddressViewController.swift; sourceTree = "<group>"; };
 		C739AC12298A9D980016B840 /* APIRebornPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRebornPatch.swift; sourceTree = "<group>"; };
+		C74A64B229C3673100F5B06F /* CreateRebornPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRebornPost.swift; sourceTree = "<group>"; };
 		C74FEE19297177BF00BFC8D0 /* StoreTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreTab.storyboard; sourceTree = "<group>"; };
 		C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarController.swift; sourceTree = "<group>"; };
 		C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMainViewController.swift; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 				953AEE9F298F9C27008AAE8A /* BestReviewModel.swift */,
 				9561B7B529916E7B00A4B33B /* PopularShopModel.swift */,
 				9561BA872994350A00A4B33B /* InprogressModel.swift */,
+				C74A64B229C3673100F5B06F /* CreateRebornPost.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1242,6 +1245,7 @@
 				95369A1229A485860041F837 /* WillLikeShopCell.swift in Sources */,
 				0B68DDE3299287D900A988FA /* JoinNeighborPost.swift in Sources */,
 				0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */,
+				C74A64B329C3673100F5B06F /* CreateRebornPost.swift in Sources */,
 				C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */,
 				C765116829BC69D90030128C /* UserDeletePost.swift in Sources */,
 				C787E3B029BB44390090B946 /* TimerModel.xcdatamodeld in Sources */,

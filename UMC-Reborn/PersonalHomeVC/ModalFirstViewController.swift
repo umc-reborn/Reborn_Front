@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ComponentProductCellDelegate3 {
+    func rebornButtonTapped(index: Int)
+}
+
 class ModalFirstViewController: UIViewController {
     
     var rebornDatas: [RebornListModel] = []
@@ -32,7 +36,23 @@ class ModalFirstViewController: UIViewController {
         mftableView.layer.shadowRadius = 10 // any value you want
         mftableView.layer.shadowOffset = .init(width: 5, height: 10)
         
-        rebornResult()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.rebornResult()
+        }
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView10"),
+                  object: nil
+                  )
+    }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            
+            self.rebornResult()
+        }
     }
     
     func rebornResult() {
@@ -76,16 +96,16 @@ class ModalFirstViewController: UIViewController {
             }
         }.resume()
     }
-    
-    @objc func shareButtonTapped2(sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornCautionViewController") as? RebornCautionViewController else { return }
-        nextVC.modalPresentationStyle = .overCurrentContext
-        self.present(nextVC, animated: true, completion: nil)
-    }
-    
 }
 
-extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource {
+extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource, ComponentProductCellDelegate3 {
+    func rebornButtonTapped(index: Int) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornCautionViewController") as? RebornCautionViewController else { return }
+        let rebornData = rebornDatas[index]
+        nextVC.rebornId = rebornData.rebornIdx
+        nextVC.modalPresentationStyle = .overFullScreen
+        self.present(nextVC, animated: false, completion: nil)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
             return rebornDatas.count
@@ -104,6 +124,9 @@ extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource {
         let cell: ModalFirstTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ModalFirst_TableViewCell", for: indexPath) as! ModalFirstTableViewCell
             
         let rebornData = rebornDatas[indexPath.section]
+        let limitTime = rebornData.productLimitTime
+        let minuteLimit1 = limitTime[String.Index(encodedOffset: 3)]
+        let minuteLimit2 = limitTime[String.Index(encodedOffset: 4)]
         let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
         cell.mfImageView.load(url: url!)
         cell.foodName.text = rebornData.productName
@@ -115,15 +138,23 @@ extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource {
             cell.timeImage.isHidden = false
             cell.timeLabel.isHidden = false
             cell.rebornButton.isHidden = false
+            cell.timeLabel.text = "\(minuteLimit1)\(minuteLimit2)분 내 수령"
         } else {
+            cell.rebornButton.alpha = 0
+            cell.rebornButton.isEnabled = false
             cell.timeImage.isHidden = true
 //            cell.timeImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
             cell.timeLabel.isHidden = true
             cell.rebornButton.isHidden = true
+            cell.foodName.translatesAutoresizingMaskIntoConstraints = false
+            cell.foodName.topAnchor.constraint(equalTo: cell.timeLabel.topAnchor, constant: 5).isActive = true
+            cell.countLabel.translatesAutoresizingMaskIntoConstraints = false
+            cell.countLabel.topAnchor.constraint(equalTo: cell.timeLabel.topAnchor, constant: 5).isActive = true
+            cell.mfImageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 10.79).isActive = true
 //            cell.limitTimeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
         }
-        cell.rebornButton.tag = indexPath.section
-        cell.rebornButton.addTarget(self, action: #selector(shareButtonTapped2(sender:)), for: .touchUpInside)
+        cell.index = indexPath.section
+        cell.delegate = self
         
         return cell
     }
