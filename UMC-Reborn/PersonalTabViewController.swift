@@ -15,6 +15,7 @@ class PersonalTabViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
         tabBar.tintColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1.0)
         tabBar.unselectedItemTintColor = UIColor.black
         tabBar.backgroundColor = .white

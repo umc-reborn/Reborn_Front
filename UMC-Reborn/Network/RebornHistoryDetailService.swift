@@ -10,14 +10,15 @@ import Alamofire
 
 class RebornHistoryDetailService {
     
-    var rebornTaskIdx:Int = 9
-    
+
     static let shared = RebornHistoryDetailService()
     private init() {}
     
     func getRebornHistoryDetail(completion: @escaping (NetworkResult<Any>) -> Void) {
-        var RebornHistoryDetailUrl = "http://www.rebornapp.shop/reborns/history/detail/\(rebornTaskIdx)"
-        print("rebornHistoryDetail의 taskIdx는 \(rebornTaskIdx)")
+        var RebornHistoryDetailUrl = "http://www.rebornapp.shop/reborns/history/detail/"
+        print("rebornHistoryDetail의 taskIdx는")
+
+
         let url: String! = RebornHistoryDetailUrl
         let header: HTTPHeaders = [
             // 헤더 프린트 해서 post 형태로 데이터를 불러오는거라서 오키오키
@@ -58,28 +59,7 @@ class RebornHistoryDetailService {
         else { print("decode fail")
             
             return .pathErr }
-        
-        /*
-         // Decoding = JSON -> Swift object
-         do {
-         let decodedData = try JSONDecoder().decode(Student.self, from: studentData)
-         print(decodedData)
-         }
-         catch let err {
-         print("Failed to decode JSON")
-         }*/
-        
-        // JSON 데이터를 해독하기 위해 JSONDecoder()를 하나 선언
-        //             let decoder = JSONDecoder()
-        //
-        //             // data를 우리가 만들어둔 PersonDataModel 형으로 decode 해준다.
-        //             // 실패하면 pathErr로 빼고, 성공하면 decodedData에 값을 뺍니다.
-        //             guard let decodedData = try? decoder.decode(RebornHistoryDetailModel.self, from: data) else {
-        //                 print("decode Error")
-        //                 return .pathErr }
-        //             // 성공적으로 decode를 마치면 success에다가 data 부분을 담아서 completion을 호출합니다.
-        //             return .success(decodedData.result)
-        
+
         switch statusCode {
         case 200 ..< 300: return .success(decodedData as Any)
         case 400 ..< 500: return .pathErr
