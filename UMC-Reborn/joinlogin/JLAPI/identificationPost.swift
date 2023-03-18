@@ -1,9 +1,9 @@
-// 이웃 회원가입 - 본인인증 API
+//
 //  identificationPost.swift
 //  UMC-Reborn
 //
 //  Created by 김예린 on 2023/02/11.
-//
+// 이웃 회원가입 - 본인인증 API
 
 import Foundation
 import Alamofire

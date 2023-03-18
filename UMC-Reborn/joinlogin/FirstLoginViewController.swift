@@ -6,40 +6,14 @@
 //
 
 import UIKit
+import KakaoSDKCommon
+import KakaoSDKAuth
 import KakaoSDKUser
-//import Tabman
-//import Pageboy
 
-//extension FirstLoginViewController: PageboyViewControllerDataSource, TMBarDataSource {
-//
-//    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-//        switch index {
-//        case 0:
-//            return TMBarItem(title: "이웃 로그인")
-//        case 1:
-//            return TMBarItem(title: "가게 로그인")
-//        default:
-//            let title = "Page \(index)"
-//           return TMBarItem(title: title)
-//        }
-//    }
-//
-//    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
-//        return viewControllers.count
-//    }
-//
-//    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
-//        return viewControllers[index]
-//    }
-//
-//    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-//        return nil
-//    }
-//}
 
 class FirstLoginViewController: ViewController {
     
-
+    
     @IBOutlet weak var FirstView: UIView!
     
     @IBOutlet var kakaoButton: UIButton! // 카카오버튼
@@ -47,74 +21,69 @@ class FirstLoginViewController: ViewController {
     
     @IBOutlet var googleButton: UIButton! // 구글 버튼
     
-//    private var viewControllers: [UIViewController] = []
+    //    private var viewControllers: [UIViewController] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupTabMan()
         
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")
         self.view.backgroundColor = BACKGROUND
         
     }
-        
-//    private func setupTabMan(){
-//
-//            let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NbViewcontroller") as! NbViewcontroller
-//            let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopLoginViewController") as! ShopLoginViewController
-//
-//
-//            viewControllers.append(vc1)
-//            viewControllers.append(vc2)
-//
-//
-//            self.dataSource = self
-//            let bar = TMBar.ButtonBar()
-//            // 배경 회색으로 나옴 -> 하얀색으로 바뀜
-//            bar.backgroundView.style = .blur(style: .light)
-//            // 간격 설정
-//            bar.layout.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-//            // 버튼 글씨 커스텀
-//            bar.buttons.customize { (button) in
-//                button.tintColor = .systemGray4
-//                button.selectedTintColor = .black
-//                button.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-//                button.selectedFont = UIFont.systemFont(ofSize: 15, weight: .semibold)
-//
-//            }
-//            // 밑줄 쳐지는 부분
-//            bar.indicator.weight = .custom(value: 2)
-//            bar.indicator.tintColor = .black
-//            addBar(bar, dataSource: self, at: .custom(view: FirstView, layout: nil))
-//
-//            }
-            
+    
     
     @IBAction func kakaoLoginButtonTouchUpInside(_ sender: UIButton) {
-            // 카카오톡 설치 여부 확인
-            if (UserApi.isKakaoTalkLoginAvailable()) {
-                UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                    if let error = error {
-                        print(error)
-                    }
-                    else {
-                        print("loginWithKakaoTalk() success.")
+        //카카오
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
 
-                        //do something
-                        _ = oauthToken
-                    }
+                    //do something
+                    let _ = oauthToken
+                    //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
+                    //self.setUserInfo()
                 }
             }
         }
     
+//    func setUserInfo() {
+//        UserApi.shared.me() {(user, error) in
+//            if let error = error {
+//                print(error)
+//            }
+//            else {
+//                print("me() success.")
+//                //do something
+//                _ = user
+//                let userKakaoNickName = user?.kakaoAccount?.profile?.nickname
+//
+//                if let url = user?.kakaoAccount?.profile?.profileImageUrl,
+//                    let data = try? Data(contentsOf: url) {
+//                    let userKakaoImage = UIImage(data: data) // 프로필 이미지 같은데
+//
+//                    let something3 = UIStoryboard(name: "PersonalTab", bundle: nil)
+//                    guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalTabVC") as? PersonalTabViewController else {return}
+//
+//                    // 풀 받고 건드리기 -> 퍼스널텝뷰컨트롤러에 ukn, uki 선언하기
+////                    rvc.uKN = userKakaoNickName
+////                    rvc.uKI = userKakaoImage
+//
+//                    self.navigationController?.pushViewController(rvc, animated: true)
+//                }
+//            }
+//        }
+//    }
+}
     
     
     
     
             
-        }
     
         
     

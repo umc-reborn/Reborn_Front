@@ -117,17 +117,18 @@ class ShopLoginViewController: UIViewController, UITextFieldDelegate, UITextView
         
     }
     
-    
     //작성 중 주황색
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // textField.borderStyle = .line
         textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
         textField.layer.borderWidth = 1.0
+        errorLabel2.isHidden = true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.layer.borderWidth = 1.0
+        errorLabel2.isHidden = true
     }
     
      //로그인 버튼 누르면 api 넘기는 것
@@ -136,20 +137,21 @@ class ShopLoginViewController: UIViewController, UITextFieldDelegate, UITextView
         print(pparmeterData)
         APIShopLoginPost.instance.SendingPostShopLogin(parameters1: pparmeterData) { result1 in self.trainDataa =  result1 }
         
-        let something5 = trainDataa?.result
-        guard let text33 = something5?.storeIdx else {return}
-        guard let text44 = something5?.storeName else {return}
-        guard let jwtResult1 = something5?.jwt else {return}
-        let something4 = UIStoryboard.init(name: "StoreTab", bundle: nil)
-        guard let rvc1 = something4.instantiateViewController(withIdentifier: "StoreTabBarController") as? StoreTabBarController else {return}
-        
-        rvc1.storeText = text33
-        
-        // 화면이동
-        self.present(rvc1, animated: true)
-        
-        // userDefault - jwt 저장
-        UserDefaults.standard.set(jwtResult1, forKey: "shopJwt")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.8) {
+            let something5 = self.trainDataa?.result
+            guard let text33 = something5?.storeIdx else {return}
+            guard let text44 = something5?.storeName else {return}
+            guard let jwtResult1 = something5?.jwt else {return}
+            let something4 = UIStoryboard.init(name: "StoreTab", bundle: nil)
+            guard let rvc1 = something4.instantiateViewController(withIdentifier: "StoreTabBarController") as? StoreTabBarController else {return}
+            
+            rvc1.storeText = text33
+            
+            // 화면이동
+            self.present(rvc1, animated: true)
+            
+            // userDefault - jwt 저장
+            UserDefaults.standard.set(jwtResult1, forKey: "shopJwt")
+        }
     }
-    
 }

@@ -88,76 +88,47 @@ class FindIdViewController: UIViewController, UITextFieldDelegate, UITextViewDel
            }
     
     
-    // 아이디 찾기 - 확인 버튼 눌렀을 때 api / 화면 넘기기도 하기
-//    @IBAction func FindIdNextButtonTapped() {
-//        userE = FindIdTextField.text ?? ""
-//        let kimnana =
-//        FindIdGet.instance.FindIdGetData(userEmail: FindIdTextField.text ?? ""){result in self.Hago = result}
-//    }
-    
     // 입력한 거랑 불러온 거랑 일치하면 오류화면 안뜨는 화면으로
     // 일치하지 않으면 alert화면으로 넘어가기.
     // 다음 버튼 누르면 화면 바뀌고 +
     
-    
-    
     @IBAction func FindIdNextButtonTapped(_ sender: Any) {
+        
+        //api get
+        FindIdGet.instance.FindIdGetData(userEmail: FindIdTextField.text ?? ""){result in self.Hago = result
+            print("result : \(result)")
+        }
+        
+        print("Hago : \(self.Hago)") // 이메일이 서버에 있는 것과 일치하면 화면전환 + 데이터값 넘겨주기
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
             
-            //api get
-            FindIdGet.instance.FindIdGetData(userEmail: FindIdTextField.text ?? ""){result in self.Hago = result
+            if(self.Hago?.code==1000){
+                let object1 = self.Hago?.result
+                guard let textedE = self.FindIdTextField.text else {return}
+                guard let idUser = object1?.userId else {return}
+                guard let datee = object1?.createdAt else {return}
+                guard let iimage = object1?.userImg else {return}
+                //                    let some1 = UIStoryboard(name: "JoinLogin", bundle: nil)
+                guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "FoundIdViewController") as? FoundIdViewController else {return}
                 
-               // print("result : \(result)")
+                rvc.emailTexted = textedE
+                rvc.userId1 = idUser
+                rvc.createdAt1 = datee
+                rvc.image1 = iimage
+                self.navigationController?.pushViewController(rvc, animated: true)
             }
-            
-            // 이메일이 서버에 있는 것과 일치하면 화면전환 + 데이터값 넘겨주기
-                //print("Hago : \(self.Hago)")
-               
-//        if (self.Hago.result.userId != "") {
-//                    let object1 = self.Hago?.result
-//                    guard let idUser = object1?.userId else {return}
-//                    guard let datee = object1?.createdAt else {return}
-//                    //guard let iimage = object1?.민몰리변수 else {return}
-//                    let some1 = UIStoryboard(name: "JoinLogin", bundle: nil)
-//                    guard let rvc = some1.instantiateViewController(withIdentifier: "FoundIdViewController") as? FoundIdViewController else {return}
-//
-//                    rvc.userId1 = idUser
-//                    rvc.createdAt1 = datee
-//                    //rvc.image1 = iimage
-//                    self.navigationController?.pushViewController(rvc, animated: true)
-//                }
-//                // 회원이 아닌 이메일이면 alert창으로 화면전환
-//                else {
-//                    let some2 = UIStoryboard(name: "JoinLogin", bundle: nil)
-//                    guard let rvcc = some2.instantiateViewController(withIdentifier: "noEmailViewController") as? noEmailViewController else {return}
-//
-//                    self.navigationController?.pushViewController(rvcc, animated: true)
-//                }
-//            }
-//
-//    }
-
-
-//    func aaaa() {
-//        // 이메일 잘 채워졌으면
-//        if () {
-//            FindIdNextButton.backgroundColor = .mybrown
-//            FindIdNextButton.setTitleColor(.white, for: .normal) // 평상시
-//            FindIdNextButton.setTitleColor(.white, for: .selected)
-//            FindIdNextButton.isEnabled = true
-//        }
-//        else {
-//            // 버튼 비활성화
-//        }
-//    }
-    
-//    @objc func textFieldDidChanged(_ sender: Any?) {
-//        if (){
-//            FindIdNextButton.backgroundColor = .mybrown
-//            FindIdNextButton.setTitleColor(.white, for: .normal)
-//            FindIdNextButton.setTitleColor(.white, for: .selected)
-//            FindIdNextButton.isEnabled = true // 활성화
+            else { // 회원이 아닌 이메일이면 alert창으로 화면전환
+                guard let rvcc = self.storyboard?.instantiateViewController(withIdentifier: "noEmailViewController") as? noEmailViewController else {return}
+                
+                rvcc.modalPresentationStyle = .overFullScreen
+                self.present(rvcc, animated: true)
+                print("회원 아님")
+            }
         }
-        }
+    }
+}
+
 
 
 
