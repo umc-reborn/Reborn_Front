@@ -8,8 +8,7 @@ import Foundation
 import UIKit
  
 class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
-    
-    
+
     
     //API
     var emailData: emailModel!
@@ -125,12 +124,12 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         codeTextField.delegate = self
         textFieldDidBeginEditing(EmailTextField)
         textFieldDidEndEditing(EmailTextField)
-        Idontknow(textField: EmailTextField)
+//        Idontknow(textField: EmailTextField)
         textFieldDidBeginEditing(codeTextField)
         textFieldDidEndEditing(codeTextField)
         //Idontknow(codeTextField)
         
-        EmailTextField.addTarget(self, action: #selector(Idontknow), for:.touchUpInside)
+        EmailTextField.addTarget(self, action: #selector(Idontknow), for:.editingChanged)
         
     }
     
@@ -148,7 +147,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     
     //이메일 정규표현식
     func isValidEmail(testStr:String?) -> Bool{
-            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z].{2,64}"
               let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
               return emailTest.evaluate(with: testStr)
         }
