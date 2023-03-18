@@ -34,8 +34,13 @@ class HomeInprogressViewController: UIViewController {
                             break
                         }
                         self.rebornDatas = response.result
-                    
+                        self.defaultView.isHidden = true
+                        
+                        if self.rebornDatas.isEmpty {
+                            self.defaultView.isHidden = false
+                        }
                     default:
+                        self.defaultView.isHidden = false
                         break
                     }
                     self.collectionView.reloadData()

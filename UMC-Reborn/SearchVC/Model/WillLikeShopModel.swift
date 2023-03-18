@@ -18,7 +18,7 @@ struct WillLikeShopModel : Codable {
 struct LikeShopsponse : Codable {
     let storeIdx: Int
     let storeName : String
-    let userImage: String
+    let userImage: String?
     let hasJjim : Bool
     let storeScore : Float
     let category : String
