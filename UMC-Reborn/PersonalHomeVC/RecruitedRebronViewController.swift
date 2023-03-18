@@ -22,14 +22,15 @@ class RecruitedRebronViewController: UIViewController {
         WillLikeShopService.shared.getLikeShop{ result in
                     switch result {
                     case .success(let response):
-//                        print("---------------")
-                        dump(response)
+                        
+//                        dump(response)
                         guard let response = response as? WillLikeShopModel else {
                             break
                         }
                         self.likeshopDatas = response.result
                     
                     default:
+                        
                         break
                     }
                     self.collectionView.reloadData()
@@ -54,7 +55,7 @@ extension RecruitedRebronViewController: UICollectionViewDelegate, UICollectionV
         cell.shopName.text = likeshopData.storeName
         cell.shopLocation.text = likeshopData.category
 //        cell.shopImage.image = UIImage(named: imageList[indexPath.row]) ?? UIImage()
-        let url = URL(string: likeshopData.userImage)
+        let url = URL(string: likeshopData.userImage!)
         cell.shopImage.load(url: url!)
 //        cell.shopImage.reloadData()
         return cell
