@@ -17,4 +17,12 @@ class PwOkViewController: UIViewController {
         pwchangeView.layer.cornerRadius = 10
         pwchangeView.clipsToBounds = true
     }
+    
+    
+    @IBAction func okButton(_ sender: Any) {
+        let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+        guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
+        rvc.modalPresentationStyle = .fullScreen
+        self.present(rvc, animated: false, completion: nil)
+    }
 }

@@ -10,8 +10,9 @@ import DropDown
 
 class SearchResultViewController: UIViewController {
     
-    var keyword : String = ""
+    var SearchInput : String = ""
     var searchDatas: [SearchResponse] = []
+
     
     @IBOutlet weak var countNum: UILabel!
     @IBOutlet weak var tfInput: UITextField!
@@ -21,7 +22,7 @@ class SearchResultViewController: UIViewController {
     @IBOutlet weak var ResultTableView: UITableView!
     
     let dropdown = DropDown()
-    let itemList = ["이름순","별점순","인기순"]
+    let itemList = ["이름순","별점순"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +31,20 @@ class SearchResultViewController: UIViewController {
         setSearchBar()
         initUI()
         setDropdown()
-        searchResult()
+//        searchResult()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        searchResult()
+//        searchsorted()
+
     }
     
     func setSearchBar(){
         
         //서치바 만들기
-        let text = keyword
+        let text = SearchInput
         let bounds = UIScreen.main.bounds
         let width = bounds.size.width //화면 너비
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: width - 50, height: 0))
@@ -50,8 +57,14 @@ class SearchResultViewController: UIViewController {
         let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         spacer.width = 26
         self.navigationItem.rightBarButtonItems = [search, spacer]
+        searchBar.delegate = self
             
         }
+    
+//    func userPressedToEnter(keyword: String) {
+//        searchBar.text = SearchInput
+//        searchResult()
+//    }
     
     func initUI(){
         DropDown.appearance().textColor = UIColor.black
@@ -85,15 +98,34 @@ class SearchResultViewController: UIViewController {
         dropdown.bottomOffset = CGPoint(x: 0, y: dropView.bounds.height)
         dropdown.selectionAction = { [weak self] (index, item) in
             self!.tfInput.text = item
+            if self!.tfInput.text == "이름순" {
+                 print("이름순 정렬")
+//                 self?.getGoalListsortbyAsc()
+                self!.searchDatas.sort{ $0.storeName < $1.storeName }
+                self!.ResultTableView.reloadData()
+                 
+             } else {
+                 print("별점순 정렬")
+//                 self?.getGoalListsortbyDesc()
+                 self!.searchDatas.sort{ $0.storeScore > $1.storeScore }
+//                 DispatchQueue.main.async {
+                     self!.ResultTableView.reloadData()
+//                }
+                 
+             }
+            
             self!.tfInput.textColor = UIColor.black
             self!.dropView.layer.borderColor = UIColor.red.cgColor
             self!.ivIcon.image = UIImage(systemName:"chevron.down")
+            
         }
         
         dropdown.cancelAction = {[weak self] in
             self?.ivIcon.image = UIImage(systemName:"chevron.down")
         }
     }
+
+
     
     @IBAction func dropdownClicked(_ sender: Any){
         dropdown.show()
@@ -101,8 +133,8 @@ class SearchResultViewController: UIViewController {
     }
     // MARK: - API
     func searchResult(){
-       let text = keyword
-//        print(text)
+       let text = SearchInput
+        print(text)
         var url = APIConstants.baseURL + "/store/search?keyword=\(text)"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
@@ -167,6 +199,21 @@ extension UIImageView {
                 }
             }
         }
+    }
+}
+
+extension SearchResultViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        SearchInput = searchBar.text!
+        searchResult()
+    }
+    func userPressedToEnter(keyword: String) {
+        
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("cancel")
     }
 }
 

@@ -117,15 +117,24 @@ extension PopularTableViewController: UITableViewDelegate, UITableViewDataSource
             case 0:
                 guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
                 svc1.storeIdm1 = popularshopDatas[0].storeIdx
+//                svc2.storeIdm2 = popularshopDatas[0].storeIdx
+//                svc3.storeIdm3 = popularshopDatas[0].storeIdx
+                UserDefaults.standard.set(popularshopDatas[0].storeIdx, forKey: "storeid")
                 self.present(svc1, animated: true)
             case 1:
-                guard let svc2 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
-                svc2.storeIdm1 = popularshopDatas[1].storeIdx
-                self.present(svc2, animated: true)
+                guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
+                svc1.storeIdm1 = popularshopDatas[1].storeIdx
+//                svc2.storeIdm2 = popularshopDatas[0].storeIdx
+//                svc3.storeIdm3 = popularshopDatas[0].storeIdx
+                UserDefaults.standard.set(popularshopDatas[1].storeIdx, forKey: "storeid")
+                self.present(svc1, animated: true)
             case 2:
-                guard let svc3 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
-                svc3.storeIdm1 = popularshopDatas[2].storeIdx
-                self.present(svc3, animated: true)
+                guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
+                svc1.storeIdm1 = popularshopDatas[2].storeIdx
+//                svc2.storeIdm2 = popularshopDatas[0].storeIdx
+//                svc3.storeIdm3 = popularshopDatas[0].storeIdx
+                UserDefaults.standard.set(popularshopDatas[2].storeIdx, forKey: "storeid")
+                self.present(svc1, animated: true)
             default:
                 return
             }

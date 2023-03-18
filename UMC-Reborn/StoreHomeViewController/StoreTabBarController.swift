@@ -16,9 +16,9 @@ class StoreTabBarController: UITabBarController {
         tabBar.tintColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1.0)
         tabBar.unselectedItemTintColor = UIColor.black
         tabBar.backgroundColor = .white
-        tabBar.layer.cornerRadius = 0
-        tabBar.layer.masksToBounds = true
-//        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        tabBar.layer.cornerRadius = 25
+        tabBar.layer.masksToBounds = false
+        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = .clear
@@ -26,5 +26,11 @@ class StoreTabBarController: UITabBarController {
         
         print(storeText)
         UserDefaults.standard.set(storeText, forKey: "userIdx")
+        setupStyle()
     }
+    
+    func setupStyle() {
+            UITabBar.clearShadow()
+            tabBar.layer.applyShadow(color: .gray, alpha: 0.3, x: 0, y: 0, blur: 12)
+        }
 }

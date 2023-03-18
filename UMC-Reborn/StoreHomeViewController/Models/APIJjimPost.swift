@@ -49,6 +49,7 @@ struct JjimresultModel: Codable {
 }
 
 struct JjimResult: Codable {
+    var jjimStatus:String
     var jjimIdx:Int
     var userEmail:String
     var storeName:String

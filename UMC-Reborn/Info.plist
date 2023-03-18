@@ -27,12 +27,10 @@
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>LSApplicationQueriesSchemes</key>
-        <array>
-              <!-- 카카오톡으로 로그인 -->
-              <string>kakaokompassauth</string>
-              <!-- 카카오링크 -->
-              <string>kakaolink</string>
-          </array>
+		<array>
+			<string>kakaokompassauth</string>
+			<string>kakaolink</string>
+		</array>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>

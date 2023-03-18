@@ -4,9 +4,20 @@
 //
 //  Created by jaegu park on 2023/01/14.
 //
+import Foundation
 import UIKit
+import Alamofire
 
 class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol {
+    
+    var rebornId : Int = 0
+    
+    let editReborn = UserDefaults.standard.integer(forKey: "userIdx")
+    
+    let DidDismissEditRebornViewController: Notification.Name = Notification.Name("DidDismissEditRebornViewController")
+    
+    var imageUrl: ImageresultModel!
+    var rebornData: RebornEditresultModel!
     
     func dataSend(data: String) {
         timeLabel.text = data
@@ -29,6 +40,10 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     @IBOutlet weak var eatTextfield: UITextField!
     @IBOutlet weak var introduceTextView: UITextView!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet var editView: UIView!
+    
+    let serverURL = "http://www.rebornapp.shop/s3"
+    
     var Number = 00
     
     let imagePickerController = UIImagePickerController()
@@ -36,6 +51,12 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("넘겨받은 값은 \(String(rebornId))")
+        
+        editView.clipsToBounds = true
+        editView.layer.cornerRadius = 15
+        editView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         
         TimeSwitch.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
 
@@ -71,6 +92,9 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         enrollAlertEvent()
         self.imagePickerController.delegate = self
         addGestureRecognizer()
+        
+        let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -92,7 +116,7 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PopupViewController") as? PopupViewController else { return }
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.delegate = self
-        self.present(nextVC, animated: true, completion: nil)
+        self.present(nextVC, animated: false, completion: nil)
     }
     
     func placeholderSetting() {
@@ -188,6 +212,49 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         Number += 1
         countTextfield.text = String(Number)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView2"), object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("StartTimer"), object: nil, userInfo: nil)
+    }
+    
+    @IBAction func editPostButton(_ sender: Any) {
+        let parmeterDatas = RebornEditModel(rebornIdx: rebornId, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
+        APIHandlerEditPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    class DiaryPost {
+        static let instance = DiaryPost()
+        
+        func uploadDiary(file: UIImage, url: String, handler: @escaping (_ result: ImageresultModel)->(Void)) {
+            let headers: HTTPHeaders = [
+                                "Content-type": "multipart/form-data"
+                            ]
+            AF.upload(multipartFormData: { (multipart) in
+                if let imageData = file.jpegData(compressionQuality: 0.8) {
+                    multipart.append(imageData, withName: "file", fileName: "photo.jpg", mimeType: "image/jpeg")
+                }
+            }, to: url ,method: .post ,headers: headers).response { responce in
+                switch responce.result {
+                case .success(let data):
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+                        print(json)
+                        
+                        let jsonresult = try JSONDecoder().decode(ImageresultModel.self, from: data!)
+                        handler(jsonresult)
+                        print(jsonresult)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
 }
 
 extension EditRebornViewController: UIPopoverPresentationControllerDelegate {
@@ -209,6 +276,9 @@ extension EditRebornViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             EditImageView?.image = image
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                DiaryPost.instance.uploadDiary(file: self.EditImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")
         }

@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ComponentProductCellDelegate2 {
+    func completeButtonTapped2(index: Int)
+    func cancelButtonTapped2(index: Int)
+}
+
 class SecondMainTableViewCell: UITableViewCell {
     
     
@@ -19,6 +24,8 @@ class SecondMainTableViewCell: UITableViewCell {
     @IBOutlet weak var sharecancelButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     
+    var index: Int = 0
+    var delegate: ComponentProductCellDelegate2?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,9 +47,32 @@ class SecondMainTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
     }
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        self.delegate?.completeButtonTapped2(index: index)
+    }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        self.delegate?.cancelButtonTapped2(index: index)
+    }
 }
 
-extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource {
+extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource, ComponentProductCellDelegate2 {
+    func cancelButtonTapped2(index: Int) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CancelAlertViewController") as? CancelAlertViewController else { return }
+        let rebornData = rebornGoingDatas[index]
+        nextVC.rebornTaskId = rebornData.rebornTaskIdx
+        nextVC.modalPresentationStyle = .overFullScreen
+        self.present(nextVC, animated: false, completion: nil)
+    }
+    
+    func completeButtonTapped2(index: Int) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController else { return }
+        let rebornData = rebornGoingDatas[index]
+        nextVC.rebornTaskId = rebornData.rebornTaskIdx
+        nextVC.modalPresentationStyle = .overFullScreen
+        self.present(nextVC, animated: false, completion: nil)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
             // #warning Incomplete implementation, return the number of sections
@@ -82,6 +112,9 @@ extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
         cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
         cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2)"
+        
+        cell.index = indexPath.section
+        cell.delegate = self
         
         return cell
     }

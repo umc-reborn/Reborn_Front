@@ -8,12 +8,13 @@
 import UIKit
 
 class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var RebornHistoryTableView: UITableView!
     @IBOutlet weak var totalNum: UILabel!
     
     var historyDatas: [RebornHistoryResponse] = []
     var userIdx:Int?
+    var rebornTaskIndex: Int?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.totalNum.text = "\(historyDatas.count)"
@@ -21,8 +22,8 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RebornHistoryCell", for: indexPath) as? RebornHistoryTableViewCell else { return UITableViewCell() }
-//
+        //        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RebornHistoryCell", for: indexPath) as? RebornHistoryTableViewCell else { return UITableViewCell() }
+        //
         let cell = RebornHistoryTableView.dequeueReusableCell(withIdentifier: "RebornHistoryCell", for: indexPath) as! RebornHistoryTableViewCell
         
         let historyData = historyDatas[indexPath.row]
@@ -33,40 +34,65 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         cell.status.text = historyData.status
         cell.storeScore.text = String(historyData.storeScore)
         cell.category.text = historyData.category
-        let taskIndex = historyData.rebornTaskIdx
-        UserDefaults.standard.set(taskIndex, forKey: "rebornTaskIdx")
-
+        
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         let historyData = historyDatas[indexPath.row]
-
+        
+        rebornTaskIndex = historyData.rebornTaskIdx
+        
         switch historyData.status {
+            
+        case "COMPLETE":
+//            self.performSegue(withIdentifier: "completeSegue", sender: nil)
+//
+//            UserDefaults.standard.set(rebornTaskIndex, forKey:"rebornTaskIdx")
+            guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "completeRebornVC") as? CompleteRebornViewController else { return }
+            nextVC.rebornTaskIdx = historyData.rebornTaskIdx
+            navigationController?.pushViewController(nextVC, animated: true)
 
-        case "COMPLETE": self.performSegue(withIdentifier: "completeSegue", sender: nil)
+            
+        case "ACTIVE":
+            guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "historyDetailVC") as? RebornHistoryDetailViewController else { return }
+            nextVC.rebornTaskIdx = historyData.rebornTaskIdx
+            navigationController?.pushViewController(nextVC, animated: true)
 
-        case "ACTIVE": self.performSegue(withIdentifier: "historySegue", sender: nil)
+
 
         default:
-
+            
             return
-
         }
-
+        
+        
+        
+        
     }
-
+    
     
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewDidDisappear(_ animated: Bool) {
+
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+
+
+//        rebornTaskIndex = 0
+//        UserDefaults.standard.set(rebornTaskIndex, forKey:"rebornTaskIdx")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         self.navigationController?.navigationBar.topItem?.title = ""
         
@@ -79,18 +105,23 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
             switch result {
             case .success(let response):
                 print("성공")
-                                dump(response)
+                dump(response)
                 guard let response = response as? RebornHistoryModel else {
                     print("실패")
                     break
                 }
                 self.historyDatas = response.result
-
+                
             default:
                 break
             }
             self.RebornHistoryTableView.reloadData()
         }
-        //        print(historyDatas)
+        print("여기는 \(historyDatas)")
+    }
+
+    func loadData() {
+        // code to load data from network, and refresh the interface
+        tableView.reloadData()
     }
 }

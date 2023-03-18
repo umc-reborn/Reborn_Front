@@ -21,6 +21,6 @@ struct SearchResponse : Codable {
     let userImage: String
     let storeAddress: String
     let storeDescription : String
-    let storeScore : Int
+    let storeScore : Float
     let category : String
 }

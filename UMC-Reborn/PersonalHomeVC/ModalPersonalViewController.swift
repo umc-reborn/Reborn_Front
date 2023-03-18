@@ -13,6 +13,9 @@ class ModalPersonalViewController: UIViewController {
     
     let modalperson = UserDefaults.standard.integer(forKey: "userIndex")
     
+    var rebornDatas: [RebornListModel] = []
+    var jjimDatas: [JjimListModel] = []
+    
     var rebornData:JjimresultModel!
     
     @IBOutlet var storeImage: UIImageView!
@@ -32,11 +35,11 @@ class ModalPersonalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let fullText = modalButton.titleLabel?.text
-        let attributedString = NSMutableAttributedString(string: fullText ?? "")
-        
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
-        self.modalButton.setAttributedTitle(attributedString, for: .normal)
+//        let fullText = modalButton.titleLabel?.text
+//        let attributedString = NSMutableAttributedString(string: fullText ?? "")
+//
+//        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
+//        self.modalButton.setAttributedTitle(attributedString, for: .normal)
 
         modalButton.layer.cornerRadius = 5
         modalButton.layer.borderWidth = 1
@@ -47,7 +50,20 @@ class ModalPersonalViewController: UIViewController {
         modalView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
         
         storeResult()
-        UserDefaults.standard.set(storeIdm1, forKey: "storeid")
+        rebornResult()
+        JjimResult()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+            if (self.rebornDatas.count > 0) {
+                let fullText = self.modalButton.titleLabel?.text
+                let attributedString = NSMutableAttributedString(string: fullText ?? "")
+                
+                attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
+                self.modalButton.setAttributedTitle(attributedString, for: .normal)
+            } else {
+                self.modalButton.setTitle("진행중인 리본이 없습니다.", for: .normal)
+            }
+        }
     }
     
     @IBAction func jjimTapped(_ sender: Any) {
@@ -68,6 +84,64 @@ class ModalPersonalViewController: UIViewController {
     
     @IBAction func backButton(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func JjimResult() {
+
+        let url = APIConstants.baseURL + "/jjim/\(String(modalperson))"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+
+                do {
+                    let decodedData = try JSONDecoder().decode(JjimList.self, from: safeData)
+                    self.jjimDatas = decodedData.result
+                    print(jjimDatas)
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+                        print("정렬순: \(self.jjimDatas.count)")
+                        for i in 0...self.jjimDatas.count-1 {
+                            if (self.jjimDatas[i].storeIdx == self.storeIdm1) {
+                                self.likeButton.setImage(UIImage(named: "ic_like"), for: .normal)
+                                break
+                            } else {
+                                self.likeButton.setImage(UIImage(named: "ic_like_gray"), for: .normal)
+                            }
+                        }
+                    }
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
     }
     
     func storeResult() {
@@ -141,4 +215,39 @@ class ModalPersonalViewController: UIViewController {
         }.resume()
     }
     
+    func rebornResult() {
+        
+        let url = APIConstants.baseURL + "/reborns/store/\(String(storeIdm1))/status?status="
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decodedData = try JSONDecoder().decode(RebornList.self, from: safeData)
+                    self.rebornDatas = decodedData.result
+                    print(rebornDatas)
+                } catch {
+                    print("Error")
+                }
+            }
+        }.resume()
+    }
 }

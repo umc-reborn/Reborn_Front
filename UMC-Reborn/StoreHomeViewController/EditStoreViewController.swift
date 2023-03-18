@@ -4,8 +4,9 @@
 //
 //  Created by jaegu park on 2023/01/14.
 //
-
+import Foundation
 import UIKit
+import Alamofire
 
 protocol SampleProtocol3:AnyObject {
     func nameSend(data: String)
@@ -18,10 +19,17 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     
     let editStore = UserDefaults.standard.integer(forKey: "userIdx")
     
+    var storeCategory : String = ""
+    
     var storecategory = [" 카페·디저트", " 반찬", " 패션", " 편의·생활", " 기타"]
     let picker = UIPickerView()
     
+    let DidDismissEditRebornViewController: Notification.Name = Notification.Name("DidDismissEditRebornViewController")
+    
     weak var delegate : SampleProtocol3?
+    
+    var imageUrl: ImageresultModel!
+    var rebornData: StoreEditresultModel!
     
     func addressSend(data: String) {
         storeaddressTextfield.text = data
@@ -35,6 +43,8 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var storeTextView: UITextView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var StoreImageView: UIImageView!
+    
+    let serverURL = "http://www.rebornapp.shop/s3"
     
     let imagePickerController = UIImagePickerController()
     let alertController = UIAlertController(title: "가게 대표 사진 설정", message: "", preferredStyle: .actionSheet)
@@ -132,19 +142,19 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
                     let storeDatas = decodedData.result
                     print(storeDatas)
                     DispatchQueue.main.async {
-                        let url = URL(string: storeDatas.storeImage ?? "")
+                        let url = URL(string: storeDatas.userImage ?? "")
                         self.StoreImageView.load(url: url!)
                         self.storenameTextfield.text = "\(storeDatas.storeName)"
                         if (storeDatas.category == "CAFE") {
-                            self.storecategoryTextfield.text = "카페·디저트"
+                            self.storecategoryTextfield.text = " 카페·디저트"
                         } else if (storeDatas.category == "FASHION") {
-                            self.storecategoryTextfield.text = "패션"
+                            self.storecategoryTextfield.text = " 패션"
                         } else if (storeDatas.category == "SIDEDISH") {
-                            self.storecategoryTextfield.text = "반찬"
+                            self.storecategoryTextfield.text = " 반찬"
                         } else if (storeDatas.category == "LIFE") {
-                            self.storecategoryTextfield.text = "편의·생활"
+                            self.storecategoryTextfield.text = " 편의·생활"
                         } else {
-                            self.storecategoryTextfield.text = "기타"
+                            self.storecategoryTextfield.text = " 기타"
                         }
                     }
                 } catch let DecodingError.dataCorrupted(context) {
@@ -169,25 +179,27 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView8"), object: nil, userInfo: nil)
+    }
     
     @IBAction func saveButton(_ sender: Any) {
-        let text = storenameTextfield.text
-        if ((text != "")) {
-            delegate?.nameSend(data: text!)
+        if(storecategoryTextfield.text == " 카페·디저트") {
+            storeCategory = "CAFE"
+        } else if (storecategoryTextfield.text == " 반찬") {
+            storeCategory = "SIDEDISH"
+        } else if (storecategoryTextfield.text == " 패션") {
+            storeCategory = "FASHION"
+        } else if (storecategoryTextfield.text == " 편의·생활") {
+            storeCategory = "LIFE"
+        } else if (storecategoryTextfield.text == " 기타") {
+            storeCategory = "ETC"
         }
-        let text1 = storecategoryTextfield.text
-            if ((text1 != "")) {
-            delegate?.categorySend(data: text1!)
-        }
-        let text2 = storeaddressTextfield.text
-        if ((text2 != "")) {
-            delegate?.addressSend(data: text2!)
-        }
-        let text3 = storeTextView.text
-        if (text3 != " 사장님의 가게를 소개해 주세요!") {
-            delegate?.introduceSend(data: text3!)
-        }
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        let parameterDatas = StoreEditModel(storeName: storenameTextfield.text ?? "", storeAddress: storeaddressTextfield.text ?? "", storeDescription: storeTextView.text, category: storeCategory, storeImage: self.imageUrl.result ?? "")
+        APIHandlerStorePost.instance.SendingPostReborn(storeId: editStore, parameters: parameterDatas) { result in self.rebornData = result }
+        self.navigationController?.popViewController(animated: true)
     }
     
 
@@ -265,6 +277,37 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     @objc func tappedUIImageView(_gesture: UITapGestureRecognizer) {
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    class DiaryPost {
+        static let instance = DiaryPost()
+        
+        func uploadDiary(file: UIImage, url: String, handler: @escaping (_ result: ImageresultModel)->(Void)) {
+            let headers: HTTPHeaders = [
+                                "Content-type": "multipart/form-data"
+                            ]
+            AF.upload(multipartFormData: { (multipart) in
+                if let imageData = file.jpegData(compressionQuality: 0.8) {
+                    multipart.append(imageData, withName: "file", fileName: "photo.jpg", mimeType: "image/jpeg")
+                }
+            }, to: url ,method: .post ,headers: headers).response { responce in
+                switch responce.result {
+                case .success(let data):
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+                        print(json)
+                        
+                        let jsonresult = try JSONDecoder().decode(ImageresultModel.self, from: data!)
+                        handler(jsonresult)
+                        print(jsonresult)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
 }
 
 extension EditStoreViewController: UIPopoverPresentationControllerDelegate {
@@ -286,6 +329,9 @@ extension EditStoreViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             StoreImageView?.image = image
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                DiaryPost.instance.uploadDiary(file: self.StoreImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")
         }

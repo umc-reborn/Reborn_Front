@@ -97,6 +97,9 @@ extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
         let cell: FirstTabTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FirstTab_TableViewCell", for: indexPath) as! FirstTabTableViewCell
             
         let rebornData = rebornDatas[indexPath.section]
+        let limitTime = rebornData.productLimitTime
+        let minuteLimit1 = limitTime[String.Index(encodedOffset: 3)]
+        let minuteLimit2 = limitTime[String.Index(encodedOffset: 4)]
         let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
         cell.FTimageView.load(url: url!)
         cell.foodName.text = rebornData.productName
@@ -108,6 +111,7 @@ extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
             cell.timeImage.isHidden = false
             cell.limitTimeLabel.isHidden = false
             cell.rebornButton.isHidden = false
+            cell.limitTimeLabel.text = "\(minuteLimit1)\(minuteLimit2)분 내 수령"
         } else {
             cell.timeImage.isHidden = true
 //            cell.timeImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
@@ -120,8 +124,6 @@ extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
             cell.countLabel.translatesAutoresizingMaskIntoConstraints = false
             cell.countLabel.topAnchor.constraint(equalTo: cell.limitTimeLabel.topAnchor, constant: 5).isActive = true
             cell.FTimageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 10.79).isActive = true
-//            cell.limitTimeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
-            
         }
         
         return cell

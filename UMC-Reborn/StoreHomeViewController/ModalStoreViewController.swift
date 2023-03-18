@@ -11,10 +11,9 @@ class ModalStoreViewController: UIViewController {
     
     let modalStore = UserDefaults.standard.integer(forKey: "userIdx")
     
-    var rebornData:JjimresultModel!
+    var rebornDatas: [RebornListModel] = []
     
     var storeIdm: Int = 0
-    
     
     @IBOutlet var storeBigImage: UIImageView!
     @IBOutlet weak var modalButton: UIButton!
@@ -30,16 +29,8 @@ class ModalStoreViewController: UIViewController {
     @IBOutlet var rebornLabel: UILabel!
     @IBOutlet var jjimLabel: UILabel!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let fullText = modalButton.titleLabel?.text
-        let attributedString = NSMutableAttributedString(string: fullText ?? "")
-        
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
-        self.modalButton.setAttributedTitle(attributedString, for: .normal)
 
         modalButton.layer.cornerRadius = 5
         modalButton.layer.borderWidth = 1
@@ -50,6 +41,20 @@ class ModalStoreViewController: UIViewController {
         modalView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
         
         storeResult()
+        rebornResult()
+        print("리본 데이터의 수는? \(rebornDatas.count)")
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            if (self.rebornDatas.count > 0) {
+                let fullText = self.modalButton.titleLabel?.text
+                let attributedString = NSMutableAttributedString(string: fullText ?? "")
+                
+                attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
+                self.modalButton.setAttributedTitle(attributedString, for: .normal)
+            } else {
+                self.modalButton.setTitle("진행중인 리본이 없습니다.", for: .normal)
+            }
+        }
     }
     
 
@@ -60,9 +65,6 @@ class ModalStoreViewController: UIViewController {
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
             likeButton.tintColor = .clear
         } else {
-//            let parmeterData = JjimModel(storeIdx: 1, userIdx: 3)
-//            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
-//            }
             likeButton.isSelected = true
             likeButton.setImage(UIImage(named: "ic_like"), for: .selected)
             likeButton.tintColor = .clear
@@ -166,6 +168,42 @@ class ModalStoreViewController: UIViewController {
                     print("codingPath:", context.codingPath)
                 } catch {
                     print("error: ", error)
+                }
+            }
+        }.resume()
+    }
+    
+    func rebornResult() {
+        
+        let url = APIConstants.baseURL + "/reborns/store/\(String(modalStore))/status?status="
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decodedData = try JSONDecoder().decode(RebornList.self, from: safeData)
+                    self.rebornDatas = decodedData.result
+                    print(rebornDatas)
+                } catch {
+                    print("Error")
                 }
             }
         }.resume()

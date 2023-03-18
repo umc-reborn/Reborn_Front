@@ -10,6 +10,10 @@ import UIKit
 class StoreManageViewController: UIViewController, SampleProtocol3 {
     
     let storeManage = UserDefaults.standard.integer(forKey: "userIdx")
+    let shopToken = UserDefaults.standard.string(forKey: "shopJwt")
+    
+    var rebornData: LogoutresultModel!
+    var rebornDatas: UserDeleteresultModel!
     
     var storeText: Int = 2
     
@@ -84,8 +88,22 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
         attributedString2.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13), range: (jjimLabel.text! as NSString).range(of: "64"))
         self.jjimLabel.attributedText = attributedString2
         
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView8"),
+                  object: nil
+              )
+        
         storeResult()
     }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+              
+              self.storeResult()
+          }
+      }
     
     func storeResult() {
         
@@ -180,4 +198,34 @@ class StoreManageViewController: UIViewController, SampleProtocol3 {
         self.present(svc1, animated: true)
     }
     
+    @IBAction func pwchangeButton(_ sender: Any) {
+        guard let svc2 = self.storyboard?.instantiateViewController(identifier: "PWChangeViewController") as? PWChangeViewController else {
+                    return
+                }
+        
+        self.navigationController?.pushViewController(svc2, animated: true)
+    }
+    
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        let parameterDatas = LogoutModel(jwt: shopToken ?? "")
+        APIHandlerLogoutPost.instance.SendingPostReborn(token: shopToken ?? "", parameters: parameterDatas) { result in self.rebornData = result }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
+            rvc.modalPresentationStyle = .fullScreen
+            self.present(rvc, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func deleteuserButton(_ sender: Any) {
+        let parameterDatas = UserDeleteModel(userIdx: storeManage, status: "DELETE")
+        APIHandlerUserDeletePost.instance.SendingPostReborn(token: shopToken ?? "", parameters: parameterDatas) { result in self.rebornDatas = result }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
+            rvc.modalPresentationStyle = .fullScreen
+            self.present(rvc, animated: true, completion: nil)
+        }
+    }
 }

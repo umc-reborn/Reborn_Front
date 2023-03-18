@@ -10,6 +10,10 @@ import DropDown
 
 class JjimViewController: UIViewController {
     
+    let jjimVC = UserDefaults.standard.integer(forKey: "userIndex")
+    
+    var rebornJjimData: JjimresultModel!
+    
     let dropdown = DropDown()
 
     // DropDown 아이템 리스트
@@ -18,9 +22,8 @@ class JjimViewController: UIViewController {
     let jjimview = UserDefaults.standard.integer(forKey: "userIndex")
     
     var jjimDatas: [JjimListModel] = []
-    var jjimPopularDatas: [JjimListModel] = []
-    var jjimNameDatas: [JjimListModel] = []
-    var jjimScoreDatas: [JjimListModel] = []
+    
+    
 
     @IBOutlet weak var JjimCountLabel: UILabel!
     @IBOutlet weak var JjimTableView: UITableView!
@@ -55,6 +58,15 @@ class JjimViewController: UIViewController {
         dropdown.selectionAction = { [weak self] (index, item) in
             //선택한 Item을 TextField에 넣어준다.
             self!.JjimTextField.text = item
+            if index == 0 {
+                self?.JjimResult()
+            } else if index == 1 {
+                self?.JjimNameResult()
+            } else if index == 2 {
+                self?.JjimScoreResult()
+            } else if index == 3 {
+                self?.JjimPopularResult()
+            }
         }
         
         // 취소 시 처리
@@ -63,10 +75,14 @@ class JjimViewController: UIViewController {
     }
 
     // View 클릭 시 Action
-    @IBAction func dropdownClicked(_ sender: Any) {
-        dropdown.show() // 아이템 팝업을 보여준다.
-        // 아이콘 이미지를 변경하여 DropDown이 펼쳐진 것을 표현
+    
+    @IBAction func dropClicked(_ sender: Any) {
+        print("드롭다운")
+        dropdown.show()
     }
+    
+//        print("드롭다운")
+//        dropdown.show()
     
     func JjimResult() {
         
@@ -99,8 +115,16 @@ class JjimViewController: UIViewController {
                     print(jjimDatas)
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
-                        print("count: \(self.jjimDatas.count)")
-                        
+                        print("정렬순: \(self.jjimDatas.count)")
+//                        for i in 0...self.jjimDatas.count-1 {
+//                            if (self.jjimDatas[i].storeIdx == 2) {
+//                                break
+//                            } else {
+//                                
+//                            }
+//                        }
+                        let ggg = self.jjimDatas[0].storeIdx
+                        print("스토어아이디: \(ggg)")
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -162,7 +186,7 @@ class JjimViewController: UIViewController {
     
     func JjimPopularResult() {
         
-        let url = APIConstants.baseURL + "/jjim/22?sort=jjimCnt"
+        let url = APIConstants.baseURL + "/jjim/\(String(jjimview))?sort=jjimCnt"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -187,11 +211,11 @@ class JjimViewController: UIViewController {
                 
                 do {
                     let decodedData = try JSONDecoder().decode(JjimList.self, from: safeData)
-                    self.jjimPopularDatas = decodedData.result
-                    print(jjimPopularDatas)
+                    self.jjimDatas = decodedData.result
+                    print(jjimDatas)
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
-                        print("count: \(self.jjimPopularDatas.count)")
+                        print("인기순: \(self.jjimDatas.count)")
                         
                     }
                     
@@ -215,7 +239,7 @@ class JjimViewController: UIViewController {
     
     func JjimNameResult() {
         
-        let url = APIConstants.baseURL + "/jjim/22?sort=storeName"
+        let url = APIConstants.baseURL + "/jjim/\(String(jjimview))?sort=storeName"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -240,11 +264,11 @@ class JjimViewController: UIViewController {
                 
                 do {
                     let decodedData = try JSONDecoder().decode(JjimList.self, from: safeData)
-                    self.jjimNameDatas = decodedData.result
-                    print(jjimNameDatas)
+                    self.jjimDatas = decodedData.result
+                    print(jjimDatas)
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
-                        print("count: \(self.jjimNameDatas.count)")
+                        print("이름순: \(self.jjimDatas.count)")
                         
                     }
                     
@@ -268,7 +292,7 @@ class JjimViewController: UIViewController {
     
     func JjimScoreResult() {
         
-        let url = APIConstants.baseURL + "/jjim/22?sort=storeScore"
+        let url = APIConstants.baseURL + "/jjim/\(String(jjimview))?sort=storeScore"
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: encodedStr) else { print("err"); return }
@@ -293,11 +317,11 @@ class JjimViewController: UIViewController {
                 
                 do {
                     let decodedData = try JSONDecoder().decode(JjimList.self, from: safeData)
-                    self.jjimScoreDatas = decodedData.result
-                    print(jjimScoreDatas)
+                    self.jjimDatas = decodedData.result
+                    print(jjimDatas)
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
-                        print("count: \(self.jjimScoreDatas.count)")
+                        print("별점순: \(self.jjimDatas.count)")
                         
                     }
                     
@@ -347,10 +371,13 @@ class JjimViewController: UIViewController {
 //        JjimPopularResult()
 //        JjimNameResult()
 //        JjimScoreResult()
+        JjimButton.isUserInteractionEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.JjimTextField.text = "   정렬"
         JjimResult()
         JjimCountResult()
+        JjimTableView.reloadData()
     }
 }

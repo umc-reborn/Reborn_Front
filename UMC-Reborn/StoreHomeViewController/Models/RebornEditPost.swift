@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 struct RebornEditModel:Encodable {
-    var storeIdx:Int
+    var rebornIdx:Int
     var productName:String?
     var productGuide:String?
     var productComment:String?

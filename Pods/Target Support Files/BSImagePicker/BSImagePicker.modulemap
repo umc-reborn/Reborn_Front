@@ -1,0 +1,6 @@
+module BSImagePicker {
+  umbrella header "BSImagePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}
