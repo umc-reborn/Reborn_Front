@@ -124,8 +124,6 @@ extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
             cell.countLabel.translatesAutoresizingMaskIntoConstraints = false
             cell.countLabel.topAnchor.constraint(equalTo: cell.limitTimeLabel.topAnchor, constant: 5).isActive = true
             cell.FTimageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 10.79).isActive = true
-//            cell.limitTimeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
-            
         }
         
         return cell

@@ -16,7 +16,7 @@ class StoreTabBarController: UITabBarController {
         tabBar.tintColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1.0)
         tabBar.unselectedItemTintColor = UIColor.black
         tabBar.backgroundColor = .white
-        tabBar.layer.cornerRadius = 20
+        tabBar.layer.cornerRadius = 25
         tabBar.layer.masksToBounds = false
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         

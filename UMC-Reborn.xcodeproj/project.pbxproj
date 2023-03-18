@@ -766,12 +766,12 @@
 			isa = PBXGroup;
 			children = (
 				C7FA26E4297E9E600054DB29 /* Models */,
-				C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */,
 				C7284AB1298FFBA1009A70E7 /* StoreService.swift */,
 				C7284AAD298EAECE009A70E7 /* RebornService.swift */,
 				C7EF98272990D8FB00480DD9 /* RebornStatusService.swift */,
 				C7EF982B2990DD2600480DD9 /* ReviewService.swift */,
 				C7EF982F2991087200480DD9 /* JjimService.swift */,
+				C74FEE3B29717AE300BFC8D0 /* StoreTabBarController.swift */,
 				C74FEE3D29717B6F00BFC8D0 /* StoreMainViewController.swift */,
 				C74FEE432971893300BFC8D0 /* RebornEnrollViewController.swift */,
 				C74FEE4529718B7C00BFC8D0 /* AddRebornViewController.swift */,

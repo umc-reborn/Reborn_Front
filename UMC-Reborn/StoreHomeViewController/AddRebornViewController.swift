@@ -110,7 +110,6 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.delegate = self
         self.present(nextVC, animated: false, completion: nil)
-//        DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
     }
     
     func placeholderSetting() {
@@ -213,27 +212,9 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     @IBAction func RebornPostButton(_ sender: Any) {
-//        let parmeterData = ImageModel(file: imageBase64String ?? "")
-//        let image = AddImageView.image
-//        DispatchQueue.main.async {
-//            APIHandlerImagePost.instance.SendingPostImage(parameters: parmeterData) { result in self.imageUrl = result
-//            }
-//        }
-//        DispatchQueue.global().sync {
-//            print(imageUrl ?? "")
-//            print(imageUrl ?? "")
-//        }
         let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
         APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
-   
-        
-    
-//        let pngData = AddImageView.image?.jpegData(compressionQuality: 1.0)
-//        let parmeterDatas = RebornModel(storeIdx: 2, productName: nameTextfield.text ?? "", productGuide: eatTextfield.text ?? "", productComment: introduceTextView.text ?? "", productImg: "", productLimitTime: timeLabel2.text ?? "", productCnt: Number)
-//////
-//        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result
-//        }
     }
     
     class DiaryPost {
@@ -290,7 +271,6 @@ extension AddRebornViewController: UIImagePickerControllerDelegate, UINavigation
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                 DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
             }
-//            AddActionEditService.shared.editActivity(file: image) { result in self.imageUrl = result }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")
         }

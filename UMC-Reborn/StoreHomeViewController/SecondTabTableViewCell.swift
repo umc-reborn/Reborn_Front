@@ -10,7 +10,6 @@ import UIKit
 class SecondTabTableViewCell: UITableViewCell {
 
     let reviewImage = ["Review_image", "Review_image"]
-    let flowlayout = UICollectionViewFlowLayout()
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var personImage: UIImageView!
@@ -27,7 +26,6 @@ class SecondTabTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        flowlayout.minimumLineSpacing = 0
         commentLabel.sizeToFit()
         
         personImage.layer.cornerRadius = self.personImage.frame.size.height / 2

@@ -17,7 +17,7 @@ class ModalFirstViewController: UIViewController {
     
     var storeIdm2: Int = 0
     
-    let modalfirst = UserDefaults.standard.integer(forKey: "storeid")
+    var modalfirst: Int = 0
     
     
     @IBOutlet var mftableView: UITableView!
@@ -36,6 +36,8 @@ class ModalFirstViewController: UIViewController {
         mftableView.layer.shadowRadius = 10 // any value you want
         mftableView.layer.shadowOffset = .init(width: 5, height: 10)
         
+        modalfirst = UserDefaults.standard.integer(forKey: "storeid")
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             self.rebornResult()
         }
@@ -47,6 +49,12 @@ class ModalFirstViewController: UIViewController {
                   object: nil
                   )
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+//            self.rebornResult()
+//        }
+//    }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {

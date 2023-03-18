@@ -92,7 +92,6 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-           // textField.borderStyle = .line
         textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
             textField.layer.borderWidth = 1.0
     }
