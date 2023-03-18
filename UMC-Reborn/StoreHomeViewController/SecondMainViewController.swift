@@ -11,11 +11,6 @@ class SecondMainViewController: UIViewController {
     
     let secondMain = UserDefaults.standard.integer(forKey: "userIdx")
     
-//    let StoreArray = [["가나다라마바사아"], ["챱챱챱챱챱스테이크"]]
-//    let FoodArray = [["맛있는우유식빵"], ["쫀득쫀득쫀득도넛"]]
-//    let CountArray = [["1"], ["2"]]
-//    let TimeArray = [["09:12"], ["10:13"]]
-    
     var storesecondText: Int = 0
     
     var rebornGoingDatas: [RebornStatusListModel] = []

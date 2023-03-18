@@ -8,8 +8,6 @@
 import UIKit
 
 class StoreReviewTableViewCell: UITableViewCell {
-
-    let flowlayout = UICollectionViewFlowLayout()
     
     var reviewImageDatas : [ReviewListModel] = []
     
@@ -28,9 +26,7 @@ class StoreReviewTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        flowlayout.minimumLineSpacing = 0
         reviewComment.sizeToFit()
-//        reviewImageResult()
         
         personImage.layer.cornerRadius = self.personImage.frame.size.height / 2
         personImage.layer.masksToBounds = true
@@ -48,58 +44,6 @@ class StoreReviewTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
     }
-    
-//    func reviewImageResult() {
-//
-//        let url = APIConstants.baseURL + "/review/store/2/buz"
-//        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-//
-//        guard let url = URL(string: encodedStr) else { print("err"); return }
-//
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "GET"
-//
-//        URLSession.shared.dataTask(with: request) { [self] data, response, error in
-//            if error != nil {
-//                print("err")
-//                return
-//            }
-//
-//            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
-//            response.statusCode else {
-//                print("Error: HTTP request failed")
-//                return
-//            }
-//
-//            if let safeData = data {
-//
-//                do {
-//                    let decoder = JSONDecoder()
-//                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                    let decodedData = try decoder.decode(ReviewList.self, from: safeData)
-//                    self.reviewImageDatas = decodedData.result
-//                    print("reviewImageDatas: \(reviewImageDatas)")
-//                    DispatchQueue.main.async {
-//                        self.collectionView.reloadData()
-//                    }
-//
-//                } catch let DecodingError.dataCorrupted(context) {
-//                    print(context)
-//                } catch let DecodingError.keyNotFound(key, context) {
-//                    print("Key '\(key)' not found:", context.debugDescription)
-//                    print("codingPath:", context.codingPath)
-//                } catch let DecodingError.valueNotFound(value, context) {
-//                    print("Value '\(value)' not found:", context.debugDescription)
-//                    print("codingPath:", context.codingPath)
-//                } catch let DecodingError.typeMismatch(type, context)  {
-//                    print("Type '\(type)' mismatch:", context.debugDescription)
-//                    print("codingPath:", context.codingPath)
-//                } catch {
-//                    print("error: ", error)
-//                }
-//            }
-//        }.resume()
-//    }
 }
 
 extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource {
@@ -125,8 +69,6 @@ extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreReview_TableViewCell", for: indexPath) as! StoreReviewTableViewCell
         
         let rebornData = reviewDatas[indexPath.section]
-//        let ddd : [String] = [rebornData.reviewImage1 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png", rebornData.reviewImage2 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png", rebornData.reviewImage3 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png", rebornData.reviewImage4 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png", rebornData.reviewImage5 ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png"]
-//        print(ddd)
         let url = URL(string: rebornData.userImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/20959843-0000-46c8-aaff-38342f93dd47.jpg")
         let url2 = URL(string: rebornData.reviewImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/20959843-0000-46c8-aaff-38342f93dd47.jpg")
         let createTime = rebornData.reviewCreatedAt

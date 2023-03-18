@@ -109,7 +109,7 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: false, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func EdittimeButton(_ sender: Any) {
@@ -117,7 +117,6 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.delegate = self
         self.present(nextVC, animated: false, completion: nil)
-//        DiaryPost.instance.uploadDiary(file: self.EditImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
     }
     
     func placeholderSetting() {
@@ -217,6 +216,7 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView2"), object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("StartTimer"), object: nil, userInfo: nil)
     }
     
     @IBAction func editPostButton(_ sender: Any) {

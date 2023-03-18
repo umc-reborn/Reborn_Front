@@ -52,9 +52,8 @@ class ModalPersonalViewController: UIViewController {
         storeResult()
         rebornResult()
         JjimResult()
-        UserDefaults.standard.set(storeIdm1, forKey: "storeid")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
             if (self.rebornDatas.count > 0) {
                 let fullText = self.modalButton.titleLabel?.text
                 let attributedString = NSMutableAttributedString(string: fullText ?? "")
@@ -126,8 +125,6 @@ class ModalPersonalViewController: UIViewController {
                                 self.likeButton.setImage(UIImage(named: "ic_like_gray"), for: .normal)
                             }
                         }
-                        let ggg = self.jjimDatas[0].storeIdx
-                        print("스토어아이디: \(ggg)")
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)

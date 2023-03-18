@@ -57,20 +57,6 @@ class EnrollTableViewCell: UITableViewCell {
     }
 }
 
-//extension UIImageView {
-//    func load(url: URL) {
-//        DispatchQueue.global().async { [weak self] in
-//            if let data = try? Data(contentsOf: url) {
-//                if let image = UIImage(data: data) {
-//                    DispatchQueue.main.async {
-//                        self?.image = image
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
-
 extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource, SampleProtocol5 {
     
     func activeSwitchTapped(index: Int) {
@@ -84,7 +70,7 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "EditRebornViewController") as? EditRebornViewController else { return }
         nextVC.modalPresentationStyle = .overFullScreen
         nextVC.rebornId = rebornData.rebornIdx
-        self.present(nextVC, animated: false)
+        self.present(nextVC, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -126,11 +112,6 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
             cell.timeLabel.alpha = 0
             cell.TimeImageView.alpha = 0
         }
-//        cell.foodName.text = FoodArray[indexPath.section]
-//        cell.timeLabel.text = "\(TimeArray[indexPath.section])분 내 수령"
-//        cell.countLabel.text = "남은 수량: \(CountArray[indexPath.section])"
-//        cell.Description.text = DescriptionArray[indexPath.section]
-//        cell.CautionLabel.text = CautionArray[indexPath.section]
         cell.index = indexPath.section
         cell.cellDelegate = self
         
@@ -144,7 +125,7 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
             let parmeterDatas = RebornDeleteModel(rebornIdx: rebornData.rebornIdx)
             APIHandlerDeletePost.instance.SendingPostReborn(rebornId: rebornData.rebornIdx, parameters: parmeterDatas) { result in self.rebornData = result }
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
                   
                   self.rebornResult()
             }
