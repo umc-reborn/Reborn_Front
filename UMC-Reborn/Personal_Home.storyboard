@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="2021.6666666666667"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLine" translatesAutoresizingMaskIntoConstraints="NO" id="COd-FA-zwC">
-                                                <rect key="frame" x="26" y="63" width="36" height="2000"/>
+                                                <rect key="frame" x="26" y="68" width="36" height="2000"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2000" id="GA5-Ib-hpS"/>
                                                     <constraint firstAttribute="width" constant="36" id="JZv-Tm-Wn3"/>
@@ -56,7 +56,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMw-8b-lRy">
-                                                <rect key="frame" x="15" y="5" width="119" height="38"/>
+                                                <rect key="frame" x="15" y="10" width="119" height="38"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Logo" title="  공릉동" titleAlignment="leading">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
@@ -158,7 +158,7 @@
                                             <constraint firstItem="Efc-11-v3a" firstAttribute="leading" secondItem="9c6-Zh-JFO" secondAttribute="leading" id="ODo-79-aRI"/>
                                             <constraint firstItem="FMS-e8-ArB" firstAttribute="top" secondItem="CJj-yL-lG1" secondAttribute="bottom" constant="60" id="PuL-kj-BA5"/>
                                             <constraint firstAttribute="trailing" secondItem="3in-iu-S9r" secondAttribute="trailing" id="S0n-Bw-kFF"/>
-                                            <constraint firstItem="cMw-8b-lRy" firstAttribute="top" secondItem="9c6-Zh-JFO" secondAttribute="top" constant="5" id="SA3-FB-t7X"/>
+                                            <constraint firstItem="cMw-8b-lRy" firstAttribute="top" secondItem="9c6-Zh-JFO" secondAttribute="top" constant="10" id="SA3-FB-t7X"/>
                                             <constraint firstAttribute="trailing" secondItem="KnN-vy-Ep6" secondAttribute="trailing" id="SGj-g0-mrw"/>
                                             <constraint firstItem="dmZ-NT-Riv" firstAttribute="top" secondItem="njX-Vf-KoF" secondAttribute="bottom" constant="31" id="U0O-yo-kxh"/>
                                             <constraint firstItem="dmZ-NT-Riv" firstAttribute="leading" secondItem="AKY-Bk-TGS" secondAttribute="trailing" constant="5" id="UQo-6n-EjB"/>
@@ -427,7 +427,7 @@
                                                 <constraint firstItem="dyv-0B-X52" firstAttribute="leading" secondItem="JYV-dg-QMO" secondAttribute="leading" id="e2Q-8E-mV3"/>
                                                 <constraint firstItem="82a-mE-rOY" firstAttribute="leading" secondItem="JYV-dg-QMO" secondAttribute="leading" id="rBP-i1-SXl"/>
                                                 <constraint firstItem="6d6-Il-FoG" firstAttribute="top" secondItem="dyv-0B-X52" secondAttribute="top" constant="22" id="wPV-1S-IRH"/>
-                                                <constraint firstItem="UYf-Bz-i7c" firstAttribute="top" secondItem="82a-mE-rOY" secondAttribute="bottom" constant="25" id="wi7-gI-m5h"/>
+                                                <constraint firstItem="UYf-Bz-i7c" firstAttribute="top" secondItem="82a-mE-rOY" secondAttribute="bottom" constant="24.5" id="wi7-gI-m5h"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="131" height="164"/>
