@@ -29,8 +29,8 @@ class HelloViewController: UIViewController {
     }
     @IBAction func startRebornButton(_ sender: UIButton) {
         
-            let storyboard = UIStoryboard(name: "Personal_Home", bundle: nil)
-            guard let nextVC = storyboard.instantiateViewController(identifier: "PersonalHomeVC") as? PersonalHomeViewController else { return }
+            let storyboard = UIStoryboard(name: "JoinLogin", bundle: nil)
+            guard let nextVC = storyboard.instantiateViewController(identifier: "tVersionViewController") as? tVersionViewController else { return }
             
             self.navigationController?.pushViewController(nextVC, animated: true)
 

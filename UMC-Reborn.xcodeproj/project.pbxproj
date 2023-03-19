@@ -36,8 +36,18 @@
 		0B94772229899E5200B5829A /* FoundIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94772129899E5200B5829A /* FoundIdViewController.swift */; };
 		0B94772429899E6500B5829A /* ResetPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94772329899E6500B5829A /* ResetPwViewController.swift */; };
 		0B9477262989A86200B5829A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9477252989A86200B5829A /* FirstViewController.swift */; };
+		0B9FC05C29BBA154008BCA53 /* goEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9FC05B29BBA154008BCA53 /* goEmailViewController.swift */; };
+		0B9FC05E29BBA4F9008BCA53 /* FullMailPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9FC05D29BBA4F9008BCA53 /* FullMailPost.swift */; };
 		0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BAEAC2429704020008079E6 /* JoinLogin.storyboard */; };
 		0BC96D5C2975522800EA4926 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC96D5B2975522800EA4926 /* LoginViewController.swift */; };
+		0BD99EDC29BEF0B700C6C0F1 /* tVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EDB29BEF0B700C6C0F1 /* tVersionViewController.swift */; };
+		0BD99EDE29C0C8D200C6C0F1 /* PwResetPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EDD29C0C8D200C6C0F1 /* PwResetPost.swift */; };
+		0BD99EE029C0CE9100C6C0F1 /* idCheckGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EDF29C0CE9100C6C0F1 /* idCheckGet.swift */; };
+		0BD99EE229C0E4BE00C6C0F1 /* noUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE129C0E4BE00C6C0F1 /* noUserViewController.swift */; };
+		0BD99EE429C0E54B00C6C0F1 /* sendPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE329C0E54B00C6C0F1 /* sendPwViewController.swift */; };
+		0BD99EE629C4D00B00C6C0F1 /* JoinNeiPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE529C4D00B00C6C0F1 /* JoinNeiPost.swift */; };
+		0BD99EE829C4D66400C6C0F1 /* noStoreJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE729C4D66400C6C0F1 /* noStoreJoinViewController.swift */; };
+		2F19029A2997D6C400853D75 /* RebornModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1902992997D6C400853D75 /* RebornModel.swift */; };
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */; };
 		2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */; };
@@ -267,8 +277,17 @@
 		0B94772129899E5200B5829A /* FoundIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundIdViewController.swift; sourceTree = "<group>"; };
 		0B94772329899E6500B5829A /* ResetPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPwViewController.swift; sourceTree = "<group>"; };
 		0B9477252989A86200B5829A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		0B9FC05B29BBA154008BCA53 /* goEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goEmailViewController.swift; sourceTree = "<group>"; };
+		0B9FC05D29BBA4F9008BCA53 /* FullMailPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMailPost.swift; sourceTree = "<group>"; };
 		0BAEAC2429704020008079E6 /* JoinLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinLogin.storyboard; sourceTree = "<group>"; };
 		0BC96D5B2975522800EA4926 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0BD99EDB29BEF0B700C6C0F1 /* tVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tVersionViewController.swift; sourceTree = "<group>"; };
+		0BD99EDD29C0C8D200C6C0F1 /* PwResetPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwResetPost.swift; sourceTree = "<group>"; };
+		0BD99EDF29C0CE9100C6C0F1 /* idCheckGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idCheckGet.swift; sourceTree = "<group>"; };
+		0BD99EE129C0E4BE00C6C0F1 /* noUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noUserViewController.swift; sourceTree = "<group>"; };
+		0BD99EE329C0E54B00C6C0F1 /* sendPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendPwViewController.swift; sourceTree = "<group>"; };
+		0BD99EE529C4D00B00C6C0F1 /* JoinNeiPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinNeiPost.swift; sourceTree = "<group>"; };
+		0BD99EE729C4D66400C6C0F1 /* noStoreJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noStoreJoinViewController.swift; sourceTree = "<group>"; };
 		0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.release.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.release.xcconfig"; sourceTree = "<group>"; };
 		20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.debug.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.debug.xcconfig"; sourceTree = "<group>"; };
 		2C19DC0605BD35D11E1E9E84 /* libPods-UMC-Reborn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UMC-Reborn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -498,7 +517,11 @@
 				0B68DDE4299287E500A988FA /* JoinShopPost.swift */,
 				0B183DC829ABAC5400B0B2FE /* FindIdPost.swift */,
 				0B183DCA29AC901C00B0B2FE /* FindIdGet.swift */,
+				0B9FC05D29BBA4F9008BCA53 /* FullMailPost.swift */,
 				0B0ED0FD29B7B99B00694C93 /* NumCheckGet.swift */,
+				0BD99EDD29C0C8D200C6C0F1 /* PwResetPost.swift */,
+				0BD99EDF29C0CE9100C6C0F1 /* idCheckGet.swift */,
+				0BD99EE529C4D00B00C6C0F1 /* JoinNeiPost.swift */,
 			);
 			path = JLAPI;
 			sourceTree = "<group>";
@@ -518,6 +541,7 @@
 				0B94771129899DB200B5829A /* Id_PassWordViewController.swift */,
 				0B94771329899DC700B5829A /* Basic_InfoViewController.swift */,
 				0B94771729899DDD00B5829A /* HelloViewController.swift */,
+				0BD99EDB29BEF0B700C6C0F1 /* tVersionViewController.swift */,
 				0B0D66C5298CFA1800E5220F /* EmailViewSecondController.swift */,
 				0B94771929899DF700B5829A /* ShopBasic_InfoViewController.swift */,
 				0B0D66C7298CFA6100E5220F /* Id_PassWordSecondViewController.swift */,
@@ -527,7 +551,11 @@
 				0B94771F29899E4400B5829A /* FindIdViewController.swift */,
 				0B183DCC29B2444B00B0B2FE /* noEmailViewController.swift */,
 				0B94772129899E5200B5829A /* FoundIdViewController.swift */,
+				0B9FC05B29BBA154008BCA53 /* goEmailViewController.swift */,
 				0B94772329899E6500B5829A /* ResetPwViewController.swift */,
+				0BD99EE129C0E4BE00C6C0F1 /* noUserViewController.swift */,
+				0BD99EE329C0E54B00C6C0F1 /* sendPwViewController.swift */,
+				0BD99EE729C4D66400C6C0F1 /* noStoreJoinViewController.swift */,
 			);
 			path = joinlogin;
 			sourceTree = "<group>";
@@ -1108,6 +1136,7 @@
 				C7C4FD75296D315B00040E05 /* AppDelegate.swift in Sources */,
 				0B94772429899E6500B5829A /* ResetPwViewController.swift in Sources */,
 				95E9FFB9297FAFE10073DF2B /* LatestSearchedCell.swift in Sources */,
+				0BD99EDC29BEF0B700C6C0F1 /* tVersionViewController.swift in Sources */,
 				0B94771A29899DF700B5829A /* ShopBasic_InfoViewController.swift in Sources */,
 				9561BA8A2994712600A4B33B /* InprogressService.swift in Sources */,
 				C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */,
@@ -1136,11 +1165,13 @@
 				9561B7B4298FA05900A4B33B /* BestReviewService.swift in Sources */,
 				952CB2A12977569C00BD7CD7 /* NewShopViewController.swift in Sources */,
 				C70D3D702982E7B900CABA91 /* PWChangeViewController.swift in Sources */,
+				0BD99EE629C4D00B00C6C0F1 /* JoinNeiPost.swift in Sources */,
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */,
 				95369A1429ACBB2E0041F837 /* WillLikeShopModel.swift in Sources */,
 				C7C400F529B09127008EB125 /* RebornDeletePost.swift in Sources */,
 				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
+				0B9FC05C29BBA154008BCA53 /* goEmailViewController.swift in Sources */,
 				2FF615372992D1EC00143369 /* RebornHistoryModel.swift in Sources */,
 				C71987552986D447000C87EB /* JjimViewController.swift in Sources */,
 				2FF28CE8298D065D008B7D8E /* APIMyRebornPost.swift in Sources */,
@@ -1151,6 +1182,7 @@
 				C7B6447A299C873B00A7048D /* ModalSecondCollectionViewCell.swift in Sources */,
 				C7324E3A29965DDA0062564D /* APIImagePost.swift in Sources */,
 				0B94771829899DDE00B5829A /* HelloViewController.swift in Sources */,
+				0BD99EE029C0CE9100C6C0F1 /* idCheckGet.swift in Sources */,
 				0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */,
 				C7B64478299C625E00A7048D /* RebornCautionViewController.swift in Sources */,
 				0B0D66C8298CFA6100E5220F /* Id_PassWordSecondViewController.swift in Sources */,
@@ -1170,6 +1202,7 @@
 				95C0365A298A7D4400599354 /* APIConstants.swift in Sources */,
 				0B94772229899E5200B5829A /* FoundIdViewController.swift in Sources */,
 				C70D3D5B29819A1D00CABA91 /* FirstMainViewController.swift in Sources */,
+				0BD99EE229C0E4BE00C6C0F1 /* noUserViewController.swift in Sources */,
 				C70D3D612981A16D00CABA91 /* FirstMainTableViewCell.swift in Sources */,
 				C7EF982A2990DC0100480DD9 /* ReviewModel.swift in Sources */,
 				C7284AA5298D23BA009A70E7 /* APIJjimPost.swift in Sources */,
@@ -1221,11 +1254,14 @@
 				C7284AAE298EAECE009A70E7 /* RebornService.swift in Sources */,
 				2FADC52D298BC71200C09566 /* ChangePasswordViewController.swift in Sources */,
 				C70D3D532981001300CABA91 /* FirstTabTableViewCell.swift in Sources */,
+				0BD99EE829C4D66400C6C0F1 /* noStoreJoinViewController.swift in Sources */,
 				9561B7BE2991E1CD00A4B33B /* MapViewController.swift in Sources */,
 				C74FEE442971893300BFC8D0 /* RebornEnrollViewController.swift in Sources */,
 				2FF615352992D0B000143369 /* RebornHistoryService.swift in Sources */,
+				0BD99EE429C0E54B00C6C0F1 /* sendPwViewController.swift in Sources */,
 				2F7C0AB82994DAD000BC5F9A /* ReviewManageService.swift in Sources */,
 				953AEEA0298F9C27008AAE8A /* BestReviewModel.swift in Sources */,
+				0B9FC05E29BBA4F9008BCA53 /* FullMailPost.swift in Sources */,
 				C7C400F329B08889008EB125 /* RebornCancelPost.swift in Sources */,
 				95E9FFB7297E6F880073DF2B /* SearchViewController.swift in Sources */,
 				C74FEE3E29717B6F00BFC8D0 /* StoreMainViewController.swift in Sources */,
@@ -1243,6 +1279,7 @@
 				0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */,
 				C74A64B329C3673100F5B06F /* CreateRebornPost.swift in Sources */,
 				C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */,
+				0BD99EDE29C0C8D200C6C0F1 /* PwResetPost.swift in Sources */,
 				C765116829BC69D90030128C /* UserDeletePost.swift in Sources */,
 				C787E3B029BB44390090B946 /* TimerModel.xcdatamodeld in Sources */,
 				C7062994299BE5BA002F5C1A /* ModalTabViewController.swift in Sources */,
@@ -1325,7 +1362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1383,7 +1420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1438,7 +1475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimyelin/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1488,7 +1525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimyelin/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;

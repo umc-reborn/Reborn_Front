@@ -6,20 +6,23 @@
 //
 import Foundation
 import UIKit
-
  
 class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
-    
-    var apple: String = ""
+
     
     //API
     var emailData: emailModel!
+    
+    var apple: String = ""
     var UserEmailText: String = ""
-    //var textt : String = ""
     var Something6 : String = ""
     
     //get api 선언
     var Lego : NumCheckModel!
+    
+    
+    var hihi : String = ""
+    var rightHi : String = ""
     
     @IBOutlet weak var ProgressView3: UIProgressView!
     
@@ -34,8 +37,10 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     
     @IBOutlet weak var requestCheckButton: UIButton! // 인증 확인 버튼
     
+    @IBOutlet var miniEmailLabel: UILabel!// 이메일 경고문구
     
     
+    @IBOutlet var miniLabel: UILabel! // 인증번호 경고문구
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +50,9 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         //뒤로가기 한글 삭제
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
-        
+        //다음 버튼 비활성화
+        nextbuttonEmail.isEnabled = false
+    
         
         //progressView3
         ProgressView3.progressViewStyle = .default
@@ -73,7 +80,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         EmailTextField.placeholder = "이메일을 입력해 주세요"
         EmailTextField.backgroundColor = .white
         EmailTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
-        EmailTextField.keyboardType = .asciiCapable // only english
+        EmailTextField.keyboardType = .emailAddress // 이메일 치도록
         EmailTextField.textColor = .black
         EmailTextField.layer.borderWidth = 1.0 // 두께
         EmailTextField.layer.borderColor = mygray?.cgColor // 테두리 컬러
@@ -86,7 +93,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         codeTextField.placeholder = "인증번호를 입력해주세요"
         codeTextField.backgroundColor = .white
         codeTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
-        codeTextField.keyboardType = .numberPad
+        codeTextField.keyboardType = .default // 인증번호는 영어와 숫자로 이루어짐
         codeTextField.textColor = .black
         codeTextField.layer.borderWidth = 1.0 // 두께
         codeTextField.layer.borderColor = mygray?.cgColor // 테두리 컬러
@@ -101,6 +108,8 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         requestButton.setTitle("인증요청", for: .normal)  // 버튼 텍스트 설정
         requestButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
         requestButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
+        miniEmailLabel.text = " " // 성공했으니 비어있어야지
+        miniEmailLabel.textColor = .mybrown
         
         // 인증확인버튼
         requestCheckButton.layer.borderWidth = 1.0
@@ -115,8 +124,12 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         codeTextField.delegate = self
         textFieldDidBeginEditing(EmailTextField)
         textFieldDidEndEditing(EmailTextField)
+//        Idontknow(textField: EmailTextField)
         textFieldDidBeginEditing(codeTextField)
         textFieldDidEndEditing(codeTextField)
+        //Idontknow(codeTextField)
+        
+        EmailTextField.addTarget(self, action: #selector(Idontknow), for:.editingChanged)
         
     }
     
@@ -132,42 +145,109 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         textField.layer.borderWidth = 1.0
     }
     
-    //다음 버튼 누르면 데이터 보내기 : 1. ad 2. 이메일
-    // 인증 번호 같아야 넘어갈거임...인증번호 같은지 확인 후 활성화 되는 함수 만들기
-    //    @IBAction func nextbuttonEmailTapped(_ sender: Any) {
-    //        Something6 = EmailTextField.text ??  // 이메일을 변수에 넣었고
-    //
-    //        let storyBBB = UIStoryboard.init(name: "JoinLogin", bundle: nil)
-    //        guard let rvc2 = storyBBB.instantiateViewController(withIdentifier: "Id_PassWordViewController") as? Id_PassWordViewController else {return}
-    //
-    //        rvc2.apple1 = apple // who에서 email로 온 거 담아서 보낼거임
-    //        rvc2.thisisemail = Something6 // 이메일 담음 (보낼거야)
-    //
-    //
-    //    }
+    //이메일 정규표현식
+    func isValidEmail(testStr:String?) -> Bool{
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z].{2,64}"
+              let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+              return emailTest.evaluate(with: testStr)
+        }
     
-    //인증요청 누르면 api 넘기기
+    @objc func Idontknow(textField: UITextField){ // 여기에 문제가
+        if (textField == EmailTextField){
+            if isValidEmail(testStr: textField.text) {
+                miniEmailLabel.text = ""
+                miniEmailLabel.textColor = .mybrown //의미가 있나
+                requestButton.isEnabled = true
+            }
+            else {
+                miniEmailLabel.text = "올바른 이메일 형식을 입력해 주세요."
+                miniEmailLabel.textColor = .myorange
+                requestButton.isEnabled = false
+            }
+        }
+    }
+    
+    // 암호화 2개 비교
+    @objc func compare2Things() {
+        if(self.hihi == self.rightHi) {
+            nextbuttonEmail.isEnabled = true // 다음 버튼 활성화
+            nextbuttonEmail.backgroundColor = .mybrown
+            nextbuttonEmail.setTitleColor(.white, for: .normal) // 평상시
+            nextbuttonEmail.setTitleColor(.white, for: .selected)
+            miniLabel.text = "인증완료 되었습니다."
+            miniLabel.textColor = .mybrown
+            requestCheckButton.backgroundColor = .white
+            requestCheckButton.layer.borderColor = UIColor.mygray?.cgColor
+            requestCheckButton.setTitleColor(.mygray, for: .normal)
+            requestCheckButton.isEnabled = false
+            
+        }
+        else {
+            nextbuttonEmail.backgroundColor = .white
+            nextbuttonEmail.setTitleColor(.mybrown, for: .normal) // 평상시
+            nextbuttonEmail.setTitleColor(.mybrown, for: .selected)
+            nextbuttonEmail.isEnabled = false // 다음 버튼 비활성화
+            miniLabel.text = "올바른 인증번호가 아닙니다."
+            miniLabel.textColor = .myorange
+            requestCheckButton.backgroundColor = .myorange
+            requestCheckButton.layer.borderColor = UIColor.myorange?.cgColor
+            requestCheckButton.setTitleColor(.white, for: .normal)
+            requestCheckButton.isEnabled = true
+        }
+    }
+    
+    @IBAction func nextbuttonEmailTapped(_ sender: Any) {
+        Something6 = EmailTextField.text ?? "" // 이메일을 변수에 넣었고
+
+        guard let rvc2 = self.storyboard?.instantiateViewController(withIdentifier: "Id_PassWordViewController") as? Id_PassWordViewController else {return}
+
+        rvc2.apple1 = apple // who에서 email로 온 거 담아서 보낼거임
+        rvc2.thisisemail = Something6 // 이메일 담음 (보낼거야)
+        
+        self.navigationController?.pushViewController(rvc2, animated: true)
+    }
+    
+    
+    //인증요청 누르면 api 넘기기 - identificationPost
     @IBAction func requestButtonTapped() {
         
         let paramettaData = Model3(userEmail: EmailTextField.text ?? "")
         print(paramettaData)
         identificationPost.instance.SendingPostNemail(parameters2: paramettaData) { result2 in self.emailData = result2 }
-        
-        //let something6 = emailData
-        //guard let textt = emailData?.result else {return}
-        
-        //let decodedData = try JSONDecoder().decode(emailModel.self, from: <#T##Data#>)
-        //self.emailData =
-        
-        UserEmailText = emailData?.result ?? ""
-        print("암호화된 인증 코드 = "+UserEmailText) // 꺼내와야하는데 이게 문제. 알아보기.
+    
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.2) {
+            
+            //hihi에 암호화된 코드가 담겨있음.
+            self.hihi = self.emailData?.result ?? ""
+            print("암호화된 인증 코드 = "+self.hihi) // 이게 좀 늦게 뜸!!!!!!!
+            self.requestButton.backgroundColor = .white
+            self.requestButton.layer.borderColor = UIColor.mygray?.cgColor
+            self.requestButton.setTitleColor(.mygray, for: .normal)
+            print("나 회색버튼이야")
+            self.requestButton.isEnabled = false
+        }
     }
     
     //인증번호 확인 버튼, result 값이 암호화된 인증 코드. 위에 버튼의 암호화친구와 이 친구가 같아야 다음 버튼 활성화 가능.
-//    @IBAction func requestCheckButtonTapped() {
-//        
-//        //api get
-//        NumCheckGet.instance.NumCheckGetData(veriCode: codeTextField.text ?? ""){result in self.Lego = result}
-//        
-//    }
+    @IBAction func requestCheckButtonTapped() {
+        
+        //api get - NumCheckGet
+        NumCheckGet.instance.NumCheckGetData(veriCode: codeTextField.text ?? ""){result in self.Lego = result
+            }
+       
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+            
+            self.rightHi = self.Lego?.result ?? ""
+            print("사용자가 입력한 코드 암호화한 것 = " + self.rightHi)
+            self.compare2Things() //해냈다...
+            
+            
+//            self.requestCheckButton.backgroundColor = .white
+//            self.requestCheckButton.layer.borderColor = UIColor.mygray?.cgColor
+//            self.requestCheckButton.setTitleColor(.mygray, for: .normal)
+//            self.requestCheckButton.isEnabled = false
+           
+        }
+    }
+    
 }
