@@ -14,12 +14,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet var titleLabel: UILabel!
-    var shopList: [String] = ["가나베이커리","하하베이커리","어쩌구","저쩌구","하이하이"]
-    var shopLocationList: [String] = ["마포구","공릉동","홍제동","연남동","서초동"]
-    var imageList: [String] = ["image 1","image 3","image 1","image 3","image 1"]
     let username = UserDefaults.standard.string(forKey: "userNickName")
     
     private var recentSearchKeywordList: [String] = []
+    var willLikeDatas: [LikeShopsponse] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +29,23 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         self.view.backgroundColor = UIColor(named: "Background")
         self.latestCV.backgroundColor = UIColor(named: "Background")
         titleLabel.text = "\(username!)"
+        
+        WillLikeShopService.shared.getLikeShop{ result in
+                    switch result {
+                    case .success(let response):
+                        
+//                        dump(response)
+                        guard let response = response as? WillLikeShopModel else {
+                            break
+                        }
+                        self.willLikeDatas = response.result
+                    
+                    default:
+                        
+                        break
+                    }
+                    self.WillLikeShop.reloadData()
+                }
         
     }
     
@@ -139,7 +154,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             
         }
         if collectionView == WillLikeShop {
-            return shopList.count
+            return willLikeDatas.count
         }
         return 5
     }
@@ -171,10 +186,11 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             shopcell.shopImage.layer.cornerRadius = 10
             shopcell.layer.borderWidth = 0
             
-            shopcell.shopName.text = shopList[indexPath.row]
-            shopcell.shopLocation.text = shopLocationList[indexPath.row]
-            shopcell.shopImage.image = UIImage(named: imageList[indexPath.row]) ?? UIImage()
-    //        cell.shopImage.reloadData()
+            let willLikeData = willLikeDatas[indexPath.row]
+            shopcell.shopName.text = willLikeData.storeName
+            shopcell.shopLocation.text = willLikeData.category
+            let url = URL(string: willLikeData.userImage!)
+            shopcell.shopImage.load(url: url!)
             return shopcell
         }
         return UICollectionViewCell()
