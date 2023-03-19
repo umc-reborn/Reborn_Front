@@ -44,6 +44,37 @@ class WillLikeShopService {
                  }
              }
          }
+    
+    func updateLikes(idPost: String, like: Bool)-> Void{
+        
+        let url: String! = APIConstants.willLikeshopURL
+             let header: HTTPHeaders = ["Content-type": "application/json",
+                                        "X-ACCESS-TOKEN": "\(jwt)"]
+        let params = ["hasJjim" : like]
+        AF.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: header).validate().responseJSON{(response) in print("response: ", response)}
+    }
+    
+//    func updateMessage(params: [String : AnyObject]!, message_id: String, completion: (response: AnyObject?, error: NSError?) -> Void)
+//    {
+//        // TODO: Updates message data Returns code 200 and {result: “success”} if message successfully updated.
+//        // The corresponding API is documented here:
+//        // https://geoconfess.herokuapp.com/apidoc/V1/messages/update.html
+//
+//        let url: String! = APIConstants.willLikeshopURL
+//
+//        Alamofire.request(.PATCH, url, parameters: params).responseJSON {
+//            response in
+//            switch response.result {
+//            case .Success:
+//                completion(response: response.result.value, error: nil)
+//            case .Failure(let error):
+//                logError("Update message error: \(error)")
+//                completion(response: nil, error: error)
+//            }
+//        }
+//    }
+    
+    
 
          private func judgeStatus<T:Codable> (by statusCode: Int, _ data: Data, _ type: T.Type) -> NetworkResult<Any> {
              let decoder = JSONDecoder()

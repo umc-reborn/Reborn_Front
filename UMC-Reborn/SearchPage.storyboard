@@ -129,21 +129,6 @@
                                                         <constraint firstAttribute="height" constant="125" id="qzs-9r-hyj"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe3-8S-wyl">
-                                                    <rect key="frame" x="110" y="101" width="17" height="15"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="17" id="am3-jh-0Jl"/>
-                                                        <constraint firstAttribute="height" constant="15" id="xe4-kb-jjC"/>
-                                                    </constraints>
-                                                    <color key="tintColor" name="gray_196"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
-                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="13"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="likeButtonAction:" destination="tKz-2N-jvk" eventType="touchUpInside" id="i3E-p8-qyt"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공릉동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvs-t6-9Ob">
                                                     <rect key="frame" x="54" y="146.33333333333334" width="29" height="13.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -178,11 +163,9 @@
                                                 <constraint firstItem="URw-Fr-o2v" firstAttribute="top" secondItem="iqE-19-x6E" secondAttribute="top" id="AgP-jM-cIS"/>
                                                 <constraint firstItem="bvs-t6-9Ob" firstAttribute="leading" secondItem="kzS-I9-VaD" secondAttribute="trailing" constant="5" id="FcX-nP-V0T"/>
                                                 <constraint firstItem="URw-Fr-o2v" firstAttribute="leading" secondItem="iqE-19-x6E" secondAttribute="leading" id="Ml4-Ye-vtD"/>
-                                                <constraint firstAttribute="trailing" secondItem="Pe3-8S-wyl" secondAttribute="trailing" constant="4" id="NFi-xq-8Ag"/>
                                                 <constraint firstItem="kzS-I9-VaD" firstAttribute="top" secondItem="83r-KG-goO" secondAttribute="top" constant="20" id="P7f-AF-BH2"/>
                                                 <constraint firstItem="83r-KG-goO" firstAttribute="leading" secondItem="iqE-19-x6E" secondAttribute="leading" id="W8p-lU-p5X"/>
                                                 <constraint firstItem="83r-KG-goO" firstAttribute="top" secondItem="URw-Fr-o2v" secondAttribute="bottom" constant="3" id="edb-xR-k0b"/>
-                                                <constraint firstItem="Pe3-8S-wyl" firstAttribute="top" secondItem="iqE-19-x6E" secondAttribute="top" constant="101" id="h8P-Fi-o4A"/>
                                                 <constraint firstItem="OTL-dZ-C4L" firstAttribute="leading" secondItem="M3m-Wg-Rsc" secondAttribute="trailing" constant="3" id="ioU-sO-tX0"/>
                                                 <constraint firstItem="bvs-t6-9Ob" firstAttribute="top" secondItem="83r-KG-goO" secondAttribute="bottom" constant="2.5" id="luE-1E-gHC"/>
                                                 <constraint firstAttribute="trailing" secondItem="URw-Fr-o2v" secondAttribute="trailing" id="qVt-hO-4gz"/>
@@ -192,7 +175,6 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="131" height="164"/>
                                         <connections>
-                                            <outlet property="likeButton" destination="Pe3-8S-wyl" id="7qh-Ub-alK"/>
                                             <outlet property="shopImage" destination="URw-Fr-o2v" id="yzJ-wv-UAg"/>
                                             <outlet property="shopLocation" destination="bvs-t6-9Ob" id="ASi-Dx-e6a"/>
                                             <outlet property="shopName" destination="83r-KG-goO" id="NVe-n0-1P8"/>
@@ -1038,7 +1020,6 @@
         <image name="bread_image" width="93" height="91"/>
         <image name="cake_image" width="93.5" height="90"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="ic_Xmark" width="9.5" height="9"/>
         <image name="ic_bell_gray" width="30.5" height="30.5"/>
         <image name="ic_down" width="54" height="52.5"/>
@@ -1050,9 +1031,6 @@
         <image name="store_star" width="27" height="27"/>
         <namedColor name="Background">
             <color red="1" green="0.98431372549019602" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="gray_196">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="lightred">
             <color red="1" green="0.8784313725490196" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

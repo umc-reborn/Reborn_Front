@@ -14,6 +14,7 @@ class RecruitedRebronViewController: UIViewController {
     var likeshopDatas: [LikeShopsponse] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionView.backgroundColor = .clear
         // Do any additional setup after loading the view.
         WillLikeShopService.shared.getLikeShop{ result in
@@ -33,6 +34,51 @@ class RecruitedRebronViewController: UIViewController {
                     self.collectionView.reloadData()
                 }
     }
+    
+//    func patchCaddieData() {
+//
+//        let PATCH_URL = APIConstants.willLikeshopURL
+//
+//        let parameters : [String:Any] = [
+//            "first_name"   : editFirstNameField?.text ?? "",
+//            "last_name"    : editLastNameField?.text ?? "",
+//            "email"        : editEmailField?.text ?? "",
+//            "phone_number" : editPhoneNumberField?.text ?? "",
+//            "address"      : editAddressField?.text ?? "",
+//            "state"        : editStateField?.text ?? "",
+//            "zipcode"      : editZipcodeField?.text ?? "",
+//            "city"         : editCityField?.text ?? ""
+//        ]
+//
+//        let headers = authHeaders()
+//
+//        Alamofire.request(PATCH_URL, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate(statusCode: 200...299).responseData { (patchData) in
+//            switch patchData.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//
+//                self.caddie.firstName = json["first_name"].string!
+//                self.caddie.lastName = json["last_name"].string!
+//                self.caddie.email = json["email"].string!
+//                self.caddie.phoneNumber = json["phone_number"].string!
+//                self.caddie.address = json["address"].string!
+//                self.caddie.state = json["state"].string!
+//                self.caddie.zipcode = json["zipcode"].string!
+//                self.caddie.city = json["city"].string!
+//
+//
+//                self.performSegue(withIdentifier: "unwindtoprofilesegue", sender: self)
+//
+//            case .failure(let error):
+//                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+//                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//                alert.addAction(action)
+//
+//                self.present(alert, animated: true, completion: nil)
+//            }
+//        }
+//    }
+    
 
 }
 
@@ -50,8 +96,9 @@ extension RecruitedRebronViewController: UICollectionViewDelegate, UICollectionV
         
         let likeshopData = likeshopDatas[indexPath.row]
         cell.shopName.text = likeshopData.storeName
+//        cell.Location.text =
         cell.shopLocation.text = likeshopData.category
-//        cell.shopImage.image = UIImage(named: imageList[indexPath.row]) ?? UIImage()
+        cell.score.text = String(likeshopData.storeScore)//        cell.shopImage.image = UIImage(named: imageList[indexPath.row]) ?? UIImage()
         let url = URL(string: likeshopData.userImage!)
         cell.shopImage.load(url: url!)
 //        cell.shopImage.reloadData()

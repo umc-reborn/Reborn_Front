@@ -14,34 +14,10 @@ class BestReviewCollectionViewCell:UICollectionViewCell {
     @IBOutlet weak var shopLocation: UILabel!
     @IBOutlet weak var shopName: UILabel!
     @IBOutlet weak var comment: UILabel!
-    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var shopScore: UILabel!
     @IBOutlet weak var date: UILabel!
     
     @IBOutlet var gradationView: UIView!
-    var likeBool: Bool = false {
-        willSet(newValue) {
-            if newValue {
-                likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                likeButton.tintColor = UIColor.red
-            }
-            else {
-                likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-                likeButton.tintColor = UIColor.lightGray
-            }
-        }
-    }
-// MARK: - IBAction
-    @IBAction func likeButtonAction(_ sender: UIButton) {
-        if likeBool {
-            likeBool = false
-            //            removeDataAcion()
-        }
-        else {
-            likeBool = true
-            //            pullDataAcion()
-        }
-    }
     
 }
 
