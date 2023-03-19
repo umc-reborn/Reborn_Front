@@ -242,42 +242,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		168C9614AF7987DE849E1FE25401E4BC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 205D6EF1B8DCC8419E2F53266F6ADCDC;
-			remoteInfo = KakaoSDKCommon;
-		};
-		3386DDCAA8497E82036F64B36CEB221D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E9F9401E9C74C0C393164FD8D86D0068;
-			remoteInfo = DropDown;
-		};
-		4A7DFE1275573F6D9F7F0A45DD26886A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
-		};
-		5C9CB91674FEAC0348D3D2C8A4BB1886 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 205D6EF1B8DCC8419E2F53266F6ADCDC;
-			remoteInfo = KakaoSDKCommon;
-		};
-		7ACE7B75F51804DC37934233D56B63D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 83CA882AD877ED964BDF66235E416BC1;
-			remoteInfo = KakaoSDKAuth;
-		};
-		7CB550DB51A13EC785642A18DA75E963 /* PBXContainerItemProxy */ = {
+		04E485F4B335E4BF9A0EA7C58D9635DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -655,7 +620,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3379DACA3389E6899FE7F61EFC5B1F57 /* Frameworks */ = {
+		459C6066CB75A11B3D3559F8780C433F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -897,47 +862,6 @@
 				707B5F632E5B07A893FCDA596AF0DFA5 /* Api.swift */,
 				D85060C140F7C113EAC77DCF70F20A07 /* ApiRequestAdapter.swift */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
-			sourceTree = "<group>";
-		};
-		63421F2A43C7FA6949BC7BBC4CC1A63F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EE6A3074514673B4D52CAD8F45982251 /* Pageboy.modulemap */,
-				7048FF6A354A1B447BA403CDF428539C /* Pageboy-dummy.m */,
-				2DF5A22CF67409DB52E461917ECDA53B /* Pageboy-prefix.pch */,
-				BDC6EE06352705E2250CFBDAA9022090 /* Pageboy-umbrella.h */,
-				B488013A8ED3B1F820B2B9C51383A751 /* Pageboy.debug.xcconfig */,
-				10214F2AC8B3E5FFB8F42A4EA77A72F2 /* Pageboy.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pageboy";
-			sourceTree = "<group>";
-		};
-		6B09B6979804BB78B459FA25387FC34A /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				7AA43482BEAA4EFB5FB5D414B2EB020E /* Array+Utils.swift */,
-				A0435618A41D06912C701F00B89009AD /* AuthErrorInfo.swift */,
-				CA81ECF8A277D26B3F25127461D3AE30 /* Common.swift */,
-				22DD4ACDA136E53BC37ABC29439B62DE /* Data+Utils.swift */,
-				283CBA61BA3BAB50BE5B48DF474F8874 /* Date+Utils.swift */,
-				64106BB796948E0F60B3AB5C51D9082C /* DecodingContainer+AnyCollection.swift */,
-				7B7A10109CADDBD11D7094D3369565E6 /* Dictionary+Utils.swift */,
-				9FC47232860245CD00D9210342888F9C /* EncodingContainer+AnyCollection.swift */,
-				10C2D3BEAD5E33143C7B83ACC141A284 /* ErrorInfo.swift */,
-				085353B44998E06924291EFE3DD9CBF2 /* KakaoSDKCommon.swift */,
-				BB4C7C616F29DFDFD220DCA464E17AA0 /* Properties.swift */,
-				9180706D2A7A9043DF116E1570E486F6 /* SdkCoder.swift */,
-				6F488C471BB3E2D9E23CE857BB262D28 /* SdkCrypto.swift */,
-				615F84304D41B91092121ECF30DE2799 /* SdkError.swift */,
-				F1F4E6D88C9364351BF8854B06EFF2A5 /* SdkLog.swift */,
-				E69F085C62DE2F5383FE09AC4218A0EE /* SdkUtils.swift */,
-				D70F0D60AA87458B3CD42121EE44C557 /* UIApplication+Utils.swift */,
-				FB7F01358A088920B48059D1D34959DC /* URL+Utils.swift */,
-				CD3C9C68AB110ABAD3B25F1297A92BC9 /* Urls.swift */,
-			);
 			name = Network;
 			sourceTree = "<group>";
 		};
@@ -1056,20 +980,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A179F99FF35241337EE14D55079C17F3 /* KakaoSDKAuth */ = {
+		A5525BD83BA79F7E928AD2FF52966328 /* KakaoSDKAuth */ = {
 			isa = PBXGroup;
 			children = (
-				031FB4907C79737F4F0221893C1636EF /* Auth.swift */,
-				63A9F941A6E8B689058335C50962172B /* AuthApi.swift */,
-				B9A28A532BDA02F74E788CF5DD50C82D /* AuthController.swift */,
-				5BC0E46F8F9CB79F62230D3A16C93DB2 /* AuthRequestAdapter.swift */,
-				EE4859F84FC668B400064DA09F4A5541 /* AuthRequestRetrier.swift */,
-				3A4B0F496017B2D1DE5DDCF9366A6A07 /* KakaoSDKAuth.h */,
-				31A22FB090D30D724A48AF7A364A0073 /* MigrateManager.swift */,
-				F68E1BF7AF09D9760F21E162E108B94D /* OAuthToken.swift */,
-				628CB3467C6D360140B69818AFB9AB59 /* TokenManagable.swift */,
-				B53414461F9DEBBDFE36A80C20665771 /* TokenManager.swift */,
-				BB36EFAE3E81F26E270486809F8D4F78 /* Support Files */,
+				91793439B9CDF5A1761EB8A2E3119BC8 /* Auth.swift */,
+				92A92BF7B46541B4B09A95F88978D3DA /* AuthApi.swift */,
+				37355ED22A44CEAA55E30D8707174926 /* AuthController.swift */,
+				1CD29D2AD85EC836FE672729130F7520 /* AuthRequestAdapter.swift */,
+				40232115B1826C42D8C9BF631C4D9FBC /* AuthRequestRetrier.swift */,
+				15FBFC596CA2C7F940B4118CA015DE3A /* KakaoSDKAuth.h */,
+				5DB8E16FA4F24D82D58DFF7F3267BF7F /* MigrateManager.swift */,
+				A3DF5155E46FB15CC08FCB13923E51AA /* OAuthToken.swift */,
+				BD1C985D3FF1F7C2216AC00D2822422E /* TokenManagable.swift */,
+				D7D000FB986545A6B95A7F808FF3FAA2 /* TokenManager.swift */,
+				8ADB2064F51476DB06E13FDE37807976 /* Support Files */,
 			);
 			name = KakaoSDKAuth;
 			path = KakaoSDKAuth;
@@ -1152,8 +1076,6 @@
 				220BBFDA2BBD951854952941A4AEF2B4 /* Resources */,
 				07497BF7266C8BAB1FE4C63C0632C4A5 /* Support Files */,
 			);
-			name = Alamofire;
-			path = Alamofire;
 			name = DropDown;
 			path = DropDown;
 			sourceTree = "<group>";
@@ -1169,31 +1091,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DE900497F68C1AE1A73E9297FEC141A9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E8D6F712322123776EA148BF1D34B4F7 /* DropDownCell.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		E8C956CF24EA349222B23C7A322D7008 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				AEBF3BBFE2FBAF798B04BC7501B21BA6 /* DropDown.modulemap */,
-				F583FE40013FD180A713E49E8BA94833 /* DropDown-dummy.m */,
-				017430556FD3226C40AEF5F4E60001B8 /* DropDown-prefix.pch */,
-				CF1449B4ACAF6C75DE81A37D61E8E0AD /* DropDown-umbrella.h */,
-				B14AA24CE791F49EA247F8E1465EB598 /* DropDown.debug.xcconfig */,
-				F77685CA3D770811D733E59F42EE23FE /* DropDown.release.xcconfig */,
-			);
 		D107FE427BD893F220BDA97D89E0E286 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1287,14 +1184,6 @@
 			files = (
 				23A29BD5D44A8309EEE6A3C5B266D91D /* KakaoSDKAuth.h in Headers */,
 				08343B80B65496298FCB7A8E32132AB0 /* KakaoSDKAuth-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76E1D974EEC7C5027842FF48FF5AE494 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF2301DEDD008629AEC7D8D1C7EFCE69 /* Pods-UMC-Reborn-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,12 +1296,6 @@
 		};
 		377E69F20375EB612410D6BD87B4AF98 /* BSImagePicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68974DFD6788D21D33C7FE36AFC25D05 /* Build configuration list for PBXNativeTarget "Tabman" */;
-			buildPhases = (
-				80FB12CAE494AAC8294BDDD42CF2F8DC /* Headers */,
-				6EA758023EAB9EB609F5F41A6EA06E7D /* Sources */,
-				55F48B655AC78106C263C53A65BAAC8E /* Frameworks */,
-				E39364FE3EA13A21D3B789AE7D80D184 /* Copy generated compatibility header */,
 			buildConfigurationList = CA2701B84FC8FE35E51545408D80C8A7 /* Build configuration list for PBXNativeTarget "BSImagePicker" */;
 			buildPhases = (
 				93BED72A9FB24184EE168C2788219274 /* Headers */,
@@ -1640,8 +1523,6 @@
 			);
 			inputPaths = (
 				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/Alamofire/Alamofire.modulemap",
-				"${PODS_ROOT}/Headers/Public/Alamofire/Alamofire-umbrella.h",
 				"${PODS_ROOT}/Headers/Public/KakaoSDKCommon/KakaoSDKCommon.modulemap",
 				"${PODS_ROOT}/Headers/Public/KakaoSDKCommon/KakaoSDKCommon-umbrella.h",
 			);
@@ -1650,7 +1531,6 @@
 			);
 			outputPaths = (
 				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-umbrella.h",
 				"${BUILT_PRODUCTS_DIR}/KakaoSDKCommon-umbrella.h",
 				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
 			);
@@ -1739,40 +1619,8 @@
 			);
 			inputPaths = (
 				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/DropDown/DropDown.modulemap",
-				"${PODS_ROOT}/Headers/Public/DropDown/DropDown-umbrella.h",
 				"${PODS_ROOT}/Headers/Public/Tabman/Tabman.modulemap",
 				"${PODS_ROOT}/Headers/Public/Tabman/Tabman-umbrella.h",
-			);
-			name = "Copy generated compatibility header";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/DropDown-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Tabman-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/DropDown/DropDown.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/DropDown/DropDown-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-		};
-		E39364FE3EA13A21D3B789AE7D80D184 /* Copy generated compatibility header */ = {
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Tabman/Tabman.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Tabman/Tabman-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-		};
-		EC020E9A2563567E3A5742CCD89794FC /* Copy generated compatibility header */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/Tabman/Tabman.modulemap",
-				"${PODS_ROOT}/Headers/Public/Tabman/Tabman-umbrella.h",
-				"${PODS_ROOT}/Headers/Public/Pageboy/Pageboy.modulemap",
-				"${PODS_ROOT}/Headers/Public/Pageboy/Pageboy-umbrella.h",
 			);
 			name = "Copy generated compatibility header";
 			outputFileListPaths = (
@@ -1803,9 +1651,6 @@
 			);
 			outputPaths = (
 				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/Pageboy-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
-			);
 				"${BUILT_PRODUCTS_DIR}/Pageboy-umbrella.h",
 				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
 			);
@@ -2206,7 +2051,7 @@
 		};
 		08D3BF8681EC9DF375CEA61D569A71EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F77685CA3D770811D733E59F42EE23FE /* DropDown.release.xcconfig */;
+			baseConfigurationReference = E8C84B314446CDA8D4986DAC541003F7 /* DropDown.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2349,7 +2194,7 @@
 			};
 			name = Release;
 		};
-		340AB8C76144B119681C2FE88CE9B3D8 /* Release */ = {
+		457944CD80D1663224CB58409E28B25D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FEFDD2F91FE003EF9D74E6A43B48457F /* Pods-UMC-Reborn.release.xcconfig */;
 			buildSettings = {
@@ -2514,64 +2359,9 @@
 			};
 			name = Debug;
 		};
-		B8923CE6343702A3A3F36F50855E55CD /* Debug */ = {
+		B400465BCB7A18459AFBB04CC27B861A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F61533BBEC54193F64E0CEF7E566099 /* Tabman.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				ENABLE_BITCODE = NO;
-				"EXCLUDED_ARCHS[sdk=appletvsimulator*]" = arm64;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
-				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = arm64;
-				GCC_PREFIX_HEADER = "Target Support Files/Tabman/Tabman-prefix.pch";
-				MODULEMAP_FILE = Headers/Public/Tabman/Tabman.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Tabman;
-				PRODUCT_NAME = Tabman;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		C83CE3BAA8858CB36593A7679B55A956 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10214F2AC8B3E5FFB8F42A4EA77A72F2 /* Pageboy.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				ENABLE_BITCODE = NO;
-				"EXCLUDED_ARCHS[sdk=appletvsimulator*]" = arm64;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
-				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = arm64;
-				GCC_PREFIX_HEADER = "Target Support Files/Pageboy/Pageboy-prefix.pch";
-				MODULEMAP_FILE = Headers/Public/Pageboy/Pageboy.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Pageboy;
-				PRODUCT_NAME = Pageboy;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		CE0D7C7192DCAB729DCD1EFB95A5C02F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 709B227DFF5BED24BBE261F8F969E5BE /* KakaoSDKCommon.debug.xcconfig */;
+			baseConfigurationReference = E0A3F89218B518AAF563E6E52AF6E64D /* KakaoSDKCommon.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2711,7 +2501,7 @@
 		};
 		E09F7853B1EC66FA3D6EB78687514A9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B488013A8ED3B1F820B2B9C51383A751 /* Pageboy.debug.xcconfig */;
+			baseConfigurationReference = F27FE046729B1D96C9277407D4D98E3F /* Pageboy.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2761,8 +2551,6 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
