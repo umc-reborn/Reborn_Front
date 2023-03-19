@@ -114,62 +114,14 @@ class ReviewManageViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-//
-//    // 이미지 사이즈 지정
-//    let imageView: UIImageView = {
-//        let aImageView = UIImageView()
-//        aImageView.contentMode = .scaleAspectFill
-//        aImageView.layer.cornerRadius = 16
-//        aImageView.translatesAutoresizingMaskIntoConstraints = false
-//        return aImageView
-//    }()
-//    //
-//
-//    var imageArray = [UIImage(named: "bread1"), UIImage(named: "bread2"),]
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        self.navigationItem.title = "리뷰 관리"
-//
-//
-//
-//        ReviewManageService.shared.getUserReview{ result in
-//            switch result {
-//            case .success(let response):
-//                print("리뷰 이미지 불러오기 성공")
-////                dump(response)
-//                guard let response = response as? ReviewManageModel else {
-//                    print("실패")
-//                    break
-//                }
-//                self.reviewDatas = response.result
-//
-//            default:
-//                break
-//            }
-//        }
-//    }
-//}
-//
-//extension ReviewManageViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return imageArray.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReviewImageCollectionViewCell", for: indexPath) as! ReviewImageCollectionViewCell
-//
-//        cell.reviewImage.image = imageArray[indexPath.row]
-//
-//        cell.reviewImage.layer.cornerRadius  = 16
-//        return cell
-//    }
-//
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reviewDatas.count
+        return 1
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+                // #warning Incomplete implementation, return the number of sections
+            return reviewDatas.count
+        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myReviewTableViewCell", for: indexPath) as! ReviewManageTableViewCell
@@ -177,7 +129,7 @@ class ReviewManageViewController: UIViewController, UITableViewDelegate, UITable
         let rebornData = reviewDatas[indexPath.section]
         let rebornImgData = img[indexPath.section]
         
-        let url = URL(string: rebornImgData ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/20959843-0000-46c8-aaff-38342f93dd47.jpg")
+        let url = URL(string:  "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/20959843-0000-46c8-aaff-38342f93dd47.jpg")
         cell.dateLabel.text = rebornData.reviewCreatedAt
         cell.storeNameLabel.text = rebornData.storeName
         cell.categoryLabel.text = rebornData.storeCategory
@@ -191,5 +143,9 @@ class ReviewManageViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 506
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            .leastNormalMagnitude
+        }
     
 }
