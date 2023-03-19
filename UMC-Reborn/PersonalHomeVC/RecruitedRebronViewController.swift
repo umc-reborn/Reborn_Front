@@ -104,6 +104,13 @@ extension RecruitedRebronViewController: UICollectionViewDelegate, UICollectionV
 //        cell.shopImage.reloadData()
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
+        svc1.storeIdm1 = likeshopDatas[indexPath.row].storeIdx
+        UserDefaults.standard.set(likeshopDatas[indexPath.row].storeIdx, forKey: "storeid")
+        self.present(svc1, animated: true)
+    }
 }
 extension RecruitedRebronViewController: UICollectionViewDelegateFlowLayout {
     

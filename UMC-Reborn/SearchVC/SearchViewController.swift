@@ -197,6 +197,16 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == WillLikeShop {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Personal_Home", bundle: nil)
+            guard let svc1 = storyboard.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
+            svc1.storeIdm1 = willLikeDatas[indexPath.row].storeIdx
+            UserDefaults.standard.set(willLikeDatas[indexPath.row].storeIdx, forKey: "storeid")
+            self.present(svc1, animated: true)
+        }
+    }
+    
     
 }
 
