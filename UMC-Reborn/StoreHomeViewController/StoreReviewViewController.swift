@@ -9,9 +9,7 @@ import UIKit
 
 class StoreReviewViewController: UIViewController {
     
-    let storeReview = UserDefaults.standard.integer(forKey: "userIdx")
-    
-    var storeId: Int = 4
+    var storeReview = UserDefaults.standard.integer(forKey: "userIdx")
     
     var reviewDatas: [ReviewListModel] = []
 

@@ -8,25 +8,23 @@ import Foundation
 import UIKit
 import Alamofire
 
-protocol SampleProtocol3:AnyObject {
-    func nameSend(data: String)
-    func categorySend(data: String)
-    func introduceSend(data: String)
-    func addressSend(data: String)
-}
+//protocol SampleProtocol3:AnyObject {
+//    func nameSend(data: String)
+//    func categorySend(data: String)
+//    func introduceSend(data: String)
+//    func addressSend(data: String)
+//}
 
 class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol4 {
     
-    let editStore = UserDefaults.standard.integer(forKey: "userIdx")
+    var editStore = UserDefaults.standard.integer(forKey: "userIdx")
     
     var storeCategory : String = ""
     
     var storecategory = [" 카페·디저트", " 반찬", " 패션", " 편의·생활", " 기타"]
     let picker = UIPickerView()
     
-    let DidDismissEditRebornViewController: Notification.Name = Notification.Name("DidDismissEditRebornViewController")
-    
-    weak var delegate : SampleProtocol3?
+//    weak var delegate : SampleProtocol3?
     
     var imageUrl: ImageresultModel!
     var rebornData: StoreEditresultModel!
@@ -34,7 +32,6 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     func addressSend(data: String) {
         storeaddressTextfield.text = data
         storeaddressTextfield.sizeToFit()
-        print(data)
     }
     
     @IBOutlet weak var storenameTextfield: UITextField!

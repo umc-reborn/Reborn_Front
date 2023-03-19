@@ -10,9 +10,7 @@ import Alamofire
 
 class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol2{
     
-    let rebornAdd = UserDefaults.standard.integer(forKey: "userIdx")
-    
-    let DidDismissAddRebornViewController: Notification.Name = Notification.Name("DidDismissAddRebornViewController")
+    var rebornAdd = UserDefaults.standard.integer(forKey: "userIdx")
     
     var imageUrl: ImageresultModel!
     var rebornData: RebornresultModel!

@@ -58,4 +58,3 @@ struct RebornCompleteresultModel: Codable {
     var message:String
     var result:String
 }
-

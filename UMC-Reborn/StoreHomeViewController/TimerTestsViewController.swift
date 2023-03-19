@@ -31,6 +31,18 @@ class TimerTestsViewController: UIViewController {
         }
     }
     
+    var timeSecond2 = 10 {
+        willSet(newValue) {
+            var hours = String(newValue / 3600)
+            var minutes = String(newValue / 60)
+            var seconds = String(newValue % 60)
+            if hours.count == 1 { hours = "0"+hours }
+            if minutes.count == 1 { minutes = "0"+minutes }
+            if seconds.count == 1 { seconds = "0"+seconds }
+            timerLabel.text = "\(hours):\(minutes):\(seconds)"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +50,7 @@ class TimerTestsViewController: UIViewController {
         self.container = appDelegate.persistentContainer
     
         timeSecond = 20
+        timeSecond2 = 30
 //        fetchContact()
 
         let notificationCenter = NotificationCenter.default

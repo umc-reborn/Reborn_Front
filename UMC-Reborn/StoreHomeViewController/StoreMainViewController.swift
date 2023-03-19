@@ -9,7 +9,7 @@ import UIKit
 
 class StoreMainViewController: UIViewController {
     
-    let storeMain = UserDefaults.standard.integer(forKey: "userIdx")
+    var storeMain = UserDefaults.standard.integer(forKey: "userIdx")
     var storeText1: Int = 0
     
     @IBOutlet weak var storemainView: UIView!
