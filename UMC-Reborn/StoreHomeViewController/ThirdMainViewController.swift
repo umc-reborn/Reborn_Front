@@ -11,10 +11,6 @@ class ThirdMainViewController: UIViewController {
     
     let thirdMain = UserDefaults.standard.integer(forKey: "userIdx")
     
-//    let StoreArray = [["가나다라마바사아"], ["챱챱챱챱챱스테이크"]]
-//    let FoodArray = [["맛있는우유식빵"], ["쫀득쫀득쫀득도넛"]]
-//    let CountArray = [["1"], ["2"]]
-    
     var storethirdText: Int = 0
     
     var rebornCompleteDatas: [RebornStatusListModel] = []

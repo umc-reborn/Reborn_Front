@@ -15,7 +15,6 @@ class ModalStoreViewController: UIViewController {
     
     var storeIdm: Int = 0
     
-    
     @IBOutlet var storeBigImage: UIImageView!
     @IBOutlet weak var modalButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
@@ -30,17 +29,8 @@ class ModalStoreViewController: UIViewController {
     @IBOutlet var rebornLabel: UILabel!
     @IBOutlet var jjimLabel: UILabel!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let fullText = modalButton.titleLabel?.text
-//        let attributedString = NSMutableAttributedString(string: fullText ?? "")
-//
-//        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
-//        self.modalButton.setAttributedTitle(attributedString, for: .normal)
-//        self.modalButton.titleLabel?.text = "진행중인 리본이 없습니다"
 
         modalButton.layer.cornerRadius = 5
         modalButton.layer.borderWidth = 1
@@ -75,9 +65,6 @@ class ModalStoreViewController: UIViewController {
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
             likeButton.tintColor = .clear
         } else {
-//            let parmeterData = JjimModel(storeIdx: 1, userIdx: 3)
-//            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
-//            }
             likeButton.isSelected = true
             likeButton.setImage(UIImage(named: "ic_like"), for: .selected)
             likeButton.tintColor = .clear

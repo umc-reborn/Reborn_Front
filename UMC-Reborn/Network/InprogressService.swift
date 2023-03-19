@@ -17,11 +17,7 @@ class InprogressService {
     func getInprogress(completion: @escaping (NetworkResult<Any>) -> Void) {
         let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
         let url: String! = APIConstants.inprogressURL + "\(userIdx)"
-        print("---------")
         print("\(userIdx)")
-//        + "\(firstObject.userid)"
-//        print("-----------")
-//        print(url)
              let header: HTTPHeaders = ["Content-type": "application/json"]
 
              let dataRequest = AF.request(
@@ -32,16 +28,16 @@ class InprogressService {
              )
 
              dataRequest.responseData { response in
-                 dump(response)
+//                 dump(response)
                  switch response.result {
                  case .success:
                      guard let statusCode = response.response?.statusCode else { return }
-                     dump(statusCode)
+//                     dump(statusCode)
                      guard let value = response.value else { return }
-                     dump(value)
+//                     dump(value)
                      let networkResult = self.judgeStatus(by: statusCode, value, InprogressModel.self)
                      completion(networkResult)
-                     print("여기까지")
+//                     print("여기까지")
 
                  case .failure:
                      completion(.networkFail)

@@ -38,7 +38,9 @@ class StoreMainViewController: UIViewController {
         attributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 15, weight: .bold), range: (storemainLabel.text! as NSString).range(of: "다시 태어나게"))
         
         self.storemainLabel.attributedText = attributedString
-        storeResult()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+              self.storeResult()
+        }
     }
     
     func storeResult() {

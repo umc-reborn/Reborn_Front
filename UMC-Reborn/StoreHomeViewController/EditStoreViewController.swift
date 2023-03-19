@@ -185,22 +185,6 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        //        let text = storenameTextfield.text
-        //        if ((text != "")) {
-        //            delegate?.nameSend(data: text!)
-        //        }
-        //        let text1 = storecategoryTextfield.text
-        //            if ((text1 != "")) {
-        //            delegate?.categorySend(data: text1!)
-        //        }
-        //        let text2 = storeaddressTextfield.text
-        //        if ((text2 != "")) {
-        //            delegate?.addressSend(data: text2!)
-        //        }
-        //        let text3 = storeTextView.text
-        //        if (text3 != " 사장님의 가게를 소개해 주세요!") {
-        //            delegate?.introduceSend(data: text3!)
-        //        }
         if(storecategoryTextfield.text == " 카페·디저트") {
             storeCategory = "CAFE"
         } else if (storecategoryTextfield.text == " 반찬") {
