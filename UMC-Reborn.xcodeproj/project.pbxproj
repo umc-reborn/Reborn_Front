@@ -167,6 +167,7 @@
 		C71987572986D46F000C87EB /* JjimTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987562986D46F000C87EB /* JjimTableViewCell.swift */; };
 		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
 		C723A50829C61B5400439D54 /* RebornModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723A50729C61B5400439D54 /* RebornModel.swift */; };
+		C723A50A29C7289500439D54 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723A50929C7289500439D54 /* UserModel.swift */; };
 		C7284AA5298D23BA009A70E7 /* APIJjimPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */; };
 		C7284AAA298EA703009A70E7 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA9298EA703009A70E7 /* APIConstants.swift */; };
 		C7284AAE298EAECE009A70E7 /* RebornService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAD298EAECE009A70E7 /* RebornService.swift */; };
@@ -408,6 +409,7 @@
 		C71987562986D46F000C87EB /* JjimTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimTableViewCell.swift; sourceTree = "<group>"; };
 		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
 		C723A50729C61B5400439D54 /* RebornModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RebornModel.swift; path = ../../../../../../.Trash/RebornModel.swift; sourceTree = "<group>"; };
+		C723A50929C7289500439D54 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIJjimPost.swift; sourceTree = "<group>"; };
 		C7284AA9298EA703009A70E7 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		C7284AAB298EA726009A70E7 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 				2FF615362992D1EC00143369 /* RebornHistoryModel.swift */,
 				2F7C0AB32994DAA600BC5F9A /* ReviewManageModel.swift */,
 				2F5302EF29AA5F7400625869 /* APIReviewImagePost.swift */,
+				C723A50929C7289500439D54 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1108,6 +1111,7 @@
 				0B94771A29899DF700B5829A /* ShopBasic_InfoViewController.swift in Sources */,
 				9561BA8A2994712600A4B33B /* InprogressService.swift in Sources */,
 				C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */,
+				C723A50A29C7289500439D54 /* UserModel.swift in Sources */,
 				C787E3B829BB460C0090B946 /* Entity+CoreDataProperties.swift in Sources */,
 				C75E99072984E6F6003D40B4 /* CodeViewController.swift in Sources */,
 				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,

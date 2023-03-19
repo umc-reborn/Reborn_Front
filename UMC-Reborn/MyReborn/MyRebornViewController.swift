@@ -11,6 +11,8 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var MyRebornTableView: UITableView!
     @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var userAddress: UILabel!
+    @IBOutlet var userImage: UIImageView!
     
     let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
     let username = UserDefaults.standard.string(forKey: "userNickName")
@@ -63,6 +65,10 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         MyRebornTableView.delegate = self
         MyRebornTableView.dataSource = self
         
+        userImage.layer.cornerRadius = self.userImage.frame.size.height / 2
+        userImage.layer.masksToBounds = true
+        userImage.clipsToBounds = true
+        
         self.MyRebornTableView.rowHeight = 64;
         self.navigationItem.title = "마이리본"
         self.navigationItem.backButtonDisplayMode = .minimal
@@ -80,7 +86,68 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
                 self.MyRebornTableView.layer.masksToBounds = false
         self.MyRebornTableView.layer.cornerRadius = 8;
 
+        userResult()
+    }
+    
+    func userResult() {
         
+        let url = APIConstants.baseURL + "/users/inform"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
+        
+        print("응답하라 \(userJWT)")
+        
+        // Header
+        request.addValue("\(userJWT)", forHTTPHeaderField: "X-ACCESS-TOKEN")
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let decodedData = try decoder.decode(UserList.self, from: safeData)
+                    let storeDatas = decodedData.result
+                    print(storeDatas)
+                    DispatchQueue.main.async {
+                        self.userAddress.text = "\(storeDatas.userAddress)"
+                        let url = URL(string: storeDatas.userImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
+                        self.userImage.load(url: url!)
+                    }
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
     }
     
     override func viewWillAppear(_ animated: Bool) {
