@@ -9,7 +9,6 @@ import UIKit
 
 class FirstTabTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var FTimageView: UIImageView!
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var countLabel: UILabel!

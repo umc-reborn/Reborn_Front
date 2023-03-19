@@ -9,8 +9,8 @@ import UIKit
 
 class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
-    let pwChange = UserDefaults.standard.integer(forKey: "userIdx")
-    let pwToken = UserDefaults.standard.string(forKey: "shopJwt")
+    var pwChange = UserDefaults.standard.integer(forKey: "userIdx")
+    var pwToken = UserDefaults.standard.string(forKey: "shopJwt")
     
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var newpwTextField: UITextField!

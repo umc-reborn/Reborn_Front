@@ -8,22 +8,22 @@
 import Foundation
 
 struct StoreList : Codable {
-    let isSuccess : Bool
-    let code : Int
-    let message : String
+    var isSuccess : Bool
+    var code : Int
+    var message : String
     var result : StoreListModel
 }
 
 struct StoreListModel : Codable {
-    let storeIdx : Int
-    let storeName : String
-    let storeImage : String?
-    let userImage : String?
-    let storeAddress : String
-    let storeDescription : String
-    let storeScore : Float
-    let numOfReborn : Int
-    let numOfJjim : Int
-    let numOfReview: Int
-    let category : String
+    var storeIdx : Int
+    var storeName : String
+    var storeImage : String?
+    var userImage : String?
+    var storeAddress : String
+    var storeDescription : String
+    var storeScore : Float
+    var numOfReborn : Int
+    var numOfJjim : Int
+    var numOfReview: Int
+    var category : String
 }

@@ -7,35 +7,33 @@
 
 import UIKit
 
-class StoreManageViewController: UIViewController, SampleProtocol3 {
+class StoreManageViewController: UIViewController {
     
-    let storeManage = UserDefaults.standard.integer(forKey: "userIdx")
-    let shopToken = UserDefaults.standard.string(forKey: "shopJwt")
+    var storeManage = UserDefaults.standard.integer(forKey: "userIdx")
+    var shopToken = UserDefaults.standard.string(forKey: "shopJwt")
     
     var rebornData: LogoutresultModel!
     var rebornDatas: UserDeleteresultModel!
     
-    var storeText: Int = 2
-    
-    func categorySend(data: String) {
-        storeCategory.text = data
-        storeCategory.sizeToFit()
-    }
-    
-    func introduceSend(data: String) {
-        storeIntroduce.text = data
-        storeIntroduce.sizeToFit()
-    }
-    
-    func addressSend(data: String) {
-        storeAddress.text = data
-        storeAddress.sizeToFit()
-    }
-    
-    func nameSend(data: String) {
-        storeName.text = data
-        storeName.sizeToFit()
-    }
+//    func categorySend(data: String) {
+//        storeCategory.text = data
+//        storeCategory.sizeToFit()
+//    }
+//
+//    func introduceSend(data: String) {
+//        storeIntroduce.text = data
+//        storeIntroduce.sizeToFit()
+//    }
+//
+//    func addressSend(data: String) {
+//        storeAddress.text = data
+//        storeAddress.sizeToFit()
+//    }
+//
+//    func nameSend(data: String) {
+//        storeName.text = data
+//        storeName.sizeToFit()
+//    }
     
     @IBOutlet weak var storeView: UIView!
     @IBOutlet weak var ManageImageView: UIImageView!

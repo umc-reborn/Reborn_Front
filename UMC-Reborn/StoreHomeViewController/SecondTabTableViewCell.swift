@@ -8,8 +8,6 @@
 import UIKit
 
 class SecondTabTableViewCell: UITableViewCell {
-
-    let reviewImage = ["Review_image", "Review_image"]
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var personImage: UIImageView!

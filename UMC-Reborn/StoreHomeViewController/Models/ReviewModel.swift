@@ -8,38 +8,27 @@
 import Foundation
 
 struct ReviewList: Codable {
-    let isSuccess: Bool
-    let code: Int
-    let message: String
-    let result: [ReviewListModel]
+    var isSuccess: Bool
+    var code: Int
+    var message: String
+    var result: [ReviewListModel]
 }
 
 struct ReviewListModel: Codable {
-    let reviewIdx, userIdx: Int
-    let userImg: String?
-    let userNickname, storeName, storeCategory: String
-    let rebornIdx: Int
-    let productName: String
-    let reviewScore: Int
-    let reviewComment: String
-    let reviewImg: String?
-    let reviewCreatedAt: String
-}
-
-struct ReviewStoreList: Codable {
-    let isSuccess:Bool
-    let code: Int
-    let message: String
-    let result: [ReviewStoreListModel]
-}
-
-struct ReviewStoreListModel: Codable {
-    let reviewImgList: [String]
+    var reviewIdx, userIdx: Int
+    var userImg: String?
+    var userNickname, storeName, storeCategory: String
+    var rebornIdx: Int
+    var productName: String
+    var reviewScore: Int
+    var reviewComment: String
+    var reviewImg: String?
+    var reviewCreatedAt: String
 }
 
 struct ReviewCountList: Codable {
-    let isSuccess: Bool
-    let code: Int
-    let message: String
-    let result: Int
+    var isSuccess: Bool
+    var code: Int
+    var message: String
+    var result: Int
 }

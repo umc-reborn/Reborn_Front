@@ -9,8 +9,6 @@ import UIKit
 
 class StoreReviewTableViewCell: UITableViewCell {
     
-    var reviewImageDatas : [ReviewListModel] = []
-    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
@@ -119,14 +117,13 @@ extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        switch indexPath.section {
-        case 0:
-            let storeIdt = storeId
-            guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else { return }
-            svc1.storeIdm = storeIdt
-            self.present(svc1, animated: true)
-        default:
-            return
-        }
+//        switch indexPath.section {
+//        case 0:
+//            let storeIdt = storeId
+//            guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else { return }
+//            svc1.storeIdm = storeIdt
+//            self.present(svc1, animated: true)
+//        default:
+//            return
     }
 }
