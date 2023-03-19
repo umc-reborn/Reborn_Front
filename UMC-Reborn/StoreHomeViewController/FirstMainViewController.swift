@@ -9,7 +9,7 @@ import UIKit
 
 class FirstMainViewController: UIViewController {
     
-    let firstMain = UserDefaults.standard.integer(forKey: "userIdx")
+    var firstMain = UserDefaults.standard.integer(forKey: "userIdx")
     
     var storemainText: Int = 0
     

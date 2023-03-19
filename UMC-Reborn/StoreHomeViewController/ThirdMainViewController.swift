@@ -9,7 +9,7 @@ import UIKit
 
 class ThirdMainViewController: UIViewController {
     
-    let thirdMain = UserDefaults.standard.integer(forKey: "userIdx")
+    var thirdMain = UserDefaults.standard.integer(forKey: "userIdx")
     
     var storethirdText: Int = 0
     

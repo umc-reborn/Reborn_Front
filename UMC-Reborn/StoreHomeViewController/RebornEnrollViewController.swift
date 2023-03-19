@@ -9,7 +9,7 @@ import UIKit
 
 class RebornEnrollViewController: UIViewController {
     
-    let rebornEnroll = UserDefaults.standard.integer(forKey: "userIdx")
+    var rebornEnroll = UserDefaults.standard.integer(forKey: "userIdx")
     
     var storeText2: Int = 0
     

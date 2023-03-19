@@ -9,7 +9,7 @@ import UIKit
 
 class FirstTabViewController: UIViewController {
     
-    let firstTab = UserDefaults.standard.integer(forKey: "userIdx")
+    var firstTab = UserDefaults.standard.integer(forKey: "userIdx")
     
     var keyword : String = ""
     

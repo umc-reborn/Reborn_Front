@@ -46,4 +46,3 @@ struct RebornCancelresultModel: Codable {
     var message:String
     var result:String
 }
-

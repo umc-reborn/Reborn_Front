@@ -13,8 +13,6 @@ class CodeViewController: UIViewController, UITextFieldDelegate {
     
     var rebornData: RebornCompleteresultModel!
     
-    let DidDismissEditRebornViewController: Notification.Name = Notification.Name("DidDismissEditRebornViewController")
-    
     @IBOutlet weak var codeTextfield: UITextField!
     @IBOutlet weak var codeokButton: UIButton!
     @IBOutlet weak var codeView: UIView!

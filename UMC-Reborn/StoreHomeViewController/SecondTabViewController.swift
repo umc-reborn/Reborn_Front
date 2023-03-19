@@ -9,7 +9,7 @@ import UIKit
 
 class SecondTabViewController: UIViewController {
     
-    let secondTab = UserDefaults.standard.integer(forKey: "userIdx")
+    var secondTab = UserDefaults.standard.integer(forKey: "userIdx")
     
     var shopList: [String] = ["bread_image", "cake_image", "goods_picture"]
     

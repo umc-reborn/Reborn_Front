@@ -13,8 +13,6 @@ class CancelAlertViewController: UIViewController {
     
     var rebornData: RebornCancelresultModel!
     
-    let DidDismissEditRebornViewController: Notification.Name = Notification.Name("DidDismissEditRebornViewController")
-    
     @IBOutlet var cancelView: UIView!
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var yesButton: UIButton!
