@@ -42,4 +42,5 @@ struct FindPartModel : Codable {
 struct FindResultModel : Codable {
     let userId : String
     let createdAt : String
+    let userImg : String
 }

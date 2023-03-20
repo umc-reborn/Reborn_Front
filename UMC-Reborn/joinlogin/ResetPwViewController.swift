@@ -9,6 +9,9 @@ import UIKit
 
 class ResetPwViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
+    //Api
+    var ResetPwData: PwResetresultModel!
+    //var Bana : PwResetresultModel!
     
     @IBOutlet weak var ResetIdTextfield: UITextField!
     
@@ -20,6 +23,10 @@ class ResetPwViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        // back button custom
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.topItem?.title = ""
+        
         let mybrown = UIColor(named: "mybrown")
         let myorange = UIColor(named: "myorange")
         let mygray = UIColor(named: "mygray")
@@ -79,4 +86,35 @@ class ResetPwViewController: UIViewController, UITextFieldDelegate, UITextViewDe
    }
 
 
+    @IBAction func reSetButtonTapped(_ sender: Any) {
+        // PwResetPost api 연결
+        let parametaData = PwResetModel(userId: ResetIdTextfield.text ?? "", userEmail: ResetPwTextfield.text ?? "",userPwd: "")
+        print(parametaData)
+        APIHandlerResetPost.instance.SendingPostReborn(parameters: parametaData) {result in self.ResetPwData = result}
+        print("===아이디와 이메일이 서버에 전송됨===")
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.8) {
+            
+            if (self.ResetPwData?.code == 1000) { // 메일 보냈다는 alert창으로 
+                guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "sendPwViewController") as? sendPwViewController else {return}
+                
+                rvc.modalPresentationStyle = .overFullScreen
+                self.present(rvc, animated: true)
+                
+            }
+            else { // 회원 없다 alert
+                guard let rvcc = self.storyboard?.instantiateViewController(withIdentifier: "noUserViewController") as? noUserViewController else {return}
+                
+                rvcc.modalPresentationStyle = .overFullScreen
+                self.present(rvcc, animated: true)
+            }
+            
+            
+            
+            
+            
+            
+        }
+    }
+    
 }

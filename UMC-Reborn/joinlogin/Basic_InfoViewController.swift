@@ -9,6 +9,21 @@ import UIKit
 
 class Basic_InfoViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
+    //API
+    var apple2 : String = "" // ad 광고
+    var thisisemail1 : String = "" // 이메일 인증된 이메일
+    
+    var yourId2 : String = ""
+    var yourPw2 : String = ""
+    
+    // 여기서 처음 보내는 것들
+    var yourImage : String = ""
+    var yourNickName : String = ""
+    var yourGround : String = ""
+    var HBD : String = ""
+    
+    
+    
     @IBOutlet weak var ProgressView5: UIProgressView!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var townTextField: UITextField!
@@ -18,6 +33,12 @@ class Basic_InfoViewController: UIViewController, UITextFieldDelegate, UITextVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        print("Basic_InfoViewController에 광고 도착" + apple2)
+        print("Basic_InfoViewController에 이메일 도착" + thisisemail1)
+        print("Basic_InfoViewController에 아이디 도착" + yourId2)
+        print("Basic_InfoViewController에 비밀번호 도착" + yourPw2)
+        
         
         let mybrown = UIColor(named: "mybrown")
         let myorange = UIColor(named: "myorange")
@@ -112,4 +133,33 @@ class Basic_InfoViewController: UIViewController, UITextFieldDelegate, UITextVie
            textField.layer.borderColor = UIColor.gray.cgColor
            textField.layer.borderWidth = 1.0
    }
+    
+    
+    
+    @IBAction func plzNextButtonTapped(_ sender: Any) {
+        
+        //yourImage = 이미지
+        yourNickName = nickNameTextField.text ?? ""
+        yourGround = townTextField.text ?? ""
+        //HBD = BDTextField ?? 0 이거 어떡하죠
+       
+        guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "InterestViewController") as? InterestViewController else {return}
+
+        rvc.apple3 = apple2 // who에서 email로 온 거 담아서 보낼거임
+        rvc.thisisemail2 = thisisemail1 // 이메일 담음 (보낼거야)
+        rvc.yourId3 = yourId2
+        rvc.yourPw3 = yourPw2
+        
+        rvc.yourNickName1 = yourNickName
+        rvc.yourGround1 = yourGround
+        rvc.HBD1 = HBD
+        
+        
+        self.navigationController?.pushViewController(rvc, animated: true)
+        
+        
+    }
+    
+    
+    
 }

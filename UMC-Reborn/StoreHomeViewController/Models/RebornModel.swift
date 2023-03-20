@@ -2,26 +2,26 @@
 //  RebornModel.swift
 //  UMC-Reborn
 //
-//  Created by 김예린 on 2023/02/11.
+//  Created by nayeon  on 2023/03/20.
 //
 
 import Foundation
 
 
 struct RebornList : Codable {
-    let isSuccess : Bool
-    let code : Int
-    let message : String
+    var isSuccess : Bool
+    var code : Int
+    var message : String
     var result : [RebornListModel]
 }
 
 struct RebornListModel : Codable {
-    let rebornIdx : Int
-    let productName : String
-    let productGuide : String
-    let productComment : String
-    let productImg : String?
-    let productLimitTime : String
-    let productCnt : Int
-    let status : String
+    var rebornIdx : Int
+    var productName : String
+    var productGuide : String
+    var productComment : String
+    var productImg : String?
+    var productLimitTime : String
+    var productCnt : Int
+    var status : String
 }

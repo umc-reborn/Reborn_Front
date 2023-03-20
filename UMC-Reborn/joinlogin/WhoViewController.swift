@@ -87,12 +87,12 @@ class WhoViewController: UIViewController {
             //화면이동
             navigationController?.pushViewController(rvvc, animated: true)
             
-            
-            
         }
         else if (route_Shop == 1){
-            let pushVCc = self.storyboard?.instantiateViewController(withIdentifier: "EmailViewSecondController")
-            self.navigationController?.pushViewController(pushVCc!, animated: true)
+            guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "noStoreJoinViewController") as? noStoreJoinViewController else {return}
+            
+            rvc.modalPresentationStyle = .overFullScreen
+            self.present(rvc, animated: true)
         }
         else {
             NextButtonn.isEnabled = false

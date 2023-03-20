@@ -9,6 +9,7 @@ import UIKit
 
 class noEmailViewController: UIViewController {
 
+    @IBOutlet var wwhiteView: UIView!
     @IBOutlet var yesButton: UIButton!
     
     override func viewDidLoad() {
@@ -16,11 +17,13 @@ class noEmailViewController: UIViewController {
 
         print("회원 아님!!!! ")
         
-        
-        
+        wwhiteView.layer.cornerRadius = 10
         
     }
     
 
-
+    @IBAction func yessButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true)
+    }
+    
 }

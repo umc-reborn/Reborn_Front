@@ -3,7 +3,7 @@
 //  UMC-Reborn
 //
 //  Created by 김예린 on 2023/02/03.
-//
+// 이웃 로그인 api
 
 import Foundation
 import Alamofire

@@ -12,9 +12,7 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     var rebornId : Int = 0
     
-    let editReborn = UserDefaults.standard.integer(forKey: "userIdx")
-    
-    let DidDismissEditRebornViewController: Notification.Name = Notification.Name("DidDismissEditRebornViewController")
+    var editReborn = UserDefaults.standard.integer(forKey: "userIdx")
     
     var imageUrl: ImageresultModel!
     var rebornData: RebornEditresultModel!
@@ -28,7 +26,6 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         timeLabel2.text = data
         timeLabel2.sizeToFit()
     }
-    
     
     @IBOutlet weak var timeLabel2: UILabel!
     @IBOutlet weak var EditImageView: UIImageView!

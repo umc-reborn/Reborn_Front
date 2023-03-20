@@ -1,23 +1,24 @@
 //
-//  RebornCompletePost.swift
+//  PwResetPost.swift
 //  UMC-Reborn
 //
-//  Created by jaegu park on 2023/03/09.
+//  Created by 김예린 on 2023/03/15.
 //
 
 import Foundation
 import Alamofire
 
-struct RebornCompleteModel:Encodable {
-    var rebornTaskIdx: Int
-    var productExchangeCode: Int
+struct PwResetModel:Encodable {
+    var userId: String
+    var userEmail: String
+    var userPwd: String
 }
 
-class APIHandlerCompletePost {
-    static let instance = APIHandlerCompletePost()
+class APIHandlerResetPost {
+    static let instance = APIHandlerResetPost()
     
-    func SendingPostReborn(parameters: RebornCompleteModel, handler: @escaping (_ result: RebornCompleteresultModel)->(Void)) {
-        let url = "http://www.rebornapp.shop/reborn-task/update"
+    func SendingPostReborn(parameters: PwResetModel, handler: @escaping (_ result: PwResetresultModel)->(Void)) {
+        let url = "http://www.rebornapp.shop/users/pwd-reset"
         let headers:HTTPHeaders = [
             "content-type": "application/json"
         ]
@@ -29,7 +30,7 @@ class APIHandlerCompletePost {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                     print(json)
                     
-                    let jsonresult = try JSONDecoder().decode(RebornCompleteresultModel.self, from: data!)
+                    let jsonresult = try JSONDecoder().decode(PwResetresultModel.self, from: data!)
                     handler(jsonresult)
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -52,9 +53,10 @@ class APIHandlerCompletePost {
     }
 }
 
-struct RebornCompleteresultModel: Codable {
+struct PwResetresultModel: Codable {
     var isSuccess:Bool
     var code:Int
     var message:String
     var result:String
 }
+

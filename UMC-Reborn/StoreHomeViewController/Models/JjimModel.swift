@@ -8,27 +8,24 @@
 import Foundation
 
 struct JjimList: Codable {
-    let isSuccess: Bool
-    let code: Int
-    let message: String
-    let result: [JjimListModel]
+    var isSuccess: Bool
+    var code: Int
+    var message: String
+    var result: [JjimListModel]
 }
 
 // MARK: - Result
 struct JjimListModel: Codable {
-    let jjimIdx, storeIdx: Int
-    let storeName: String
-    let storeImage: String?
-    let storeCategory: String
-    let storeScore: Float
+    var jjimIdx, storeIdx: Int
+    var storeName: String
+    var storeImage: String?
+    var storeCategory: String
+    var storeScore: Float
 }
 
-
-
-
 struct JjimCountList: Codable {
-    let isSuccess: Bool
-    let code: Int
-    let message: String
-    let result: Int
+    var isSuccess: Bool
+    var code: Int
+    var message: String
+    var result: Int
 }

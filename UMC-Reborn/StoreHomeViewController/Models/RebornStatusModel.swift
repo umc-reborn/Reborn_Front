@@ -8,19 +8,19 @@
 import Foundation
 
 struct RebornStatusList: Codable {
-    let isSuccess: Bool
-    let code: Int
-    let message: String
-    let result: [RebornStatusListModel]
+    var isSuccess: Bool
+    var code: Int
+    var message: String
+    var result: [RebornStatusListModel]
 }
 
 struct RebornStatusListModel: Codable {
-    let rebornTaskIdx: Int
-    let userNickname: String
-    let productName:String
-    let productImg: String?
-    let productLimitTime: String
-    let productCnt: Int
-    let status: String
-    let createdAt: String
+    var rebornTaskIdx: Int
+    var userNickname: String
+    var productName:String
+    var productImg: String?
+    var productLimitTime: String
+    var productCnt: Int
+    var status: String
+    var createdAt: String
 }

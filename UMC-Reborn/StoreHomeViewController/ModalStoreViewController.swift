@@ -9,7 +9,7 @@ import UIKit
 
 class ModalStoreViewController: UIViewController {
     
-    let modalStore = UserDefaults.standard.integer(forKey: "userIdx")
+    var modalStore = UserDefaults.standard.integer(forKey: "userIdx")
     
     var rebornDatas: [RebornListModel] = []
     

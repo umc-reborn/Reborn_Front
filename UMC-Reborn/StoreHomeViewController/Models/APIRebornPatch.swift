@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 struct PatchModel:Encodable {
-    let rebornIdx: Int
-    let status: String
+    var rebornIdx: Int
+    var status: String
 }
 
 class APIHandlerPatch {
@@ -42,8 +42,8 @@ class APIHandlerPatch {
 }
 
 struct PatchresultModel: Codable {
-    let isSuccess:Bool
-    let code: Int
-    let message: String
-    let result: String
+    var isSuccess:Bool
+    var code: Int
+    var message: String
+    var result: String
 }

@@ -5,38 +5,43 @@
 //  Created by yeonsu on 2023/02/07.
 //
 
-import Foundation
-import Alamofire
-
-struct ManageReviewReqModel:Codable {
-    var reviewIdx:Int
-    var userIdx:Int
-    var userImg:UInt
-    var userNickname:String
-    var storeName:String
-    var storeCategory:String
-    var rebornIdx:Int
-    var productName:String
-    var reviewScore:Int
-    var reviewComment:String
-    var reviewImage1:String
-    var reviewImage2:String
-    var reviewImage3:String
-    var reviewImage4:String
-    var reviewImage5:String
-    var reviewCreatedAt:String
-}
-
-struct ManageReviewReqResultModel: Codable {
-    var isSuccess:Bool
-    var code:Int
-    var message:String
-    var result:postReviewReqResult
-}
-
-struct ManageReviewReqResult: Codable {
-    var reviewIdx:Int
-}
+//import Foundation
+//import Alamofire
+//
+//struct ManageReviewReqModel:Codable {
+//    var reviewIdx:Int
+//    var userIdx:Int
+//    var userImg:UInt
+//    var userNickname:String
+//    var storeName:String
+//    var storeCategory:String
+//    var rebornIdx:Int
+//    var productName:String
+//    var reviewScore:Int
+//    var reviewComment:String
+//    var reviewImg:
+//    var reviewImage1:String?
+//    var reviewImage2:String?
+//    var reviewImage3:String?
+//    var reviewImage4:String?
+//    var reviewImage5:String?
+//    var reviewCreatedAt:String
+//}
+//
+//struct reviewImg :Codable {
+//    
+//}
+//
+//struct ManageReviewReqResultModel: Codable {
+//    var isSuccess:Bool
+//    var code:Int
+//    var message:String
+//    var result:postReviewReqResult
+//}
+//
+//struct ManageReviewReqResult: Codable {
+//    var reviewIdx:Int
+//}
 //
 //class APIMyRebornHandlerPost {
 //    static let instance = APIMyRebornHandlerPost()
