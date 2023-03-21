@@ -27,12 +27,16 @@ class APIShopLoginPost {
         AF.request(url, method:.post, parameters: parameters1, encoder: JSONParameterEncoder.default, headers: headers).response { response1 in
             switch response1.result {
             case .success(let data):
+                print(String(decoding: data!, as: UTF8.self))
                 let resultData2 = String(data: response1.data!, encoding: .utf8)
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                     print(json)
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    print(String(decoding: data!, as: UTF8.self))
                     
-                    let jsonresult = try JSONDecoder().decode(ShopModel.self, from: data!) // 고쳤음
+                    let jsonresult = try decoder.decode(ShopModel.self, from: data!) // 고쳤음
                     handler(jsonresult)
                     
                 }catch {

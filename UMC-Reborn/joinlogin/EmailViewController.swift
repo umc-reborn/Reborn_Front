@@ -53,7 +53,6 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         //다음 버튼 비활성화
         nextbuttonEmail.isEnabled = false
     
-        
         //progressView3
         ProgressView3.progressViewStyle = .default
         ProgressView3.progressTintColor = .myorange
@@ -124,10 +123,8 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         codeTextField.delegate = self
         textFieldDidBeginEditing(EmailTextField)
         textFieldDidEndEditing(EmailTextField)
-//        Idontknow(textField: EmailTextField)
         textFieldDidBeginEditing(codeTextField)
         textFieldDidEndEditing(codeTextField)
-        //Idontknow(codeTextField)
         
         EmailTextField.addTarget(self, action: #selector(Idontknow), for:.editingChanged)
         

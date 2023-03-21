@@ -26,6 +26,7 @@ class APIHandlerResetPost {
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).response { responce in
             switch responce.result {
             case .success(let data):
+                print(String(decoding: data!, as: UTF8.self))
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                     print(json)
