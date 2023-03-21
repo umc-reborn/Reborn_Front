@@ -11,8 +11,6 @@ class RebornEnrollViewController: UIViewController {
     
     var rebornEnroll = UserDefaults.standard.integer(forKey: "userIdx")
     
-    var storeText2: Int = 0
-    
     var rebornDatas: [RebornListModel] = []
     var rebornData: RebornDeleteresultModel!
     var rebornActiveData: RebornActiveresultModel!

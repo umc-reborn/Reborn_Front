@@ -54,7 +54,6 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         newpwTextField.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
         newokTextField.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
-
     }
     
     @objc func textFieldEdited(textField: UITextField) {
@@ -75,7 +74,7 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
             nextButton.backgroundColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1)
         }
         else {
-                pwokErrorLabel.text = "비밀번호가 일치하지 않습니다."
+            pwokErrorLabel.text = "비밀번호가 일치하지 않습니다."
             nextButton.backgroundColor = .white
         }
         
@@ -85,7 +84,7 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
     }
     
     func isValidPw(testStr: String?) -> Bool{
-        let regex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"
+        let regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[\\d])(?=.*[~!@#\\$%\\^&\\*])[\\w~!@#\\$%\\^&\\*]{8,16}$"
         
         let pwTest = NSPredicate(format:"SELF MATCHES %@", regex)
         return pwTest.evaluate(with: testStr)
@@ -93,12 +92,12 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
-            textField.layer.borderWidth = 1.0
+        textField.layer.borderWidth = 1.0
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-            textField.layer.borderColor = UIColor.gray.cgColor
-            textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.borderWidth = 1.0
     }
     
     @IBAction func backButton(_ sender: Any) {

@@ -74,6 +74,11 @@ class TimerViewController: UIViewController {
         self.timeLabel.text = "0분 00초"
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     
     func fetchContact() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
