@@ -57,6 +57,8 @@
 		2F7C0ABC29956D0400BC5F9A /* PersonalTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7C0ABB29956D0400BC5F9A /* PersonalTabViewController.swift */; };
 		2FA56F58298BDBE200CCC89A /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */; };
 		2FADC52D298BC71200C09566 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */; };
+		2FB3BD1A29CA05BE003B17CA /* EditUserInfoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3BD1929CA05BE003B17CA /* EditUserInfoPost.swift */; };
+		2FB3BD1C29CA1266003B17CA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3BD1B29CA1266003B17CA /* UserModel.swift */; };
 		2FB4A6A62977A46F00CA811C /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */; };
 		2FB4A6A82977A5D900CA811C /* RebornHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */; };
 		2FB4A6AC2977A66000CA811C /* ReviewManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */; };
@@ -293,6 +295,8 @@
 		2F7C0ABB29956D0400BC5F9A /* PersonalTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTabViewController.swift; sourceTree = "<group>"; };
 		2FA56F57298BDBE200CCC89A /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		2FADC52C298BC71200C09566 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		2FB3BD1929CA05BE003B17CA /* EditUserInfoPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoPost.swift; sourceTree = "<group>"; };
+		2FB3BD1B29CA1266003B17CA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
 		2FB4A6A72977A5D900CA811C /* RebornHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryViewController.swift; sourceTree = "<group>"; };
 		2FB4A6AB2977A66000CA811C /* ReviewManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManageViewController.swift; sourceTree = "<group>"; };
@@ -572,6 +576,8 @@
 				2FF615362992D1EC00143369 /* RebornHistoryModel.swift */,
 				2F7C0AB32994DAA600BC5F9A /* ReviewManageModel.swift */,
 				2F5302EF29AA5F7400625869 /* APIReviewImagePost.swift */,
+				2FB3BD1929CA05BE003B17CA /* EditUserInfoPost.swift */,
+				2FB3BD1B29CA1266003B17CA /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1091,6 +1097,7 @@
 				0B94772029899E4400B5829A /* FindIdViewController.swift in Sources */,
 				9561B7B629916E7B00A4B33B /* PopularShopModel.swift in Sources */,
 				9561BA8C2995B37C00A4B33B /* HomeInprogressViewController.swift in Sources */,
+				2FB3BD1C29CA1266003B17CA /* UserModel.swift in Sources */,
 				2F7010EE2975845200E09DD9 /* MyRebornViewController.swift in Sources */,
 				C7C400EF29B07E38008EB125 /* RebornEditPost.swift in Sources */,
 				2FB97CFF2992AE1B006D4420 /* RebornHistoryDetailService.swift in Sources */,
@@ -1197,6 +1204,7 @@
 				0B0D66CC298D0BFD00E5220F /* APINeiLoginPost.swift in Sources */,
 				0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */,
 				0B183DCB29AC901C00B0B2FE /* FindIdGet.swift in Sources */,
+				2FB3BD1A29CA05BE003B17CA /* EditUserInfoPost.swift in Sources */,
 				C70D3D632982308D00CABA91 /* SecondMainTableViewCell.swift in Sources */,
 				C7C4FD77296D315B00040E05 /* SceneDelegate.swift in Sources */,
 				C74FEE3C29717AE300BFC8D0 /* StoreTabBarController.swift in Sources */,
