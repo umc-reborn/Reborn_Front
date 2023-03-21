@@ -60,6 +60,13 @@ extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataS
 //        cell.shopImage.reloadData()
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
+        svc1.storeIdm1 = newDatas[indexPath.row].storeIdx
+        UserDefaults.standard.set(newDatas[indexPath.row].storeIdx, forKey: "storeid")
+        self.present(svc1, animated: true)
+    }
 }
 
 extension NewShopViewController: UICollectionViewDelegateFlowLayout {
