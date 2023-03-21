@@ -7,10 +7,9 @@
 
 import UIKit
 
-class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, MySampleProtocol {
     
     var nickname = UserDefaults.standard.string(forKey: "userNickName")
-    
 
     let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
     let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
@@ -26,6 +25,12 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     
     @objc func FinishEditMode() {
         // TODO : (일단 닉네임이라도) 변경한 값으로 만들기
+    }
+    
+    func addressSend(data: String) {
+        EditAddressTextField.text = data
+        EditAddressTextField.sizeToFit()
+        print(data)
     }
     
     override func viewDidLoad() {
@@ -277,6 +282,16 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.layer.borderWidth = 1.0
+    }
+    
+    
+    @IBAction func FindAddressButton(_ sender: UIButton) {
+        guard let svc3 = self.storyboard?.instantiateViewController(identifier: "UserAddressViewController") as? UserAddressViewController else {
+                    return
+                }
+        svc3.delegate = self
+        
+        self.present(svc3, animated: true)
     }
 }
 
