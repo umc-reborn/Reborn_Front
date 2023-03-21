@@ -30,12 +30,18 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         createButton1()
         createButton2()
         createButton3()
         createButton4()
         createButton5()
+        
+        if button1.isSelected {
+            // 1. 저장을 위한 변수 선언(맨 위에)
+            // 2. 버튼을 클릭했을 때 1번 변수에 저장(sender.label.text)
+            // 3. 클릭했을 때 UI
+            // 4. 다른 거를 선택했을 땐 for문을 써서 나머지 버튼 색깔들을 뺌
+        }
         
         print("유저 닉네임은 \(nickname)")
         
