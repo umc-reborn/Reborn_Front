@@ -23,10 +23,12 @@ class FindIdPost {
         
         AF.request(url, method: .post, parameters: parameters6, encoder: JSONParameterEncoder.default, headers: headers).response {response4 in switch response4.result{
         case .success(let data):
+            print(String(decoding: data!, as: UTF8.self))
             let resultData7 = String(data: response4.data!, encoding: .utf8)
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                 print(json)
+                
                 
                 let jsonresult = try
                 JSONDecoder().decode(aaaModel.self, from: data!)
