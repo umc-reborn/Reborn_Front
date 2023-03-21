@@ -10,7 +10,6 @@ import UIKit
 class StoreMainViewController: UIViewController {
     
     var storeMain = UserDefaults.standard.integer(forKey: "userIdx")
-    var storeText1: Int = 0
     
     @IBOutlet weak var storemainView: UIView!
     @IBOutlet weak var storemainLabel: UILabel!

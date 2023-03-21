@@ -13,6 +13,7 @@ class StoreTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tabBar.tintColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1.0)
         tabBar.unselectedItemTintColor = UIColor.black
         tabBar.backgroundColor = .white
@@ -24,13 +25,12 @@ class StoreTabBarController: UITabBarController {
         self.navigationController?.navigationBar.tintColor = .clear
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        print(storeText)
         UserDefaults.standard.set(storeText, forKey: "userIdx")
         setupStyle()
     }
     
     func setupStyle() {
-            UITabBar.clearShadow()
-            tabBar.layer.applyShadow(color: .gray, alpha: 0.3, x: 0, y: 0, blur: 12)
-        }
+        UITabBar.clearShadow()
+        tabBar.layer.applyShadow(color: .gray, alpha: 0.3, x: 0, y: 0, blur: 12)
+    }
 }

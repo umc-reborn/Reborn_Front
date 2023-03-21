@@ -14,12 +14,28 @@ class TimerTestViewController: UIViewController {
     
     var secondsLeft: Int = 0
     var timer: Timer?
+    var timer2: Timer? = nil
+    var isTimerOn = false
     
     var seconds: Int = 0
     var minutes: Int = 0
     
+    var container: NSPersistentContainer!
+    
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var startStopButton: UIButton!
+    
+    var timeSecond = 10 {
+        willSet(newValue) {
+            var hours = String(newValue / 3600)
+            var minutes = String(newValue / 60)
+            var seconds = String(newValue % 60)
+            if hours.count == 1 { hours = "0"+hours }
+            if minutes.count == 1 { minutes = "0"+minutes }
+            if seconds.count == 1 { seconds = "0"+seconds }
+            timeLabel.text = "\(hours):\(minutes):\(seconds)"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +45,59 @@ class TimerTestViewController: UIViewController {
         minutes = self.secondsLeft / 60
         seconds = self.secondsLeft % 60
         self.timeLabel.text = String(format: "%02d:%02d", minutes, seconds)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.container = appDelegate.persistentContainer
+        
+//        NotificationCenter.default.addObserver(
+//                    self,
+//                    selector: #selector(self.startTimerNotification(_:)),
+//                    name: NSNotification.Name("StartTimer"),
+//                    object: nil
+//        )
     }
+    
+//    @objc func startTimerNotification(_ notification: Notification) {
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+//            self.timerStart()
+//        }
+//    }
     
     @IBAction func startStopAction(_ sender: Any) {
         startTimer()
+    }
+    
+//    func timerStart() {
+//        if isTimerOn {
+//            timer?.invalidate()
+//            startStopButton.setTitle("START", for: .normal)
+//        } else {
+//            self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+//                self.fetchContacts()
+//                if (self.timeSecond == 0) {
+//                    timer.invalidate()
+//                }
+//            }
+//            RunLoop.current.add(self.timer!, forMode: .common)
+//            startStopButton.setTitle("STOP", for: .normal)
+//        }
+//        isTimerOn = !isTimerOn
+//    }
+//
+//    func fetchContacts() {
+//        do {
+//            let contact = try self.container.viewContext.fetch(Entity.fetchRequest()) as! [Entity]
+//           contact.forEach {
+//               timeSecond = Int($0.minutes)
+//          }
+//        } catch {
+//           print(error.localizedDescription)
+//        }
+//    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("StartTimer"), object: nil, userInfo: nil)
     }
     
     @objc func startTimer() {
@@ -46,7 +111,7 @@ class TimerTestViewController: UIViewController {
 //
 //          //타이머가 비어있을때는 타이머 시작!
 //          self.startStopButton.setTitle("타이머 종료하기", for: .normal)
-          //시간을 세팅
+        //시간을 세팅
 //          self.secondsLeft = 30 //180초지만 10초로 테스트
 
           self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
@@ -136,6 +201,6 @@ class TimerTestViewController: UIViewController {
     }
     
     @IBAction func resetAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
 }
