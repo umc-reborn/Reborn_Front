@@ -49,9 +49,14 @@ class SecondMainViewController: UIViewController {
                   )
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            self.rebornGoingResult()
+        }
+    }
+    
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            
             self.rebornGoingResult()
         }
     }

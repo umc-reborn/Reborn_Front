@@ -45,35 +45,19 @@ class RebornEnrollViewController: UIViewController {
             name: NSNotification.Name("DismissDetailView2"),
             object: nil
         )
-        
-//        NotificationCenter.default.addObserver(
-//            self,
-//            selector: #selector(self.startTimerNotification(_:)),
-//            name: NSNotification.Name("StartTimer"),
-//            object: nil
-//        )
     }
     
-//    @objc func startTimerNotification(_ notification: Notification) {
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-//
-//
-//          }
-//      }
-    
     @objc func didDismissDetailNotification(_ notification: Notification) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-              
-              self.rebornResult()
-          }
-      }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            self.rebornResult()
+        }
+    }
     
     @objc func didDismissDetailNotification2(_ notification: Notification) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-              
-              self.rebornResult()
-          }
-      }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            self.rebornResult()
+        }
+    }
     
     func rebornResult() {
         

@@ -16,7 +16,6 @@ class StoreReviewViewController: UIViewController {
     @IBOutlet weak var StoreReviewTableView: UITableView!
     @IBOutlet weak var ReviewCountLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,7 +88,6 @@ class StoreReviewViewController: UIViewController {
         }.resume()
     }
     
-    
     func reviewCountResult() {
         
         let url = APIConstants.baseURL + "/review/cnt?storeIdx=\(String(storeReview))"
@@ -130,5 +128,4 @@ class StoreReviewViewController: UIViewController {
             }
         }.resume()
     }
-
 }

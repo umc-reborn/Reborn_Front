@@ -9,7 +9,6 @@ import UIKit
 
 protocol SampleProtocol2:AnyObject {
     func dataSend(data: String)
-    func timeSend(data: String)
 }
 
 class TimePopupViewController: UIViewController {
@@ -52,9 +51,6 @@ class TimePopupViewController: UIViewController {
         if let text = timeLabel2.text {
             delegate?.dataSend(data: text)
         }
-        if let text2 = timeLabel3.text {
-            delegate?.timeSend(data: text2)
-        }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
@@ -67,6 +63,7 @@ extension TimePopupViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
         switch component {
                 case 0:
                     return pickerHour.count /// 연도의 아이템 개수
@@ -78,6 +75,7 @@ extension TimePopupViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         switch component {
             case 0:
                 return "\(pickerHour[row])"
@@ -89,6 +87,7 @@ extension TimePopupViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
         var label = view as! UILabel?
         if label == nil {
             label = UILabel()

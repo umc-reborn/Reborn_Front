@@ -35,7 +35,6 @@ class StoreReviewTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -47,7 +46,7 @@ class StoreReviewTableViewCell: UITableViewCell {
 extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-            // #warning Incomplete implementation, return the number of sections
+        // #warning Incomplete implementation, return the number of sections
         return reviewDatas.count
     }
     
@@ -113,17 +112,5 @@ extension StoreReviewViewController: UITableViewDelegate, UITableViewDataSource 
         }
         cell.reviewComment.text = rebornData.reviewComment
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-//        switch indexPath.section {
-//        case 0:
-//            let storeIdt = storeId
-//            guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else { return }
-//            svc1.storeIdm = storeIdt
-//            self.present(svc1, animated: true)
-//        default:
-//            return
     }
 }

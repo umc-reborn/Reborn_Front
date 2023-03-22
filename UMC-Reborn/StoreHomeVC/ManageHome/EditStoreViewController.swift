@@ -8,23 +8,14 @@ import Foundation
 import UIKit
 import Alamofire
 
-//protocol SampleProtocol3:AnyObject {
-//    func nameSend(data: String)
-//    func categorySend(data: String)
-//    func introduceSend(data: String)
-//    func addressSend(data: String)
-//}
-
 class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol4 {
     
     var editStore = UserDefaults.standard.integer(forKey: "userIdx")
     
     var storeCategory : String = ""
     
-    var storecategory = [" 카페·디저트", " 반찬", " 패션", " 편의·생활", " 기타"]
+    var storecategory = ["카페·디저트", "반찬", "패션", "편의·생활", "기타"]
     let picker = UIPickerView()
-    
-//    weak var delegate : SampleProtocol3?
     
     var imageUrl: ImageresultModel!
     var rebornData: StoreEditresultModel!
@@ -70,8 +61,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         storeTextView.layer.cornerRadius = 5
         storeTextView.layer.borderWidth = 1
         storeTextView.layer.borderColor = UIColor.gray.cgColor
-        
-        placeholderSetting()
+
         textViewDidBeginEditing(storeTextView)
         textViewDidEndEditing(storeTextView)
         storenameTextfield.delegate = self
@@ -100,8 +90,8 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     
     @IBAction func addressButton(_ sender: Any) {
         guard let svc2 = self.storyboard?.instantiateViewController(identifier: "StoreAddressViewController") as? StoreAddressViewController else {
-                    return
-                }
+            return
+        }
         svc2.delegate = self
         
         self.present(svc2, animated: true)
@@ -143,16 +133,19 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
                         self.StoreImageView.load(url: url!)
                         self.storenameTextfield.text = "\(storeDatas.storeName)"
                         if (storeDatas.category == "CAFE") {
-                            self.storecategoryTextfield.text = " 카페·디저트"
+                            self.storecategoryTextfield.text = "카페·디저트"
                         } else if (storeDatas.category == "FASHION") {
-                            self.storecategoryTextfield.text = " 패션"
+                            self.storecategoryTextfield.text = "패션"
                         } else if (storeDatas.category == "SIDEDISH") {
-                            self.storecategoryTextfield.text = " 반찬"
+                            self.storecategoryTextfield.text = "반찬"
                         } else if (storeDatas.category == "LIFE") {
-                            self.storecategoryTextfield.text = " 편의·생활"
+                            self.storecategoryTextfield.text = "편의·생활"
                         } else {
-                            self.storecategoryTextfield.text = " 기타"
+                            self.storecategoryTextfield.text = "기타"
                         }
+                        self.storeaddressTextfield.text = "\(storeDatas.storeAddress)"
+                        self.storeTextView.text = "\(storeDatas.storeDescription)"
+                        self.storeTextView.textColor = UIColor.black
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -182,15 +175,15 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        if(storecategoryTextfield.text == " 카페·디저트") {
+        if(storecategoryTextfield.text == "카페·디저트") {
             storeCategory = "CAFE"
-        } else if (storecategoryTextfield.text == " 반찬") {
+        } else if (storecategoryTextfield.text == "반찬") {
             storeCategory = "SIDEDISH"
-        } else if (storecategoryTextfield.text == " 패션") {
+        } else if (storecategoryTextfield.text == "패션") {
             storeCategory = "FASHION"
-        } else if (storecategoryTextfield.text == " 편의·생활") {
+        } else if (storecategoryTextfield.text == "편의·생활") {
             storeCategory = "LIFE"
-        } else if (storecategoryTextfield.text == " 기타") {
+        } else if (storecategoryTextfield.text == "기타") {
             storeCategory = "ETC"
         }
         
@@ -198,7 +191,6 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         APIHandlerStorePost.instance.SendingPostReborn(storeId: editStore, parameters: parameterDatas) { result in self.rebornData = result }
         self.navigationController?.popViewController(animated: true)
     }
-    
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
            // textField.borderStyle = .line
@@ -211,12 +203,6 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
             textField.layer.borderWidth = 1.0
     }
     
-    func placeholderSetting() {
-        storeTextView.delegate = self // txtvReview가 유저가 선언한 outlet
-        storeTextView.text = " 사장님의 가게를 소개해 주세요!"
-        storeTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15.0)
-        storeTextView.textColor = UIColor.systemGray
-    }
         // TextView Place Holder
     @objc func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.systemGray {

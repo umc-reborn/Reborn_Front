@@ -31,7 +31,6 @@ class TabMainViewController: TabmanViewController {
     
         tabView.layer.borderWidth = 0
         
-        
         self.dataSource = self
         let bar = TMBar.ButtonBar()
         // 배경 회색으로 나옴 -> 하얀색으로 바뀜

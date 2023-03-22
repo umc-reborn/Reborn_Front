@@ -18,7 +18,6 @@ class PwOkViewController: UIViewController {
         pwchangeView.clipsToBounds = true
     }
     
-    
     @IBAction func okButton(_ sender: Any) {
         let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
         guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}

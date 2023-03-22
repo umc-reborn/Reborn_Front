@@ -11,13 +11,9 @@ class SecondTabViewController: UIViewController {
     
     var secondTab = UserDefaults.standard.integer(forKey: "userIdx")
     
-    var shopList: [String] = ["bread_image", "cake_image", "goods_picture"]
-    
     var reviewDatas: [ReviewListModel] = []
     
     @IBOutlet weak var STtableView: UITableView!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

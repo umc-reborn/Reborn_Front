@@ -18,7 +18,6 @@ class StoreMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("넘겨받은 값은 \(String(storeMain))")
         
         storemainView.clipsToBounds = true
         storemainView.layer.cornerRadius = 20
@@ -26,7 +25,6 @@ class StoreMainViewController: UIViewController {
         storemainView.layer.shadowOffset = CGSize(width: 5, height: 10)
         storemainView.layer.shadowRadius = 10
         storemainView.layer.shadowOpacity = 0.1
-
         
         let attributedString = NSMutableAttributedString(string: storemainLabel.text!, attributes: [
             .font: UIFont.systemFont(ofSize: 15, weight: .regular),

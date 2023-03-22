@@ -40,7 +40,6 @@ class FirstMainTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -75,9 +74,8 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
         self.present(nextVC, animated: false, completion: nil)
     }
     
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-            // #warning Incomplete implementation, return the number of sections
+        // #warning Incomplete implementation, return the number of sections
         return rebornWholeDatas.count
     }
     
@@ -101,24 +99,59 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: FirstMainTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FirstMain_TableViewCell", for: indexPath) as! FirstMainTableViewCell
         
+        var timeSecond = 10 {
+            willSet(newValue) {
+                var days = String(newValue / 86400)
+                var hours = String(newValue / 3600)
+                var minutes = String(newValue / 60)
+                var seconds = String(newValue % 60)
+                if days.count == 1 { hours = "00" }
+                if hours.count == 1 { hours = "0"+hours }
+                if minutes.count == 1 { minutes = "0"+minutes }
+                if seconds.count == 1 { seconds = "0"+seconds }
+                cell.limitLabel.text = "\(hours):\(minutes) 이후 자동취소"
+            }
+        }
+        
         let rebornData = rebornWholeDatas[indexPath.section]
         let timeLimit = rebornData.productLimitTime
         let hourLimit = timeLimit.prefix(2)
         let minuteLimit1 = timeLimit[String.Index(encodedOffset: 3)]
         let minuteLimit2 = timeLimit[String.Index(encodedOffset: 4)]
+        
+        let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
+        let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
+        let minuteCLimit1 = timeLimit[String.Index(encodedOffset: 3)].wholeNumberValue ?? 0
+        let minuteCLimit2 = timeLimit[String.Index(encodedOffset: 4)].wholeNumberValue ?? 0
+        let hourTimer2 = 3600 * (hourCLimit1 * 10 + hourCLimit2)
+        let minuteTimer2 = 60 * (minuteCLimit1 * 10 + minuteCLimit2)
+        
         let createTime = rebornData.createdAt
         let yearTime = createTime.prefix(4)
         let monthTime1 = createTime[String.Index(encodedOffset: 5)]
         let monthTime2 = createTime[String.Index(encodedOffset: 6)]
         let dayTime1 = createTime[String.Index(encodedOffset: 8)]
         let dayTime2 = createTime[String.Index(encodedOffset: 9)]
+        
+        let hourCTime1 = createTime[String.Index(encodedOffset: 12)].wholeNumberValue ?? 0
+        let minuteCTime1 = createTime[String.Index(encodedOffset: 14)].wholeNumberValue ?? 0
+        let minuteCTime2 = createTime[String.Index(encodedOffset: 15)].wholeNumberValue ?? 0
+        let secondCTime1 = createTime[String.Index(encodedOffset: 17)].wholeNumberValue ?? 0
+        let secondCTime2 = createTime[String.Index(encodedOffset: 18)].wholeNumberValue ?? 0
+        let hourTimer = 3600 * hourCTime1
+        let minuteTimer = 60 * (minuteCTime1 * 10 + minuteCTime2)
+        let secondTimer = secondCTime1 * 10 + secondCTime2
+        
+        let wholeSeconds = hourTimer2 + minuteTimer2 + hourTimer + minuteTimer + secondTimer
+        
         let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
         cell.foodimageView.load(url: url!)
         cell.nicknameLabel.text = rebornData.userNickname
         cell.foodnameLabel.text = rebornData.productName
         cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
         if (rebornData.status == "ACTIVE") {
-            cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
+            timeSecond = wholeSeconds
+//            cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
             cell.statusLabel.text = "진행중"
             cell.shareButton.isEnabled = true
             cell.sharecancelButton.isEnabled = true
@@ -132,7 +165,6 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
         
         cell.index = indexPath.section
         cell.delegate = self
-        
         
         return cell
     }

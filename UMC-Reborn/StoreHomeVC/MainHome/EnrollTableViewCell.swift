@@ -70,6 +70,12 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "EditRebornViewController") as? EditRebornViewController else { return }
         nextVC.modalPresentationStyle = .overFullScreen
         nextVC.rebornId = rebornData.rebornIdx
+        nextVC.productImage = rebornData.productImg ?? ""
+        nextVC.productName = rebornData.productName
+        nextVC.productCount = rebornData.productCnt
+        nextVC.productGuide = rebornData.productGuide
+        nextVC.productIntroduce = rebornData.productComment
+        
         self.present(nextVC, animated: true)
     }
     
@@ -136,6 +142,4 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
         
         return UISwipeActionsConfiguration(actions: [delete])
     }
-    
-    
 }

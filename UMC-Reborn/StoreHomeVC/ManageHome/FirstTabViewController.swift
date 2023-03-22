@@ -11,13 +11,10 @@ class FirstTabViewController: UIViewController {
     
     var firstTab = UserDefaults.standard.integer(forKey: "userIdx")
     
-    var keyword : String = ""
-    
     var rebornDatas: [RebornListModel] = []
     
     @IBOutlet weak var FTtableView: UITableView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,8 +32,6 @@ class FirstTabViewController: UIViewController {
     }
     
     func rebornResult() {
-        
-        let text = keyword
         
         let url = APIConstants.baseURL + "/reborns/store/\(String(firstTab))/status?status="
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
@@ -81,12 +76,12 @@ class FirstTabViewController: UIViewController {
 extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return rebornDatas.count
+        return rebornDatas.count
     }
     
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 1
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         .leastNormalMagnitude
@@ -114,7 +109,6 @@ extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
             cell.limitTimeLabel.text = "\(minuteLimit1)\(minuteLimit2)분 내 수령"
         } else {
             cell.timeImage.isHidden = true
-//            cell.timeImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
             cell.foodName.translatesAutoresizingMaskIntoConstraints = false
             cell.foodName.topAnchor.constraint(equalTo: cell.limitTimeLabel.topAnchor, constant: 5).isActive = true
             cell.rebornButton.alpha = 0
@@ -125,7 +119,6 @@ extension FirstTabViewController: UITableViewDelegate, UITableViewDataSource {
             cell.countLabel.topAnchor.constraint(equalTo: cell.limitTimeLabel.topAnchor, constant: 5).isActive = true
             cell.FTimageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 10.79).isActive = true
         }
-        
         return cell
     }
         

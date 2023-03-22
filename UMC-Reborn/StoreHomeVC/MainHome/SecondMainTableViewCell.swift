@@ -14,7 +14,6 @@ protocol ComponentProductCellDelegate2 {
 
 class SecondMainTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var foodnameLabel: UILabel!
@@ -40,7 +39,6 @@ class SecondMainTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -75,7 +73,7 @@ extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource, 
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            // #warning Incomplete implementation, return the number of sections
+        // #warning Incomplete implementation, return the number of sections
         return rebornGoingDatas.count
     }
     
