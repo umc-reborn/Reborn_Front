@@ -22,6 +22,13 @@ class HomeInprogressViewController: UIViewController {
         defaultView.layer.shadowOffset = CGSize(width: 5, height: 10)
         defaultView.layer.shadowRadius = 10
         defaultView.layer.shadowOpacity = 0.1
+        
+        collectionView.layer.cornerRadius = 20
+        collectionView.clipsToBounds = true
+        collectionView.layer.masksToBounds = false
+        collectionView.layer.shadowOffset = CGSize(width: 5, height: 10)
+        collectionView.layer.shadowRadius = 10
+        collectionView.layer.shadowOpacity = 0.1
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +78,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RebornCell", for: indexPath) as! InprogressCollectionViewCell
         
         cell.backgroundColor = .white
-        cell.layer.cornerRadius = 10
+        cell.layer.cornerRadius = 20
         cell.layer.borderWidth = 0
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.shadowColor = UIColor.black.cgColor
