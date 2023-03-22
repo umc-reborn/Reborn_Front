@@ -15,10 +15,7 @@
 		0B183DC929ABAC5400B0B2FE /* FindIdPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B183DC829ABAC5400B0B2FE /* FindIdPost.swift */; };
 		0B183DCB29AC901C00B0B2FE /* FindIdGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B183DCA29AC901C00B0B2FE /* FindIdGet.swift */; };
 		0B183DCD29B2444B00B0B2FE /* noEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B183DCC29B2444B00B0B2FE /* noEmailViewController.swift */; };
-		0B68DDE3299287D900A988FA /* JoinNeighborPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B68DDE2299287D900A988FA /* JoinNeighborPost.swift */; };
-		0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B68DDE4299287E500A988FA /* JoinShopPost.swift */; };
 		0B9167A1299779120094DC57 /* identificationPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9167A0299779120094DC57 /* identificationPost.swift */; };
-		0B9167A32997D2270094DC57 /* CompanyNumPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9167A22997D2270094DC57 /* CompanyNumPost.swift */; };
 		0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770329899BF400B5829A /* FirstLoginViewController.swift */; };
 		0B94770829899D6400B5829A /* NeighborViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770729899D6400B5829A /* NeighborViewController.swift */; };
 		0B94770A29899D7800B5829A /* ShopLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94770929899D7800B5829A /* ShopLoginViewController.swift */; };
@@ -47,6 +44,8 @@
 		0BD99EE429C0E54B00C6C0F1 /* sendPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE329C0E54B00C6C0F1 /* sendPwViewController.swift */; };
 		0BD99EE629C4D00B00C6C0F1 /* JoinNeiPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE529C4D00B00C6C0F1 /* JoinNeiPost.swift */; };
 		0BD99EE829C4D66400C6C0F1 /* noStoreJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE729C4D66400C6C0F1 /* noStoreJoinViewController.swift */; };
+		0BD99EEA29C7633300C6C0F1 /* RebornModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE929C7633300C6C0F1 /* RebornModel.swift */; };
+		0BD99EEC29C782C200C6C0F1 /* myAdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EEB29C782C100C6C0F1 /* myAdressViewController.swift */; };
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */; };
 		2F315053298276E90088DD46 /* RebornHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F315052298276E90088DD46 /* RebornHistoryTableViewCell.swift */; };
@@ -250,10 +249,7 @@
 		0B183DC829ABAC5400B0B2FE /* FindIdPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdPost.swift; sourceTree = "<group>"; };
 		0B183DCA29AC901C00B0B2FE /* FindIdGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdGet.swift; sourceTree = "<group>"; };
 		0B183DCC29B2444B00B0B2FE /* noEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noEmailViewController.swift; sourceTree = "<group>"; };
-		0B68DDE2299287D900A988FA /* JoinNeighborPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinNeighborPost.swift; sourceTree = "<group>"; };
-		0B68DDE4299287E500A988FA /* JoinShopPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinShopPost.swift; sourceTree = "<group>"; };
 		0B9167A0299779120094DC57 /* identificationPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = identificationPost.swift; sourceTree = "<group>"; };
-		0B9167A22997D2270094DC57 /* CompanyNumPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyNumPost.swift; sourceTree = "<group>"; };
 		0B94770329899BF400B5829A /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
 		0B94770729899D6400B5829A /* NeighborViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborViewController.swift; sourceTree = "<group>"; };
 		0B94770929899D7800B5829A /* ShopLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLoginViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +278,8 @@
 		0BD99EE329C0E54B00C6C0F1 /* sendPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendPwViewController.swift; sourceTree = "<group>"; };
 		0BD99EE529C4D00B00C6C0F1 /* JoinNeiPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinNeiPost.swift; sourceTree = "<group>"; };
 		0BD99EE729C4D66400C6C0F1 /* noStoreJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noStoreJoinViewController.swift; sourceTree = "<group>"; };
+		0BD99EE929C7633300C6C0F1 /* RebornModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornModel.swift; sourceTree = "<group>"; };
+		0BD99EEB29C782C100C6C0F1 /* myAdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAdressViewController.swift; sourceTree = "<group>"; };
 		0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.release.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.release.xcconfig"; sourceTree = "<group>"; };
 		20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.debug.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.debug.xcconfig"; sourceTree = "<group>"; };
 		2C19DC0605BD35D11E1E9E84 /* libPods-UMC-Reborn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UMC-Reborn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -501,9 +499,6 @@
 				0B0D66CB298D0BFD00E5220F /* APINeiLoginPost.swift */,
 				0B0D66CD298D21A000E5220F /* APIShopLoginPost.swift */,
 				0B9167A0299779120094DC57 /* identificationPost.swift */,
-				0B9167A22997D2270094DC57 /* CompanyNumPost.swift */,
-				0B68DDE2299287D900A988FA /* JoinNeighborPost.swift */,
-				0B68DDE4299287E500A988FA /* JoinShopPost.swift */,
 				0B183DC829ABAC5400B0B2FE /* FindIdPost.swift */,
 				0B183DCA29AC901C00B0B2FE /* FindIdGet.swift */,
 				0B9FC05D29BBA4F9008BCA53 /* FullMailPost.swift */,
@@ -529,13 +524,14 @@
 				0B94770F29899DA400B5829A /* EmailViewController.swift */,
 				0B94771129899DB200B5829A /* Id_PassWordViewController.swift */,
 				0B94771329899DC700B5829A /* Basic_InfoViewController.swift */,
+				0BD99EEB29C782C100C6C0F1 /* myAdressViewController.swift */,
+				0B94771529899DD200B5829A /* InterestViewController.swift */,
 				0B94771729899DDD00B5829A /* HelloViewController.swift */,
 				0BD99EDB29BEF0B700C6C0F1 /* tVersionViewController.swift */,
 				0B0D66C5298CFA1800E5220F /* EmailViewSecondController.swift */,
 				0B94771929899DF700B5829A /* ShopBasic_InfoViewController.swift */,
 				0B0D66C7298CFA6100E5220F /* Id_PassWordSecondViewController.swift */,
 				0B94771B29899E2400B5829A /* InterestSecondViewController.swift */,
-				0B94771529899DD200B5829A /* InterestViewController.swift */,
 				0B94771D29899E3000B5829A /* HelloSecondViewController.swift */,
 				0B94771F29899E4400B5829A /* FindIdViewController.swift */,
 				0B183DCC29B2444B00B0B2FE /* noEmailViewController.swift */,
@@ -1173,6 +1169,7 @@
 				0BD99EE629C4D00B00C6C0F1 /* JoinNeiPost.swift in Sources */,
 				95E9FFA52979BE270073DF2B /* NewShopCollectionViewCell.swift in Sources */,
 				2F48EBD32991559700D3C791 /* APIHandler.swift in Sources */,
+				0BD99EEC29C782C200C6C0F1 /* myAdressViewController.swift in Sources */,
 				95369A1429ACBB2E0041F837 /* WillLikeShopModel.swift in Sources */,
 				C7C400F529B09127008EB125 /* RebornDeletePost.swift in Sources */,
 				95E9FFB2297D9F930073DF2B /* adCollectionViewCell.swift in Sources */,
@@ -1181,7 +1178,6 @@
 				C71987552986D447000C87EB /* JjimViewController.swift in Sources */,
 				2FF28CE8298D065D008B7D8E /* APIMyRebornPost.swift in Sources */,
 				95148B3D298256FF004A1A57 /* SearchResultTableViewCell.swift in Sources */,
-				0B9167A32997D2270094DC57 /* CompanyNumPost.swift in Sources */,
 				95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */,
 				C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */,
 				C7B6447A299C873B00A7048D /* ModalSecondCollectionViewCell.swift in Sources */,
@@ -1278,8 +1274,6 @@
 				953AEE9C298F4FC2008AAE8A /* NewShopService.swift in Sources */,
 				0B94771C29899E2400B5829A /* InterestSecondViewController.swift in Sources */,
 				95369A1229A485860041F837 /* WillLikeShopCell.swift in Sources */,
-				0B68DDE3299287D900A988FA /* JoinNeighborPost.swift in Sources */,
-				0B68DDE5299287E500A988FA /* JoinShopPost.swift in Sources */,
 				C74A64B329C3673100F5B06F /* CreateRebornPost.swift in Sources */,
 				C739AC13298A9D980016B840 /* APIRebornPatch.swift in Sources */,
 				0BD99EDE29C0C8D200C6C0F1 /* PwResetPost.swift in Sources */,

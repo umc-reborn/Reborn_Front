@@ -13,6 +13,7 @@ struct BigModel: Encodable {
     var userEmail: String
     var userPwd: String
     var userNickname: String
+    var userImg: String
     var userAdAgreement: String
     var userBirthDate: String
     var userAddress: String
@@ -25,13 +26,14 @@ class JoinNeiPost {
     func SendingPostNeiJoin(parameterspp: BigModel, handler:@escaping (_ result: realFinModel) ->(Void)){
         let url = "http://www.rebornapp.shop/users/sign-up"
         let headers:HTTPHeaders = [
-            "content-type" : "application/json;charset=utf-8"
+            .contentType("application/json;charset=utf-8") 
         ]
         
         AF.request(url, method:.post, parameters: parameterspp, encoder: JSONParameterEncoder.default, headers: headers).response { rresponse in
             switch rresponse.result {
             case .success(let data):
-                let resultData = String(data: rresponse.data!, encoding: .utf8)
+                print(String(decoding: data!, as: UTF8.self))
+                let resultData = String(decoding: data!, as: UTF8.self)
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                     print(json)

@@ -24,7 +24,7 @@ class identificationPost {
         AF.request(url, method:.post, parameters: parameters2, encoder:
                     JSONParameterEncoder.default, headers: headers).response { ressponse in switch ressponse.result {
                     case .success(let data):
-                        //let resultData3 = String(data: ressponse.data!, encoding: .utf8)
+                        print(String(decoding: data!, as: UTF8.self))
                         do {
                             let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                             print(json) // {} 로그에 뜬 애들

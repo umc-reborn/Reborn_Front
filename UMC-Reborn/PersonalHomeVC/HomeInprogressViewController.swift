@@ -22,6 +22,13 @@ class HomeInprogressViewController: UIViewController {
         defaultView.layer.shadowOffset = CGSize(width: 5, height: 10)
         defaultView.layer.shadowRadius = 10
         defaultView.layer.shadowOpacity = 0.1
+        
+        collectionView.layer.cornerRadius = 20
+        collectionView.clipsToBounds = true
+        collectionView.layer.masksToBounds = false
+        collectionView.layer.shadowOffset = CGSize(width: 5, height: 10)
+        collectionView.layer.shadowRadius = 10
+        collectionView.layer.shadowOpacity = 0.1
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +42,7 @@ class HomeInprogressViewController: UIViewController {
                         }
                         self.rebornDatas = response.result
                         self.defaultView.isHidden = true
+                        self.defaultView.backgroundColor = .clear
                         
                         if self.rebornDatas.isEmpty {
                             self.defaultView.isHidden = false
@@ -69,9 +77,20 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RebornCell", for: indexPath) as! InprogressCollectionViewCell
         
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 20
+        cell.layer.borderWidth = 0
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowOpacity = 0.15
+        cell.layer.shadowRadius = 10
+        cell.contentView.layer.masksToBounds = true
+        cell.layer.masksToBounds = false
+        
         let rebornData = rebornDatas[indexPath.row]
-//        let url = URL(string: rebornData.productImg ?? "")
-//        cell.ongoingImg.load(url: url!)
+        let url = URL(string: rebornData.productImg ?? "")
+        cell.ongoingImg.load(url: url!)
         cell.ongoingName.text = rebornData.storeName
         cell.ongoingtime.text = rebornData.productLimitTime
         cell.ongoingCategory.text = rebornData.category

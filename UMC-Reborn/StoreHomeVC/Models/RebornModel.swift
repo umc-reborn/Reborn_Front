@@ -2,7 +2,7 @@
 //  RebornModel.swift
 //  UMC-Reborn
 //
-//  Created by nayeon  on 2023/03/20.
+//  Created by 김예린 on 2023/03/20.
 //
 
 import Foundation

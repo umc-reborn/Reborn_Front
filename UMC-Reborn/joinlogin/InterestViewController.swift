@@ -17,6 +17,7 @@ class InterestViewController: UIViewController {
     
     
     var yourNickName1 : String = "" // Nickname
+    var myImg1 : String = "" // 프로필 이미지
     var yourGround1 : String = "" // address
     var HBD1 : String = "" //Birthday 데이트피커
 
@@ -120,7 +121,7 @@ class InterestViewController: UIViewController {
     
     @IBAction func finalNextButtonTapped(_ sender: Any) {
         //회원가입 api 보내기 (최종 모은 곳 여기)
-        let parmeterData = BigModel(userId: yourId3, userEmail: thisisemail2, userPwd: yourPw3, userNickname: yourNickName1, userAdAgreement: apple3, userBirthDate: HBD1, userAddress: yourGround1, userLikes: yourInterest)
+        let parmeterData = BigModel(userId: yourId3, userEmail: thisisemail2, userPwd: yourPw3, userNickname: yourNickName1,userImg: myImg1, userAdAgreement: apple3, userBirthDate: HBD1, userAddress: yourGround1, userLikes: yourInterest)
         print(parmeterData)
         JoinNeiPost.instance.SendingPostNeiJoin(parameterspp: parmeterData) { result in self.FinalMData = result }
         print("이웃 회원가입 api 보내졌다!!!!!")
@@ -171,6 +172,15 @@ class InterestViewController: UIViewController {
     }
         override func viewDidLoad() {
             super.viewDidLoad()
+            
+            print("내 아이디 : \(yourId3)")
+            print("내 비밀번호 : \(yourPw3)")
+            
+            
+            print("내 프로필 사진 잘 넘어왔어 : \(myImg1)")
+            print("내 닉네임 잘 넘어왔어 : \(yourNickName1)")
+            print("내 주소 잘 넘어왔어 : \(yourGround1)")
+            print("내 생일 잘 넘어왔어 : \(HBD1)")
             
             nextButton11.isEnabled = false
             

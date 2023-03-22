@@ -14,20 +14,21 @@ class FindIdViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     @IBOutlet weak var FindIdNextButton: UIButton! // 버튼
     
+    @IBOutlet var messageeLabel: UILabel! // 이메일 형식
+    
+    let mybrown = UIColor(named: "mybrown")
+    let myorange = UIColor(named: "myorange")
+    let mygray = UIColor(named: "mygray")
     
     //api 선언
     var Hago : FindPartModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         //다음 버튼 비활성화
-//        FindIdNextButton.isEnabled = false
+        FindIdNextButton.isEnabled = false
         
-        let mybrown = UIColor(named: "mybrown")
-        let myorange = UIColor(named: "myorange")
-        let mygray = UIColor(named: "mygray")
         
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")
@@ -64,7 +65,7 @@ class FindIdViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         textFieldDidBeginEditing(FindIdTextField)
         textFieldDidEndEditing(FindIdTextField)
         
-//        FindIdNextButton.addTarget(self, action: #selector(textFieldDidChanged), for:.touchUpInside)
+        FindIdTextField.addTarget(self, action: #selector(Idontknow2), for:.editingChanged)
         
     }
 
@@ -80,14 +81,33 @@ class FindIdViewController: UIViewController, UITextFieldDelegate, UITextViewDel
            textField.layer.borderWidth = 1.0
    }
     
-    //email 정규표현식
-    func isValidEmail(testStr:String) -> Bool {
-          let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-          let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-          return emailTest.evaluate(with: testStr)
-           }
     
+    //이메일 정규표현식
+    func isValidEmail(testStr:String?) -> Bool{
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z].{2,64}"
+              let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+              return emailTest.evaluate(with: testStr)
+        }
     
+    @objc func Idontknow2(textField: UITextField){ // 여기에 문제가
+        if (textField == FindIdTextField){
+            if isValidEmail(testStr: textField.text) {
+                messageeLabel.text = ""
+                messageeLabel.textColor = .mybrown //의미가 있나
+                FindIdNextButton.isEnabled = true
+                FindIdNextButton.setTitleColor(.white, for: .normal)
+                FindIdNextButton.layer.borderWidth = 1.0
+                FindIdNextButton.layer.borderColor = mybrown?.cgColor // 테두리 컬러
+                FindIdNextButton.backgroundColor = .mybrown
+                
+            }
+            else {
+                messageeLabel.text = "올바른 이메일 형식을 입력해 주세요."
+                messageeLabel.textColor = .myorange
+                FindIdNextButton.isEnabled = false
+            }
+        }
+    }
     // 입력한 거랑 불러온 거랑 일치하면 오류화면 안뜨는 화면으로
     // 일치하지 않으면 alert화면으로 넘어가기.
     // 다음 버튼 누르면 화면 바뀌고 +

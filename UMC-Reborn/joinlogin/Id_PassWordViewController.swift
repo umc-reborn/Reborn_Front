@@ -48,8 +48,6 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         print("Basic_InfoViewController에 이메일 도착" + thisisemail)
         
         
-        nextButton5.isEnabled = false
-        
         let mybrown = UIColor(named: "mybrown")
         let myorange = UIColor(named: "myorange")
         let mygray = UIColor(named: "mygray")
@@ -160,6 +158,11 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         doubleCheckTextField.addTarget(self, action: #selector(passwordRegex), for: .editingChanged)
 
         
+        
+//        setPwTextField.addTarget(self, action: #selector(equalPassWord), for: .editingChanged)
+//        doubleCheckTextField.addTarget(self, action: #selector(equalPassWord), for: .editingChanged)
+
+        
     }
     
     //작성 중 주황색
@@ -191,7 +194,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         else if (setPwTextField.text == doubleCheckTextField.text) {
             secondPwLabel.text = ""
             nextButton5.setTitleColor(.white, for: .normal)
-            nextButton5.setTitleColor(.white, for: .selected)
+//            nextButton5.setTitleColor(.white, for: .selected)
             nextButton5.backgroundColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1)
         }
         else {
@@ -218,7 +221,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     //pw 정규표현식
     func isValidPassWord(testStr: String?) -> Bool{
-        let regex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"
+        let regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[\\d])(?=.*[~!@#\\$%\\^&\\*])[\\w~!@#\\$%\\^&\\*]{8,16}$"
         
         let pwTest = NSPredicate(format:"SELF MATCHES %@", regex)
         return pwTest.evaluate(with: testStr)
@@ -288,28 +291,26 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         }
     }
     
-    @objc func equalPassWord(_ sender: UITextField){
-        // 비밀번호 두 번 쳤을 때 같다면
-        if (setPwTextField.text == doubleCheckTextField.text){
-            nextButton5.layer.borderColor = UIColor.mybrown?.cgColor
-            nextButton5.isEnabled = true
-            nextButton5.backgroundColor = .mybrown
-            nextButton5.setTitleColor(.white, for: .normal) // 평상시
-            nextButton5.setTitleColor(.white, for: .selected)
-        
-        }
-        else { // 다르다면
-            nextButton5.layer.borderColor = UIColor.mybrown?.cgColor
-            nextButton5.isEnabled = false
-            nextButton5.backgroundColor = .white
-            nextButton5.setTitleColor(.mybrown, for: .normal) // 평상시
-            nextButton5.setTitleColor(.mybrown, for: .selected)
-            secondPwLabel.text = "비밀번호가 일치하지 않습니다."
-        }
-    }
+//    @objc func equalPassWord(_ sender: UITextField){
+//        // 비밀번호 두 번 쳤을 때 같다면
+//        if (setPwTextField.text == doubleCheckTextField.text){
+//            nextButton5.layer.borderColor = UIColor.mybrown?.cgColor
+//            //nextButton5.isEnabled = true
+//            nextButton5.backgroundColor = .mybrown
+//            nextButton5.setTitleColor(.white, for: .normal) // 평상시
+//
+//        }
+//        else { // 다르다면
+//            nextButton5.layer.borderColor = UIColor.mybrown?.cgColor
+//            //nextButton5.isEnabled = false
+//            nextButton5.backgroundColor = .white
+//            nextButton5.setTitleColor(.mybrown, for: .normal) // 평상시
+//            secondPwLabel.text = "비밀번호가 일치하지 않습니다."
+//        }
+//    }
 
     // 버튼 누르면 화면 전환 + 아이디, 비밀번호 넘기기
-    @IBAction func nextBButtonTapped(_ sender: Any) {
+    @IBAction func nextButtonTapped(_ sender: Any) {
         
         yourId = setIdTextField.text ?? "" // 인증 완료된 아이디
         yourPw = doubleCheckTextField.text ?? "" // 인증 완료된 비밀번호
@@ -318,13 +319,14 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
 
         rvc.apple2 = apple1 // who에서 email로 온 거 담아서 보낼거임
         rvc.thisisemail1 = thisisemail // 이메일 담음 (보낼거야)
-        rvc.yourId2 = yourId 
+        rvc.yourId2 = yourId
         rvc.yourPw2 = yourPw
-        
+
+        print("나와라 ============")
         
         self.navigationController?.pushViewController(rvc, animated: true)
         
-        
+        print("나와라11111 ============")
 
         
         

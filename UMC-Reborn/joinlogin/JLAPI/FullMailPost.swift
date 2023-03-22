@@ -23,10 +23,12 @@ class FullMailPost {
         
         AF.request(url, method: .post, parameters: parameters,encoder: JSONParameterEncoder.default, headers: headers).response {response7 in switch response7.result {
         case .success(let data):
+            print(String(decoding: data!, as: UTF8.self))
             let resultData8 = String(data: response7.data!, encoding: .utf8)
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                 print(json)
+                
                 
                 let jsonresult = try
                 JSONDecoder().decode(TTrainModel.self, from: data!)
