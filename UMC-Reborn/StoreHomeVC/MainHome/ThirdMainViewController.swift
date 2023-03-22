@@ -34,6 +34,12 @@ class ThirdMainViewController: UIViewController {
         rebornCompleteResult()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            self.rebornCompleteResult()
+        }
+    }
+    
     func rebornCompleteResult() {
         
         let url = APIConstants.baseURL + "/reborns/store/page/\(String(thirdMain))/status?status=COMPLETE"

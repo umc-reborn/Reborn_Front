@@ -1,47 +1,39 @@
 //
-//  EditRebornViewController.swift
+//  AddRebornViewController.swift
 //  UMC-Reborn
 //
-//  Created by jaegu park on 2023/01/14.
+//  Created by jaegu park on 2023/01/13.
 //
 import Foundation
 import UIKit
 import Alamofire
 
-class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol {
+class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol2{
     
-    var rebornId : Int = 0
-    
-    var editReborn = UserDefaults.standard.integer(forKey: "userIdx")
+    var rebornAdd = UserDefaults.standard.integer(forKey: "userIdx")
     
     var imageUrl: ImageresultModel!
-    var rebornData: RebornEditresultModel!
+    var rebornData: RebornresultModel!
     
     func dataSend(data: String) {
         timeLabel.text = data
         timeLabel.sizeToFit()
     }
     
-    func timeSend(data: String) {
-        timeLabel2.text = data
-        timeLabel2.sizeToFit()
-    }
-    
     @IBOutlet weak var timeLabel2: UILabel!
-    @IBOutlet weak var EditImageView: UIImageView!
-    @IBOutlet weak var TimeSwitch: UISwitch!
-    @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var countTextfield: UITextField!
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var eatTextfield: UITextField!
     @IBOutlet weak var introduceTextView: UITextView!
     @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet var editView: UIView!
+    @IBOutlet weak var AddImageView: UIImageView!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var TimeSwitch: UISwitch!
+    @IBOutlet weak var countTextfield: UITextField!
     
     let serverURL = "http://www.rebornapp.shop/s3"
     
-    var Number = 00
+    var Number = 0
     
     let imagePickerController = UIImagePickerController()
     let alertController = UIAlertController(title: "가게 대표 사진 설정", message: "", preferredStyle: .actionSheet)
@@ -49,21 +41,15 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("넘겨받은 값은 \(String(rebornId))")
-        
-        editView.clipsToBounds = true
-        editView.layer.cornerRadius = 15
-        editView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
-        
         TimeSwitch.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-
-        EditImageView.layer.cornerRadius = 10
-        EditImageView.clipsToBounds = true
+        
+        AddImageView.layer.cornerRadius = 10
+        AddImageView.clipsToBounds = true
         
         countTextfield.layer.cornerRadius = 5
         countTextfield.layer.borderWidth = 1.5
         countTextfield.layer.borderColor = UIColor.gray.cgColor
-        
+
         nameTextfield.layer.cornerRadius = 5
         nameTextfield.layer.borderWidth = 1
         nameTextfield.layer.borderColor = UIColor.gray.cgColor
@@ -101,16 +87,17 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderColor = UIColor.gray.cgColor
-        textField.layer.borderWidth = 1.0
+            textField.layer.borderColor = UIColor.gray.cgColor
+            textField.layer.borderWidth = 1.0
     }
-    
+
     @IBAction func backButton(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+        print(AddImageView.image ?? "")
     }
-    
-    @IBAction func EdittimeButton(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PopupViewController") as? PopupViewController else { return }
+
+    @IBAction func editTimeButton(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TimePopupViewController") as? TimePopupViewController else { return }
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.delegate = self
         self.present(nextVC, animated: false, completion: nil)
@@ -172,8 +159,8 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     func addGestureRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tappedUIImageView(_gesture:)))
-        self.EditImageView.addGestureRecognizer(tapGestureRecognizer)
-        self.EditImageView.isUserInteractionEnabled = true
+        self.AddImageView.addGestureRecognizer(tapGestureRecognizer)
+        self.AddImageView.isUserInteractionEnabled = true
     }
     
     @objc func tappedUIImageView(_gesture: UITapGestureRecognizer) {
@@ -205,20 +192,19 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         }
     }
     
-    @IBAction func addCount(_ sender: Any) {
+    @IBAction func plusCount(_ sender: Any) {
         Number += 1
         countTextfield.text = String(Number)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView2"), object: nil, userInfo: nil)
-        NotificationCenter.default.post(name: NSNotification.Name("StartTimer"), object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView"), object: nil, userInfo: nil)
     }
     
-    @IBAction func editPostButton(_ sender: Any) {
-        let parmeterDatas = RebornEditModel(rebornIdx: rebornId, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
-        APIHandlerEditPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
+    @IBAction func RebornPostButton(_ sender: Any) {
+        let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
+        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
@@ -254,7 +240,7 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     }
 }
 
-extension EditRebornViewController: UIPopoverPresentationControllerDelegate {
+extension AddRebornViewController: UIPopoverPresentationControllerDelegate {
     func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
         if let popoverPresentationController = self.alertController.popoverPresentationController {
             popoverPresentationController.sourceView = self.view
@@ -264,7 +250,7 @@ extension EditRebornViewController: UIPopoverPresentationControllerDelegate {
     }
 }
 
-extension EditRebornViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension AddRebornViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func openAlbum() {
         self.imagePickerController.sourceType = .photoLibrary
         present(self.imagePickerController, animated: false, completion: nil)
@@ -272,9 +258,9 @@ extension EditRebornViewController: UIImagePickerControllerDelegate, UINavigatio
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            EditImageView?.image = image
+            AddImageView?.image = image
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-                DiaryPost.instance.uploadDiary(file: self.EditImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+                DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
             }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")
@@ -291,3 +277,4 @@ extension EditRebornViewController: UIImagePickerControllerDelegate, UINavigatio
         }
     }
 }
+

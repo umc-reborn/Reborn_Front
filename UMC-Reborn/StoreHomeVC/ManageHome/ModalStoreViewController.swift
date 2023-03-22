@@ -56,7 +56,6 @@ class ModalStoreViewController: UIViewController {
             }
         }
     }
-    
 
     @IBAction func tappedlike(_ sender: Any) {
         if (likeButton.image(for: .selected) == UIImage(named: "ic_like")) {

@@ -15,26 +15,6 @@ class StoreManageViewController: UIViewController {
     var rebornData: LogoutresultModel!
     var rebornDatas: UserDeleteresultModel!
     
-//    func categorySend(data: String) {
-//        storeCategory.text = data
-//        storeCategory.sizeToFit()
-//    }
-//
-//    func introduceSend(data: String) {
-//        storeIntroduce.text = data
-//        storeIntroduce.sizeToFit()
-//    }
-//
-//    func addressSend(data: String) {
-//        storeAddress.text = data
-//        storeAddress.sizeToFit()
-//    }
-//
-//    func nameSend(data: String) {
-//        storeName.text = data
-//        storeName.sizeToFit()
-//    }
-    
     @IBOutlet weak var storeView: UIView!
     @IBOutlet weak var ManageImageView: UIImageView!
     @IBOutlet weak var storeName: UILabel!
@@ -91,17 +71,16 @@ class StoreManageViewController: UIViewController {
                   selector: #selector(self.didDismissDetailNotification(_:)),
                   name: NSNotification.Name("DismissDetailView8"),
                   object: nil
-              )
+        )
         
         storeResult()
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-              
-              self.storeResult()
-          }
-      }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            self.storeResult()
+        }
+    }
     
     func storeResult() {
         
@@ -176,34 +155,32 @@ class StoreManageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-            self.navigationItem.title="가게 관리"
+        self.navigationItem.title="가게 관리"
     }
     
     @IBAction func editButton(_ sender: Any) {
         guard let svc2 = self.storyboard?.instantiateViewController(identifier: "EditStoreViewController") as? EditStoreViewController else {
-                    return
-                }
+            return
+        }
         
         self.navigationController?.pushViewController(svc2, animated: true)
     }
     
-    
     @IBAction func nextButton(_ sender: Any) {
         guard let svc1 = self.storyboard?.instantiateViewController(identifier: "ModalStoreViewController") as? ModalStoreViewController else {
-                    return
-                }
+            return
+        }
         
         self.present(svc1, animated: true)
     }
     
     @IBAction func pwchangeButton(_ sender: Any) {
         guard let svc2 = self.storyboard?.instantiateViewController(identifier: "PWChangeViewController") as? PWChangeViewController else {
-                    return
-                }
+            return
+        }
         
         self.navigationController?.pushViewController(svc2, animated: true)
     }
-    
     
     @IBAction func logoutButton(_ sender: Any) {
         let parameterDatas = LogoutModel(jwt: shopToken ?? "")

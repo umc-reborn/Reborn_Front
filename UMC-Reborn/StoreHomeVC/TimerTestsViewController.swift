@@ -56,8 +56,7 @@ class TimerTestsViewController: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-//        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication., object: nil)
-//        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willTerminateNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willTerminateNotification, object: nil)
         NotificationCenter.default.addObserver(
                             self,
                             selector: #selector(self.startTimerNotification(_:)),

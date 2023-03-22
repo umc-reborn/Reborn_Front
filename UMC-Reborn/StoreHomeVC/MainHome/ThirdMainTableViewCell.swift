@@ -24,7 +24,6 @@ class ThirdMainTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -34,9 +33,8 @@ class ThirdMainTableViewCell: UITableViewCell {
 }
 
 extension ThirdMainViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-            // #warning Incomplete implementation, return the number of sections
+        // #warning Incomplete implementation, return the number of sections
         return rebornCompleteDatas.count
     }
     
