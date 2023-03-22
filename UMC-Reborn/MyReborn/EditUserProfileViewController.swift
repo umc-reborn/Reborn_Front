@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, MySampleProtocol, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
 
     let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
     let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
@@ -30,7 +33,12 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     var rebornData: EditUserInfoResultModel!
     
     @objc func FinishEditMode() {
-        // ㅎㅎ
+        print("버튼 테스트")
+        // 📌 API 수정되면 img URL 변경
+        let parameterDatas = EditUserInfoModel(userImg:  self.imageUrl.result ?? "", userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: "LIFE")
+        APIHandlerUserInfoPost.instance.SendingPostReborn(token: userJWT, parameters: parameterDatas) { result in self.rebornData = result }
+        print("회원정보수정 결과는 \(self.rebornData)")
+        self.navigationController?.popViewController(animated: true)
     }
     
     func addressSend(data: String) {
@@ -38,6 +46,8 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         EditAddressTextField.sizeToFit()
         print(data)
     }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,7 +125,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
+
         
         print("응답하라 \(userJWT)")
         
@@ -373,6 +383,56 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         svc3.delegate = self
         
         self.present(svc3, animated: true)
+    }
+    
+    @IBAction func UploadImageButton(_ sender: Any) {
+        self.imagePickerController.delegate = self
+               self.imagePickerController.sourceType = .photoLibrary
+               present(self.imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            userProfileImage.image = image
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                DiaryPost.instance.uploadDiary(file: self.userProfileImage.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
+        }
+        
+        picker.dismiss(animated: true, completion: nil) //dismiss를 직접 해야함
+    }
+    
+    
+    // 이미지 post
+    class DiaryPost {
+        static let instance = DiaryPost()
+        
+        func uploadDiary(file: UIImage, url: String, handler: @escaping (_ result: ReviewImageresultModel)->(Void)) {
+            let headers: HTTPHeaders = [
+                                "Content-type": "multipart/form-data"
+                            ]
+            AF.upload(multipartFormData: { (multipart) in
+                if let imageData = file.jpegData(compressionQuality: 0.8) {
+                    multipart.append(imageData, withName: "file", fileName: "photo.jpg", mimeType: "image/jpeg")
+                }
+            }, to: url ,method: .post ,headers: headers).response { responce in
+                switch responce.result {
+                case .success(let data):
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+                        print(json)
+                        
+                        let jsonresult = try JSONDecoder().decode(ReviewImageresultModel.self, from: data!)
+                        handler(jsonresult)
+                        print(jsonresult)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }
 
