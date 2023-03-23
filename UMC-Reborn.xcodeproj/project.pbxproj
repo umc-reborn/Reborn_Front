@@ -44,7 +44,6 @@
 		0BD99EE429C0E54B00C6C0F1 /* sendPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE329C0E54B00C6C0F1 /* sendPwViewController.swift */; };
 		0BD99EE629C4D00B00C6C0F1 /* JoinNeiPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE529C4D00B00C6C0F1 /* JoinNeiPost.swift */; };
 		0BD99EE829C4D66400C6C0F1 /* noStoreJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE729C4D66400C6C0F1 /* noStoreJoinViewController.swift */; };
-		0BD99EEA29C7633300C6C0F1 /* RebornModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EE929C7633300C6C0F1 /* RebornModel.swift */; };
 		0BD99EEC29C782C200C6C0F1 /* myAdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD99EEB29C782C100C6C0F1 /* myAdressViewController.swift */; };
 		2F1B30C429758EC5001A7284 /* MyRebornCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B30C329758EC5001A7284 /* MyRebornCell.swift */; };
 		2F3150512982677F0088DD46 /* ReviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3150502982677F0088DD46 /* ReviewImageCollectionViewCell.swift */; };
@@ -224,7 +223,7 @@
 		C7EF98262990D83B00480DD9 /* RebornStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF98252990D83B00480DD9 /* RebornStatusModel.swift */; };
 		C7EF982A2990DC0100480DD9 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF98292990DC0100480DD9 /* ReviewModel.swift */; };
 		C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF982D299107C000480DD9 /* JjimModel.swift */; };
-		C7F913D329CB580500971C80 /* APIImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F913D229CB580500971C80 /* APIImagePost.swift */; };
+		C7F913D529CC03C100971C80 /* APIImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F913D429CC03C100971C80 /* APIImagePost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -278,7 +277,6 @@
 		0BD99EE329C0E54B00C6C0F1 /* sendPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendPwViewController.swift; sourceTree = "<group>"; };
 		0BD99EE529C4D00B00C6C0F1 /* JoinNeiPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinNeiPost.swift; sourceTree = "<group>"; };
 		0BD99EE729C4D66400C6C0F1 /* noStoreJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noStoreJoinViewController.swift; sourceTree = "<group>"; };
-		0BD99EE929C7633300C6C0F1 /* RebornModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornModel.swift; sourceTree = "<group>"; };
 		0BD99EEB29C782C100C6C0F1 /* myAdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAdressViewController.swift; sourceTree = "<group>"; };
 		0F6EF8032D9E3685D5618366 /* Pods-UMC-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.release.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.release.xcconfig"; sourceTree = "<group>"; };
 		20695CA204D5535133317C3B /* Pods-UMC-Reborn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMC-Reborn.debug.xcconfig"; path = "Target Support Files/Pods-UMC-Reborn/Pods-UMC-Reborn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -470,7 +468,7 @@
 		C7EF98252990D83B00480DD9 /* RebornStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornStatusModel.swift; sourceTree = "<group>"; };
 		C7EF98292990DC0100480DD9 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		C7EF982D299107C000480DD9 /* JjimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimModel.swift; sourceTree = "<group>"; };
-		C7F913D229CB580500971C80 /* APIImagePost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIImagePost.swift; path = ../../../../../../.Trash/APIImagePost.swift; sourceTree = "<group>"; };
+		C7F913D429CC03C100971C80 /* APIImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImagePost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -905,7 +903,6 @@
 		C7FA26E4297E9E600054DB29 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C7F913D229CB580500971C80 /* APIImagePost.swift */,
 				C70D3D6929826F1D00CABA91 /* APIRebornPost.swift */,
 				C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */,
 				C7284AAF298FFB25009A70E7 /* StoreModel.swift */,
@@ -923,6 +920,7 @@
 				C765116529BC67710030128C /* LogoutPost.swift */,
 				C765116729BC69D90030128C /* UserDeletePost.swift */,
 				950DCD5B29C7E8C5003E6663 /* RebornModel.swift */,
+				C7F913D429CC03C100971C80 /* APIImagePost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1240,6 +1238,7 @@
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
 				C7B8BCE12984241200FE3C0A /* PwOkViewController.swift in Sources */,
 				9561BA8E2995B3FB00A4B33B /* InprogressCollectionViewCell.swift in Sources */,
+				C7F913D529CC03C100971C80 /* APIImagePost.swift in Sources */,
 				C70D3D552981637E00CABA91 /* SecondTabTableViewCell.swift in Sources */,
 				2F62AE87297EA0C0008907B2 /* WriteReviewViewController.swift in Sources */,
 				2FB97CFB2992A20A006D4420 /* RebornHistoryDetailViewController.swift in Sources */,
@@ -1267,7 +1266,6 @@
 				C70D3D59298197FE00CABA91 /* TabMainViewController.swift in Sources */,
 				C7DCE53C29727AA900F44F1D /* EnrollTableViewCell.swift in Sources */,
 				C74FEE4629718B7C00BFC8D0 /* AddRebornViewController.swift in Sources */,
-				C7F913D329CB580500971C80 /* APIImagePost.swift in Sources */,
 				953AEE96298F3C1D008AAE8A /* NewShopModel.swift in Sources */,
 				0B94771629899DD200B5829A /* InterestViewController.swift in Sources */,
 				C74FEE48297199FE00BFC8D0 /* StoreManageViewController.swift in Sources */,
