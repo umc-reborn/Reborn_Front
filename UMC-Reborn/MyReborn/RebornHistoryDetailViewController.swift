@@ -7,11 +7,15 @@
 
 import Foundation
 import Alamofire 
+import CoreData
 
 class RebornHistoryDetailViewController: UIViewController {
     
     var rebornTaskIdx: Int = 0
     var timeLimit: String = ""
+    
+    var timer: Timer? = nil
+    
     var timeSecond = 10 {
         willSet(newValue) {
             var hours = String(newValue / 3600)
@@ -43,16 +47,16 @@ class RebornHistoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
-        let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
-        let minuteCLimit1 = timeLimit[String.Index(encodedOffset: 3)].wholeNumberValue ?? 0
-        let minuteCLimit2 = timeLimit[String.Index(encodedOffset: 4)].wholeNumberValue ?? 0
-        let hourTimer = 3600 * (hourCLimit1 * 10 + hourCLimit2)
-        let minuteTimer = 60 * (minuteCLimit1 * 10 + minuteCLimit2)
-        
-        let wholeSeconds = hourTimer + minuteTimer
-        
-        timeSecond = wholeSeconds
+//        let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
+//        let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
+//        let minuteCLimit1 = timeLimit[String.Index(encodedOffset: 3)].wholeNumberValue ?? 0
+//        let minuteCLimit2 = timeLimit[String.Index(encodedOffset: 4)].wholeNumberValue ?? 0
+//        let hourTimer = 3600 * (hourCLimit1 * 10 + hourCLimit2)
+//        let minuteTimer = 60 * (minuteCLimit1 * 10 + minuteCLimit2)
+//
+//        let wholeSeconds = hourTimer + minuteTimer
+//
+//        timeSecond = wholeSeconds
         
         self.contentView.layer.cornerRadius = 10
         self.productImg.layer.cornerRadius = 10
@@ -87,11 +91,46 @@ getRebornHistoryDetail { result in
                 break
             }
         }
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView10"),
+                  object: nil
+                  )
     }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            
+            self.timerStart()
+        }
+    }
+
     //
     func getData() {
         print("getData() 함수 실행")
     
+    }
+    
+    func timerStart() {
+        let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
+        let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
+        let minuteCLimit1 = timeLimit[String.Index(encodedOffset: 3)].wholeNumberValue ?? 0
+        let minuteCLimit2 = timeLimit[String.Index(encodedOffset: 4)].wholeNumberValue ?? 0
+        let hourTimer = 3600 * (hourCLimit1 * 10 + hourCLimit2)
+        let minuteTimer = 60 * (minuteCLimit1 * 10 + minuteCLimit2)
+        
+        let wholeSeconds = hourTimer + minuteTimer
+        
+        timeSecond = wholeSeconds
+        
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            if (self.timeSecond == 0) {
+                timer.invalidate()
+            }
+        }
+        RunLoop.current.add(self.timer!, forMode: .common)
     }
 
     @IBAction func FinishRebornTapped(_ sender: Any) {
