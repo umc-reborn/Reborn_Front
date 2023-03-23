@@ -1892,7 +1892,7 @@
                                                         <color key="baseBackgroundColor" red="0.25098039220000001" green="0.19215686269999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </buttonConfiguration>
                                                     <connections>
-                                                        <action selector="getNumber:" destination="NaW-95-8Tp" eventType="touchUpInside" id="i4w-OH-3nB"/>
+                                                        <action selector="codeButtonTapped:" destination="yR9-Qq-4Ve" eventType="touchUpInside" id="2bP-3o-Tmm"/>
                                                     </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T41-j4-tRU">
