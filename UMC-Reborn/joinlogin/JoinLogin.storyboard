@@ -3103,7 +3103,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpz-cv-u2h">
-                                <rect key="frame" x="26" y="400" width="338" height="54"/>
+                                <rect key="frame" x="26" y="400" width="338" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="aHT-eo-AE8"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="338" id="rif-ya-GjH"/>
@@ -3131,7 +3131,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rd-0K-WxP">
-                                <rect key="frame" x="26" y="502.00000000000006" width="338" height="35.666666666666686"/>
+                                <rect key="frame" x="26" y="464" width="338" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Ed9-2a-cPB"/>
                                     <constraint firstAttribute="width" constant="338" id="oMa-37-0Cv"/>
