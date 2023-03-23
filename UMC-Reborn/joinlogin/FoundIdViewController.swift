@@ -9,12 +9,16 @@ import UIKit
 
 class FoundIdViewController: UIViewController {
     
+    var emailTexted : String = ""
     var userId1 : String = ""
     var createdAt1 : String = ""
-  //var image1 : String = ""
+    var image1 : String = ""
+    
+    var TTrainData : TTrainModel!
     
     
-    @IBOutlet weak var IdFullButton: UIButton!
+    
+    @IBOutlet weak var IdFullButton: UIButton! // 아이디 전체보기 버튼
     
     @IBOutlet weak var FoundIdLoginButton: UIButton!
     
@@ -30,17 +34,19 @@ class FoundIdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 표현됨
+        // 콘솔
+        print("유저가 친 이메일 : " + emailTexted)
         print("유저 아이디 : " + userId1)
         print("가입일 : " + createdAt1)
+        print("이미지 : " + image1)
         
-        
+        // 표현
         UrNameLabel.text = userId1
         joinDateLabel.text = createdAt1
-        
-        // + 이미지 까지
+        // + 이미지 까지 (api)
         //let url = URL(string: 받아온유저이미지스트링값)
-        //imageRound.load(url: url!)
+        let url = URL(string: image1)
+        imageRound.load(url: url!)
         
         let mybrown = UIColor(named: "mybrown")
         let myorange = UIColor(named: "myorange")
@@ -79,8 +85,32 @@ class FoundIdViewController: UIViewController {
         whiteView.layer.shadowOpacity = 0.1
         
         
+        
+    }
+    // 아이디 전체보기 api
+    @IBAction func IdFullButtonTapped(_ sender: Any) {
+        let pparmeterData = EModel(userEmail : self.emailTexted)
+        print(pparmeterData)
+        FullMailPost.instance.sendingPostFullEmail(parameters: pparmeterData) { result in self.TTrainData =  result }
+        print("===이메일로 아이디가 전송되었음===")
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.8) {
+            // 이메일로 아이디 전송되었다는 alert
+            guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "goEmailViewController") as? goEmailViewController else {return}
+            
+            rvc.modalPresentationStyle = .overFullScreen
+            self.present(rvc, animated: true)
+            
+        }
+        
     }
     
-
-
+    
+    @IBAction func LogInBButtonTapped(_ sender: Any) {
+        guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
+        
+        self.navigationController?.pushViewController(rvc, animated: true)
+        print("로그인 창으로 이동")
+    }
+    
 }

@@ -14,20 +14,21 @@ class FindIdViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     @IBOutlet weak var FindIdNextButton: UIButton! // 버튼
     
+    @IBOutlet var messageeLabel: UILabel! // 이메일 형식
+    
+    let mybrown = UIColor(named: "mybrown")
+    let myorange = UIColor(named: "myorange")
+    let mygray = UIColor(named: "mygray")
     
     //api 선언
     var Hago : FindPartModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         //다음 버튼 비활성화
-//        FindIdNextButton.isEnabled = false
+        FindIdNextButton.isEnabled = false
         
-        let mybrown = UIColor(named: "mybrown")
-        let myorange = UIColor(named: "myorange")
-        let mygray = UIColor(named: "mygray")
         
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")
@@ -64,7 +65,7 @@ class FindIdViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         textFieldDidBeginEditing(FindIdTextField)
         textFieldDidEndEditing(FindIdTextField)
         
-//        FindIdNextButton.addTarget(self, action: #selector(textFieldDidChanged), for:.touchUpInside)
+        FindIdTextField.addTarget(self, action: #selector(Idontknow2), for:.editingChanged)
         
     }
 
@@ -80,84 +81,74 @@ class FindIdViewController: UIViewController, UITextFieldDelegate, UITextViewDel
            textField.layer.borderWidth = 1.0
    }
     
-    //email 정규표현식
-    func isValidEmail(testStr:String) -> Bool {
-          let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-          let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-          return emailTest.evaluate(with: testStr)
-           }
     
+    //이메일 정규표현식
+    func isValidEmail(testStr:String?) -> Bool{
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z].{2,64}"
+              let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+              return emailTest.evaluate(with: testStr)
+        }
     
-    // 아이디 찾기 - 확인 버튼 눌렀을 때 api / 화면 넘기기도 하기
-//    @IBAction func FindIdNextButtonTapped() {
-//        userE = FindIdTextField.text ?? ""
-//        let kimnana =
-//        FindIdGet.instance.FindIdGetData(userEmail: FindIdTextField.text ?? ""){result in self.Hago = result}
-//    }
-    
+    @objc func Idontknow2(textField: UITextField){ // 여기에 문제가
+        if (textField == FindIdTextField){
+            if isValidEmail(testStr: textField.text) {
+                messageeLabel.text = ""
+                messageeLabel.textColor = .mybrown //의미가 있나
+                FindIdNextButton.isEnabled = true
+                FindIdNextButton.setTitleColor(.white, for: .normal)
+                FindIdNextButton.layer.borderWidth = 1.0
+                FindIdNextButton.layer.borderColor = mybrown?.cgColor // 테두리 컬러
+                FindIdNextButton.backgroundColor = .mybrown
+                
+            }
+            else {
+                messageeLabel.text = "올바른 이메일 형식을 입력해 주세요."
+                messageeLabel.textColor = .myorange
+                FindIdNextButton.isEnabled = false
+            }
+        }
+    }
     // 입력한 거랑 불러온 거랑 일치하면 오류화면 안뜨는 화면으로
     // 일치하지 않으면 alert화면으로 넘어가기.
     // 다음 버튼 누르면 화면 바뀌고 +
     
-    
-    
     @IBAction func FindIdNextButtonTapped(_ sender: Any) {
+        
+        //api get
+        FindIdGet.instance.FindIdGetData(userEmail: FindIdTextField.text ?? ""){result in self.Hago = result
+            print("result : \(result)")
+        }
+        
+        print("Hago : \(self.Hago)") // 이메일이 서버에 있는 것과 일치하면 화면전환 + 데이터값 넘겨주기
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
             
-            //api get
-            FindIdGet.instance.FindIdGetData(userEmail: FindIdTextField.text ?? ""){result in self.Hago = result
+            if(self.Hago?.code==1000){
+                let object1 = self.Hago?.result
+                guard let textedE = self.FindIdTextField.text else {return}
+                guard let idUser = object1?.userId else {return}
+                guard let datee = object1?.createdAt else {return}
+                guard let iimage = object1?.userImg else {return}
+                //                    let some1 = UIStoryboard(name: "JoinLogin", bundle: nil)
+                guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "FoundIdViewController") as? FoundIdViewController else {return}
                 
-               // print("result : \(result)")
+                rvc.emailTexted = textedE
+                rvc.userId1 = idUser
+                rvc.createdAt1 = datee
+                rvc.image1 = iimage
+                self.navigationController?.pushViewController(rvc, animated: true)
             }
-            
-            // 이메일이 서버에 있는 것과 일치하면 화면전환 + 데이터값 넘겨주기
-                //print("Hago : \(self.Hago)")
-               
-//        if (self.Hago.result.userId != "") {
-//                    let object1 = self.Hago?.result
-//                    guard let idUser = object1?.userId else {return}
-//                    guard let datee = object1?.createdAt else {return}
-//                    //guard let iimage = object1?.민몰리변수 else {return}
-//                    let some1 = UIStoryboard(name: "JoinLogin", bundle: nil)
-//                    guard let rvc = some1.instantiateViewController(withIdentifier: "FoundIdViewController") as? FoundIdViewController else {return}
-//
-//                    rvc.userId1 = idUser
-//                    rvc.createdAt1 = datee
-//                    //rvc.image1 = iimage
-//                    self.navigationController?.pushViewController(rvc, animated: true)
-//                }
-//                // 회원이 아닌 이메일이면 alert창으로 화면전환
-//                else {
-//                    let some2 = UIStoryboard(name: "JoinLogin", bundle: nil)
-//                    guard let rvcc = some2.instantiateViewController(withIdentifier: "noEmailViewController") as? noEmailViewController else {return}
-//
-//                    self.navigationController?.pushViewController(rvcc, animated: true)
-//                }
-//            }
-//
-//    }
-
-
-//    func aaaa() {
-//        // 이메일 잘 채워졌으면
-//        if () {
-//            FindIdNextButton.backgroundColor = .mybrown
-//            FindIdNextButton.setTitleColor(.white, for: .normal) // 평상시
-//            FindIdNextButton.setTitleColor(.white, for: .selected)
-//            FindIdNextButton.isEnabled = true
-//        }
-//        else {
-//            // 버튼 비활성화
-//        }
-//    }
-    
-//    @objc func textFieldDidChanged(_ sender: Any?) {
-//        if (){
-//            FindIdNextButton.backgroundColor = .mybrown
-//            FindIdNextButton.setTitleColor(.white, for: .normal)
-//            FindIdNextButton.setTitleColor(.white, for: .selected)
-//            FindIdNextButton.isEnabled = true // 활성화
+            else { // 회원이 아닌 이메일이면 alert창으로 화면전환
+                guard let rvcc = self.storyboard?.instantiateViewController(withIdentifier: "noEmailViewController") as? noEmailViewController else {return}
+                
+                rvcc.modalPresentationStyle = .overFullScreen
+                self.present(rvcc, animated: true)
+                print("회원 아님")
+            }
         }
-        }
+    }
+}
+
 
 
 
