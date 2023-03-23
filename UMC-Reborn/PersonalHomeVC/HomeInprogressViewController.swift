@@ -44,8 +44,6 @@ class HomeInprogressViewController: UIViewController {
                   name: NSNotification.Name("DismissDetailView12"),
                   object: nil
                   )
-
-        InprogressResult()
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
