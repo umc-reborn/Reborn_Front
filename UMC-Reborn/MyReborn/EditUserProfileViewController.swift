@@ -11,6 +11,8 @@ import Alamofire
 class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, MySampleProtocol, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
+    
+    var selectCategory: String = ""
 
     let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
     let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
@@ -35,10 +37,17 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     @objc func FinishEditMode() {
         print("버튼 테스트")
         // 📌 API 수정되면 img URL 변경
-        let parameterDatas = EditUserInfoModel(userImg:  self.imageUrl.result ?? "", userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: "LIFE")
+        
+        isSelectedCategory()
+        let parameterDatas = EditUserInfoModel(userImg:  self.imageUrl.result ?? "", userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: selectCategory ?? "")
         APIHandlerUserInfoPost.instance.SendingPostReborn(token: userJWT, parameters: parameterDatas) { result in self.rebornData = result }
         print("회원정보수정 결과는 \(self.rebornData)")
-        self.navigationController?.popViewController(animated: true)
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "MyRebornVC") as? MyRebornViewController else { return }
+        nextVC.getUserName = EditNicknameTextField.text ?? ""
+        navigationController?.pushViewController(nextVC, animated: true)
+
+        print(selectCategory)
     }
     
     func addressSend(data: String) {
@@ -47,15 +56,19 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         print(data)
     }
     
-
+// 하나만 선택되게
+// 변수에 선택된 값 저장
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         createButton1()
         createButton2()
         createButton3()
         createButton4()
         createButton5()
+        
+        isSelectedCategory()
         
         userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.height / 2
         userProfileImage.layer.masksToBounds = true
@@ -110,6 +123,16 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         textFieldDidEndEditing(EditBirthTextField)
         
         self.imagePickerController.delegate = self
+        
+        // 생년월일 특정 문자열만 가져오기
+        let userBirth = EditAddressTextField.text ?? ""
+        print("userBirth count is \(userBirth.count)")
+        let startIndex = userBirth.index(userBirth.startIndex, offsetBy: 0)// 사용자지정 시작인덱스
+//        let endIndex = userBirth.index(userBirth.startIndex, offsetBy:10)
+        
+        
+        
+        //
         
         UserInfoResult()
     }
@@ -195,11 +218,17 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         button1.configurationUpdateHandler =  { button in
           var config = button.configuration
           config?.title = "카페·디저트"
-            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
-          config?.image = button.isSelected
+            config?.baseBackgroundColor = button.isSelected && button.changesSelectionAsPrimaryAction ? .init(named: "lightred") : .white
+          config?.image = button.isSelected && button.changesSelectionAsPrimaryAction
           ? UIImage(named: "checkedicon")
             : .none
           button.configuration = config
+            
+//        button.isSelected ? selectCategory = "카페·디저트" : selectCategory = ""
+            self.button2.isSelected = false
+            self.button3.isSelected = false
+            self.button4.isSelected = false
+            self.button5.isSelected = false
         }
         
         button1.layer.borderWidth = 1
@@ -231,11 +260,15 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         button2.configurationUpdateHandler =  { button in
           var config = button.configuration
           config?.title = "편의·생활"
-            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
-          config?.image = button.isSelected
+            config?.baseBackgroundColor = button.isSelected && button.changesSelectionAsPrimaryAction ? .init(named: "lightred") : .white
+          config?.image = button.isSelected && button.changesSelectionAsPrimaryAction
           ? UIImage(named: "checkedicon")
             : .none
           button.configuration = config
+            self.button1.isSelected = false
+            self.button3.isSelected = false
+            self.button4.isSelected = false
+            self.button5.isSelected = false
         }
         
         button2.layer.borderWidth = 1
@@ -267,11 +300,15 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         button3.configurationUpdateHandler =  { button in
           var config = button.configuration
           config?.title = "반찬"
-            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
-          config?.image = button.isSelected
+            config?.baseBackgroundColor = button.isSelected && button.changesSelectionAsPrimaryAction ? .init(named: "lightred") : .white
+          config?.image = button.isSelected && button.changesSelectionAsPrimaryAction
           ? UIImage(named: "checkedicon")
             : .none
           button.configuration = config
+            self.button1.isSelected = false
+            self.button2.isSelected = false
+            self.button4.isSelected = false
+            self.button5.isSelected = false
         }
         
         button3.layer.borderWidth = 1
@@ -303,11 +340,15 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         button4.configurationUpdateHandler =  { button in
           var config = button.configuration
           config?.title = "패션"
-            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
-          config?.image = button.isSelected
+            config?.baseBackgroundColor = button.isSelected && button.changesSelectionAsPrimaryAction ? .init(named: "lightred") : .white
+          config?.image = button.isSelected && button.changesSelectionAsPrimaryAction
           ? UIImage(named: "checkedicon")
             : .none
           button.configuration = config
+            self.button1.isSelected = false
+            self.button2.isSelected = false
+            self.button3.isSelected = false
+            self.button5.isSelected = false
         }
         
         button4.layer.borderWidth = 1
@@ -338,12 +379,15 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
 
         button5.configurationUpdateHandler =  { button in
           var config = button.configuration
-          config?.title = "반찬"
-            config?.baseBackgroundColor = button.isSelected ? .init(named: "lightred") : .white
-          config?.image = button.isSelected
-          ? UIImage(named: "checkedicon")
+          config?.title = "기타"
+            config?.baseBackgroundColor = button.isSelected && button.changesSelectionAsPrimaryAction ? .init(named: "lightred") : .white
+          config?.image = button.isSelected && button.changesSelectionAsPrimaryAction ? UIImage(named: "checkedicon")
             : .none
           button.configuration = config
+            self.button1.isSelected = false
+            self.button2.isSelected = false
+            self.button3.isSelected = false
+            self.button4.isSelected = false
         }
         
         button5.layer.borderWidth = 1
@@ -393,13 +437,52 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            userProfileImage.image = image
+            userProfileImage?.image = image
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
                 DiaryPost.instance.uploadDiary(file: self.userProfileImage.image!, url: self.serverURL) { result in self.imageUrl = result }
             }
         }
         
         picker.dismiss(animated: true, completion: nil) //dismiss를 직접 해야함
+    }
+    
+    func isSelectedCategory() {
+        if button1.isSelected {
+            selectCategory = "CAFE"
+            button1.changesSelectionAsPrimaryAction = true
+            button2.isSelected = false
+            button2.changesSelectionAsPrimaryAction = false
+            button3.isSelected = false
+            button3.changesSelectionAsPrimaryAction = false
+            button4.isSelected = false
+            button4.changesSelectionAsPrimaryAction = false
+            button5.isSelected = false
+            button5.changesSelectionAsPrimaryAction = false
+        } else if button2.isSelected {
+            selectCategory = "LIFE"
+            button1.isSelected = false
+            button3.isSelected = false
+            button4.isSelected = false
+            button5.isSelected = false
+        } else if button3.isSelected {
+            selectCategory = "SIDEDISH"
+            button1.isSelected = false
+            button2.isSelected = false
+            button4.isSelected = false
+            button5.isSelected = false
+        } else if button4.isSelected {
+            selectCategory = "FASHION"
+            button1.isSelected = false
+            button2.isSelected = false
+            button3.isSelected = false
+            button5.isSelected = false
+        } else if button5.isSelected {
+            selectCategory = "ETC"
+            button1.isSelected = false
+            button2.isSelected = false
+            button3.isSelected = false
+            button4.isSelected = false
+        }
     }
     
     

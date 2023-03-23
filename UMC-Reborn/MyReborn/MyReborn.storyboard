@@ -313,7 +313,7 @@
             <objects>
                 <viewController storyboardIdentifier="writeReviewVC" id="8Hs-ZW-hUa" customClass="WriteReviewViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aeS-Vi-i54">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/31 (토)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDT-WN-ohk">
@@ -529,6 +529,9 @@
                         <outlet property="AddImageView" destination="e4W-gD-YnG" id="cgA-pZ-aMZ"/>
                         <outlet property="countLabel" destination="FNq-qa-UDh" id="WZy-7i-oG1"/>
                         <outlet property="label" destination="Y2O-2o-IIR" id="yRP-u7-o9W"/>
+                        <outlet property="reviewDate" destination="sDT-WN-ohk" id="BzO-yA-aZX"/>
+                        <outlet property="storeCategory" destination="Sbx-ob-7Sv" id="jcm-4l-BRV"/>
+                        <outlet property="storeName" destination="rFK-ah-7OT" id="2BI-Vg-Ga3"/>
                         <outlet property="textField" destination="oDp-GD-lwF" id="9ao-FL-mYn"/>
                     </connections>
                 </viewController>
@@ -1287,7 +1290,7 @@
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="8Hs-ZW-hUa" kind="push" id="p8d-gz-F5u"/>
+                                            <action selector="PostReviewButton:" destination="w3B-76-O9L" eventType="touchUpInside" id="Jwh-Lf-1nh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1714,10 +1717,10 @@
             <color red="1" green="0.30196078431372547" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mybrown">
-            <color red="0.25098039215686274" green="0.19215686274509805" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.25099998712539673" green="0.19200000166893005" blue="0.13699999451637268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mygray">
-            <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
