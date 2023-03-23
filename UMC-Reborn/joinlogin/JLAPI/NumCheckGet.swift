@@ -13,9 +13,10 @@ class NumCheckGet {
     
     func NumCheckGetData(veriCode: String, handler: @escaping(_ result:NumCheckModel)->(Void)){
         
-        let url = "http://www.rebornapp.shop/users/login/mailCheck?code={\(veriCode)}"
+        let url = "http://www.rebornapp.shop/users/login/mailCheck?code=\(veriCode)"
         AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil).response {response6 in switch response6.result {
         case .success(let data):
+            print(String(decoding: data!, as: UTF8.self))
             do {
                 let jsondata = try JSONDecoder().decode(NumCheckModel.self, from: data!)
                 handler(jsondata)

@@ -8,7 +8,6 @@ import Foundation
 import UIKit
 
 
-
 extension UITextField {
   func addLeftPadding1() {
     let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
@@ -17,9 +16,6 @@ extension UITextField {
   }
 }
 
-
-    
-    
 class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     
@@ -187,27 +183,33 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
             // textField.borderStyle = .line
             textField.layer.borderColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1).cgColor//your color
             textField.layer.borderWidth = 1.0
+            errorMessage.isHidden = true
+            
         }
         
         func textFieldDidEndEditing(_ textField: UITextField) {
             textField.layer.borderColor = UIColor.gray.cgColor
             textField.layer.borderWidth = 1.0
+            errorMessage.isHidden = true
         }
         
         
         // 로그인 버튼 누르면 api 넘기는 것
-        @IBAction func LoginButton(_ sender: Any) {
-            let pparmeterData = Model1(userId: Id.text ?? "", userPwd: PassWord.text ?? "")
-            print(pparmeterData)
-            APINeiLoginPost.instance.SendingPostNLogin(parameters: pparmeterData) { result in self.trainData =  result }
+    @IBAction func LoginButton(_ sender: Any) {
+        let pparmeterData = Model1(userId: Id.text ?? "", userPwd: PassWord.text ?? "")
+        print(pparmeterData)
+        APINeiLoginPost.instance.SendingPostNLogin(parameters: pparmeterData) { result in self.trainData =  result }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.8) {
             
-             // 화면 넘기기 + 데이터 넘겨주기.
-             let something2 = trainData?.result
-             guard let text = something2?.userIdx else {return}
-             guard let text2 = something2?.userNickname else {return}
-             guard let jwtResult = something2?.jwt else {return}
-             let something3 = UIStoryboard(name: "PersonalTab", bundle: nil)
-             guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalTabVC") as? PersonalTabViewController else {return}
+            // 화면 넘기기 + 데이터 넘겨주기.
+            let something2 = self.trainData?.result
+            guard let text = something2?.userIdx else {return}
+            guard let text2 = something2?.userNickname else {return}
+            guard let jwtResult = something2?.jwt else {return}
+            let something3 = UIStoryboard(name: "PersonalTab", bundle: nil)
+            guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalTabVC") as? PersonalTabViewController else {return}
             
             
             rvc.userIdx = text
@@ -215,14 +217,14 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
             rvc.jwt = jwtResult
             
             // 화면이동
-            navigationController?.pushViewController(rvc, animated: true)
+            self.navigationController?.pushViewController(rvc, animated: true)
             
             // userDefault - jwt 저장
             UserDefaults.standard.set(jwtResult, forKey: "userJwt")
             
-            }
-            
         }
+    }
+}
         
 
 

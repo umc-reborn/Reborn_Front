@@ -17,10 +17,10 @@ class FindIdGet {
         AF.request(url, method:.get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil).response { response5 in
             switch response5.result {
         case .success(let data):
+                print(String(decoding: data!, as: UTF8.self))
                 do {
                     let jsondata = try JSONDecoder().decode(FindPartModel.self, from: data!)
                     handler(jsondata)
-                    //print(jsondata)
                     print(response5)
                 } catch {
                     print(error.localizedDescription)
@@ -42,4 +42,5 @@ struct FindPartModel : Codable {
 struct FindResultModel : Codable {
     let userId : String
     let createdAt : String
+    let userImg : String
 }

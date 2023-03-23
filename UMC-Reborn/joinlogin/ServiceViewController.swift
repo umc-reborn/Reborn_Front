@@ -18,6 +18,7 @@ extension UIColor { // 컬러를 이렇게 익스텐션으로 설정해서 쓰�
     class var BACKGROUND: UIColor? {return UIColor(named: "BACKGROUND")}
 }
 
+
 class ServiceViewController: UIViewController {
     
     // 데이터 넘길 때 쓸 변수

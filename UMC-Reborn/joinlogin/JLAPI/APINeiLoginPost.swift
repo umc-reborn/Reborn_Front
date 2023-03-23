@@ -3,7 +3,7 @@
 //  UMC-Reborn
 //
 //  Created by 김예린 on 2023/02/03.
-//
+// 이웃 로그인 api
 
 import Foundation
 import Alamofire
@@ -33,6 +33,7 @@ class APINeiLoginPost {
 //                        var dataString = NSString(data: data!, encoding: CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.EUC_KR.rawValue)))
                         let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                         print(json)
+                        print(String(decoding: data!, as: UTF8.self))
                         
                         let jsonresult = try JSONDecoder().decode(TrainModel.self, from: data!) // 고쳤음
                         //let something = jsonresult.result
