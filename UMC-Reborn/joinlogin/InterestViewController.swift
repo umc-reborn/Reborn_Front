@@ -58,6 +58,7 @@ class InterestViewController: UIViewController {
         if (number1 == true){
             cafeButton.setImage(orange_cafe, for: .normal)
             number1 = false
+            nextButton11.isEnabled = true
         }
         else {
             cafeButton.setImage(gray_cafe, for: .normal)
@@ -71,6 +72,7 @@ class InterestViewController: UIViewController {
         if (number2 == true){
             banchanButton.setImage(orange_banchan, for: .normal)
             number2 = false
+            nextButton11.isEnabled = true
         }
         else {
             banchanButton.setImage(gray_banchan, for: .normal)
@@ -84,6 +86,7 @@ class InterestViewController: UIViewController {
         if (number3 == true){
             fashionButton.setImage(orange_fashion, for: .normal)
             number3 = false
+            nextButton11.isEnabled = true
         }
         else {
             fashionButton.setImage(gray_fashion, for: .normal)
@@ -97,6 +100,7 @@ class InterestViewController: UIViewController {
         if (number4 == true){
             lifeButton.setImage(orange_life, for: .normal)
             number4 = false
+            nextButton11.isEnabled = true
         }
         else {
             lifeButton.setImage(gray_life, for: .normal)
@@ -110,6 +114,7 @@ class InterestViewController: UIViewController {
         if (number5 == true){
             etcButton.setImage(orange_etc, for: .normal)
             number5 = false
+            nextButton11.isEnabled = true
         }
         else {
             etcButton.setImage(gray_etc, for: .normal)
@@ -156,12 +161,36 @@ class InterestViewController: UIViewController {
     //    }
     
     @objc func nextButton11didChanged(_ sender: UIButton) {
-        if ((number1 == true) || (number2 == true) || (number3 == true) || (number4 == true) || (number5 == true)){
+        
+        if ((number1 == false) && (number2 == true) && (number3 == true) && (number4 == true) && (number5 == true)){
             nextButton11.backgroundColor = .mybrown
             nextButton11.setTitleColor(.white, for: .normal) // 평상시
             nextButton11.setTitleColor(.white, for: .selected) // 선택됐을때
             nextButton11.isEnabled = true
-            
+        }
+        else if ((number1 == true) && (number2 == false) && (number3 == true) && (number4 == true) && (number5 == true)){
+            nextButton11.backgroundColor = .mybrown
+            nextButton11.setTitleColor(.white, for: .normal) // 평상시
+            nextButton11.setTitleColor(.white, for: .selected) // 선택됐을때
+            nextButton11.isEnabled = true
+        }
+        else if ((number1 == true) && (number2 == true) && (number3 == false) && (number4 == true) && (number5 == true)){
+            nextButton11.backgroundColor = .mybrown
+            nextButton11.setTitleColor(.white, for: .normal) // 평상시
+            nextButton11.setTitleColor(.white, for: .selected) // 선택됐을때
+            nextButton11.isEnabled = true
+        }
+        else if ((number1 == true) && (number2 == true) && (number3 == true) && (number4 == false) && (number5 == true)){
+            nextButton11.backgroundColor = .mybrown
+            nextButton11.setTitleColor(.white, for: .normal) // 평상시
+            nextButton11.setTitleColor(.white, for: .selected) // 선택됐을때
+            nextButton11.isEnabled = true
+        }
+        else if ((number1 == true) && (number2 == true) && (number3 == true) && (number4 == true) && (number5 == false)){
+            nextButton11.backgroundColor = .mybrown
+            nextButton11.setTitleColor(.white, for: .normal) // 평상시
+            nextButton11.setTitleColor(.white, for: .selected) // 선택됐을때
+            nextButton11.isEnabled = true
         }
         else {
             nextButton11.backgroundColor = .white
@@ -169,6 +198,19 @@ class InterestViewController: UIViewController {
             nextButton11.setTitleColor(.mybrown, for: .selected)
             nextButton11.isEnabled = false
         }
+//        if ((number1 == true) || (number2 == true) || (number3 == true) || (number4 == true) || (number5 == true)){
+//            nextButton11.backgroundColor = .mybrown
+//            nextButton11.setTitleColor(.white, for: .normal) // 평상시
+//            nextButton11.setTitleColor(.white, for: .selected) // 선택됐을때
+//            nextButton11.isEnabled = true
+//
+//        }
+//        else {
+//            nextButton11.backgroundColor = .white
+//            nextButton11.setTitleColor(.mybrown, for: .normal) // 평상시
+//            nextButton11.setTitleColor(.mybrown, for: .selected)
+//            nextButton11.isEnabled = false
+//        }
     }
         override func viewDidLoad() {
             super.viewDidLoad()

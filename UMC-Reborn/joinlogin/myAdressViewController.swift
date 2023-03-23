@@ -41,7 +41,7 @@ class myAdressViewController: UIViewController {
         webView = WKWebView(frame: .zero, configuration: configuration)
         self.webView?.navigationDelegate = self
         
-        guard let url = URL(string: "https://jaekyup.github.io/Reborn-Webpage/"),
+        guard let url = URL(string: "https://jaewift.github.io/Reborn-Webpage/"),
               let webView = webView else { return }
         
         let request = URLRequest(url: url)

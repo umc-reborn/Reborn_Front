@@ -17,37 +17,42 @@ class WhoViewController: UIViewController {
     var isChangeLeft = false
     var isChangeRight = false
     
-    var leftgray: UIImage?
-    var leftorange: UIImage?
-    var rightgray: UIImage?
-    var rightorange: UIImage?
+//    var leftgray: UIImage?
+//    var leftorange: UIImage?
+//    var rightgray: UIImage?
+//    var rightorange: UIImage?
+    
+    var orange_A : UIImage?
+    var orange_B : UIImage?
+    var gray_A : UIImage?
+    var gray_B : UIImage?
     
     // 방향
     var route_Neighbor = 0
     var route_Shop = 0
     
     @IBOutlet weak var ProgressView2: UIProgressView!
-    @IBOutlet weak var LeftBow: UIButton! //왼쪽리본
-    @IBOutlet weak var RightBow: UIButton! //오른쪽리본
-    @IBOutlet weak var BigWord1: UILabel! // 동네이웃
-    @IBOutlet weak var SmallWord1: UILabel! // 나눔받고싶어요
-    @IBOutlet weak var BigWord2: UILabel! // 동네 가게
-    @IBOutlet weak var SmallWord2: UILabel! //나눔하고싶어요
+    
+    @IBOutlet var LeftBow: UIButton!
+    
+    
+    @IBOutlet var RightBow: UIButton!
+    
     @IBOutlet weak var NextButtonn: UIButton!//다음
     
     
     @IBAction func LeftBowTapped(_ sender:Any){
         if (isChangeLeft == false){
-            LeftBow.setImage(leftorange, for: .normal)
-            BigWord1.textColor = .black
-            SmallWord1.textColor = .black
+            LeftBow.setImage(orange_A, for: .normal)
+//            BigWord1.textColor = .black
+//            SmallWord1.textColor = .black
             route_Neighbor = 1
             isChangeLeft = true
         }
         else {
-            LeftBow.setImage(leftgray, for: .normal)
-            BigWord1.textColor = .mygray
-            SmallWord1.textColor = .mygray
+            LeftBow.setImage(gray_A, for: .normal)
+//            BigWord1.textColor = .mygray
+//            SmallWord1.textColor = .mygray
             route_Neighbor = 0
             isChangeLeft = false
             NextButtonn.isEnabled = false
@@ -56,18 +61,18 @@ class WhoViewController: UIViewController {
     
     @IBAction func RightBowTapped(_ sender:Any){
         if (isChangeRight == false){
-            RightBow.setImage(rightorange, for: .normal)
-            BigWord2.textColor = .black
-            SmallWord2.textColor = .black
+            RightBow.setImage(orange_B, for: .normal)
+//            BigWord2.textColor = .black
+//            SmallWord2.textColor = .black
             route_Shop = 1
             isChangeRight = true
             
             
         }
         else {
-            RightBow.setImage(rightgray, for: .normal)
-            BigWord2.textColor = .mygray
-            SmallWord2.textColor = .mygray
+            RightBow.setImage(gray_B, for: .normal)
+//            BigWord2.textColor = .mygray
+//            SmallWord2.textColor = .mygray
             route_Shop = 0
             isChangeRight = false
             NextButtonn.isEnabled = false
@@ -138,16 +143,16 @@ class WhoViewController: UIViewController {
         
         NextButtonn.isEnabled = false
         
-        leftgray = UIImage(named: "leftgray")
-        leftorange = UIImage(named: "leftorange")
-        rightgray = UIImage(named: "rightgray")
-        rightorange = UIImage(named: "rightorange")
+        orange_A = UIImage(named: "orange_A")
+        orange_B = UIImage(named: "orange_B")
+        gray_A = UIImage(named: "gray_A")
+        gray_B = UIImage(named: "gray_B")
 
 
-        BigWord1.textColor = UIColor(named:"mygray")
-        BigWord2.textColor = UIColor(named:"mygray")
-        SmallWord1.textColor = UIColor(named:"mygray")
-        SmallWord2.textColor = UIColor(named:"mygray")
+//        BigWord1.textColor = UIColor(named:"mygray")
+//        BigWord2.textColor = UIColor(named:"mygray")
+//        SmallWord1.textColor = UIColor(named:"mygray")
+//        SmallWord2.textColor = UIColor(named:"mygray")
         
         
         let mybrown = UIColor(named: "mybrown")
