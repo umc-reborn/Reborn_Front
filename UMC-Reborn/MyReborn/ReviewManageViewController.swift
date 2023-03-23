@@ -7,40 +7,33 @@
 
 import UIKit
 
-class ReviewManageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ReviewManageViewController: UIViewController {
     
     let userReview = UserDefaults.standard.integer(forKey: "userIndex")
     
     var reviewDatas: [ReviewManageModelResponse] = []
-    var img : [String] = []
     
-    @IBOutlet var reviewCountLabel: UILabel!
     @IBOutlet var myReviewTableView: UITableView!
+    @IBOutlet var myReviewCount: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        myReviewTableView = UITableView()
-        myReviewTableView.dataSource = self
-        myReviewTableView.delegate = self
         
-
-
-//        myReviewTableView.delegate = self
-//        myReviewTableView.dataSource = self
-//        myReviewTableView.rowHeight = UITableView.automaticDimension
-//        myReviewTableView.estimatedRowHeight = UITableView.automaticDimension
-//        myReviewTableView.contentInset = .zero
-//        myReviewTableView.contentInsetAdjustmentBehavior = .never
-//
-//        myReviewTableView.layer.masksToBounds = true // any value you want
-//        myReviewTableView.layer.shadowOpacity = 0.1// any value you want
-//        myReviewTableView.layer.shadowRadius = 10 // any value you want
-//        myReviewTableView.layer.shadowOffset = .init(width: 5, height: 10)
+        myReviewTableView.delegate = self
+        myReviewTableView.dataSource = self
+        myReviewTableView.rowHeight = UITableView.automaticDimension
+        myReviewTableView.estimatedRowHeight = UITableView.automaticDimension
+        myReviewTableView.contentInset = .zero
+        myReviewTableView.contentInsetAdjustmentBehavior = .never
+        
+        myReviewTableView.layer.masksToBounds = true // any value you want
+        myReviewTableView.layer.shadowOpacity = 0.1// any value you want
+        myReviewTableView.layer.shadowRadius = 10 // any value you want
+        myReviewTableView.layer.shadowOffset = .init(width: 5, height: 10)
         
         reviewResult()
         print("reviewResult값 확인 \(reviewResult())")
-//        reviewCountResult()
     }
     
     func reviewResult() {
@@ -67,7 +60,7 @@ class ReviewManageViewController: UIViewController, UITableViewDelegate, UITable
             }
             
             guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
-            response.statusCode else {
+                    response.statusCode else {
                 print("Error: HTTP request failed")
                 return
             }
@@ -78,23 +71,13 @@ class ReviewManageViewController: UIViewController, UITableViewDelegate, UITable
                 do {
                     let decodedData = try JSONDecoder().decode(ReviewManageModel.self, from: safeData)
                     self.reviewDatas = decodedData.result
-                    
-                    for i in stride(from: 0, through: reviewDatas.count-1, by: 1){
-                        let ls = decodedData.result[i].reviewImg.reviewImage1
-                        
-                        img.append(ls)
-//                        print (ls)
-//                        print ("++++++++++")
-                    }
-                    
                     print("리뷰 조회에서 불러온 데이터 값은 \(reviewDatas)")
                     DispatchQueue.main.async {
                         self.myReviewTableView.reloadData()
                         print("count: \(self.reviewDatas.count)")
                         print("완벽함")
-                        
+                        self.myReviewCount.text = String(self.reviewDatas.count)
                     }
-                    
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
                 } catch let DecodingError.keyNotFound(key, context) {
@@ -112,40 +95,4 @@ class ReviewManageViewController: UIViewController, UITableViewDelegate, UITable
             }
         }.resume()
     }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-                // #warning Incomplete implementation, return the number of sections
-            return reviewDatas.count
-        }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myReviewTableViewCell", for: indexPath) as! ReviewManageTableViewCell
-        
-        let rebornData = reviewDatas[indexPath.section]
-        let rebornImgData = img[indexPath.section]
-        
-        let url = URL(string:  "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/20959843-0000-46c8-aaff-38342f93dd47.jpg")
-        cell.dateLabel.text = rebornData.reviewCreatedAt
-        cell.storeNameLabel.text = rebornData.storeName
-        cell.categoryLabel.text = rebornData.storeCategory
-        cell.productName.text = rebornData.productName
-        cell.reviewImg.load(url: url!)
-        cell.reviewCommentLabel.text = rebornData.reviewComment
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 506
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            .leastNormalMagnitude
-        }
-    
 }

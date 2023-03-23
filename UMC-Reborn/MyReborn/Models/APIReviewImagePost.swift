@@ -30,11 +30,14 @@ class APIHandlerReviewImagePost {
 
                     let jsonresult = try JSONDecoder().decode(ReviewImageresultModel.self, from: data!)
                     handler(jsonresult)
+                    print("image URL 붙이기 성공")
                 } catch {
                     print(error.localizedDescription)
+                    print("image URL 붙이기 error")
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+                print("image URL 붙이기 실패")
             }
         }
     }
