@@ -15,6 +15,8 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     var imageUrl: ImageresultModel!
     var rebornData: RebornresultModel!
     
+    var dsd : String = "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/453f2385-364b-45ea-bf37-8450c467541e.jpg"
+    
     func dataSend(data: String) {
         timeLabel.text = data
         timeLabel.sizeToFit()
@@ -30,6 +32,9 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var TimeSwitch: UISwitch!
     @IBOutlet weak var countTextfield: UITextField!
+    @IBOutlet var topView: UIView!
+    @IBOutlet var saveButton: UIButton!
+    
     
     let serverURL = "http://www.rebornapp.shop/s3"
     
@@ -45,6 +50,9 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         
         AddImageView.layer.cornerRadius = 10
         AddImageView.clipsToBounds = true
+        
+        topView.layer.borderWidth = 0.5
+        topView.layer.borderColor = UIColor.lightGray.cgColor
         
         countTextfield.layer.cornerRadius = 5
         countTextfield.layer.borderWidth = 1.5
@@ -78,6 +86,9 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
         self.view.addGestureRecognizer(tapGesture)
+        
+        eatTextfield.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
+        nameTextfield.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -94,6 +105,15 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBAction func backButton(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         print(AddImageView.image ?? "")
+    }
+    
+    @objc func textFieldEdited(textField: UITextField) {
+            
+        if (textField.text == nil) {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
+        }
     }
 
     @IBAction func editTimeButton(_ sender: Any) {
@@ -157,6 +177,7 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
         prepareForPopoverPresentation(alertControllerPopoverPresentationController)
     }
     
+    
     func addGestureRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tappedUIImageView(_gesture:)))
         self.AddImageView.addGestureRecognizer(tapGestureRecognizer)
@@ -203,9 +224,11 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     @IBAction func RebornPostButton(_ sender: Any) {
-        let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
-        APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
+            APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
     }
     
     class DiaryPost {
@@ -222,6 +245,7 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
             }, to: url ,method: .post ,headers: headers).response { responce in
                 switch responce.result {
                 case .success(let data):
+                    print(String(decoding: data!, as: UTF8.self))
                     do {
                         let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
                         print(json)
