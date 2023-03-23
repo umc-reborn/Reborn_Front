@@ -174,7 +174,6 @@
 		C71987552986D447000C87EB /* JjimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987542986D447000C87EB /* JjimViewController.swift */; };
 		C71987572986D46F000C87EB /* JjimTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71987562986D46F000C87EB /* JjimTableViewCell.swift */; };
 		C71C2D6F29757625007BA3E0 /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */; };
-		C723A50A29C7289500439D54 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723A50929C7289500439D54 /* UserModel.swift */; };
 		C7284AA5298D23BA009A70E7 /* APIJjimPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */; };
 		C7284AAA298EA703009A70E7 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AA9298EA703009A70E7 /* APIConstants.swift */; };
 		C7284AB0298FFB25009A70E7 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7284AAF298FFB25009A70E7 /* StoreModel.swift */; };
@@ -224,6 +223,7 @@
 		C7EF982A2990DC0100480DD9 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF98292990DC0100480DD9 /* ReviewModel.swift */; };
 		C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF982D299107C000480DD9 /* JjimModel.swift */; };
 		C7F913D529CC03C100971C80 /* APIImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F913D429CC03C100971C80 /* APIImagePost.swift */; };
+		C7F913D729CC08E600971C80 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F913D629CC08E600971C80 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -418,7 +418,6 @@
 		C71987542986D447000C87EB /* JjimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimViewController.swift; sourceTree = "<group>"; };
 		C71987562986D46F000C87EB /* JjimTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimTableViewCell.swift; sourceTree = "<group>"; };
 		C71C2D6E29757625007BA3E0 /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
-		C723A50929C7289500439D54 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C7284AA4298D23BA009A70E7 /* APIJjimPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIJjimPost.swift; sourceTree = "<group>"; };
 		C7284AA9298EA703009A70E7 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		C7284AAB298EA726009A70E7 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -469,6 +468,7 @@
 		C7EF98292990DC0100480DD9 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		C7EF982D299107C000480DD9 /* JjimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimModel.swift; sourceTree = "<group>"; };
 		C7F913D429CC03C100971C80 /* APIImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImagePost.swift; sourceTree = "<group>"; };
+		C7F913D629CC08E600971C80 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = ../../../../../../Downloads/UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -571,6 +571,7 @@
 		2FF28CE6298D0645008B7D8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C7F913D629CC08E600971C80 /* UserModel.swift */,
 				2FF28CE7298D065D008B7D8E /* APIMyRebornPost.swift */,
 				2F48EBD22991559700D3C791 /* APIHandler.swift */,
 				2F48EBD42991592400D3C791 /* APIManageReview.swift */,
@@ -578,7 +579,6 @@
 				2FF615362992D1EC00143369 /* RebornHistoryModel.swift */,
 				2F7C0AB32994DAA600BC5F9A /* ReviewManageModel.swift */,
 				2F5302EF29AA5F7400625869 /* APIReviewImagePost.swift */,
-				C723A50929C7289500439D54 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1142,7 +1142,6 @@
 				0B94771A29899DF700B5829A /* ShopBasic_InfoViewController.swift in Sources */,
 				9561BA8A2994712600A4B33B /* InprogressService.swift in Sources */,
 				C70D3D4F2980F1C500CABA91 /* FirstTabViewController.swift in Sources */,
-				C723A50A29C7289500439D54 /* UserModel.swift in Sources */,
 				C787E3B829BB460C0090B946 /* Entity+CoreDataProperties.swift in Sources */,
 				C75E99072984E6F6003D40B4 /* CodeViewController.swift in Sources */,
 				95E9FFAB297D9B280073DF2B /* adViewController.swift in Sources */,
@@ -1183,6 +1182,7 @@
 				0BD99EE029C0CE9100C6C0F1 /* idCheckGet.swift in Sources */,
 				0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */,
 				C7B64478299C625E00A7048D /* RebornCautionViewController.swift in Sources */,
+				C7F913D729CC08E600971C80 /* UserModel.swift in Sources */,
 				0B0D66C8298CFA6100E5220F /* Id_PassWordSecondViewController.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				C7C400ED29B077AE008EB125 /* RebornActivePost.swift in Sources */,

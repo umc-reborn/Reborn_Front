@@ -332,7 +332,6 @@ extension EditStoreViewController: UIImagePickerControllerDelegate, UINavigation
 }
 
 extension EditStoreViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
     func configPickerView() {
         picker.delegate = self
         picker.dataSource = self
