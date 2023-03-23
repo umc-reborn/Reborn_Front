@@ -11,6 +11,8 @@ class HomeInprogressViewController: UIViewController {
     @IBOutlet var defaultView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var timeWhenGoBackground: Date?
+    
     var rebornDatas: [InprogressResponse] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,34 +31,45 @@ class HomeInprogressViewController: UIViewController {
         collectionView.layer.shadowOffset = CGSize(width: 5, height: 10)
         collectionView.layer.shadowRadius = 10
         collectionView.layer.shadowOpacity = 0.1
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView12"),
+                  object: nil
+                  )
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        InprogressService.shared.getInprogress{ result in
-                    switch result {
-                    case .success(let response):
-//                        dump(response)
-                        guard let response = response as? InprogressModel else {
-                            break
-                        }
-                        self.rebornDatas = response.result
-                        self.defaultView.isHidden = true
-                        self.defaultView.backgroundColor = .clear
-                        
-                        if self.rebornDatas.isEmpty {
-                            self.defaultView.isHidden = false
-                        }
-                    default:
-                        self.defaultView.isHidden = false
-                        break
-                    }
-                    self.collectionView.reloadData()
-           
-            
-                }
-        
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.InprogressResult()
+        }
     }
+    
+    func InprogressResult() {
+        InprogressService.shared.getInprogress { result in
+            switch result {
+            case .success(let response):
+                //                        dump(response)
+                guard let response = response as? InprogressModel else {
+                    break
+                }
+                self.rebornDatas = response.result
+                self.defaultView.isHidden = true
+                self.defaultView.backgroundColor = .clear
+                
+                if self.rebornDatas.isEmpty {
+                    self.defaultView.isHidden = false
+                }
+            default:
+                self.defaultView.isHidden = false
+                break
+            }
+            self.collectionView.reloadData()
+            print("뭐야")
+        }
+    }
+    
     @IBAction func getNumber(_ sender: Any) {
         let detail = UIStoryboard.init(name: "MyReborn", bundle: nil)
         guard let Checkvc = detail.instantiateViewController(identifier: "historyDetailVC") as? RebornHistoryDetailViewController else {
@@ -69,6 +82,7 @@ class HomeInprogressViewController: UIViewController {
 }
 
 extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return rebornDatas.count
     }
@@ -92,12 +106,50 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         let url = URL(string: rebornData.productImg ?? "")
         cell.ongoingImg.load(url: url!)
         cell.ongoingName.text = rebornData.storeName
-        cell.ongoingtime.text = rebornData.productLimitTime
         cell.ongoingCategory.text = rebornData.category
         cell.ongoingProduct.text = rebornData.productName
         
+        let timeLimit = rebornData.productLimitTime
+        let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
+        let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
+        let minuteCLimit1 = timeLimit[String.Index(encodedOffset: 3)].wholeNumberValue ?? 0
+        let minuteCLimit2 = timeLimit[String.Index(encodedOffset: 4)].wholeNumberValue ?? 0
+        let hourTimer = 3600 * (hourCLimit1 * 10 + hourCLimit2)
+        let minuteTimer = 60 * (minuteCLimit1 * 10 + minuteCLimit2)
+        
+        let wholeSeconds = hourTimer + minuteTimer
+        cell.timeSecond = wholeSeconds
+        
+        cell.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            cell.timeSecond -= 1
+            if (cell.timeSecond == 0) {
+                timer.invalidate()
+            }
+        }
+        RunLoop.current.add(cell.timer!, forMode: .common)
+        
+        cell.index = indexPath.row
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RebornCell", for: indexPath) as! InprogressCollectionViewCell
+        
+        print("App moved to foreground")
+        if let backTime = timeWhenGoBackground {
+            let elapsed = Date().timeIntervalSince(backTime)
+            let duration = Int(elapsed)
+            cell.timeSecond -= duration
+            timeWhenGoBackground = nil
+            print("DURATION: \(duration)")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print("App moved to background!")
+        timeWhenGoBackground = Date()
+        print("Save")
     }
 }
 extension HomeInprogressViewController: UICollectionViewDelegateFlowLayout {
@@ -117,6 +169,4 @@ extension HomeInprogressViewController: UICollectionViewDelegateFlowLayout {
         let size = CGSize(width: width, height: height)
         return size
     }
-    
-    
 }
