@@ -226,7 +226,7 @@
 		C7EF982A2990DC0100480DD9 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF98292990DC0100480DD9 /* ReviewModel.swift */; };
 		C7EF982E299107C000480DD9 /* JjimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF982D299107C000480DD9 /* JjimModel.swift */; };
 		C7F913D529CC03C100971C80 /* APIImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F913D429CC03C100971C80 /* APIImagePost.swift */; };
-		C7F913D729CC08E600971C80 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F913D629CC08E600971C80 /* UserModel.swift */; };
+		C7F913D929CC0C8900971C80 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F913D829CC0C8900971C80 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -474,7 +474,7 @@
 		C7EF98292990DC0100480DD9 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		C7EF982D299107C000480DD9 /* JjimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JjimModel.swift; sourceTree = "<group>"; };
 		C7F913D429CC03C100971C80 /* APIImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImagePost.swift; sourceTree = "<group>"; };
-		C7F913D629CC08E600971C80 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = ../../../../../../Downloads/UserModel.swift; sourceTree = "<group>"; };
+		C7F913D829CC0C8900971C80 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -578,7 +578,6 @@
 		2FF28CE6298D0645008B7D8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C7F913D629CC08E600971C80 /* UserModel.swift */,
 				2FF28CE7298D065D008B7D8E /* APIMyRebornPost.swift */,
 				2F48EBD22991559700D3C791 /* APIHandler.swift */,
 				2F48EBD42991592400D3C791 /* APIManageReview.swift */,
@@ -588,6 +587,7 @@
 				2F5302EF29AA5F7400625869 /* APIReviewImagePost.swift */,
 				2FB3BD1929CA05BE003B17CA /* EditUserInfoPost.swift */,
 				2FB3BD1B29CA1266003B17CA /* UserModel.swift */,
+				C7F913D829CC0C8900971C80 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1193,7 +1193,7 @@
 				0BD99EE029C0CE9100C6C0F1 /* idCheckGet.swift in Sources */,
 				0B94770429899BF400B5829A /* FirstLoginViewController.swift in Sources */,
 				C7B64478299C625E00A7048D /* RebornCautionViewController.swift in Sources */,
-				C7F913D729CC08E600971C80 /* UserModel.swift in Sources */,
+				C7F913D929CC0C8900971C80 /* UserModel.swift in Sources */,
 				0B0D66C8298CFA6100E5220F /* Id_PassWordSecondViewController.swift in Sources */,
 				952CB29F2977566B00BD7CD7 /* BestReviewViewController.swift in Sources */,
 				C7C400ED29B077AE008EB125 /* RebornActivePost.swift in Sources */,
