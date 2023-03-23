@@ -23,9 +23,9 @@ class tVersionViewController: UIViewController {
         iseeButton.layer.borderWidth = 1.0
         iseeButton.layer.borderColor = mybrown?.cgColor // 테두리 컬러
         
-        // viewcontroller 배경 색상 변경 #FFFBF9
-        let BACKGROUND = UIColor(named: "BACKGROUND")
-        self.view.backgroundColor = BACKGROUND
+        // back button custom
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.topItem?.title = ""
         
     }
     
