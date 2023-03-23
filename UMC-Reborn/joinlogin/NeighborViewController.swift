@@ -78,8 +78,8 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         
         //viewcontroller 배경 색상 변경 #FFFBF9
-        let BACKGROUND = UIColor(named: "BACKGROUND")
-         self.view.backgroundColor = BACKGROUND
+//        let BACKGROUND = UIColor(named: "BACKGROUND")
+//         self.view.backgroundColor = BACKGROUND
         
         
         Id.addLeftPadding1()

@@ -59,6 +59,7 @@ class Basic_InfoViewController: UIViewController, UITextFieldDelegate, UITextVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        BasicNextButton.isEnabled = false
         
         proFileView.layer.cornerRadius = self.proFileView.frame.size.height / 2
         proFileView.layer.masksToBounds = true
@@ -147,7 +148,10 @@ class Basic_InfoViewController: UIViewController, UITextFieldDelegate, UITextVie
         addGestureRecognizer()
         
         
-        //BasicNextButton.addTarget(BasicNextButton, action: AlltextFieldisFilled, for: .editingChanged)
+        // add target
+        nickNameTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
+        townTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
+        BDTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
     }
     
 
@@ -163,7 +167,21 @@ class Basic_InfoViewController: UIViewController, UITextFieldDelegate, UITextVie
            textField.layer.borderWidth = 1.0
    }
     
-
+    @objc func AlltextFieldisFilled(textField: UITextField){
+        if (!(nickNameTextField.text == "") && !(townTextField.text == "") && !(BDTextField.text == "")){
+            BasicNextButton.isEnabled = true
+            BasicNextButton.setTitleColor(.white, for: .normal)
+            BasicNextButton.layer.borderWidth = 1.0
+            BasicNextButton.layer.borderColor = mybrown?.cgColor // 테두리 컬러
+            BasicNextButton.backgroundColor = .mybrown
+        }
+        else {
+            BasicNextButton.setTitleColor(.mybrown, for: .normal)
+            BasicNextButton.layer.borderWidth = 1.0
+            BasicNextButton.layer.borderColor = mybrown?.cgColor // 테두리 컬러
+            BasicNextButton.backgroundColor = .white
+        }
+    }
 
     
     @IBAction func plzNextButtonTapped(_ sender: Any) {

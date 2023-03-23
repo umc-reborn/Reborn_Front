@@ -10,6 +10,23 @@ import UIKit
 class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     
+    
+    // 타이머
+    var timer : Timer? = nil
+    var isTimerOn = false
+    var timeSecond = 10 {
+        willSet(newValue) {
+            var hours = String(newValue / 3600)
+            var minutes = String(newValue / 60)
+            var seconds = String(newValue % 60)
+            if hours.count == 1 { hours = "0"+hours }
+            if minutes.count == 1 { minutes = "0"+minutes }
+            if seconds.count == 1 { seconds = "0"+seconds }
+            timeLabel.text = "\(minutes):\(seconds)"
+        }
+    }
+    
+    
     //API
     var emailData: emailModel!
     
@@ -39,11 +56,24 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     
     @IBOutlet var miniEmailLabel: UILabel!// 이메일 경고문구
     
-    
     @IBOutlet var miniLabel: UILabel! // 인증번호 경고문구
+    
+    
+    
+    @IBOutlet var leftTimeLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel! // 타이머 라벨
+    
+    
+    let mybrown = UIColor(named: "mybrown")
+    let myorange = UIColor(named: "myorange")
+    let mygray = UIColor(named: "mygray")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 600초
+        timeSecond = 600
         
         print("ad : who에서 email로 넘어왔음 " + apple) //된다
         
@@ -61,10 +91,6 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")
         self.view.backgroundColor = BACKGROUND
-        
-        let mybrown = UIColor(named: "mybrown")
-        let myorange = UIColor(named: "myorange")
-        let mygray = UIColor(named: "mygray")
         
         // 다음 버튼
         nextbuttonEmail.layer.borderWidth = 1.0
@@ -118,6 +144,11 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         requestCheckButton.setTitle("인증확인", for: .normal)  // 버튼 텍스트 설정
         requestCheckButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
         requestCheckButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
+        
+        
+        leftTimeLabel.isHidden = true
+        timeLabel.isHidden = true
+        
         
         EmailTextField.delegate = self
         codeTextField.delegate = self
@@ -222,6 +253,9 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
             self.requestButton.setTitleColor(.mygray, for: .normal)
             print("나 회색버튼이야")
             self.requestButton.isEnabled = false
+            self.leftTimeLabel.isHidden = false
+            self.timeLabel.isHidden = false
+            self.timerStart()
         }
     }
     
@@ -239,12 +273,37 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDele
             self.compare2Things() //해냈다...
             
             
-//            self.requestCheckButton.backgroundColor = .white
-//            self.requestCheckButton.layer.borderColor = UIColor.mygray?.cgColor
-//            self.requestCheckButton.setTitleColor(.mygray, for: .normal)
-//            self.requestCheckButton.isEnabled = false
+            self.requestCheckButton.backgroundColor = .white
+            self.requestCheckButton.layer.borderColor = UIColor.mygray?.cgColor
+            self.requestCheckButton.setTitleColor(.mygray, for: .normal)
+            self.requestCheckButton.isEnabled = false
+            
+            if(self.hihi != self.rightHi){
+                self.requestCheckButton.isEnabled = true
+                self.requestCheckButton.layer.borderWidth = 1.0
+                self.requestCheckButton.layer.borderColor = self.myorange?.cgColor // 테두리 컬러
+                self.requestCheckButton.backgroundColor = .myorange
+                self.requestCheckButton.layer.cornerRadius = 4.0
+                self.requestCheckButton.setTitle("인증확인", for: .normal)  // 버튼 텍스트 설정
+                self.requestCheckButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
+                self.requestCheckButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
+            }
            
         }
     }
     
+    // 타이머
+    func timerStart() {
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.timeSecond -= 1
+            if (self.timeSecond == 0) {
+                timer.invalidate()
+                self.requestCheckButton.backgroundColor = .white
+                self.requestCheckButton.layer.borderColor = UIColor.mygray?.cgColor
+                self.requestCheckButton.setTitleColor(.mygray, for: .normal)
+                self.requestCheckButton.isEnabled = false
+            }
+        }
+        RunLoop.current.add(self.timer!, forMode: .common)
+    }
 }
