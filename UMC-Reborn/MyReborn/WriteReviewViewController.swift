@@ -16,7 +16,17 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet var AddImageView: UIImageView!
-
+    @IBOutlet var reviewDate: UILabel!
+    @IBOutlet var storeName: UILabel!
+    @IBOutlet var storeCategory: UILabel!
+    
+    var reviewStoreName: String = ""
+    var reviewDates: String = ""
+    var category: String = ""
+    
+    var getProductName: String = ""
+    // var get
+    
     let rebornAdd = UserDefaults.standard.integer(forKey: "userIndex")
     
     let rebornIdx = 23
@@ -60,6 +70,10 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
         
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
         self.view.addGestureRecognizer(tapGesture)
+        
+        self.storeName.text = reviewStoreName
+        self.storeCategory.text = category
+        self.reviewDate.text = reviewDates
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
