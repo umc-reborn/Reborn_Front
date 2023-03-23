@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ComponentProductCellDelegate5 {
+    func historyButtonTapped(index: Int)
+}
+
 class InprogressCollectionViewCell: UICollectionViewCell {
     // MARK: - IBOutlet
     
@@ -22,6 +26,7 @@ class InprogressCollectionViewCell: UICollectionViewCell {
     var timeWhenGoBackground: Date?
     
     var index: Int = 0
+    var delegate: ComponentProductCellDelegate5?
     
     var timeSecond = 10 {
         willSet(newValue) {
@@ -72,5 +77,9 @@ class InprogressCollectionViewCell: UICollectionViewCell {
             timeWhenGoBackground = nil
             print("DURATION: \(duration)")
         }
+    }
+    
+    @IBAction func codeButtonTapped(_ sender: Any) {
+        self.delegate?.historyButtonTapped(index: index)
     }
 }

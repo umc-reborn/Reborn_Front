@@ -4,14 +4,13 @@
 //
 //  Created by nayeon  on 2023/02/10.
 //
-
+import UIKit
 import Foundation
+
 class HomeInprogressViewController: UIViewController {
     
     @IBOutlet var defaultView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    var timeWhenGoBackground: Date?
     
     var rebornDatas: [InprogressResponse] = []
     override func viewDidLoad() {
@@ -42,6 +41,7 @@ class HomeInprogressViewController: UIViewController {
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            
             self.InprogressResult()
         }
     }
@@ -69,19 +69,20 @@ class HomeInprogressViewController: UIViewController {
             print("뭐야")
         }
     }
+}
+
+extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionViewDataSource, ComponentProductCellDelegate5 {
     
-    @IBAction func getNumber(_ sender: Any) {
+    func historyButtonTapped(index: Int) {
+        let rebornData = rebornDatas[index]
         let detail = UIStoryboard.init(name: "MyReborn", bundle: nil)
         guard let Checkvc = detail.instantiateViewController(identifier: "historyDetailVC") as? RebornHistoryDetailViewController else {
                     return
                 }
-        
+        Checkvc.rebornTaskIdx = rebornData.rebornTaskIdx
+        Checkvc.timeLimit = rebornData.productLimitTime
         navigationController?.pushViewController(Checkvc, animated: true)
     }
-    
-}
-
-extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return rebornDatas.count
@@ -109,6 +110,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         cell.ongoingCategory.text = rebornData.category
         cell.ongoingProduct.text = rebornData.productName
         
+        
         let timeLimit = rebornData.productLimitTime
         let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
         let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
@@ -129,6 +131,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         RunLoop.current.add(cell.timer!, forMode: .common)
         
         cell.index = indexPath.row
+        cell.delegate = self
         
         return cell
     }
@@ -137,18 +140,20 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RebornCell", for: indexPath) as! InprogressCollectionViewCell
         
         print("App moved to foreground")
-        if let backTime = timeWhenGoBackground {
+        if let backTime = cell.timeWhenGoBackground {
             let elapsed = Date().timeIntervalSince(backTime)
             let duration = Int(elapsed)
             cell.timeSecond -= duration
-            timeWhenGoBackground = nil
+            cell.timeWhenGoBackground = nil
             print("DURATION: \(duration)")
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RebornCell", for: indexPath) as! InprogressCollectionViewCell
+        
         print("App moved to background!")
-        timeWhenGoBackground = Date()
+        cell.timeWhenGoBackground = Date()
         print("Save")
     }
 }
