@@ -38,7 +38,6 @@ class RebornHistoryDetailViewController: UIViewController {
     @IBOutlet var contentView: UIView!
     @IBOutlet var timeLabel: UILabel!
     
-    
     var apiData: RebornHistoryDetailResponse!
 
     override func viewDidLoad() {

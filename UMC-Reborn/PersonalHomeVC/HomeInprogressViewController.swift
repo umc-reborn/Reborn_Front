@@ -41,6 +41,7 @@ class HomeInprogressViewController: UIViewController {
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            
             self.InprogressResult()
         }
     }
@@ -108,6 +109,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         cell.ongoingName.text = rebornData.storeName
         cell.ongoingCategory.text = rebornData.category
         cell.ongoingProduct.text = rebornData.productName
+        
         
         let timeLimit = rebornData.productLimitTime
         let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
