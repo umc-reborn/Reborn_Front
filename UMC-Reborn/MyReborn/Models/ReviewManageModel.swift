@@ -26,15 +26,7 @@ struct ReviewManageModelResponse: Codable {
     let reviewScore: Int
     let reviewComment: String
     let reviewCreatedAt: String
-    let reviewImg: reviewImgResult
-}
-
-struct reviewImgResult : Codable {
-    let reviewImage1 : String
-    let reviewImage2 : String?
-    let reviewImage3 : String?
-    let reviewImage4 : String?
-    let reviewImage5 : String?
+    let reviewImg: String?
 }
 
 //struct ReviewManageList: Codable {
@@ -44,6 +36,3 @@ struct reviewImgResult : Codable {
 //    let result: [ReviewManageListModel]
 //}
 
-//struct ReviewManageListModel: Codable {
-//    let reviewImgList: [String]
-//}

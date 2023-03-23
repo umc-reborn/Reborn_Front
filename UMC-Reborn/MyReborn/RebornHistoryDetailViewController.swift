@@ -10,9 +10,19 @@ import Alamofire
 
 class RebornHistoryDetailViewController: UIViewController {
     
-    
     var rebornTaskIdx: Int = 0
-
+    var timeLimit: String = ""
+    var timeSecond = 10 {
+        willSet(newValue) {
+            var hours = String(newValue / 3600)
+            var minutes = String(newValue / 60)
+            var seconds = String(newValue % 60)
+            if hours.count == 1 { hours = "0"+hours }
+            if minutes.count == 1 { minutes = "0"+minutes }
+            if seconds.count == 1 { seconds = "0"+seconds }
+            timeLabel.text = "\(hours):\(minutes):\(seconds)"
+        }
+    }
     
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var storeName: UILabel!
@@ -26,13 +36,23 @@ class RebornHistoryDetailViewController: UIViewController {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var statusImage: UIImageView!
     @IBOutlet var contentView: UIView!
+    @IBOutlet var timeLabel: UILabel!
     
     var apiData: RebornHistoryDetailResponse!
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
+        let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
+        let minuteCLimit1 = timeLimit[String.Index(encodedOffset: 3)].wholeNumberValue ?? 0
+        let minuteCLimit2 = timeLimit[String.Index(encodedOffset: 4)].wholeNumberValue ?? 0
+        let hourTimer = 3600 * (hourCLimit1 * 10 + hourCLimit2)
+        let minuteTimer = 60 * (minuteCLimit1 * 10 + minuteCLimit2)
+        
+        let wholeSeconds = hourTimer + minuteTimer
+        
+        timeSecond = wholeSeconds
         
         self.contentView.layer.cornerRadius = 10
         self.productImg.layer.cornerRadius = 10

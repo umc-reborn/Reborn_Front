@@ -6,11 +6,11 @@
 //
 
 import UIKit
+import Alamofire
 
-class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, MySampleProtocol, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    var nickname = UserDefaults.standard.string(forKey: "userNickName")
-    
+    let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
 
     let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
     let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
@@ -23,24 +23,54 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     @IBOutlet var EditAddressTextField: UITextField!
     @IBOutlet var EditBirthTextField: UITextField!
     
+    @IBOutlet var userProfileImage: UIImageView!
+    
+    let serverURL = "http://www.rebornapp.shop/s3"
+    
+    let imagePickerController = UIImagePickerController()
+    
+    var imageUrl: ReviewImageresultModel!
+    var rebornData: EditUserInfoResultModel!
     
     @objc func FinishEditMode() {
-        // TODO : (일단 닉네임이라도) 변경한 값으로 만들기
+        print("버튼 테스트")
+        // 📌 API 수정되면 img URL 변경
+        let parameterDatas = EditUserInfoModel(userImg:  self.imageUrl.result ?? "", userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: "LIFE")
+        APIHandlerUserInfoPost.instance.SendingPostReborn(token: userJWT, parameters: parameterDatas) { result in self.rebornData = result }
+        print("회원정보수정 결과는 \(self.rebornData)")
+        self.navigationController?.popViewController(animated: true)
     }
+    
+    func addressSend(data: String) {
+        EditAddressTextField.text = data
+        EditAddressTextField.sizeToFit()
+        print(data)
+    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         createButton1()
         createButton2()
         createButton3()
         createButton4()
         createButton5()
         
-        print("유저 닉네임은 \(nickname)")
+        userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.height / 2
+        userProfileImage.layer.masksToBounds = true
+        userProfileImage.clipsToBounds = true
         
-        guard let name = nickname else {return}
-        self.EditNicknameTextField.text = "\(name)"
+        if button1.isSelected {
+            // 1. 저장을 위한 변수 선언(맨 위에)
+            // 2. 버튼을 클릭했을 때 1번 변수에 저장(sender.label.text)
+            // 3. 클릭했을 때 UI
+            // 4. 다른 거를 선택했을 땐 for문을 써서 나머지 버튼 색깔들을 뺌
+        }
+
+        // 닉네임 값 변경
+//        guard let name = nickname else {return}
+//        self.EditNicknameTextField.text = "ㅎ"
 
         // 네비게이션 바
         self.navigationItem.title = "회원정보 수정"
@@ -78,6 +108,78 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         textFieldDidEndEditing(EditNicknameTextField)
         textFieldDidEndEditing(EditAddressTextField)
         textFieldDidEndEditing(EditBirthTextField)
+        
+        self.imagePickerController.delegate = self
+        
+        UserInfoResult()
+    }
+    
+    func UserInfoResult() {
+        
+        let url = "http://www.rebornapp.shop/users/inform"
+        
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+
+        
+        print("응답하라 \(userJWT)")
+        
+        // Header
+        request.addValue("\(userJWT)", forHTTPHeaderField: "X-ACCESS-TOKEN")
+        
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let decodedData = try decoder.decode(UserList.self, from: safeData)
+                    let storeDatas = decodedData.result
+                    print(storeDatas)
+                    DispatchQueue.main.async {
+                        let url = URL(string: storeDatas.userImg ?? "")
+                        self.userProfileImage.load(url: url!)
+                        self.EditNicknameTextField.text = storeDatas.userNickname
+                        self.EditBirthTextField.text = storeDatas.userBirthDate
+                        self.EditAddressTextField.text = storeDatas.userAddress
+                        // userLikes
+                        print("데이타 \(storeDatas)")
+                        
+                    }
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
     }
     
     // 카테고리 버튼1
@@ -271,6 +373,66 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.layer.borderWidth = 1.0
+    }
+    
+    
+    @IBAction func FindAddressButton(_ sender: UIButton) {
+        guard let svc3 = self.storyboard?.instantiateViewController(identifier: "UserAddressViewController") as? UserAddressViewController else {
+                    return
+                }
+        svc3.delegate = self
+        
+        self.present(svc3, animated: true)
+    }
+    
+    @IBAction func UploadImageButton(_ sender: Any) {
+        self.imagePickerController.delegate = self
+               self.imagePickerController.sourceType = .photoLibrary
+               present(self.imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            userProfileImage.image = image
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                DiaryPost.instance.uploadDiary(file: self.userProfileImage.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
+        }
+        
+        picker.dismiss(animated: true, completion: nil) //dismiss를 직접 해야함
+    }
+    
+    
+    // 이미지 post
+    class DiaryPost {
+        static let instance = DiaryPost()
+        
+        func uploadDiary(file: UIImage, url: String, handler: @escaping (_ result: ReviewImageresultModel)->(Void)) {
+            let headers: HTTPHeaders = [
+                                "Content-type": "multipart/form-data"
+                            ]
+            AF.upload(multipartFormData: { (multipart) in
+                if let imageData = file.jpegData(compressionQuality: 0.8) {
+                    multipart.append(imageData, withName: "file", fileName: "photo.jpg", mimeType: "image/jpeg")
+                }
+            }, to: url ,method: .post ,headers: headers).response { responce in
+                switch responce.result {
+                case .success(let data):
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+                        print(json)
+                        
+                        let jsonresult = try JSONDecoder().decode(ReviewImageresultModel.self, from: data!)
+                        handler(jsonresult)
+                        print(jsonresult)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }
 
