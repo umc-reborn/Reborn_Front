@@ -15,11 +15,16 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     var imageUrl: ImageresultModel!
     var rebornData: RebornresultModel!
     
-    var dsd : String = "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/453f2385-364b-45ea-bf37-8450c467541e.jpg"
+    var defaultImage : String = ""
     
     func dataSend(data: String) {
         timeLabel.text = data
         timeLabel.sizeToFit()
+    }
+    
+    func timeSend(data: String) {
+        timeLabel2.text = data
+        timeLabel2.sizeToFit()
     }
     
     @IBOutlet weak var timeLabel2: UILabel!
@@ -45,6 +50,8 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        defaultImage = "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/44f3e518-814e-4ce1-b104-8afc86843fbd.jpg"
         
         TimeSwitch.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         
@@ -225,7 +232,7 @@ class AddRebornViewController: UIViewController, UITextFieldDelegate, UITextView
     
     @IBAction func RebornPostButton(_ sender: Any) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-            let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
+            let parmeterDatas = RebornModel(storeIdx: self.rebornAdd, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.defaultImage, productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
             APIHandlerPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
@@ -283,8 +290,11 @@ extension AddRebornViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             AddImageView?.image = image
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
                 DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.defaultImage = self.imageUrl.result
             }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")

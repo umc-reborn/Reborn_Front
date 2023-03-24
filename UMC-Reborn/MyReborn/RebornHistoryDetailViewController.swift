@@ -86,7 +86,7 @@ class RebornHistoryDetailViewController: UIViewController {
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
             
             self.timerStart()
         }

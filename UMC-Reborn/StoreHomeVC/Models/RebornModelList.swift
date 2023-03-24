@@ -19,7 +19,7 @@ struct RebornListModel : Codable {
     var productName : String
     var productGuide : String
     var productComment : String
-    var productImg : String?
+    var productImg : String
     var productLimitTime : String
     var productCnt : Int
     var status : String
