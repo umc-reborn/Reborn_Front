@@ -101,15 +101,18 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
         
         var timeSecond = 10 {
             willSet(newValue) {
-                var days = String(newValue / 86400)
-                var hours = String(newValue / 3600)
-                var minutes = String(newValue / 60)
-                var seconds = String(newValue % 60)
-                if days.count == 1 { hours = "00" }
-                if hours.count == 1 { hours = "0"+hours }
-                if minutes.count == 1 { minutes = "0"+minutes }
-                if seconds.count == 1 { seconds = "0"+seconds }
-                cell.limitLabel.text = "\(hours):\(minutes) 이후 자동취소"
+                var hours = newValue / 3600
+                var minutes = (newValue % 3600) / 60
+                var seconds = (newValue % 3600) % 60
+                if ((hours < 10) && (minutes < 10)) {
+                    cell.limitLabel.text = "0\(hours):0\(minutes) 이후 자동취소"
+                } else if ((hours < 10) && (minutes >= 10)) {
+                    cell.limitLabel.text = "0\(hours):\(minutes) 이후 자동취소"
+                } else if ((hours >= 10) && (minutes < 10)) {
+                    cell.limitLabel.text = "\(hours):0\(minutes) 이후 자동취소"
+                } else if ((hours >= 10) && (minutes >= 10)) {
+                    cell.limitLabel.text = "\(hours):\(minutes) 이후 자동취소"
+                }
             }
         }
         
@@ -132,6 +135,12 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
         let monthTime2 = createTime[String.Index(encodedOffset: 6)]
         let dayTime1 = createTime[String.Index(encodedOffset: 8)]
         let dayTime2 = createTime[String.Index(encodedOffset: 9)]
+        let hourTime1 = createTime[String.Index(encodedOffset: 11)]
+        let hourTime2 = createTime[String.Index(encodedOffset: 12)]
+        let minuteTime1 = createTime[String.Index(encodedOffset: 14)]
+        let minuteTime2 = createTime[String.Index(encodedOffset: 15)]
+        let secondTime1 = createTime[String.Index(encodedOffset: 17)]
+        let secondTime2 = createTime[String.Index(encodedOffset: 18)]
         
         let hourCTime1 = createTime[String.Index(encodedOffset: 12)].wholeNumberValue ?? 0
         let minuteCTime1 = createTime[String.Index(encodedOffset: 14)].wholeNumberValue ?? 0
@@ -142,7 +151,7 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
         let minuteTimer = 60 * (minuteCTime1 * 10 + minuteCTime2)
         let secondTimer = secondCTime1 * 10 + secondCTime2
         
-        let wholeSeconds = hourTimer2 + minuteTimer2 + hourTimer + minuteTimer + secondTimer
+        let wholeSeconds = hourTimer + minuteTimer + secondTimer + hourTimer2 + minuteTimer2
         
         let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
         cell.foodimageView.load(url: url!)
@@ -151,7 +160,7 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
         cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
         if (rebornData.status == "ACTIVE") {
             timeSecond = wholeSeconds
-//            cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
+            print("총 시간: \(wholeSeconds)")
             cell.statusLabel.text = "진행중"
             cell.shareButton.isEnabled = true
             cell.sharecancelButton.isEnabled = true
@@ -161,7 +170,7 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
             cell.shareButton.isEnabled = false
             cell.sharecancelButton.isEnabled = false
         }
-        cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2)"
+        cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2) \(hourTime1)\(hourTime2):\(minuteTime1)\(minuteTime2)"
         
         cell.index = indexPath.section
         cell.delegate = self
