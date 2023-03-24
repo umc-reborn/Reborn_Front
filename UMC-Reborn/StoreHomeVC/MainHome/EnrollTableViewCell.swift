@@ -102,7 +102,7 @@ extension RebornEnrollViewController: UITableViewDelegate, UITableViewDataSource
         let limitTime = rebornData.productLimitTime
         let minuteLimit1 = limitTime[String.Index(encodedOffset: 3)]
         let minuteLimit2 = limitTime[String.Index(encodedOffset: 4)]
-        let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
+        let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/44f3e518-814e-4ce1-b104-8afc86843fbd.jpg")
         cell.StoreImageView.load(url: url!)
         cell.foodName.text = rebornData.productName
         cell.Description.text = rebornData.productComment

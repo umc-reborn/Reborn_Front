@@ -1713,7 +1713,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="umc_character" translatesAutoresizingMaskIntoConstraints="NO" id="AVx-7B-6Pg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile@1" translatesAutoresizingMaskIntoConstraints="NO" id="AVx-7B-6Pg">
                                 <rect key="frame" x="143" y="88" width="104" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="agq-m0-PUH"/>
@@ -4169,6 +4169,7 @@
         <image name="ic_like_gray" width="30.5" height="30.5"/>
         <image name="person_image" width="51.5" height="51.5"/>
         <image name="person_image_w" width="51.5" height="51.5"/>
+        <image name="profile@1" width="90" height="90"/>
         <image name="pw_change" width="26" height="26.5"/>
         <image name="review" width="21" height="21.5"/>
         <image name="review_star" width="40.5" height="40.5"/>

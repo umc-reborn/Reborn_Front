@@ -25,6 +25,8 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         storeaddressTextfield.sizeToFit()
     }
     
+    var defaultImage : String = ""
+    
     @IBOutlet weak var storenameTextfield: UITextField!
     @IBOutlet weak var storecategoryTextfield: UITextField!
     @IBOutlet weak var storeaddressTextfield: UITextField!
@@ -143,9 +145,11 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
                         } else {
                             self.storecategoryTextfield.text = "기타"
                         }
+                        self.storeCategory = storeDatas.category
                         self.storeaddressTextfield.text = "\(storeDatas.storeAddress)"
                         self.storeTextView.text = "\(storeDatas.storeDescription)"
                         self.storeTextView.textColor = UIColor.black
+                        self.defaultImage = storeDatas.userImage ?? ""
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -175,19 +179,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        if(storecategoryTextfield.text == "카페·디저트") {
-            storeCategory = "CAFE"
-        } else if (storecategoryTextfield.text == "반찬") {
-            storeCategory = "SIDEDISH"
-        } else if (storecategoryTextfield.text == "패션") {
-            storeCategory = "FASHION"
-        } else if (storecategoryTextfield.text == "편의·생활") {
-            storeCategory = "LIFE"
-        } else if (storecategoryTextfield.text == "기타") {
-            storeCategory = "ETC"
-        }
-        
-        let parameterDatas = StoreEditModel(storeName: storenameTextfield.text ?? "", storeAddress: storeaddressTextfield.text ?? "", storeDescription: storeTextView.text, category: storeCategory, storeImage: self.imageUrl.result ?? "")
+        let parameterDatas = StoreEditModel(storeName: storenameTextfield.text ?? "", storeAddress: storeaddressTextfield.text ?? "", storeDescription: storeTextView.text, category: storeCategory, storeImage: defaultImage)
         APIHandlerStorePost.instance.SendingPostReborn(storeId: editStore, parameters: parameterDatas) { result in self.rebornData = result }
         self.navigationController?.popViewController(animated: true)
     }
@@ -315,6 +307,9 @@ extension EditStoreViewController: UIImagePickerControllerDelegate, UINavigation
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                 DiaryPost.instance.uploadDiary(file: self.StoreImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
             }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.defaultImage = self.imageUrl.result
+            }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")
         }
@@ -352,6 +347,17 @@ extension EditStoreViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.storecategoryTextfield.text = self.storecategory[row]
+        if(storecategoryTextfield.text == "카페·디저트") {
+            storeCategory = "CAFE"
+        } else if (storecategoryTextfield.text == "반찬") {
+            storeCategory = "SIDEDISH"
+        } else if (storecategoryTextfield.text == "패션") {
+            storeCategory = "FASHION"
+        } else if (storecategoryTextfield.text == "편의·생활") {
+            storeCategory = "LIFE"
+        } else if (storecategoryTextfield.text == "기타") {
+            storeCategory = "ETC"
+        }
     }
     
     func configToolbar() {
