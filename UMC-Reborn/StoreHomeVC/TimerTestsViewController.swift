@@ -21,13 +21,24 @@ class TimerTestsViewController: UIViewController {
     var timeWhenGoBackground: Date?
     var timeSecond = 10 {
         willSet(newValue) {
-            var hours = String(newValue / 3600)
-            var minutes = String(newValue / 60)
-            var seconds = String(newValue % 60)
-            if hours.count == 1 { hours = "0"+hours }
-            if minutes.count == 1 { minutes = "0"+minutes }
-            if seconds.count == 1 { seconds = "0"+seconds }
-            timerLabel.text = "\(hours):\(minutes):\(seconds)"
+            var hours = newValue / 3600
+            var minutes = (newValue % 3600) / 60
+            var seconds = (newValue % 3600) % 60
+            if ((hours < 10) && (minutes < 10) && (seconds < 10)) {
+                timerLabel.text = "0\(hours):0\(minutes):0\(seconds)"
+            } else if ((hours < 10) && (minutes >= 10) && (seconds >= 10)) {
+                timerLabel.text = "0\(hours):\(minutes):\(seconds)"
+            } else if ((hours >= 10) && (minutes < 10) && (seconds >= 10)) {
+                timerLabel.text = "\(hours):0\(minutes):\(seconds)"
+            } else if ((hours >= 10) && (minutes >= 10) && (seconds < 10)) {
+                timerLabel.text = "\(hours):\(minutes):0\(seconds)"
+            } else if ((hours < 10) && (minutes < 10) && (seconds >= 10)) {
+                timerLabel.text = "0\(hours):0\(minutes):\(seconds)"
+            } else if ((hours < 10) && (minutes >= 10) && (seconds < 10)) {
+                timerLabel.text = "0\(hours):\(minutes):0\(seconds)"
+            } else if ((hours >= 10) && (minutes < 10) && (seconds < 10)) {
+                timerLabel.text = "\(hours):0\(minutes):0\(seconds)"
+            }
         }
     }
     
@@ -43,15 +54,23 @@ class TimerTestsViewController: UIViewController {
         }
     }
     
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+      return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
+    func printSecondsToHoursMinutesSeconds (seconds:Int) -> () {
+        let (h, m, s) = secondsToHoursMinutesSeconds (seconds: seconds)
+        timerLabel.text = "\(h):\(m):\(s)"
+      print ("\(h) Hours, \(m) Minutes, \(s) Seconds")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.container = appDelegate.persistentContainer
     
-        timeSecond = 30
-        timeSecond2 = 30
-//        fetchContact()
+        timeSecond = 6731
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
@@ -98,7 +117,7 @@ class TimerTestsViewController: UIViewController {
             print("DURATION: \(duration)")
         }
     }
-    
+
     func timerStart() {
         let entity = NSEntityDescription.entity(forEntityName: "Entity", in: self.container.viewContext)
         let person = NSManagedObject(entity: entity!, insertInto: self.container.viewContext)

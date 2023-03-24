@@ -41,7 +41,7 @@ class HomeInprogressViewController: UIViewController {
         NotificationCenter.default.addObserver(
                   self,
                   selector: #selector(self.didDismissDetailNotification(_:)),
-                  name: NSNotification.Name("DismissDetailView12"),
+                  name: NSNotification.Name("DismissDetailView10"),
                   object: nil
                   )
         
