@@ -188,8 +188,7 @@ class StoreManageViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
             let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
             guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
-            rvc.modalPresentationStyle = .fullScreen
-            self.present(rvc, animated: true, completion: nil)
+            self.present(rvc, animated: true)
         }
     }
     
@@ -199,7 +198,6 @@ class StoreManageViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
             let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
             guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
-            rvc.modalPresentationStyle = .fullScreen
             self.present(rvc, animated: true, completion: nil)
         }
     }
