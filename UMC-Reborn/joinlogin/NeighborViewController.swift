@@ -217,7 +217,7 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
             rvc.jwt = jwtResult
             
             // 화면이동
-            self.navigationController?.pushViewController(rvc, animated: true)
+            self.present(rvc, animated: true)
             
             // userDefault - jwt 저장
             UserDefaults.standard.set(jwtResult, forKey: "userJwt")

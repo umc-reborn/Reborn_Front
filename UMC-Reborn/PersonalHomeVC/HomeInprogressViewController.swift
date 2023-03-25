@@ -65,7 +65,7 @@ class HomeInprogressViewController: UIViewController {
                 }
                 self.rebornDatas = response.result
                 self.defaultView.isHidden = true
-                self.defaultView.backgroundColor = .clear
+//                self.defaultView.backgroundColor = .clear
                 
                 if self.rebornDatas.isEmpty {
                     self.defaultView.isHidden = false
