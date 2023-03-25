@@ -38,6 +38,7 @@ class RebornCautionViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView10"), object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView16"), object: nil, userInfo: nil)
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -48,6 +49,5 @@ class RebornCautionViewController: UIViewController {
         let parameterDatas = CreateRebornModel(userIdx: rebornCaution, rebornIdx: rebornId)
         APIHandlerCreateRebornPost.instance.SendingPostReborn(parameters: parameterDatas) { result in self.rebornData = result }
         self.presentingViewController?.dismiss(animated: false, completion: nil)
-//        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView15"), object: nil, userInfo: nil)
     }
 }

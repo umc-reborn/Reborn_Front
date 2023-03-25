@@ -6,15 +6,22 @@
 //
 import UIKit
 import Foundation
+import CoreData
 
 class HomeInprogressViewController: UIViewController {
     
     @IBOutlet var defaultView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var container: NSPersistentContainer!
+    
     var rebornDatas: [InprogressResponse] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.container = appDelegate.persistentContainer
+        
         collectionView.backgroundColor = .clear
         // Do any additional setup after loading the view.
         defaultView.clipsToBounds = true
@@ -34,9 +41,11 @@ class HomeInprogressViewController: UIViewController {
         NotificationCenter.default.addObserver(
                   self,
                   selector: #selector(self.didDismissDetailNotification(_:)),
-                  name: NSNotification.Name("DismissDetailView12"),
+                  name: NSNotification.Name("DismissDetailView10"),
                   object: nil
                   )
+        
+        InprogressResult()
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
@@ -122,8 +131,16 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         let wholeSeconds = hourTimer + minuteTimer
         cell.timeSecond = wholeSeconds
         
+        let entity = NSEntityDescription.entity(forEntityName: "Entity", in: self.container.viewContext)
+        let person = NSManagedObject(entity: entity!, insertInto: self.container.viewContext)
         cell.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             cell.timeSecond -= 1
+            person.setValue(cell.timeSecond, forKey: "seconds")
+            do {
+                try self.container.viewContext.save()
+            } catch {
+                print(error.localizedDescription)
+            }
             if (cell.timeSecond == 0) {
                 timer.invalidate()
             }

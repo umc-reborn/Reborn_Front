@@ -48,13 +48,13 @@ class RebornEnrollViewController: UIViewController {
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
             self.rebornResult()
         }
     }
     
     @objc func didDismissDetailNotification2(_ notification: Notification) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
             self.rebornResult()
         }
     }

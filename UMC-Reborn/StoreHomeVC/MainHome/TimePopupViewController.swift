@@ -9,6 +9,7 @@ import UIKit
 
 protocol SampleProtocol2:AnyObject {
     func dataSend(data: String)
+    func timeSend(data: String)
 }
 
 class TimePopupViewController: UIViewController {
@@ -50,6 +51,9 @@ class TimePopupViewController: UIViewController {
     @IBAction func nextButton(_ sender: Any) {
         if let text = timeLabel2.text {
             delegate?.dataSend(data: text)
+        }
+        if let text2 = timeLabel3.text {
+            delegate?.timeSend(data: text2)
         }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }

@@ -122,6 +122,15 @@ class CompleteRebornViewController:UIViewController {
         default: return .networkFail
         }
     }
+    
+    @IBAction func PostReviewButton(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "writeReviewVC") as? WriteReviewViewController else { return }
+        nextVC.reviewStoreName = self.apiData.storeName
+        nextVC.reviewDates = self.apiData.createdAt
+        nextVC.category = self.apiData.category
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 
 }
 

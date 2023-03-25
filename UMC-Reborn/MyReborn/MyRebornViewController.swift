@@ -15,7 +15,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var userImage: UIImageView!
     
     let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
-    let username = UserDefaults.standard.string(forKey: "userNickName")
+    var getUserName: String = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MyRebornMenu.count
@@ -68,15 +68,11 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         userImage.layer.cornerRadius = self.userImage.frame.size.height / 2
         userImage.layer.masksToBounds = true
         userImage.clipsToBounds = true
-        
         self.MyRebornTableView.rowHeight = 64;
+        self.MyRebornTableView.layer.cornerRadius = 10
         self.navigationItem.title = "마이리본"
         self.navigationItem.backButtonDisplayMode = .minimal
         self.navigationController?.navigationBar.tintColor = .black
-
-        print("마이 리본으로 불러온 userIdx 값은 \(userIdx)")
-        print("마이 리본으로 불러온 userNickname 값은 \(username)")
-        userNameLabel.text = "\(username!)"
         
         // 그림자
         self.MyRebornTableView.layer.shadowColor = UIColor.gray.cgColor //색상
@@ -131,6 +127,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
                         self.userAddress.text = "\(storeDatas.userAddress)"
                         let url = URL(string: storeDatas.userImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
                         self.userImage.load(url: url!)
+                        self.userNameLabel.text = "\(storeDatas.userNickname)"
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)

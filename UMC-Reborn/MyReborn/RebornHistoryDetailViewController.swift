@@ -6,12 +6,17 @@
 //
 
 import Foundation
-import Alamofire 
+import Alamofire
+import CoreData
 
 class RebornHistoryDetailViewController: UIViewController {
     
     var rebornTaskIdx: Int = 0
     var timeLimit: String = ""
+    
+    var container: NSPersistentContainer!
+    var timer: Timer? = nil
+    
     var timeSecond = 10 {
         willSet(newValue) {
             var hours = String(newValue / 3600)
@@ -20,9 +25,10 @@ class RebornHistoryDetailViewController: UIViewController {
             if hours.count == 1 { hours = "0"+hours }
             if minutes.count == 1 { minutes = "0"+minutes }
             if seconds.count == 1 { seconds = "0"+seconds }
-            timeLabel.text = "\(hours):\(minutes):\(seconds)"
+            timeLabel.text = "\(minutes):\(seconds)"
         }
     }
+    
     
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var storeName: UILabel!
@@ -43,21 +49,13 @@ class RebornHistoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
-        let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
-        let minuteCLimit1 = timeLimit[String.Index(encodedOffset: 3)].wholeNumberValue ?? 0
-        let minuteCLimit2 = timeLimit[String.Index(encodedOffset: 4)].wholeNumberValue ?? 0
-        let hourTimer = 3600 * (hourCLimit1 * 10 + hourCLimit2)
-        let minuteTimer = 60 * (minuteCLimit1 * 10 + minuteCLimit2)
-        
-        let wholeSeconds = hourTimer + minuteTimer
-        
-        timeSecond = wholeSeconds
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.container = appDelegate.persistentContainer
         
         self.contentView.layer.cornerRadius = 10
         self.productImg.layer.cornerRadius = 10
         
-getRebornHistoryDetail { result in
+        getRebornHistoryDetail { result in
             switch result {
             case .success(let response):
                 print("성공일까?")
@@ -87,11 +85,26 @@ getRebornHistoryDetail { result in
                 break
             }
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            
+            self.timerStart()
+        }
     }
-    //
+
     func getData() {
         print("getData() 함수 실행")
     
+    }
+    
+    func timerStart() {
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.fetchContact()
+            if (self.timeSecond == 0) {
+                timer.invalidate()
+            }
+        }
+        RunLoop.current.add(self.timer!, forMode: .common)
     }
 
     @IBAction func FinishRebornTapped(_ sender: Any) {
@@ -99,7 +112,6 @@ getRebornHistoryDetail { result in
         nextVC.modalPresentationStyle = .overCurrentContext
         self.present(nextVC, animated: true, completion: nil)
     }
-    
     
     func getRebornHistoryDetail(completion: @escaping (NetworkResult<Any>) -> Void) {
         var RebornHistoryDetailUrl = "http://www.rebornapp.shop/reborns/history/detail/\(rebornTaskIdx)"
@@ -155,5 +167,16 @@ getRebornHistoryDetail { result in
         }
     }
     
+    func fetchContact() {
+        do {
+            let contact = try self.container.viewContext.fetch(Entity.fetchRequest())
+           contact.forEach {
+            print("\($0.seconds)")
+               timeSecond = Int($0.seconds)
+//            self.timeLabel2.text = "\($0.seconds)"
+          }
+        } catch {
+           print(error.localizedDescription)
+        }
+    }
 }
-
