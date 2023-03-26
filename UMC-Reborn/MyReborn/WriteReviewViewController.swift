@@ -23,6 +23,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     var reviewStoreName: String = ""
     var reviewDates: String = ""
     var category: String = ""
+    var storeImageUrl: String =  "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/44f3e518-814e-4ce1-b104-8afc86843fbd.jpg"
     
     var getProductName: String = ""
     // var get
@@ -122,7 +123,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
         
         // TODO: rebornIdx 수정 필요
 
-        let parmeterDatas = postReviewReqModel(userIdx: self.rebornAdd, rebornIdx: self.rebornIdx, reviewScore: scoreInt, reviewComment: self.textField.text ?? "", reviewImage: self.imageUrl.result ?? "")
+        let parmeterDatas = postReviewReqModel(userIdx: self.rebornAdd, rebornIdx: self.rebornIdx, reviewScore: scoreInt, reviewComment: self.textField.text ?? "", reviewImage: storeImageUrl ?? "")
         APIMyRebornHandlerPost.instance.SendingPostReview(parameters: parmeterDatas) { result in self.writeRebornData = result }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
@@ -142,6 +143,9 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
             AddImageView.image = image
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
                 DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.storeImageUrl = self.imageUrl.result
             }
         }
         

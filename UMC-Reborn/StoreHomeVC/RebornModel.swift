@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct RebornList : Codable {
     var isSuccess : Bool
     var code : Int
