@@ -92,24 +92,72 @@ extension SecondMainViewController: UITableViewDelegate, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SecondMain_TableViewCell", for: indexPath) as! SecondMainTableViewCell
         
+        var timeSecond = 10 {
+            willSet(newValue) {
+                let hours = newValue / 3600
+                if (hours == 24) {
+                    let hours = 0
+                }
+                let minutes = (newValue % 3600) / 60
+                let seconds = (newValue % 3600) % 60
+                if ((hours < 10) && (minutes < 10)) {
+                    cell.limitLabel.text = "0\(hours):0\(minutes) 이후 자동취소"
+                } else if ((hours < 10) && (minutes >= 10)) {
+                    cell.limitLabel.text = "0\(hours):\(minutes) 이후 자동취소"
+                } else if ((hours >= 10) && (minutes < 10)) {
+                    cell.limitLabel.text = "\(hours):0\(minutes) 이후 자동취소"
+                } else if ((hours >= 10) && (minutes >= 10)) {
+                    cell.limitLabel.text = "\(hours):\(minutes) 이후 자동취소"
+                }
+            }
+        }
+        
         let rebornData = rebornGoingDatas[indexPath.section]
         let timeLimit = rebornData.productLimitTime
         let hourLimit = timeLimit.prefix(2)
         let minuteLimit1 = timeLimit[String.Index(encodedOffset: 3)]
         let minuteLimit2 = timeLimit[String.Index(encodedOffset: 4)]
+        
+        let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
+        let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
+        let minuteCLimit1 = timeLimit[String.Index(encodedOffset: 3)].wholeNumberValue ?? 0
+        let minuteCLimit2 = timeLimit[String.Index(encodedOffset: 4)].wholeNumberValue ?? 0
+        let hourTimer2 = 3600 * (hourCLimit1 * 10 + hourCLimit2)
+        let minuteTimer2 = 60 * (minuteCLimit1 * 10 + minuteCLimit2)
+        
         let createTime = rebornData.createdAt
         let yearTime = createTime.prefix(4)
         let monthTime1 = createTime[String.Index(encodedOffset: 5)]
         let monthTime2 = createTime[String.Index(encodedOffset: 6)]
         let dayTime1 = createTime[String.Index(encodedOffset: 8)]
         let dayTime2 = createTime[String.Index(encodedOffset: 9)]
+        let hourTime1 = createTime[String.Index(encodedOffset: 11)]
+        let hourTime2 = createTime[String.Index(encodedOffset: 12)]
+        let minuteTime1 = createTime[String.Index(encodedOffset: 14)]
+        let minuteTime2 = createTime[String.Index(encodedOffset: 15)]
+        let secondTime1 = createTime[String.Index(encodedOffset: 17)]
+        let secondTime2 = createTime[String.Index(encodedOffset: 18)]
+        
+        let hourCTime1 = createTime[String.Index(encodedOffset: 12)].wholeNumberValue ?? 0
+        let minuteCTime1 = createTime[String.Index(encodedOffset: 14)].wholeNumberValue ?? 0
+        let minuteCTime2 = createTime[String.Index(encodedOffset: 15)].wholeNumberValue ?? 0
+        let secondCTime1 = createTime[String.Index(encodedOffset: 17)].wholeNumberValue ?? 0
+        let secondCTime2 = createTime[String.Index(encodedOffset: 18)].wholeNumberValue ?? 0
+        let hourTimer = 3600 * hourCTime1
+        let minuteTimer = 60 * (minuteCTime1 * 10 + minuteCTime2)
+        let secondTimer = secondCTime1 * 10 + secondCTime2
+        
+        let wholeSeconds = hourTimer + minuteTimer + secondTimer + hourTimer2 + minuteTimer2
+        
+        timeSecond = wholeSeconds
+        
         let url = URL(string: rebornData.productImg ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
         cell.foodImage.load(url: url!)
         cell.nicknameLabel.text = rebornData.userNickname
         cell.foodnameLabel.text = rebornData.productName
         cell.countLabel.text = "남은 수량: \(String(rebornData.productCnt))"
         cell.limitLabel.text = "\(hourLimit):\(minuteLimit1)\(minuteLimit2) 후 자동취소"
-        cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2)"
+        cell.dateLabel.text = "\(yearTime)/\(monthTime1)\(monthTime2)/\(dayTime1)\(dayTime2) \(hourTime1)\(hourTime2):\(minuteTime1)\(minuteTime2)"
         
         cell.index = indexPath.section
         cell.delegate = self

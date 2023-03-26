@@ -78,8 +78,8 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         
         //viewcontroller 배경 색상 변경 #FFFBF9
-//        let BACKGROUND = UIColor(named: "BACKGROUND")
-//         self.view.backgroundColor = BACKGROUND
+        let BACKGROUND = UIColor(named: "BACKGROUND")
+         self.view.backgroundColor = BACKGROUND
         
         
         Id.addLeftPadding1()
@@ -217,7 +217,7 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
             rvc.jwt = jwtResult
             
             // 화면이동
-            self.navigationController?.pushViewController(rvc, animated: true)
+            self.present(rvc, animated: true)
             
             // userDefault - jwt 저장
             UserDefaults.standard.set(jwtResult, forKey: "userJwt")

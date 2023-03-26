@@ -19,12 +19,19 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     var editReborn = UserDefaults.standard.integer(forKey: "userIdx")
     
+    var defaultImage : String = ""
+    
     var imageUrl: ImageresultModel!
     var rebornData: RebornEditresultModel!
     
     func dataSend(data: String) {
         timeLabel.text = data
         timeLabel.sizeToFit()
+    }
+    
+    func timeSend(data: String) {
+        timeLabel2.text = data
+        timeLabel2.sizeToFit()
     }
     
     @IBOutlet weak var timeLabel2: UILabel!
@@ -98,6 +105,10 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
         
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
         self.view.addGestureRecognizer(tapGesture)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.defaultImage = self.productImage
+        }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -217,7 +228,7 @@ class EditRebornViewController: UIViewController, UITextFieldDelegate, UITextVie
     }
     
     @IBAction func editPostButton(_ sender: Any) {
-        let parmeterDatas = RebornEditModel(rebornIdx: rebornId, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: self.imageUrl.result ?? "", productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
+        let parmeterDatas = RebornEditModel(rebornIdx: rebornId, productName: self.nameTextfield.text ?? "", productGuide: self.eatTextfield.text ?? "", productComment: self.introduceTextView.text ?? "", productImg: defaultImage, productLimitTime: self.timeLabel2.text ?? "", productCnt: self.Number)
         APIHandlerEditPost.instance.SendingPostReborn(parameters: parmeterDatas) { result in self.rebornData = result }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
@@ -275,6 +286,9 @@ extension EditRebornViewController: UIImagePickerControllerDelegate, UINavigatio
             EditImageView?.image = image
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                 DiaryPost.instance.uploadDiary(file: self.EditImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.defaultImage = self.imageUrl.result
             }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")

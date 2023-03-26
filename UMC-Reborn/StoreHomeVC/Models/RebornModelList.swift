@@ -1,8 +1,8 @@
 //
-//  RebornModel.swift
+//  RebornModelList.swift
 //  UMC-Reborn
 //
-//  Created by 김예린 on 2023/03/20.
+//  Created by jaegu park on 2023/03/24.
 //
 
 import Foundation
@@ -19,7 +19,7 @@ struct RebornListModel : Codable {
     var productName : String
     var productGuide : String
     var productComment : String
-    var productImg : String?
+    var productImg : String
     var productLimitTime : String
     var productCnt : Int
     var status : String
