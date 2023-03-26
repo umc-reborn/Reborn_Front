@@ -13,6 +13,12 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var newPwdTextField: UITextField!
     @IBOutlet weak var confirmNewPwdTextField: UITextField!
     
+    let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
+    
+    let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
+    
+    var rebornData: PwChangeresultModel!
+    
     @IBAction func conFirmPwdButton(_ sender: Any) {
         // ================ < 비밀번호 유효성 검사 > ================
         // 기존 비밀번호
@@ -49,6 +55,20 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate, UITex
         
         // TODO : - 로그인 뷰로 넘기기
         // =======================================================
+        
+        let parameterDatas = PwChangeModel(userIdx: self.userIdx, userPwd: oldPwdTextField.text ?? "", userNewPwd: newPwdTextField.text ?? "", userNewPwd2: confirmNewPwdTextField.text ?? "")
+        APIHandlerPwPost.instance.SendingPostReborn(token: userJWT , parameters: parameterDatas) { result in self.rebornData = result }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+            if (self.rebornData.code == 2111) {
+                    UtilityFunctions().simpleAlert(vc: self, title: "입력 오류", message: "새로운 비밀번호가 일치하지 않습니다")
+                
+            } else {
+                let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+                guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
+                rvc.modalPresentationStyle = .fullScreen
+                self.present(rvc, animated: false, completion: nil)
+            }
+        }
         
     }
     
