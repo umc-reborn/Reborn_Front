@@ -15,7 +15,16 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var userImage: UIImageView!
     
     let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
+    
+    let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
+    
     var getUserName: String = ""
+    
+    // 로그아웃
+    var rebornData: LogoutresultModel!
+    
+    // 회원탈퇴
+    var rebornDatas: UserDeleteresultModel!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MyRebornMenu.count
@@ -95,7 +104,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
+
         
         print("응답하라 \(userJWT)")
         
@@ -156,6 +165,30 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         
 
     }
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        let parameterDatas = LogoutModel(jwt: userJWT )
+        APIHandlerLogoutPost.instance.SendingPostReborn(token: userJWT , parameters: parameterDatas) { result in self.rebornData = result }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
+            self.present(rvc, animated: true)
+        }
+    }
+    
+    @IBAction func deleteUserButton(_ sender: Any) {
+        let parameterDatas = UserDeleteModel(userIdx: userIdx, status: "DELETE")
+        APIHandlerUserDeletePost.instance.SendingPostReborn(token: userJWT , parameters: parameterDatas) { result in self.rebornDatas = result }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
+            rvc.modalPresentationStyle = .fullScreen
+            self.present(rvc, animated: true, completion: nil)
+
+        }
+    }
+    
+    
     
 }
 
