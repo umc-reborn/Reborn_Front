@@ -55,6 +55,9 @@ class RebornHistoryDetailViewController: UIViewController {
         self.contentView.layer.cornerRadius = 10
         self.productImg.layer.cornerRadius = 10
         
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationItem.title = "리본 히스토리"
+        
         getRebornHistoryDetail { result in
             switch result {
             case .success(let response):

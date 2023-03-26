@@ -185,8 +185,8 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
                         self.EditBirthTextField.text = storeDatas.userBirthDate
                         self.EditAddressTextField.text = storeDatas.userAddress
                         // userLikes
+                        self.selectCategory = storeDatas.userLikes
                         print("데이타 \(storeDatas)")
-                        
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -243,7 +243,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button1")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -283,7 +283,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button2")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -323,7 +323,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button3")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -363,7 +363,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button4")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -402,7 +402,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button5")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -422,12 +422,13 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     
     
     @IBAction func FindAddressButton(_ sender: UIButton) {
-        guard let svc3 = self.storyboard?.instantiateViewController(identifier: "UserAddressViewController") as? UserAddressViewController else {
-                    return
-                }
-        svc3.delegate = self
-        
-        self.present(svc3, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+            guard let svc3 = self.storyboard?.instantiateViewController(identifier: "UserAddressViewController") as? UserAddressViewController else {
+                return
+            }
+            svc3.delegate = self
+            self.present(svc3, animated: true)
+        }
     }
     
     @IBAction func UploadImageButton(_ sender: Any) {

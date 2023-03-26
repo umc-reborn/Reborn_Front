@@ -68,7 +68,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         userImage.layer.cornerRadius = self.userImage.frame.size.height / 2
         userImage.layer.masksToBounds = true
         userImage.clipsToBounds = true
-        self.MyRebornTableView.rowHeight = 64;
+        self.MyRebornTableView.rowHeight = 56;
         self.MyRebornTableView.layer.cornerRadius = 10
         self.navigationItem.title = "마이리본"
         self.navigationItem.backButtonDisplayMode = .minimal
