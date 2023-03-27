@@ -92,6 +92,7 @@ extension RecruitedRebronViewController: UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecruitedShopCell", for: indexPath) as! RecruitedShopCollectionViewCell
         
         cell.shopImage.layer.cornerRadius = 10
+        cell.shopImage.clipsToBounds = true
         cell.layer.borderWidth = 0
         
         let likeshopData = likeshopDatas[indexPath.row]
