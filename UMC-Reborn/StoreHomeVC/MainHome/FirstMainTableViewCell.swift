@@ -101,9 +101,12 @@ extension FirstMainViewController: UITableViewDelegate, UITableViewDataSource, C
         
         var timeSecond = 10 {
             willSet(newValue) {
-                var hours = newValue / 3600
-                var minutes = (newValue % 3600) / 60
-                var seconds = (newValue % 3600) % 60
+                let hours = newValue / 3600
+                if (hours == 24) {
+                    let hours = 0
+                }
+                let minutes = (newValue % 3600) / 60
+                let seconds = (newValue % 3600) % 60
                 if ((hours < 10) && (minutes < 10)) {
                     cell.limitLabel.text = "0\(hours):0\(minutes) 이후 자동취소"
                 } else if ((hours < 10) && (minutes >= 10)) {

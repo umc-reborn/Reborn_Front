@@ -49,6 +49,7 @@ extension NewShopViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         cell.backgroundColor = .clear
         cell.shopImage.layer.cornerRadius = 10
+        cell.shopImage.clipsToBounds = true
         cell.layer.borderWidth = 0
         
         let newData = newDatas[indexPath.row]

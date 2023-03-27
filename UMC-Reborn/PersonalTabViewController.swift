@@ -20,26 +20,18 @@ class PersonalTabViewController: UITabBarController {
         tabBar.unselectedItemTintColor = UIColor.black
         tabBar.backgroundColor = .white
         tabBar.layer.cornerRadius = 30
-        tabBar.layer.masksToBounds = true
+        tabBar.layer.masksToBounds = false
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
         UserDefaults.standard.set(userIdx, forKey: "userIndex")
         UserDefaults.standard.set(userNickname, forKey:"userNickName")
+        setupStyle()
     }
-
-
-
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupStyle() {
+        UITabBar.clearShadow()
+        tabBar.layer.applyShadow(color: .gray, alpha: 0.3, x: 0, y: 0, blur: 12)
     }
-    */
-
 }

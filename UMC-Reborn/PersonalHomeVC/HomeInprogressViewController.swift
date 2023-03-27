@@ -48,6 +48,12 @@ class HomeInprogressViewController: UIViewController {
         InprogressResult()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        InprogressResult()
+    }
+    
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             
@@ -65,7 +71,7 @@ class HomeInprogressViewController: UIViewController {
                 }
                 self.rebornDatas = response.result
                 self.defaultView.isHidden = true
-                self.defaultView.backgroundColor = .clear
+//                self.defaultView.backgroundColor = .clear
                 
                 if self.rebornDatas.isEmpty {
                     self.defaultView.isHidden = false
@@ -101,7 +107,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RebornCell", for: indexPath) as! InprogressCollectionViewCell
         
-        cell.backgroundColor = .white
+        cell.backgroundColor = .clear
         cell.layer.cornerRadius = 20
         cell.layer.borderWidth = 0
         cell.layer.borderColor = UIColor.black.cgColor
@@ -109,6 +115,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
         cell.layer.shadowOpacity = 0.15
         cell.layer.shadowRadius = 10
+        cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
         cell.layer.masksToBounds = false
         
