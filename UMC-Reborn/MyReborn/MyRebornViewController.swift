@@ -71,7 +71,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
             self.userJWT = UserDefaults.standard.string(forKey: "userJwt") ?? ""
         }
         
@@ -95,7 +95,9 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
                 self.MyRebornTableView.layer.masksToBounds = false
         self.MyRebornTableView.layer.cornerRadius = 8;
 
-        userResult()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            self.userResult()
+        }
     }
     
     func userResult() {
