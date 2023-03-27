@@ -27,7 +27,10 @@ class PersonalHomeViewController: UIViewController {
 //    let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
     override func viewDidLoad() {
         super.viewDidLoad()
-        nickNameLabel.text = "\(username!)"
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.nickNameLabel.text = "\(self.username ?? "")"
+        }
         contentView.addSubview(floatingButton)
         
         NSLayoutConstraint.activate([
