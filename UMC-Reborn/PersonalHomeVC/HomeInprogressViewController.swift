@@ -126,7 +126,6 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         cell.ongoingCategory.text = rebornData.category
         cell.ongoingProduct.text = rebornData.productName
         
-        
         let timeLimit = rebornData.productLimitTime
         let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
         let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
@@ -138,21 +137,21 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         let wholeSeconds = hourTimer + minuteTimer
         cell.timeSecond = wholeSeconds
         
-        let entity = NSEntityDescription.entity(forEntityName: "Entity", in: self.container.viewContext)
-        let person = NSManagedObject(entity: entity!, insertInto: self.container.viewContext)
-        cell.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            cell.timeSecond -= 1
-            person.setValue(cell.timeSecond, forKey: "seconds")
-            do {
-                try self.container.viewContext.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-            if (cell.timeSecond == 0) {
-                timer.invalidate()
-            }
-        }
-        RunLoop.current.add(cell.timer!, forMode: .common)
+//        let entity = NSEntityDescription.entity(forEntityName: "Entity", in: self.container.viewContext)
+//        let person = NSManagedObject(entity: entity!, insertInto: self.container.viewContext)
+//        cell.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+//            cell.timeSecond -= 1
+//            person.setValue(cell.timeSecond, forKey: "seconds")
+//            do {
+//                try self.container.viewContext.save()
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//            if (cell.timeSecond == 0) {
+//                cell.timer?.invalidate()
+//            }
+//        }
+//        RunLoop.current.add(cell.timer!, forMode: .common)
         
         cell.index = indexPath.row
         cell.delegate = self

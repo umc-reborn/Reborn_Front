@@ -39,16 +39,15 @@ class PopularShopViewController: TabmanViewController {
         viewControllers.append(fourthVC)
         viewControllers.append(fifthVC)
         
+        
         tabView.backgroundColor = .white
 //        tabView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
-        tabView.layer.cornerRadius = 20
-        tabView.layer.borderWidth = 0
-        tabView.layer.borderColor = UIColor.black.cgColor
-        tabView.layer.shadowColor = UIColor.black.cgColor
-        tabView.layer.shadowOffset = CGSize(width: 0, height: -5)
-        tabView.layer.shadowOpacity = 0.05
-        tabView.layer.shadowRadius = 10
+        tabView.layer.cornerRadius = 10
+        tabView.layer.shadowOffset = CGSize(width: 5, height: -5)
+        tabView.layer.shadowOpacity = 0.15
+        tabView.layer.shadowRadius = 8
         tabView.layer.masksToBounds = false
+        tabView.clipsToBounds = true
         
         
         self.dataSource = self
@@ -77,13 +76,13 @@ class PopularShopViewController: TabmanViewController {
         func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
             switch index {
             case 0:
-                return TMBarItem(title: "카페 / 디저트")
+                return TMBarItem(title: "카페·디저트")
             case 1:
                 return TMBarItem(title: "반찬")
             case 2:
                 return TMBarItem(title: "패션")
             case 3:
-                return TMBarItem(title: "편의 생활")
+                return TMBarItem(title: "편의·생활")
             case 4:
                 return TMBarItem(title: "기타")
             default:

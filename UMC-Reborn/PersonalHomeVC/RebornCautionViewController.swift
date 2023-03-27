@@ -37,7 +37,10 @@ class RebornCautionViewController: UIViewController {
         yesButton.layer.cornerRadius = 0
         yesButton.layer.borderWidth = 1
         
-        TimeLabel.text = "*\(limitTime) 내 방문 필수 이후 자동 취소"
+        let minuteCLimit1 = limitTime[String.Index(encodedOffset: 3)]
+        let minuteCLimit2 = limitTime[String.Index(encodedOffset: 4)]
+        
+        TimeLabel.text = "*\(minuteCLimit1)\(minuteCLimit2)분 내 방문 필수, 이후 자동 취소"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
