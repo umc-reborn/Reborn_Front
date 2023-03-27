@@ -16,7 +16,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     
     let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
     
-    let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
+    var userJWT : String = ""
     
     var getUserName: String = ""
     
@@ -70,6 +70,10 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.userJWT = UserDefaults.standard.string(forKey: "userJwt") ?? ""
+        }
         
         MyRebornTableView.delegate = self
         MyRebornTableView.dataSource = self
