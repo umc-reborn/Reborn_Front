@@ -48,6 +48,12 @@ class HomeInprogressViewController: UIViewController {
         InprogressResult()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        InprogressResult()
+    }
+    
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             
