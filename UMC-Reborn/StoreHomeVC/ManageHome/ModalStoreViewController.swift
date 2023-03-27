@@ -44,7 +44,7 @@ class ModalStoreViewController: UIViewController {
         rebornResult()
         print("리본 데이터의 수는? \(rebornDatas.count)")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             if (self.rebornDatas.count > 0) {
                 let fullText = self.modalButton.titleLabel?.text
                 let attributedString = NSMutableAttributedString(string: fullText ?? "")
