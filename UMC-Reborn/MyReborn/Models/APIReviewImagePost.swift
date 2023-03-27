@@ -47,6 +47,6 @@ struct ReviewImageresultModel: Codable {
     var isSuccess: Bool
     var code: Int
     var message: String
-    var result: String?
+    var result: String
 }
 

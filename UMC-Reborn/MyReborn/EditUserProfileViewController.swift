@@ -13,6 +13,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
     
     var selectCategory: String = ""
+    var storeImageUrl: String =  "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/44f3e518-814e-4ce1-b104-8afc86843fbd.jpg"
 
     let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
     let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
@@ -39,7 +40,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         // 📌 API 수정되면 img URL 변경
         
         isSelectedCategory()
-        let parameterDatas = EditUserInfoModel(userImg:  self.imageUrl.result ?? "", userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: selectCategory ?? "")
+        let parameterDatas = EditUserInfoModel(userImg:  storeImageUrl, userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: selectCategory ?? "")
         APIHandlerUserInfoPost.instance.SendingPostReborn(token: userJWT, parameters: parameterDatas) { result in self.rebornData = result }
         print("회원정보수정 결과는 \(self.rebornData)")
         
@@ -184,8 +185,8 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
                         self.EditBirthTextField.text = storeDatas.userBirthDate
                         self.EditAddressTextField.text = storeDatas.userAddress
                         // userLikes
+                        self.selectCategory = storeDatas.userLikes
                         print("데이타 \(storeDatas)")
-                        
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -242,7 +243,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button1")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -282,7 +283,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button2")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -322,7 +323,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button3")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -362,7 +363,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button4")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -401,7 +402,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button5")
-        titleAttr.font = .systemFont(ofSize: 13.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -421,12 +422,13 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     
     
     @IBAction func FindAddressButton(_ sender: UIButton) {
-        guard let svc3 = self.storyboard?.instantiateViewController(identifier: "UserAddressViewController") as? UserAddressViewController else {
-                    return
-                }
-        svc3.delegate = self
-        
-        self.present(svc3, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+            guard let svc3 = self.storyboard?.instantiateViewController(identifier: "UserAddressViewController") as? UserAddressViewController else {
+                return
+            }
+            svc3.delegate = self
+            self.present(svc3, animated: true)
+        }
     }
     
     @IBAction func UploadImageButton(_ sender: Any) {
@@ -440,6 +442,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
             userProfileImage?.image = image
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
                 DiaryPost.instance.uploadDiary(file: self.userProfileImage.image!, url: self.serverURL) { result in self.imageUrl = result }
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                    self.storeImageUrl = self.imageUrl.result
+                }
             }
         }
         
