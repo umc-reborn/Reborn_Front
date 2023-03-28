@@ -1102,7 +1102,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㆍ표기된 섭취 권장일을 꼭 준수해주시길 바라며, 폐기 품목에 대한 무료나눔이므로 섭취 후 발생하는 건강상의 문제에 대해 가게는 법적 책임이 없음을 알립니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQf-cy-cV3">
-                                        <rect key="frame" x="16.333333333333332" y="118" width="279.66666666666663" height="40"/>
+                                        <rect key="frame" x="16.333333333333343" y="118" width="279.66666666666663" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="279.67000000000002" id="4wu-vc-YSi"/>
                                             <constraint firstAttribute="height" constant="40" id="aCh-Hg-gZ9"/>
@@ -1205,7 +1205,6 @@
                                                 <rect key="frame" x="26" y="317" width="338" height="54"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="4HD-MK-kg6"/>
-                                                    <constraint firstAttribute="width" constant="338" id="hqg-zQ-rQ9"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1379,11 +1378,11 @@
                                             <constraint firstItem="zu9-69-Nk1" firstAttribute="top" secondItem="VdB-rE-y18" secondAttribute="bottom" constant="10" id="Un0-pn-n2w"/>
                                             <constraint firstItem="1Tz-ZZ-MMh" firstAttribute="leading" secondItem="R7n-bB-OJb" secondAttribute="leading" constant="30" id="WX3-2R-toF"/>
                                             <constraint firstItem="lhF-Av-YJJ" firstAttribute="leading" secondItem="R7n-bB-OJb" secondAttribute="leading" id="XU5-B1-4B6"/>
+                                            <constraint firstAttribute="trailing" secondItem="gM2-DI-eaq" secondAttribute="trailing" constant="23.670000000000002" id="YdZ-0o-uU7"/>
                                             <constraint firstItem="FGF-Nb-Fqf" firstAttribute="top" secondItem="56W-Db-0qg" secondAttribute="bottom" constant="25.5" id="boC-rS-xVH"/>
                                             <constraint firstAttribute="trailing" secondItem="lhF-Av-YJJ" secondAttribute="trailing" id="e36-AN-gm7"/>
                                             <constraint firstItem="Cqq-nK-IVA" firstAttribute="top" secondItem="VdB-rE-y18" secondAttribute="bottom" constant="7.5" id="e40-Ka-HHT"/>
                                             <constraint firstItem="lhF-Av-YJJ" firstAttribute="top" secondItem="Cqq-nK-IVA" secondAttribute="bottom" constant="33.5" id="ezx-Yf-DUT"/>
-                                            <constraint firstItem="CzA-PD-IIX" firstAttribute="leading" secondItem="y25-a5-S4T" secondAttribute="trailing" constant="75" id="ffq-zS-bTX"/>
                                             <constraint firstItem="gM2-DI-eaq" firstAttribute="leading" secondItem="CzA-PD-IIX" secondAttribute="trailing" id="gAV-rL-57q"/>
                                             <constraint firstItem="rIz-y8-uYf" firstAttribute="top" secondItem="VdB-rE-y18" secondAttribute="bottom" constant="7.5" id="gdm-wF-dZO"/>
                                             <constraint firstItem="s82-9G-CBB" firstAttribute="top" secondItem="56W-Db-0qg" secondAttribute="bottom" constant="26.5" id="l2c-nZ-YUa"/>
@@ -1405,6 +1404,7 @@
                                     <constraint firstItem="R7n-bB-OJb" firstAttribute="height" secondItem="XzU-rV-cWZ" secondAttribute="height" priority="250" id="71i-Wy-h1X"/>
                                     <constraint firstItem="R7n-bB-OJb" firstAttribute="bottom" secondItem="xtY-qW-ZJo" secondAttribute="bottom" id="EyR-es-dCz"/>
                                     <constraint firstItem="R7n-bB-OJb" firstAttribute="trailing" secondItem="xtY-qW-ZJo" secondAttribute="trailing" id="NPB-OQ-7gv"/>
+                                    <constraint firstItem="R7n-bB-OJb" firstAttribute="width" secondItem="XzU-rV-cWZ" secondAttribute="width" id="TGR-yg-xyJ"/>
                                     <constraint firstItem="R7n-bB-OJb" firstAttribute="leading" secondItem="xtY-qW-ZJo" secondAttribute="leading" id="wKB-Yj-jsC"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="xtY-qW-ZJo"/>
