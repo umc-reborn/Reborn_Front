@@ -43,9 +43,9 @@ class PopularShopViewController: TabmanViewController {
         tabView.backgroundColor = .white
 //        tabView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         tabView.layer.cornerRadius = 10
-        tabView.layer.shadowOffset = CGSize(width: 5, height: -5)
-        tabView.layer.shadowOpacity = 0.15
-        tabView.layer.shadowRadius = 8
+        tabView.layer.shadowOffset = CGSize(width: 5, height: 10)
+        tabView.layer.shadowOpacity = 0.1
+        tabView.layer.shadowRadius = 10
         tabView.layer.masksToBounds = false
         tabView.clipsToBounds = true
         
