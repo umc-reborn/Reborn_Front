@@ -7,8 +7,20 @@
 
 import UIKit
 
+extension Id_PassWordViewController: UITextFieldDelegate {
 
-class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // TextField 비활성화
+        return true
+    }
+}
+
+class Id_PassWordViewController: UIViewController,UITextViewDelegate {
     
     //API
     var apple1 : String = "" // ad 광고
@@ -38,7 +50,7 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     @IBOutlet var secondPwLabel: UILabel! // 두 번째 비밀번호 경고문구
     
-    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,6 +174,11 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
 //        setPwTextField.addTarget(self, action: #selector(equalPassWord), for: .editingChanged)
 //        doubleCheckTextField.addTarget(self, action: #selector(equalPassWord), for: .editingChanged)
 
+        // 키보드 내려가게
+//        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//                self.view.endEditing(true)
+        
+        
         
     }
     
@@ -332,6 +349,6 @@ class Id_PassWordViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         
     }
-    
+   
     
 }
