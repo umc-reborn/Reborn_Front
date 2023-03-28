@@ -10,6 +10,7 @@ import UIKit
 class RebornCautionViewController: UIViewController {
     
     var rebornId : Int = 0
+    var limitTime: String = ""
     
     let rebornCaution = UserDefaults.standard.integer(forKey: "userIndex")
     
@@ -20,6 +21,8 @@ class RebornCautionViewController: UIViewController {
     @IBOutlet var cautionView: UIView!
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var yesButton: UIButton!
+    @IBOutlet var TimeLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,11 @@ class RebornCautionViewController: UIViewController {
         cancelButton.layer.borderColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1).cgColor
         yesButton.layer.cornerRadius = 0
         yesButton.layer.borderWidth = 1
+        
+        let minuteCLimit1 = limitTime[String.Index(encodedOffset: 3)]
+        let minuteCLimit2 = limitTime[String.Index(encodedOffset: 4)]
+        
+        TimeLabel.text = "*\(minuteCLimit1)\(minuteCLimit2)분 내 방문 필수, 이후 자동 취소"
     }
     
     override func viewWillDisappear(_ animated: Bool) {

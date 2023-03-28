@@ -89,10 +89,10 @@ class RebornHistoryDetailViewController: UIViewController {
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
-            
-            self.timerStart()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+//
+//            self.timerStart()
+//        }
     }
 
     func getData() {

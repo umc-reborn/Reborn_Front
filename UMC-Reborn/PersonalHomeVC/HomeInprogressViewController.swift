@@ -126,7 +126,6 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         cell.ongoingCategory.text = rebornData.category
         cell.ongoingProduct.text = rebornData.productName
         
-        
         let timeLimit = rebornData.productLimitTime
         let hourCLimit1 = timeLimit[String.Index(encodedOffset: 0)].wholeNumberValue ?? 0
         let hourCLimit2 = timeLimit[String.Index(encodedOffset: 1)].wholeNumberValue ?? 0
@@ -149,7 +148,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
                 print(error.localizedDescription)
             }
             if (cell.timeSecond == 0) {
-                timer.invalidate()
+                cell.timer?.invalidate()
             }
         }
         RunLoop.current.add(cell.timer!, forMode: .common)

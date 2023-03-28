@@ -111,6 +111,7 @@ extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource, 
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornCautionViewController") as? RebornCautionViewController else { return }
         let rebornData = rebornDatas[index]
         nextVC.rebornId = rebornData.rebornIdx
+        nextVC.limitTime = rebornData.productLimitTime
         nextVC.modalPresentationStyle = .overFullScreen
         self.present(nextVC, animated: false, completion: nil)
     }

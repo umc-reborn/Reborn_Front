@@ -72,15 +72,12 @@ class PopularTableViewController: UIViewController {
     }
     
     private func addShadow(){
-        backgroundView.backgroundColor = .white
         backgroundView.layer.cornerRadius = 10
-        backgroundView.layer.borderWidth = 0
-        backgroundView.layer.borderColor = UIColor.black.cgColor
-        backgroundView.layer.shadowColor = UIColor.black.cgColor
         backgroundView.layer.shadowOffset = CGSize(width: 2, height: 0)
         backgroundView.layer.shadowOpacity = 0.15
         backgroundView.layer.shadowRadius = 8
-        backgroundView.layer.masksToBounds = true
+//        backgroundView.layer.masksToBounds = true
+        backgroundView.clipsToBounds = true
         backgroundView.layer.masksToBounds = false
     }
 
