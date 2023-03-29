@@ -75,15 +75,11 @@ class JjimViewController: UIViewController {
     }
 
     // View 클릭 시 Action
-    
     @IBAction func dropClicked(_ sender: Any) {
         print("드롭다운")
         dropdown.show()
     }
-    
-//        print("드롭다운")
-//        dropdown.show()
-    
+
     func JjimResult() {
         
         let url = APIConstants.baseURL + "/jjim/\(String(jjimview))"
@@ -116,13 +112,6 @@ class JjimViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
                         print("정렬순: \(self.jjimDatas.count)")
-//                        for i in 0...self.jjimDatas.count-1 {
-//                            if (self.jjimDatas[i].storeIdx == 2) {
-//                                break
-//                            } else {
-//                                
-//                            }
-//                        }
                         let ggg = self.jjimDatas[0].storeIdx
                         print("스토어아이디: \(ggg)")
                     }
@@ -368,9 +357,6 @@ class JjimViewController: UIViewController {
         setDropdown()
         JjimResult()
         JjimCountResult()
-//        JjimPopularResult()
-//        JjimNameResult()
-//        JjimScoreResult()
         JjimButton.isUserInteractionEnabled = true
     }
     
