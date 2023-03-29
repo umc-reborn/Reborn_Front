@@ -358,6 +358,13 @@ class JjimViewController: UIViewController {
         JjimResult()
         JjimCountResult()
         JjimButton.isUserInteractionEnabled = true
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView12"),
+                  object: nil
+                  )
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -365,5 +372,12 @@ class JjimViewController: UIViewController {
         JjimResult()
         JjimCountResult()
         JjimTableView.reloadData()
+    }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.JjimResult()
+            self.JjimCountResult()
+        }
     }
 }
