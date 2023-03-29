@@ -73,6 +73,9 @@ class ModalPersonalViewController: UIViewController {
     
     @IBAction func jjimTapped(_ sender: Any) {
         if (likeButton.image(for: .selected) == UIImage(named: "ic_like")) {
+            let parmeterData = JjimModel(storeIdx: storeIdm1, userIdx: modalperson)
+            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
+            }
             likeButton.isSelected = false
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .normal)
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
