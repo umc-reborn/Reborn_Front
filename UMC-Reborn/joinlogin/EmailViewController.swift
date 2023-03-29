@@ -6,8 +6,23 @@
 //
 import Foundation
 import UIKit
- 
-class EmailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+
+//바탕 터치하거나 리턴 누르면 키보드 내려감, 텍스트필드.delegate = self 필요
+extension EmailViewController: UITextFieldDelegate {
+
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // TextField 비활성화
+        return true
+    }
+}
+
+
+class EmailViewController: UIViewController, UITextViewDelegate {
 
     
     

@@ -1448,7 +1448,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = RX53PD2JKA;
+				DEVELOPMENT_TEAM = NJG454V257;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1479,7 +1479,7 @@
 				);
 				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yelinkim.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
@@ -1498,7 +1498,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = RX53PD2JKA;
+				DEVELOPMENT_TEAM = NJG454V257;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1529,7 +1529,7 @@
 				);
 				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.JKPARK.UMCReborn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yelinkim.UMCReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
