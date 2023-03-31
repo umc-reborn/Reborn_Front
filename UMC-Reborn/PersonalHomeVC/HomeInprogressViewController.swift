@@ -48,12 +48,6 @@ class HomeInprogressViewController: UIViewController {
         InprogressResult()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        InprogressResult()
-    }
-    
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             
@@ -100,7 +94,11 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return rebornDatas.count
+        if (rebornDatas.count > 0) {
+            return 1
+        } else {
+            return rebornDatas.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

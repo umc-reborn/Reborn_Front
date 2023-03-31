@@ -13,8 +13,6 @@ protocol JjimCellDelegate {
 
 class JjimTableViewCell: UITableViewCell {
     
-    
-    
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
@@ -29,7 +27,6 @@ class JjimTableViewCell: UITableViewCell {
         
         foodImage.layer.cornerRadius = 10
         foodImage.clipsToBounds = true
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -44,7 +41,6 @@ class JjimTableViewCell: UITableViewCell {
         JjimButton.setImage(UIImage(named: "ic_like"), for: .normal)
     }
     
-    
     @IBAction func JjimTapped(_ sender: Any) {
         if (JjimButton.image(for: .selected) == UIImage(named: "ic_like")) {
             JjimButton.isSelected = false
@@ -58,7 +54,6 @@ class JjimTableViewCell: UITableViewCell {
             JjimButton.tintColor = .clear
         }
     }
-    
 }
 
 extension JjimViewController: UITableViewDelegate, UITableViewDataSource, JjimCellDelegate {
@@ -67,12 +62,11 @@ extension JjimViewController: UITableViewDelegate, UITableViewDataSource, JjimCe
         let parmeterData = JjimModel(storeIdx: rebornData.storeIdx, userIdx: jjimVC)
         APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornJjimData = result
         }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.JjimResult()
             self.JjimCountResult()
         }
     }
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
             return 1

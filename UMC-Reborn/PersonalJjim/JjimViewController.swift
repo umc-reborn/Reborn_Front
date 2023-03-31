@@ -23,14 +23,11 @@ class JjimViewController: UIViewController {
     
     var jjimDatas: [JjimListModel] = []
     
-    
-
     @IBOutlet weak var JjimCountLabel: UILabel!
     @IBOutlet weak var JjimTableView: UITableView!
     @IBOutlet weak var JjimView: UIView!
     @IBOutlet weak var JjimTextField: UITextField!
     @IBOutlet weak var JjimButton: UIButton!
-    
     
     func initUI() {
         DropDown.appearance().textColor = UIColor.black // 아이템 텍스트 색상
@@ -371,7 +368,6 @@ class JjimViewController: UIViewController {
         self.JjimTextField.text = "   정렬"
         JjimResult()
         JjimCountResult()
-        JjimTableView.reloadData()
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {

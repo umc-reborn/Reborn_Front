@@ -19,10 +19,8 @@ class ModalFirstViewController: UIViewController {
     
     var modalfirst: Int = 0
     
-    
     @IBOutlet var mftableView: UITableView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +36,7 @@ class ModalFirstViewController: UIViewController {
         
         modalfirst = UserDefaults.standard.integer(forKey: "storeid")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
             self.rebornResult()
         }
         
@@ -50,23 +48,14 @@ class ModalFirstViewController: UIViewController {
                   )
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-//            self.rebornResult()
-//        }
-//    }
-    
     @objc func didDismissDetailNotification(_ notification: Notification) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
             
             self.rebornResult()
         }
     }
     
     func rebornResult() {
-        
-//        let text = keyword
-        
         let url = APIConstants.baseURL + "/reborns/store/\(String(modalfirst))/status?status="
         let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
@@ -117,7 +106,7 @@ extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource, 
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return rebornDatas.count
+        return rebornDatas.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -144,15 +133,18 @@ extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource, 
         cell.cautionLabel.text = rebornData.productGuide
         
         if (rebornData.status == "ACTIVE") {
-            cell.timeImage.isHidden = false
-            cell.timeLabel.isHidden = false
-            cell.rebornButton.isHidden = false
-            cell.timeLabel.text = "\(minuteLimit1)\(minuteLimit2)분 내 수령"
+            if (rebornData.productCnt > 0) {
+                cell.timeImage.isHidden = false
+                cell.timeLabel.isHidden = false
+                cell.rebornButton.isHidden = false
+                cell.timeLabel.text = "\(minuteLimit1)\(minuteLimit2)분 내 수령"
+            } else {
+                cell.rebornButton.isEnabled = false
+            }
         } else {
             cell.rebornButton.alpha = 0
             cell.rebornButton.isEnabled = false
             cell.timeImage.isHidden = true
-//            cell.timeImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
             cell.timeLabel.isHidden = true
             cell.rebornButton.isHidden = true
             cell.foodName.translatesAutoresizingMaskIntoConstraints = false
@@ -160,7 +152,6 @@ extension ModalFirstViewController: UITableViewDelegate, UITableViewDataSource, 
             cell.countLabel.translatesAutoresizingMaskIntoConstraints = false
             cell.countLabel.topAnchor.constraint(equalTo: cell.timeLabel.topAnchor, constant: 5).isActive = true
             cell.mfImageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 10.79).isActive = true
-//            cell.limitTimeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
         }
         cell.index = indexPath.section
         cell.delegate = self
