@@ -36,7 +36,7 @@ class InprogressCollectionViewCell: UICollectionViewCell {
             if hours.count == 1 { hours = "0"+hours }
             if minutes.count == 1 { minutes = "0"+minutes }
             if seconds.count == 1 { seconds = "0"+seconds }
-            ongoingtime.text = "\(hours):\(minutes):\(seconds)"
+            ongoingtime.text = "\(minutes):\(seconds) 후 자동취소"
         }
     }
     

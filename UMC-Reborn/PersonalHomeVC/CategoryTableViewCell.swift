@@ -27,6 +27,11 @@ class CategoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        shopImg?.image = nil
+    }
         
     var likeBool: Bool = false {
         willSet(newValue) {
@@ -52,6 +57,5 @@ class CategoryTableViewCell: UITableViewCell {
 //            pullDataAcion()
         }
     }
-    
 }
 

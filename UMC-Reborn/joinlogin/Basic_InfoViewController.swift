@@ -8,7 +8,20 @@ import Foundation
 import UIKit
 import Alamofire
 
-class Basic_InfoViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocolS {
+extension Basic_InfoViewController: UITextFieldDelegate {
+
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // TextField 비활성화
+        return true
+    }
+}
+
+class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProtocolS {
     
     func addressSend(data: String) {
         townTextField.text = data

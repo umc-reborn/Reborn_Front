@@ -13,8 +13,6 @@ protocol JjimCellDelegate {
 
 class JjimTableViewCell: UITableViewCell {
     
-    
-    
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
@@ -29,7 +27,6 @@ class JjimTableViewCell: UITableViewCell {
         
         foodImage.layer.cornerRadius = 10
         foodImage.clipsToBounds = true
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,10 +37,9 @@ class JjimTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        foodImage.image = nil
+        foodImage?.image = nil
         JjimButton.setImage(UIImage(named: "ic_like"), for: .normal)
     }
-    
     
     @IBAction func JjimTapped(_ sender: Any) {
         if (JjimButton.image(for: .selected) == UIImage(named: "ic_like")) {
@@ -58,7 +54,6 @@ class JjimTableViewCell: UITableViewCell {
             JjimButton.tintColor = .clear
         }
     }
-    
 }
 
 extension JjimViewController: UITableViewDelegate, UITableViewDataSource, JjimCellDelegate {
@@ -67,12 +62,11 @@ extension JjimViewController: UITableViewDelegate, UITableViewDataSource, JjimCe
         let parmeterData = JjimModel(storeIdx: rebornData.storeIdx, userIdx: jjimVC)
         APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornJjimData = result
         }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.JjimResult()
             self.JjimCountResult()
         }
     }
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
             return 1
@@ -114,65 +108,14 @@ extension JjimViewController: UITableViewDelegate, UITableViewDataSource, JjimCe
         cell.delegate = self
         
         return cell
-//        } else if (JjimTextField.text == "인기순")  {
-//            JjimTableView.beginUpdates()
-//            print("인기순")
-//            let rebornData2 = jjimPopularDatas[indexPath.row]
-//            let url2 = URL(string: rebornData2.storeImage ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
-//            cell.foodImage.load(url: url2!)
-//            cell.storeName.text = rebornData2.storeName
-//            cell.rateLabel.text = "\(String(rebornData2.storeScore))"
-//            if (rebornData2.storeCategory == "CAFE") {
-//                cell.categoryLabel.text = "카페·디저트"
-//            } else if (rebornData2.storeCategory == "FASHION") {
-//                cell.categoryLabel.text = "패션"
-//            } else if (rebornData2.storeCategory == "SIDEDISH") {
-//                cell.categoryLabel.text = "반찬"
-//            } else if (rebornData2.storeCategory == "LIFE") {
-//                cell.categoryLabel.text = "편의·생활"
-//            } else {
-//                cell.categoryLabel.text = "기타"
-//            }
-//            JjimTableView.endUpdates()
-//            return cell
-//        } else if (JjimTextField.text == "이름순")  {
-//            print("이름순")
-//            let rebornData3 = jjimNameDatas[indexPath.row]
-//            let url3 = URL(string: rebornData3.storeImage ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
-//            cell.foodImage.load(url: url3!)
-//            cell.storeName.text = rebornData3.storeName
-//            cell.rateLabel.text = "\(String(rebornData3.storeScore))"
-//            if (rebornData3.storeCategory == "CAFE") {
-//                cell.categoryLabel.text = "카페·디저트"
-//            } else if (rebornData3.storeCategory == "FASHION") {
-//                cell.categoryLabel.text = "패션"
-//            } else if (rebornData3.storeCategory == "SIDEDISH") {
-//                cell.categoryLabel.text = "반찬"
-//            } else if (rebornData3.storeCategory == "LIFE") {
-//                cell.categoryLabel.text = "편의·생활"
-//            } else {
-//                cell.categoryLabel.text = "기타"
-//            }
-//            return cell
-//        } else {
-//            print("별점순")
-//            let rebornData4 = jjimScoreDatas[indexPath.row]
-//            let url4 = URL(string: rebornData4.storeImage ?? "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/6f9043df-c35f-4f57-9212-cccaa0091315.png")
-//            cell.foodImage.load(url: url4!)
-//            cell.storeName.text = rebornData4.storeName
-//            cell.rateLabel.text = "\(String(rebornData4.storeScore))"
-//            if (rebornData4.storeCategory == "CAFE") {
-//                cell.categoryLabel.text = "카페·디저트"
-//            } else if (rebornData4.storeCategory == "FASHION") {
-//                cell.categoryLabel.text = "패션"
-//            } else if (rebornData4.storeCategory == "SIDEDISH") {
-//                cell.categoryLabel.text = "반찬"
-//            } else if (rebornData4.storeCategory == "LIFE") {
-//                cell.categoryLabel.text = "편의·생활"
-//            } else {
-//                cell.categoryLabel.text = "기타"
-//            }
-//            return cell
-//        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rebornData = jjimDatas[indexPath.row]
+        let goModal = UIStoryboard.init(name: "Personal_Home", bundle: nil)
+        guard let rvc = goModal.instantiateViewController(withIdentifier: "ModalPersonalViewController") as? ModalPersonalViewController else {return}
+        rvc.storeIdm1 = rebornData.storeIdx
+        UserDefaults.standard.set(rebornData.storeIdx, forKey: "storeid")
+        self.present(rvc, animated: true)
     }
 }

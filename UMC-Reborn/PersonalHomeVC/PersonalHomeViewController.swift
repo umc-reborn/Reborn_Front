@@ -11,7 +11,6 @@ import UIKit
 
 class PersonalHomeViewController: UIViewController {
 
-    
     var userText : Int = 0
     var userNickNameText : String = ""
     let username = UserDefaults.standard.string(forKey: "userNickName")
@@ -19,8 +18,12 @@ class PersonalHomeViewController: UIViewController {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var helloLabel: UILabel!
+    @IBOutlet var nimLabel: UILabel!
     
     let button = UIButton(type: .system)
+    
+    var rebornDatas: [InprogressResponse] = []
    
 //    let userNickName = UserDefaults.standard.integer(forKey: "userNickName")
     // var userid : String = "1"
@@ -29,8 +32,9 @@ class PersonalHomeViewController: UIViewController {
         super.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-            self.nickNameLabel.text = "\(self.username ?? "")"
+            self.InprogressResult()
         }
+        
         contentView.addSubview(floatingButton)
         
         NSLayoutConstraint.activate([
@@ -39,6 +43,19 @@ class PersonalHomeViewController: UIViewController {
         floatingButton.bottomAnchor.constraint(equalTo: scrollView.frameLayoutGuide.bottomAnchor, constant: -20),
         floatingButton.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -10)
         ])
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView10"),
+                  object: nil
+                  )
+    }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.InprogressResult()
+        }
     }
 
     let floatingButton: UIButton = {
@@ -67,5 +84,33 @@ class PersonalHomeViewController: UIViewController {
         MapVC.modalPresentationStyle = .automatic
         
         self.present(MapVC, animated: true, completion: nil)
+    }
+    
+    func InprogressResult() {
+        InprogressService.shared.getInprogress { result in
+            switch result {
+            case .success(let response):
+                //                        dump(response)
+                guard let response = response as? InprogressModel else {
+                    break
+                }
+                self.rebornDatas = response.result
+//                self.defaultView.backgroundColor = .clear
+                print("에러")
+                
+                if (self.rebornDatas.count > 0) {
+                    self.nickNameLabel.text = "\(self.username ?? "")"
+                    self.nimLabel.text = "님의"
+                    self.helloLabel.text = "진행 중인 리본 입니다."
+                } else {
+                    self.nickNameLabel.text = "\(self.username ?? "")"
+                    self.nimLabel.text = "님"
+                    self.helloLabel.text = "안녕하세요!"
+                }
+            default:
+                break
+            }
+            print("뭐야")
+        }
     }
 }

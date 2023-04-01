@@ -138,9 +138,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="p_home" width="23" height="23"/>
-        <image name="p_jjim" width="23" height="21"/>
-        <image name="p_my" width="23" height="22"/>
-        <image name="p_search" width="23" height="23"/>
+        <image name="p_home" width="20" height="20"/>
+        <image name="p_jjim" width="20" height="18.5"/>
+        <image name="p_my" width="20" height="19"/>
+        <image name="p_search" width="20" height="20"/>
     </resources>
 </document>

@@ -14,8 +14,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet var titleLabel: UILabel!
-    let username = UserDefaults.standard.string(forKey: "userNickName")
-    
+
+    var username : String = ""
     private var recentSearchKeywordList: [String] = []
     var willLikeDatas: [LikeShopsponse] = []
     
@@ -25,10 +25,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         configure()
         searchBar.delegate = self
         
-        
+        username = UserDefaults.standard.string(forKey: "userNickName") ?? ""
         self.view.backgroundColor = UIColor(named: "Background")
         self.latestCV.backgroundColor = UIColor(named: "Background")
-        titleLabel.text = "\(username!)"
+        titleLabel.text = "\(username)"
         
         WillLikeShopService.shared.getLikeShop{ result in
                     switch result {
