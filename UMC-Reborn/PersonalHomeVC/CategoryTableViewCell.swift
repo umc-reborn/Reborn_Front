@@ -30,7 +30,7 @@ class CategoryTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        shopImg.image = nil
+        shopImg?.image = nil
     }
         
     var likeBool: Bool = false {
