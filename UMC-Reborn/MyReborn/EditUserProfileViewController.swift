@@ -253,7 +253,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button1")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -264,7 +264,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         view.addSubview(button2)
         button2.translatesAutoresizingMaskIntoConstraints = false
         button2.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
-        button2.leadingAnchor.constraint(equalTo: self.button1.trailingAnchor, constant: 8).isActive = true
+        button2.leadingAnchor.constraint(equalTo: self.button1.trailingAnchor, constant: 4).isActive = true
         
         button2.changesSelectionAsPrimaryAction = true
 
@@ -293,7 +293,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button2")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -304,7 +304,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         view.addSubview(button3)
         button3.translatesAutoresizingMaskIntoConstraints = false
         button3.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
-        button3.leadingAnchor.constraint(equalTo: self.button2.trailingAnchor, constant: 8).isActive = true
+        button3.leadingAnchor.constraint(equalTo: self.button2.trailingAnchor, constant: 4).isActive = true
         
         button3.changesSelectionAsPrimaryAction = true
 
@@ -333,7 +333,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button3")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -344,7 +344,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         view.addSubview(button4)
         button4.translatesAutoresizingMaskIntoConstraints = false
         button4.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
-        button4.leadingAnchor.constraint(equalTo: self.button3.trailingAnchor, constant: 8).isActive = true
+        button4.leadingAnchor.constraint(equalTo: self.button3.trailingAnchor, constant: 4).isActive = true
         
         button4.changesSelectionAsPrimaryAction = true
 
@@ -373,7 +373,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button4")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -384,7 +384,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         view.addSubview(button5)
         button5.translatesAutoresizingMaskIntoConstraints = false
         button5.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
-        button5.leadingAnchor.constraint(equalTo: self.button4.trailingAnchor, constant: 8).isActive = true
+        button5.leadingAnchor.constraint(equalTo: self.button4.trailingAnchor, constant: 4).isActive = true
         
         button5.changesSelectionAsPrimaryAction = true
 
@@ -412,7 +412,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button5")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
