@@ -171,7 +171,6 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             cell.layer.cornerRadius = 10
             cell.layer.borderWidth = 0
             cell.keyword.sizeToFit()
-            //        cell.backgroundColor =
             cell.deleteBtn.tag = indexPath.row
                     cell.deleteBtn.addTarget(self, action: #selector(deletePreview(sender:)), for: .touchUpInside)
             
