@@ -36,12 +36,6 @@ class ModalFirstTableViewCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-//    @IBAction func cautionButton(_ sender: Any) {
-//        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornCautionViewController") as? RebornCautionViewController else { return }
-//        nextVC.modalPresentationStyle = .overCurrentContext
-//        self.present(nextVC, animated: true, completion: nil)
-//    }
-    
     @IBAction func rebornButtonTapped(_ sender: Any) {
         self.delegate?.rebornButtonTapped(index: index)
     }

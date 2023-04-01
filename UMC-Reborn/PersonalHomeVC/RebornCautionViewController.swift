@@ -16,13 +16,10 @@ class RebornCautionViewController: UIViewController {
     
     var rebornData: CreateRebornresultModel!
     
-    let DidDismissEditRebornViewController: Notification.Name = Notification.Name("DidDismissEditRebornViewController")
-    
     @IBOutlet var cautionView: UIView!
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var TimeLabel: UILabel!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +43,6 @@ class RebornCautionViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView10"), object: nil, userInfo: nil)
-        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView16"), object: nil, userInfo: nil)
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -56,6 +52,7 @@ class RebornCautionViewController: UIViewController {
     @IBAction func yesTapped(_ sender: Any) {
         let parameterDatas = CreateRebornModel(userIdx: rebornCaution, rebornIdx: rebornId)
         APIHandlerCreateRebornPost.instance.SendingPostReborn(parameters: parameterDatas) { result in self.rebornData = result }
+        NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView16"), object: nil, userInfo: nil)
         self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
 }

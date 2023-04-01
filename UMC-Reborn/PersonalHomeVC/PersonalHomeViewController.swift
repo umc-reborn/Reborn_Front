@@ -34,6 +34,7 @@ class PersonalHomeViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.InprogressResult()
         }
+        
         contentView.addSubview(floatingButton)
         
         NSLayoutConstraint.activate([
@@ -53,7 +54,6 @@ class PersonalHomeViewController: UIViewController {
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-            
             self.InprogressResult()
         }
     }
@@ -96,16 +96,18 @@ class PersonalHomeViewController: UIViewController {
                 }
                 self.rebornDatas = response.result
 //                self.defaultView.backgroundColor = .clear
+                print("에러")
                 
                 if (self.rebornDatas.count > 0) {
                     self.nickNameLabel.text = "\(self.username ?? "")"
                     self.nimLabel.text = "님의"
                     self.helloLabel.text = "진행 중인 리본 입니다."
+                } else {
+                    self.nickNameLabel.text = "\(self.username ?? "")"
+                    self.nimLabel.text = "님"
+                    self.helloLabel.text = "안녕하세요!"
                 }
             default:
-                self.nickNameLabel.text = "\(self.username ?? "")"
-                self.nimLabel.text = "님"
-                self.helloLabel.text = "안녕하세요!"
                 break
             }
             print("뭐야")
