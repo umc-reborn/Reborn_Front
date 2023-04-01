@@ -36,7 +36,7 @@ class ModalFirstViewController: UIViewController {
         
         modalfirst = UserDefaults.standard.integer(forKey: "storeid")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
             self.rebornResult()
         }
         

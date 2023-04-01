@@ -186,9 +186,7 @@ class StoreManageViewController: UIViewController {
         let parameterDatas = LogoutModel(jwt: shopToken ?? "")
         APIHandlerLogoutPost.instance.SendingPostReborn(token: shopToken ?? "", parameters: parameterDatas) { result in self.rebornData = result }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
-            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
-            self.present(rvc, animated: true)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -196,9 +194,7 @@ class StoreManageViewController: UIViewController {
         let parameterDatas = UserDeleteModel(userIdx: storeManage, status: "DELETE")
         APIHandlerUserDeletePost.instance.SendingPostReborn(token: shopToken ?? "", parameters: parameterDatas) { result in self.rebornDatas = result }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
-            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
-            self.present(rvc, animated: true, completion: nil)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
 }

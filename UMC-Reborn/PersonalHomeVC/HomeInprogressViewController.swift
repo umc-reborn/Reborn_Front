@@ -41,7 +41,7 @@ class HomeInprogressViewController: UIViewController {
         NotificationCenter.default.addObserver(
                   self,
                   selector: #selector(self.didDismissDetailNotification(_:)),
-                  name: NSNotification.Name("DismissDetailView10"),
+                  name: NSNotification.Name("DismissDetailView16"),
                   object: nil
                   )
         
@@ -134,6 +134,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         
         let wholeSeconds = hourTimer + minuteTimer
         cell.timeSecond = wholeSeconds
+        
         
         let entity = NSEntityDescription.entity(forEntityName: "Entity", in: self.container.viewContext)
         let person = NSManagedObject(entity: entity!, insertInto: self.container.viewContext)

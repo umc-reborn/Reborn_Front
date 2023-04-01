@@ -53,7 +53,7 @@ class ModalPersonalViewController: UIViewController {
         rebornResult()
         JjimResult()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
             if (self.rebornDatas.count > 0) {
                 let fullText = self.modalButton.titleLabel?.text
                 let attributedString = NSMutableAttributedString(string: fullText ?? "")
