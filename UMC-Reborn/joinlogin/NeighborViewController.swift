@@ -7,6 +7,19 @@
 import Foundation
 import UIKit
 
+//바탕 터치하거나 리턴 누르면 키보드 내려감, 텍스트필드.delegate = self 필요
+extension NeighborViewController: UITextFieldDelegate {
+
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // TextField 비활성화
+        return true
+    }
+}
 
 extension UITextField {
   func addLeftPadding1() {
@@ -16,7 +29,7 @@ extension UITextField {
   }
 }
 
-class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class NeighborViewController: UIViewController, UITextViewDelegate {
     
     
     
@@ -66,12 +79,14 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
     var trainData:TrainModel!
     var userText: Int = 0
     var userNickNameText: String = ""
+    var rightHi : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
-        errorMessage.isHidden = true
+//        errorMessage.isHidden = true
+        errorMessage.text = ""
         
         let mygray = UIColor(named: "mygray") // 만들어둔 컬러 쓰려면 선언 먼저
         let mybrown = UIColor(named: "mybrown")
@@ -108,7 +123,7 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
         PassWord.layer.cornerRadius = 4.0
         PassWord.clearButtonMode = .always // 한번에 지우기
         
-        self.LoginButton.setTitle("로그인", for: .normal)
+        LoginButton.setTitle("로그인", for: .normal)
         LoginButton.setTitleColor(.white, for: .normal)
         LoginButton.backgroundColor = .mybrown
         LoginButton.layer.borderWidth = 1.0
@@ -124,39 +139,59 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
         textFieldDidEndEditing(Id)
         textFieldDidBeginEditing(PassWord)
         textFieldDidEndEditing(PassWord)
-        //
         
-        //            Id.addTarget(self, action: #selector(textFieldEdited), for: .editingDidEnd)
-        //            PassWord.addTarget(self, action: #selector(textFieldEdited), for: .editingDidEnd)
+        
+//        Id.addTarget(self, action: #selector(textFieldEdited), for: .editingDidEnd)
+//        PassWord.addTarget(self, action: #selector(textFieldEdited), for: .editingDidEnd)
         LoginButton.addTarget(self, action: #selector(textFieldEdited), for: .touchUpInside)
-        
         
     }
     
     @objc func textFieldEdited(textField: UITextField) {
         
-        if (Id.text!.isEmpty) || (PassWord.text!.isEmpty){
-            errorMessage.isHidden = false
-            errorMessage.text = "아이디 또는 비밀번호를 잘못 입력하셨습니다."
-            //LoginButton.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            if (self.Id.text!.isEmpty) || (self.PassWord.text!.isEmpty){
+                self.errorMessage.isHidden = false
+                self.errorMessage.text = "아이디 또는 비밀번호를 잘못 입력하셨습니다."
+                print("아이디 또는 비밀번호를 잘못 입력하셨습니다.")
+                self.LoginButton.isEnabled = true
+                self.LoginButton.setTitle("로그인", for: .normal)
+                self.LoginButton.setTitleColor(.white, for: .normal)
+                
+            }
+            else if (self.rightHi == ""){
+                self.errorMessage.isHidden = false
+                self.errorMessage.text = "아이디 또는 비밀번호를 잘못 입력하셨습니다."
+                print("아이디 또는 비밀번호를 잘못 입력하셨습니다.")
+                    }
+            else if (self.rightHi == "요청에 성공하였습니다."){
+                self.Id.text = ""
+                self.PassWord.text = ""
+                print("아이디랑 비밀번호 초기화되길 바라며")
+            }
+            else {
+                self.errorMessage.isHidden = true
+                self.errorMessage.text = ""
+                self.LoginButton.setTitle("로그인", for: .normal)
+                self.LoginButton.setTitleColor(.white, for: .normal)
+                //LoginButton.isEnabled = true
+            }
+            
+            UIView.animate(withDuration: 0.1) { // 효과 주기
+                self.view.layoutIfNeeded()
+            }
             
         }
-//        else if (Id.text!.isEmpty) && (PassWord.text!.isEmpty){
-//            errorMessage.isHidden = true
-//            errorMessage.text = ""
-//        }
-        else {
-            errorMessage.isHidden = true
-            errorMessage.text = ""
-            //LoginButton.isEnabled = true
-        }
-        
-        UIView.animate(withDuration: 0.1) { // 효과 주기
-            self.view.layoutIfNeeded()
-        }
-        
     }
     
+//    @objc func textFieldFailed(textField: UITextField) {
+//
+//        if(self.rightHi == 3014){
+//        self.errorMessage.isHidden = false
+//        self.errorMessage.text = "아이디 또는 비밀번호를 잘못 입력하셨습니다."
+//        print("아이디 또는 비밀번호를 잘못 입력하셨습니다.")
+//        }
+//    }
         
         //Id 정규표현식
         //아이디는 2-10자의 영문과 숫자와 일부 특수문자(._-)만 입력 가능
@@ -201,7 +236,12 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
         APINeiLoginPost.instance.SendingPostNLogin(parameters: pparmeterData) { result in self.trainData =  result }
         
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.8) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+            
+            
+            self.rightHi = self.trainData?.message ?? ""
+            
+            print(self.rightHi)
             
             // 화면 넘기기 + 데이터 넘겨주기.
             let something2 = self.trainData?.result
@@ -210,78 +250,21 @@ class NeighborViewController: UIViewController, UITextFieldDelegate, UITextViewD
             guard let jwtResult = something2?.jwt else {return}
             let something3 = UIStoryboard(name: "PersonalTab", bundle: nil)
             guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalTabVC") as? PersonalTabViewController else {return}
-            
-            
+                
+                
             rvc.userIdx = text
             rvc.userNickname = text2
             rvc.jwt = jwtResult
-            
+                
             // 화면이동
             self.present(rvc, animated: true)
-            
+                
             // userDefault - jwt 저장
             UserDefaults.standard.set(jwtResult, forKey: "userJwt")
             
+        
+            }
         }
     }
-}
-        
-
-
-// 방법 1
-//if (trainData.isSuccess == true) {
-// 화면이동
-//navigationController?.pushViewController(rvc, animated: true)
-//            }
-//            else {
-//
-//            }
-
-
-
-
-
-
-
-//let sb = UIStoryboard(name: "", bundle: Bundle.main)
-//sb.instantiateViewController(withIdentifier: "blue")
-
-    
-
-//            guard let userindex = something2?.userIdx else {return}
-//             let myRebornHistory = UIStoryboard.init(name: "MyReborn", bundle: nil)
-//             guard let historyVC = myRebornHistory.instantiateViewController(withIdentifier: "rebornHistoryVC") as? RebornHistoryViewController else { return }
-//             guard let ResultUserIdx = something2?.userIdx else {return}
-//             historyVC.userIdx = ResultUserIdx
-//             print("넘겨주는 userIdx값은 \(historyVC.userIdx)")
-
-             
-             // 화면이동
-             //navigationController?.pushViewController(rvc, animated: true)
-            
-            // 네비게이션 바 숨기기
-            //navigationController?.setNavigationBarHidden(true, animated: false)
-            
-            
-            /*
-            // 화면 넘기기 + 데이터 넘겨주기
-             let something2 = trainData?.result
-             guard let text = something2?.userIdx else {return}
-             guard let text2 = something2?.userNickname else {return}
-             let something3 = UIStoryboard.init(name: "Personal_Home", bundle: nil)
-             guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalHomeVC") as? PersonalHomeViewController else {return}
-             
-
-/*
-// 화면 넘기기 + 데이터 넘겨주기
- let something2 = trainData?.result
- guard let text = something2?.userIdx else {return}
- guard let text2 = something2?.userNickname else {return}
- let something3 = UIStoryboard.init(name: "Personal_Home", bundle: nil)
- guard let rvc = something3.instantiateViewController(withIdentifier: "PersonalHomeVC") as? PersonalHomeViewController else {return}
- 
 
  
- // 화면이동
- navigationController?.pushViewController(rvc, animated: true)
- */*/
