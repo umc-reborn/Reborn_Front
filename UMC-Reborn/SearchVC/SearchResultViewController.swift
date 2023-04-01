@@ -22,7 +22,7 @@ class SearchResultViewController: UIViewController {
     @IBOutlet weak var ResultTableView: UITableView!
     
     let dropdown = DropDown()
-    let itemList = ["이름순","별점순"]
+    let itemList = ["  이름순","  별점순"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class SearchResultViewController: UIViewController {
         let bounds = UIScreen.main.bounds
         let width = bounds.size.width //화면 너비
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: width - 50, height: 0))
-        searchBar.placeholder = "\(text)"
+        searchBar.text = "\(text)"
         searchBar.searchTextField.backgroundColor = UIColor.white
         searchBar.searchTextField.layer.borderColor = UIColor.lightGray.cgColor
         searchBar.searchTextField.layer.borderWidth = 1.0
@@ -75,7 +75,8 @@ class SearchResultViewController: UIViewController {
         dropdown.dismissMode = .automatic
         
         ivIcon.tintColor = UIColor.gray
-        tfInput.text = "정렬"
+        tfInput.text = "   정렬"
+        tfInput.layer.borderWidth = 0
         tfInput.textColor = UIColor.gray
         dropView.layer.cornerRadius = 15
         dropView.layer.borderWidth = 0.5
@@ -98,7 +99,7 @@ class SearchResultViewController: UIViewController {
         dropdown.bottomOffset = CGPoint(x: 0, y: dropView.bounds.height)
         dropdown.selectionAction = { [weak self] (index, item) in
             self!.tfInput.text = item
-            if self!.tfInput.text == "이름순" {
+            if self!.tfInput.text == "  이름순" {
                  print("이름순 정렬")
 //                 self?.getGoalListsortbyAsc()
                 self!.searchDatas.sort{ $0.storeName < $1.storeName }
@@ -108,9 +109,9 @@ class SearchResultViewController: UIViewController {
                  print("별점순 정렬")
 //                 self?.getGoalListsortbyDesc()
                  self!.searchDatas.sort{ $0.storeScore > $1.storeScore }
-//                 DispatchQueue.main.async {
+                 DispatchQueue.main.async {
                      self!.ResultTableView.reloadData()
-//                }
+                }
                  
              }
             
@@ -239,6 +240,16 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 96
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let storyboard: UIStoryboard = UIStoryboard(name: "Personal_Home", bundle: nil)
+        guard let svc1 = storyboard.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
+        svc1.storeIdm1 = searchDatas[indexPath.row].storeIdx
+        UserDefaults.standard.set(searchDatas[indexPath.row].storeIdx, forKey: "storeid")
+        self.present(svc1, animated: true)
+
     }
     
     
