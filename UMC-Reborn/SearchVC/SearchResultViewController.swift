@@ -48,7 +48,7 @@ class SearchResultViewController: UIViewController {
         let bounds = UIScreen.main.bounds
         let width = bounds.size.width //화면 너비
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: width - 50, height: 0))
-        searchBar.placeholder = "\(text)"
+        searchBar.text = "\(text)"
         searchBar.searchTextField.backgroundColor = UIColor.white
         searchBar.searchTextField.layer.borderColor = UIColor.lightGray.cgColor
         searchBar.searchTextField.layer.borderWidth = 1.0
@@ -247,8 +247,6 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         let storyboard: UIStoryboard = UIStoryboard(name: "Personal_Home", bundle: nil)
         guard let svc1 = storyboard.instantiateViewController(identifier: "ModalPersonalViewController") as? ModalPersonalViewController else { return }
         svc1.storeIdm1 = searchDatas[indexPath.row].storeIdx
-        print(searchDatas[indexPath.row].storeIdx)
-        print("&&&&&&&&")
         UserDefaults.standard.set(searchDatas[indexPath.row].storeIdx, forKey: "storeid")
         self.present(svc1, animated: true)
 
