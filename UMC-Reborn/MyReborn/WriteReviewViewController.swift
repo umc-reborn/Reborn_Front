@@ -39,7 +39,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
 //    let stringToNum = self().countLabel.text
 //    let dd = Int(stringToNum)
     
-    lazy var stringToNum = UInt(label.text ?? "")
+    var stringToNum: Int = 0
     
     var Number = 0
     var scoreInt: Int!
@@ -63,7 +63,8 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
         
         let labelText: String = self.label.text!
         
-         scoreInt = Int(labelText)
+//         scoreInt = Int(labelText)!
+        print("scoreInt is \(scoreInt)")
         
         // ======== 이미지뷰 ========
 //        self.imagePickerController.delegate = self
@@ -102,13 +103,9 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
                         }
                     }
                     self.label?.text = String(Int(floatValue))
+        scoreInt = intValue
                 }
-    
-    @IBAction func addReviewButton(_ sender: Any) {
-        print("순수 label 값은 \(label!)")
-        print("형변환한 label 값은 \(stringToNum!)")
-    }
-    
+
 //    func addGestureRecognizer() {
 //        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tappedUIImageView(_gesture:)))
 //        self.AddImageView.addGestureRecognizer(tapGestureRecognizer)
@@ -122,6 +119,8 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     @IBAction func postReviewButton(_ sender: UIButton) {
         
         // TODO: rebornIdx 수정 필요
+        print("순수 label 값은 \(label!)")
+        print("형변환한 label 값은 \(stringToNum)")
 
         let parmeterDatas = postReviewReqModel(userIdx: self.rebornAdd, rebornIdx: self.rebornIdx, reviewScore: scoreInt, reviewComment: self.textField.text ?? "", reviewImage: storeImageUrl ?? "")
         APIMyRebornHandlerPost.instance.SendingPostReview(parameters: parmeterDatas) { result in self.writeRebornData = result }

@@ -11,7 +11,7 @@ import Alamofire
 class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, MySampleProtocol, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
-    
+
     var selectCategory: String = ""
     var storeImageUrl: String =  "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/44f3e518-814e-4ce1-b104-8afc86843fbd.jpg"
 
@@ -50,7 +50,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         // 📌 API 수정되면 img URL 변경
         
         isSelectedCategory()
-        let parameterDatas = EditUserInfoModel(userImg:  storeImageUrl, userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: selectCategory ?? "")
+        let parameterDatas = EditUserInfoModel(userImg: storeImageUrl, userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: selectCategory ?? "")
         APIHandlerUserInfoPost.instance.SendingPostReborn(token: userJWT, parameters: parameterDatas) { result in self.rebornData = result }
         print("회원정보수정 결과는 \(self.rebornData)")
         
@@ -191,6 +191,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
                     DispatchQueue.main.async {
                         let url = URL(string: storeDatas.userImg ?? "")
                         self.userProfileImage.load(url: url!)
+                        self.storeImageUrl = storeDatas.userImg!
                         self.EditNicknameTextField.text = storeDatas.userNickname
                         self.EditBirthTextField.text = storeDatas.userBirthDate
                         self.EditAddressTextField.text = storeDatas.userAddress
