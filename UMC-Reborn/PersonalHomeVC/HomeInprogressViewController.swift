@@ -41,15 +41,9 @@ class HomeInprogressViewController: UIViewController {
         NotificationCenter.default.addObserver(
                   self,
                   selector: #selector(self.didDismissDetailNotification(_:)),
-                  name: NSNotification.Name("DismissDetailView10"),
+                  name: NSNotification.Name("DismissDetailView16"),
                   object: nil
                   )
-        
-        InprogressResult()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         InprogressResult()
     }
@@ -100,7 +94,11 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return rebornDatas.count
+        if (rebornDatas.count > 0) {
+            return 1
+        } else {
+            return rebornDatas.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -136,6 +134,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         
         let wholeSeconds = hourTimer + minuteTimer
         cell.timeSecond = wholeSeconds
+        
         
         let entity = NSEntityDescription.entity(forEntityName: "Entity", in: self.container.viewContext)
         let person = NSManagedObject(entity: entity!, insertInto: self.container.viewContext)

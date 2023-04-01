@@ -34,17 +34,10 @@ class ModalSecondViewController: UIViewController {
         
         modalsecond = UserDefaults.standard.integer(forKey: "storeid")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
             self.reviewResult()
         }
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-//            self.reviewResult()
-//        }
-//    }
-    
 
     func reviewResult() {
         
@@ -104,7 +97,7 @@ class ModalSecondViewController: UIViewController {
 extension ModalSecondViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return reviewDatas.count
+        return reviewDatas.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

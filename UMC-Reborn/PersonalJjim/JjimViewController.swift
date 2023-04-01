@@ -23,14 +23,11 @@ class JjimViewController: UIViewController {
     
     var jjimDatas: [JjimListModel] = []
     
-    
-
     @IBOutlet weak var JjimCountLabel: UILabel!
     @IBOutlet weak var JjimTableView: UITableView!
     @IBOutlet weak var JjimView: UIView!
     @IBOutlet weak var JjimTextField: UITextField!
     @IBOutlet weak var JjimButton: UIButton!
-    
     
     func initUI() {
         DropDown.appearance().textColor = UIColor.black // 아이템 텍스트 색상
@@ -75,15 +72,11 @@ class JjimViewController: UIViewController {
     }
 
     // View 클릭 시 Action
-    
     @IBAction func dropClicked(_ sender: Any) {
         print("드롭다운")
         dropdown.show()
     }
-    
-//        print("드롭다운")
-//        dropdown.show()
-    
+
     func JjimResult() {
         
         let url = APIConstants.baseURL + "/jjim/\(String(jjimview))"
@@ -116,13 +109,6 @@ class JjimViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
                         print("정렬순: \(self.jjimDatas.count)")
-//                        for i in 0...self.jjimDatas.count-1 {
-//                            if (self.jjimDatas[i].storeIdx == 2) {
-//                                break
-//                            } else {
-//                                
-//                            }
-//                        }
                         let ggg = self.jjimDatas[0].storeIdx
                         print("스토어아이디: \(ggg)")
                     }
@@ -368,16 +354,26 @@ class JjimViewController: UIViewController {
         setDropdown()
         JjimResult()
         JjimCountResult()
-//        JjimPopularResult()
-//        JjimNameResult()
-//        JjimScoreResult()
         JjimButton.isUserInteractionEnabled = true
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("DismissDetailView12"),
+                  object: nil
+                  )
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.JjimTextField.text = "   정렬"
         JjimResult()
         JjimCountResult()
-        JjimTableView.reloadData()
+    }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.JjimResult()
+            self.JjimCountResult()
+        }
     }
 }

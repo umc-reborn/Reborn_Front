@@ -21,6 +21,12 @@ class PopularTableViewController: UIViewController {
         
         categoryListTableView.delegate = self
         categoryListTableView.dataSource = self
+        
+        categoryListTableView.separatorStyle = .singleLine
+        categoryListTableView.separatorInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 20)
+        categoryListTableView.separatorInsetReference = .fromAutomaticInsets
+        categoryListTableView.separatorColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+        
         popularstoreAPI()
     }
     // MARK: - API

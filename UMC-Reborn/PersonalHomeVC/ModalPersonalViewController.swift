@@ -53,7 +53,7 @@ class ModalPersonalViewController: UIViewController {
         rebornResult()
         JjimResult()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
             if (self.rebornDatas.count > 0) {
                 let fullText = self.modalButton.titleLabel?.text
                 let attributedString = NSMutableAttributedString(string: fullText ?? "")
@@ -73,6 +73,9 @@ class ModalPersonalViewController: UIViewController {
     
     @IBAction func jjimTapped(_ sender: Any) {
         if (likeButton.image(for: .selected) == UIImage(named: "ic_like")) {
+            let parmeterData = JjimModel(storeIdx: storeIdm1, userIdx: modalperson)
+            APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
+            }
             likeButton.isSelected = false
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .normal)
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
@@ -122,12 +125,14 @@ class ModalPersonalViewController: UIViewController {
                     print(jjimDatas)
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
                         print("정렬순: \(self.jjimDatas.count)")
-                        for i in 0...self.jjimDatas.count-1 {
-                            if (self.jjimDatas[i].storeIdx == self.storeIdm1) {
-                                self.likeButton.setImage(UIImage(named: "ic_like"), for: .normal)
-                                break
-                            } else {
-                                self.likeButton.setImage(UIImage(named: "ic_like_gray"), for: .normal)
+                        if (jjimDatas.count > 0) {
+                            for i in 0...self.jjimDatas.count - 1 {
+                                if (self.jjimDatas[i].storeIdx == self.storeIdm1) {
+                                    self.likeButton.setImage(UIImage(named: "ic_like"), for: .normal)
+                                    break
+                                } else {
+                                    self.likeButton.setImage(UIImage(named: "ic_like_gray"), for: .normal)
+                                }
                             }
                         }
                     }
