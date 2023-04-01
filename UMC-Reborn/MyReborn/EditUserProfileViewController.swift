@@ -35,6 +35,16 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     var imageUrl: ReviewImageresultModel!
     var rebornData: EditUserInfoResultModel!
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // TextField 비활성화
+        return true
+    }
+    
+
     @objc func FinishEditMode() {
         print("버튼 테스트")
         // 📌 API 수정되면 img URL 변경

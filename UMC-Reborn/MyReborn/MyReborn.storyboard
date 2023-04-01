@@ -730,7 +730,7 @@
                                             <constraint firstAttribute="height" constant="54" id="8E4-th-QLt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
