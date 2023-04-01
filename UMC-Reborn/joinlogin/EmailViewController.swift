@@ -223,6 +223,7 @@ class EmailViewController: UIViewController, UITextViewDelegate {
             requestCheckButton.layer.borderColor = UIColor.mygray?.cgColor
             requestCheckButton.setTitleColor(.mygray, for: .normal)
             requestCheckButton.isEnabled = false
+            timer?.invalidate()
             
         }
         else {
