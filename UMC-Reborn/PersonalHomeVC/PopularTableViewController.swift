@@ -98,9 +98,10 @@ extension PopularTableViewController: UITableViewDelegate, UITableViewDataSource
         let cell: CategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PopularListCell", for: indexPath) as! CategoryTableViewCell
         
         let popularshopData = popularshopDatas[indexPath.row]
+        let score = String(describing:popularshopData.storeScore)
         cell.shopnameLabel.text = popularshopData.storeName
         cell.locationLabel.text = popularshopData.storeAddress
-        cell.shopScore.text = String(popularshopData.storeScore)
+        cell.shopScore.text = score
         let url = URL(string: popularshopData.storeImage)
         cell.shopImg.load(url: url!)
         

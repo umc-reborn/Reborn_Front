@@ -189,6 +189,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             let willLikeData = willLikeDatas[indexPath.row]
             shopcell.shopName.text = willLikeData.storeName
             shopcell.shopLocation.text = willLikeData.category
+            shopcell.shopScore.text = String(willLikeData.storeScore)
             let url = URL(string: willLikeData.userImage!)
             shopcell.shopImage.load(url: url!)
             return shopcell
