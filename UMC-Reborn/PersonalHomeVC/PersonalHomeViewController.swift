@@ -14,6 +14,7 @@ class PersonalHomeViewController: UIViewController {
     var userText : Int = 0
     var userNickNameText : String = ""
     let username = UserDefaults.standard.string(forKey: "userNickName")
+    var userJWT : String = ""
 
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
@@ -25,14 +26,12 @@ class PersonalHomeViewController: UIViewController {
     
     var rebornDatas: [InprogressResponse] = []
    
-//    let userNickName = UserDefaults.standard.integer(forKey: "userNickName")
-    // var userid : String = "1"
-//    let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
     override func viewDidLoad() {
         super.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.InprogressResult()
+            self.userJWT = UserDefaults.standard.string(forKey: "userJwt") ?? ""
         }
         
         contentView.addSubview(floatingButton)
@@ -52,12 +51,19 @@ class PersonalHomeViewController: UIViewController {
                   )
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.userResult()
+        }
+    }
+    
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.InprogressResult()
         }
     }
-
+    
     let floatingButton: UIButton = {
         let button = UIButton()
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light)
@@ -86,6 +92,53 @@ class PersonalHomeViewController: UIViewController {
         self.present(MapVC, animated: true, completion: nil)
     }
     
+    func userResult() {
+        
+        let url = APIConstants.baseURL + "/users/inform"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+
+        print("응답하라 \(userJWT)")
+        
+        // Header
+        request.addValue("\(userJWT)", forHTTPHeaderField: "X-ACCESS-TOKEN")
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+            response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let decodedData = try decoder.decode(UserList.self, from: safeData)
+                    let storeDatas = decodedData.result
+                    print(storeDatas)
+                    DispatchQueue.main.async {
+                        self.nickNameLabel.text = "\(storeDatas.userNickname)"
+                    }
+                } catch {
+                    print("error: ", error)
+                }
+            }
+        }.resume()
+    }
+    
     func InprogressResult() {
         InprogressService.shared.getInprogress { result in
             switch result {
@@ -110,7 +163,6 @@ class PersonalHomeViewController: UIViewController {
             default:
                 break
             }
-            print("뭐야")
         }
     }
 }
