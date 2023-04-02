@@ -36,7 +36,7 @@ class ModalFirstViewController: UIViewController {
         
         modalfirst = UserDefaults.standard.integer(forKey: "storeid")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.rebornResult()
         }
         
@@ -49,7 +49,7 @@ class ModalFirstViewController: UIViewController {
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             
             self.rebornResult()
         }

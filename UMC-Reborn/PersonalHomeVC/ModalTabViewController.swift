@@ -15,7 +15,6 @@ class ModalTabViewController: TabmanViewController {
     
     @IBOutlet var tabView: UIView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTab()
@@ -31,7 +30,6 @@ class ModalTabViewController: TabmanViewController {
         tabView.backgroundColor = UIColor(red: 255/255, green: 251/255, blue: 249/255, alpha: 1)
         //        tabView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         tabView.layer.borderWidth = 0
-        
         
         self.dataSource = self
         let bar = TMBar.ButtonBar()
