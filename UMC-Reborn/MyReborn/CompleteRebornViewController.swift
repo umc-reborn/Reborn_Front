@@ -23,12 +23,19 @@ class CompleteRebornViewController:UIViewController {
     @IBOutlet var status: UILabel!
     @IBOutlet var statusImage: UILabel!
     @IBOutlet var changeCode: UILabel!
-    
+    @IBOutlet var backgroundView: UIView!
     
     var apiData: RebornHistoryDetailResponse!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.backgroundView.layer.shadowColor = UIColor.gray.cgColor //색상
+                self.backgroundView.layer.shadowOpacity = 0.1 //alpha값
+                self.backgroundView.layer.shadowRadius = 10 //반경
+                self.backgroundView.layer.shadowOffset = CGSize(width: 0, height: 10) //위치조정
+                self.backgroundView.layer.masksToBounds = false
+        self.backgroundView.layer.cornerRadius = 8;
         
         self.navigationController?.navigationBar.topItem?.title = ""
         
