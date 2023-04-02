@@ -35,12 +35,6 @@ class ModalPersonalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let fullText = modalButton.titleLabel?.text
-//        let attributedString = NSMutableAttributedString(string: fullText ?? "")
-//
-//        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1), range: (fullText! as NSString).range(of: "진행중"))
-//        self.modalButton.setAttributedTitle(attributedString, for: .normal)
-
         modalButton.layer.cornerRadius = 5
         modalButton.layer.borderWidth = 1
         modalButton.layer.borderColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1).cgColor
@@ -53,7 +47,7 @@ class ModalPersonalViewController: UIViewController {
         rebornResult()
         JjimResult()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             if (self.rebornDatas.count > 0) {
                 let fullText = self.modalButton.titleLabel?.text
                 let attributedString = NSMutableAttributedString(string: fullText ?? "")

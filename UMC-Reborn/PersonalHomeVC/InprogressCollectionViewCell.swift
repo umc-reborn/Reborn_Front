@@ -52,16 +52,6 @@ class InprogressCollectionViewCell: UICollectionViewCell {
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-//    func timerStart() {
-//        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-//            self.timeSecond -= 1
-//            if (self.timeSecond == 0) {
-//                timer.invalidate()
-//            }
-//        }
-//        RunLoop.current.add(self.timer!, forMode: .common)
-//    }
-    
     @objc func appMovedToBackground() {
         print("App moved to background!")
             timeWhenGoBackground = Date()

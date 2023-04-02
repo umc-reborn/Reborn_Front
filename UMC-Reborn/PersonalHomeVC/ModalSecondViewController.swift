@@ -34,7 +34,7 @@ class ModalSecondViewController: UIViewController {
         
         modalsecond = UserDefaults.standard.integer(forKey: "storeid")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.reviewResult()
         }
     }
