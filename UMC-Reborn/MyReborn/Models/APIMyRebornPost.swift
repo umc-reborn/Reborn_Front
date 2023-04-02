@@ -53,7 +53,7 @@ struct postReviewReqResultModel: Codable {
     var isSuccess:Bool
     var code:Int
     var message:String
-    var result: RebornResult
+    var result: postReviewReqResult
 }
 
 struct postReviewReqResult: Codable {

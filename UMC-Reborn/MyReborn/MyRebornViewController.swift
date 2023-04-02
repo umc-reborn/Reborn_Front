@@ -174,9 +174,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         let parameterDatas = LogoutModel(jwt: userJWT )
         APIHandlerLogoutPost.instance.SendingPostReborn(token: userJWT , parameters: parameterDatas) { result in self.rebornData = result }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
-            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
-            self.present(rvc, animated: true)
+            self.presentingViewController?.dismiss(animated: true)
         }
     }
     
@@ -184,10 +182,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
         let parameterDatas = UserDeleteModel(userIdx: userIdx, status: "DELETE")
         APIHandlerUserDeletePost.instance.SendingPostReborn(token: userJWT , parameters: parameterDatas) { result in self.rebornDatas = result }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-            let goLogin = UIStoryboard.init(name: "JoinLogin", bundle: nil)
-            guard let rvc = goLogin.instantiateViewController(withIdentifier: "FirstLoginViewController") as? FirstLoginViewController else {return}
-            rvc.modalPresentationStyle = .fullScreen
-            self.present(rvc, animated: true, completion: nil)
+            self.presentingViewController?.dismiss(animated: true)
 
         }
     }
