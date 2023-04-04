@@ -58,6 +58,8 @@ class RebornHistoryDetailViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationItem.title = "리본 히스토리"
         
+        timerStart()
+        
         getRebornHistoryDetail { result in
             switch result {
             case .success(let response):
@@ -88,11 +90,6 @@ class RebornHistoryDetailViewController: UIViewController {
                 break
             }
         }
-        
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
-//
-//            self.timerStart()
-//        }
     }
 
     func getData() {

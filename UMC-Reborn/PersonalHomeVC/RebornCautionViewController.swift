@@ -74,9 +74,11 @@ class RebornCautionViewController: UIViewController {
         if (rebornDatas.count == 0) {
             APIHandlerCreateRebornPost.instance.SendingPostReborn(parameters: parameterDatas) { result in self.rebornData = result }
             NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView16"), object: nil, userInfo: nil)
+            self.presentingViewController?.dismiss(animated: false, completion: nil)
         } else {
-            NotificationCenter.default.post(name: NSNotification.Name("DismissDetailView100"), object: nil, userInfo: nil)
+            guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "RebornErrorViewController") as? RebornErrorViewController else { return }
+            nextVC.modalPresentationStyle = .overFullScreen
+            self.present(nextVC, animated: false, completion: nil)
         }
-        self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
 }
