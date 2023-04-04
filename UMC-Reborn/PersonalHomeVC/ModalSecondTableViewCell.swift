@@ -28,6 +28,12 @@ class ModalSecondTableViewCell: UITableViewCell {
         super.awakeFromNib()
         flowlayout.minimumLineSpacing = 0
         commentLabel.sizeToFit()
+        
+        userImage.layer.cornerRadius = self.userImage.frame.size.height / 2
+        userImage.layer.masksToBounds = true
+        userImage.clipsToBounds = true
+        reviewImage.layer.cornerRadius = 10
+        reviewImage.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
