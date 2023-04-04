@@ -16,6 +16,7 @@ class HomeInprogressViewController: UIViewController {
     var container: NSPersistentContainer!
     
     var rebornDatas: [InprogressResponse] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,13 +46,25 @@ class HomeInprogressViewController: UIViewController {
                   object: nil
                   )
         
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotifications(_:)),
+                  name: NSNotification.Name("DismissDetailView20"),
+                  object: nil
+                  )
+        
         InprogressResult()
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-            
             self.InprogressResult()
+        }
+    }
+    
+    @objc func didDismissDetailNotifications(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            print("리본은 한개만 받을 수 있습니다")
         }
     }
     
@@ -138,6 +151,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         
         let entity = NSEntityDescription.entity(forEntityName: "Entity", in: self.container.viewContext)
         let person = NSManagedObject(entity: entity!, insertInto: self.container.viewContext)
+        
         cell.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             cell.timeSecond -= 1
             person.setValue(cell.timeSecond, forKey: "seconds")

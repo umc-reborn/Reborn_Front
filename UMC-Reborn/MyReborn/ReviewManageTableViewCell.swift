@@ -18,6 +18,14 @@ class ReviewManageTableViewCell: UITableViewCell {
     @IBOutlet var reviewImg: UIImageView!
     @IBOutlet var productName: UILabel!
     
+    @IBOutlet var reviewStar_a: UIImageView!
+    @IBOutlet var reviewStar_b: UIImageView!
+    @IBOutlet var reviewStar_c: UIImageView!
+    @IBOutlet var reviewStar_d: UIImageView!
+    @IBOutlet var reviewStar_e: UIImageView!
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -72,6 +80,37 @@ extension ReviewManageViewController: UITableViewDelegate, UITableViewDataSource
         cell.productName.text = rebornData.productName
         cell.reviewImg.load(url: url!)
         cell.reviewCommentLabel.text = rebornData.reviewComment
+        if (rebornData.reviewScore == 5) {
+            cell.reviewStar_a.image = UIImage(named: "review_star")
+            cell.reviewStar_b.image = UIImage(named: "review_star")
+            cell.reviewStar_c.image = UIImage(named: "review_star")
+            cell.reviewStar_d.image = UIImage(named: "review_star")
+            cell.reviewStar_e.image = UIImage(named: "review_star")
+        } else if (rebornData.reviewScore == 4) {
+            cell.reviewStar_a.image = UIImage(named: "review_star")
+            cell.reviewStar_b.image = UIImage(named: "review_star")
+            cell.reviewStar_c.image = UIImage(named: "review_star")
+            cell.reviewStar_d.image = UIImage(named: "review_star")
+            cell.reviewStar_e.image = UIImage(named: "review_star_gray")
+        } else if (rebornData.reviewScore == 3) {
+            cell.reviewStar_a.image = UIImage(named: "review_star")
+            cell.reviewStar_b.image = UIImage(named: "review_star")
+            cell.reviewStar_c.image = UIImage(named: "review_star")
+            cell.reviewStar_d.image = UIImage(named: "review_star_gray")
+            cell.reviewStar_e.image = UIImage(named: "review_star_gray")
+        } else if (rebornData.reviewScore == 2) {
+            cell.reviewStar_a.image = UIImage(named: "review_star")
+            cell.reviewStar_b.image = UIImage(named: "review_star")
+            cell.reviewStar_c.image = UIImage(named: "review_star_gray")
+            cell.reviewStar_d.image = UIImage(named: "review_star_gray")
+            cell.reviewStar_e.image = UIImage(named: "review_star_gray")
+        } else {
+            cell.reviewStar_a.image = UIImage(named: "review_star")
+            cell.reviewStar_b.image = UIImage(named: "review_star_gray")
+            cell.reviewStar_c.image = UIImage(named: "review_star_gray")
+            cell.reviewStar_d.image = UIImage(named: "review_star_gray")
+            cell.reviewStar_e.image = UIImage(named: "review_star_gray")
+        }
         
         return cell
     }

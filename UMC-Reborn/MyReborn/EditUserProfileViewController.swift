@@ -11,7 +11,7 @@ import Alamofire
 class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, MySampleProtocol, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     let userJWT = UserDefaults.standard.string(forKey: "userJwt")!
-    
+
     var selectCategory: String = ""
     var storeImageUrl: String =  "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/44f3e518-814e-4ce1-b104-8afc86843fbd.jpg"
 
@@ -35,12 +35,65 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     var imageUrl: ReviewImageresultModel!
     var rebornData: EditUserInfoResultModel!
     
+    
+    // 스크롤뷰 추가
+    private let contentScrollView: UIScrollView = {
+            let scrollView = UIScrollView()
+            scrollView.translatesAutoresizingMaskIntoConstraints = false
+            scrollView.backgroundColor = .white
+            scrollView.showsVerticalScrollIndicator = false
+            
+            return scrollView
+        }()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //
+    func addSubview() {
+      self.view.addSubview(contentScrollView)
+        contentScrollView.addSubview(button1)
+        contentScrollView.addSubview(button2)
+        contentScrollView.addSubview(button3)
+        contentScrollView.addSubview(button4)
+        contentScrollView.addSubview(button5)
+    }
+    //
+    private func setUpUIConstraints() {
+      NSLayoutConstraint.activate([
+                contentScrollView.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor),
+                contentScrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+                contentScrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+                contentScrollView.bottomAnchor.constraint(equalTo: self.self.categoryLabel.bottomAnchor),
+                contentView.topAnchor.constraint(equalTo: contentScrollView.topAnchor),
+                            contentView.leadingAnchor.constraint(equalTo: contentScrollView.leadingAnchor),
+                            contentView.trailingAnchor.constraint(equalTo: contentScrollView.trailingAnchor),
+                            contentView.bottomAnchor.constraint(equalTo: contentScrollView.bottomAnchor),
+                contentView.heightAnchor.constraint(equalTo: contentScrollView.heightAnchor)
+    ])
+    }
+    private let contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
+    // =========================================
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // TextField 비활성화
+        return true
+    }
+    
+
     @objc func FinishEditMode() {
         print("버튼 테스트")
         // 📌 API 수정되면 img URL 변경
         
         isSelectedCategory()
-        let parameterDatas = EditUserInfoModel(userImg:  storeImageUrl, userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: selectCategory ?? "")
+        let parameterDatas = EditUserInfoModel(userImg: storeImageUrl, userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: selectCategory ?? "")
         APIHandlerUserInfoPost.instance.SendingPostReborn(token: userJWT, parameters: parameterDatas) { result in self.rebornData = result }
         print("회원정보수정 결과는 \(self.rebornData)")
         
@@ -48,7 +101,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         nextVC.getUserName = EditNicknameTextField.text ?? ""
         navigationController?.pushViewController(nextVC, animated: true)
 
-        print(selectCategory)
+        print("post된 카테고리는 \(self.selectCategory)")
     }
     
     func addressSend(data: String) {
@@ -63,13 +116,18 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.isSelectedCategory()
+        }
+        UserInfoResult()
+        
         createButton1()
         createButton2()
         createButton3()
         createButton4()
         createButton5()
         
-        isSelectedCategory()
+        
         
         userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.height / 2
         userProfileImage.layer.masksToBounds = true
@@ -135,7 +193,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         
         //
         
-        UserInfoResult()
+        
     }
     
     func UserInfoResult() {
@@ -181,12 +239,14 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
                     DispatchQueue.main.async {
                         let url = URL(string: storeDatas.userImg ?? "")
                         self.userProfileImage.load(url: url!)
+                        self.storeImageUrl = storeDatas.userImg!
                         self.EditNicknameTextField.text = storeDatas.userNickname
                         self.EditBirthTextField.text = storeDatas.userBirthDate
                         self.EditAddressTextField.text = storeDatas.userAddress
                         // userLikes
                         self.selectCategory = storeDatas.userLikes
                         print("데이타 \(storeDatas)")
+                        print("selectCategory is \(self.selectCategory)")
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -225,7 +285,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
             : .none
           button.configuration = config
             
-//        button.isSelected ? selectCategory = "카페·디저트" : selectCategory = ""
+            if self.button1.isSelected {
+                self.selectCategory = "CAFE"
+            }
             self.button2.isSelected = false
             self.button3.isSelected = false
             self.button4.isSelected = false
@@ -243,8 +305,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button1")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 9.0, weight: .regular)
             config.attributedTitle = titleAttr
+        config.titlePadding = 2
         return config
     }
     
@@ -254,7 +317,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         view.addSubview(button2)
         button2.translatesAutoresizingMaskIntoConstraints = false
         button2.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
-        button2.leadingAnchor.constraint(equalTo: self.button1.trailingAnchor, constant: 8).isActive = true
+        button2.leadingAnchor.constraint(equalTo: self.button1.trailingAnchor, constant: 4).isActive = true
         
         button2.changesSelectionAsPrimaryAction = true
 
@@ -266,6 +329,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
           ? UIImage(named: "checkedicon")
             : .none
           button.configuration = config
+            if self.button2.isSelected {
+                self.selectCategory = "LIFE"
+            }
             self.button1.isSelected = false
             self.button3.isSelected = false
             self.button4.isSelected = false
@@ -283,7 +349,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button2")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -294,7 +360,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         view.addSubview(button3)
         button3.translatesAutoresizingMaskIntoConstraints = false
         button3.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
-        button3.leadingAnchor.constraint(equalTo: self.button2.trailingAnchor, constant: 8).isActive = true
+        button3.leadingAnchor.constraint(equalTo: self.button2.trailingAnchor, constant: 4).isActive = true
         
         button3.changesSelectionAsPrimaryAction = true
 
@@ -306,6 +372,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
           ? UIImage(named: "checkedicon")
             : .none
           button.configuration = config
+            if self.button3.isSelected {
+                self.selectCategory = "SIDEDISH"
+            }
             self.button1.isSelected = false
             self.button2.isSelected = false
             self.button4.isSelected = false
@@ -323,7 +392,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button3")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -333,8 +402,8 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         button4.configuration = createConfig4()
         view.addSubview(button4)
         button4.translatesAutoresizingMaskIntoConstraints = false
-        button4.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
-        button4.leadingAnchor.constraint(equalTo: self.button3.trailingAnchor, constant: 8).isActive = true
+        button4.topAnchor.constraint(equalTo: self.button2.bottomAnchor, constant: 12).isActive = true
+        button4.leadingAnchor.constraint(equalTo: self.button1.leadingAnchor, constant: 0).isActive = true
         
         button4.changesSelectionAsPrimaryAction = true
 
@@ -346,6 +415,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
           ? UIImage(named: "checkedicon")
             : .none
           button.configuration = config
+            if self.button4.isSelected {
+                self.selectCategory = "FASHION"
+            }
             self.button1.isSelected = false
             self.button2.isSelected = false
             self.button3.isSelected = false
@@ -363,7 +435,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button4")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -373,8 +445,8 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         button5.configuration = createConfig5()
         view.addSubview(button5)
         button5.translatesAutoresizingMaskIntoConstraints = false
-        button5.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
-        button5.leadingAnchor.constraint(equalTo: self.button4.trailingAnchor, constant: 8).isActive = true
+        button5.topAnchor.constraint(equalTo: self.button1.bottomAnchor, constant: 12).isActive = true
+        button5.leadingAnchor.constraint(equalTo: self.button4.trailingAnchor, constant: 4).isActive = true
         
         button5.changesSelectionAsPrimaryAction = true
 
@@ -385,6 +457,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
           config?.image = button.isSelected && button.changesSelectionAsPrimaryAction ? UIImage(named: "checkedicon")
             : .none
           button.configuration = config
+            if self.button5.isSelected {
+                self.selectCategory = "ETC"
+            }
             self.button1.isSelected = false
             self.button2.isSelected = false
             self.button3.isSelected = false
@@ -402,7 +477,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.cornerStyle = .capsule
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button5")
-        titleAttr.font = .systemFont(ofSize: 12.0, weight: .regular)
+        titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
             config.attributedTitle = titleAttr
         return config
     }
@@ -452,41 +527,61 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     }
     
     func isSelectedCategory() {
-        if button1.isSelected {
-            selectCategory = "CAFE"
+        if selectCategory == "CAFE" {
+            button1.isSelected = true
             button1.changesSelectionAsPrimaryAction = true
             button2.isSelected = false
-            button2.changesSelectionAsPrimaryAction = false
+            button2.changesSelectionAsPrimaryAction = true
             button3.isSelected = false
-            button3.changesSelectionAsPrimaryAction = false
+            button3.changesSelectionAsPrimaryAction = true
             button4.isSelected = false
-            button4.changesSelectionAsPrimaryAction = false
+            button4.changesSelectionAsPrimaryAction = true
             button5.isSelected = false
-            button5.changesSelectionAsPrimaryAction = false
-        } else if button2.isSelected {
-            selectCategory = "LIFE"
+            button5.changesSelectionAsPrimaryAction = true
+        } else if selectCategory == "LIFE" {
+            button2.isSelected = true
+            button2.changesSelectionAsPrimaryAction = true
             button1.isSelected = false
+            button1.changesSelectionAsPrimaryAction = true
             button3.isSelected = false
+            button3.changesSelectionAsPrimaryAction = true
             button4.isSelected = false
+            button4.changesSelectionAsPrimaryAction = true
             button5.isSelected = false
-        } else if button3.isSelected {
-            selectCategory = "SIDEDISH"
+            button5.changesSelectionAsPrimaryAction = true
+        } else if selectCategory == "SIDEDISH" {
+            button3.isSelected = true
+            button3.changesSelectionAsPrimaryAction = true
             button1.isSelected = false
+            button1.changesSelectionAsPrimaryAction = true
             button2.isSelected = false
+            button2.changesSelectionAsPrimaryAction = true
             button4.isSelected = false
+            button4.changesSelectionAsPrimaryAction = true
             button5.isSelected = false
-        } else if button4.isSelected {
-            selectCategory = "FASHION"
+            button5.changesSelectionAsPrimaryAction = true
+        } else if selectCategory == "FASHION" {
+            button4.isSelected = true
+            button4.changesSelectionAsPrimaryAction = true
             button1.isSelected = false
+            button1.changesSelectionAsPrimaryAction = true
             button2.isSelected = false
+            button2.changesSelectionAsPrimaryAction = true
             button3.isSelected = false
+            button3.changesSelectionAsPrimaryAction = true
             button5.isSelected = false
-        } else if button5.isSelected {
-            selectCategory = "ETC"
+            button5.changesSelectionAsPrimaryAction = true
+        } else if selectCategory == "ETC" {
+            button5.isSelected = true
+            button5.changesSelectionAsPrimaryAction = true
             button1.isSelected = false
+            button1.changesSelectionAsPrimaryAction = true
             button2.isSelected = false
+            button2.changesSelectionAsPrimaryAction = true
             button3.isSelected = false
+            button3.changesSelectionAsPrimaryAction = true
             button4.isSelected = false
+            button4.changesSelectionAsPrimaryAction = true
         }
     }
     
