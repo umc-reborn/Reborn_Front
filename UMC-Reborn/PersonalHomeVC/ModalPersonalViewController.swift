@@ -70,6 +70,9 @@ class ModalPersonalViewController: UIViewController {
             let parmeterData = JjimModel(storeIdx: storeIdm1, userIdx: modalperson)
             APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
             }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+                self.storeResult()
+            }
             likeButton.isSelected = false
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .normal)
             likeButton.setImage(UIImage(named: "ic_like_gray"), for: .selected)
@@ -77,6 +80,9 @@ class ModalPersonalViewController: UIViewController {
         } else {
             let parmeterData = JjimModel(storeIdx: storeIdm1, userIdx: modalperson)
             APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornData = result
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+                self.storeResult()
             }
             likeButton.isSelected = true
             likeButton.setImage(UIImage(named: "ic_like"), for: .selected)
