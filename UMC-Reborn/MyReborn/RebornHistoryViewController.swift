@@ -92,6 +92,13 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.RebornHistoryTableView.layer.shadowColor = UIColor.gray.cgColor //색상
+                self.RebornHistoryTableView.layer.shadowOpacity = 0.1 //alpha값
+                self.RebornHistoryTableView.layer.shadowRadius = 10 //반경
+                self.RebornHistoryTableView.layer.shadowOffset = CGSize(width: 0, height: 10) //위치조정
+                self.RebornHistoryTableView.layer.masksToBounds = false
+        self.RebornHistoryTableView.layer.cornerRadius = 8;
 
         
         self.navigationController?.navigationBar.topItem?.title = ""

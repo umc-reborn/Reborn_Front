@@ -43,11 +43,22 @@ class RebornHistoryDetailViewController: UIViewController {
     @IBOutlet weak var statusImage: UIImageView!
     @IBOutlet var contentView: UIView!
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var rebornContentView: UIView!
+    
     
     var apiData: RebornHistoryDetailResponse!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 그림자
+        self.rebornContentView.layer.shadowColor = UIColor.gray.cgColor //색상
+                self.rebornContentView.layer.shadowOpacity = 0.1 //alpha값
+                self.rebornContentView.layer.shadowRadius = 10 //반경
+                self.rebornContentView.layer.shadowOffset = CGSize(width: 0, height: 10) //위치조정
+                self.rebornContentView.layer.masksToBounds = false
+        self.rebornContentView.layer.cornerRadius = 8;
+
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.container = appDelegate.persistentContainer

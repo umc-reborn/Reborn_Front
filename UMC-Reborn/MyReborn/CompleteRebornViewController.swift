@@ -135,6 +135,7 @@ class CompleteRebornViewController:UIViewController {
         nextVC.reviewStoreName = self.apiData.storeName
         nextVC.reviewDates = self.apiData.createdAt
         nextVC.category = self.apiData.category
+        nextVC.rebornTaskIndex = self.rebornTaskIdx
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
