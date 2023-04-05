@@ -24,7 +24,7 @@ class ReviewManageTableViewCell: UITableViewCell {
     @IBOutlet var reviewStar_d: UIImageView!
     @IBOutlet var reviewStar_e: UIImageView!
     
-    
+
     
     
     override func awakeFromNib() {

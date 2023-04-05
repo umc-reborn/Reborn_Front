@@ -532,6 +532,7 @@
                     <navigationItem key="navigationItem" id="Tpi-CW-cAY"/>
                     <connections>
                         <outlet property="AddImageView" destination="e4W-gD-YnG" id="cgA-pZ-aMZ"/>
+                        <outlet property="backgroundView" destination="b3d-na-T9H" id="BYF-aU-R5B"/>
                         <outlet property="countLabel" destination="FNq-qa-UDh" id="WZy-7i-oG1"/>
                         <outlet property="label" destination="Y2O-2o-IIR" id="yRP-u7-o9W"/>
                         <outlet property="reviewDate" destination="sDT-WN-ohk" id="BzO-yA-aZX"/>
@@ -1686,6 +1687,7 @@
                         <outlet property="productDetail" destination="FeQ-LP-Iau" id="WMQ-rn-rjz"/>
                         <outlet property="productImg" destination="E8H-V8-6E7" id="a39-lp-Hal"/>
                         <outlet property="productName" destination="Uuz-7M-jgH" id="6yN-hX-nnw"/>
+                        <outlet property="rebornContentView" destination="s2c-b6-kXE" id="1Ua-f3-spe"/>
                         <outlet property="status" destination="Adz-LX-5nj" id="NCj-uG-Den"/>
                         <outlet property="statusImage" destination="XMs-6e-Fuc" id="hWf-uq-zXC"/>
                         <outlet property="storeAddr" destination="wwX-PL-Rzi" id="CZD-AA-Gp5"/>
