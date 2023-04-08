@@ -46,6 +46,7 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         let historyData = historyDatas[indexPath.row]
         
         rebornTaskIndex = historyData.rebornTaskIdx
+        print("리본 태스크 인덱스는 \(rebornTaskIndex)")
         
         switch historyData.status {
             
@@ -60,7 +61,7 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
             
         case "ACTIVE":
             guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "historyDetailVC") as? RebornHistoryDetailViewController else { return }
-            nextVC.rebornTaskIdx = historyData.rebornTaskIdx
+            nextVC.rebornTaskIndex = historyData.rebornTaskIdx
             navigationController?.pushViewController(nextVC, animated: true)
 
 

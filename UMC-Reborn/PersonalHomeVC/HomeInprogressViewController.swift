@@ -101,7 +101,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         guard let Checkvc = detail.instantiateViewController(identifier: "historyDetailVC") as? RebornHistoryDetailViewController else {
                     return
                 }
-        Checkvc.rebornTaskIdx = rebornData.rebornTaskIdx
+        Checkvc.rebornTaskIndex = rebornData.rebornTaskIdx
         Checkvc.timeLimit = rebornData.productLimitTime
         navigationController?.pushViewController(Checkvc, animated: true)
     }
