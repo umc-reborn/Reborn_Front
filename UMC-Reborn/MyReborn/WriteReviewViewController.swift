@@ -158,13 +158,14 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            AddImageView.image = image
+            AddImageView?.image = image
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
                 DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
             }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                print("이미지 주소 성공")
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
                 self.storeImageUrl = self.imageUrl.result
+                print("이미지 주소 성공")
+                print("\(self.storeImageUrl)")
             }
         }
         

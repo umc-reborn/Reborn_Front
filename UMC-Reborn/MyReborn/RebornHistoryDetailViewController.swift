@@ -11,7 +11,7 @@ import CoreData
 
 class RebornHistoryDetailViewController: UIViewController {
     
-    var rebornTaskIdx: Int = 0
+    var rebornTaskIndex: Int = 0
     var timeLimit: String = ""
     
     var container: NSPersistentContainer!
@@ -47,6 +47,7 @@ class RebornHistoryDetailViewController: UIViewController {
     
     
     var apiData: RebornHistoryDetailResponse!
+    var rebornData: RebornCompleteresultModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,14 +120,19 @@ class RebornHistoryDetailViewController: UIViewController {
     }
 
     @IBAction func FinishRebornTapped(_ sender: Any) {
+        let exchangeCode = Int(changeCode.text ?? "") ?? 0
+        let parameterDatas = RebornCompleteModel(rebornTaskIdx: rebornTaskIndex, productExchangeCode: exchangeCode)
+        APIHandlerCompletePost.instance.SendingPostReborn(parameters: parameterDatas) { result in self.rebornData = result }
+
+        
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AlertViewController") as? AlertViewController else { return }
         nextVC.modalPresentationStyle = .overCurrentContext
         self.present(nextVC, animated: true, completion: nil)
     }
     
     func getRebornHistoryDetail(completion: @escaping (NetworkResult<Any>) -> Void) {
-        var RebornHistoryDetailUrl = "http://www.rebornapp.shop/reborns/history/detail/\(rebornTaskIdx)"
-        print("rebornHistoryDetail의 taskIdx는 \(rebornTaskIdx)")
+        var RebornHistoryDetailUrl = "http://www.rebornapp.shop/reborns/history/detail/\(rebornTaskIndex)"
+        print("rebornHistoryDetail의 taskIdx는 \(rebornTaskIndex)")
 
 
         let url: String! = RebornHistoryDetailUrl
