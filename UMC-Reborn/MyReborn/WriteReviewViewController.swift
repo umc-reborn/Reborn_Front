@@ -19,7 +19,9 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     @IBOutlet var reviewDate: UILabel!
     @IBOutlet var storeName: UILabel!
     @IBOutlet var storeCategory: UILabel!
+    @IBOutlet var backgroundView: UIView!
     
+    var rebornIndex: Int = 0
     var reviewStoreName: String = ""
     var reviewDates: String = ""
     var category: String = ""
@@ -31,8 +33,6 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     let rebornAdd = UserDefaults.standard.integer(forKey: "userIndex")
     
     // ✅ API 수정되면 값 바꾸기
-    let rebornIdx = 23
-    
     let serverURL = "http://www.rebornapp.shop/s3"
     
     let imagePickerController = UIImagePickerController()
@@ -41,6 +41,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
 //    let dd = Int(stringToNum)
     
     var stringToNum: Int = 0
+    var rebornTaskIndex: Int = 0
     
     var Number = 0
     var scoreInt: Int!
@@ -48,7 +49,15 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("rebornIdx값은 \(rebornIdx)")
+        // 그림자
+        self.backgroundView.layer.shadowColor = UIColor.gray.cgColor //색상
+                self.backgroundView.layer.shadowOpacity = 0.1 //alpha값
+                self.backgroundView.layer.shadowRadius = 10 //반경
+                self.backgroundView.layer.shadowOffset = CGSize(width: 0, height: 10) //위치조정
+                self.backgroundView.layer.masksToBounds = false
+        self.backgroundView.layer.cornerRadius = 8;
+        
+        print("rebornIdx값은 \(self.rebornIndex)")
         
         self.navigationController?.navigationBar.topItem?.title = ""
 
@@ -124,15 +133,14 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
         print("형변환한 label 값은 \(stringToNum)")
         
 
-        let parmeterDatas = postReviewReqModel(userIdx: self.rebornAdd, rebornIdx: self.rebornIdx, reviewScore: scoreInt, reviewComment: self.textField.text ?? "", reviewImage: storeImageUrl ?? "")
+        let parmeterDatas = postReviewReqModel(userIdx: self.rebornAdd, rebornIdx: self.rebornIndex, rebornTaskIdx: self.rebornTaskIndex, reviewScore: scoreInt, reviewComment: self.textField.text ?? "", reviewImage: storeImageUrl)
         APIMyRebornHandlerPost.instance.SendingPostReview(parameters: parmeterDatas) { result in self.writeRebornData = result }
         print("리뷰작성 결과는 \(self.writeRebornData)")
 //        self.presentingViewContro ller?.dismiss(animated: true, completion: nil)
         
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "reviewManageVC") as? ReviewManageViewController else { return }
-//        nextVC.storeTitle = self.storeName.text!
-//        nextVC.storeCategory = self.storeCategory.text!
-//        nectVC.
+        nextVC.storeTitle = self.storeName.text!
+        nextVC.storeCategory = self.storeCategory.text!
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -148,12 +156,14 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            AddImageView.image = image
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.2) {
+            AddImageView?.image = image
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
                 DiaryPost.instance.uploadDiary(file: self.AddImageView.image!, url: self.serverURL) { result in self.imageUrl = result }
             }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
                 self.storeImageUrl = self.imageUrl.result
+                print("이미지 주소 성공")
+                print("\(self.storeImageUrl)")
             }
         }
         

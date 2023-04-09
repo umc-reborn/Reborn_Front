@@ -46,6 +46,7 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
         let historyData = historyDatas[indexPath.row]
         
         rebornTaskIndex = historyData.rebornTaskIdx
+        print("리본 태스크 인덱스는 \(rebornTaskIndex)")
         
         switch historyData.status {
             
@@ -55,12 +56,14 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
 //            UserDefaults.standard.set(rebornTaskIndex, forKey:"rebornTaskIdx")
             guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "completeRebornVC") as? CompleteRebornViewController else { return }
             nextVC.rebornTaskIdx = historyData.rebornTaskIdx
+            nextVC.rebornIdx = historyData.rebornIdx
             navigationController?.pushViewController(nextVC, animated: true)
 
             
         case "ACTIVE":
             guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "historyDetailVC") as? RebornHistoryDetailViewController else { return }
-            nextVC.rebornTaskIdx = historyData.rebornTaskIdx
+            nextVC.rebornTaskIndex = historyData.rebornTaskIdx
+            nextVC.rebornIdx = historyData.rebornIdx
             navigationController?.pushViewController(nextVC, animated: true)
 
 
@@ -92,6 +95,13 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.RebornHistoryTableView.layer.shadowColor = UIColor.gray.cgColor //색상
+                self.RebornHistoryTableView.layer.shadowOpacity = 0.1 //alpha값
+                self.RebornHistoryTableView.layer.shadowRadius = 10 //반경
+                self.RebornHistoryTableView.layer.shadowOffset = CGSize(width: 0, height: 10) //위치조정
+                self.RebornHistoryTableView.layer.masksToBounds = false
+        self.RebornHistoryTableView.layer.cornerRadius = 8;
 
         
         self.navigationController?.navigationBar.topItem?.title = ""

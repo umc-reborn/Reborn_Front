@@ -13,6 +13,10 @@ class ReviewManageViewController: UIViewController {
     
     var reviewDatas: [ReviewManageModelResponse] = []
     
+    var storeTitle: String = ""
+    var storeCategory: String = ""
+    var reviewDate: String = ""
+    
     @IBOutlet var myReviewTableView: UITableView!
     @IBOutlet var myReviewCount: UILabel!
     

@@ -15,6 +15,7 @@ struct RebornHistoryModel: Codable {
 }
 
 struct RebornHistoryResponse: Codable {
+    let rebornIdx: Int
     let rebornTaskIdx: Int
     let storeName: String
     let storeImage: String
