@@ -56,12 +56,14 @@ class RebornHistoryViewController: UIViewController, UITableViewDataSource, UITa
 //            UserDefaults.standard.set(rebornTaskIndex, forKey:"rebornTaskIdx")
             guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "completeRebornVC") as? CompleteRebornViewController else { return }
             nextVC.rebornTaskIdx = historyData.rebornTaskIdx
+            nextVC.rebornIdx = historyData.rebornIdx
             navigationController?.pushViewController(nextVC, animated: true)
 
             
         case "ACTIVE":
             guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "historyDetailVC") as? RebornHistoryDetailViewController else { return }
             nextVC.rebornTaskIndex = historyData.rebornTaskIdx
+            nextVC.rebornIdx = historyData.rebornIdx
             navigationController?.pushViewController(nextVC, animated: true)
 
 

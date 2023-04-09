@@ -10,6 +10,7 @@ import Alamofire
 
 class CompleteRebornViewController:UIViewController {
     
+    var rebornIdx: Int = 0
     var rebornTaskIdx: Int = 0
     
     @IBOutlet var date: UILabel!
@@ -136,6 +137,7 @@ class CompleteRebornViewController:UIViewController {
         nextVC.reviewDates = self.apiData.createdAt
         nextVC.category = self.apiData.category
         nextVC.rebornTaskIndex = self.rebornTaskIdx
+        nextVC.rebornIndex = self.rebornIdx
         navigationController?.pushViewController(nextVC, animated: true)
     }
     

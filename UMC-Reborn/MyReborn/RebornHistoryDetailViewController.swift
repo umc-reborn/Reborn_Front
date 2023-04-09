@@ -11,6 +11,7 @@ import CoreData
 
 class RebornHistoryDetailViewController: UIViewController {
     
+    var rebornIdx: Int = 0
     var rebornTaskIndex: Int = 0
     var timeLimit: String = ""
     
