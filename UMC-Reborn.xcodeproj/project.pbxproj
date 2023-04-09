@@ -148,6 +148,7 @@
 		95E9FFB9297FAFE10073DF2B /* LatestSearchedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFB8297FAFE10073DF2B /* LatestSearchedCell.swift */; };
 		95E9FFBB29808CB10073DF2B /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9FFBA29808CB10073DF2B /* SearchResultViewController.swift */; };
 		BCAC19B4823DC2E9483F2B3C /* libPods-UMC-Reborn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C19DC0605BD35D11E1E9E84 /* libPods-UMC-Reborn.a */; };
+		C703213D29E319030029D684 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C703213F29E319030029D684 /* InfoPlist.strings */; };
 		C7062990299BE144002F5C1A /* ModalFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706298F299BE144002F5C1A /* ModalFirstViewController.swift */; };
 		C7062992299BE151002F5C1A /* ModalSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7062991299BE151002F5C1A /* ModalSecondViewController.swift */; };
 		C7062994299BE5BA002F5C1A /* ModalTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7062993299BE5BA002F5C1A /* ModalTabViewController.swift */; };
@@ -395,6 +396,9 @@
 		95E9FFB6297E6F880073DF2B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		95E9FFB8297FAFE10073DF2B /* LatestSearchedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSearchedCell.swift; sourceTree = "<group>"; };
 		95E9FFBA29808CB10073DF2B /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		C703213929E3183F0029D684 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C703213A29E3183F0029D684 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		C703213E29E319030029D684 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C706298F299BE144002F5C1A /* ModalFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFirstViewController.swift; sourceTree = "<group>"; };
 		C7062991299BE151002F5C1A /* ModalSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSecondViewController.swift; sourceTree = "<group>"; };
 		C7062993299BE5BA002F5C1A /* ModalTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTabViewController.swift; sourceTree = "<group>"; };
@@ -905,6 +909,7 @@
 				C7C4FD7D296D315E00040E05 /* Assets.xcassets */,
 				C7C4FD82296D315E00040E05 /* Info.plist */,
 				0BC96D5B2975522800EA4926 /* LoginViewController.swift */,
+				C703213F29E319030029D684 /* InfoPlist.strings */,
 			);
 			path = "UMC-Reborn";
 			sourceTree = "<group>";
@@ -989,6 +994,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = C7C4FD68296D315B00040E05;
 			productRefGroup = C7C4FD72296D315B00040E05 /* Products */;
@@ -1029,6 +1035,7 @@
 				9561BA752992494400A4B33B /* map_pin@3x.png in Resources */,
 				C7C4FD81296D315E00040E05 /* LaunchScreen.storyboard in Resources */,
 				0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */,
+				C703213D29E319030029D684 /* InfoPlist.strings in Resources */,
 				9561BA832992494400A4B33B /* map_pin_shadow.png in Resources */,
 				9561BA692992494400A4B33B /* map_pinup_custom@3x.png in Resources */,
 				9561BA822992494400A4B33B /* daum_th_line.png in Resources */,
@@ -1298,10 +1305,19 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C703213F29E319030029D684 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C703213E29E319030029D684 /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		C7C4FD7A296D315B00040E05 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C7C4FD7B296D315B00040E05 /* Base */,
+				C703213A29E3183F0029D684 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1310,6 +1326,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C7C4FD80296D315E00040E05 /* Base */,
+				C703213929E3183F0029D684 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1321,6 +1338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1385,6 +1403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1448,7 +1467,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 76W6K6R528;
+				DEVELOPMENT_TEAM = KSR8K3JPUM;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1462,7 +1481,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "UMC Re-born";
+				INFOPLIST_KEY_CFBundleDisplayName = "리본";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1479,10 +1498,10 @@
 				);
 				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yeonsu.UMCReborn;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ham.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yeonsu/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1498,7 +1517,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 76W6K6R528;
+				DEVELOPMENT_TEAM = KSR8K3JPUM;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1512,7 +1531,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "UMC Re-born";
+				INFOPLIST_KEY_CFBundleDisplayName = "리본";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1529,10 +1548,10 @@
 				);
 				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yeonsu.UMCReborn;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ham.UMC-Reborn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yeonsu/Desktop/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
