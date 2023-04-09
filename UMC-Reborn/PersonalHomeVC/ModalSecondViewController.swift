@@ -70,10 +70,7 @@ class ModalSecondViewController: UIViewController {
                     print(reviewDatas)
                     DispatchQueue.main.async {
                         self.mstableView.reloadData()
-                        print("count: \(self.reviewDatas.count)")
-                        
                     }
-                    
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
                 } catch let DecodingError.keyNotFound(key, context) {

@@ -44,7 +44,6 @@ class InprogressCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         exchangeBtn.layer.cornerRadius = 5
-//        exchangeBtn.layer.borderWidth = 1
         exchangeBtn.layer.borderColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1).cgColor
         
         let notificationCenter = NotificationCenter.default
