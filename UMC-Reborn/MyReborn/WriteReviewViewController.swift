@@ -21,7 +21,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     @IBOutlet var storeCategory: UILabel!
     @IBOutlet var backgroundView: UIView!
     
-    
+    var rebornIndex: Int = 0
     var reviewStoreName: String = ""
     var reviewDates: String = ""
     var category: String = ""
@@ -33,8 +33,6 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
     let rebornAdd = UserDefaults.standard.integer(forKey: "userIndex")
     
     // ✅ API 수정되면 값 바꾸기
-    let rebornIdx = 23
-    
     let serverURL = "http://www.rebornapp.shop/s3"
     
     let imagePickerController = UIImagePickerController()
@@ -59,7 +57,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
                 self.backgroundView.layer.masksToBounds = false
         self.backgroundView.layer.cornerRadius = 8;
         
-        print("rebornIdx값은 \(rebornIdx)")
+        print("rebornIdx값은 \(self.rebornIndex)")
         
         self.navigationController?.navigationBar.topItem?.title = ""
 
@@ -135,7 +133,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIImagePi
         print("형변환한 label 값은 \(stringToNum)")
         
 
-        let parmeterDatas = postReviewReqModel(userIdx: self.rebornAdd, rebornIdx: self.rebornIdx, rebornTaskIdx: self.rebornTaskIndex, reviewScore: scoreInt, reviewComment: self.textField.text ?? "", reviewImage: storeImageUrl)
+        let parmeterDatas = postReviewReqModel(userIdx: self.rebornAdd, rebornIdx: self.rebornIndex, rebornTaskIdx: self.rebornTaskIndex, reviewScore: scoreInt, reviewComment: self.textField.text ?? "", reviewImage: storeImageUrl)
         APIMyRebornHandlerPost.instance.SendingPostReview(parameters: parmeterDatas) { result in self.writeRebornData = result }
         print("리뷰작성 결과는 \(self.writeRebornData)")
 //        self.presentingViewContro ller?.dismiss(animated: true, completion: nil)
