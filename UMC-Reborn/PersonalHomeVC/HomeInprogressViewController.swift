@@ -46,25 +46,12 @@ class HomeInprogressViewController: UIViewController {
                   object: nil
                   )
         
-        NotificationCenter.default.addObserver(
-                  self,
-                  selector: #selector(self.didDismissDetailNotifications(_:)),
-                  name: NSNotification.Name("DismissDetailView20"),
-                  object: nil
-                  )
-        
         InprogressResult()
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.InprogressResult()
-        }
-    }
-    
-    @objc func didDismissDetailNotifications(_ notification: Notification) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-            print("리본은 한개만 받을 수 있습니다")
         }
     }
     
@@ -98,9 +85,7 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
     func historyButtonTapped(index: Int) {
         let rebornData = rebornDatas[index]
         let detail = UIStoryboard.init(name: "MyReborn", bundle: nil)
-        guard let Checkvc = detail.instantiateViewController(identifier: "historyDetailVC") as? RebornHistoryDetailViewController else {
-                    return
-                }
+        guard let Checkvc = detail.instantiateViewController(identifier: "historyDetailVC") as? RebornHistoryDetailViewController else { return }
         Checkvc.rebornTaskIdx = rebornData.rebornTaskIdx
         Checkvc.timeLimit = rebornData.productLimitTime
         navigationController?.pushViewController(Checkvc, animated: true)
@@ -147,7 +132,6 @@ extension HomeInprogressViewController: UICollectionViewDelegate, UICollectionVi
         
         let wholeSeconds = hourTimer + minuteTimer
         cell.timeSecond = wholeSeconds
-        
         
         let entity = NSEntityDescription.entity(forEntityName: "Entity", in: self.container.viewContext)
         let person = NSManagedObject(entity: entity!, insertInto: self.container.viewContext)
@@ -198,7 +182,6 @@ extension HomeInprogressViewController: UICollectionViewDelegateFlowLayout {
     // 옆 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
-        
     }
 
     // cell 사이즈

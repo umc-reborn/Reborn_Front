@@ -31,7 +31,6 @@ class ModalPersonalViewController: UIViewController {
     @IBOutlet var jjimLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

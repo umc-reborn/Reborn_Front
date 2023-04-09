@@ -29,7 +29,7 @@ class PersonalHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
             self.InprogressResult()
             self.userJWT = UserDefaults.standard.string(forKey: "userJwt") ?? ""
         }

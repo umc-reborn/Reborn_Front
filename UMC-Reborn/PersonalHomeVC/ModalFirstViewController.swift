@@ -85,7 +85,6 @@ class ModalFirstViewController: UIViewController {
                     print(rebornDatas)
                     DispatchQueue.main.async {
                         self.mftableView.reloadData()
-                        print("count: \(self.rebornDatas.count)")
                     }
                 } catch {
                     print("Error")

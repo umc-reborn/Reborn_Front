@@ -9,9 +9,7 @@ import UIKit
 import DropDown
 
 class JjimViewController: UIViewController {
-    
-    let jjimVC = UserDefaults.standard.integer(forKey: "userIndex")
-    
+
     var rebornJjimData: JjimresultModel!
     
     let dropdown = DropDown()
@@ -38,7 +36,7 @@ class JjimViewController: UIViewController {
             dropdown.dismissMode = .automatic // 팝업을 닫을 모드 설정
         DropDown.appearance().textFont = UIFont(name: "AppleSDGothicNeo-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13)
                 
-            JjimTextField.text = "   정렬" // 힌트 텍스트
+        JjimTextField.text = "   정렬" // 힌트 텍스트
     }
     
     func setDropdown() {
@@ -73,7 +71,6 @@ class JjimViewController: UIViewController {
 
     // View 클릭 시 Action
     @IBAction func dropClicked(_ sender: Any) {
-        print("드롭다운")
         dropdown.show()
     }
 
@@ -109,8 +106,6 @@ class JjimViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
                         print("정렬순: \(self.jjimDatas.count)")
-                        let ggg = self.jjimDatas[0].storeIdx
-                        print("스토어아이디: \(ggg)")
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -201,8 +196,6 @@ class JjimViewController: UIViewController {
                     print(jjimDatas)
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
-                        print("인기순: \(self.jjimDatas.count)")
-                        
                     }
                     
                 } catch let DecodingError.dataCorrupted(context) {
@@ -254,8 +247,6 @@ class JjimViewController: UIViewController {
                     print(jjimDatas)
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
-                        print("이름순: \(self.jjimDatas.count)")
-                        
                     }
                     
                 } catch let DecodingError.dataCorrupted(context) {
@@ -307,8 +298,6 @@ class JjimViewController: UIViewController {
                     print(jjimDatas)
                     DispatchQueue.main.async {
                         self.JjimTableView.reloadData()
-                        print("별점순: \(self.jjimDatas.count)")
-                        
                     }
                     
                 } catch let DecodingError.dataCorrupted(context) {
@@ -365,6 +354,7 @@ class JjimViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.JjimTextField.text = "   정렬"
         JjimResult()
         JjimCountResult()

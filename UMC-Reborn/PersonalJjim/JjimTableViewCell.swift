@@ -59,7 +59,7 @@ class JjimTableViewCell: UITableViewCell {
 extension JjimViewController: UITableViewDelegate, UITableViewDataSource, JjimCellDelegate {
     func JjimBtn(index: Int) {
         let rebornData = jjimDatas[index]
-        let parmeterData = JjimModel(storeIdx: rebornData.storeIdx, userIdx: jjimVC)
+        let parmeterData = JjimModel(storeIdx: rebornData.storeIdx, userIdx: jjimview)
         APIHandlerJjimPost.instance.SendingPostJjim(parameters: parmeterData) { result in self.rebornJjimData = result
         }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
@@ -69,7 +69,7 @@ extension JjimViewController: UITableViewDelegate, UITableViewDataSource, JjimCe
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
