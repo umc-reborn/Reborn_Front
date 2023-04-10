@@ -461,7 +461,7 @@
 		C7C400F029B08114008EB125 /* StoreEditPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreEditPost.swift; sourceTree = "<group>"; };
 		C7C400F229B08889008EB125 /* RebornCancelPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornCancelPost.swift; sourceTree = "<group>"; };
 		C7C400F429B09127008EB125 /* RebornDeletePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornDeletePost.swift; sourceTree = "<group>"; };
-		C7C4FD71296D315B00040E05 /* UMC-Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-Reborn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7C4FD71296D315B00040E05 /* Re-born.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Re-born.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C4FD74296D315B00040E05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7C4FD76296D315B00040E05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C7C4FD78296D315B00040E05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -865,7 +865,7 @@
 		C7C4FD68296D315B00040E05 = {
 			isa = PBXGroup;
 			children = (
-				C7C4FD73296D315B00040E05 /* UMC-Reborn */,
+				C7C4FD73296D315B00040E05 /* Re-born */,
 				C7C4FD72296D315B00040E05 /* Products */,
 				D04DEAD214F0B35E09E08104 /* Pods */,
 				77AD8D9494DCB96CF5BB6F9D /* Frameworks */,
@@ -876,12 +876,12 @@
 		C7C4FD72296D315B00040E05 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C7C4FD71296D315B00040E05 /* UMC-Reborn.app */,
+				C7C4FD71296D315B00040E05 /* Re-born.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C7C4FD73296D315B00040E05 /* UMC-Reborn */ = {
+		C7C4FD73296D315B00040E05 /* Re-born */ = {
 			isa = PBXGroup;
 			children = (
 				C787E3AD29BB44230090B946 /* CoreData */,
@@ -911,7 +911,7 @@
 				0BC96D5B2975522800EA4926 /* LoginViewController.swift */,
 				C703213F29E319030029D684 /* InfoPlist.strings */,
 			);
-			path = "UMC-Reborn";
+			path = "Re-born";
 			sourceTree = "<group>";
 		};
 		C7FA26E4297E9E600054DB29 /* Models */ = {
@@ -951,9 +951,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C7C4FD70296D315B00040E05 /* UMC-Reborn */ = {
+		C7C4FD70296D315B00040E05 /* Re-born */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7C4FD85296D315E00040E05 /* Build configuration list for PBXNativeTarget "UMC-Reborn" */;
+			buildConfigurationList = C7C4FD85296D315E00040E05 /* Build configuration list for PBXNativeTarget "Re-born" */;
 			buildPhases = (
 				6965A19F8B7A023819DAD2B1 /* [CP] Check Pods Manifest.lock */,
 				C7C4FD6D296D315B00040E05 /* Sources */,
@@ -967,9 +967,9 @@
 			);
 			dependencies = (
 			);
-			name = "UMC-Reborn";
+			name = "Re-born";
 			productName = "UMC-Reborn";
-			productReference = C7C4FD71296D315B00040E05 /* UMC-Reborn.app */;
+			productReference = C7C4FD71296D315B00040E05 /* Re-born.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -987,7 +987,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C7C4FD6C296D315B00040E05 /* Build configuration list for PBXProject "UMC-Reborn" */;
+			buildConfigurationList = C7C4FD6C296D315B00040E05 /* Build configuration list for PBXProject "Re-born" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1001,7 +1001,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C7C4FD70296D315B00040E05 /* UMC-Reborn */,
+				C7C4FD70296D315B00040E05 /* Re-born */,
 			);
 		};
 /* End PBXProject section */
@@ -1480,7 +1480,7 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
+				INFOPLIST_FILE = "Re-born/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "리본";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
@@ -1498,7 +1498,7 @@
 				);
 				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ham.UMC-Reborn";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ham.Re-born";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
@@ -1530,7 +1530,7 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "UMC-Reborn/Info.plist";
+				INFOPLIST_FILE = "Re-born/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "리본";
 				INFOPLIST_KEY_NSCameraUsageDescription = "''";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "'Re-born'이(가) 사용자의 사진첩에 접근하려고 합니다.";
@@ -1548,7 +1548,7 @@
 				);
 				MARKETING_VERSION = 1.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ham.UMC-Reborn";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ham.Re-born";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/UMC-Reborn/Network/kako api-Bridging-Header.h";
@@ -1561,7 +1561,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C7C4FD6C296D315B00040E05 /* Build configuration list for PBXProject "UMC-Reborn" */ = {
+		C7C4FD6C296D315B00040E05 /* Build configuration list for PBXProject "Re-born" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7C4FD83296D315E00040E05 /* Debug */,
@@ -1570,7 +1570,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7C4FD85296D315E00040E05 /* Build configuration list for PBXNativeTarget "UMC-Reborn" */ = {
+		C7C4FD85296D315E00040E05 /* Build configuration list for PBXNativeTarget "Re-born" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7C4FD86296D315E00040E05 /* Debug */,
