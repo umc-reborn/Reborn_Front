@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C7C4FD70296D315B00040E05"
-               BuildableName = "UMC-Reborn.app"
-               BlueprintName = "UMC-Reborn"
-               ReferencedContainer = "container:UMC-Reborn.xcodeproj">
+               BuildableName = "Re-born.app"
+               BlueprintName = "Re-born"
+               ReferencedContainer = "container:Re-born.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C7C4FD70296D315B00040E05"
-            BuildableName = "UMC-Reborn.app"
-            BlueprintName = "UMC-Reborn"
-            ReferencedContainer = "container:UMC-Reborn.xcodeproj">
+            BuildableName = "Re-born.app"
+            BlueprintName = "Re-born"
+            ReferencedContainer = "container:Re-born.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C7C4FD70296D315B00040E05"
-            BuildableName = "UMC-Reborn.app"
-            BlueprintName = "UMC-Reborn"
-            ReferencedContainer = "container:UMC-Reborn.xcodeproj">
+            BuildableName = "Re-born.app"
+            BlueprintName = "Re-born"
+            ReferencedContainer = "container:Re-born.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
