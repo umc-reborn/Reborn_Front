@@ -13,7 +13,7 @@ class PersonalHomeViewController: UIViewController {
 
     var userText : Int = 0
     var userNickNameText : String = ""
-    let username = UserDefaults.standard.string(forKey: "userNickName")
+    var username = UserDefaults.standard.string(forKey: "userNickName")
     var userJWT : String = ""
 
     @IBOutlet weak var nickNameLabel: UILabel!
@@ -131,6 +131,7 @@ class PersonalHomeViewController: UIViewController {
                     print(storeDatas)
                     DispatchQueue.main.async {
                         self.nickNameLabel.text = "\(storeDatas.userNickname)"
+                        self.username = storeDatas.userNickname
                     }
                 } catch {
                     print("error: ", error)
