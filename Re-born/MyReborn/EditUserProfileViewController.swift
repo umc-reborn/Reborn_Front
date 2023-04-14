@@ -15,11 +15,11 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     var selectCategory: String = ""
     var storeImageUrl: String =  "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/44f3e518-814e-4ce1-b104-8afc86843fbd.jpg"
 
-    let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
-    let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
-    let button3 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
-    let button4 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
-    let button5 = UIButton(frame: CGRect(x: 0, y: 0, width: 84, height: 30))
+    let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 77, height: 28))
+    let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 77, height: 28))
+    let button3 = UIButton(frame: CGRect(x: 0, y: 0, width: 77, height: 28))
+    let button4 = UIButton(frame: CGRect(x: 0, y: 0, width: 77, height: 28))
+    let button5 = UIButton(frame: CGRect(x: 0, y: 0, width: 77, height: 28))
 
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var EditNicknameTextField: UITextField!
@@ -283,6 +283,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
           config?.image = button.isSelected && button.changesSelectionAsPrimaryAction
           ? UIImage(named: "checkedicon")
             : .none
+            var arr = AttributedString.init("카페·디저트")
+            arr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config?.attributedTitle = arr
           button.configuration = config
             
             if self.button1.isSelected {
@@ -328,6 +331,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
           config?.image = button.isSelected && button.changesSelectionAsPrimaryAction
           ? UIImage(named: "checkedicon")
             : .none
+            var arr = AttributedString.init("편의·생활")
+            arr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config?.attributedTitle = arr
           button.configuration = config
             if self.button2.isSelected {
                 self.selectCategory = "LIFE"
@@ -371,6 +377,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
           config?.image = button.isSelected && button.changesSelectionAsPrimaryAction
           ? UIImage(named: "checkedicon")
             : .none
+            var arr = AttributedString.init("반찬")
+            arr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config?.attributedTitle = arr
           button.configuration = config
             if self.button3.isSelected {
                 self.selectCategory = "SIDEDISH"
@@ -393,7 +402,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         config.baseForegroundColor = .darkGray
         var titleAttr = AttributedString.init("button3")
         titleAttr.font = .systemFont(ofSize: 11.0, weight: .regular)
-            config.attributedTitle = titleAttr
+        config.attributedTitle = titleAttr
         return config
     }
     
@@ -402,8 +411,8 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         button4.configuration = createConfig4()
         view.addSubview(button4)
         button4.translatesAutoresizingMaskIntoConstraints = false
-        button4.topAnchor.constraint(equalTo: self.button2.bottomAnchor, constant: 12).isActive = true
-        button4.leadingAnchor.constraint(equalTo: self.button1.leadingAnchor, constant: 0).isActive = true
+        button4.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
+        button4.leadingAnchor.constraint(equalTo: self.button3.trailingAnchor, constant: 4).isActive = true
         
         button4.changesSelectionAsPrimaryAction = true
 
@@ -414,6 +423,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
           config?.image = button.isSelected && button.changesSelectionAsPrimaryAction
           ? UIImage(named: "checkedicon")
             : .none
+            var arr = AttributedString.init("패션")
+            arr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config?.attributedTitle = arr
           button.configuration = config
             if self.button4.isSelected {
                 self.selectCategory = "FASHION"
@@ -445,7 +457,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         button5.configuration = createConfig5()
         view.addSubview(button5)
         button5.translatesAutoresizingMaskIntoConstraints = false
-        button5.topAnchor.constraint(equalTo: self.button1.bottomAnchor, constant: 12).isActive = true
+        button5.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 24).isActive = true
         button5.leadingAnchor.constraint(equalTo: self.button4.trailingAnchor, constant: 4).isActive = true
         
         button5.changesSelectionAsPrimaryAction = true
@@ -456,6 +468,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
             config?.baseBackgroundColor = button.isSelected && button.changesSelectionAsPrimaryAction ? .init(named: "lightred") : .white
           config?.image = button.isSelected && button.changesSelectionAsPrimaryAction ? UIImage(named: "checkedicon")
             : .none
+            var arr = AttributedString.init("기타")
+            arr.font = .systemFont(ofSize: 13.0, weight: .regular)
+            config?.attributedTitle = arr
           button.configuration = config
             if self.button5.isSelected {
                 self.selectCategory = "ETC"
