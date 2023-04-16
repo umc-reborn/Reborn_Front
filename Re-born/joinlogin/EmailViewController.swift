@@ -259,7 +259,7 @@ class EmailViewController: UIViewController, UITextViewDelegate {
         print(paramettaData)
         identificationPost.instance.SendingPostNemail(parameters2: paramettaData) { result2 in self.emailData = result2 }
     
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.2) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             
             //hihi에 암호화된 코드가 담겨있음.
             self.hihi = self.emailData?.result ?? ""
