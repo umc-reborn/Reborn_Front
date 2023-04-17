@@ -259,7 +259,7 @@ class EmailViewController: UIViewController, UITextViewDelegate {
         print(paramettaData)
         identificationPost.instance.SendingPostNemail(parameters2: paramettaData) { result2 in self.emailData = result2 }
     
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
             
             //hihi에 암호화된 코드가 담겨있음.
             self.hihi = self.emailData?.result ?? ""
@@ -282,7 +282,7 @@ class EmailViewController: UIViewController, UITextViewDelegate {
         NumCheckGet.instance.NumCheckGetData(veriCode: codeTextField.text ?? ""){result in self.Lego = result
             }
        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
             
             self.rightHi = self.Lego?.result ?? ""
             print("사용자가 입력한 코드 암호화한 것 = " + self.rightHi)
