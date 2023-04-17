@@ -50,12 +50,6 @@ class FirstViewController: TabmanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabMan()
-        
-        // viewcontroller 배경 색상 변경 #FFFBF9
-        let BACKGROUND = UIColor(named: "BACKGROUND")
-        self.view.backgroundColor = BACKGROUND
-        
-        
     }
     
     private func setupTabMan(){
@@ -71,7 +65,7 @@ class FirstViewController: TabmanViewController {
             self.dataSource = self
             let bar = TMBar.ButtonBar()
             // 배경 회색으로 나옴 -> 하얀색으로 바뀜
-            bar.backgroundView.style = .blur(style: .light)
+            bar.backgroundView.style = .clear
             // 간격 설정
             bar.layout.contentInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
             // 버튼 글씨 커스텀
@@ -85,7 +79,6 @@ class FirstViewController: TabmanViewController {
             // 밑줄 쳐지는 부분
             bar.indicator.weight = .custom(value: 2)
             bar.indicator.tintColor = .black
-            bar.backgroundColor = UIColor(named: "BACKGROUND")
             addBar(bar, dataSource: self, at: .custom(view: TabView, layout: nil))
     
             }
