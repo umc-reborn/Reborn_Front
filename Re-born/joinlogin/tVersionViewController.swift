@@ -36,7 +36,7 @@ class tVersionViewController: UIViewController {
         let storyboard = UIStoryboard(name: "JoinLogin", bundle: nil)
         guard let nextVC = storyboard.instantiateViewController(identifier: "FirstLoginViewController") as? FirstLoginViewController else { return }
         
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        self.present(nextVC, animated: true)
     }
     
 
