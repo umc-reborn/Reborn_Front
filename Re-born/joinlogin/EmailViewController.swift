@@ -224,7 +224,6 @@ class EmailViewController: UIViewController, UITextViewDelegate {
             requestCheckButton.setTitleColor(.mygray, for: .normal)
             requestCheckButton.isEnabled = false
             timer?.invalidate()
-            
         }
         else {
             nextbuttonEmail.backgroundColor = .white
@@ -259,11 +258,11 @@ class EmailViewController: UIViewController, UITextViewDelegate {
         print(paramettaData)
         identificationPost.instance.SendingPostNemail(parameters2: paramettaData) { result2 in self.emailData = result2 }
     
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             
             //hihi에 암호화된 코드가 담겨있음.
             self.hihi = self.emailData?.result ?? ""
-            print("암호화된 인증 코드 = "+self.hihi) // 이게 좀 늦게 뜸!!!!!!!
+            print("암호화된 인증 코드 = \(self.hihi)") // 이게 좀 늦게 뜸!!!!!!!
             self.requestButton.backgroundColor = .white
             self.requestButton.layer.borderColor = UIColor.mygray?.cgColor
             self.requestButton.setTitleColor(.mygray, for: .normal)
@@ -282,29 +281,29 @@ class EmailViewController: UIViewController, UITextViewDelegate {
         NumCheckGet.instance.NumCheckGetData(veriCode: codeTextField.text ?? ""){result in self.Lego = result
             }
        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             
             self.rightHi = self.Lego?.result ?? ""
             print("사용자가 입력한 코드 암호화한 것 = " + self.rightHi)
+
+//            self.requestCheckButton.backgroundColor = .white
+//            self.requestCheckButton.layer.borderColor = UIColor.mygray?.cgColor
+//            self.requestCheckButton.setTitleColor(.mygray, for: .normal)
+//            self.requestCheckButton.isEnabled = false
+            
+//            if(self.hihi != self.rightHi){
+//                self.requestCheckButton.isEnabled = true
+//                self.requestCheckButton.layer.borderWidth = 1.0
+//                self.requestCheckButton.layer.borderColor = self.myorange?.cgColor // 테두리 컬러
+//                self.requestCheckButton.backgroundColor = .myorange
+//                self.requestCheckButton.layer.cornerRadius = 4.0
+//                self.requestCheckButton.setTitle("인증확인", for: .normal)  // 버튼 텍스트 설정
+//                self.requestCheckButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
+//                self.requestCheckButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
+//            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
             self.compare2Things() //해냈다...
-            
-            
-            self.requestCheckButton.backgroundColor = .white
-            self.requestCheckButton.layer.borderColor = UIColor.mygray?.cgColor
-            self.requestCheckButton.setTitleColor(.mygray, for: .normal)
-            self.requestCheckButton.isEnabled = false
-            
-            if(self.hihi != self.rightHi){
-                self.requestCheckButton.isEnabled = true
-                self.requestCheckButton.layer.borderWidth = 1.0
-                self.requestCheckButton.layer.borderColor = self.myorange?.cgColor // 테두리 컬러
-                self.requestCheckButton.backgroundColor = .myorange
-                self.requestCheckButton.layer.cornerRadius = 4.0
-                self.requestCheckButton.setTitle("인증확인", for: .normal)  // 버튼 텍스트 설정
-                self.requestCheckButton.setTitleColor(UIColor.white, for: .normal)//버튼 텍스트 색상 설정
-                self.requestCheckButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 15) //폰트 및 사이즈 설정
-            }
-           
         }
     }
     
