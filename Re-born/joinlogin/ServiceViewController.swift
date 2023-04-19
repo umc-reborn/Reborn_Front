@@ -56,6 +56,7 @@ class ServiceViewController: UIViewController {
         }
         else {
             BigButton.tintColor = .mygray
+            BigButton.backgroundColor = .clear
             SmallButton1.tintColor = .mygray
             SmallButton2.tintColor = .mygray
             SmallButton3.tintColor = .mygray
