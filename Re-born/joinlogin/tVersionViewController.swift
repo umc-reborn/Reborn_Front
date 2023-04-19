@@ -26,18 +26,13 @@ class tVersionViewController: UIViewController {
         // back button custom
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
-        
     }
-    
-    
     
     @IBAction func iseeButtonTapped(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "JoinLogin", bundle: nil)
         guard let nextVC = storyboard.instantiateViewController(identifier: "FirstLoginViewController") as? FirstLoginViewController else { return }
         
-        self.present(nextVC, animated: true)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
-
 }
