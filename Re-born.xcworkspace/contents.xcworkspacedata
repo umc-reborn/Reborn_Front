@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/jaegupark/Desktop/Reborn_iOS/Reborn_Front/Re-born.xcodeproj">
+      location = "group:Re-born.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
