@@ -26,10 +26,7 @@ class tVersionViewController: UIViewController {
         // back button custom
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
-        
     }
-    
-    
     
     @IBAction func iseeButtonTapped(_ sender: Any) {
         
@@ -38,6 +35,4 @@ class tVersionViewController: UIViewController {
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
-
 }

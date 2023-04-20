@@ -26,6 +26,8 @@ class FirstLoginViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationItem.hidesBackButton = true
         
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")
