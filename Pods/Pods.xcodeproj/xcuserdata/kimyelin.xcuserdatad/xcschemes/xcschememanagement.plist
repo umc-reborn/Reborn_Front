@@ -9,10 +9,10 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>BSImagePicker.xcscheme</key>
+		<key>BSImagePicker.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>DropDown.xcscheme</key>
 		<dict>
