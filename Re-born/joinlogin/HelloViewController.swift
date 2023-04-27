@@ -16,10 +16,13 @@ class HelloViewController: UIViewController {
         super.viewDidLoad()
         
         let mybrown = UIColor(named: "mybrown")
+        let myorange = UIColor(named: "myorange")
         
         // back button custom
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
+        
+        self.navigationController?.navigationBar.backgroundColor = myorange
         
         startRebornButton.backgroundColor = .mybrown
         startRebornButton.layer.cornerRadius = 4.0

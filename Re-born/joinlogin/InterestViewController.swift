@@ -214,68 +214,70 @@ class InterestViewController: UIViewController {
 //            nextButton11.isEnabled = false
 //        }
     }
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            print("내 아이디 : \(yourId3)")
-            print("내 비밀번호 : \(yourPw3)")
-            
-            
-            print("내 프로필 사진 잘 넘어왔어 : \(myImg1)")
-            print("내 닉네임 잘 넘어왔어 : \(yourNickName1)")
-            print("내 주소 잘 넘어왔어 : \(yourGround1)")
-            print("내 생일 잘 넘어왔어 : \(HBD1)")
-            
-            nextButton11.isEnabled = false
-            
-            gray_cafe = UIImage(named:"gray_cafe")
-            gray_banchan = UIImage(named:"gray_banchan")
-            gray_fashion = UIImage(named:"gray_fashion")
-            gray_life = UIImage(named:"gray_life")
-            gray_etc = UIImage(named:"gray_etc")
-            
-            
-            orange_cafe = UIImage(named:"orange_cafe")
-            orange_banchan = UIImage(named:"orange_banchan")
-            orange_fashion = UIImage(named:"orange_fashion")
-            orange_life = UIImage(named:"orange_life")
-            orange_etc = UIImage(named:"orange_etc")
-            
-            
-            let mybrown = UIColor(named: "mybrown")
-            let myorange = UIColor(named: "myorange")
-            
-            // back button custom
-            self.navigationController?.navigationBar.tintColor = .black
-            self.navigationController?.navigationBar.topItem?.title = ""
-            
-            // viewcontroller 배경 색상 변경 #FFFBF9
-            let BACKGROUND = UIColor(named: "BACKGROUND")
-            self.view.backgroundColor = BACKGROUND
-            ddview.backgroundColor = BACKGROUND
-            
-            //progressView6
-            progressView6.progressViewStyle = .default
-            progressView6.progressTintColor = .myorange
-            progressView6.progress = 0.9
-            
-            // 다음 버튼
-            nextButton11.layer.borderWidth = 1.0
-            nextButton11.layer.borderColor = mybrown?.cgColor // 테두리 컬러
-            nextButton11.layer.cornerRadius = 4.0
-            nextButton11.setTitle("다음", for: .normal)  // 버튼 텍스트 설정
-            nextButton11.setTitleColor(UIColor.mybrown, for: .normal)//버튼 텍스트 색상 설정
-            nextButton11.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_bold", size: 16) //폰트 및 사이즈 설정
-            
-            cafeButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
-            banchanButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
-            fashionButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
-            lifeButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
-            etcButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
-            
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("내 아이디 : \(yourId3)")
+        print("내 비밀번호 : \(yourPw3)")
         
         
+        print("내 프로필 사진 잘 넘어왔어 : \(myImg1)")
+        print("내 닉네임 잘 넘어왔어 : \(yourNickName1)")
+        print("내 주소 잘 넘어왔어 : \(yourGround1)")
+        print("내 생일 잘 넘어왔어 : \(HBD1)")
+        
+        nextButton11.isEnabled = false
+        
+        gray_cafe = UIImage(named:"gray_cafe")
+        gray_banchan = UIImage(named:"gray_banchan")
+        gray_fashion = UIImage(named:"gray_fashion")
+        gray_life = UIImage(named:"gray_life")
+        gray_etc = UIImage(named:"gray_etc")
+        
+        
+        orange_cafe = UIImage(named:"orange_cafe")
+        orange_banchan = UIImage(named:"orange_banchan")
+        orange_fashion = UIImage(named:"orange_fashion")
+        orange_life = UIImage(named:"orange_life")
+        orange_etc = UIImage(named:"orange_etc")
+        
+        
+        let mybrown = UIColor(named: "mybrown")
+        let myorange = UIColor(named: "myorange")
+        
+        // back button custom
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        // viewcontroller 배경 색상 변경 #FFFBF9
+        let BACKGROUND = UIColor(named: "BACKGROUND")
+        self.view.backgroundColor = BACKGROUND
+        ddview.backgroundColor = BACKGROUND
+        self.navigationController?.navigationBar.backgroundColor = BACKGROUND
+        
+        //progressView6
+        progressView6.progressViewStyle = .default
+        progressView6.progressTintColor = .myorange
+        progressView6.progress = 0.9
+        
+        // 다음 버튼
+        nextButton11.layer.borderWidth = 1.0
+        nextButton11.layer.borderColor = mybrown?.cgColor // 테두리 컬러
+        nextButton11.layer.cornerRadius = 4.0
+        nextButton11.setTitle("다음", for: .normal)  // 버튼 텍스트 설정
+        nextButton11.setTitleColor(UIColor.mybrown, for: .normal)//버튼 텍스트 색상 설정
+        nextButton11.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_bold", size: 16) //폰트 및 사이즈 설정
+        
+        cafeButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
+        banchanButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
+        fashionButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
+        lifeButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
+        etcButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
     }
-    
-
+        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "회원가입"
+    }
+}
