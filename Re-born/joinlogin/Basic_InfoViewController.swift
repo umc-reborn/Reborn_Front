@@ -63,6 +63,9 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
     
     @IBOutlet var findAddressButton: UIButton!
     
+    
+    @IBOutlet var hihiview: UIView!
+    
     //전역변수로 사용
     let mybrown = UIColor(named: "mybrown")
     let myorange = UIColor(named: "myorange")
@@ -84,12 +87,14 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         print("Basic_InfoViewController에 비밀번호 도착" + yourPw2)
         
         // back button custom
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.title = ""
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.title = ""
+    
         
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")
         self.view.backgroundColor = BACKGROUND
+        hihiview.backgroundColor = BACKGROUND
         
         //progressView5
         ProgressView5.progressViewStyle = .default
@@ -147,7 +152,7 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         
         //생년월일
         BDTextField.addLeftPadding()
-        BDTextField.placeholder = "YYYY/MM/DD"
+        BDTextField.placeholder = "YYYYMMDD"
         BDTextField.backgroundColor = .white
         BDTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
         BDTextField.textColor = .black
@@ -181,7 +186,7 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
    }
     
     @objc func AlltextFieldisFilled(textField: UITextField){
-        if (!(nickNameTextField.text == "") && !(townTextField.text == "") && !(BDTextField.text == "")){
+        if (!(nickNameTextField.text == "") && !(townTextField.text == "")){
             BasicNextButton.isEnabled = true
             BasicNextButton.setTitleColor(.white, for: .normal)
             BasicNextButton.layer.borderWidth = 1.0
@@ -199,20 +204,27 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
     
     @IBAction func plzNextButtonTapped(_ sender: Any) {
         
-        // 문자열 중 숫자만 꺼내오기
-        let BirthdayDate = BDTextField.text ?? ""
-        let BDyear = BirthdayDate.prefix(4)
-        let BDmonth1 = BirthdayDate[String.Index(encodedOffset: 5)] // 슬래시 다음 값 ex.0
-        let BDmonth2 = BirthdayDate[String.Index(encodedOffset: 6)] // ex.3
-        let BDdate1 = BirthdayDate[String.Index(encodedOffset: 8)]
-        let BDdate2 = BirthdayDate[String.Index(encodedOffset: 9)]
-        let Birrthday = "\(BDyear)\(BDmonth1)\(BDmonth2)\(BDdate1)\(BDdate2)"
+        // 생년월일을 적었다면
+        if ((BDTextField.text != "")) {
+            HBD = BDTextField.text ?? ""
+
+//            // 문자열 중 숫자만 꺼내오기
+//            let BirthdayDate = BDTextField.text ?? ""
+////            let BDyear = BirthdayDate.prefix(4)
+////            let BDmonth1 = BirthdayDate[String.Index(encodedOffset: 5)] // 슬래시 다음 값 ex.0
+////            let BDmonth2 = BirthdayDate[String.Index(encodedOffset: 6)] // ex.3
+////            let BDdate1 = BirthdayDate[String.Index(encodedOffset: 8)]
+////            let BDdate2 = BirthdayDate[String.Index(encodedOffset: 9)]
+////            let Birrthday = "\(BDyear)\(BDmonth1)\(BDmonth2)\(BDdate1)\(BDdate2)"
+//            HBD = BirthdayDate
+            
+        }
         
         
         yourImage = imageUrl.result ?? ""
         yourNickName = nickNameTextField.text ?? ""
         yourGround = townTextField.text ?? ""
-        HBD = Birrthday
+        
        
         guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "InterestViewController") as? InterestViewController else {return}
 

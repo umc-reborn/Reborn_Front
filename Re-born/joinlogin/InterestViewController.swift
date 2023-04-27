@@ -51,6 +51,8 @@ class InterestViewController: UIViewController {
     @IBOutlet weak var nextButton11: UIButton!
     @IBOutlet weak var progressView6: UIProgressView!
     
+    @IBOutlet var ddview: UIView!
+    
     //var selectedOrangeButtonIndex = -1
     
     @IBAction func cafeButtonTapped(_ sender:Any){
@@ -250,6 +252,7 @@ class InterestViewController: UIViewController {
             // viewcontroller 배경 색상 변경 #FFFBF9
             let BACKGROUND = UIColor(named: "BACKGROUND")
             self.view.backgroundColor = BACKGROUND
+            ddview.backgroundColor = BACKGROUND
             
             //progressView6
             progressView6.progressViewStyle = .default
