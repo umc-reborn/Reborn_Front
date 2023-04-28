@@ -33,6 +33,7 @@ class FirstLoginViewController: ViewController {
         let BACKGROUND = UIColor(named: "BACKGROUND")
         self.view.backgroundColor = BACKGROUND
         
+        self.navigationController?.navigationBar.backgroundColor = BACKGROUND
     }
     
     
