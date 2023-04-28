@@ -17,6 +17,7 @@ class tVersionViewController: UIViewController {
         super.viewDidLoad()
         
         let mybrown = UIColor(named: "mybrown")
+        let myorange = UIColor(named: "testversion")
         
         iseeButton.setTitleColor(.white, for: .normal)
         iseeButton.layer.cornerRadius = 4.0
@@ -26,6 +27,8 @@ class tVersionViewController: UIViewController {
         // back button custom
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
+        
+        self.navigationController?.navigationBar.backgroundColor = myorange
     }
     
     @IBAction func iseeButtonTapped(_ sender: Any) {
