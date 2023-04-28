@@ -186,7 +186,10 @@ class WhoViewController: UIViewController {
         
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "회원가입"
+    }
 }
 
 

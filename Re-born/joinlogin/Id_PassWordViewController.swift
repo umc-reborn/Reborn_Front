@@ -298,6 +298,7 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
                 self.doubleCheckButton.setTitleColor(.mygray, for: .normal)
                 self.iddLabel.text = "사용가능한 아이디입니다."
                 self.iddLabel.textColor = .mybrown
+                self.setIdTextField.isEnabled = false
                 self.doubleCheckButton.isEnabled = false
             }
             else {
@@ -344,11 +345,10 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
         self.navigationController?.pushViewController(rvc, animated: true)
         
         print("나와라11111 ============")
-
-        
-        
-        
     }
-   
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "회원가입"
+    }
 }

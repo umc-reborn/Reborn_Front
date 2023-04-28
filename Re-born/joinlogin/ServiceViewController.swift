@@ -30,7 +30,7 @@ class ServiceViewController: UIViewController {
     
     @IBOutlet weak var ProgressView: UIProgressView!
     
- 
+    
     // 연결
     @IBOutlet weak var BigButton: UIButton!
     
@@ -108,32 +108,32 @@ class ServiceViewController: UIViewController {
             smallStatus4 = "X"
         }
     }
-   
-
+    
+    
     @IBAction func NnextButton(_ sender: Any) {
-
+        
         //화면 넘기기 + 데이터 넘기기
         let servSomething4 = smallStatus4
-
+        
         let storyB = UIStoryboard.init(name: "JoinLogin", bundle: nil)
         guard let rvcc = storyB.instantiateViewController(withIdentifier: "WhoViewController") as? WhoViewController else {return}
-
+        
         rvcc.smallStatus44 = servSomething4
-
+        
         //화면이동
         navigationController?.pushViewController(rvcc, animated: true)
-
-
+        
+        
     }
     
     @objc func ButtondidChanged(_ sender: UIButton) {
-           
+        
         if ((SmallButton1.tintColor == .myorange) && (SmallButton2.tintColor == .myorange) && (SmallButton3.tintColor == .myorange)){
             NnextButton.backgroundColor = .mybrown
             NnextButton.setTitleColor(.white, for: .normal) // 평상시
             NnextButton.setTitleColor(.white, for: .selected)
             NnextButton.isEnabled = true
-           }
+        }
         else if ((SmallButton1.tintColor == .myorange) && (SmallButton2.tintColor == .myorange) && (SmallButton3.tintColor == .myorange) && (SmallButton4.tintColor == .myorange) && (BigButton.tintColor == .myorange)){
             NnextButton.backgroundColor = .mybrown
             NnextButton.setTitleColor(.white, for: .normal) // 평상시
@@ -145,9 +145,9 @@ class ServiceViewController: UIViewController {
             NnextButton.setTitleColor(.mybrown, for: .normal) // 평상시
             NnextButton.setTitleColor(.mybrown, for: .selected)
             NnextButton.isEnabled = false
-           }
-           
-       }
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,9 +176,9 @@ class ServiceViewController: UIViewController {
         NnextButton.layer.borderColor = mybrown?.cgColor // 테두리 컬러
         NnextButton.layer.cornerRadius = 4.0
         NnextButton.setTitle("다음", for: .normal)  // 버튼 텍스트 설정
-
+        
         NnextButton.setTitleColor(UIColor.mybrown, for: .normal)//버튼 텍스트 색상 설정
-
+        
         NnextButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_bold", size: 16) //폰트 및 사이즈 설정
         
         //버튼 비활성화
@@ -199,9 +199,10 @@ class ServiceViewController: UIViewController {
         
         SmallButton4.addTarget(self, action: #selector(ButtondidChanged), for:.touchUpInside)
         
-        }
     }
     
-
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "회원가입"
+    }
+}

@@ -42,6 +42,8 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
     var yourGround : String = ""
     var HBD : String = ""
     
+    var defaultImage : String = ""
+    
     // 프로필사진 관련 함수
     let imagePickerController = UIImagePickerController()
     let alertController = UIAlertController(title: "프로필 사진 설정", message: "", preferredStyle: .actionSheet)
@@ -74,6 +76,8 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        defaultImage = "https://rebornbucket.s3.ap-northeast-2.amazonaws.com/44f3e518-814e-4ce1-b104-8afc86843fbd.jpg"
 
         BasicNextButton.isEnabled = false
         
@@ -89,12 +93,14 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         // back button custom
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     
         
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")
         self.view.backgroundColor = BACKGROUND
         hihiview.backgroundColor = BACKGROUND
+        self.navigationController?.navigationBar.backgroundColor = BACKGROUND
         
         //progressView5
         ProgressView5.progressViewStyle = .default
@@ -170,8 +176,13 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         nickNameTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
         townTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
         BDTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
+        print(proFileView.image ?? "")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "회원가입"
+    }
 
     //작성 중 주황색
    func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -186,7 +197,7 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
    }
     
     @objc func AlltextFieldisFilled(textField: UITextField){
-        if (!(nickNameTextField.text == "") && !(townTextField.text == "")){
+        if ((nickNameTextField.text?.count ?? 0 >= 2) && !(townTextField.text == "") && (BDTextField.text?.count == 8) && (nickNameTextField.text?.count ?? 0 <= 12)){
             BasicNextButton.isEnabled = true
             BasicNextButton.setTitleColor(.white, for: .normal)
             BasicNextButton.layer.borderWidth = 1.0
@@ -221,7 +232,7 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         }
         
         
-        yourImage = imageUrl.result ?? ""
+        yourImage = defaultImage ?? ""
         yourNickName = nickNameTextField.text ?? ""
         yourGround = townTextField.text ?? ""
         
@@ -296,8 +307,11 @@ extension Basic_InfoViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             proFileView?.image = image
-           DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+           DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
                 DiaryPost.instance.uploadDiary(file: self.proFileView.image!, url: self.serverURL) { result in self.imageUrl = result }
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.defaultImage = self.imageUrl.result
             }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")

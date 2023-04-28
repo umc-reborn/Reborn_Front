@@ -306,4 +306,9 @@ class EmailViewController: UIViewController, UITextViewDelegate {
         }
         RunLoop.current.add(self.timer!, forMode: .common)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "회원가입"
+    }
 }
