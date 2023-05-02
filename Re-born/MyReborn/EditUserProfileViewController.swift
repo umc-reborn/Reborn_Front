@@ -24,7 +24,6 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var EditNicknameTextField: UITextField!
     @IBOutlet var EditAddressTextField: UITextField!
-    @IBOutlet var EditBirthTextField: UITextField!
     
     @IBOutlet var userProfileImage: UIImageView!
     
@@ -93,7 +92,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         // 📌 API 수정되면 img URL 변경
         
         isSelectedCategory()
-        let parameterDatas = EditUserInfoModel(userImg: storeImageUrl, userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userBirthDate: EditBirthTextField.text, userLikes: selectCategory ?? "")
+        let parameterDatas = EditUserInfoModel(userImg: storeImageUrl, userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userLikes: selectCategory ?? "")
         APIHandlerUserInfoPost.instance.SendingPostReborn(token: userJWT, parameters: parameterDatas) { result in self.rebornData = result }
         print("회원정보수정 결과는 \(self.rebornData)")
         
@@ -154,11 +153,11 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         // 텍스트 필드
         EditNicknameTextField.delegate = self
         EditAddressTextField.delegate = self
-        EditBirthTextField.delegate = self
+//        EditBirthTextField.delegate = self
         
         EditNicknameTextField.addLeftPadding()
         EditAddressTextField.addLeftPadding()
-        EditBirthTextField.addLeftPadding()
+//        EditㅓㅇTextField.addLeftPadding()
         
         EditNicknameTextField.layer.borderWidth = 1.0
         EditNicknameTextField.layer.cornerRadius = 4
@@ -168,25 +167,25 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         EditAddressTextField.layer.cornerRadius = 4
         EditAddressTextField.layer.borderColor = UIColor.darkGray.cgColor
         
-        EditBirthTextField.layer.borderWidth = 1.0
-        EditBirthTextField.layer.cornerRadius = 4
-        EditBirthTextField.layer.borderColor = UIColor.darkGray.cgColor
+//        EditBirthTextField.layer.borderWidth = 1.0
+//        EditBirthTextField.layer.cornerRadius = 4
+//        EditBirthTextField.layer.borderColor = UIColor.darkGray.cgColor
         
         // 텍스트 필드 컬러
         textFieldDidBeginEditing(EditNicknameTextField)
         textFieldDidBeginEditing(EditAddressTextField)
-        textFieldDidBeginEditing(EditBirthTextField)
+//        textFieldDidBeginEditing(EditBirthTextField)
         
         textFieldDidEndEditing(EditNicknameTextField)
         textFieldDidEndEditing(EditAddressTextField)
-        textFieldDidEndEditing(EditBirthTextField)
+//        textFieldDidEndEditing(EditBirthTextField)
         
         self.imagePickerController.delegate = self
         
         // 생년월일 특정 문자열만 가져오기
-        let userBirth = EditAddressTextField.text ?? ""
-        print("userBirth count is \(userBirth.count)")
-        let startIndex = userBirth.index(userBirth.startIndex, offsetBy: 0)// 사용자지정 시작인덱스
+//        let userBirth = EditAddressTextField.text ?? ""
+//        print("userBirth count is \(userBirth.count)")
+//        let startIndex = userBirth.index(userBirth.startIndex, offsetBy: 0)// 사용자지정 시작인덱스
 //        let endIndex = userBirth.index(userBirth.startIndex, offsetBy:10)
         
         
@@ -241,7 +240,7 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
                         self.userProfileImage.load(url: url!)
                         self.storeImageUrl = storeDatas.userImg!
                         self.EditNicknameTextField.text = storeDatas.userNickname
-                        self.EditBirthTextField.text = storeDatas.userBirthDate
+//                        self.EditBirthTextField.text = storeDatas.userBirthDate
                         self.EditAddressTextField.text = storeDatas.userAddress
                         // userLikes
                         self.selectCategory = storeDatas.userLikes

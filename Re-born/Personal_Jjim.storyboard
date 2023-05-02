@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!--Jjim View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="JjimVC" id="Y6W-OH-hqX" customClass="JjimViewController" customModule="UMC_Reborn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JjimVC" id="Y6W-OH-hqX" customClass="JjimViewController" customModule="Re_born" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="148.66666666666669" width="390" height="695.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JjimTableViewCell" rowHeight="96" id="zlG-em-wNk" customClass="JjimTableViewCell" customModule="UMC_Reborn" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JjimTableViewCell" rowHeight="96" id="zlG-em-wNk" customClass="JjimTableViewCell" customModule="Re_born" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="350" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zlG-em-wNk" id="ggI-KE-iTk">
@@ -200,12 +201,11 @@
                             <constraint firstItem="lty-iH-oCB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BQm-Kh-OgS"/>
                             <constraint firstItem="iIU-PA-Tmc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="CHE-7B-TJW"/>
                             <constraint firstItem="iIU-PA-Tmc" firstAttribute="top" secondItem="VMj-3L-bZ7" secondAttribute="bottom" constant="30" id="EdK-PE-gEW"/>
-                            <constraint firstAttribute="trailing" secondItem="aeA-sV-rxH" secondAttribute="trailing" constant="187" id="JYr-D8-7RL"/>
                             <constraint firstItem="VMj-3L-bZ7" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="NwP-eM-UYm"/>
                             <constraint firstItem="mCE-Rp-eSo" firstAttribute="top" secondItem="VMj-3L-bZ7" secondAttribute="bottom" constant="25.5" id="bM1-Y0-LPj"/>
                             <constraint firstItem="lty-iH-oCB" firstAttribute="top" secondItem="iIU-PA-Tmc" secondAttribute="bottom" constant="18" id="jtU-hT-6C3"/>
                             <constraint firstItem="aeA-sV-rxH" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="51" id="kQw-pm-gH5"/>
-                            <constraint firstItem="aeA-sV-rxH" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="187" id="wYZ-Tw-Jrr"/>
+                            <constraint firstItem="aeA-sV-rxH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xnH-G7-kO1"/>
                             <constraint firstAttribute="trailing" secondItem="VMj-3L-bZ7" secondAttribute="trailing" id="z9N-Gv-88K"/>
                         </constraints>
                     </view>

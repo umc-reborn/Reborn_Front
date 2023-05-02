@@ -71,7 +71,7 @@ class MyRebornViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.userJWT = UserDefaults.standard.string(forKey: "userJwt") ?? ""
             self.userResult()
         }

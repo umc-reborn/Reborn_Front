@@ -128,7 +128,7 @@ class InterestViewController: UIViewController {
     
     @IBAction func finalNextButtonTapped(_ sender: Any) {
         //회원가입 api 보내기 (최종 모은 곳 여기)
-        let parmeterData = BigModel(userId: yourId3, userEmail: thisisemail2, userPwd: yourPw3, userNickname: yourNickName1,userImg: myImg1, userAdAgreement: apple3, userBirthDate: HBD1, userAddress: yourGround1, userLikes: yourInterest)
+        let parmeterData = BigModel(userId: yourId3, userEmail: thisisemail2, userPwd: yourPw3, userNickname: yourNickName1,userImg: myImg1, userAdAgreement: apple3, userAddress: yourGround1, userLikes: yourInterest)
         print(parmeterData)
         JoinNeiPost.instance.SendingPostNeiJoin(parameterspp: parmeterData) { result in self.FinalMData = result }
         print("이웃 회원가입 api 보내졌다!!!!!")
