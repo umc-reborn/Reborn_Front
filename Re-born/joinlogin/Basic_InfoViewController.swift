@@ -40,7 +40,7 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
     var yourImage : String = ""
     var yourNickName : String = ""
     var yourGround : String = ""
-    var HBD : String = ""
+//    var HBD : String = ""
     
     var defaultImage : String = ""
     
@@ -56,7 +56,6 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
     @IBOutlet weak var ProgressView5: UIProgressView!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var townTextField: UITextField!
-    @IBOutlet weak var BDTextField: UITextField!
     @IBOutlet weak var BasicNextButton: UIButton!
     
     @IBOutlet var proFileView: UIImageView!
@@ -127,9 +126,9 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         textFieldDidEndEditing(townTextField)
         
         // 생년월일
-        BDTextField.delegate = self
-        textFieldDidBeginEditing(BDTextField)
-        textFieldDidEndEditing(BDTextField)
+//        BDTextField.delegate = self
+//        textFieldDidBeginEditing(BDTextField)
+//        textFieldDidEndEditing(BDTextField)
         
         //닉네임
         nickNameTextField.addLeftPadding()
@@ -157,14 +156,14 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
 //        townTextField.clearButtonMode = .always // 한번에 지우기
         
         //생년월일
-        BDTextField.addLeftPadding()
-        BDTextField.placeholder = "YYYYMMDD"
-        BDTextField.backgroundColor = .white
-        BDTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
-        BDTextField.textColor = .black
-        BDTextField.layer.borderWidth = 1.0 // 두께
-        BDTextField.layer.borderColor = mygray?.cgColor // 테두리 컬러
-        BDTextField.layer.cornerRadius = 4.0
+//        BDTextField.addLeftPadding()
+//        BDTextField.placeholder = "YYYYMMDD"
+//        BDTextField.backgroundColor = .white
+//        BDTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
+//        BDTextField.textColor = .black
+//        BDTextField.layer.borderWidth = 1.0 // 두께
+//        BDTextField.layer.borderColor = mygray?.cgColor // 테두리 컬러
+//        BDTextField.layer.cornerRadius = 4.0
         
         //프로필 사진
         enrollAlertEvent()
@@ -175,7 +174,7 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         // add target
         nickNameTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
         townTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
-        BDTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
+//        BDTextField.addTarget(self, action: #selector(AlltextFieldisFilled), for: .editingChanged)
         print(proFileView.image ?? "")
     }
     
@@ -197,7 +196,7 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
    }
     
     @objc func AlltextFieldisFilled(textField: UITextField){
-        if ((nickNameTextField.text?.count ?? 0 >= 2) && !(townTextField.text == "") && (BDTextField.text?.count == 8) && (nickNameTextField.text?.count ?? 0 <= 12)){
+        if ((nickNameTextField.text?.count ?? 0 >= 2) && !(townTextField.text == "") && (nickNameTextField.text?.count ?? 0 <= 12)){
             BasicNextButton.isEnabled = true
             BasicNextButton.setTitleColor(.white, for: .normal)
             BasicNextButton.layer.borderWidth = 1.0
@@ -215,24 +214,6 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
     
     @IBAction func plzNextButtonTapped(_ sender: Any) {
         
-        // 생년월일을 적었다면
-        if ((BDTextField.text != "")) {
-            HBD = BDTextField.text ?? ""
-
-//            // 문자열 중 숫자만 꺼내오기
-//            let BirthdayDate = BDTextField.text ?? ""
-////            let BDyear = BirthdayDate.prefix(4)
-////            let BDmonth1 = BirthdayDate[String.Index(encodedOffset: 5)] // 슬래시 다음 값 ex.0
-////            let BDmonth2 = BirthdayDate[String.Index(encodedOffset: 6)] // ex.3
-////            let BDdate1 = BirthdayDate[String.Index(encodedOffset: 8)]
-////            let BDdate2 = BirthdayDate[String.Index(encodedOffset: 9)]
-////            let Birrthday = "\(BDyear)\(BDmonth1)\(BDmonth2)\(BDdate1)\(BDdate2)"
-//            HBD = BirthdayDate
-            
-        }
-        
-        
-        yourImage = defaultImage ?? ""
         yourNickName = nickNameTextField.text ?? ""
         yourGround = townTextField.text ?? ""
         
@@ -243,10 +224,10 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         rvc.thisisemail2 = thisisemail1 // 이메일 담음 (보낼거야)
         rvc.yourId3 = yourId2
         rvc.yourPw3 = yourPw2
-        rvc.myImg1 = yourImage
+        rvc.myImg1 = defaultImage
         rvc.yourNickName1 = yourNickName
         rvc.yourGround1 = yourGround
-        rvc.HBD1 = HBD
+//        rvc.HBD1 = HBD
         
         self.navigationController?.pushViewController(rvc, animated: true)
         
@@ -309,9 +290,9 @@ extension Basic_InfoViewController: UIImagePickerControllerDelegate, UINavigatio
             proFileView?.image = image
            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
                 DiaryPost.instance.uploadDiary(file: self.proFileView.image!, url: self.serverURL) { result in self.imageUrl = result }
-            }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
-                self.defaultImage = self.imageUrl.result
+               DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+                   self.defaultImage = self.imageUrl.result
+               }
             }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")
