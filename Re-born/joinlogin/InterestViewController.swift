@@ -61,11 +61,22 @@ class InterestViewController: UIViewController {
             cafeButton.setImage(orange_cafe, for: .normal)
             number1 = false
             nextButton11.isEnabled = true
+            // 다른 버튼 비활성화 부분
+            banchanButton.isEnabled = false
+            fashionButton.isEnabled = false
+            lifeButton.isEnabled = false
+            etcButton.isEnabled = false
         }
         else {
             cafeButton.setImage(gray_cafe, for: .normal)
             number1 = true
             nextButton11.isEnabled = false
+            // 다른 버튼 다시 활성화
+            banchanButton.isEnabled = true
+            fashionButton.isEnabled = true
+            lifeButton.isEnabled = true
+            etcButton.isEnabled = true
+            
         }
     }
     
@@ -75,11 +86,21 @@ class InterestViewController: UIViewController {
             banchanButton.setImage(orange_banchan, for: .normal)
             number2 = false
             nextButton11.isEnabled = true
+            // 다른 버튼 비활성화 부분
+            cafeButton.isEnabled = false
+            fashionButton.isEnabled = false
+            lifeButton.isEnabled = false
+            etcButton.isEnabled = false
         }
         else {
             banchanButton.setImage(gray_banchan, for: .normal)
             number2 = true
             nextButton11.isEnabled = false
+            // 다른 버튼 다시 활성화
+            cafeButton.isEnabled = true
+            fashionButton.isEnabled = true
+            lifeButton.isEnabled = true
+            etcButton.isEnabled = true
         }
     }
     
@@ -89,11 +110,22 @@ class InterestViewController: UIViewController {
             fashionButton.setImage(orange_fashion, for: .normal)
             number3 = false
             nextButton11.isEnabled = true
+            // 다른 버튼 비활성화 부분
+            cafeButton.isEnabled = false
+            banchanButton.isEnabled = false
+            lifeButton.isEnabled = false
+            etcButton.isEnabled = false
         }
         else {
             fashionButton.setImage(gray_fashion, for: .normal)
             number3 = true
             nextButton11.isEnabled = false
+            // 다른 버튼 다시 활성화
+            cafeButton.isEnabled = true
+            banchanButton.isEnabled = true
+            lifeButton.isEnabled = true
+            etcButton.isEnabled = true
+            
         }
     }
     
@@ -103,11 +135,21 @@ class InterestViewController: UIViewController {
             lifeButton.setImage(orange_life, for: .normal)
             number4 = false
             nextButton11.isEnabled = true
+            // 다른 버튼 비활성화 부분
+            cafeButton.isEnabled = false
+            banchanButton.isEnabled = false
+            fashionButton.isEnabled = false
+            etcButton.isEnabled = false
         }
         else {
             lifeButton.setImage(gray_life, for: .normal)
             number4 = true
             nextButton11.isEnabled = false
+            // 다른 버튼 다시 활성화
+            cafeButton.isEnabled = true
+            banchanButton.isEnabled = true
+            fashionButton.isEnabled = true
+            etcButton.isEnabled = true
         }
     }
     
@@ -117,11 +159,22 @@ class InterestViewController: UIViewController {
             etcButton.setImage(orange_etc, for: .normal)
             number5 = false
             nextButton11.isEnabled = true
+            // 다른 버튼 비활성화 부분
+            cafeButton.isEnabled = false
+            banchanButton.isEnabled = false
+            fashionButton.isEnabled = false
+            lifeButton.isEnabled = false
         }
         else {
             etcButton.setImage(gray_etc, for: .normal)
             number5 = true
             nextButton11.isEnabled = false
+            // 다른 버튼 다시 활성화
+            cafeButton.isEnabled = true
+            banchanButton.isEnabled = true
+            fashionButton.isEnabled = true
+            lifeButton.isEnabled = true
+
         }
     }
     
