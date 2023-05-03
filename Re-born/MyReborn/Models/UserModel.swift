@@ -18,6 +18,5 @@ struct UserListModel: Codable {
     var userImg: String?
     var userNickname: String
     var userAddress: String
-    var userBirthDate: String
     var userLikes: String
 }

@@ -759,37 +759,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pyk-ws-fAU">
-                                <rect key="frame" x="26" y="377.66666666666669" width="338" height="77.333333333333314"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQe-0x-E6j">
-                                        <rect key="frame" x="0.0" y="0.0" width="55.666666666666664" height="19.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="YYYY/MM/DD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qL5-bO-uPZ">
-                                        <rect key="frame" x="0.0" y="23.333333333333314" width="338" height="54"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="54" id="LeT-cs-AbQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="qL5-bO-uPZ" secondAttribute="trailing" id="slM-ki-iHu"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 생일에 생일 축하 쿠폰을 드립니다. (연 1회)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paQ-Sq-7n6">
-                                <rect key="frame" x="26" y="463" width="258.33333333333331" height="15.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" name="mygray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 카테고리" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1D-Uq-kkP">
-                                <rect key="frame" x="26" y="502.66666666666669" width="338" height="19.333333333333314"/>
+                                <rect key="frame" x="26" y="377.66666666666669" width="338" height="19.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -830,37 +801,31 @@
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="q3m-bL-lsK" firstAttribute="trailing" secondItem="HMa-lA-d1r" secondAttribute="trailing" id="2Yy-Vo-oWM"/>
+                            <constraint firstItem="z1D-Uq-kkP" firstAttribute="top" secondItem="Nlf-eP-GKR" secondAttribute="bottom" constant="20" id="4l7-TU-6V9"/>
                             <constraint firstItem="Nlf-eP-GKR" firstAttribute="top" secondItem="sEm-VM-ZJO" secondAttribute="bottom" constant="4" id="59h-Pm-PnS"/>
                             <constraint firstItem="sHP-pb-uuD" firstAttribute="centerX" secondItem="aS0-eS-dZr" secondAttribute="centerX" id="6TA-7j-kAE"/>
                             <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="Nlf-eP-GKR" secondAttribute="trailing" constant="26" id="6xC-2x-w5m"/>
                             <constraint firstItem="sHP-pb-uuD" firstAttribute="top" secondItem="HMa-lA-d1r" secondAttribute="bottom" constant="8" id="7Hm-zk-plX"/>
                             <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="cx4-m7-ZMq" secondAttribute="trailing" constant="26" id="7I2-nQ-9Be"/>
+                            <constraint firstItem="APv-CT-Eq2" firstAttribute="top" secondItem="cx4-m7-ZMq" secondAttribute="bottom" constant="43.329999999999998" id="9TP-ME-FnB"/>
                             <constraint firstItem="cx4-m7-ZMq" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="9k1-K6-eZF"/>
                             <constraint firstItem="sEm-VM-ZJO" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="Bj8-ge-0Wr"/>
                             <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="z1D-Uq-kkP" secondAttribute="trailing" constant="26" id="Bqi-8j-Urv"/>
                             <constraint firstItem="Nlf-eP-GKR" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="HYh-9b-UZQ"/>
                             <constraint firstItem="cx4-m7-ZMq" firstAttribute="top" secondItem="sHP-pb-uuD" secondAttribute="bottom" constant="12" id="IA3-1e-O0Z"/>
-                            <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="pyk-ws-fAU" secondAttribute="trailing" constant="26" id="Izy-nZ-hCs"/>
-                            <constraint firstItem="pyk-ws-fAU" firstAttribute="top" secondItem="APv-CT-Eq2" secondAttribute="bottom" constant="20" id="Kpc-1h-HLV"/>
                             <constraint firstItem="q3m-bL-lsK" firstAttribute="trailing" secondItem="sHP-pb-uuD" secondAttribute="trailing" id="Llu-WP-JWl"/>
-                            <constraint firstItem="pyk-ws-fAU" firstAttribute="top" secondItem="Nlf-eP-GKR" secondAttribute="bottom" constant="20" id="MrN-mf-cTE"/>
-                            <constraint firstItem="pyk-ws-fAU" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="Pbc-G6-Pa5"/>
                             <constraint firstItem="HMa-lA-d1r" firstAttribute="top" secondItem="R8t-0C-PsQ" secondAttribute="top" constant="8" id="Qwo-jE-PFK"/>
                             <constraint firstItem="R8t-0C-PsQ" firstAttribute="trailing" secondItem="APv-CT-Eq2" secondAttribute="trailing" constant="26" id="WuP-f4-5cu"/>
                             <constraint firstItem="sEm-VM-ZJO" firstAttribute="top" secondItem="cx4-m7-ZMq" secondAttribute="bottom" constant="20" id="XpI-fE-GCp"/>
-                            <constraint firstItem="z1D-Uq-kkP" firstAttribute="top" secondItem="paQ-Sq-7n6" secondAttribute="bottom" constant="24" id="b7J-6A-VFR"/>
                             <constraint firstItem="HMa-lA-d1r" firstAttribute="centerX" secondItem="aS0-eS-dZr" secondAttribute="centerX" id="doj-1G-Lim"/>
-                            <constraint firstItem="paQ-Sq-7n6" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="g32-i2-Qmb"/>
                             <constraint firstItem="q3m-bL-lsK" firstAttribute="top" secondItem="R8t-0C-PsQ" secondAttribute="top" constant="70" id="jPY-mZ-rln"/>
                             <constraint firstItem="z1D-Uq-kkP" firstAttribute="leading" secondItem="R8t-0C-PsQ" secondAttribute="leading" constant="26" id="wUH-n6-0Mc"/>
-                            <constraint firstItem="paQ-Sq-7n6" firstAttribute="top" secondItem="pyk-ws-fAU" secondAttribute="bottom" constant="8" id="xwo-eM-NiC"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="EditAddressTextField" destination="Nlf-eP-GKR" id="YNM-mq-Ank"/>
-                        <outlet property="EditBirthTextField" destination="qL5-bO-uPZ" id="vRB-Ly-e3F"/>
                         <outlet property="EditNicknameTextField" destination="rIp-L4-uK0" id="SAe-d3-KPd"/>
                         <outlet property="categoryLabel" destination="z1D-Uq-kkP" id="dUw-Lh-zyS"/>
                         <outlet property="userProfileImage" destination="HMa-lA-d1r" id="rXj-Hc-wub"/>
@@ -1795,13 +1760,13 @@
             <color red="1" green="0.98431372549019602" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
-            <color red="1" green="0.30196078431372547" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.30199998617172241" blue="0.082000002264976501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mybrown">
             <color red="0.25099998712539673" green="0.19200000166893005" blue="0.13699999451637268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mygray">
-            <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

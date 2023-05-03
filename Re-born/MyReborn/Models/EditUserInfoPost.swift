@@ -12,7 +12,6 @@ struct EditUserInfoModel: Encodable {
     var userImg: String?
     var userNickname: String?
     var userAddress: String?
-    var userBirthDate: String?
     var userLikes: String?
 }
 

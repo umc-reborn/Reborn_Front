@@ -15,7 +15,6 @@ struct BigModel: Encodable {
     var userNickname: String
     var userImg: String
     var userAdAgreement: String
-    var userBirthDate: String
     var userAddress: String
     var userLikes: String
 }
