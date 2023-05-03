@@ -3726,9 +3726,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 품목을 알고 싶어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZK-oX-DKS">
-                                                <rect key="frame" x="26" y="73" width="304" height="24"/>
+                                                <rect key="frame" x="26" y="73" width="194.66666666666666" height="24"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="304" id="AQ4-GZ-JwE"/>
                                                     <constraint firstAttribute="height" constant="24" id="lyu-mN-uan"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
@@ -3800,14 +3799,22 @@
                                                     <action selector="lifeButtonTapped:" destination="P0d-cz-LJ2" eventType="touchUpInside" id="nZY-3a-YJU"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(1가지 선택해주세요)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJC-wP-5e1">
+                                                <rect key="frame" x="224.66666666666663" y="79" width="108" height="16"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" name="Background"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="B0b-Xn-1wL" secondAttribute="trailing" constant="125" id="1za-St-Lxi"/>
                                             <constraint firstAttribute="trailing" secondItem="0mf-9u-EFe" secondAttribute="trailing" constant="37" id="3b8-Mf-jIc"/>
                                             <constraint firstItem="6qW-Pw-gGf" firstAttribute="top" secondItem="Wpq-sm-WWe" secondAttribute="top" id="3yq-f2-Lva"/>
-                                            <constraint firstItem="0mf-9u-EFe" firstAttribute="top" secondItem="WZK-oX-DKS" secondAttribute="bottom" constant="81" id="4CS-2J-etF"/>
                                             <constraint firstItem="Cq2-Om-cMR" firstAttribute="top" secondItem="Im2-l8-thl" secondAttribute="bottom" constant="40" id="8sw-aH-cq7"/>
+                                            <constraint firstItem="0mf-9u-EFe" firstAttribute="top" secondItem="WZK-oX-DKS" secondAttribute="bottom" constant="81" id="95h-kB-K1S"/>
+                                            <constraint firstItem="pJC-wP-5e1" firstAttribute="leading" secondItem="WZK-oX-DKS" secondAttribute="trailing" constant="4" id="Da6-hE-ax9"/>
+                                            <constraint firstItem="pJC-wP-5e1" firstAttribute="top" secondItem="6qW-Pw-gGf" secondAttribute="bottom" constant="75" id="KaS-yt-KrC"/>
                                             <constraint firstItem="B0b-Xn-1wL" firstAttribute="leading" secondItem="Wpq-sm-WWe" secondAttribute="leading" constant="126" id="LHo-36-iw1"/>
                                             <constraint firstItem="yUO-1f-K18" firstAttribute="width" secondItem="Cq2-Om-cMR" secondAttribute="width" id="MjV-15-rtt"/>
                                             <constraint firstItem="Im2-l8-thl" firstAttribute="leading" secondItem="Wpq-sm-WWe" secondAttribute="leading" constant="37" id="MqU-1V-BBg"/>
@@ -3817,11 +3824,9 @@
                                             <constraint firstItem="6qW-Pw-gGf" firstAttribute="leading" secondItem="Wpq-sm-WWe" secondAttribute="leading" id="g1g-fY-vL0"/>
                                             <constraint firstItem="pDL-js-goy" firstAttribute="top" secondItem="B0b-Xn-1wL" secondAttribute="bottom" constant="80" id="n2a-zI-f0h"/>
                                             <constraint firstItem="4We-ey-dgl" firstAttribute="top" secondItem="6qW-Pw-gGf" secondAttribute="bottom" constant="37" id="n7N-MZ-kGI"/>
-                                            <constraint firstAttribute="trailing" secondItem="WZK-oX-DKS" secondAttribute="trailing" constant="60" id="nBr-PV-MFh"/>
                                             <constraint firstAttribute="trailing" secondItem="pDL-js-goy" secondAttribute="trailing" constant="26" id="nIV-CK-984"/>
                                             <constraint firstItem="yUO-1f-K18" firstAttribute="leading" secondItem="Cq2-Om-cMR" secondAttribute="trailing" constant="38" id="qY3-38-fBS"/>
                                             <constraint firstAttribute="trailing" secondItem="yUO-1f-K18" secondAttribute="trailing" constant="37" id="qh1-0Z-s9A"/>
-                                            <constraint firstItem="Im2-l8-thl" firstAttribute="top" secondItem="WZK-oX-DKS" secondAttribute="bottom" constant="81" id="s1p-eh-qJR"/>
                                             <constraint firstAttribute="trailing" secondItem="4We-ey-dgl" secondAttribute="trailing" constant="94" id="tD2-aU-OMx"/>
                                             <constraint firstItem="B0b-Xn-1wL" firstAttribute="top" secondItem="Cq2-Om-cMR" secondAttribute="bottom" constant="40" id="tYi-u9-xek"/>
                                             <constraint firstItem="WZK-oX-DKS" firstAttribute="top" secondItem="4We-ey-dgl" secondAttribute="bottom" constant="8" symbolic="YES" id="u2W-Jq-9re"/>
@@ -3829,6 +3834,7 @@
                                             <constraint firstItem="pDL-js-goy" firstAttribute="leading" secondItem="Wpq-sm-WWe" secondAttribute="leading" constant="26" id="vF9-RA-cpg"/>
                                             <constraint firstItem="yUO-1f-K18" firstAttribute="top" secondItem="0mf-9u-EFe" secondAttribute="bottom" constant="40" id="vXL-4O-fuD"/>
                                             <constraint firstItem="WZK-oX-DKS" firstAttribute="leading" secondItem="Wpq-sm-WWe" secondAttribute="leading" constant="26" id="vuu-8b-zNe"/>
+                                            <constraint firstItem="Im2-l8-thl" firstAttribute="top" secondItem="WZK-oX-DKS" secondAttribute="bottom" constant="81" id="wik-d3-wb5"/>
                                             <constraint firstItem="0mf-9u-EFe" firstAttribute="width" secondItem="Im2-l8-thl" secondAttribute="width" id="zd9-8o-IHM"/>
                                         </constraints>
                                     </view>
@@ -3899,16 +3905,16 @@
             <color red="1" green="0.98431372549019602" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
-            <color red="1" green="0.30199998617172241" blue="0.082000002264976501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.30196078431372547" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mybrown">
-            <color red="0.25099998712539673" green="0.19200000166893005" blue="0.13699999451637268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.25098039215686274" green="0.19215686274509805" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mygray">
             <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="myorange">
-            <color red="1" green="0.30196078431372547" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.30199998617172241" blue="0.082000002264976501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="testversion">
             <color red="1" green="0.9882352941176471" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
