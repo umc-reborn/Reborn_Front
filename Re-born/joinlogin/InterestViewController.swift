@@ -53,129 +53,191 @@ class InterestViewController: UIViewController {
     
     @IBOutlet var ddview: UIView!
     
-    //var selectedOrangeButtonIndex = -1
-    
     @IBAction func cafeButtonTapped(_ sender:Any){
         yourInterest = "CAFE"
-        if (number1 == true){
-            cafeButton.setImage(orange_cafe, for: .normal)
-            number1 = false
-            nextButton11.isEnabled = true
-            // 다른 버튼 비활성화 부분
-            banchanButton.isEnabled = false
-            fashionButton.isEnabled = false
-            lifeButton.isEnabled = false
-            etcButton.isEnabled = false
-        }
-        else {
-            cafeButton.setImage(gray_cafe, for: .normal)
-            number1 = true
-            nextButton11.isEnabled = false
-            // 다른 버튼 다시 활성화
-            banchanButton.isEnabled = true
-            fashionButton.isEnabled = true
-            lifeButton.isEnabled = true
-            etcButton.isEnabled = true
-            
-        }
+//        if (cafeButton.isSelected == true){
+        cafeButton.setImage(orange_cafe, for: .normal)
+        banchanButton.setImage(gray_banchan, for: .normal)
+        fashionButton.setImage(gray_fashion, for: .normal)
+        lifeButton.setImage(gray_life, for: .normal)
+        etcButton.setImage(gray_etc, for: .normal)
+        nextButton11.isEnabled = true
+        // 다른 버튼 비활성화 부분
+        banchanButton.isSelected = false
+        fashionButton.isSelected = false
+        lifeButton.isSelected = false
+        etcButton.isSelected = false
+        number1 = false
+        number2 = true
+        number3 = true
+        number4 = true
+        number5 = true
+//        }
+//        else {
+//            cafeButton.setImage(gray_cafe, for: .normal)
+//            number1 = true
+//            nextButton11.isEnabled = false
+//            // 다른 버튼 다시 활성화
+//            banchanButton.isEnabled = true
+//            fashionButton.isEnabled = true
+//            lifeButton.isEnabled = true
+//            etcButton.isEnabled = true
+//
+//        }
     }
     
     @IBAction func banchanButtonTapped(_ sender:Any){
         yourInterest = "SIDEDISH"
-        if (number2 == true){
-            banchanButton.setImage(orange_banchan, for: .normal)
-            number2 = false
-            nextButton11.isEnabled = true
-            // 다른 버튼 비활성화 부분
-            cafeButton.isEnabled = false
-            fashionButton.isEnabled = false
-            lifeButton.isEnabled = false
-            etcButton.isEnabled = false
-        }
-        else {
-            banchanButton.setImage(gray_banchan, for: .normal)
-            number2 = true
-            nextButton11.isEnabled = false
-            // 다른 버튼 다시 활성화
-            cafeButton.isEnabled = true
-            fashionButton.isEnabled = true
-            lifeButton.isEnabled = true
-            etcButton.isEnabled = true
-        }
+//        if (banchanButton.isSelected == true){
+        cafeButton.setImage(gray_cafe, for: .normal)
+        banchanButton.setImage(orange_banchan, for: .normal)
+        fashionButton.setImage(gray_fashion, for: .normal)
+        lifeButton.setImage(gray_life, for: .normal)
+        etcButton.setImage(gray_etc, for: .normal)
+        nextButton11.isEnabled = true
+        // 다른 버튼 비활성화 부분
+        cafeButton.isSelected = false
+        fashionButton.isSelected = false
+        lifeButton.isSelected = false
+        etcButton.isSelected = false
+        number1 = true
+        number2 = false
+        number3 = true
+        number4 = true
+        number5 = true
+//        }
+//        else {
+//            banchanButton.setImage(gray_banchan, for: .normal)
+//            number2 = true
+//            nextButton11.isEnabled = false
+//            // 다른 버튼 다시 활성화
+//            cafeButton.isEnabled = true
+//            fashionButton.isEnabled = true
+//            lifeButton.isEnabled = true
+//            etcButton.isEnabled = true
+//        }
     }
     
     @IBAction func fashionButtonTapped(_ sender:Any){
         yourInterest = "FASHION"
-        if (number3 == true){
-            fashionButton.setImage(orange_fashion, for: .normal)
-            number3 = false
-            nextButton11.isEnabled = true
-            // 다른 버튼 비활성화 부분
-            cafeButton.isEnabled = false
-            banchanButton.isEnabled = false
-            lifeButton.isEnabled = false
-            etcButton.isEnabled = false
-        }
-        else {
-            fashionButton.setImage(gray_fashion, for: .normal)
-            number3 = true
-            nextButton11.isEnabled = false
-            // 다른 버튼 다시 활성화
-            cafeButton.isEnabled = true
-            banchanButton.isEnabled = true
-            lifeButton.isEnabled = true
-            etcButton.isEnabled = true
-            
-        }
+        cafeButton.setImage(gray_cafe, for: .normal)
+        banchanButton.setImage(gray_banchan, for: .normal)
+        fashionButton.setImage(orange_fashion, for: .normal)
+        lifeButton.setImage(gray_life, for: .normal)
+        etcButton.setImage(gray_etc, for: .normal)
+        nextButton11.isEnabled = true
+        // 다른 버튼 비활성화 부분
+        cafeButton.isSelected = false
+        banchanButton.isSelected = false
+        lifeButton.isSelected = false
+        etcButton.isSelected = false
+        number1 = true
+        number2 = true
+        number3 = false
+        number4 = true
+        number5 = true
+//        if (number3 == true){
+//            fashionButton.setImage(orange_fashion, for: .normal)
+//            number3 = false
+//            nextButton11.isEnabled = true
+//            // 다른 버튼 비활성화 부분
+//            cafeButton.isEnabled = false
+//            banchanButton.isEnabled = false
+//            lifeButton.isEnabled = false
+//            etcButton.isEnabled = false
+//        }
+//        else {
+//            fashionButton.setImage(gray_fashion, for: .normal)
+//            number3 = true
+//            nextButton11.isEnabled = false
+//            // 다른 버튼 다시 활성화
+//            cafeButton.isEnabled = true
+//            banchanButton.isEnabled = true
+//            lifeButton.isEnabled = true
+//            etcButton.isEnabled = true
+//
+//        }
     }
     
     @IBAction func lifeButtonTapped(_ sender:Any){
         yourInterest = "LIFE"
-        if (number4 == true){
-            lifeButton.setImage(orange_life, for: .normal)
-            number4 = false
-            nextButton11.isEnabled = true
-            // 다른 버튼 비활성화 부분
-            cafeButton.isEnabled = false
-            banchanButton.isEnabled = false
-            fashionButton.isEnabled = false
-            etcButton.isEnabled = false
-        }
-        else {
-            lifeButton.setImage(gray_life, for: .normal)
-            number4 = true
-            nextButton11.isEnabled = false
-            // 다른 버튼 다시 활성화
-            cafeButton.isEnabled = true
-            banchanButton.isEnabled = true
-            fashionButton.isEnabled = true
-            etcButton.isEnabled = true
-        }
+        cafeButton.setImage(gray_cafe, for: .normal)
+        banchanButton.setImage(gray_banchan, for: .normal)
+        fashionButton.setImage(gray_fashion, for: .normal)
+        lifeButton.setImage(orange_life, for: .normal)
+        etcButton.setImage(gray_etc, for: .normal)
+        nextButton11.isEnabled = true
+        // 다른 버튼 비활성화 부분
+        cafeButton.isSelected = false
+        banchanButton.isSelected = false
+        fashionButton.isSelected = false
+        etcButton.isSelected = false
+        number1 = true
+        number2 = true
+        number3 = true
+        number4 = false
+        number5 = true
+//        if (number4 == true){
+//            lifeButton.setImage(orange_life, for: .normal)
+//            number4 = false
+//            nextButton11.isEnabled = true
+//            // 다른 버튼 비활성화 부분
+//            cafeButton.isEnabled = false
+//            banchanButton.isEnabled = false
+//            fashionButton.isEnabled = false
+//            etcButton.isEnabled = false
+//        }
+//        else {
+//            lifeButton.setImage(gray_life, for: .normal)
+//            number4 = true
+//            nextButton11.isEnabled = false
+//            // 다른 버튼 다시 활성화
+//            cafeButton.isEnabled = true
+//            banchanButton.isEnabled = true
+//            fashionButton.isEnabled = true
+//            etcButton.isEnabled = true
+//        }
     }
     
     @IBAction func etcButtonTapped(_ sender:Any){
         yourInterest = "ETC"
-        if (number5 == true){
-            etcButton.setImage(orange_etc, for: .normal)
-            number5 = false
-            nextButton11.isEnabled = true
-            // 다른 버튼 비활성화 부분
-            cafeButton.isEnabled = false
-            banchanButton.isEnabled = false
-            fashionButton.isEnabled = false
-            lifeButton.isEnabled = false
-        }
-        else {
-            etcButton.setImage(gray_etc, for: .normal)
-            number5 = true
-            nextButton11.isEnabled = false
-            // 다른 버튼 다시 활성화
-            cafeButton.isEnabled = true
-            banchanButton.isEnabled = true
-            fashionButton.isEnabled = true
-            lifeButton.isEnabled = true
-
-        }
+        cafeButton.setImage(gray_cafe, for: .normal)
+        banchanButton.setImage(gray_banchan, for: .normal)
+        fashionButton.setImage(gray_fashion, for: .normal)
+        lifeButton.setImage(gray_life, for: .normal)
+        etcButton.setImage(orange_etc, for: .normal)
+        nextButton11.isEnabled = true
+        // 다른 버튼 비활성화 부분
+        cafeButton.isSelected = false
+        banchanButton.isSelected = false
+        fashionButton.isSelected = false
+        lifeButton.isSelected = false
+        number1 = true
+        number2 = true
+        number3 = true
+        number4 = true
+        number5 = false
+//        if (number5 == true){
+//            etcButton.setImage(orange_etc, for: .normal)
+//            number5 = false
+//            nextButton11.isEnabled = true
+//            // 다른 버튼 비활성화 부분
+//            cafeButton.isEnabled = false
+//            banchanButton.isEnabled = false
+//            fashionButton.isEnabled = false
+//            lifeButton.isEnabled = false
+//        }
+//        else {
+//            etcButton.setImage(gray_etc, for: .normal)
+//            number5 = true
+//            nextButton11.isEnabled = false
+//            // 다른 버튼 다시 활성화
+//            cafeButton.isEnabled = true
+//            banchanButton.isEnabled = true
+//            fashionButton.isEnabled = true
+//            lifeButton.isEnabled = true
+//
+//        }
     }
     
     
@@ -253,20 +315,8 @@ class InterestViewController: UIViewController {
             nextButton11.setTitleColor(.mybrown, for: .selected)
             nextButton11.isEnabled = false
         }
-//        if ((number1 == true) || (number2 == true) || (number3 == true) || (number4 == true) || (number5 == true)){
-//            nextButton11.backgroundColor = .mybrown
-//            nextButton11.setTitleColor(.white, for: .normal) // 평상시
-//            nextButton11.setTitleColor(.white, for: .selected) // 선택됐을때
-//            nextButton11.isEnabled = true
-//
-//        }
-//        else {
-//            nextButton11.backgroundColor = .white
-//            nextButton11.setTitleColor(.mybrown, for: .normal) // 평상시
-//            nextButton11.setTitleColor(.mybrown, for: .selected)
-//            nextButton11.isEnabled = false
-//        }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

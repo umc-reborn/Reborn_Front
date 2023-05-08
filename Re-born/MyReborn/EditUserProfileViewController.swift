@@ -529,11 +529,11 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             userProfileImage?.image = image
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
                 DiaryPost.instance.uploadDiary(file: self.userProfileImage.image!, url: self.serverURL) { result in self.imageUrl = result }
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                    self.storeImageUrl = self.imageUrl.result
-                }
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+                self.storeImageUrl = self.imageUrl.result
             }
         }
         

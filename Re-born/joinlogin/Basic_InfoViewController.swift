@@ -288,11 +288,11 @@ extension Basic_InfoViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             proFileView?.image = image
-           DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
                 DiaryPost.instance.uploadDiary(file: self.proFileView.image!, url: self.serverURL) { result in self.imageUrl = result }
-               DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
-                   self.defaultImage = self.imageUrl.result
-               }
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+                self.defaultImage = self.imageUrl.result
             }
         } else {
             print("error detected in didFinishPickinMEdiaWithInfo method")

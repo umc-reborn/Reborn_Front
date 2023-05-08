@@ -97,7 +97,7 @@ class WhoViewController: UIViewController {
             guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "noStoreJoinViewController") as? noStoreJoinViewController else {return}
             
             rvc.modalPresentationStyle = .overFullScreen
-            self.present(rvc, animated: true)
+            self.present(rvc, animated: false)
         }
         else {
             NextButtonn.isEnabled = false
@@ -183,7 +183,6 @@ class WhoViewController: UIViewController {
         
         LeftBow.addTarget(self, action: #selector(NextButtonndidChanged), for:.touchUpInside)
         RightBow.addTarget(self, action: #selector(NextButtonndidChanged), for:.touchUpInside)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -191,5 +190,3 @@ class WhoViewController: UIViewController {
         self.navigationItem.title = "회원가입"
     }
 }
-
-
