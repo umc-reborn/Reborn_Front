@@ -341,8 +341,10 @@ class JjimViewController: UIViewController {
         
         initUI()
         setDropdown()
-        JjimResult()
-        JjimCountResult()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.JjimResult()
+            self.JjimCountResult()
+        }
         JjimButton.isUserInteractionEnabled = true
         
         NotificationCenter.default.addObserver(
@@ -356,8 +358,10 @@ class JjimViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.JjimTextField.text = "   정렬"
-        JjimResult()
-        JjimCountResult()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.JjimResult()
+            self.JjimCountResult()
+        }
     }
     
     @objc func didDismissDetailNotification(_ notification: Notification) {

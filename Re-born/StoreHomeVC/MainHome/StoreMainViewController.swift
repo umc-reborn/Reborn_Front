@@ -40,6 +40,11 @@ class StoreMainViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        storeResult()
+    }
+    
     func storeResult() {
         
         let url = APIConstants.baseURL + "/store/\(String(storeMain))"
