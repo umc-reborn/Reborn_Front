@@ -291,7 +291,7 @@ extension Basic_InfoViewController: UIImagePickerControllerDelegate, UINavigatio
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
                 DiaryPost.instance.uploadDiary(file: self.proFileView.image!, url: self.serverURL) { result in self.imageUrl = result }
             }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
                 self.defaultImage = self.imageUrl.result
             }
         } else {

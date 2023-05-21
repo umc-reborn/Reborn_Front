@@ -24,6 +24,7 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nextButton.isEnabled = false
         nextButton.layer.cornerRadius = 5
         nextButton.layer.borderWidth = 1
         nextButton.layer.borderColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1).cgColor
@@ -52,6 +53,7 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
         textFieldDidBeginEditing(newokTextField)
         textFieldDidEndEditing(newokTextField)
         
+        pwTextField.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
         newpwTextField.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
         newokTextField.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
     }
@@ -69,13 +71,23 @@ class PWChangeViewController: UIViewController, UITextFieldDelegate, UITextViewD
         }
         else if (newpwTextField.text == newokTextField.text) {
             pwokErrorLabel.text = ""
-            nextButton.setTitleColor(.white, for: .normal)
-            nextButton.setTitleColor(.white, for: .selected)
-            nextButton.backgroundColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1)
+//            nextButton.setTitleColor(.white, for: .normal)
+//            nextButton.setTitleColor(.white, for: .selected)
+//            nextButton.backgroundColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1)
         }
         else {
             pwokErrorLabel.text = "비밀번호가 일치하지 않습니다."
             nextButton.backgroundColor = .white
+        }
+        
+        if ((newpwTextField.text == newokTextField.text) && (pwTextField.text?.count ?? 0 >= 8) && (isValidPw(testStr: newpwTextField.text))) {
+            nextButton.isEnabled = true
+            nextButton.setTitleColor(.white, for: .normal)
+            nextButton.setTitleColor(.white, for: .selected)
+            nextButton.backgroundColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1)
+        } else {
+            nextButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .normal)
+            nextButton.setTitleColor(UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1), for: .selected)
         }
         
         UIView.animate(withDuration: 0.1) { // 효과 주기

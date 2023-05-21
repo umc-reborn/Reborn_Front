@@ -86,6 +86,7 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
         nextButton5.setTitle("다음", for: .normal)  // 버튼 텍스트 설정
         nextButton5.setTitleColor(UIColor.mybrown, for: .normal)//버튼 텍스트 색상 설정
         nextButton5.titleLabel?.font = UIFont(name: "AppleSDGothicNeo_Medium", size: 18) //폰트 및 사이즈 설정
+        nextButton5.isEnabled = false
         
         // 중복확인버튼
         doubleCheckButton.layer.borderWidth = 1.0
@@ -166,10 +167,9 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
         textFieldDidEndEditing(doubleCheckTextField)
         
         // add target
-        setPwTextField.addTarget(self, action: #selector(passwordRegex), for: .editingChanged)
-        doubleCheckTextField.addTarget(self, action: #selector(passwordRegex), for: .editingChanged)
-
-        
+        setPwTextField.addTarget(self, action: #selector(passwordRegex(_:)), for: .editingChanged)
+        doubleCheckTextField.addTarget(self, action: #selector(passwordRegex(_:)), for: .editingChanged)
+        setIdTextField.addTarget(self, action: #selector(passwordRegex(_:)), for: .editingChanged)
         
 //        setPwTextField.addTarget(self, action: #selector(equalPassWord), for: .editingChanged)
 //        doubleCheckTextField.addTarget(self, action: #selector(equalPassWord), for: .editingChanged)
@@ -196,7 +196,7 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
     
     
     // 패스워드 정규식 확인 함수
-    @objc func passwordRegex(textField: UITextField) {
+    @objc func passwordRegex(_ textField: UITextField) {
             
         if (textField == setPwTextField) {
             if isValidPassWord(testStr: textField.text) {
@@ -210,14 +210,19 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
         }
         else if (setPwTextField.text == doubleCheckTextField.text) {
             secondPwLabel.text = ""
-            nextButton5.setTitleColor(.white, for: .normal)
-//            nextButton5.setTitleColor(.white, for: .selected)
-            nextButton5.backgroundColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1)
         }
-        else {
+        else if (setPwTextField.text != doubleCheckTextField.text){
             secondPwLabel.text = "비밀번호가 일치하지 않습니다."
             secondPwLabel.textColor = .myorange
             nextButton5.backgroundColor = .white
+        }
+        
+        if ((setPwTextField.text == doubleCheckTextField.text) && (setIdTextField.isEnabled == false) && (isValidPassWord(testStr: setPwTextField.text))) {
+            nextButton5.isEnabled = true
+            nextButton5.setTitleColor(.white, for: .normal)
+            nextButton5.backgroundColor = UIColor(red: 64/255, green: 49/255, blue: 35/255, alpha: 1)
+        } else {
+            nextButton5.setTitleColor(UIColor.mybrown, for: .normal)
         }
         
         UIView.animate(withDuration: 0.1) { // 효과 주기
@@ -330,21 +335,27 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
     // 버튼 누르면 화면 전환 + 아이디, 비밀번호 넘기기
     @IBAction func nextButtonTapped(_ sender: Any) {
         
-        yourId = setIdTextField.text ?? "" // 인증 완료된 아이디
-        yourPw = doubleCheckTextField.text ?? "" // 인증 완료된 비밀번호
-        
-        guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "Basic_InfoViewController") as? Basic_InfoViewController else {return}
-
-        rvc.apple2 = apple1 // who에서 email로 온 거 담아서 보낼거임
-        rvc.thisisemail1 = thisisemail // 이메일 담음 (보낼거야)
-        rvc.yourId2 = yourId
-        rvc.yourPw2 = yourPw
-
-        print("나와라 ============")
-        
-        self.navigationController?.pushViewController(rvc, animated: true)
-        
-        print("나와라11111 ============")
+        if (doubleCheckButton.isEnabled == false) {
+            yourId = setIdTextField.text ?? "" // 인증 완료된 아이디
+            yourPw = doubleCheckTextField.text ?? "" // 인증 완료된 비밀번호
+            
+            guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "Basic_InfoViewController") as? Basic_InfoViewController else {return}
+            
+            rvc.apple2 = apple1 // who에서 email로 온 거 담아서 보낼거임
+            rvc.thisisemail1 = thisisemail // 이메일 담음 (보낼거야)
+            rvc.yourId2 = yourId
+            rvc.yourPw2 = yourPw
+            
+            print("나와라 ============")
+            
+            self.navigationController?.pushViewController(rvc, animated: true)
+            
+            print("나와라11111 ============")
+        } else {
+            guard let rvc2 = self.storyboard?.instantiateViewController(withIdentifier: "IdCheckViewController") as? IdCheckViewController else {return}
+            rvc2.modalPresentationStyle = .overFullScreen
+            self.present(rvc2, animated: false, completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
