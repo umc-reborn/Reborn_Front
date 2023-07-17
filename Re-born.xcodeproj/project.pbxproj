@@ -32,7 +32,7 @@
 		0B94772029899E4400B5829A /* FindIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94771F29899E4400B5829A /* FindIdViewController.swift */; };
 		0B94772229899E5200B5829A /* FoundIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94772129899E5200B5829A /* FoundIdViewController.swift */; };
 		0B94772429899E6500B5829A /* ResetPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94772329899E6500B5829A /* ResetPwViewController.swift */; };
-		0B9477262989A86200B5829A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9477252989A86200B5829A /* FirstViewController.swift */; };
+		0B9477262989A86200B5829A /* FirstTabmanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9477252989A86200B5829A /* FirstTabmanController.swift */; };
 		0B9FC05C29BBA154008BCA53 /* goEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9FC05B29BBA154008BCA53 /* goEmailViewController.swift */; };
 		0B9FC05E29BBA4F9008BCA53 /* FullMailPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9FC05D29BBA4F9008BCA53 /* FullMailPost.swift */; };
 		0BAEAC2529704020008079E6 /* JoinLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BAEAC2429704020008079E6 /* JoinLogin.storyboard */; };
@@ -270,7 +270,7 @@
 		0B94771F29899E4400B5829A /* FindIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdViewController.swift; sourceTree = "<group>"; };
 		0B94772129899E5200B5829A /* FoundIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundIdViewController.swift; sourceTree = "<group>"; };
 		0B94772329899E6500B5829A /* ResetPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPwViewController.swift; sourceTree = "<group>"; };
-		0B9477252989A86200B5829A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		0B9477252989A86200B5829A /* FirstTabmanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabmanController.swift; sourceTree = "<group>"; };
 		0B9FC05B29BBA154008BCA53 /* goEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goEmailViewController.swift; sourceTree = "<group>"; };
 		0B9FC05D29BBA4F9008BCA53 /* FullMailPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMailPost.swift; sourceTree = "<group>"; };
 		0BAEAC2429704020008079E6 /* JoinLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinLogin.storyboard; sourceTree = "<group>"; };
@@ -526,7 +526,7 @@
 				0B68DDDF299242A200A988FA /* JLAPI */,
 				0BAEAC2429704020008079E6 /* JoinLogin.storyboard */,
 				0B94770329899BF400B5829A /* FirstLoginViewController.swift */,
-				0B9477252989A86200B5829A /* FirstViewController.swift */,
+				0B9477252989A86200B5829A /* FirstTabmanController.swift */,
 				0B94770729899D6400B5829A /* NeighborViewController.swift */,
 				0B94770929899D7800B5829A /* ShopLoginViewController.swift */,
 				0B94770B29899D8C00B5829A /* ServiceViewController.swift */,
@@ -1139,7 +1139,7 @@
 				C7C400EF29B07E38008EB125 /* RebornEditPost.swift in Sources */,
 				2FB97CFF2992AE1B006D4420 /* RebornHistoryDetailService.swift in Sources */,
 				C7889DFC297C23050008E99F /* StoreReviewViewController.swift in Sources */,
-				0B9477262989A86200B5829A /* FirstViewController.swift in Sources */,
+				0B9477262989A86200B5829A /* FirstTabmanController.swift in Sources */,
 				0B94771E29899E3000B5829A /* HelloSecondViewController.swift in Sources */,
 				C7C4FD79296D315B00040E05 /* ViewController.swift in Sources */,
 				0B94771429899DC700B5829A /* Basic_InfoViewController.swift in Sources */,

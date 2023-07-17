@@ -26,7 +26,6 @@ class APINeiLoginPost {
             AF.request(url, method:.post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).response { rresponse in
                 switch rresponse.result {
                 case .success(let data):
-                    let resultData = String(data: rresponse.data!, encoding: .utf8)
                     //let encodingEUCKR = CFStringConvertEncodingToNSStringEncoding(0x0422)
                     //let strUTF8 = String(data: data!, encoding: String.Encoding(rawValue: encodingEUCKR))
                     do {
