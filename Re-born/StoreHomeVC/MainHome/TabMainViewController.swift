@@ -50,7 +50,6 @@ class TabMainViewController: TabmanViewController {
         bar.indicator.tintColor = .clear
         addBar(bar, dataSource: self, at: .custom(view: tabView, layout: nil))
     }
-
 }
 
 extension TabMainViewController: PageboyViewControllerDataSource, TMBarDataSource {

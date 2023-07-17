@@ -10,7 +10,7 @@ import Tabman
 import Pageboy
 
 
-extension FirstViewController: PageboyViewControllerDataSource, TMBarDataSource {
+extension FirstTabmanController: PageboyViewControllerDataSource, TMBarDataSource {
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         switch index {
@@ -38,7 +38,7 @@ extension FirstViewController: PageboyViewControllerDataSource, TMBarDataSource 
 }
 
 
-class FirstViewController: TabmanViewController {
+class FirstTabmanController: TabmanViewController {
 
     
     @IBOutlet weak var TabView: UIView!

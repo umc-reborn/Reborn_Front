@@ -7,6 +7,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import DropDown
 
 class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, SampleProtocol4 {
     
@@ -14,8 +15,7 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     
     var storeCategory : String = ""
     
-    var storecategory = ["카페·디저트", "반찬", "패션", "편의·생활", "기타"]
-    let picker = UIPickerView()
+    var storecategory = [" 카페·디저트", " 반찬", " 패션", " 편의·생활", " 기타"]
     
     var imageUrl: ImageresultModel!
     var rebornData: StoreEditresultModel!
@@ -26,6 +26,8 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     var defaultImage : String = ""
+    
+    let dropdown = DropDown()
     
     @IBOutlet weak var storenameTextfield: UITextField!
     @IBOutlet weak var storecategoryTextfield: UITextField!
@@ -76,8 +78,8 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         textFieldDidBeginEditing(storeaddressTextfield)
         textFieldDidEndEditing(storeaddressTextfield)
         
-        configPickerView()
-        configToolbar()
+        initUI()
+        setDropdown()
         
         enrollAlertEvent()
         self.imagePickerController.delegate = self
@@ -89,6 +91,40 @@ class EditStoreViewController: UIViewController, UITextFieldDelegate, UITextView
         self.view.addGestureRecognizer(tapGesture)
     }
     
+    func initUI() {
+        DropDown.appearance().textColor = UIColor.black // 아이템 텍스트 색상
+        DropDown.appearance().selectedTextColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1) // 선택된 아이템 텍스트 색상
+        DropDown.appearance().backgroundColor = UIColor.white // 아이템 팝업 배경 색상
+        DropDown.appearance().selectionBackgroundColor = UIColor.white // 선택한 아이템 배경 색상
+        DropDown.appearance().setupCornerRadius(10)
+            dropdown.dismissMode = .automatic // 팝업을 닫을 모드 설정
+        DropDown.appearance().textFont = UIFont(name: "AppleSDGothicNeo-Regular", size: 15) ?? UIFont.systemFont(ofSize: 15)
+    }
+    
+    func setDropdown() {
+        // dataSource로 ItemList를 연결
+        dropdown.dataSource = storecategory
+        dropdown.cellHeight = 45
+        // anchorView를 통해 UI와 연결
+        dropdown.anchorView = self.storecategoryTextfield
+        
+        // View를 갖리지 않고 View아래에 Item 팝업이 붙도록 설정
+        dropdown.bottomOffset = CGPoint(x: 0, y: storecategoryTextfield.bounds.height)
+        
+        // Item 선택 시 처리
+        dropdown.selectionAction = { [weak self] (index, item) in
+            //선택한 Item을 TextField에 넣어준다.
+            self!.storecategoryTextfield.text = " \(item)"
+        }
+        
+        // 취소 시 처리
+        dropdown.cancelAction = { [weak self] in
+        }
+    }
+    
+    @IBAction func showPicker(_ sender: Any) {
+        dropdown.show()
+    }
     
     @IBAction func addressButton(_ sender: Any) {
         guard let svc2 = self.storyboard?.instantiateViewController(identifier: "StoreAddressViewController") as? StoreAddressViewController else {
@@ -326,74 +362,4 @@ extension EditStoreViewController: UIImagePickerControllerDelegate, UINavigation
     }
 }
 
-extension EditStoreViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func configPickerView() {
-        picker.delegate = self
-        picker.dataSource = self
-        storecategoryTextfield.inputView = picker
-    }
-    
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        storecategory.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return storecategory[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.storecategoryTextfield.text = self.storecategory[row]
-        if(storecategoryTextfield.text == "카페·디저트") {
-            storeCategory = "CAFE"
-        } else if (storecategoryTextfield.text == "반찬") {
-            storeCategory = "SIDEDISH"
-        } else if (storecategoryTextfield.text == "패션") {
-            storeCategory = "FASHION"
-        } else if (storecategoryTextfield.text == "편의·생활") {
-            storeCategory = "LIFE"
-        } else if (storecategoryTextfield.text == "기타") {
-            storeCategory = "ETC"
-        }
-    }
-    
-    func configToolbar() {
-        // toolbar를 만들어준다.
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor.white
-        toolBar.sizeToFit()
-        
-        // 만들어줄 버튼
-        // flexibleSpace는 취소~완료 간의 거리를 만들어준다.
-        let doneBT = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(self.donePicker))
-        doneBT.tintColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1)
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelBT = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(self.cancelPicker))
-        cancelBT.tintColor = UIColor(red: 255/255, green: 77/255, blue: 21/255, alpha: 1)
-        
-        // 만든 아이템들을 세팅해주고
-        toolBar.setItems([cancelBT,flexibleSpace,doneBT], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        // 악세사리로 추가한다.
-        storecategoryTextfield.inputAccessoryView = toolBar
-    }
-    
-    @objc func donePicker() {
-        let row = self.picker.selectedRow(inComponent: 0)
-        self.picker.selectRow(row, inComponent: 0, animated: false)
-        self.storecategoryTextfield.text = self.storecategory[row]
-        self.storecategoryTextfield.resignFirstResponder()
-    }
 
-    // "취소" 클릭 시 textfield의 텍스트 값을 nil로 처리 후 입력창 내리기
-    @objc func cancelPicker() {
-        self.storecategoryTextfield.text = nil
-        self.storecategoryTextfield.resignFirstResponder()
-    }
-}
