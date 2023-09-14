@@ -10,7 +10,7 @@ import CoreData
 import KakaoSDKCommon
 import KakaoSDKAuth
 
-@main 
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var persistentContainer: NSPersistentContainer = {

@@ -8,7 +8,6 @@
 import UIKit
 
 extension Id_PassWordViewController: UITextFieldDelegate {
-
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -27,12 +26,10 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
     var emailData : emailModel!
     var thisisemail : String = "" // 이메일 인증된 이메일
     
-    
     var idCheck : Int = 0
     
     var yourId : String = "" // 아이디
     var yourPw : String = "" // 중복확인한 패스워드
-    
     
     @IBOutlet weak var ProgressView4: UIProgressView!
     
@@ -42,36 +39,21 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var doubleCheckTextField: UITextField! // 비밀번호 확인
     @IBOutlet weak var nextButton5: UIButton! // 다음 버튼
     
-    
-    
     @IBOutlet var iddLabel: UILabel! // 중복확인 결과 멘트 경고문구
     
     @IBOutlet var firstPwLabel: UILabel! // 첫 입력된 비밀번호 경고문구
     
     @IBOutlet var secondPwLabel: UILabel! // 두 번째 비밀번호 경고문구
     
- 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         print("Basic_InfoViewController에 광고 도착" + apple1)
         print("Basic_InfoViewController에 이메일 도착" + thisisemail)
         
-        
         let mybrown = UIColor(named: "mybrown")
         let myorange = UIColor(named: "myorange")
         let mygray = UIColor(named: "mygray")
-        
-        // back button custom
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.title = ""
-        
-        
-        // viewcontroller 배경 색상 변경 #FFFBF9
-        let BACKGROUND = UIColor(named: "BACKGROUND")
-        self.view.backgroundColor = BACKGROUND
         
         //ProgressView4
         ProgressView4.progressViewStyle = .default
@@ -107,17 +89,14 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
         textFieldDidBeginEditing(setPwTextField)
         textFieldDidEndEditing(setPwTextField)
         
-        
         //비밀번호 확인
         doubleCheckTextField.delegate = self
         textFieldDidBeginEditing(doubleCheckTextField)
         textFieldDidEndEditing(doubleCheckTextField)
-    
-        
         
         //아이디
         setIdTextField.addLeftPadding1()
-        setIdTextField.placeholder = "4~16자 영문, 숫자를 사용하세요"
+        setIdTextField.placeholder = "2~10자 영문, 숫자를 사용하세요"
         setIdTextField.backgroundColor = .white
         setIdTextField.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 15)
         setIdTextField.keyboardType = .asciiCapable // only english
@@ -153,8 +132,6 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
         doubleCheckTextField.clearButtonMode = .always // 한번에 지우기
         doubleCheckTextField.isSecureTextEntry = true // 비밀번호 안보이게
         
-        
-        
         setIdTextField.delegate = self
         setPwTextField.delegate = self
         doubleCheckTextField.delegate = self
@@ -170,16 +147,9 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
         setPwTextField.addTarget(self, action: #selector(passwordRegex(_:)), for: .editingChanged)
         doubleCheckTextField.addTarget(self, action: #selector(passwordRegex(_:)), for: .editingChanged)
         setIdTextField.addTarget(self, action: #selector(passwordRegex(_:)), for: .editingChanged)
+        setIdTextField.addTarget(self, action: #selector(idRegex(_:)), for: .editingChanged)
         
-//        setPwTextField.addTarget(self, action: #selector(equalPassWord), for: .editingChanged)
-//        doubleCheckTextField.addTarget(self, action: #selector(equalPassWord), for: .editingChanged)
-
-        // 키보드 내려가게
-//        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//                self.view.endEditing(true)
-        
-        
-        
+        doubleCheckButton.isEnabled = false
     }
     
     //작성 중 주황색
@@ -194,6 +164,18 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
         textField.layer.borderWidth = 1.0
     }
     
+    @objc func idRegex(_ textField: UITextField) {
+        if (isValidLogin(testStr: textField.text)) {
+            iddLabel.text = ""
+            doubleCheckButton.isEnabled = true
+            nextButton5.isEnabled = true
+        } else {
+            iddLabel.text = "2~10자 영문, 숫자를 사용하세요"
+            iddLabel.textColor = .myorange
+            doubleCheckButton.isEnabled = false
+            nextButton5.isEnabled = false
+        }
+    }
     
     // 패스워드 정규식 확인 함수
     @objc func passwordRegex(_ textField: UITextField) {
@@ -230,11 +212,10 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
         }
     }
     
-    
     //Id 정규표현식
     //아이디는 2-10자의 영문과 숫자와 일부 특수문자(._-)만 입력 가능
     func isValidLogin(testStr: String?) -> Bool{
-        let regex = "/^(?=.*[a-zA-Z])[-a-zA-Z0-9_.]{2,10}$/;"
+        let regex = "[A-Za-z0-9]{2,10}"
         
         let pwTest = NSPredicate(format:"SELF MATCHES %@", regex)
         return pwTest.evaluate(with: testStr)
@@ -251,44 +232,44 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
     
     // get api 필요
     func IdCheckResult(userid: String) {
+        
+        let url = APIConstants.baseURL + "/users/checkDuplicate?userId=\(userid)"
+        let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: encodedStr) else { print("err"); return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            if error != nil {
+                print("err")
+                return
+            }
             
-            let url = APIConstants.baseURL + "/users/checkDuplicate?userId=\(userid)"
-            let encodedStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
+                    response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
             
-            guard let url = URL(string: encodedStr) else { print("err"); return }
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            
-            URLSession.shared.dataTask(with: request) { [self] data, response, error in
-                if error != nil {
-                    print("err")
-                    return
-                }
+            if let safeData = data {
+                print(String(decoding: safeData, as: UTF8.self))
                 
-                guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
-                response.statusCode else {
-                    print("Error: HTTP request failed")
-                    return
-                }
-                
-                if let safeData = data {
-                    print(String(decoding: safeData, as: UTF8.self))
-                    
-                    do {
-                        let decodedData = try JSONDecoder().decode(IdCheckList.self, from: safeData)
-                        let rebornDatas = decodedData.code
-                        print(rebornDatas)
-                        DispatchQueue.main.async {
-                            print("count: \(rebornDatas)")
-                            self.idCheck = rebornDatas
-                        }
-                    } catch {
-                        print("Error")
+                do {
+                    let decodedData = try JSONDecoder().decode(IdCheckList.self, from: safeData)
+                    let rebornDatas = decodedData.code
+                    print(rebornDatas)
+                    DispatchQueue.main.async {
+                        print("count: \(rebornDatas)")
+                        self.idCheck = rebornDatas
                     }
+                } catch {
+                    print("Error")
                 }
-            }.resume()
-        }
+            }
+        }.resume()
+    }
     
     @IBAction func idCheckButtonTapped(_ sender: Any) {
         
@@ -356,6 +337,10 @@ class Id_PassWordViewController: UIViewController,UITextViewDelegate {
             rvc2.modalPresentationStyle = .overFullScreen
             self.present(rvc2, animated: false, completion: nil)
         }
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

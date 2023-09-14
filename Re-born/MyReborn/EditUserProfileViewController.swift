@@ -92,9 +92,9 @@ class EditUserProfileViewController: UIViewController, UITextFieldDelegate, UITe
         // 📌 API 수정되면 img URL 변경
         
         isSelectedCategory()
-        let parameterDatas = EditUserInfoModel(userImg: storeImageUrl, userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userLikes: selectCategory ?? "")
+        let parameterDatas = EditUserInfoModel(userImg: storeImageUrl, userNickname: EditNicknameTextField.text ?? "", userAddress: EditAddressTextField.text ?? "", userLikes: selectCategory)
         APIHandlerUserInfoPost.instance.SendingPostReborn(token: userJWT, parameters: parameterDatas) { result in self.rebornData = result }
-        print("회원정보수정 결과는 \(self.rebornData)")
+        print("회원정보수정 결과는 \(String(describing: rebornData))")
         
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "MyRebornVC") as? MyRebornViewController else { return }
         nextVC.getUserName = EditNicknameTextField.text ?? ""

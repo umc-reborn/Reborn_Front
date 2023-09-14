@@ -158,13 +158,9 @@ class ServiceViewController: UIViewController {
         SmallButton3.tintColor = UIColor(named:"mygray")
         SmallButton4.tintColor = UIColor(named:"mygray")
         
-        
         let mybrown = UIColor(named: "mybrown")
         let myorange = UIColor(named: "myorange")
         
-        // back button custom
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.title = ""
         
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")
@@ -199,6 +195,10 @@ class ServiceViewController: UIViewController {
         
         SmallButton4.addTarget(self, action: #selector(ButtondidChanged), for:.touchUpInside)
         
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

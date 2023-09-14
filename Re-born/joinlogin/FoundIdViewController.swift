@@ -49,9 +49,6 @@ class FoundIdViewController: UIViewController {
         imageRound.load(url: url!)
         
         let mybrown = UIColor(named: "mybrown")
-        let myorange = UIColor(named: "myorange")
-        let mygray = UIColor(named: "mygray")
-        
         
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")

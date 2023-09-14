@@ -93,13 +93,6 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.shadowImage = UIImage()
-    
-        
-        // viewcontroller 배경 색상 변경 #FFFBF9
-        let BACKGROUND = UIColor(named: "BACKGROUND")
-        self.view.backgroundColor = BACKGROUND
-        hihiview.backgroundColor = BACKGROUND
-        self.navigationController?.navigationBar.backgroundColor = BACKGROUND
         
         //progressView5
         ProgressView5.progressViewStyle = .default
@@ -182,7 +175,11 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
         super.viewWillAppear(animated)
         self.navigationItem.title = "회원가입"
     }
-
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     //작성 중 주황색
    func textFieldDidBeginEditing(_ textField: UITextField) {
           // textField.borderStyle = .line
@@ -230,9 +227,8 @@ class Basic_InfoViewController: UIViewController, UITextViewDelegate, SampleProt
 //        rvc.HBD1 = HBD
         
         self.navigationController?.pushViewController(rvc, animated: true)
-        
-        
     }
+    
     // 프로필사진 관련 함수
     func enrollAlertEvent() {
             let photoLibraryAlertAction = UIAlertAction(title: "앨범에서 사진 선택", style: .default) {

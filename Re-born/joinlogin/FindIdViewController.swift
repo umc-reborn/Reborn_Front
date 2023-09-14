@@ -133,7 +133,7 @@ class FindIdViewController: UIViewController, UITextViewDelegate {
             print("result : \(result)")
         }
         
-        print("Hago : \(self.Hago)") // 이메일이 서버에 있는 것과 일치하면 화면전환 + 데이터값 넘겨주기
+        print("Hago : \(String(describing: Hago))") // 이메일이 서버에 있는 것과 일치하면 화면전환 + 데이터값 넘겨주기
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
             

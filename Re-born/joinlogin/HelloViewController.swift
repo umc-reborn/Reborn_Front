@@ -11,7 +11,6 @@ class HelloViewController: UIViewController {
     
     @IBOutlet weak var startRebornButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,14 +27,14 @@ class HelloViewController: UIViewController {
         startRebornButton.layer.cornerRadius = 4.0
         startRebornButton.layer.borderWidth = 1.0
         startRebornButton.layer.borderColor = mybrown?.cgColor // 테두리 컬러
-        
     }
+    
     @IBAction func startRebornButton(_ sender: UIButton) {
         
-            let storyboard = UIStoryboard(name: "JoinLogin", bundle: nil)
-            guard let nextVC = storyboard.instantiateViewController(identifier: "tVersionViewController") as? tVersionViewController else { return }
-            
-            self.navigationController?.pushViewController(nextVC, animated: true)
-
-        }
+        let storyboard = UIStoryboard(name: "JoinLogin", bundle: nil)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "tVersionViewController") as? tVersionViewController else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
+    }
 }
