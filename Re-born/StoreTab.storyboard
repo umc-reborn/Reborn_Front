@@ -1213,14 +1213,14 @@
             <objects>
                 <viewController storyboardIdentifier="StoreMainViewController" modalPresentationStyle="fullScreen" id="6Aa-dx-has" customClass="StoreMainViewController" customModule="Re_born" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S0a-1P-wuR">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1498"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOs-as-Bq8">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="1498"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-gW-W94">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1498"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgl-KI-2lA">
                                                 <rect key="frame" x="26" y="60" width="36" height="2766"/>
@@ -1338,7 +1338,7 @@
                                                 </constraints>
                                             </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUL-0M-r7g">
-                                                <rect key="frame" x="0.0" y="422" width="390" height="1078"/>
+                                                <rect key="frame" x="0.0" y="422" width="390" height="1076"/>
                                                 <connections>
                                                     <segue destination="cg7-77-eIA" kind="embed" id="eYA-Ct-g8v"/>
                                                 </connections>
@@ -1397,7 +1397,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <size key="freeformSize" width="390" height="1500"/>
+                    <size key="freeformSize" width="390" height="1498"/>
                     <connections>
                         <outlet property="storeName" destination="SuD-qI-inQ" id="VjA-Gv-adm"/>
                         <outlet property="storemainLabel" destination="Lsr-k7-HpM" id="m2I-1M-tT2"/>
@@ -1406,7 +1406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbF-u3-bOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2764.6153846153843" y="-1463.0331753554501"/>
+            <point key="canvasLocation" x="2763.0769230769229" y="-1463.0331753554501"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="b8B-r3-Qrg">
@@ -3781,7 +3781,7 @@
             <objects>
                 <viewController id="cg7-77-eIA" customClass="TabMainViewController" customModule="Re_born" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V5w-lj-h5g">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="1078"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1076"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fr-Gf-Yer">

@@ -66,8 +66,6 @@ class WhoViewController: UIViewController {
 //            SmallWord2.textColor = .black
             route_Shop = 1
             isChangeRight = true
-            
-            
         }
         else {
             RightBow.setImage(gray_B, for: .normal)
@@ -82,22 +80,22 @@ class WhoViewController: UIViewController {
     
     @IBAction func NextButtonTouched(_ sender: Any) {
         if (route_Neighbor == 1){
-            let somethingg = smallStatus44 // 받아온 거 담음(광고 O,X)
-            
             let pushVC = UIStoryboard.init(name: "JoinLogin", bundle: nil)
             guard let rvvc = pushVC.instantiateViewController(withIdentifier: "EmailViewController") as? EmailViewController else {return}
             
-            rvvc.apple = somethingg
+            rvvc.apple = smallStatus44
             
             //화면이동
             navigationController?.pushViewController(rvvc, animated: true)
             
         }
         else if (route_Shop == 1){
-            guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "noStoreJoinViewController") as? noStoreJoinViewController else {return}
+            let pushVC = UIStoryboard.init(name: "JoinLogin", bundle: nil)
+            guard let rvc = pushVC.instantiateViewController(withIdentifier: "EmailViewSecondController") as? EmailViewSecondController else {return}
             
-            rvc.modalPresentationStyle = .overFullScreen
-            self.present(rvc, animated: false)
+            rvc.apple = smallStatus44
+            
+            navigationController?.pushViewController(rvc, animated: true)
         }
         else {
             NextButtonn.isEnabled = false
@@ -154,13 +152,8 @@ class WhoViewController: UIViewController {
 //        SmallWord1.textColor = UIColor(named:"mygray")
 //        SmallWord2.textColor = UIColor(named:"mygray")
         
-        
         let mybrown = UIColor(named: "mybrown")
         let myorange = UIColor(named: "myorange")
-        
-        // navigation : back button custom
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.title = ""
         
         // viewcontroller 배경 색상 변경 #FFFBF9
         let BACKGROUND = UIColor(named: "BACKGROUND")
@@ -183,6 +176,10 @@ class WhoViewController: UIViewController {
         
         LeftBow.addTarget(self, action: #selector(NextButtonndidChanged), for:.touchUpInside)
         RightBow.addTarget(self, action: #selector(NextButtonndidChanged), for:.touchUpInside)
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

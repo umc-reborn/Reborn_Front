@@ -107,7 +107,7 @@ class NeighborViewController: UIViewController, UITextViewDelegate {
         Id.textColor = .black
         Id.layer.borderWidth = 1.0 // 두께
         Id.layer.borderColor = mygray?.cgColor // 테두리 컬러
-        Id.layer.cornerRadius = 4.0
+        Id.layer.cornerRadius = 5.0
         Id.clearButtonMode = .always // 한번에 지우기
         
         
@@ -120,7 +120,7 @@ class NeighborViewController: UIViewController, UITextViewDelegate {
         PassWord.isSecureTextEntry = true // 비밀번호 안보이게
         PassWord.layer.borderWidth = 1.0 // 두께
         PassWord.layer.borderColor = mygray?.cgColor // 테두리 컬러
-        PassWord.layer.cornerRadius = 4.0
+        PassWord.layer.cornerRadius = 5.0
         PassWord.clearButtonMode = .always // 한번에 지우기
         
         LoginButton.setTitle("로그인", for: .normal)
@@ -128,7 +128,7 @@ class NeighborViewController: UIViewController, UITextViewDelegate {
         LoginButton.backgroundColor = .mybrown
         LoginButton.layer.borderWidth = 1.0
         LoginButton.layer.borderColor = mybrown?.cgColor // 테두리 컬러
-        LoginButton.layer.cornerRadius = 4.0
+        LoginButton.layer.cornerRadius = 5.0
         // 폰트는 코드로 안함
         //LoginButton.userPressedToEnter()
         

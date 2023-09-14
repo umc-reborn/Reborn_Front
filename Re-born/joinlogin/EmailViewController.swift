@@ -23,9 +23,6 @@ extension EmailViewController: UITextFieldDelegate {
 
 
 class EmailViewController: UIViewController, UITextViewDelegate {
-
-    
-    
     // 타이머
     var timer : Timer? = nil
     var isTimerOn = false
@@ -40,7 +37,6 @@ class EmailViewController: UIViewController, UITextViewDelegate {
             timeLabel.text = "\(minutes):\(seconds)"
         }
     }
-    
     
     //API
     var emailData: emailModel!
@@ -57,7 +53,6 @@ class EmailViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var ProgressView3: UIProgressView!
     
-    
     @IBOutlet weak var nextbuttonEmail: UIButton! // 다음 버튼
     
     @IBOutlet weak var EmailTextField: UITextField! // 이메일 텍스트필드
@@ -72,9 +67,8 @@ class EmailViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet var miniLabel: UILabel! // 인증번호 경고문구
     
-    
-    
     @IBOutlet var leftTimeLabel: UILabel!
+    
     @IBOutlet var timeLabel: UILabel! // 타이머 라벨
     
     
@@ -91,9 +85,6 @@ class EmailViewController: UIViewController, UITextViewDelegate {
         
         print("ad : who에서 email로 넘어왔음 " + apple) //된다
         
-        //뒤로가기 한글 삭제
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.title = ""
         //다음 버튼 비활성화
         nextbuttonEmail.isEnabled = false
     
@@ -101,10 +92,6 @@ class EmailViewController: UIViewController, UITextViewDelegate {
         ProgressView3.progressViewStyle = .default
         ProgressView3.progressTintColor = .myorange
         ProgressView3.progress = 0.5
-        
-        // viewcontroller 배경 색상 변경 #FFFBF9
-        let BACKGROUND = UIColor(named: "BACKGROUND")
-        self.view.backgroundColor = BACKGROUND
         
         // 다음 버튼
         nextbuttonEmail.layer.borderWidth = 1.0
@@ -305,6 +292,10 @@ class EmailViewController: UIViewController, UITextViewDelegate {
             }
         }
         RunLoop.current.add(self.timer!, forMode: .common)
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

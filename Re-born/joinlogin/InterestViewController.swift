@@ -15,7 +15,6 @@ class InterestViewController: UIViewController {
     var yourId3 : String = "" // Id
     var yourPw3 : String = "" // Pw
     
-    
     var yourNickName1 : String = "" // Nickname
     var myImg1 : String = "" // 프로필 이미지
     var yourGround1 : String = "" // address
@@ -240,7 +239,6 @@ class InterestViewController: UIViewController {
 //        }
     }
     
-    
     @IBAction func finalNextButtonTapped(_ sender: Any) {
         //회원가입 api 보내기 (최종 모은 곳 여기)
         let parmeterData = BigModel(userId: yourId3, userEmail: thisisemail2, userPwd: yourPw3, userNickname: yourNickName1,userImg: myImg1, userAdAgreement: apple3, userAddress: yourGround1, userLikes: yourInterest)
@@ -256,26 +254,6 @@ class InterestViewController: UIViewController {
         // 화면이동
         self.navigationController?.pushViewController(rvc, animated: true)
     }
-    
-    
-    //gpt
-    //    @IBAction func orangeButtonClicked(_ sender: Any) {
-    //        if let buttonIndex = [cafeButton, banchanButton, fashionButton, lifeButton,etcButton ].firstIndex(of: sender as! UIButton) {
-    //            selectedOrangeButtonIndex = buttonIndex
-    //            let numberOfSelectedButtons = [cafeButton, banchanButton, fashionButton, lifeButton,etcButton].filter { $0.backgroundColor == UIColor.orange }.count
-    //            if numberOfSelectedButtons == 1 {
-    //                nextButton11.backgroundColor = .mybrown
-    //                nextButton11.setTitleColor(.white, for: .normal) // 평상시
-    //                nextButton11.setTitleColor(.white, for: .selected) // 선택됐을때
-    //                nextButton11.isEnabled = true
-    //            } else {
-    //                nextButton11.backgroundColor = .white
-    //                nextButton11.setTitleColor(.white, for: .normal) // 평상시
-    //                nextButton11.setTitleColor(.white, for: .selected)
-    //                nextButton11.isEnabled = false
-    //            }
-    //        }
-    //    }
     
     @objc func nextButton11didChanged(_ sender: UIButton) {
         
@@ -344,7 +322,6 @@ class InterestViewController: UIViewController {
         orange_life = UIImage(named:"orange_life")
         orange_etc = UIImage(named:"orange_etc")
         
-        
         let mybrown = UIColor(named: "mybrown")
         let myorange = UIColor(named: "myorange")
         
@@ -353,11 +330,6 @@ class InterestViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        // viewcontroller 배경 색상 변경 #FFFBF9
-        let BACKGROUND = UIColor(named: "BACKGROUND")
-        self.view.backgroundColor = BACKGROUND
-        ddview.backgroundColor = BACKGROUND
-        self.navigationController?.navigationBar.backgroundColor = BACKGROUND
         
         //progressView6
         progressView6.progressViewStyle = .default
@@ -378,7 +350,11 @@ class InterestViewController: UIViewController {
         lifeButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
         etcButton.addTarget(self, action: #selector(nextButton11didChanged), for:.touchUpInside)
     }
-        
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = "회원가입"

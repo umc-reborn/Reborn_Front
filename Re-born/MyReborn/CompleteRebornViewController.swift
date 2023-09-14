@@ -78,7 +78,7 @@ class CompleteRebornViewController:UIViewController {
     }
     
     func getRebornHistoryDetail(completion: @escaping (NetworkResult<Any>) -> Void) {
-        var RebornHistoryDetailUrl = "http://www.rebornapp.shop/reborns/history/detail/\(rebornTaskIdx)"
+        let RebornHistoryDetailUrl = "http://www.rebornapp.shop/reborns/history/detail/\(rebornTaskIdx)"
         print("rebornHistoryDetail의 taskIdx는 \(rebornTaskIdx)")
 
 

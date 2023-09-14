@@ -67,7 +67,7 @@ class FirstTabmanController: TabmanViewController {
             // 배경 회색으로 나옴 -> 하얀색으로 바뀜
             bar.backgroundView.style = .clear
             // 간격 설정
-            bar.layout.contentInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
+            bar.layout.contentInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 25)
             // 버튼 글씨 커스텀
             bar.buttons.customize { (button) in
                 button.tintColor = .systemGray4
