@@ -29,10 +29,10 @@
 
 ### 🗃️ 프레임워크
 - UI: UIKit
-- 암호화: UserDefaults, CoreData
+- 암호화: CoreData
 - 카카오로그인: KakaoSDK
 
-### 🗂️ 외부 의존성
+### 🗂️ 외부 라이브러리
 - UI: DropDown, Tabman
 - 네트워크 통신: Alamofire
 
