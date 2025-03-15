@@ -228,6 +228,7 @@
 		C7F850D52AB1D6E700A6B192 /* ShopIdentifyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F850D42AB1D6E700A6B192 /* ShopIdentifyPost.swift */; };
 		C7F913D529CC03C100971C80 /* APIImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F913D429CC03C100971C80 /* APIImagePost.swift */; };
 		C7F913DD29CD134C00971C80 /* RebornModelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F913DC29CD134C00971C80 /* RebornModelList.swift */; };
+		C7F9CE082D85BD6F00FD29F3 /* RebornHistoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F9CE072D85BD6F00FD29F3 /* RebornHistoryDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -479,6 +480,7 @@
 		C7F913D429CC03C100971C80 /* APIImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImagePost.swift; sourceTree = "<group>"; };
 		C7F913D829CC0C8900971C80 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C7F913DC29CD134C00971C80 /* RebornModelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornModelList.swift; sourceTree = "<group>"; };
+		C7F9CE072D85BD6F00FD29F3 /* RebornHistoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebornHistoryDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -558,7 +560,8 @@
 		2FB4A6A229779E2000CA811C /* MyReborn */ = {
 			isa = PBXGroup;
 			children = (
-				2FF28CE6298D0645008B7D8E /* Models */,
+				C7F9CE062D85BD5C00FD29F3 /* ViewModel */,
+				2FF28CE6298D0645008B7D8E /* Model */,
 				2F7010EF297586C100E09DD9 /* MyReborn.storyboard */,
 				2F7010ED2975845200E09DD9 /* MyRebornViewController.swift */,
 				2FB4A6A52977A46F00CA811C /* EditUserProfileViewController.swift */,
@@ -581,7 +584,7 @@
 			path = MyReborn;
 			sourceTree = "<group>";
 		};
-		2FF28CE6298D0645008B7D8E /* Models */ = {
+		2FF28CE6298D0645008B7D8E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				2FF28CE7298D065D008B7D8E /* APIMyRebornPost.swift */,
@@ -595,7 +598,7 @@
 				2FB3BD1B29CA1266003B17CA /* UserModel.swift */,
 				C7F913D829CC0C8900971C80 /* UserModel.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		77AD8D9494DCB96CF5BB6F9D /* Frameworks */ = {
@@ -904,6 +907,14 @@
 				C703213F29E319030029D684 /* InfoPlist.strings */,
 			);
 			path = "Re-born";
+			sourceTree = "<group>";
+		};
+		C7F9CE062D85BD5C00FD29F3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C7F9CE072D85BD6F00FD29F3 /* RebornHistoryDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C7FA26E4297E9E600054DB29 /* Models */ = {
@@ -1241,6 +1252,7 @@
 				C787E3B729BB460C0090B946 /* Entity+CoreDataClass.swift in Sources */,
 				C70D3D6C2982D85500CABA91 /* TabModalViewController.swift in Sources */,
 				C787E3AC29BB019D0090B946 /* TimerTestViewController.swift in Sources */,
+				C7F9CE082D85BD6F00FD29F3 /* RebornHistoryDetailViewModel.swift in Sources */,
 				0B94770E29899D9700B5829A /* WhoViewController.swift in Sources */,
 				C70D3D6A29826F1D00CABA91 /* APIRebornPost.swift in Sources */,
 				2F7C0ABC29956D0400BC5F9A /* PersonalTabViewController.swift in Sources */,

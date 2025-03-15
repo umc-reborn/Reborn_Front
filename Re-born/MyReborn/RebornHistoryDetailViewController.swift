@@ -15,21 +15,8 @@ class RebornHistoryDetailViewController: UIViewController {
     var rebornTaskIndex: Int = 0
     var timeLimit: String = ""
     
-    var container: NSPersistentContainer!
-    var timer: Timer? = nil
-    
-    var timeSecond = 10 {
-        willSet(newValue) {
-            var hours = String(newValue / 3600)
-            var minutes = String(newValue / 60)
-            var seconds = String(newValue % 60)
-            if hours.count == 1 { hours = "0"+hours }
-            if minutes.count == 1 { minutes = "0"+minutes }
-            if seconds.count == 1 { seconds = "0"+seconds }
-            timeLabel.text = "\(minutes):\(seconds)"
-        }
-    }
-    
+    var viewModel: RebornHistoryDetailViewModel!
+    private var cancellables = Set<AnyCancellable>()
     
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var storeName: UILabel!
@@ -46,24 +33,22 @@ class RebornHistoryDetailViewController: UIViewController {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var rebornContentView: UIView!
     
-    
     var apiData: RebornHistoryDetailResponse!
     var rebornData: RebornCompleteresultModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 그림자
-        self.rebornContentView.layer.shadowColor = UIColor.gray.cgColor //색상
-                self.rebornContentView.layer.shadowOpacity = 0.1 //alpha값
-                self.rebornContentView.layer.shadowRadius = 10 //반경
-                self.rebornContentView.layer.shadowOffset = CGSize(width: 0, height: 10) //위치조정
-                self.rebornContentView.layer.masksToBounds = false
-        self.rebornContentView.layer.cornerRadius = 8;
 
+        self.rebornContentView.layer.shadowColor = UIColor.gray.cgColor
+        self.rebornContentView.layer.shadowOpacity = 0.1 //alpha값
+        self.rebornContentView.layer.shadowRadius = 10 //반경
+        self.rebornContentView.layer.shadowOffset = CGSize(width: 0, height: 10) //위치조정
+        self.rebornContentView.layer.masksToBounds = false
+        self.rebornContentView.layer.cornerRadius = 8;
+        
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.container = appDelegate.persistentContainer
+        viewModel = RebornHistoryDetailViewModel(container: appDelegate.persistentContainer)
         
         self.contentView.layer.cornerRadius = 10
         self.productImg.layer.cornerRadius = 10
@@ -77,7 +62,7 @@ class RebornHistoryDetailViewController: UIViewController {
             switch result {
             case .success(let response):
                 print("성공일까?")
-
+                
                 // 값 불러오기
                 print("response is \(response)")
                 guard let response = response as? RebornHistoryDetailModel else {
@@ -85,7 +70,7 @@ class RebornHistoryDetailViewController: UIViewController {
                 }
                 
                 self.apiData = response.result
-            
+                
                 
                 let url = URL(string: self.apiData.storeImage)
                 self.storeName.text = self.apiData.storeName
@@ -98,26 +83,23 @@ class RebornHistoryDetailViewController: UIViewController {
                 self.storeAddr.text = self.apiData.storeAddress
                 self.storeCategory.text = self.apiData.category
                 self.date.text = self.apiData.createdAt
-
+                
             default:
                 break
             }
         }
     }
-
-    func getData() {
-        print("getData() 함수 실행")
     
-    }
-    
-    func timerStart() {
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.fetchContact()
-            if (self.timeSecond == 0) {
-                timer.invalidate()
+    private func bindViewModel() {
+        viewModel.$timeSecond
+            .receive(on: DispatchQueue.main)
+            .map { seconds -> String in
+                let minutes = String(format: "%02d", seconds / 60)
+                let sec = String(format: "%02d", seconds % 60)
+                return "\(minutes):\(sec)"
             }
-        }
-        RunLoop.current.add(self.timer!, forMode: .common)
+            .assign(to: \.text, on: timeLabel)
+            .store(in: &cancellables)
     }
 
     @IBAction func FinishRebornTapped(_ sender: Any) {
@@ -138,7 +120,6 @@ class RebornHistoryDetailViewController: UIViewController {
 
         let url: String! = RebornHistoryDetailUrl
         let header: HTTPHeaders = [
-            // 헤더 프린트 해서 post 형태로 데이터를 불러오는거라서 오키오키
             "Content-type": "application/json"
             //                "jwt"
         ]
@@ -182,19 +163,6 @@ class RebornHistoryDetailViewController: UIViewController {
         case 400 ..< 500: return .pathErr
         case 500: return .serverErr
         default: return .networkFail
-        }
-    }
-    
-    func fetchContact() {
-        do {
-            let contact = try self.container.viewContext.fetch(Entity.fetchRequest())
-           contact.forEach {
-            print("\($0.seconds)")
-               timeSecond = Int($0.seconds)
-//            self.timeLabel2.text = "\($0.seconds)"
-          }
-        } catch {
-           print(error.localizedDescription)
         }
     }
 }
