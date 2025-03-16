@@ -29,13 +29,34 @@ class RebornHistoryDetailViewModel {
     }
     
     private func fetchContact() {
+        let request: NSFetchRequest<Entity> = Entity.fetchRequest()
+        
         do {
-            let contact = try self.container.viewContext.fetch(Entity.fetchRequest())
-            if let firstContact = contact.first {
-                self.timeSecond = Int(firstContact.seconds)
+            let results = try context.fetch(request)
+            if let timerEntity = results.first {
+                let totalSeconds = (Int(timerEntity.minutes) * 60) + Int(timerEntity.seconds)
+                self.timeSecond = totalSeconds
             }
         } catch {
-            print("Failed to fetch contact: \(error.localizedDescription)")
+            print("⚠️ 타이머 데이터를 불러오지 못했습니다: \(error.localizedDescription)")
+        }
+    }
+    
+    private func saveTimerToCoreData() {
+        let context = container.viewContext
+        let request: NSFetchRequest<Entity> = Entity.fetchRequest()
+        
+        do {
+            let results = try context.fetch(request)
+            let timerEntity: Entity
+            
+            let totalSeconds = self.timeSecond
+            timerEntity.minutes = Int64(totalSeconds / 60) // ✅ 분 저장
+            timerEntity.seconds = Int64(totalSeconds % 60)
+            
+            try context.save()
+        } catch {
+            print("⚠️ 타이머 데이터를 저장하지 못했습니다: \(error.localizedDescription)")
         }
     }
 }
